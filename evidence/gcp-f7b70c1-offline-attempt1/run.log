@@ -1,0 +1,31 @@
+Thu Oct 29 23:42:29 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/paper1-source-2cfe95c.bundle: OK
+/home/dfredriksen_quantyra_org/paper1-mathlib-c5ea003-offline.tar.gz: OK
+/home/dfredriksen_quantyra_org/lean-4.30.0-linux-paper1.tar.zst: OK
+Cloning into 'source'...
+warning: remote HEAD refers to nonexistent ref, unable to checkout
+HEAD is now at f7b70c1 Draft partial-map congruence formalization
+f7b70c170a66687a851710d1d6a4630333b66189
+d0a2f58e5793fce6db78b3978a875dc73b8f892c9331bf8b2d3bf7ba018da033  lean/PairedDirac.lean
+54727eec5cba149c18842e6deb5c41b369d66455c93ce135d7d5347c782b2325  lean/lean-toolchain
+95879f7efafe0e4b8910a98e2801eae864295f63f24a34b7576160784d7d9c55  lean/lakefile.toml
+382ab2454de5dcedf0abf1c337a4ca17c7ed4287f02e04f2765d137853f276e8  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/Cli.tar
+709129310159356e87bf7327e5803b9f32600f4185ebabca2dd4d9fcce07f6f8  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/LeanSearchClient.tar
+d3c4704eec35f80aa6952801ec54eda66810b2aecf3b38609aa22f2866fe4c73  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/Qq.tar
+dd0899ad74a3e1c0aea6317e13d90ac74a1cb12686c6104b0f5acdb4d89275a3  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/aesop.tar
+ba30ce828e5f48526b14d04d2c209c6eb34c021ad38be321b3742d6b53d46957  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/batteries.tar
+52460fce6ab697040d9438a7a32b050d402c59a376c4f8b37d3862165cb89b85  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/importGraph.tar
+391f12768f427c89db07364bb6356e96af5b5475c38e9b19d578f24f69cb2d08  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/mathlib.tar
+c2027214d1cbb5ca066b9130e1ec5667f809734d74af145c1b17fffb0921ee06  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/plausible.tar
+49fde547129269063060c93cff777339347d3c2af41828ea7c0f8c98ff1dab28  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/proofwidgets.tar
+61d78cb094e771f720b480be1183e4727021b3b81b1aecf0e23807b022b22407  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/dependencies/lake-manifest.json
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+61d78cb094e771f720b480be1183e4727021b3b81b1aecf0e23807b022b22407  lake-manifest.json
+info: mathlib: URL has changed; deleting '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/source/lean/.lake/packages/mathlib' and cloning again
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+info: stderr:
+Cloning into '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-offline-f7b70c1-20261029/source/lean/.lake/packages/mathlib'...
+fatal: unable to access 'https://github.com/leanprover-community/mathlib4.git/': Failed to connect to github.com port 443 after 133430 ms: Couldn't connect to server
+error: external command 'git' exited with code 128
