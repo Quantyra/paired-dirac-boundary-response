@@ -37,6 +37,11 @@ leading tails only after showing the required remainder bounds and cutoff
 behavior; here (2) is an explicit hypothesis, not a claim for arbitrary H^3
 profiles.
 
+For pure cubic and logarithmic profiles with a smooth even cutoff equal to
+one near the seam, the separate [Fourier-tail argument](localized-fourier-tails.md)
+establishes (2) with an O(|k|^-10) remainder. That argument does not cover
+all weighted remainders in the broader mass/log class.
+
 ## Cubic-cubic term
 
 Choose any fixed K>0 above which (2) holds. On |k|>=K, substitute s=sqrt(t)|k|
