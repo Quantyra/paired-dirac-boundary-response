@@ -1,4 +1,4 @@
-﻿# Proper-distance metric coefficient and the cubic seam
+# Proper-distance metric coefficient and the cubic seam
 
 This derives the local relation between the source's orbit metric and the
 positive coefficient f used by the auxiliary bridge. It applies under the
@@ -45,7 +45,7 @@ uniform under the same fixed collar and scalar bounds. The auxiliary
 periodic bridge therefore meets the coefficient regularity inputs of the
 assembled contact estimate for this concrete orbit-conformal family.
 
-If the seed has a genuine reflected cubic of its own, (3) must include that
+The frozen RN product-frame seed has a nonzero cubic boundary jet, as calculated in [the seed audit](rn-seed-cubic-boundary-jet.md); the smooth even seed assumed above does not cover it. If the seed has a genuine reflected cubic of its own, (3) must include that
 seed's cubic coefficient; smooth evenness was used to exclude it here. A
 general physical stationary deformation also need not be a pure
 orbit-conformal change in a fixed collar. The fixed-seed direction convention
