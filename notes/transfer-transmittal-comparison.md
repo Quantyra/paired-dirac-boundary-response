@@ -137,6 +137,37 @@ Robin coefficient and source sign convention, and compare the actual
 closed realizations. The required global parallel J itself remains an
 application-specific hypothesis.
 
+At the boundary, the side identification can be made explicit under these
+assumptions. Put E_side^+ and E_side^- for the S eigensubbundles and write
+psi'=psi_+ + psi_-. Since T is unitary and anticommutes with S, its
+restriction I=T|_(E_side^+) is a unitary map E_side^+ -> E_side^-.
+The equation P_- psi'=0 is equivalent to
+
+    psi_- = I psi_+.
+
+Assume in addition that the collar extension has nabla'_n T=0 and that n
+is the common inward normal after folding. In this paragraph s denotes the
+Robin coefficient for that inward normal, namely minus the coefficient in
+the square note's outward-normal convention. Since S is parallel, the normal
+derivative preserves each side bundle; differentiating the identification
+is not being assumed. Rather, the Robin boundary equation itself yields
+
+    nabla'_n psi_+ + I^(-1) nabla'_n psi_-
+        = -2s psi_+.
+
+Indeed, applying the E_side^+ projection to P_+(nabla'_n+s)psi'=0
+gives one half of the displayed sum plus s psi_+, using the value equation.
+Conversely these two side equations imply the original mixed conditions.
+Thus the transmittal source's v is -2s with this common inward normal and
+its stated convention. If the original outward normal is used, the sign of
+the derivative and the Robin coefficient must be converted together.
+
+This gives an exact boundary-jet correspondence for the candidate side
+bundles; it does not prove that those bundles are globally identified over
+the whole boundary, that the bulk operators match the source's hypotheses,
+or that their closed realizations agree. In particular, the first-order
+paired operator still has its separately specified domain.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces
