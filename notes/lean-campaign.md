@@ -1,8 +1,9 @@
 # Lean campaign: domain theorem
 
-Status: setup only; no Lean or Lake invocation and no certificate. The prior
-turn established the abstract ordinary argument. This turn inspected the
-Quantyra Space GCP builder and created a pinned project for formalization.
+Status: a development build is running on GCP; no certificate has been
+obtained. The checked-in source defines an abstract congruence of a partially
+defined linear map and states domain and invariant-preimage lemmas. It does
+not yet formalize the full bounded-congruence theorem or the paper.
 
 The first intended formal target is the complete bounded-congruence lemma in
 [the ordinary argument](bounded-congruence-argument.md): for a densely defined
@@ -15,10 +16,13 @@ explicitly mark as assumptions all geometric trace and regularity inputs.
 
 The project pins Lean 4.30.0 and mathlib commit
 `c5ea00351c28e24afc9f0f84379aa41082b1188f`, matching an existing Space
-reference workspace. `PairedDirac.lean` is only an import and contains no
-formalized claim. The toolchain and dependency must be acquired and built on
-GCP, not the workstation. The live cloud source, exact lock/dependency
-identities, raw logs, axiom reports and terminal results must be retained.
+reference workspace. The development snapshot is commit `f7b70c1`; its
+source contains two theorem declarations with `#print axioms` requests.
+Those declarations remain unverified until the GCP build terminates
+successfully and the exact-source and axiom evidence is audited. All Lean
+invocations remain on GCP, not the workstation. The live cloud source, exact
+lock/dependency identities, raw logs, axiom reports and terminal results must
+be retained.
 
 On 2026-10-29 HST the designated GCP instance was initially TERMINATED. It
 was started for read-only inspection and had Lean 4.34.0-rc2 installed; the
@@ -28,12 +32,28 @@ contain the inspected `LinearPMap.olean` at the expected path. No Lean or Lake
 process was present in the subsequent process checks. The instance was then
 requested to stop. These are environment observations, not build evidence.
 
-The first development run must install the pinned toolchain if needed, acquire
-the exact dependency in a new task-owned Space directory, and compile only
-submitted source snapshots. Failure is recorded as failure; a narrow helper
-lemma or a typecheck of the import cannot certify the full operator statement
-or the paper. Once the domain lemma is formalized, the paired geometry and
-boundary-response claims remain separate proof obligations.
+The initial run failed before Lean because the VM could not clone the pinned
+dependencies; the offline Git-metadata retry uses verified source and toolchain
+archives and was last observed building Mathlib on GCP. The metadata-only
+shallow clones produce local-change warnings, so the dependency content and
+exact identities need an acceptance audit even if compilation succeeds.
+
+The present `congruence_domain` theorem is definitional because the candidate
+map was constructed with the original domain; `invariant_preimage` proves
+the matching natural right-composition domain only from both forward and
+inverse invariance. Neither establishes closedness, the adjoint identity,
+square-domain characterization, or graph bounds. In particular, the current
+formalization does not assume or discharge the physical H1 projector domain
+characterizations, the flat heat trace, or any curved regulator limit. A
+successful run of this source would certify only the checked declarations,
+subject to its axioms and source audit.
+
+Next, express and prove closedness and the adjoint relation for the actual
+Mathlib operator and bounded self-adjoint equivalence, followed by the composed
+square-domain identity and graph estimates. Then connect geometric domain
+and trace hypotheses to independently supported results and formalize the
+response claims to the extent actually stated. A failed build is evidence of
+failure and must be retained; a helper lemma cannot certify the paper.
 
 Remaining to-do list: implement and verify the actual unbounded-operator
 lemma on GCP, retain complete source and axiom evidence, then formalize the
