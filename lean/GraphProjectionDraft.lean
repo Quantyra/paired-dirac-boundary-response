@@ -38,3 +38,29 @@ theorem graph_projection_identity_draft
 end PairedDirac
 
 #print axioms PairedDirac.graph_projection_identity_draft
+namespace PairedDirac
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable [CompleteSpace H]
+
+/-- The shifted natural adjoint square is onto. -/
+theorem positiveSquare_add_one_surjective_draft
+    (D : H →ₗ.[ℂ] H) (hClosed : D.IsClosed)
+    (hDense : Dense (D.domain : Set H)) (f : H) :
+    ∃ x : (positiveSquare D).domain, (x : H) + (positiveSquare D) x = f := by
+  obtain ⟨u, hu⟩ := graph_projection_identity_draft D hClosed f
+  have hDu : D u ∈ D.adjoint.domain :=
+    LinearPMap.mem_adjoint_domain_of_exists _ ⟨f - (u : H), hu⟩
+  have hx : (u : H) ∈ (positiveSquare D).domain :=
+    (mem_positiveSquare_domain_draft D u).mpr ⟨u.property, hDu⟩
+  let x : (positiveSquare D).domain := ⟨u, hx⟩
+  have hvalue : D.adjoint ⟨D u, hDu⟩ = f - (u : H) :=
+    LinearPMap.adjoint_apply_eq hDense _ hu
+  refine ⟨x, ?_⟩
+  change (u : H) + D.adjoint ⟨D u, hDu⟩ = f
+  rw [hvalue]
+  exact add_sub_cancel_comm _ _
+
+end PairedDirac
+
+#print axioms PairedDirac.positiveSquare_add_one_surjective_draft
