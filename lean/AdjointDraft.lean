@@ -22,9 +22,13 @@ theorem congruence_formalAdjoint_draft
   intro x y
   change inner ℂ (E (D ⟨E x, hE x x.property⟩)) (y : H) =
     inner ℂ (x : H) (E (D.adjoint ⟨E y, hEA y y.property⟩))
-  rw [hSymm, ← hSymm]
-  exact (LinearPMap.adjoint_isFormalAdjoint hDense).symm
-    ⟨E x, hE x x.property⟩ ⟨E y, hEA y y.property⟩
+  calc
+    inner ℂ (E (D ⟨E x, hE x x.property⟩)) (y : H) =
+        inner ℂ (D ⟨E x, hE x x.property⟩) (E y) := hSymm _ _
+    _ = inner ℂ (E x) (D.adjoint ⟨E y, hEA y y.property⟩) :=
+      (LinearPMap.adjoint_isFormalAdjoint hDense).symm
+        ⟨E x, hE x x.property⟩ ⟨E y, hEA y y.property⟩
+    _ = inner ℂ (x : H) (E (D.adjoint ⟨E y, hEA y y.property⟩)) := hSymm _ _
 
 end PairedDirac
 
