@@ -108,6 +108,36 @@ strengthen the evidence of an internal normalization mismatch, but do not
 resolve whether a convention or another issue accounts for it. An independent
 review and a direct check of the publisher's version are still needed.
 
+## Explicit one-interface comparison
+
+Use the source's own one-sided geometry and take E(x)=x exp(−x) for x≥0
+and E(x)=0 for x<0. This is continuous, exponentially decaying and smooth
+on either side, with one derivative jump. Its Fourier transform is
+E-hat(k)=(1+ik)^(−2), so |E-hat(k)|²=(1+k²)^(−2), and its jump J is 1.
+The dominated-convergence argument above applies directly; compact support
+is unnecessary for this example because the required derivatives are
+integrable. It gives, for one scalar degree of freedom in two dimensions
+per unit tangential length, the subtracted quadratic coefficient
+
+    K₂(t) − K₂,smooth(t) = [1/(512 sqrt(pi))] t^(5/2) + o(t^(5/2)).
+
+The same coefficient follows independently from the source's one-dimensional
+Eqs. (27)–(28): E'''(x)=(3−x)exp(−x) for x>0 and
+∫₀∞ E E''' dx=1/2. Their n=3 term is t³/256. Multiplying by the free
+one-dimensional tangential trace density (4 pi t)^(−1/2) gives the displayed
+coefficient. This calculation uses K₂ itself, not its second derivative.
+
+For the source's inward normals, E^(1)+=1 and E^(1)−=0, so the squared
+jump in its Eq. (20) is exactly one; there is one interface and one scalar
+fiber. Applying its Eq. (32) with p=1 instead gives
+1/(256 sqrt(pi)) times t^(5/2). Thus a tangential heat factor, a second
+interface, polarization, and an extra fiber do not explain the difference
+in this specific model. The source uses −E where the independent setup uses
++V, but the quadratic term is unchanged by E→−E. This comparison strengthens
+the internal discrepancy finding in the linked preprint; it does not settle
+the publisher's version, establish an erratum, or validate the Dirac result.
+The APS issue index identifies the published article as Physical Review D 70,
+045003 (2004), but its full text was inaccessible in the source check.
 Remaining to-do list: independently review this prefactor and source
 conventions, inspect the publisher's version, justify the Dirac folding,
 and revise the comparison only after the normalization is settled.
