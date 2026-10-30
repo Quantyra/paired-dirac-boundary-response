@@ -63,3 +63,41 @@ end PairedDirac
 
 #print axioms PairedDirac.positiveSquare_inner_draft
 #print axioms PairedDirac.positiveSquare_nonneg_draft
+namespace PairedDirac
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable [CompleteSpace H]
+
+/-- The actual adjoint composition is symmetric on its composition domain. -/
+theorem positiveSquare_symmetric_draft
+    (D : H →ₗ.[ℂ] H) (hDense : Dense (D.domain : Set H)) :
+    (positiveSquare D).IsFormalAdjoint (positiveSquare D) := by
+  intro x y
+  let x' : D.domain := ⟨(x : H), x.property.2⟩
+  let y' : D.domain := ⟨(y : H), y.property.2⟩
+  have hx : D x' ∈ D.adjoint.domain := by
+    obtain ⟨h, hh⟩ := (mem_squareDomain_draft D x).mp x.property.1
+    exact hh
+  have hy : D y' ∈ D.adjoint.domain := by
+    obtain ⟨h, hh⟩ := (mem_squareDomain_draft D y).mp y.property.1
+    exact hh
+  change inner ℂ (D.adjoint ⟨D x', hx⟩) (y' : H) =
+    inner ℂ (x' : H) (D.adjoint ⟨D y', hy⟩)
+  calc
+    inner ℂ (D.adjoint ⟨D x', hx⟩) (y' : H) =
+        inner ℂ (D x') (D y') :=
+      LinearPMap.adjoint_isFormalAdjoint hDense ⟨D x', hx⟩ y'
+    _ = inner ℂ (x' : H) (D.adjoint ⟨D y', hy⟩) :=
+      (LinearPMap.adjoint_isFormalAdjoint hDense).symm x' ⟨D y', hy⟩
+
+/-- A densely defined square is contained in its adjoint. -/
+theorem positiveSquare_le_adjoint_draft
+    (D : H →ₗ.[ℂ] H) (hDense : Dense (D.domain : Set H))
+    (hSquareDense : Dense ((positiveSquare D).domain : Set H)) :
+    positiveSquare D ≤ (positiveSquare D).adjoint :=
+  (positiveSquare_symmetric_draft D hDense).le_adjoint hSquareDense
+
+end PairedDirac
+
+#print axioms PairedDirac.positiveSquare_symmetric_draft
+#print axioms PairedDirac.positiveSquare_le_adjoint_draft
