@@ -41,6 +41,17 @@ The infinity projector cannot be transported to an arbitrary finite cut merely b
  span{cosh(lambda) v_plus+sinh(lambda) v_minus}.            (2.3)
 
 Unless lambda=0, this is not the local P_minus psi(x0)=0 plane. The sign of lambda depends on radial orientation, but the mixing does not. This exact test is derived in `../notes/finite-cut-boundary-transport.md`. It does not determine the full physical Dirichlet-to-Neumann relation: nonzero spectral parameters, both copies, the other endpoint, angular sectors and inhomogeneous collar sources must also be retained. Propositions 2.1 and 3.1 apply to any realization satisfying their stated domains; applying them to a finite-cut model does not by itself identify that model with transported infinity data.
+For a square resolvent the missing collar source also changes the boundary relation. In the corrected symmetric-lapse model let H_mu=-i sigma_2 partial_s+mu a(s) sigma_1, P=sqrt(f)(H_mu+i nu)sqrt(f), and consider (P*P+M²-zeta)psi=g on [s0,s1]. With eta=sqrt(f)psi and xi=f(H_mu+i nu)eta, the local equations give Y' = K_zeta Y + (0,i f^(-1/2) sigma_2 g), where Y=(eta,xi) and
+
+ K_zeta=[ nu sigma_2-mu a sigma_3        i f^(-1) sigma_2 ]
+        [ i(zeta-M²)f^(-1) sigma_2   -nu sigma_2-mu a sigma_3 ]. (2.4)
+
+If U_zeta(s,t) is the fundamental matrix, variation of constants yields
+
+ Y(s0)=U_zeta(s0,s1)Y(s1)
+          -integral_(s0)^s1 U_zeta(s0,s)(0,i f^(-1/2) sigma_2 g(s))ds. (2.5)
+
+Thus a homogeneous boundary plane at s1 is carried to an affine plane at s0, with a displacement depending on the removed-collar source. For bounded f^-1 and integrable coefficients, the displacement is bounded by exp(h)||f^(-1/2)||_infinity sqrt(s1-s0)||g||_L2, where h is the integral of an operator-norm majorant for K_zeta. The exact model assumptions and a fixed-mode nonreal Poisson estimate are in `../notes/symmetric-lapse-inhomogeneous-transfer.md` and `../notes/symmetric-lapse-nonreal-poisson.md`. These estimates do not by themselves establish the physical boundary relation, summability over modes, or a trace-norm regulator limit.
 ## 3. Paired factorization
 
 **Proposition 3.1 (conditional mass resolvent).** In addition to Proposition 2.1, suppose J is a bounded unitary involution, commutes with E_b, and D*=-JDJ as an equality of closed operators. Then Q_b=J D_b is skew-adjoint, D_b*D_b=-Q_b², and for M>0,
