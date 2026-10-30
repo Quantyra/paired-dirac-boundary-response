@@ -205,6 +205,11 @@ The triangle has measure da db, with no additional factorial. For a parameter-de
 
 The mixed square form vertex V_uw includes both cross-products of the first Dirac variations, as well as the two terms containing the mixed Dirac variation. These are retained in addition to any separate density or action-restoration terms. The Galerkin and positive-time passage under the stated holomorphic form and trace hypotheses is developed in `../notes/fixed-cut-moving-insertion-mixed-response.md`; the expressions in (5.1) are not asserted to be individually convergent unregularized form-operator integrals.
 
+For the single V_uw term, a fixed conformal insertion b can be moved to a reference position with an explicit heat-commutator correction. At finite matrix level, for a+c=t and a>=t/2,
+
+ Tr[b K_a V_uw K_c]=Tr[b K_t V_uw]+Tr([K_c,b]K_a V_uw). (5.3)
+
+For c>=t/2 the reference is Tr[b V_uw K_t] and the correction is Tr([b,K_a]V_uw K_c). The reference traces are conjugate. Under the form-domain and weighted smoothing assumptions in `../notes/conformal-second-vertex-reference-traces.md`, they are bounded using the decaying directions and the commutators of b with D, without bounding the bare logarithmic insertion. The remaining correction requires an unsandwiched trace-class bound or another justified form estimate. These fixed-time conditional statements do not control the two ordered vertices or the common regulator.
 A proof of the source's sufficient t^(3/2) bound must identify the physical and tangent families, their localizations, normalization, contact and restoration terms on one regulator, and estimate their complete difference uniformly in the declared rough family. Equations (5.1)--(5.2) specify the terms but do not provide that estimate or permit the cutoff and short-time limits to be interchanged. Weak boundary completion, gluing, angular and thermal sums, and regulator limits remain open. No global extension is claimed here.
 
 ## Relation to prior work — preliminary
