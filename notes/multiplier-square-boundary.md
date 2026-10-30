@@ -39,6 +39,29 @@ gamma_n are invertible. No tangential derivative of b enters this projected
 boundary term: the tangential operator sends the allowed trace to the
 opposite eigenspace. This conclusion depends on the assumed intrinsic flip.
 
+## Intrinsic flip and its bundle assumptions
+
+The source's orientation-aware representation has gamma_n=1 tensor sigma_1
+and tangential gammas carrying a sigma factor anticommuting with sigma_1;
+the copy involution tau_3 commutes with each of these gammas. Consequently
+chi=tau_3 gamma_n anticommutes with every tangential gamma pointwise. For
+the intrinsic boundary spin connection, Clifford compatibility and its
+normal-parallel construction imply nabla^boundary_a gamma_n=0. If the
+connection on the two pulled-back copies also preserves tau_3, then
+nabla^boundary_a chi=0. For D_intr=sum_a gamma_a nabla^boundary_a this
+gives, on smooth boundary spinors,
+
+    chi D_intr psi = -D_intr(chi psi).
+
+The equality extends to the Sobolev traces used above by continuity of the
+first-order tangential operator. In particular, it explains why a tangential
+derivative of scalar E produces no Pi_+ term for an allowed trace. The
+identical-copy magnetic connection recorded in the source is compatible with
+this argument provided its pulled-back bundle identification really makes
+the copy involution parallel. The global identification, spin structure at
+the regular bolt and the stated Gauss formula are still source hypotheses,
+not independently established by this pointwise calculation.
+
 ## H2 regularity from the first-order theorem
 
 Assume the smooth compact finite-cut setting and the D-elliptic projector
