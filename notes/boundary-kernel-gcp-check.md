@@ -89,6 +89,23 @@ algebraic relations recorded for the physical involution and tangential
 Clifford action. Their representation on the actual global spinor bundle,
 the trace and elliptic facts, and the paper's response statements are not
 formalized by this theorem.
+## Paired Clifford specialization
+
+The source at d7d2ebd92407d2771c0da73cc84a0e6e07280498 passed Lean 4.30.0
+on the same GCP builder with exit 0. The new theorem
+`paired_clifford_tangential_compression` reports [propext, Classical.choice,
+Quot.sound]. The source file SHA-256 is
+021a0392932f8636ca66854c59967f5af5448e60d08bc1852d9c1a1592dd5240;
+the bundle SHA-256 is
+d00bba23eb0c231c60aaae14e4005a850aa409592965be5bb76fd1289e874100.
+The previously recorded source-only dependency-worktree warnings apply.
+
+The theorem derives the involution and tangential anticommutation for
+chi=tau gamma_n from the separately stated commuting-involution and
+Clifford anticommutation relations, then proves the paired projector's
+compression vanishes. It remains an abstract linear-map theorem: the
+matrix identities and their global bundle interpretation, the Sobolev
+and domain results, and the response are not certified by this check.
 Remaining to-do list: formalize and verify the geometric interpretation and
 remaining claims on GCP, resolve the physical and novelty audits, and prepare
 the manuscript.
