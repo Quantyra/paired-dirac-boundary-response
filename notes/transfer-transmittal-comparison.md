@@ -35,6 +35,25 @@ be claimed. Exact equivalence additionally requires matching projectors,
 fiber identification, normal orientations, connection, Robin coefficient,
 and both bulk operators. Those checks are not supplied by this algebra alone.
 
+More explicitly, in the transfer source's formal transmittal convention let
+phi^+=phi^- and let the sum of inward derivatives equal v phi^+ after
+identifying the boundary fibers. Set
+
+    u=(phi^++phi^-)/sqrt(2),  w=(phi^+-phi^-)/sqrt(2),
+    N_u=(nabla_nu+ phi^+ + nabla_nu- phi^-)/sqrt(2).
+
+Then the boundary equations are w=0 and N_u-(v/2)u=0. This is an exact
+linear equivalence of boundary jets, with the factor 1/2 fixed by the
+source's normalization. Conversely these two equations recover the value
+equality and derivative sum. The antisymmetric normal derivative and the
+symmetric boundary value are unrestricted. To identify N_u with the normal
+derivative of the symmetric folded field, one must also choose the collar
+identification and verify that its pulled-back connections and inward-normal
+conventions agree; with unequal connections this can introduce additional
+zeroth-order boundary terms. The paired projector and Robin coefficient must
+then match the transformed subspaces and v/2. These conditions are concrete
+tests, not an assertion that the physical paired operator is transmittal.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces
