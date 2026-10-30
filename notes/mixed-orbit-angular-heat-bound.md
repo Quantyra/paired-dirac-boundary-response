@@ -57,7 +57,7 @@ sector hypotheses. It does not assert an individual unregularized operator
 integral exists at the endpoints; take the form-smoothed integral limit.
 
 If Tr(e^(-tL/2))=O(t^-1) on a compact two-dimensional orbit, (4) is at
-most O(t^-2) as t tends to zero. This unsusbtracted estimate cannot establish
+most O(t^-2) as t tends to zero. This unsubtracted estimate cannot establish
 the desired integrable remainder or justify regulator removal. The mixed
 second square vertex, pure orbit pair, local subtraction, physical bundle
 and finite-cut matching remain separate. No numerical calculation is used.
@@ -65,3 +65,4 @@ and finite-cut matching remain separate. No numerical calculation is used.
 Remaining to-do list: assemble all vertices with the physical subtraction,
 prove the short-time common-regulator estimate, verify geometry, decide
 novelty, prepare the manuscript, and certify supported results in Lean on GCP.
+
