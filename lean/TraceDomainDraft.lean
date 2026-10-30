@@ -55,3 +55,48 @@ end PairedDirac
 
 #print axioms PairedDirac.projectedTraceDomain_preserved_draft
 #print axioms PairedDirac.two_projectedTrace_domains_invariant_draft
+namespace PairedDirac
+
+variable {H B : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable [CompleteSpace H] [AddCommGroup B] [Module ℂ B]
+
+/-- Projected trace hypotheses imply the closed congruence, its adjoint
+identity, and the self-adjoint natural square. -/
+theorem projectedTrace_congruence_square_draft
+    (D : H →ₗ.[ℂ] H) (S : Submodule ℂ H) (T : S →ₗ[ℂ] B)
+    (P Q M N : B →ₗ[ℂ] B) (E : H ≃L[ℂ] H)
+    (hDomain : D.domain = projectedTraceDomain S T P)
+    (hAdjDomain : D.adjoint.domain = projectedTraceDomain S T Q)
+    (hS : ∀ x ∈ S, E x ∈ S)
+    (hSinv : ∀ x ∈ S, E.symm x ∈ S)
+    (hTrace : ∀ x : S, T ⟨E x, hS x x.property⟩ = M (T x))
+    (hTraceInv : ∀ x : S, T ⟨E.symm x, hSinv x x.property⟩ = N (T x))
+    (hPM : ∀ b : B, P (M b) = M (P b))
+    (hPN : ∀ b : B, P (N b) = N (P b))
+    (hQM : ∀ b : B, Q (M b) = M (Q b))
+    (hQN : ∀ b : B, Q (N b) = N (Q b))
+    (hClosed : D.IsClosed) (hDense : Dense (D.domain : Set H))
+    (hSymm : ∀ x y : H, inner ℂ (E x) y = inner ℂ x (E y)) :
+    ∃ hE : ∀ x ∈ D.domain, E x ∈ D.domain,
+    ∃ hEA : ∀ x ∈ D.adjoint.domain, E x ∈ D.adjoint.domain,
+      (congruence D E.toLinearEquiv hE).IsClosed ∧
+      (congruence D E.toLinearEquiv hE).adjoint =
+        congruence D.adjoint E.toLinearEquiv hEA ∧
+      (positiveSquare (congruence D E.toLinearEquiv hE)).adjoint =
+        positiveSquare (congruence D E.toLinearEquiv hE) := by
+  obtain ⟨hp, hpInv, hq, hqInv⟩ :=
+    two_projectedTrace_domains_invariant_draft S T P Q M N E hS hSinv
+      hTrace hTraceInv hPM hPN hQM hQN
+  have hE : ∀ x ∈ D.domain, E x ∈ D.domain := by simpa [hDomain] using hp
+  have hEinv : ∀ x ∈ D.domain, E.symm x ∈ D.domain := by simpa [hDomain] using hpInv
+  have hEA : ∀ x ∈ D.adjoint.domain, E x ∈ D.adjoint.domain := by
+    simpa [hAdjDomain] using hq
+  have hEAinv : ∀ x ∈ D.adjoint.domain, E.symm x ∈ D.adjoint.domain := by
+    simpa [hAdjDomain] using hqInv
+  exact ⟨hE, hEA,
+    congruence_closed_selfAdjoint_square_draft D E hE hEinv hEA hEAinv
+      hClosed hDense hSymm⟩
+
+end PairedDirac
+
+#print axioms PairedDirac.projectedTrace_congruence_square_draft
