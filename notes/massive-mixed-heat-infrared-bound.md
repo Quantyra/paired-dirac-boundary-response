@@ -35,6 +35,7 @@ For an exhausting family it suffices instead to assume, at t0 and uniformly on t
 
 Then the same factorization gives ||U_n K_n(z,t)||_1 <= C_loc exp[-c(t-t0)] and (3)--(4) hold with U C replaced by C_loc. This is a concrete localized smoothing target for the mixed physical problem. It requires a complex-parameter trace-class estimate; the previously established real weighted S2 comparison alone does not imply (5), especially with only one insertion.
 
+The [log-cubic trace obstruction](log-cubic-single-insertion-trace-obstruction.md) shows why (5) is a serious restriction: under a positive diagonal lower bound, the actual non-L1 physical log-cubic insertion fails even the fixed-real-parameter trace-class requirement. A relative or subtracted observable would need its own estimate.
 ## Connection to the mass gap
 
 In the stipulated graded model, the real positive square has P_(n,r,M)>=M² exp(-4B), uniformly in 0<=r<=1 when Q_n is skew-adjoint and the multiplier/domain hypotheses of `graded-conversion-regulated-endpoints.md` hold with ||b_n||_infinity<=B. If M>=M0>0, this supplies a common real gap g=M0² exp(-4B). If the complex form perturbation is relatively form bounded uniformly in n and sufficiently small that its real part changes the real form by at most g/2 in the required coercive estimate, then a common smaller polydisc has (1) with c=g/2. The relative bound and common radius must be proved for the actual variation class; a real gap alone does not establish them. The gap is an operator estimate, not a physical admission margin.
