@@ -50,7 +50,41 @@ it does not establish convergence of traces, square domains, heat kernels,
 or renormalized response. Extending the construction to tangentially varying
 fields requires the corresponding mixed derivative and chart bounds.
 
+## Smooth approximation away from the boundary
+
+For each fixed epsilon, extend the C5 function r_epsilon from [0,delta]
+to a compactly supported C5 function on R, agreeing with zero on
+(-infinity,epsilon]. Such an extension exists by matching the finite jet at
+delta and multiplying by a cutoff outside the collar. Let rho_h be a
+standard compactly supported smooth approximate identity with h<epsilon/2,
+and put s_epsilon=rho_h * r_epsilon using this extension. The choice of h
+may depend on epsilon. Then s_epsilon is C-infinity and vanishes on
+[0,epsilon/2].
+
+For each fixed epsilon, the derivatives through order five of the extension
+are continuous and compactly supported, hence uniformly continuous. Standard
+convolution therefore gives convergence to r_epsilon in C5([0,delta]) as
+h decreases. For j=0,...,5 let w_j(y)=y^(4-j)L(y), and let
+
+    m_epsilon = min(1, min_(0<=j<=5) min_(epsilon/2<=y<=delta) w_j(y)).
+
+This number is strictly positive. If K>0 choose h small enough that every
+derivative through order five differs from r_epsilon by at most
+K epsilon m_epsilon on [0,delta]; when K=0 take s_epsilon=0. Since both
+functions vanish on [0,epsilon/2], the difference has the pointwise bound
+K epsilon w_j(y) everywhere in the collar. Consequently
+
+    |s_epsilon^(j)(y)| <= K(C_j+epsilon) w_j(y),  j=0,...,5,
+    ||s_epsilon-r||_(W^(3,infinity)) -> 0.
+
+The second line combines the chosen C5 error with the preceding cutoff
+estimate. This gives smooth physical-side approximants under the C5 input
+hypothesis, with a uniform enlarged weight constant and unchanged cubic
+jet. It is an existence construction: h is selected using the particular
+function, and no quantitative common regulator or tangential regularity is
+claimed. In particular, it does not establish the stronger assertion that
+the original K is preserved.
+
 Remaining to-do list: verify the physical field's full regularity and chart
-assumptions, construct any required C-infinity approximation away from the
-boundary without losing weighted estimates, and prove the actual paired
-domain and common-regulator limits.
+assumptions, extend the construction to any required tangential dependence,
+and prove the actual paired domain and common-regulator limits.
