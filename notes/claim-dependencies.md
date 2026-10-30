@@ -84,6 +84,11 @@ physical-half mixed geometric heat multiplier is F(tk²)/(pi t), with
 
     F(x)=1/2+(1/2)∫₀¹(1+a x)e^(−a x)dα,  a=α(1−α).
 
+The [weighted log-jet audit](weighted-log-jet-nonuniqueness.md) shows that
+the recorded remainder bound alone does not determine a unique logarithmic
+amplitude; the following log coefficient requires an explicit additional jet
+and Fourier-tail hypothesis.
+
 For the localized cubic and logarithmic jets, the proposed boundary terms are
 −15 c_u c_w t^(5/2)/(1024 sqrt(pi)) and
 −(c_u d_w+d_u c_w)t³ log(t)/(70pi), subject to the precise hypotheses in
