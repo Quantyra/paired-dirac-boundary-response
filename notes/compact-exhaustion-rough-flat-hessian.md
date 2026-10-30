@@ -1,4 +1,4 @@
-﻿# Compact-double approximation to the rough flat tangent Hessian
+# Compact-double approximation to the rough flat tangent Hessian
 
 This combines the fixed compact form theorem in
 `compact-positive-time-derivatives.md` with the free Fourier and thermal
@@ -66,16 +66,41 @@ C ||u||_H2 ||v||_H2, uniformly in L because the profiles vanish near the
 identified radial seam. This gives the winding part of (2), including the
 mixed second vertex through the complete positive-time variation identity.
 
-For the m=0 term, the periodic external-mode sum is the Poisson periodization
-of the noncompact Fourier pairing. Equivalently, its difference from the
-integral is a sum of translations of the smooth free heat kernels between
-supports separated by at least 2L-2R. The same Gaussian derivative estimates
-bound those images by C exp(-c L^2) times the H2 norms for L>2R, with c
-chosen from t1. This also accounts for the sampling error: it is not inferred
-from pointwise convergence of Fourier coefficients. These estimates apply
-before the radial half factor, which is exactly one half on each compact
-double under the folding hypotheses.
+For the m=0 term, the periodic external-mode sum is a periodization of the
+noncompact Fourier pairing. Its image estimate can be made explicit without
+assuming a uniform Taylor expansion in k. By I=(1+A)/2, the fixed-period
+Hessian multiplier is a t-dependent linear combination of 1, A(x) and x A'(x),
+with x=t k^2; its coefficients contain only W_T,W_T',W_T'' and powers of t.
+They are bounded on [t0,t1]. In real space these three pieces are respectively
 
+  integral u v,
+  integral_0^1 <u, exp(a t partial_y^2)v> d alpha,
+  -t integral_0^1 a <u', exp(a t partial_y^2)v'> d alpha,      (4)
+
+where a=alpha(1-alpha), and the first term is local. The integrals are
+understood with the full-line L2 pairing. Periodizing replaces the Gaussian
+K_(a t)(y-z) by its sum over shifts 2Lm. For the m!=0 terms, y,z in the
+common support [-R,R] imply
+
+  |y-z+2Lm| >= 2L|m|-2R >= (2|m|-1)L,  L>2R.                  (5)
+
+The local term has no nonzero image because the supports are disjoint. For
+the Gaussian terms, Young's inequality and the one-dimensional Gaussian tail
+bound give, uniformly for a in [0,1/4] and t in [t0,t1],
+
+  ||1_(|x|>=d) K_(a t)(x)||_1 <= C exp[-d^2/(C t1)],           (6)
+
+with the a=0 endpoint interpreted as the delta kernel, which has no image
+at positive separation. Applying (6) to u,v and to u',v', then summing m,
+bounds the sampling error by C exp(-c L^2)||u||_H1||v||_H1. Thus the
+constant is independent of R once L>2R; it may depend on T,t0,t1. The
+thermal and t-dependent coefficients are fixed during this radial estimate.
+This explicitly includes the external-mode sampling error rather than
+inferring a rate from pointwise convergence of Fourier coefficients.
+
+Combining this with the internal-winding estimate proves (2) for the smooth
+profiles. The radial half factor is exactly one half on each compact double
+under the folding hypotheses.
 ## Rough directions
 
 Choose smooth even compact approximants u_j,v_j with the same enlarged support,
