@@ -1,5 +1,13 @@
 # Lean campaign: domain theorem
 
+Current coverage has expanded beyond the historical initial status below:
+see the GCP receipts for the abstract congruence, projected trace, mode
+square and radial comparison results. The flat form-factor coefficient
+obstruction is checked in `evidence/gcp-flat-form-factor-20261030/README.md`.
+Geometric hypotheses, analytic response and full paper certification remain open.
+
+## Historical initial campaign
+
 Status: the GCP development build succeeded for two abstract declarations;
 acceptance and paper certification remain open. The checked-in source defines an abstract congruence of a partially
 defined linear map and states domain and invariant-preimage lemmas. It does
