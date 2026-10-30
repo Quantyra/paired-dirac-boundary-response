@@ -88,3 +88,28 @@ end PairedDirac
 
 #print axioms PairedDirac.congruence_adjoint_forward_draft
 #print axioms PairedDirac.congruence_adjoint_domain_reverse_draft
+
+namespace PairedDirac
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable [CompleteSpace H]
+
+/-- Abstract congruence commutes with taking the adjoint under the recorded invariances. -/
+theorem congruence_adjoint_eq_draft
+    (D : H →ₗ.[ℂ] H) (E : H ≃ₗ[ℂ] H)
+    (hE : ∀ x ∈ D.domain, E x ∈ D.domain)
+    (hEinv : ∀ x ∈ D.domain, E.symm x ∈ D.domain)
+    (hEA : ∀ x ∈ D.adjoint.domain, E x ∈ D.adjoint.domain)
+    (hEAinv : ∀ x ∈ D.adjoint.domain, E.symm x ∈ D.adjoint.domain)
+    (hDense : Dense (D.domain : Set H))
+    (hSymm : ∀ x y : H, inner ℂ (E x) y = inner ℂ x (E y)) :
+    (congruence D E hE).adjoint = congruence D.adjoint E hEA := by
+  have hf := congruence_adjoint_forward_draft D E hE hEA hDense hSymm
+  have hr := congruence_adjoint_domain_reverse_draft D E hE hEinv hEAinv hDense hSymm
+  apply Eq.symm
+  apply LinearPMap.eq_of_le_of_domain_eq hf
+  exact le_antisymm hf.1 hr
+
+end PairedDirac
+
+#print axioms PairedDirac.congruence_adjoint_eq_draft
