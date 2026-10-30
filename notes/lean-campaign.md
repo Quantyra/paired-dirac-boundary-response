@@ -1,7 +1,7 @@
 # Lean campaign: domain theorem
 
-Status: a development build is running on GCP; no certificate has been
-obtained. The checked-in source defines an abstract congruence of a partially
+Status: the GCP development build succeeded for two abstract declarations;
+acceptance and paper certification remain open. The checked-in source defines an abstract congruence of a partially
 defined linear map and states domain and invariant-preimage lemmas. It does
 not yet formalize the full bounded-congruence theorem or the paper.
 
@@ -18,8 +18,9 @@ The project pins Lean 4.30.0 and mathlib commit
 `c5ea00351c28e24afc9f0f84379aa41082b1188f`, matching an existing Space
 reference workspace. The development snapshot is commit `f7b70c1`; its
 source contains two theorem declarations with `#print axioms` requests.
-Those declarations remain unverified until the GCP build terminates
-successfully and the exact-source and axiom evidence is audited. All Lean
+The development build and axiom output are retained in
+[the receipt](../evidence/gcp-f7b70c1-offline-gitmeta-attempt/README.md);
+the dependency-content and acceptance audits remain open. All Lean
 invocations remain on GCP, not the workstation. The live cloud source, exact
 lock/dependency identities, raw logs, axiom reports and terminal results must
 be retained.
@@ -33,8 +34,8 @@ process was present in the subsequent process checks. The instance was then
 requested to stop. These are environment observations, not build evidence.
 
 The initial run failed before Lean because the VM could not clone the pinned
-dependencies; the offline Git-metadata retry uses verified source and toolchain
-archives and was last observed building Mathlib on GCP. The metadata-only
+dependencies; the offline Git-metadata retry used verified source and toolchain
+archives and completed successfully on GCP. The metadata-only
 shallow clones produce local-change warnings, so the dependency content and
 exact identities need an acceptance audit even if compilation succeeds.
 
