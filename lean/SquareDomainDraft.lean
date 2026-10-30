@@ -1,4 +1,4 @@
-﻿import AdjointDraft
+import AdjointDraft
 
 /-! Development draft for the natural domain of the operator product D†D.
 This file must be typechecked on GCP; it is not an acceptance result. -/
