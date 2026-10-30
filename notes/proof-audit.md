@@ -15,6 +15,23 @@ This is the S001.2 working audit, assessed against [the claim ledger](claim-depe
 | Curved family trace | [Claim ledger P1-D](claim-dependencies.md) states the requested estimate and its first missing implication. | Establish the actual mixed-boundary kernel estimate uniformly with complete vertices, thermal/angular sums, physical regularization and a fixed atlas. No such implication follows from norm-resolvent or flat estimates alone. |
 | Closest prior art | [Transfer/transmittal comparison](transfer-transmittal-comparison.md), [finite regularity](finite-regularity-prior-art.md) and [jump comparison](prior-art-derivative-jumps.md) identify substantial overlap and hypothesis differences. | The [exact one-interface benchmark](scalar-jump-exact-benchmark.md) independently checks the full-frequency scalar coefficient and gives an O(t^3) remainder, strengthening the [normalization audit](scalar-jump-normalization-audit.md). Inspect the published version and complete the physical Dirac and final-scope comparison; the scalar calculation and differences in hypotheses alone do not settle novelty. |
 
+## Reconciliation of the later physical and formal work
+
+The following entries record the scope of later work alongside the original
+audit. They do not close the paper's source, novelty or certification gates.
+
+| Dependency | Later evidence | What remains unproved |
+| --- | --- | --- |
+| Partner square domain | [GCP partner-domain receipt](../evidence/gcp-partner-square-domain-20261030/README.md) checks the abstract composition-domain equivalence from an assumed adjoint-domain characterization. | The geometric partner identity, the square action, resolvent factorization and physical hypotheses are not established by this Lean lemma. The receipt records reused-build provenance limitations. |
+| Fixed-time physical response | [Assembly](physical-fixed-time-mixed-response-assembly.md) combines ordered and mixed second-vertex convergence under explicit finite-cut geometry, form-Duhamel, heat and trace assumptions. | Its observable is a four-dimensional physical L2 form response. The full source, density/moving insertions, normalization and actual physical realization are not identified by this conditional statement. |
+| Cutoff and locality | [Smooth weighted path](smooth-physical-cutoff-joint-path.md) constructs field-dependent radial approximants; [interior response locality](physical-cut-interior-response-locality.md) derives a cut comparison under combined weighted-Davies, H5, domain, bundle and finite-cover assumptions. | Verify those assumptions for the actual source and control all source subtractions. A fixed-time or conditional joint-path comparison does not show the renormalized finite part exists. |
+| Curved trace claim | [Observable distinction](p1d-response-versus-conversion.md) fixes the difference between the P1-D proper-time integrand and the endpoint conversion. [Operator gap](physical-product-contact-operator-gap.md) shows the transported physical square has a different principal symbol from the product-frame square. | Derive the actual product-frame/source identity and the uniform subtracted remainder. Physical L2 response convergence or an endpoint coefficient is not that estimate. |
+| Novelty and review | [Prior-art comparison](prior-art-comparison.md) includes the later spectral-boundary logarithm comparison. | No final novelty disposition or independent proof review has been recorded. The close scalar normalization discrepancy remains unresolved. |
+
+In particular, conditional finite-cut or physical-space results may support a
+paper proof only after their explicit assumptions are matched to the final
+operator and observable. They cannot be collected into a claim of full
+physical response or formal certification merely by summing the notes.
 The numerical role is limited to checking stated analytic constants and reproducibility where receipts exist. Neither a numerical bound nor an abstract Lean lemma replaces the missing ordinary physical argument. A narrower finite-cut theorem may eventually be defensible, but the story requires a supported continue/narrow/merge/park decision; this document does not make one by default or remove the physical-response work from the objective.
 
 Remaining to-do list: disposition the physical geometry and trace dependencies with evidence; complete the prior-art comparison and research decision; prepare and review the supported manuscript; certify its claimed results in Lean on GCP.

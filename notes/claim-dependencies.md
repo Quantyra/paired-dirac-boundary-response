@@ -129,6 +129,13 @@ all geometric, density and contact vertices and a stated uniform atlas.
 The full signed quantum response G_t is not a prerequisite for the narrower
 operator/tangent package, but neither package proves P1-D.
 
+## Later audit reconciliation
+
+The [working proof audit](proof-audit.md) now records the fixed-positive-time
+physical response and cut-locality arguments under their combined model
+hypotheses, and the [partner-domain Lean receipt](../evidence/gcp-partner-square-domain-20261030/README.md).
+These do not identify the physical response with P1-C's product-frame
+observable, prove P1-D, settle novelty, or certify the paper.
 ## Numerical and decision roles
 
 The rational/whole-frequency and smoothing checks support specific displayed
