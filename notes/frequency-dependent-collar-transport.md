@@ -60,6 +60,11 @@ choice z=nu_k is an explicitly declared model identification; analytic
 continuation or a different relation between spectral and thermal parameters
 requires a separate calculation.
 
+The subsequent `euclidean-thermal-boundary-spectral-parameter.md` derives
+z=-i nu_k for the homogeneous first-order Euclidean equation. The upper
+bounds above remain valid because they use |z|, but the transported line
+and the physical square/heat boundary problem are not thereby identified.
+
 A finite D and integrable a are substantive hypotheses. In particular, an
 infinite coordinate interval or a singular conformal boundary cannot be
 replaced silently by a finite collar. The actual physical copy maps, regular
