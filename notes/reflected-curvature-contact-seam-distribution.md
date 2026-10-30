@@ -4,7 +4,7 @@ This checks the singular part of the curvature term in `bridge-contact-fourth-co
 
 Let f be positive and even near zero, smooth on each side, with
 
-  f(y)=f0+a |y|^3+r(y),  f0>0,
+  f(y)=f0+b y^2+a |y|^3+r(y),  f0>0,
   r^(j)(y)=O(|y|^(4-j)(1+|log|y||)), j<=3, y!=0,          (1)
 
 and suppose the one-sided classical derivatives needed below exist. In the product collar g=dy²+f^-2 d tau², the scalar curvature is
