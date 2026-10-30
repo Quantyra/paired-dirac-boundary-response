@@ -21,7 +21,7 @@ Moreover, the kernel formula and (1)--(2) give the endpoint-uniform bound
 
  |Tr S_s| <= C1 ||U||_1 ||V||_infinity (a+b)^(-d/2),     (4)
 
-where C1 depends on r,C,c,C0 and the measure convention. To see this, use |tr(K_a(x,z) V(z) K_b(z,x))| <= r ||V|| |K_a(x,z)|_op |K_b(z,x)|_op and integrate z; the factors a^(-d/2)b^(-d/2) cancel against (ab/(a+b))^(d/2). Thus the trace is absolutely integrable in s on [0,t], although individual Hilbert-Schmidt bounds need not be uniform at either endpoint. The same bound holds with a unitary bundle involution inserted into the fiber trace.
+where C1 depends on r,C,c,C0 and the measure convention. To see this, use |tr(K_a(x,z) V(z) K_b(z,x))| <= r ||V|| |K_a(x,z)|_op |K_b(z,x)|_op and integrate z; the factors a^(-d/2)b^(-d/2) cancel against (ab/(a+b))^(d/2). Thus the trace is absolutely integrable in s on [0,t], although individual Hilbert-Schmidt bounds need not be uniform at either endpoint.
 
 Suppose reflection J and grading Gamma satisfy the commutations and anticommutation in the preceding note and commute with A,E,V. Then S_s commutes with Gamma, so Tr(J S_s)=0 and Tr(P S_s)=Tr(S_s)/2. Under a unitary identification of the J-even sector with the half-domain realization, this proves the half/double identity for the sandwiched localized contact. If the unsandwiched product U K_a V K_b is independently trace class, cyclicity identifies its trace with Tr S_s. Without that additional fact, (3) defines the localized trace and no claim is made that the unsandwiched product is trace class.
 
