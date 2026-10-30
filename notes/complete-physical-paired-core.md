@@ -23,10 +23,10 @@ essential self-adjointness theorem for symmetric first-order operators on a
 complete manifold applies: the closure of A_beta on C_c^infinity is
 self-adjoint and C_c^infinity is its graph core. This is the classical
 [Chernoff theorem](https://doi.org/10.1016/0022-1236(73)90003-7); it
-requires the stated formal symmetry, completeness and symbol bound. For a
-rough W1,infinity beta, the same conclusion is not assumed from the smooth
-theorem alone: it requires the applicable low-regularity theorem or a
-separate approximation/core proof. The statement here is for smooth beta.
+requires the stated formal symmetry, completeness and symbol bound. For rough W1,infinity beta, a separate bounded-congruence argument is now
+given in `rough-paired-core-congruence.md`, under its explicit product-rule
+and domain-invariance hypotheses. The application in this note is for
+smooth beta and does not verify those additional physical hypotheses.
 
 Let X_n be finite-cut subregions exhausting X, and identify their bundles
 with restrictions of E. Suppose their closed paired first-order realizations
