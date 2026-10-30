@@ -1,5 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.LinearPMap
 import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 /-! Scalar lower-bound algebra for the auxiliary variable-coefficient model.
 This does not establish an operator inequality or a physical admission margin. -/
@@ -15,8 +16,13 @@ theorem radial_comparison_gap
     nlinarith
   have habs : |mu|^2 = mu^2 := sq_abs mu
   have hs := sq_nonneg (2 * a^2 * |mu| - g)
+  have hid : (4 * a^2) * (mass^2 + a^2 * mu^2 - g * |mu|) =
+      (4 * a^2 * mass^2 - g^2) + (2 * a^2 * |mu| - g)^2 := by
+    rw [← habs]
+    ring
   have hp : 0 < (4 * a^2) * (mass^2 + a^2 * mu^2 - g * |mu|) := by
-    nlinarith [hs]
+    rw [hid]
+    linarith
   exact (mul_pos_iff_of_pos_left ha2).mp hp
 
 theorem radial_mass_threshold_equiv
@@ -25,7 +31,7 @@ theorem radial_mass_threshold_equiv
   have ha2 : 0 < 4 * a^2 := by
     have h := mul_pos ha ha
     nlinarith
-  exact div_lt_iff₀ ha2
+  simpa only [mul_comm] using (div_lt_iff₀ ha2 : g^2 / (4 * a^2) < mass^2 ↔ g^2 < mass^2 * (4 * a^2))
 
 theorem radial_high_mode_lower_bound
     (a g mu : ℝ) (hhigh : 2 * g ≤ a^2 * |mu|) :
