@@ -1,0 +1,4 @@
+GraphBoundsComposedDraft.lean:1:0: error: expected token
+GraphBoundsComposedDraft.lean:8:19: error: unexpected token '}'; expected term
+GraphBoundsComposedDraft.lean:11:12: error: expected token
+'PairedDirac.congruence_graph_lower_composed_draft' does not depend on any axioms
