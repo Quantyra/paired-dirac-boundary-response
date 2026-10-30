@@ -1,9 +1,9 @@
-﻿# Exact relation between the flat Dirac and scalar form factors
+# Exact relation between the flat Dirac and scalar form factors
 
 This sharpens `flat-dirac-scalar-form-factor-comparison.md` for the stated
 translation-invariant flat models. It does not establish physical folding,
-a curved response, an equivalence to every scalar perturbation, novelty, or
-Lean certification.
+a curved response, an equivalence to every scalar perturbation, or novelty.
+The compact integral relation (3) has the partial Lean check described below.
 
 Put a=alpha(1-alpha),
 
@@ -32,6 +32,37 @@ It is stronger and more informative than the observation that the two
 Taylor series differ. The source's Dirac calculation and the scalar
 comparison have different vertices and normalizations; (3) alone does not
 identify their physical traces or their varying boundary domains.
+
+## Connection to the differentiated tangent kernel
+
+The momentum-space calculation in `flat-tangent-multiplier.md` first gives
+
+  F_raw(x)=integral_0^1 [1+x a+(x^2/4)a(1-2alpha)^2] exp(-a x) d alpha.
+
+This is not definitionally the F used in the checked Lean theorem. Put
+B(x)=integral_0^1 a exp(-a x) d alpha. The two endpoint identities displayed
+in the tangent note are
+
+  (2+x)A-4xB=2,
+  integral_0^1 [1-6a-x a(1-2alpha)^2] exp(-a x) d alpha=0.
+
+Both follow by ordinary integration by parts; the first differentiates
+(1-2alpha) exp(-a x), and the second differentiates
+alpha(1-alpha)(1-2alpha) exp(-a x). Using the second identity in F_raw gives
+
+  F_raw=(1+x/4)A-(x/2)B.
+
+The first then yields F_raw=1/4+(6+x)A/8. The compact expression in (1)
+is (1+A+xB)/2 and yields the same result from the first identity. Thus the
+source form, the compact expression and (3) agree for every real x by the
+ordinary argument, without division by x.
+
+The GCP Lean theorem in `lean/FlatFormFactorIntegral.lean` checks the first
+endpoint identity and the equality of the compact expression to (3), using
+actual interval integrals. See `evidence/gcp-flat-integral-20261030/README.md`
+for the successful log and build provenance. It does not yet formalize the
+second endpoint identity, the passage from F_raw, the momentum calculation,
+or the physical trace/folding. Those remain separate proof obligations.
 
 ## Consequences for the specific scalar reduction
 
