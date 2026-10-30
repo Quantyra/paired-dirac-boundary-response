@@ -28,10 +28,12 @@ theorem graph_projection_identity_draft
     change ((v : H), D v) ∈ D.graph
     exact D.mem_graph v
   have h := (G.mem_orthogonal' _).mp horth _ hv
-  simp only [WithLp.prod_inner_apply, map_sub, WithLp.ofLp_toLp,
+  simp only [WithLp.prod_inner_apply, WithLp.ofLp_sub, WithLp.ofLp_toLp,
     Prod.fst_sub, Prod.snd_sub, Prod.fst_zero, Prod.snd_zero] at h
   rw [← hu, ← hdu] at h
-  simpa [inner_sub_left, inner_neg_left, sub_eq_add_neg] using h
+  have h' : inner ℂ (f - (u : H)) (v : H) - inner ℂ (D u) (D v) = 0 := by
+    simpa [inner_neg_left, sub_eq_add_neg] using h
+  exact sub_eq_zero.mp h'
 
 end PairedDirac
 
