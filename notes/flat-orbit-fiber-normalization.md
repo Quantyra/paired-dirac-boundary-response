@@ -76,7 +76,49 @@ above, the multiplier is H_2 and those coefficients double. If the intended
 observable is normalized by one half, the earlier values may be consistent.
 No numerical calculation or physical admission conclusion is needed here.
 
-Remaining to-do list: trace K(t), the determinant prefactor, angular sector
+
+## Source convention: per-exterior orbit trace
+
+The pinned [stationary massive boundary-layer note](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/stationary-massive-boundary-layer.md)
+states that its formulas are per exterior, that d_n=2(q+2n) includes
+both nonzero signs of the sphere Dirac eigenvalue, and that the remaining
+orbit spinor has rank two. It states that the folded mouth space duplicates
+those degrees of freedom and is divided by two for the per-exterior
+normalization. The [curved TT note](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/stationary-curved-quantum-tt.md)
+likewise describes a physical-half functional obtained from the evenly
+varied double and says that its orbit formulas use rank two with both sphere
+signs already in d_n.
+
+Under the flat-domain and trace-class assumptions of the folding calculation,
+this supplies a concrete convention compatible with the conditional H_2/2:
+
+    unnormalized paired half-trace = H_2,
+    per-exterior paired half-trace = (1/2) H_2.
+
+Equivalently, the per-exterior quantity is one quarter of the full-line
+rank-four trace, or one half of the full-line rank-two trace. The two
+one-half operations have distinct roles in that comparison: the spatial
+folding selects one reflection sector, and the per-exterior normalization
+divides the two-copy trace. This is a bookkeeping statement for that
+observable, not an additional halving of the already normalized orbit
+formulas. In particular, d_n must not be divided again to remove its
+sphere-eigenvalue signs.
+
+The same source states a pointwise diagonal identity without an extra
+one-half. This is compatible with the integrated half-line identity:
+the image trace vanishes pointwise, while integrating an even double over
+both sides doubles the integral. The pointwise and integrated statements
+therefore must not be interchanged without the spatial integration.
+
+This source tracing resolves the algebraic factor for the declared
+per-exterior flat orbit convention, conditional on the folding and
+trace-class hypotheses. It does not independently prove that the physical
+rough common-regulator functional, its determinant normalization, contact
+terms and all angular limits coincide with this flat model. The historical
+note does not explicitly label the rank of every K(t) in its tangent
+formula, so its final observable-to-model identification remains an audit
+item rather than a silently assumed equality.
+Remaining to-do list: identify the historical tangent K(t) with the stated per-exterior observable,
 counting and zero-mode conventions to one physical observable; reconcile
 the tangent coefficients in that convention; complete the physical domain,
 response and prior-art audit; and certify supported statements in Lean.
