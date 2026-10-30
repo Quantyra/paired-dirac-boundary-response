@@ -1,4 +1,4 @@
-﻿# Davies off-diagonal estimate from the paired first-order form
+# Davies off-diagonal estimate from the paired first-order form
 
 Status: ordinary estimate under explicit uniform form and trace hypotheses.
 It supplies the operator-norm part of the sufficient input in
@@ -51,25 +51,25 @@ local estimate
 
     ||Cw|| ≤ c₁ (||D(ψw)||+||ψw||).                       (5)
 
-For the square heat operator, spectral calculus gives
-||D e^(-rL)||≤(2er)^(-1/2). The scalar product rule gives the same bound
-for Dψ e^(-rL), up to ||dψ||∞. Split e^(-tL) at t/2 and insert ψ on the
-left of the second half. Combining this derivative bound with (4) yields
+Spectral calculus gives the global bound
+||D e^(-rL)||≤(2er)^(-1/2), but it cannot simply be multiplied by (4):
+the spatial cutoff and the heat factor do not commute. A localized energy
+or weighted-gradient estimate is still needed to establish
 
-    ||C e^(-tL)1_E|| ≤ C₂(1+t^(-1/2)) exp[-d₁²/(2a²t)], (6)
+    ||C e^(-tL)1_E|| ≤ C₂(1+t^(-1/2)) exp[-d₁²/(c t)]. (6)
 
-where d₁ is the positive distance between E and supp ψ. Equation (5) is an
-elliptic/local graph hypothesis, not a consequence of (1) alone. For a
-commutator between two identified operators the needed local estimate must
-be checked in the common collar and applied to the correct semigroup.
-
+Here d₁ is a positive distance between E and the commutator support. Equation
+(5) is an elliptic/local graph hypothesis, and neither it nor (6) follows
+from (1) by the naive semigroup splitting. For a commutator between two
+identified operators, the estimate must be checked in the common collar and
+applied to the correct semigroup.
 ## From operator norm to Hilbert–Schmidt norm
 
 If the family also has a uniform positive-time heat trace bound
 
     Tr(e^(-rL)) ≤ H r^(-p),      0<r≤t₀,                  (7)
 
-then ||e^(-rL)||₂≤H^(1/2)(2r)^(-p/2). Splitting a separated heat operator
+then ||e^(-rL)||₂≤H^(1/2)(2r)^(-p/2). Given the derivative estimate (6), splitting a separated heat operator
 once more and using the Schatten ideal property upgrades (4) and (6) to
 Hilbert–Schmidt off-diagonal bounds with a polynomial factor in t and an
 exponential exp(-d₂²/(c t)); finite positive separations may be reduced to
