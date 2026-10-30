@@ -1,4 +1,4 @@
-﻿# Uniform varying-coefficient bounds for the reflected auxiliary
+# Uniform varying-coefficient bounds for the reflected auxiliary
 
 Status: ordinary global estimate for the explicit auxiliary cylinder in
 [the construction note](compact-reflected-auxiliary.md). It supplies uniform
@@ -20,7 +20,7 @@ periodic variables (with the fixed spin transition) gives, for H¹ sections,
 
     ||D_f ψ||²
       = ||∂_y ψ||²+||f∂_τ ψ||²
-        + Re ∫ <ψ, Γ f' ∂_τ ψ>.                         (1)
+        - Re ∫ <ψ, Γ f' ∂_τ ψ>.                         (1)
 
 The cross term has this sign in the stated convention; the estimates below
 use its absolute value. The identity holds first for smooth f and sections,
