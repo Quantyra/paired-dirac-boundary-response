@@ -61,6 +61,17 @@ task-owned source-only run should use `lake --no-cache build PairedDirac`
 and record its command, source identities and complete output; this option
 has not been applied retroactively to the current live run.
 
+The uncompiled `ClosedGraphDraft.lean` at commit
+`b55befb15d55013b552969eb703eb1446fe64094` was bundled with complete history
+and verified in the local repository. The bundle was transferred to GCP;
+both sides report SHA-256
+`3b034a49560a601aba06d3f3c28099fb7d5a1baacd8a5d7fce69097cc650ff9a`.
+A separate remote `git bundle verify` call from outside a Git repository
+failed with “need a repository”; it was not an independent verification.
+The running exact-tree workspace has not been modified or used to compile
+this draft. Its GCP development run, dependency audit and axiom report remain
+to be obtained.
+
 The present `congruence_domain` theorem is definitional because the candidate
 map was constructed with the original domain; `invariant_preimage` proves
 the matching natural right-composition domain only from both forward and
