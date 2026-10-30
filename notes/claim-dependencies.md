@@ -105,7 +105,7 @@ the stipulated compact flat model, under the stated form, folding and trace
 hypotheses. Its cubic-log coefficient retains the stronger explicit Fourier
 product-tail hypothesis. The free-seed [contact trace and half factor](free-tangent-contact-trace-class.md) and [thermal image bound](fixed-period-flat-contact-images.md) concern the same declared flat
 normalization. These do not identify the source's physical curved observable
-or justify its regulator limit. The raw tangent integral is GCP Lean-checked
+or justify its regulator limit. An identity between two raw tangent form-factor integral representations was checked in a GCP development environment
 as recorded in [the receipt](../evidence/gcp-raw-tangent-20261030/README.md);
 the momentum-to-trace argument, coefficient asymptotics and physical
 realization are not thereby certified.
