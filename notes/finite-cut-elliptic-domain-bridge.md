@@ -85,6 +85,26 @@ The source assumes identical exteriors and a fixed bundle identification;
 verifying that this identification supplies a globally parallel J remains
 an application-specific obligation. No limiting-cut assertion follows.
 
+In a local orthonormal frame this last condition can be checked explicitly.
+Write the full connection as d+Omega_spin+A, with
+Omega_spin=(1/4) omega_ab gamma_a gamma_b and A the twisting connection.
+If the matrix representing J is constant in the chart, commutes with every
+gamma_a and commutes with A, then [Omega_spin,J]=0 and nabla J=0 there.
+For the source's identical pulled-back magnetic connection, A is scalar in
+the spin and copy factors in the stated common identification, so its local
+commutator vanishes. This justifies the local connection calculation rather
+than inferring it from a matrix commutator alone.
+
+The local matrices define one global parallel bundle endomorphism only if
+on every overlap J_alpha=g_alpha_beta J_beta g_alpha_beta^(-1), where
+g_alpha_beta is the actual spin-and-twist transition function. Once this
+patching identity holds, the local connection calculation establishes
+global parallelism, including a regular bolt chart if that chart and its
+transition are in the cover. The source asserts global parallelism and a
+fixed bundle identification; the transition identity and regular bolt chart
+have not been independently reconstructed in this audit. A boundary-only
+map or a constant matrix in one singular frame is insufficient evidence.
+
 ## What this does and does not settle
 
 This gives an established route to the H1 assumptions on each compact smooth
