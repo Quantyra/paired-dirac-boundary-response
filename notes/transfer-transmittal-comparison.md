@@ -100,6 +100,20 @@ the transformed connection, but does not by itself rule out another
 identification or all transmittal formulations. The actual copy-block
 condition, zeroth-order terms, and normal orientation remain to be matched.
 
+The symmetric/antisymmetric splitting is not itself the original side
+splitting. Let Z=tau_3 be the original copy involution and K=U Z U^(-1).
+Since [Z,chi]=0, one has [K,T]=0. If Z is parallel for the original
+connection, K is parallel for nabla'. By contrast the side involution Z_std
+in the standard symmetric/antisymmetric transmittal coordinates satisfies
+{Z_std,T}=0: swapping the side sign exchanges the two value combinations.
+Thus K cannot simultaneously be that standard side involution and preserve
+the given copy identification. In particular, the preceding calculation of
+nabla' T is not a test of whether nabla' preserves the *original* copies;
+it tests a different splitting. Establishing a transmittal interpretation
+requires a suitable alternative side splitting and its connection and bulk
+compatibility, or a more general identification. This observation does not
+exclude such an alternative.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces
