@@ -26,7 +26,7 @@ For each block, the corresponding component v_m is locally H1 by local elliptic 
 
 Consequently B_m is integrable on [s0,infinity), for each fixed block. Let U_m(s) be its fundamental matrix with U_m(s0)=I. Gronwall's inequality bounds U_m and U_m^(-1) uniformly; the integral equation then shows both converge as s->infinity. Their limits are inverse matrices, so U_m(infinity) is invertible. Every solution v_m(s)=U_m(s)c_m therefore has a finite limit, and that limit is nonzero whenever c_m is nonzero. Such a component cannot lie in L2([s0,infinity),ds). Since the density transform is unitary, the L2 norm of v is the sum of the nonnegative block norms; each block must vanish. Hence v vanishes on the whole exterior collar.
 
-A weak solution of a smooth Dirac equation has local elliptic regularity and satisfies the standard unique-continuation property, so vanishing on this open collar forces it to vanish on the connected physical copy. Apply this on each copy; local seam or bolt conditions cannot create an additional solution vanishing on an open set. This proves ker D=0. Finally, the quadratic-form identity (psi,D*D psi)=||D psi||² implies ker(D*D)=ker D.
+A weak solution of a smooth Dirac equation has local elliptic regularity and satisfies weak unique continuation for Dirac-type operators (see [Booß-Bavnbek, Marcolli and Wang](https://doi.org/10.1016/S0926-2245(01)00056-0)), so vanishing on this open collar forces it to vanish on the connected physical copy. Apply this on each copy; local seam or bolt conditions cannot create an additional solution vanishing on an open set. This proves ker D=0. Finally, the quadratic-form identity (psi,D*D psi)=||D psi||² implies ker(D*D)=ker D.
 
 ## Bounded scalar congruence
 
