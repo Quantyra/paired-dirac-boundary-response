@@ -1,8 +1,9 @@
 #!/bin/bash
 # Fresh source-only replay of the specified repository bundle; run only on GCP.
 set -euo pipefail
-run="$HOME/quantyra-space-runs/paper1-clean-replay-20261030a"
+run="$HOME/quantyra-space-runs/paper1-clean-replay-20261030b"
 archives="$HOME/paper1-exact-tree-archives-20261029"
+work="/dev/shm/paper1-clean-replay-20261030b"
 mkdir "$run"
 exec > >(tee "$run/run.log") 2>&1
 trap 'code=$?; printf "%s\n" "$code" > "$run/exit-code"; date -u > "$run/finished-utc"' EXIT
@@ -24,7 +25,8 @@ e02f9079352fa741592aa8d9fe5c6116064d95c0c7bed87b4f1e94bbf4e603e3  mathlib.tar
 9115d94ad45d38756b8f72c4ad11e6d336f760d4f9d43d2fbc333cda304f20a1  plausible.tar
 d7316b08c66d55f32ae0bdf13b5e827d3fd49b37b9096d29faa4ac92e0508a2d  proofwidgets.tar
 SUMS
-cd "$run"
+mkdir "$work"
+cd "$work"
 git clone "$HOME/paper1-clean-replay.bundle" source
 expected="$(cat "$HOME/paper1-clean-replay-head.txt")"
 git -C source checkout --detach "$expected"
@@ -33,10 +35,10 @@ test -z "$(git -C source status --porcelain)"
 git -C source rev-parse HEAD
 mkdir toolchain
 tar --zstd -xf "$HOME/lean-4.30.0-linux-paper1.tar.zst" -C toolchain
-export PATH="$run/toolchain/lean-4.30.0-linux/bin:$PATH"
+export PATH="$work/toolchain/lean-4.30.0-linux/bin:$PATH"
 lean --version
 lake --version
-cd "$run/source/lean"
+cd "$work/source/lean"
 sha256sum ./*.lean > "$run/lean-source-sha256.txt"
 mkdir -p .lake/packages
 for archive in "$archives"/*.tar; do
@@ -72,3 +74,4 @@ lean_path="$(lake --no-cache env printenv LEAN_PATH)"
 export LEAN_PATH="$PWD:$lean_path"
 python3 check-all-current.py
 sha256sum -c "$run/lean-source-sha256.txt"
+sha256sum ./*.olean > "$run/lean-olean-sha256.txt"
