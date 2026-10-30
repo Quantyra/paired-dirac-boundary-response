@@ -1,0 +1,17 @@
+{
+    "date_hst":  "2026-10-29",
+    "runtime":  "Node.js v26.12.1 on workstation",
+    "check":  "checks/resolvent-rational-guards.js",
+    "source_sha256":  "16c84a30a4e0f1f2889bb11447ef58f4e7672d794795d490b808df389be7d7b8",
+    "scope":  "exact rational comparisons only",
+    "tests":  {
+                  "exp_002":  true,
+                  "exp_125":  true,
+                  "exp_127":  true,
+                  "q_below_0134":  true,
+                  "conjugated_inverse_below_132":  true
+              },
+    "status":  "passed",
+    "lean_certification":  false,
+    "operator_or_trace_proof":  false
+}
