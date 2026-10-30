@@ -1,0 +1,4 @@
+'PairedDirac.congruence_formalAdjoint_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.congruence_adjoint_forward_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.congruence_adjoint_domain_reverse_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.congruence_adjoint_eq_draft' depends on axioms: [propext, Classical.choice, Quot.sound]

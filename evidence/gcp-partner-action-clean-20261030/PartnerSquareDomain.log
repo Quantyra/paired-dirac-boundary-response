@@ -1,0 +1,1 @@
+'PairedDirac.mem_positive_square_domain_partner' depends on axioms: [propext, Classical.choice, Quot.sound]

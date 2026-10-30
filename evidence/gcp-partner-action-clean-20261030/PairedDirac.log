@@ -1,0 +1,2 @@
+'PairedDirac.congruence_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.invariant_preimage' depends on axioms: [propext, Classical.choice, Quot.sound]
