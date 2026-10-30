@@ -36,16 +36,24 @@ empty index, and one additional ProofWidgets hash file; that audit did not
 validate compiled `.lake` artifacts and was not rerun for this check. This
 second check is stronger development evidence but is still not a clean
 source replay or complete paper certificate.
-## Fresh source-only replay in progress
+## Fresh source-only replay passed
 
-Run `paper1-transport-clean-20261030c` on the same GCP builder started at
-2026-10-30 14:53 UTC. The checked-in driver is
+Run `paper1-transport-clean-20261030c` on the same GCP builder finished at
+2026-10-30 15:25:53 UTC with exit code 0. The checked-in driver is
 [`cloud-transported-congruence-replay.sh`](../../lean/cloud-transported-congruence-replay.sh).
-It uses the retained Git bundle at commit 6376ccc, verifies the toolchain and
-dependency archive hashes, reconstructs and checks all nine dependency Git
-trees and clean indexes, verifies manifest revisions, builds `PairedDirac`
-without Lake caches, and then checks the separately hash-pinned new source.
-The source build is running; no result is claimed until its exit code, log,
-source hash and axiom output have been inspected. The `/dev/shm` build tree
-is ephemeral; the persistent run directory retains logs and exit status.
-This replay is only for the algebraic declaration, not the complete paper.
+It used the retained Git bundle at commit 6376ccc, verified the toolchain and
+dependency archive hashes, reconstructed and checked all nine dependency Git
+trees and clean indexes, verified manifest revisions, built `PairedDirac`
+without Lake caches, and checked the separately hash-pinned source. The
+[run log](paper1-transport-clean-20261030c/run.log),
+[exit status](paper1-transport-clean-20261030c/exit-code), and
+[Lean output](paper1-transport-clean-20261030c/transported-congruence-lean.log)
+are retained here. The Lean output lists `propext`, `Classical.choice`, and
+`Quot.sound`; the replay checked for and rejected `sorryAx`.
+
+This certifies the stated algebraic declaration under Lean's listed axioms,
+not the physical unitary, operator domains, heat traces, or complete paper.
+
+Remaining to-do list: prove the required physical statements and regulator
+limits, resolve novelty, complete the manuscript, and certify further
+supported claims in Lean on GCP.
