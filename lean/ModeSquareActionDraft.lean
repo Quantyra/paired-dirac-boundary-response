@@ -29,7 +29,10 @@ theorem mode_square_action_draft
   have hmem : (modeOperator D G a) x ∈ (modeAdjointCandidate D G a).domain := by
     change D x + a • G x ∈ D.adjoint.domain
     exact D.adjoint.domain.add_mem hx (D.adjoint.domain.smul_mem a (hG x x.property))
-  have heval : (modeOperator D G a).adjoint ⟨(modeOperator D G a) x, _⟩ =
+  have hact : (modeOperator D G a) x ∈ (modeOperator D G a).adjoint.domain := by
+    rw [mode_adjoint_eq_draft D G a hDense hSymm]
+    exact hmem
+  have heval : (modeOperator D G a).adjoint ⟨(modeOperator D G a) x, hact⟩ =
       modeAdjointCandidate D G a ⟨(modeOperator D G a) x, hmem⟩ := by
     have heq := mode_adjoint_eq_draft D G a hDense hSymm
     cases heq
