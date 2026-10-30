@@ -17,9 +17,7 @@ fixed by the chosen normal, has the form
 
 for smooth f in V, where R is a bounded interior endomorphism and S_0 a
 zeroth-order boundary endomorphism. The exact sign of the last term does
-not affect the estimate. This identity is an explicit hypothesis here; it
-must be checked against the chosen connection, orientation, twisting and
-Green convention. The tangential term vanishes because gamma f=P gamma f,
+not affect the estimate. The identity follows in the stipulated smooth Dirac model from the Gauss and twisted Lichnerowicz formulas, with the tangential cancellation shown in `paired-projector-dirac-energy-identity.md`. Its application still requires the actual connection, orientation and projector realization to match those hypotheses. The tangential term vanishes because gamma f=P gamma f,
 A exchanges the two P subbundles, and c(n) preserves them. No condition on
 D f at the boundary is needed for (1).
 
@@ -58,6 +56,13 @@ D_b f=E^2 D f + E c(dE)f. Consequently
   ||D f|| <= ||E^(-1)||_infinity^2 ||D_b f||
             + ||E^(-1)||_infinity ||c(dE)||_infinity ||f||. (4)
 
+For E=exp(-b/2), the composed commutator identity gives the sharper form
+
+ ||D f|| <= exp(B)||D_b f||+(G/2)||f||,
+ B=||b||_infinity, G=||db||_infinity.                    (4a)
+
+Consequently the explicit C0 in (3a) gives the uniform sufficient constant
+ C_g=C0 max{exp(B),1+G/2} whenever B and G are bounded uniformly. This avoids the extra exponential factor incurred by bounding E^-1 and [D,E] separately. It is a graph-estimate constant, not a numerical physical margin. The corresponding sharper Lean draft remains untypechecked.
 Combining (3)-(4) proves the desired graph estimate for D_b with a constant
 uniform in both cut and field approximant. The same reasoning applies to
 the complementary projector when the corresponding energy identity and
