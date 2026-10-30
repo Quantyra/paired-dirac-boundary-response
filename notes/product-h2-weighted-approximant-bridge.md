@@ -1,5 +1,7 @@
 # Weighted collar approximants and the product H2 perturbation
 
+The later [bounded-congruence argument](product-h2-uniform-bounded-congruence.md) removes the reference-closeness requirement for the scalar-congruent geometric square under uniform first-order seed estimates. This note retains the perturbative comparison for other families.
+
 This checks how the actual one-sided cubic/log collar regularization enters the coefficient perturbation in `product-square-uniform-h2-from-first-order.md`. It provides a quantitative sufficient test around a specified smooth reference; it does not prove that the test is satisfied for an arbitrary weighted family, or identify the source's boundary realization.
 
 Let b(y)=c y³+r(y), with the source's weights |r^(j)(y)|<=K A_j y^(4-j)(1+|log y|) for j<=5, and let b_eta=c y³+s_eta be the smooth physical-side approximants of `smooth-physical-cutoff-joint-path.md`. On the product collar, the raw cutoff error for j<=2 is supported in y<2eta. Its weighted derivative bounds, together with the prescribed mollification error in that note, give
