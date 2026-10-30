@@ -1,0 +1,3 @@
+archive entries: {'files': 13904, 'dirs': 570, 'symlinks': 12, 'hardlinks': 0}
+problems=0 extra=0
+PASS: bytes, types, link targets and executable modes match; ownership ignored

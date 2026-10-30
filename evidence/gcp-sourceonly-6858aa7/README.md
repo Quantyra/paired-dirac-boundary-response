@@ -23,3 +23,26 @@ A GNU tar comparison against the reused toolchain archive also exited 1
 and produced extensive UID/GID differences; it is not a successful
 content audit. A comparison that separately checks file bytes and types
 without requiring matching ownership remains open.
+
+## Ownership-independent toolchain comparison
+
+The GCP audit in `lean/audit-toolchain-archive.py` exited 0. It streamed
+the retained Lean 4.30.0 archive and compared all 13,904 regular files,
+570 directories and 12 symbolic links against the reused extraction. It
+reported zero byte, type, link-target or executable-mode differences and
+zero extra entries; ownership was deliberately excluded. Raw log SHA-256:
+`92ae64ea8264482d1a37543e68cf9f4c357c65d69954778553656ea8dade6ba0`. This compares the extracted toolchain to the already verified
+archive, not the archive to an independently authenticated publisher release.
+
+## ProofWidgets hash artifact
+
+The extra file is `widget/package-lock.json.hash`, 16 bytes, with a
+modification time during the source-only run. The pinned ProofWidgets
+`lakefile.lean` declares a package-lock target, while the audited Lean
+4.30.0 Lake source `Lake/Build/Common.lean` defines cached file hashes
+using a filename formed by appending `.hash` and creates that file when
+needed. This makes a Lake-generated hash cache a supported explanation,
+but no recorded call trace proves exactly which operation wrote this file.
+The tracked package-lock and all other tracked dependency bytes still match
+the trees. The worktree audit remains exit 1 for the extra artifact; no
+claim of a clean worktree is made.
