@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-run="$HOME/quantyra-space-runs/paper1-lapse-adjoint-domain-20261030b"
+run="$HOME/quantyra-space-runs/paper1-lapse-adjoint-domain-20261030c"
 base="$HOME/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029"
 trace="$HOME/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean"
 prior="$HOME/quantyra-space-runs/paper1-lapse-square-domain-20261030a"

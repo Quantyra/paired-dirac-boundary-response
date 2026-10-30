@@ -50,7 +50,24 @@ theorem left_multiplier_square_domain
   · exact left_multiplier_adjoint_domain A E hDense hSymm
   · exact hMultiplier
 
+
+theorem left_multiplier_square_domain_from_invariance
+    (A : H →ₗ.[ℂ] H) (E : H ≃ₗ[ℂ] H)
+    (hDense : Dense (A.domain : Set H))
+    (hSymm : ∀ x y : H, inner ℂ (E x) y = inner ℂ x (E y))
+    (hForward : ∀ y ∈ A.adjoint.domain, E y ∈ A.adjoint.domain)
+    (hBackward : ∀ y ∈ A.adjoint.domain, E.symm y ∈ A.adjoint.domain) :
+    (positiveSquare (leftMultiplier A E)).domain = (positiveSquare A).domain := by
+  apply left_multiplier_square_domain A E hDense hSymm
+  intro y
+  constructor
+  · intro hy
+    have h := hBackward _ (hBackward _ hy)
+    simpa using h
+  · intro hy
+    exact hForward _ (hForward _ hy)
 end PairedDirac
 
 #print axioms PairedDirac.left_multiplier_adjoint_domain
 #print axioms PairedDirac.left_multiplier_square_domain
+#print axioms PairedDirac.left_multiplier_square_domain_from_invariance
