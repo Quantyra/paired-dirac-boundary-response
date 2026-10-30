@@ -41,7 +41,7 @@ potential-only quadratic term below does not represent the complete answer.
 ## Scalar potential-only benchmark
 
 **Normalization audit open:** Equation (2) below faithfully applies the
-published jump coefficient, but the same source's Eqs. (27)--(28) appear to
+preprint jump coefficient, but the same source's Eqs. (27)--(28) appear to
 give half that coefficient for p=1. See
 [the normalization audit](scalar-jump-normalization-audit.md). Until this
 discrepancy is resolved, neither (2) nor the numerical difference below is
@@ -64,6 +64,18 @@ benchmark is
 
     + 9/(32 sqrt(pi)) c_u c_w t^(5/2).                     (2)
 
+The independent Duhamel calculation in the normalization audit instead
+gives 1/(512 sqrt(pi)) for one scalar fiber and one unit derivative jump.
+Using the same polarizing, rank and physical-half factors gives the
+alternative benchmark
+
+    + 9/(64 sqrt(pi)) c_u c_w t^(5/2).                      (2a)
+
+The scalar result is an ordinary all-frequency calculation; its application
+here still assumes that isolating this particular potential vertex is a valid
+comparison and that the physical-half normalization holds. The two scalar
+values must not be silently interchanged pending review of the preprint
+inconsistency and the publisher version.
 The calculation has used the source's jump, expansion, and quadratic
 normalizations; it is not a new heat-coefficient formula. The relevant
 one-sided smoothness holds for the isolated |y| potential with a smooth
@@ -80,6 +92,10 @@ The algebraic difference, complete coefficient minus the potential-only
 benchmark, is -303/(1024 sqrt(pi)) c_u c_w t^(5/2). It groups all remaining
 principal-symbol, first-order Clifford, cross-vertex and second-variation
 contributions; it is not an independent calculation of any one of them.
+Using (2a) instead, the corresponding grouped difference is
+-159/(1024 sqrt(pi)) c_u c_w t^(5/2). The sign disagreement survives
+either scalar normalization, but neither grouped difference is an
+independent evaluation of the omitted Dirac vertices.
 The difference does not prove (3), justify the physical-half identification,
 or establish novelty over the comparator or related spinor literature.
 
