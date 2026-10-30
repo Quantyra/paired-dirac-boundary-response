@@ -49,7 +49,7 @@ while J=tau_1 tensor sigma_1. With the orbit orientation used in the
 chirality note,
 
   G=i gamma_n gamma_tau=-tau_3 tensor sigma_2,
-  H=JG=tau_2 tensor sigma_3.                              (5)
+  H=JG=-tau_2 tensor sigma_3.                              (5)
 
 The Pauli multiplication rules show JG=GJ, H*=H and H^2=1. Reversing the
 orbit orientation changes the sign of G and H but not the anticommutation
