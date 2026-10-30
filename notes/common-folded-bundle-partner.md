@@ -1,4 +1,4 @@
-﻿# Explicit common-bundle construction of the partner map
+# Explicit common-bundle construction of the partner map
 
 Status: construction of the source's orientation-aware folded model from one
 common twisted Dirac bundle, conditional on identifying that model with the
@@ -69,9 +69,9 @@ This is an explicit common-bundle model satisfying the global algebra, not
 a derivation that the original physical copy pullbacks possess these exact
 transition functions. To apply it, the physical copy and boundary maps must
 identify each pulled-back spin/magnetic connection and Clifford action with
-these constructed data; in particular the boundary identification in the
-source's convention must be checked against h and the basis changes, rather
-than equating a coordinate matrix H with a physical boundary map by fiat.
+these constructed data. At the selected zero angle the relative coupling map
+drops out of the boundary condition; see [the zero-angle calculation]
+(zero-angle-boundary-map.md). A nonzero-angle coupling needs its own map check.
 The source assumes identical pullbacks and an identity boundary map in fixed
 frames, but its displayed local formulas alone do not establish this global
 identification. This construction also does not establish rough-family
