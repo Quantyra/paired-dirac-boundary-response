@@ -5,3 +5,21 @@ Run `paper1-sourceonly-6858aa7-20261029` exited 0 with Lean 4.30.0. Its driver v
 Lake nevertheless emitted local-change warnings for all nine metadata-only dependency repositories. The archive/tree verification is recorded, but those warnings and the full environment provenance still require independent acceptance audit. The reused toolchain was extracted in the preceding exact-tree run; this run verified the toolchain archive hash but did not independently re-extract it. This result concerns the abstract declarations, not the physical or response theorem and not certification of the paper.
 
 Remaining to-do list: audit dependency and toolchain provenance, inspect the later-draft check, and complete the physical and response proofs and their Lean certification.
+
+## Post-build worktree audit
+
+A read-only run of `lean/audit-dependency-worktrees.py` compared the
+actual extracted files against each local pinned Git tree, excluding
+`.git` and `.lake`. It exited 1: all tracked paths, Git blob hashes
+and executable modes matched, and eight repositories had no extra files;
+ProofWidgets had one extra `widget/package-lock.json.hash` (16 bytes).
+All nine Git indexes had zero entries, explaining their deletion-style
+status and local-change warnings. The extra file was observed after the
+build; its origin and effect have not been independently established.
+The raw audit output SHA-256 is `2fd68423c6d149a8546207682a9eb4ab18b5e159f00ec9ab5c3dab632c4f58cb`. The excluded build artifacts
+are not validated by this worktree comparison.
+
+A GNU tar comparison against the reused toolchain archive also exited 1
+and produced extensive UID/GID differences; it is not a successful
+content audit. A comparison that separately checks file bytes and types
+without requiring matching ownership remains open.
