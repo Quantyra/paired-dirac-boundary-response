@@ -1,4 +1,4 @@
-﻿# Spin matching on the finite-cut disk–sphere product
+# Spin matching on the finite-cut disk–sphere product
 
 Status: conditional topological and connection argument, not an independent
 construction of the source's copy map or a Lean certificate. It complements
@@ -10,7 +10,7 @@ Assume the finite-cut Euclidean exterior X is the smooth product D²×S²
 with its given orientation and product topology. Its tangent bundle is
 spin: w₂(TD²)=0 and w₂(TS²) is the Euler class of TS² reduced modulo two,
 which vanishes because the Euler number is 2. Also H¹(X;Z₂)=0. The
-standard classification of spin structures therefore gives exactly one
+standard classification of spin structures (see the spin-structure discussion in [this primary source](https://cds.cern.ch/record/200600/files/198910194.pdf)) therefore gives exactly one
 isomorphism class of spin structure on X. The spin structure induced on the
 thermal boundary circle is the bounding one; in a rotating polar spin frame
 its components are antiperiodic. This sign is a spin-frame transition,
