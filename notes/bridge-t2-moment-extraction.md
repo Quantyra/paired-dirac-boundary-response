@@ -51,6 +51,35 @@ polynomial becomes the geometric bilinear contact after weak integration by
 parts. This extraction is for smooth coefficients and is not by itself the
 uniform rough remainder.
 
+## Derivation of the bridge moments
+
+Let K(s,t)=2(min(s,t)−st), a(s)=K(s,s)=2s(1−s), and
+k(s)=∫₀¹K(s,t)dt=s(1−s). Three elementary integrals are
+
+    ∫a(s)ds=1/3,  ∫k(s)ds=1/6,  ∫k(s)²ds=1/30.
+
+For example, the middle identity follows by splitting the K integral at
+t=s; the last is the beta integral B(3,3)=1/30. In addition,
+
+    ∫∫K(s,t)² ds dt
+      = 8∫₀¹(1−t)²[∫₀ᵗ s²ds]dt
+      = (8/3)B(4,3)=2/45.
+
+Wick's pairings then give, with all integrals over [0,1],
+
+    Eμ₂=∫a=1/3,
+    Eμ₁²=∫k=1/6,
+    Eμ₄=3∫a²=12/30=2/5,
+    E(μ₃μ₁)=3∫a k=6/30=1/5,
+    Eμ₂²=(∫a)²+2∫∫K²=1/9+4/45=1/5,
+    E(μ₂μ₁²)=(∫a)(∫k)+2∫k²=1/18+1/15=11/90,
+    Eμ₁⁴=3(∫k)²=1/12.
+
+The factors 2 in K are essential. Fubini is justified by finite Gaussian
+moments on the compact time square; these exact moment calculations do not
+require a frequency cutoff. They verify (2) independently of the source's
+listed numerical values, but do not prove the source's path representation
+or its rough remainder.
 ## Verification contract
 
 A small arithmetic check may compare the expanded expression (1)–(2) with
