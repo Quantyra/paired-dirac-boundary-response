@@ -70,3 +70,48 @@ subtracted remainder.
 Remaining to-do list: verify the actual mode decomposition and finite-cut
 bundle, prove the required short-time and regulator estimates, complete the
 prior-art audit, and certify supported results in Lean on GCP.
+
+## Matching the recorded product-frame sectors
+
+The pinned [conformal-domain source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/stationary-exterior-conformal-domain.md),
+section "Exact product separation and the proper Euclidean gap", states at
+a finite cut
+
+    L_4 = L_2 ⊗ 1 + 1 ⊗ D_{S,q}²/b²,
+
+with the orbit boundary condition independent of the sphere eigenspace.
+For a smooth compact monopole sphere, the self-adjoint sphere Dirac operator
+has a complete discrete spectral resolution. Its squared-eigenspace
+projections, tensored with the orbit identity and the paired copy identity,
+therefore form mutually orthogonal projections with strong sum I. The
+zero-eigenspace is included as its own projection, not hidden in the n≥1
+sum. Under the source's product identification, the angular projectors
+meet the hypotheses of (1), conditional on the finite-cut trace-class
+argument and actual bundled domain.
+
+For an orbit-rotation-invariant finite-cut geometry and boundary condition,
+the regular thermal spin lift supplies the corresponding circle
+representation on L² spinors. Its character projections are mutually
+orthogonal and complete. In the source's rotating polar frame their
+frequencies are (j+1/2)κ₀; the apparent antiperiodicity is a frame/spin
+condition and does not turn the bolt into a boundary. The polar frame is
+singular at the bolt, but the bolt has measure zero for the L² character
+decomposition; regularity of the actual operator domain is a separate
+condition, not something proved by Fourier completeness. The angular and
+circle actions commute in the stated product setup, so products of their
+spectral projections supply a joint countable resolution.
+
+When b,u,w are radial and the fixed-frame identifications, operator and
+projector domain have the source's product/rotation invariance, the
+corresponding heat operators and their parameter derivatives preserve these
+sectors. Even without proving that stronger commutation, the diagonal trace
+sum (1) is valid for the complete joint projections. The source's n≥1
+factorization and its d_n normalization concern the specified product seed;
+they are not automatically a factorization of an arbitrary curved-family
+mixed response. The LLL, physical-half convention, mode degeneracies and
+common four-dimensional subtraction must remain explicit when interpreting
+the sector traces. No statement here controls the limit t₀→0.
+
+Remaining to-do list: verify the actual fixed-frame bundle and projector
+domains, connect the mode labels and per-exterior normalization, prove the
+short-time regulator estimate, and certify supported results on GCP.
