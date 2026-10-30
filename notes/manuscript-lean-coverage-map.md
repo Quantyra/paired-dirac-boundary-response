@@ -1,0 +1,18 @@
+# Manuscript propositions and clean Lean replay coverage
+
+This maps the current incomplete `../manuscript/DRAFT.md` to the exact-source GCP replay, without asserting a complete paper certificate. The prior goal turn corrected the draft's broad Lean-evidence wording; this check inspects the actual source signatures and retained log.
+
+The [clean replay receipt](../evidence/gcp-clean-replay-20261030/README.md) identifies commit 6376ccc, exit code 0 and a source-only build. Its retained `run.log` reports the four declarations below with axioms `propext`, `Classical.choice`, and `Quot.sound`, without reported `sorryAx`. A Git comparison of those four source files against commit 6376ccc found no changes in the current tree. The source comments still call them drafts; the receipt, not that historical comment alone, records the clean replay.
+
+| Manuscript step | Checked declaration and scope | Missing bridge |
+| --- | --- | --- |
+| Proposition 2.1 closedness | `congruence_isClosed_draft` in `lean/ClosedGraphDraft.lean` proves closedness for a continuous linear equivalence given forward and inverse domain invariance and a closed input graph. | Instantiate the actual bounded multiplication on the chosen Hilbert space and prove its geometric invariance and continuity hypotheses. |
+| Proposition 2.1 adjoint identity | `congruence_adjoint_eq_draft` in `lean/AdjointDraft.lean` proves equality for a dense partially defined linear map and a symmetric linear equivalence under both input- and adjoint-domain invariances. | Establish the Hilbert-space multiplier, self-adjointness and the physical H1 projector domains; the declaration assumes these facts. |
+| Proposition 2.1 composition domain | `congruence_squareDomain_draft` in `lean/SquareDomainDraft.lean` characterizes the natural adjoint-square domain of the congruence under its stated assumptions. | Connect the formal partially defined operator to the actual source realization; prove the stated numerical graph inequalities separately. |
+| Positive square | `positiveSquare_selfAdjoint_draft` in `lean/GraphProjectionDraft.lean` proves self-adjointness of the formal positive square of a closed densely defined map. | The paired skew-adjoint factorization and mass-resolvent bounds in Proposition 3.1 are not thereby established as that proposition. |
+
+The separate [transported-congruence clean replay](../evidence/gcp-transported-congruence-20261030/README.md) checks a total-linear-map algebraic identity. The [raw tangent development check](../evidence/gcp-raw-tangent-20261030/README.md) proves equality of two integral representations in a reused environment with dependency warnings; it does not prove the value of the convergent subtracted integral or Proposition 4.1. The finite-matrix grading draft remains unverified as recorded in `../evidence/gcp-grading-odd-trace-20261030/README.md`.
+
+This map does not verify that the physical domain, boundary regularity, common regulator, full tangent response or prior-art requirements are true. The complete formalization and acceptance replay remain open. All Lean invocations must run on GCP.
+
+Remaining to-do list: restore GCP authentication, formalize the missing operator and response bridges, verify physical and regulator assumptions, finish the manuscript and novelty audit, and cleanly replay the supported claims.
