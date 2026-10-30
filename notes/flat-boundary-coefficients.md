@@ -263,7 +263,7 @@ regulator interchange.
 ## Integrated flat diagnostic
 
 The uniform estimate (6) gives an explicit contribution to the subtracted
-proper-time integral in this flat model. For 0<T<=min(1,t0), let
+proper-time integral in this flat model. Let t_* be a threshold on which (6) holds. For 0<T<=min(1,t_*), let
 L_T=log(1/T) and A=15/(1024 sqrt(pi)). Then
 
     |∫_0^T [B_t(u,w)+A c_u c_w t^(5/2)] dt/t²|
