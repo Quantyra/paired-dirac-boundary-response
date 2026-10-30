@@ -55,6 +55,11 @@ For a bounded insertion the pullback is the corresponding composed scalar
 multiplier and a moving-insertion difference must be included when it is
 not held fixed on the reference space.
 
+The subsequent `conformal-infinity-l2-domain-obstruction.md` shows that
+nonzero H1 conformal boundary data are not physical Euclidean L2 data
+under the singular conformal weight. This makes the physical-domain
+matching assumption below substantive rather than automatic.
+
 Equation (2) compares two explicitly regulated compactified-model terms.
 It does not show either term has an unregulated limit, establish the source's
 complete action or endpoint-conversion formula, or prove that the physical
