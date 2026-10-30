@@ -9,7 +9,7 @@ variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 variable [CompleteSpace H]
 
 /-- The inverse image of the adjoint domain within D's domain, embedded in H. -/
-def squareDomain (D : H →ₗ.[ℂ] H) : Submodule ℂ H :=
+noncomputable def squareDomain (D : H →ₗ.[ℂ] H) : Submodule ℂ H :=
   (D.adjoint.domain.comap D.toFun).map D.domain.subtype
 
 /-- Membership expresses the actual product condition on D's domain. -/
