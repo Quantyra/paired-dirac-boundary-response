@@ -1,4 +1,4 @@
-﻿import OrbitMatrixDraft
+import OrbitMatrixDraft
 
 /-! Local Clifford identities used in the paired product-domain argument.
 This does not formalize the geometric bundle or unbounded operator domains. -/
