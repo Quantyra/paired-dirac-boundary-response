@@ -58,7 +58,7 @@ Poisson summation of the shifted Gaussian gives the mth term in (3). With a
 consistent Fourier-sign convention, its first two P moments are H_t times
 exp(-m^2 L^2/t) exp(2 i m L alpha k) multiplied by, respectively,
 
-  i m L/t,             1/(2t)-m^2 L^2/t^2.                     (4b)
+  -i m L/t,            1/(2t)-m^2 L^2/t^2.                     (4b)
 
 A reversal of the Poisson convention conjugates the first expression and the
 phase; all estimates below are unchanged. These identities follow by
