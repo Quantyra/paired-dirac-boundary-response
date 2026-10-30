@@ -72,8 +72,23 @@ theorem mode_adjoint_eq_draft
   apply LinearPMap.eq_of_le_of_domain_eq hf
   exact le_antisymm hf.1 hr
 
+/-- The mode-square composition domain follows from the proved adjoint
+identity and the remaining chirality-domain mapping. -/
+theorem mode_square_domain_from_adjoint_draft
+    (D : H →ₗ.[ℂ] H) (G : H →ₗ[ℂ] H) (a : ℂ)
+    (hDense : Dense (D.domain : Set H))
+    (hSymm : ∀ x y : H, inner ℂ (G x) y = inner ℂ x (G y))
+    (hG : ∀ x ∈ D.domain, G x ∈ D.adjoint.domain) :
+    squareDomain (modeOperator D G a) = squareDomain D := by
+  apply mode_square_domain_draft D G a
+  · rw [mode_adjoint_eq_draft D G a hDense hSymm]
+    rfl
+  · exact hG
+
 end PairedDirac
 
 #print axioms PairedDirac.mode_formal_adjoint_draft
 
 #print axioms PairedDirac.mode_adjoint_eq_draft
+
+#print axioms PairedDirac.mode_square_domain_from_adjoint_draft
