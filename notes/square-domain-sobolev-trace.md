@@ -1,4 +1,4 @@
-﻿# Sobolev trace surjectivity for the seed square domain
+# Sobolev trace surjectivity for the seed square domain
 
 Status: ordinary finite-cut argument using the standard H² boundary jet
 trace theorem, not Lean-certified and not an independent verification of
@@ -51,7 +51,7 @@ controlled by ||v||_{H^{3/2}}+||a||_{H^{1/2}}. Smooth collar cutoffs,
 bundle trivializations and a finite partition of unity give the manifold
 version; connection terms are absorbed into the prescribed normal jet.
 For a textbook trace result and context see, for example, the joint-jet
-statement in [Leoni's Sobolev notes](https://www.math.cmu.edu/cna/LectureNotesFiles/SOB%2BInt.pdf).
+statement in [CMU Sobolev notes](https://www.math.cmu.edu/cna/LectureNotesFiles/SOB%2BInt.pdf).
 
 Let ψ be this lift. Its boundary value lies in P E, so ψ∈Dom(D), and
 Dψ∈H¹ because ψ∈H² and D has smooth coefficients. The choice of a gives
