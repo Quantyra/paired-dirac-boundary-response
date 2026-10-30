@@ -6,9 +6,9 @@ physical curved response or a Lean certificate.
 
 Take fixed real even compactly localized profiles u,w satisfying the cubic
 collar derivative bounds and exterior regularity of
-`flat-shrinking-complement-seam.md`. In addition, assume the Fourier-product
-hypothesis (2) of `flat-boundary-coefficients.md`, so that its full-profile
-cubic limit applies. Let chi be a smooth even cutoff equal to one on a
+`flat-shrinking-complement-seam.md`. The later `flat-weighted-cubic-leading-limit.md` proves the required
+full-profile cubic limit from the stated weighted collar and exterior
+regularity, without the stronger Fourier-product hypothesis. Let chi be a smooth even cutoff equal to one on a
 neighborhood of zero. Put ell=t^p with 0<p<1/2 and write
 u_loc=chi(x/ell)u and u_out=(1-chi(x/ell))u, similarly for w.
 
@@ -54,8 +54,8 @@ established full-profile limit give
     lim_(t->0) t^(-5/2) B_t(u_loc,w_loc)
        = -15/(1024 sqrt(pi)) c_u c_w.                  (4)
 
-This conclusion uses the Fourier-tail hypothesis for the fixed full profiles;
-the collar bounds alone are not asserted to imply it. The proof does not claim
+The logarithmic coefficient still requires additional tail assumptions.
+The proof does not claim
 (3) for every path with ell/sqrt(t)->infinity. The multiplier's physical-half
 normalization and paired-domain identification remain conditional, and no
 curved complement, regulator interchange, or physical admission margin follows.
@@ -63,4 +63,4 @@ No numerical calculation is used.
 
 Remaining to-do list: control the physical curved complement and vertices,
 match spin, domains and regulator, complete novelty and manuscript work,
-recover the pending GCP run, and certify supported claims in Lean on GCP.
+and certify supported claims in Lean on GCP.
