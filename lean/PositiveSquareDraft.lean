@@ -57,7 +57,7 @@ theorem positiveSquare_nonneg_draft
     (x : (positiveSquare D).domain) :
     0 ≤ Complex.re (inner ℂ ((positiveSquare D) x) (x : H)) := by
   rw [positiveSquare_inner_draft D hDense x]
-  exact inner_self_nonneg
+  exact inner_self_nonneg (𝕜 := ℂ) (x := D ⟨(x : H), x.property.2⟩)
 
 end PairedDirac
 
