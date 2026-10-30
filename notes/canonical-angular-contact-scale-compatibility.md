@@ -43,8 +43,10 @@ lower asymptotic ell_R~L4^2/R, so the model sufficient condition R t^2->infinity
 in `rn-thermal-cut-transport-rate.md` also holds. This uses the fixed seed.
 
 A physical joint limit does not follow. In particular, the angular bound's
-d and prefactor must be uniform as the finite cut changes; the fixed compact
-product proof does not provide that uniformity. The model observables must
+d and prefactor must be uniform as the finite cut changes. The subsequent
+`product-frame-moving-cut-uniformity.md` establishes this for a smooth
+compact product with the stated local cut projectors, subject to its
+physical matching hypotheses. The model observables must
 also be identified with the same physical vertices, thermal factors, local
 subtractions and regulator, and the fixed-direction curved complement must
 be controlled. The estimates establish compatibility of conditional scales
