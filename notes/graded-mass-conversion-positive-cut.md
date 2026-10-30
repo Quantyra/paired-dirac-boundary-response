@@ -49,6 +49,8 @@ L_v. The dependence on r is affine at first order; the scalar product rule
 and common form domain justify the interpolation. Equation (3) is not an
 assertion that the square domains are fixed.
 
+The [trace-class argument](graded-odd-commutator-trace-class.md) establishes the needed bounded-commutator and endpoint integrability steps under the stated compact heat assumptions.
+
 Since Gamma commutes with u,v and K_s but anticommutes with [v,Q], conjugation
 by Gamma changes the sign of
 Tr[u K_(t-s)[v,Q]K_s]. Its trace is therefore zero for 0<s<t, whenever the
