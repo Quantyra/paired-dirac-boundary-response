@@ -1,0 +1,83 @@
+e5a5128403b7a68afa81a8187e04738b9f70d7a9e96fc6b6553f745f96709bc4  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-chirality-1bab84d-20261029/BoundaryKernelDraft.lean
+cde8cc1bb956bdc97b452879003f64bb169e4b75fb0648d2f9b21b77ef156c82  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-chirality-1bab84d-20261029/OrbitMatrixDraft.lean
+07fc2c4189de8429a252f1bb760975910b3fe1611f305a048ded65ac659aac50  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-chirality-1bab84d-20261029/ProductChiralityDraft.lean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+'PairedDirac.boundary_kernel_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.embedded_boundary_kernel_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.tangential_compression_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.involution_tangential_compression_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.paired_clifford_tangential_compression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.compression_with_commuting_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+OrbitMatrixDraft.lean:55:62: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  simp [̵m̵u̵l̵_̵a̵s̵s̵o̵c̵,̵ ̵m̵u̵l̵_̵c̵o̵m̵m̵,̵[̲m̲u̲l̲_̲c̲o̲m̲m̲,̲ mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+OrbitMatrixDraft.lean:55:73: warning: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  simp [mul_assoc, m̵u̵l̵_̵c̵o̵m̵m̵,̵ ̵mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.Orbit.paired_time_compression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Orbit.paired_sphere_orbit_compression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Orbit.full_sphere_gamma_compression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Orbit.reflection_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Orbit.partner_chi' depends on axioms: [propext, Classical.choice, Quot.sound]
+ProductChiralityDraft.lean:1:0: error: expected token
+ProductChiralityDraft.lean:11:3: error: unknown tactic
+ProductChiralityDraft.lean:9:20: error(lean.unknownIdentifier): Unknown identifier `Complex.I`
+ProductChiralityDraft.lean:9:4: error: Function expected at
+  sphereOrbit
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  v
+
+Hint: The identifier `sphereOrbit` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+ProductChiralityDraft.lean:9:32: error: Function expected at
+  normal
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  (timeGamma v)
+
+Hint: The identifier `normal` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+ProductChiralityDraft.lean:15:3: error: unknown tactic
+ProductChiralityDraft.lean:13:35: error: Function expected at
+  sphereOrbit
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  (sphereOrbit v)
+
+Hint: The identifier `sphereOrbit` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+ProductChiralityDraft.lean:20:3: error: unknown tactic
+ProductChiralityDraft.lean:18:4: error: Function expected at
+  sphereOrbit
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  ((tau.comp normal) v)
+
+Hint: The identifier `sphereOrbit` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+ProductChiralityDraft.lean:18:42: error(lean.unknownIdentifier): Unknown identifier `tau.comp`
+ProductChiralityDraft.lean:24:14: error(lean.unknownIdentifier): Unknown constant `PairedDirac.Orbit.chirality_is_sphere_orbit`
+'PairedDirac.Orbit.chirality_square' depends on axioms: [sorryAx]
+'PairedDirac.Orbit.chirality_swaps_projector' depends on axioms: [sorryAx]

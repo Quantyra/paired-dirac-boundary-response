@@ -1,0 +1,15 @@
+ed5b72b22cbef27a8b1edb928da950d6bba2669207f4d4b65b9d69303e49e316  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-chirality-423e842-20261029/ProductChiralityDraft.lean
+b5a7af2810f1d681cf98f32f648cd90a705b0ed0811107c4107fd54d2445bea5  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-chirality-1bab84d-20261029/BoundaryKernelDraft.olean
+d4f60afff5b055c69555e75a62054ec3f51cb5a09b3afc8acf9b49a921b45e21  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-chirality-1bab84d-20261029/OrbitMatrixDraft.olean
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+'PairedDirac.Orbit.chirality_is_sphere_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Orbit.chirality_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Orbit.chirality_swaps_projector' depends on axioms: [propext, Classical.choice, Quot.sound]

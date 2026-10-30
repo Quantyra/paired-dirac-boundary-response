@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 set -uo pipefail
 run="$HOME/quantyra-space-runs/paper1-chirality-1bab84d-20261029"
 base="$HOME/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029"

@@ -1,0 +1,9 @@
+﻿# GCP local product-chirality development check
+
+On `quantyra-lean-builder-01`, project `quantyra-lean-cert-20260915`, zone `us-central1-a`, run `paper1-chirality-423e842-20261029` exited 0 using Lean 4.30.0 and the retained source-only dependency environment. It checked `chirality_is_sphere_orbit`, `chirality_square`, and `chirality_swaps_projector`; all three `#print axioms` outputs list `propext`, `Classical.choice`, and `Quot.sound`. The [success log](success.log) has SHA-256 `3dd20a775070fc6c9c18a3d9e5d837e4db8c45c518da077dc5eb81a5935ca43e`.
+
+The checked draft's remote SHA-256 was `ed5b72b22cbef27a8b1edb928da950d6bba2669207f4d4b65b9d69303e49e316`, matching the local file and Git blob `c877c1a262022e9956870595648c3562b7465a99` at commit `423e842`. The two imported source files' remote SHA-256 values matched their local files; local Git blob hashes matched that same commit. The retry reused their `.olean` files compiled during attempt 1; the success log records those `.olean` hashes. The inherited [dependency receipt](../gcp-sourceonly-6858aa7/README.md) documents source, local-change warnings and remaining provenance caveats. This is a development check of finite-dimensional matrices, not certification of the product operator or paper.
+
+The [first attempt](attempt1.log) failed because its source had a UTF-8 byte-order mark rejected by Lean. The [second attempt](attempt2.log) removed that mark but left the chirality-square proof unfinished; its output contains `sorryAx` and is not a successful certificate. The final run adds the missing associativity simplification and succeeds. The source files were transferred by SCP and their hashes compared, rather than using a verified full source bundle on the VM.
+
+Remaining to-do list: complete the environment acceptance audit, formalize and check the product domains and response claims on GCP, verify the physical hypotheses, resolve novelty and prepare the manuscript.
