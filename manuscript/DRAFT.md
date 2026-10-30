@@ -89,7 +89,25 @@ In the stipulated rank-two flat orbit model, the full-plane mixed geometric heat
 
 *Proof.* Distributionally, u''''=12 c_u delta_0+g_u with g_u in L1, and likewise for w. The Riemann--Lebesgue lemma gives k⁴ uhat(k)->12 c_u and the analogous limit for w, with these quantities bounded. Set s=sqrt(t)k in (4.2). The scaled kernel R3(s²)/s⁸ is integrable: R3(x)=O(x⁴) at zero and R3(x)=O(1+x³) at infinity. Dominated convergence therefore reduces the limit to 144 c_u c_w/pi² times the integral of that kernel on (0,infinity). Direct integration gives integral_0^infinity R3(s²)ds/s⁸=-5 pi^(3/2)/49152, yielding (4.3). The integral and endpoint justifications are recorded in `../notes/tangent-integral-argument.md`; the full weighted-profile argument is in `../notes/flat-weighted-cubic-leading-limit.md`. □
 
-The bound on the weighted remainder alone does not select a unique logarithmic jet, so no logarithmic coefficient is claimed without further hypotheses. The half normalization, all physical vertices and the curved common-regulator limit remain to be matched. A GCP Lean receipt covers the raw tangent integral at a narrower scope; it does not certify Proposition 4.1 or the physical response.
+**Proposition 4.2 (explicit logarithmic jet).** Let chi be real, even, smooth, compactly supported and equal to one near zero. Suppose
+
+ u=chi(c_u |y|³+d_u |y|⁴ log|y|)+h_u,
+ w=chi(c_w |y|³+d_w |y|⁴ log|y|)+h_w,
+
+where the real even compactly supported residuals are smooth away from zero, their derivatives through order three have zero limits at zero, their fourth derivatives have equal finite one-sided limits, and their classical fifth derivatives are integrable on the two open half-lines, with no other distributional jumps. Then, for (4.2),
+
+ B_t(u,w)=-15 c_u c_w t^(5/2)/(1024 sqrt(pi))
+           -(c_u d_w+d_u c_w)t³ log(t)/(70pi)
+           +o(t³ |log t|).                                  (4.4)
+
+*Proof.* The hypotheses make each residual fifth distributional derivative integrable, hence its Fourier transform is o(|k|^-5) after division by (ik)^5. The explicit cubic and logarithmic profiles give the product tail
+
+ conjugate(uhat) what=144 c_u c_w |k|^-8
+       -288pi(c_u d_w+d_u c_w)|k|^-9+o(|k|^-9).            (4.5)
+
+The cubic term is Proposition 4.1. For the logarithmic term, split frequencies at a fixed K and t^(-1/2), and use R3(x)=-x⁴/10080+O(x⁵) below the latter threshold. The integral of dk/k supplies -(1/2)log t; the high-frequency part is O(t³) by R3(x)=O(x³). The o(|k|^-9) remainder contributes o(t³ |log t|) by an epsilon bound on its tail. The detailed Fourier and endpoint calculations are in `../notes/flat-log-coefficient-integrable-fifth.md` and `../notes/flat-boundary-coefficients.md`. □
+
+The remainder in (4.4) is not asserted to be O(t³). The bound on the weighted remainder alone does not select a unique logarithmic jet, so (4.4) requires the additional hypotheses above. The half normalization, all physical vertices and the curved common-regulator limit remain to be matched. A GCP Lean receipt covers the raw tangent integral at a narrower scope; it does not certify Proposition 4.1 or the physical response.
 
 ## 5. Curved trace extension — work in progress
 
