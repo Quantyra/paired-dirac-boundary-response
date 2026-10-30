@@ -59,6 +59,38 @@ match the actual operator: changing n changes both ∂_n b and c(n), leaving
 their product unchanged. The proof does not assert a specific Robin formula
 or identify the square domain on a noncompact limit.
 
+## Necessity of the zero normal jet at a smooth finite cut
+
+Under the same assumptions, add the standard smooth-boundary H² jet
+extension property: any smooth section v of the allowed boundary bundle
+P E, supported in a boundary chart, can be extended to a smooth ψ in the
+seed square domain with trace ψ=v. Then equality of the seed and perturbed
+square domains holds **if and only if** ∂_n b=0 on the boundary.
+
+The extension property follows locally from the principal normal form of
+D. Choose the boundary value v with Pv=v. In a collar, prescribe a normal
+first derivative a whose P-component cancels P trace(Dψ): the normal
+principal coefficient P c(n) P is invertible on P E because c(n) commutes
+with P and satisfies the Clifford relation. The remaining tangential and
+zeroth-order terms are fixed by v, so such an a exists smoothly. A smooth
+collar extension with boundary jets (v,a), multiplied by a cutoff, is H²,
+has Pi_- trace ψ=0 and P trace(Dψ)=0, hence belongs to the seed square
+domain by composition. Patch only within the chart; no assertion about the
+physical global bundle follows from this local construction.
+
+If the normal trace h=∂_n b is nonzero at a boundary point, its Lipschitz
+boundary representative is nonzero on a small neighborhood because
+b∈W^{2,∞}. Choose a nonzero smooth allowed v supported there. For its seed
+extension ψ, the seed condition has P trace(Dψ)=0, while the perturbed
+condition requires h c(n)v/2=0. This is impossible because c(n) is
+invertible on the allowed fiber. Therefore ψ belongs to the seed square
+domain but not the perturbed one. The converse was proved above. The
+statement assumes a nonzero allowed subbundle; for the trivial P=0 case
+this necessity argument does not apply.
+
+This criterion concerns equality of domains as sets on the same fixed
+finite-cut Hilbert space. It does not compare different outer cuts and does
+not settle first-order domain identities or heat-trace limits.
 ## Relevance to the collar and limits
 
 A physical-side collar field b=c y³+r with a differentiable remainder
