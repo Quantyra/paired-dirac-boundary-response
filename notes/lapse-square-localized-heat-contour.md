@@ -57,12 +57,37 @@ integrals because of (3). In particular the left side tends to zero
 uniformly on any fixed positive-time interval [epsilon,1]. If u is cubic at
 the boundary then sqrt(U_ell)=O(ell^2).
 
-Equation (4) does not claim a uniform epsilon->0 estimate: the constants and
-the required ell/epsilon relationship matter. It also does not sum the
-angular and thermal modes, identify the transported physical boundary, or
-handle mixed response vertices and subtractions. The contour argument
-requires the fixed-mode polynomial lift and fixed-collar assumptions; it is
-not a Lean certificate. No numerical calculation was used.
+## One explicit fixed-mode joint path
+
+The dependence on epsilon in (4) is at most polynomial under the stated
+polynomial lift hypothesis. More precisely, for 0<ell<=epsilon cos(theta)/4
+and ell<=1, exp(h)-1<=ell(C_0+|zeta|) exp(h) and ell<=sqrt(ell).
+Absorb C_0 and this additional factor of |zeta| into a polynomial of degree
+N+1. The ray integral of (1+r)^(N+1) exp(-t cos(theta) r/2) from 1/t to
+infinity is at most C t^(-(N+2)) for t<=1; the arc has length O(1/t) and
+the same bound. Thus, with K=N+2 and a constant independent of epsilon,
+
+  ||S[exp(-t A)-J*exp(-t A_ell)J]S||_1
+    <= C t^(-K) [sqrt(ell)+sqrt(U_ell)],   epsilon<=t<=1.      (5)
+
+The constants and exponent are for one fixed separated mode. If u is cubic
+at the boundary and ell(epsilon)=exp(-L/epsilon) for fixed L>0, then for
+sufficiently small epsilon the cut condition holds and (5) implies
+
+  integral_epsilon^1 t^(-2)
+    ||S[exp(-t A)-J*exp(-t A_ell)J]S||_1 dt -> 0.              (6)
+
+Indeed the right side is bounded by a fixed power of epsilon^(-1) times
+exp(-L/(2 epsilon)), with a faster decaying cubic-collar term. The cut is
+held fixed throughout the integral. This is a sufficient joint path for the
+localized fixed-mode model heat difference, not a path-independent physical
+finite-part theorem.
+
+Neither (5) nor (6) sums the angular and thermal modes, identifies the
+transported physical boundary, or handles mixed response vertices and
+subtractions. The contour argument requires the fixed-mode polynomial lift
+and fixed-collar assumptions; it is not a Lean certificate. No numerical
+calculation was used.
 
 Remaining to-do list: derive uniform mode/cutoff bounds and physical boundary
 matching, establish the curved remainder and regulator, resolve novelty,
