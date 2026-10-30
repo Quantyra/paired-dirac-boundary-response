@@ -1,5 +1,7 @@
 # Conformal variation bounds for product mixed-boundary data
 
+The later [conformal Dirac-square argument](product-conformal-robin-from-dirac-square.md) derives the Robin structural form for the stipulated geometric projector model, conditional on its closed-domain and Gauss hypotheses.
+
 This checks the coefficient-variation hypothesis in `moving-cut-conformal-boundary-jet-refinement.md` for a specified geometric Dirac-type model. The local calculation remains conditional on matching the actual paired square and its mixed boundary condition to this model; it is not a global bundle or regulator theorem.
 
 Let g_z=exp(2zv)g be a smooth conformal family on a two-dimensional product orbit. Assume fixed smooth spin/twist identification, fixed scalar u, fixed cut, and uniform bounds on the base curvature, second fundamental form and twist curvature. Use an orthonormal conformal spin identification in which the normalized boundary Clifford multiplication and the copy involution are fixed, so chi and Pi_+ are fixed matrices. Assume the mixed Robin endomorphism of the actual square has, in this identification, the form
