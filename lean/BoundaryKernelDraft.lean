@@ -106,6 +106,29 @@ theorem involution_tangential_compression_zero
     intro x
     simp [P, hinv, add_comm]
   exact tangential_compression_zero chi P C hp hP hanti
+/-- The paired involution chi=tau gamma_n has the required properties
+when tau and gamma_n are commuting involutions, tau commutes with a
+tangential Clifford action, and gamma_n anticommutes with it. -/
+theorem paired_clifford_tangential_compression
+    (tau gn gt : V →ₗ[ℂ] V)
+    (htau : ∀ x, tau (tau x) = x)
+    (hgn : ∀ x, gn (gn x) = x)
+    (hcomm : ∀ x, tau (gn x) = gn (tau x))
+    (htc : ∀ x, tau (gt x) = gt (tau x))
+    (hantic : ∀ x, gn (gt x) = -gt (gn x)) :
+    let chi := tau.comp gn
+    let P : V →ₗ[ℂ] V := (1 / 2 : ℂ) • (LinearMap.id + chi)
+    ∀ x, P (gt (P x)) = 0 := by
+  let chi := tau.comp gn
+  have hinv : ∀ x, chi (chi x) = x := by
+    intro x
+    change tau (gn (tau (gn x))) = x
+    rw [← hcomm (gn x), hgn, htau]
+  have hanti : ∀ x, chi (gt x) = -gt (chi x) := by
+    intro x
+    change tau (gn (gt x)) = -gt (tau (gn x))
+    rw [hantic, map_neg, htc]
+  exact involution_tangential_compression_zero chi gt hinv hanti
 end PairedDirac
 
 #print axioms PairedDirac.boundary_kernel_eq_iff
@@ -115,3 +138,5 @@ end PairedDirac
 #print axioms PairedDirac.tangential_compression_zero
 
 #print axioms PairedDirac.involution_tangential_compression_zero
+
+#print axioms PairedDirac.paired_clifford_tangential_compression
