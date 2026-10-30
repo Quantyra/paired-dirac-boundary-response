@@ -37,6 +37,21 @@ theorem congruence_graph_preimage_draft
     rw [hz', hy]
     simp
 
+/-- Candidate closedness consequence for a continuous linear equivalence. -/
+theorem congruence_isClosed_draft
+    [NormedAddCommGroup H] [NormedSpace ℂ H]
+    (D : H →ₗ.[ℂ] H) (E : H ≃L[ℂ] H)
+    (hE : ∀ x ∈ D.domain, E x ∈ D.domain)
+    (hEinv : ∀ x ∈ D.domain, E.symm x ∈ D.domain)
+    (hD : D.IsClosed) :
+    (congruence D E.toLinearEquiv hE).IsClosed := by
+  change IsClosed (D.graph : Set (H × H)) at hD
+  change IsClosed ((congruence D E.toLinearEquiv hE).graph : Set (H × H))
+  rw [congruence_graph_preimage_draft D E.toLinearEquiv hE hEinv]
+  exact hD.preimage ((E.continuous.comp continuous_fst).prodMk
+    (E.symm.continuous.comp continuous_snd))
+
 end PairedDirac
 
 #print axioms PairedDirac.congruence_graph_preimage_draft
+#print axioms PairedDirac.congruence_isClosed_draft
