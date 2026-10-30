@@ -28,6 +28,9 @@ Consequently B_m is integrable on [s0,infinity), for each fixed block. Let U_m(s
 
 A weak solution of a smooth Dirac equation has local elliptic regularity and satisfies the standard unique-continuation property, so vanishing on this open collar forces it to vanish on the connected physical copy. Apply this on each copy; local seam or bolt conditions cannot create an additional solution vanishing on an open set. This proves ker D=0. Finally, the quadratic-form identity (psi,D*D psi)=||D psi||² implies ker(D*D)=ker D.
 
+## Bounded scalar congruence
+
+Suppose additionally that b is real and bounded, E=exp(-b/2) acts boundedly and invertibly on L2, and the varied realization has precisely Dom(D_b)={psi : E psi in Dom(D)} and D_b psi=E D(E psi). These are domain hypotheses, not consequences of boundedness alone. If D_b psi=0, invertibility of E gives D(E psi)=0; (1) then gives psi=0. Thus ker D_b=ker(D_b*D_b)=0 for every such fixed variation. This transfers no uniform-in-b rate or cut estimate and does not verify the geometric domain identification.
 ## Consequence and remaining boundary
 
 For a self-adjoint L=D*D and bounded localization S satisfying the Hilbert--Schmidt hypothesis in `gapless-localized-heat-endpoint.md`, (1) yields
