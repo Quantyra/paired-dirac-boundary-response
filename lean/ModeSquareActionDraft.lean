@@ -26,7 +26,15 @@ theorem mode_square_action_draft
       exact D.adjoint.domain.add_mem hx (D.adjoint.domain.smul_mem a (hG x x.property))
     P.adjoint ⟨P x, hp⟩ = D.adjoint ⟨D x, hx⟩ - (a * a) • (x : H) := by
   dsimp only
-  simp only [mode_adjoint_eq_draft D G a hDense hSymm]
+  have hmem : (modeOperator D G a) x ∈ (modeAdjointCandidate D G a).domain := by
+    change D x + a • G x ∈ D.adjoint.domain
+    exact D.adjoint.domain.add_mem hx (D.adjoint.domain.smul_mem a (hG x x.property))
+  have heval : (modeOperator D G a).adjoint ⟨(modeOperator D G a) x, _⟩ =
+      modeAdjointCandidate D G a ⟨(modeOperator D G a) x, hmem⟩ := by
+    have heq := mode_adjoint_eq_draft D G a hDense hSymm
+    cases heq
+    rfl
+  rw [heval]
   change D.adjoint ⟨D x + a • G x, _⟩ + star a • G (D x + a • G x) = _
   have hsub : (⟨D x + a • G x, _⟩ : D.adjoint.domain) =
       ⟨D x, hx⟩ + a • ⟨G x, hG x x.property⟩ := by
