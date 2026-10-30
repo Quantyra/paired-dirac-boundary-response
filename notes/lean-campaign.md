@@ -68,6 +68,9 @@ both sides report SHA-256
 `3b034a49560a601aba06d3f3c28099fb7d5a1baacd8a5d7fce69097cc650ff9a`.
 A separate remote `git bundle verify` call from outside a Git repository
 failed with “need a repository”; it was not an independent verification.
+Repeating `git bundle verify` on GCP with the task-owned source repository
+as the working Git repository succeeded and reported the same complete-history
+HEAD `b55befb15d55013b552969eb703eb1446fe64094`.
 The running exact-tree workspace has not been modified or used to compile
 this draft. Its GCP development run, dependency audit and axiom report remain
 to be obtained.
