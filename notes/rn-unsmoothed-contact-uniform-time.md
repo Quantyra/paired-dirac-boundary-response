@@ -1,4 +1,4 @@
-﻿# Uniform positive-time unsmoothed RN contact convergence
+# Uniform positive-time unsmoothed RN contact convergence
 
 This strengthens `rn-unsmoothed-cut-contact.md` from each fixed t>0 to a
 compact positive-time interval, for its fixed separated RN model. It does
@@ -41,6 +41,27 @@ strong factor, uniformity after multiplication by the relevant compact
 Hilbert--Schmidt factors follows from finite-rank approximation; the heat
 family is uniformly bounded.
 
+## Uniform strong-times-Schatten step
+
+The compactness needed above follows directly from the uniform S2
+convergence, rather than from a uniform S2 bound alone. On the compact
+interior time/alpha parameter set, each limiting localized half-heat factor
+is continuous in S2 and therefore has compact image in S2. The corresponding
+cut factors converge to it uniformly in S2, so their tails are uniformly
+approximated by a finite set of S2 operators.
+
+More generally, suppose D_ell(q) is uniformly bounded and tends strongly to
+zero uniformly in q on a compact parameter set. If K(q) is a compact family
+in S2, then sup_q ||D_ell(q)K(q)||_2 tends to zero. To prove it, approximate
+K(q) uniformly by finitely many finite-rank operators. Strong convergence is
+uniform on each finite-dimensional range, and the error is bounded by the
+common operator norm times the S2 approximation error. If K_ell(q) converges
+to K(q) uniformly in S2, the same conclusion holds with K_ell by a triangle
+inequality. Right multiplication is handled by applying the statement to
+adjoints; here the heat factors are self-adjoint. Schatten Holder then turns
+the resulting S2 convergence, together with the other bounded S2 factor,
+into uniform trace-norm convergence of the product. This explicitly handles
+the fact that both the heat operator and the compact factor vary with ell.
 The same cited RN estimate bounds the absolute integrand, uniformly in ell,
 by a constant times
 
