@@ -45,11 +45,53 @@ does not infer those assumptions from L-infinity convergence. In particular,
 W1,infinity approximants satisfying the H1 multiplier theorem provide one
 conditional route to the domain hypotheses on a fixed smooth finite cut.
 
+## Positive-time heat convergence on a fixed compact seed
+
+For every fixed t>0, (1) implies operator-norm convergence of the heat
+operators. Indeed, with R_b=(L_b+M^2)^(-1), the continuous function on
+[0,M^(-2)] defined by f_t(x)=exp[-t(x^(-1)-M^2)] for x>0 and f_t(0)=0
+satisfies exp(-t L_b)=f_t(R_b). Uniform polynomial approximation on this
+compact interval and norm convergence of R_b prove the assertion.
+
+There is also a conditional trace-norm conclusion on a fixed compact seed.
+Assume all fields have ||db_n||_infinity, ||db||_infinity <= G, the graph
+estimate in [the multiplier note](paired-multiplier-domains.md) applies with
+the same B,G, and the seed heat operator exp(-s L_0) is trace class for
+every s>0. The first-order domains are common, so their quadratic forms
+have common domain Dom(D_0). The reverse graph estimate gives, on that
+domain,
+
+    ||D_b v||^2 >= (exp(-2B)/2)||D_0 v||^2
+                     - (exp(-2B) G^2/4)||v||^2.
+
+The same holds uniformly for b_n. The seed has compact resolvent; the common
+form domain and this lower form bound give compact resolvent for each L_b_n.
+By the min-max principle, with eigenvalues in nondecreasing order,
+
+    lambda_j(L_b_n) >= (exp(-2B)/2) lambda_j(L_0)
+                           - exp(-2B) G^2/4.
+
+The resulting exponential sequence dominates the heat eigenvalues
+summably for every fixed t>0. Operator-norm heat convergence implies
+convergence of each ordered heat eigenvalue, so dominated convergence gives
+convergence of the heat traces. For positive trace-class operators, strong
+convergence together with convergence of traces implies trace-norm
+convergence: approximate the limiting operator by a finite-rank spectral
+projection and control the complementary positive trace; the off-diagonal
+blocks are controlled by the trace Cauchy--Schwarz inequality. Therefore
+
+    ||exp(-t L_b_n)-exp(-t L_b)||_1 -> 0,   for each fixed t>0.
+
+This argument depends on the uniform global first-derivative bound, the
+common form domain, and the seed trace-class hypothesis. It supplies neither
+a small-time bound uniform in n nor convergence of differentiated and
+subtracted traces. It also does not cover a changing cut or noncompact limit.
+
 The collar approximation establishes only local convergence. A global
 extension preserving the paired hypotheses must still be provided. Norm
-resolvent convergence at this mass does not imply trace-norm convergence,
-uniformity as M varies, preservation of local heat coefficients, or the
-common-regulator curved remainder. No equality of square domains is used.
+resolvent convergence alone does not imply trace-norm convergence, uniformity
+as M varies, preservation of local heat coefficients, or the common-regulator
+curved remainder. No equality of square domains is used.
 
 Remaining to-do list: verify the actual paired seed and global approximant
 hypotheses, connect this convergence to the needed positive-time traces with
