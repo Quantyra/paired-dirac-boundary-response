@@ -129,6 +129,24 @@ The verified finite-dimensional maps implement tau_3⊗1, 1⊗sigma_1 and
 the abstract paired projector theorem for the time-tangential gamma. This
 check does not cover the sphere-tangential gamma factors, global transition
 functions, physical domains, traces, or heat response.
+## Sphere-tangential orbit factor
+
+The source at 4a88a3ee3bd8a4a495367d8e4b6223d56fcaa269 passed Lean 4.30.0
+on the GCP builder with exit 0. The new theorem
+`PairedDirac.Orbit.paired_sphere_orbit_compression` reports [propext,
+Classical.choice, Quot.sound]. OrbitMatrixDraft.lean SHA-256 is
+d4ae1f2a90cb0b79c6d1f37fb50a624e4ca34ffdf43bb8e8243158b7b222a937;
+the Git bundle SHA-256 is
+e43f7ddd75cd74853e6d89978355ae2e57ba60ccf3483a48f345b6ba208d3bbc.
+The check also emitted two unused-simp-argument linter warnings and the
+previously recorded source-only dependency-worktree warnings.
+
+The finite-dimensional map implements the orbit factor −tau₃⊗sigma₂
+appearing in the source's sphere-tangential gammas. Lean verifies its
+relations with tau₃ and the normal gamma, then applies the paired projector
+lemma. The independent sphere-spin factor, tensor-product realization,
+global transitions, Sobolev domains and heat response are not established
+by this orbit-factor calculation.
 Remaining to-do list: formalize and verify the geometric interpretation and
 remaining claims on GCP, resolve the physical and novelty audits, and prepare
 the manuscript.
