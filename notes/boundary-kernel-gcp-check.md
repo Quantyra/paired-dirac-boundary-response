@@ -163,6 +163,23 @@ the checked orbit cancellation. It does not itself construct the tensor
 product or prove the physical sphere gamma commutes with the orbit projector;
 those identifications, the global bundle, and the operator domain remain
 outside this check.
+## Full local sphere-spin example
+
+At commit ee714212b5197956d85554bf7731cc608c949e15, Lean 4.30.0 on the
+GCP builder checked `PairedDirac.Orbit.full_sphere_gamma_compression` with
+exit 0 and axioms [propext, Classical.choice, Quot.sound]. The file
+OrbitMatrixDraft.lean SHA-256 is
+4a9b99c0cd0687b6dfa08201b1cf28241a0522a7ba3fdb7b1269c11c9d7b7923;
+the bundle SHA-256 is
+1e7d3a0b75404c50a4cf1edbacde405b607a5216ff668168ef694c9ed03d2f2c.
+The earlier unused-simp and source-only dependency-worktree warnings remain.
+
+The proof represents the full local eight-component fiber as two copies
+of the rank-four orbit space, lifts the orbit operators, constructs one
+sphere-spin sigma₁ action, proves its commutation with the lifted projector,
+and derives compression cancellation for their product. This is one local
+sphere gamma in a concrete basis, not a proof for arbitrary sphere gamma
+frames, bundle patching, physical domains or the heat response.
 Remaining to-do list: formalize and verify the geometric interpretation and
 remaining claims on GCP, resolve the physical and novelty audits, and prepare
 the manuscript.
