@@ -33,3 +33,33 @@ end PairedDirac
 
 #print axioms PairedDirac.positiveSquare_domain_draft
 #print axioms PairedDirac.mem_positiveSquare_domain_draft
+namespace PairedDirac
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable [CompleteSpace H]
+
+/-- The quadratic form of the constructed product is the norm square of D. -/
+theorem positiveSquare_inner_draft
+    (D : H →ₗ.[ℂ] H) (hDense : Dense (D.domain : Set H))
+    (x : (positiveSquare D).domain) :
+    inner ℂ ((positiveSquare D) x) (x : H) =
+      inner ℂ (D ⟨(x : H), x.property.2⟩) (D ⟨(x : H), x.property.2⟩) := by
+  let y : D.domain := ⟨(x : H), x.property.2⟩
+  have hy : D y ∈ D.adjoint.domain := by
+    obtain ⟨hx, hh⟩ := (mem_squareDomain_draft D x).mp x.property.1
+    exact hh
+  change inner ℂ (D.adjoint ⟨D y, hy⟩) (y : H) = inner ℂ (D y) (D y)
+  exact LinearPMap.adjoint_isFormalAdjoint hDense ⟨D y, hy⟩ y
+
+/-- The quadratic form is nonnegative. -/
+theorem positiveSquare_nonneg_draft
+    (D : H →ₗ.[ℂ] H) (hDense : Dense (D.domain : Set H))
+    (x : (positiveSquare D).domain) :
+    0 ≤ Complex.re (inner ℂ ((positiveSquare D) x) (x : H)) := by
+  rw [positiveSquare_inner_draft D hDense x]
+  exact inner_self_nonneg
+
+end PairedDirac
+
+#print axioms PairedDirac.positiveSquare_inner_draft
+#print axioms PairedDirac.positiveSquare_nonneg_draft
