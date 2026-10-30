@@ -1,4 +1,4 @@
-﻿# Square domains under a scalar congruence: boundary criterion
+# Square domains under a scalar congruence: boundary criterion
 
 Status: conditional ordinary argument for a compact smooth finite-cut seed,
 not a physical-domain audit or Lean certificate. It sharpens the square-domain
@@ -71,6 +71,40 @@ is at a finite outer cut rather than at y=0, its normal derivative must be
 checked at that cut separately. A vanishing normal trace is a sufficient
 condition here, not a proof that all paper variations obey it.
 
+### Check against the pinned mass/log collar
+
+Section 3 of the [pinned rough-variation source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md)
+identifies y as proper distance on the physical outer half, with boundary
+at y=0, and specifies |c|≤K and |r^(j)(y)|≤K j! 100^j y^(4−j)L(y),
+L(y)=1+log(1/y), for j≤5 and 0<y≤0.1. Consequently
+
+    |b'(y)| ≤ 3K y²+100K y³L(y) → 0,
+    |b''(y)| ≤ 6K y+20000K y²L(y),
+
+and b itself tends to zero. The second displayed bound is uniformly finite
+on the collar. Thus the prescribed physical-side function extends with
+zero first boundary jet and bounded first two weak normal derivatives.
+In a proper-distance collar, ∂_n b is ±b'(0), so its boundary value is
+zero, regardless of the normal orientation. The same calculation applies
+to each direction u,w with its own source norm and to a fixed finite power
+of the logarithmic weight.
+
+For the stated radial collar fields, a smooth finite-cut metric and smooth
+collar atlas convert these bounded derivatives into a local W^{2,∞} bound;
+the source additionally calls for interior/cold C5 charts and regular even
+disk fields. If those charts form a finite smooth atlas with matching
+uniform bounds, they supply the global W^{2,∞} hypothesis. Under those
+explicit atlas assumptions and the conditional H¹ projector-domain
+identifications, (1) therefore gives the *same* square domain for the
+source's unregularized finite-cut mass/log family. The cubic is retained on
+the physical side; no smooth even extension is used in this argument.
+
+This is an application of the criterion, not an independent reconstruction
+of the physical atlas or seed realization. A boundary moved to y=η>0 need
+not have zero normal jet, and no identification of different cut domains
+follows. The conclusion also does not apply automatically to a generic
+W^{1,∞} multiplier, an unbounded family of logarithmic degrees, or a
+noncompact limit.
 This result does not freeze a square domain for arbitrary W^{1,∞} fields,
 does not justify differentiating a heat trace, and does not establish the
 physical global bundle, regulator or curved-response hypotheses. No numerical
