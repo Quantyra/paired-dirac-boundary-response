@@ -1,0 +1,9 @@
+﻿# GCP combined mode square-domain check
+
+Run `paper1-mode-adjoint-7a944d9-20261029` exited 0 on `quantyra-lean-builder-01`, project `quantyra-lean-cert-20260915`, zone `us-central1-a`, with Lean 4.30.0. It checked `mode_square_domain_from_adjoint_draft`, which derives equality of `LinearPMap` composition domains using the actual adjoint equality, rather than assuming that equality separately. The theorem assumes dense original domain, a symmetric total linear fiber map and its mapping of the original domain into the adjoint domain. Its axiom report lists `propext`, `Classical.choice`, and `Quot.sound`.
+
+Remote and local checked source SHA-256 match `1e2a71db8e2fb27aff04c8c2f9f75f7a9a27d5dd4f5c63764a30a8323f60fb2c`; local Git blob `c0b0bf8729f378771244a2dd4fe16b2fa34f3b0d` matches commit `7a944d9`. The [raw log](run.log) SHA-256 is `f7ad1360534bbde1ae114f8e716c321a411788d7f4af7233481f7f1fd11b7595`. The run reused GCP-built mode prerequisite `.olean` files and logged their hashes; see [the earlier receipt](../gcp-mode-adjoint-20261029/README.md). The source was transferred by SCP, after a connection-closed failure and successful retry, and its hash compared locally, not verified via a full repository bundle on the VM. The reused [source-only environment](../gcp-sourceonly-6858aa7/README.md) retains its documented worktree warnings and provenance caveats.
+
+This is a conditional abstract domain theorem. It does not establish that physical chirality satisfies the assumptions, prove the square operator's action, validate the global product realization, or certify the heat response or paper. A builder stop was requested after the run.
+
+Remaining to-do list: establish the geometric chirality/domain hypotheses and square action, verify the physical response, complete novelty and manuscript, and certify the supported theorem package on GCP.
