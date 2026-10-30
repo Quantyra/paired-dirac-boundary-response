@@ -180,6 +180,24 @@ sphere-spin sigma₁ action, proves its commutation with the lifted projector,
 and derives compression cancellation for their product. This is one local
 sphere gamma in a concrete basis, not a proof for arbitrary sphere gamma
 frames, bundle patching, physical domains or the heat response.
+## Local time-reflection and partner matrices
+
+At commit 53011ac55555d205a91745effc63166d97d5ce60, Lean 4.30.0 on the
+GCP builder checked OrbitMatrixDraft.lean with exit 0. The printed axioms
+for `reflection_sphere` and `partner_chi` were [propext, Classical.choice,
+Quot.sound]. OrbitMatrixDraft.lean SHA-256 is
+cde8cc1bb956bdc97b452879003f64bb169e4b75fb0648d2f9b21b77ef156c82;
+the bundle SHA-256 is
+7a2735c980db218703a1e0733f9ab0538ff5cc18c150e201034d52b46e04c0bc.
+The prior unused-simp and source-only dependency-worktree warnings remain.
+
+The earlier source at 322b403 failed with exit 1 because two complex-linear
+map definitions lacked noncomputable declarations; it was not accepted.
+The successful file checks the finite-dimensional U and J relations, including
+U's action on the time, normal and one sphere gamma, U commuting with χ,
+J anticommuting with χ, and U commuting with J. These are local matrix
+identities. The physical base reflection, global spin and monopole bundle,
+closed-domain covariance and actual copy map remain separate obligations.
 Remaining to-do list: formalize and verify the geometric interpretation and
 remaining claims on GCP, resolve the physical and novelty audits, and prepare
 the manuscript.
