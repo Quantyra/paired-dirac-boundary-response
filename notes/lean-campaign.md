@@ -42,7 +42,19 @@ The audit found mismatched worktree and recorded-tree blob IDs, including the
 directly imported LinearPMap source. A full Mathlib archive comparison then
 showed that all 8,767 mismatches match the tree after CRLF-to-LF conversion;
 see the receipt. The raw bytes still differ and other packages remain unaudited,
-so the successful build is not yet an exact-source acceptance result.
+so the successful build is not yet an exact-source acceptance result. A later
+audit found the same line-ending explanation for the other eight packages,
+and reconstructed exact-tree archives; see the reconstruction receipt.
+
+The fresh exact-tree run `paper1-domain-exact-tree-f7b70c1-20261029` was
+observed on GCP with driver PID 74691 and Lake PID 74786. While Lake was
+active, child `curl` processes were attempting to fetch dependency build
+barrels from `reservoir.lean-lang.org`; the progress log had not advanced
+between observations. This is a live-process observation, not a terminal
+failure. The driver checks source archives but does not disable or
+authenticate fetched binary build artifacts. Acceptance must inspect whether
+Lake used such artifacts and their provenance, or use a fresh verified
+source-only build. Do not restart solely because observation is slow.
 
 The present `congruence_domain` theorem is definitional because the candidate
 map was constructed with the original domain; `invariant_preimage` proves
