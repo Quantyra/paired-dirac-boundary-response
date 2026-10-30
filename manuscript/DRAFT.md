@@ -142,7 +142,19 @@ Here D_v denotes the geometric variation on the identified fixed Hilbert space, 
 Equation (4.7) is a source identity whose physical hypotheses and complete trace interchanges remain to be independently verified, not a consequence of Proposition 4.1 alone. In particular, neither the geometric term nor the contact may be omitted when the common cutoff is removed. The source notation and the distinction between operator heat kernels and scalar heat traces are audited in `../notes/tangent-regulator-normalization.md`; the separate zero-sector allocation is in `../notes/source-angular-zero-mode-allocation.md`. The endpoint (4.7) must also not be identified with the tangent-subtracted P1-D proper-time remainder without an additional argument.
 ## 5. Curved trace extension — work in progress
 
-The source's localized tangent-subtracted curved remainder and the endpoint conversion are distinct observables; see `../notes/p1d-response-versus-conversion.md`. Their geometric vertices, weak boundary completion, gluing and regulator limits remain open. No global extension is claimed here.
+The source's localized tangent-subtracted curved remainder and the endpoint conversion (4.7) are distinct observables; see `../notes/p1d-response-versus-conversion.md`. To specify the mixed response before estimating it, let a positive-cutoff form family q_(s,r) have a common form domain and write its first and mixed derivatives as V_u, V_w and V_uw in a finite-dimensional Galerkin approximation. If K_t is the unperturbed heat matrix, the exact mixed heat derivative is
+
+ K_uw(t)=integral_(a,b,c>=0; a+b+c=t)
+       [K_a V_u K_b V_w K_c+K_a V_w K_b V_u K_c] da db
+       -integral_0^t K_(t-s) V_uw K_s ds.                   (5.1)
+
+The triangle has measure da db, with no additional factorial. For a parameter-dependent insertion C_(s,r), the mixed derivative of Tr[C_(s,r)K_(s,r)] contains four terms:
+
+ Tr[C_uw K]+Tr[C_u K_w]+Tr[C_w K_u]+Tr[C K_uw].             (5.2)
+
+The mixed square form vertex V_uw includes both cross-products of the first Dirac variations, as well as the two terms containing the mixed Dirac variation. These are retained in addition to any separate density or action-restoration terms. The Galerkin and positive-time passage under the stated holomorphic form and trace hypotheses is developed in `../notes/fixed-cut-moving-insertion-mixed-response.md`; the expressions in (5.1) are not asserted to be individually convergent unregularized form-operator integrals.
+
+A proof of the source's sufficient t^(3/2) bound must identify the physical and tangent families, their localizations, normalization, contact and restoration terms on one regulator, and estimate their complete difference uniformly in the declared rough family. Equations (5.1)--(5.2) specify the terms but do not provide that estimate or permit the cutoff and short-time limits to be interchanged. Weak boundary completion, gluing, angular and thermal sums, and regulator limits remain open. No global extension is claimed here.
 
 ## Relation to prior work — preliminary
 
