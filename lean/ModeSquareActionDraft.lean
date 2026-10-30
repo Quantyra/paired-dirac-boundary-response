@@ -36,8 +36,10 @@ theorem mode_square_action_draft
       modeAdjointCandidate D G a ⟨(modeOperator D G a) x, hmem⟩ := by
     exact ((mode_adjoint_forward_draft D G a hDense hSymm).2 rfl).symm
   rw [heval]
-  change D.adjoint ⟨D x + a • G x, _⟩ + star a • G (D x + a • G x) = _
-  have hsub : (⟨D x + a • G x, _⟩ : D.adjoint.domain) =
+  have hsum : D x + a • G x ∈ D.adjoint.domain :=
+    D.adjoint.domain.add_mem hx (D.adjoint.domain.smul_mem a (hG x x.property))
+  change D.adjoint ⟨D x + a • G x, hsum⟩ + star a • G (D x + a • G x) = _
+  have hsub : (⟨D x + a • G x, hsum⟩ : D.adjoint.domain) =
       ⟨D x, hx⟩ + a • ⟨G x, hG x x.property⟩ := by
     ext
     simp
