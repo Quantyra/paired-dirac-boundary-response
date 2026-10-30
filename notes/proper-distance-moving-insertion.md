@@ -1,4 +1,4 @@
-﻿# Proper-distance movement of a collar insertion
+# Proper-distance movement of a collar insertion
 
 The frozen [rough-variation source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md), section 3, defines y as proper distance on the physical outer half, fixed at the seed. Thus a direction u(y) understood as a function on that fixed seed coordinate is a fixed multiplier in [the fixed-space mixed identity](paired-positive-time-mixed-identity.md); no moving-insertion term is generated merely by using its collar expansion. This is the convention in that section, not a proof that every later physical observable uses the same parametrization.
 
@@ -16,7 +16,7 @@ For the source's collar directions u=c_u y³+O(y⁴L(y)) and w=c_w y³+O(y⁴L(y
     W(y)=c_w y⁴/4+O(y⁵L(y)),
     partial_r u_r(y)|_0 = (3/4)c_u c_w y⁶+O(y⁷L(y)).       (3)
 
-In particular this moving-coordinate insertion has zero jets through order five. Its derivatives through order three satisfy |partial_y^j(u'W)|<=C y^(6−j)L(y)^2, 0<=j<=3, on a fixed small collar, with C depending on the declared weighted bounds. This follows from the product rule, W'=w and the j<=4 bounds on u. The estimate concerns the local collar only; cutoff transitions and the global coordinate map need their own bounds.
+In particular this moving-coordinate insertion is O(y^6) and has zero traces through order three. Its derivatives through order three satisfy |partial_y^j(u'W)|<=C y^(6−j)L(y)^2, 0<=j<=3, on a fixed small collar, with C depending on the declared weighted bounds. This follows from the product rule, W'=w and the j<=4 bounds on u. The estimate concerns the local collar only; cutoff transitions and the global coordinate map need their own bounds.
 
 In a fixed-space trace T(r,t)=Tr[M_(u_r) exp(−tL_r)], differentiation therefore gives both the operator term and
 
