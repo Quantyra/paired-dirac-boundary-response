@@ -1,4 +1,4 @@
-﻿# Subleading heat asymptotics of the recorded magnetic tower
+# Subleading heat asymptotics of the recorded magnetic tower
 
 This sharpens the leading Riemann-sum limits in
 `angular-flat-contact-leading-remainder.md` for the source's stated nonzero
@@ -32,7 +32,7 @@ Define g_a(x)=2 f'(x) exp(-a f(x)), x>=0. The integral is exact:
 by z=f(x), with the endpoint x=0 and f(0)=0. The first endpoint data are
 
   g_a(0)=2q,  g_a'(0)=4-2a q^2,
-  g_a'''(0)=-24a+24a^2 q^2.                                   (5)
+  g_a'''(0)=-24a+24a^2 q^2-2a^3 q^4.                                   (5)
 
 Euler--Maclaurin for the sum n>=1 gives
 
