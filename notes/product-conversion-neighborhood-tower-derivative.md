@@ -2,6 +2,8 @@
 
 This closes the positive-time termwise-differentiation gap identified in `product-conversion-mixed-seed-tower-domination.md` for the stipulated real product-mode model. It does not identify that model with the physical paired source or remove the ultraviolet regulator.
 
+The [individual-mode form argument](product-conversion-form-differentiability.md) supplies the positive-time differentiability and form-Duhamel identity for the stated compact model, under its domain and graph assumptions.
+
 ## Uniform form-derivative bound
 
 Use the compact product cuts, skew-adjoint Q_delta, domain-preserving scalar multipliers and real interpolation A_r(b), P_r(b)=A_r(b)*A_r(b) of `product-mass-conversion-h2-heat-tower.md`. Let b vary in a real W2,infinity-bounded set with ||b||<=B, r in [0,1], and let v be a real W1,infinity direction. Suppose the uniform commutator and domain hypotheses there hold and that each heat trace is continuously differentiable by the stated form-Duhamel theorem. All constants below are uniform over the cut, r, b and M>=0.
