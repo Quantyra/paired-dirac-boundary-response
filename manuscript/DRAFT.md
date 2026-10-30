@@ -109,6 +109,13 @@ The cubic term is Proposition 4.1. For the logarithmic term, split frequencies a
 
 The remainder in (4.4) is not asserted to be O(t³). The bound on the weighted remainder alone does not select a unique logarithmic jet, so (4.4) requires the additional hypotheses above. The half normalization, all physical vertices and the curved common-regulator limit remain to be matched. A GCP Lean development receipt checks an identity between two integral representations of the tangent form factor; it does not certify the numerical integral in Proposition 4.1, the proposition as a whole, or the physical response.
 
+**Conditional compact-model transfer.** Fix a thermal period T>0 and a radial double of circumference 2L, with L>2R and profiles supported in [-R,R]. Under the compact form-differentiation, folding and per-exterior trace conventions stated in `../notes/compact-flat-small-time-winding.md`, the actual compact flat-model mixed derivative and its Fourier-defined counterpart differ by
+
+  O((1+t^(-N)) exp(-c/t) ||u||_H2 ||w||_H2),              (4.10)
+
+for some c>0 and finite N at fixed L,R,T. The estimate retains radial winding and external sampling images; the compact mixed second vertex is included. A common local polynomial subtraction agrees by periodic Parseval for profiles with no overlap with nonzero translates. Consequently (4.3), and (4.4) under its stronger jet assumptions, also hold for this declared compact model. This is not yet an identification with the physical curved trace or its common regulator.
+
+The distinction between fiber and action normalization matters: the recorded folded orbit fiber is rank four, whereas F in (4.1) was computed using one rank-two sector. Under the stated flat folding identities, the unnormalized rank-four paired half trace equals the full-line rank-two trace; the extra per-exterior factor in (4.2) must come from the source's specified averaging or action convention, not be applied twice. The detailed ledger is in `../notes/flat-orbit-fiber-normalization.md` and `../notes/tangent-regulator-normalization.md`.
 **Proposition 4.3 (all-frequency flat bound).** Define R2(x)=F(x)-1+x²/120 and, with the Fourier and half-normalization conventions of (4.2),
 
  r_flat(t;u,w)=(1/(pi t)) integral_R conjugate(uhat(k)) what(k)
