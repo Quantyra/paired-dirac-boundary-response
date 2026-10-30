@@ -109,6 +109,23 @@ The cubic term is Proposition 4.1. For the logarithmic term, split frequencies a
 
 The remainder in (4.4) is not asserted to be O(t³). The bound on the weighted remainder alone does not select a unique logarithmic jet, so (4.4) requires the additional hypotheses above. The half normalization, all physical vertices and the curved common-regulator limit remain to be matched. A GCP Lean receipt covers the raw tangent integral at a narrower scope; it does not certify Proposition 4.1 or the physical response.
 
+### Regulated conversion and the separate contact
+
+The flat geometric multiplier does not by itself give the regulated action Hessian. In the source's physical-half, time-reduced trace convention, write
+
+ T_t(u)=Tr_bar[u exp(-tL)],
+ I_t(u,v)=integral_0^t Tr_bar[u exp(-(t-s)L) v exp(-sL)] ds,
+ Theta(t)=sum_(n>=1) d_n exp(-t M_n²),
+ M_n²=n(n+q)/b_sphere²,  d_n=2(q+2n).                     (4.6)
+
+The source records, at positive common cutoff and under its paired-domain, grading and differentiation hypotheses,
+
+ J_t''[u,v]=Theta(t)/2 [D_v T_t(u)+D_u T_t(v)]
+                         +2 Theta'(t) I_t(u,v).             (4.7)
+
+Here D_v denotes the geometric variation on the identified fixed Hilbert space, and J_t is the endpoint conversion between the source's geometric and variable-mass regulated actions. The contact is symmetric by trace cyclicity and s -> t-s. The n=0 sector and its lowest-Landau-level allocation are separate from the displayed n>=1 sum. A further source action normalization is not absorbed into (4.7); the angular multiplicities already contain their recorded sign degeneracy.
+
+Equation (4.7) is a source identity whose physical hypotheses and complete trace interchanges remain to be independently verified, not a consequence of Proposition 4.1 alone. In particular, neither the geometric term nor the contact may be omitted when the common cutoff is removed. The source notation and the distinction between operator heat kernels and scalar heat traces are audited in `../notes/tangent-regulator-normalization.md`; the separate zero-sector allocation is in `../notes/source-angular-zero-mode-allocation.md`. The endpoint (4.7) must also not be identified with the tangent-subtracted P1-D proper-time remainder without an additional argument.
 ## 5. Curved trace extension — work in progress
 
 The source's localized tangent-subtracted curved remainder and the endpoint conversion are distinct observables; see `../notes/p1d-response-versus-conversion.md`. Their geometric vertices, weak boundary completion, gluing and regulator limits remain open. No global extension is claimed here.
