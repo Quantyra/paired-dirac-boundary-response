@@ -1,4 +1,4 @@
-﻿# Mixed heat response: explicit first and second vertices
+# Mixed heat response: explicit first and second vertices
 
 This note specifies the vertex inventory needed to compare the original paired heat response with its localized tangent model. It works on the fixed Hilbert space and first-order domain assumed in [the positive-time form argument](paired-positive-time-trace-derivatives.md). It does not assert the missing uniform curved remainder or identify a physical regulator.
 
@@ -21,7 +21,7 @@ For the sesquilinear form q_(s,r)(phi,psi)=<D(s,r)phi,D(s,r)psi>, write q_u,q_w,
 
 The last two are the mixed product or coincidence vertex. They must remain even if D_uw has been computed. The first form vertices q_u,q_w each contain both variations of the two square factors. These expressions also account for the scalar gradient terms through [the weak product rule](geometric-locality-vertex.md).
 
-For smooth compact coefficients and compatible smooth cores, the finite-cutoff mixed heat derivative is the sum of the two ordered Duhamel insertions of q_u and q_w minus the single q_uw insertion. In schematic operator notation, with K_t=exp(−tL_b), the ordered terms are
+For product modes, the full first-order form vertices above already include the explicit angular-dependent terms in [the Weyl mode calculation](full-weyl-angular-vertices.md). They must not be added a second time to the full form inventory. For smooth compact coefficients and compatible smooth cores, the finite-cutoff mixed heat derivative is the sum of the two ordered Duhamel insertions of q_u and q_w minus the single q_uw insertion. In schematic operator notation, with K_t=exp(−tL_b), the ordered terms are
 
     integral_(a,b,c>0; a+b+c=t)
       [K_a V_u K_b V_w K_c + K_a V_w K_b V_u K_c] da db,
