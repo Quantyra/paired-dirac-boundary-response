@@ -1,0 +1,7 @@
+# GCP grading-odd trace development attempt
+
+The source `lean/GradingOddTrace.lean` has SHA-256 `6d8f9c062390a8c97f05b9b4826f3f294ef150bf718cc11fefa6e73f99a46c17`. It states a finite-matrix grading trace cancellation, intended to support the source conversion's odd-commutator calculation. It does not establish the trace-class infinite-dimensional identity, physical grading, domains, or paper certification.
+
+On 2026-10-30, a GCP attempt on `quantyra-lean-builder-01` in project `quantyra-lean-cert-20260915` used the retained `paper1-sourceonly-6858aa7-20261029` environment and Lean 4.30.0. The first attempt failed because `Mathlib.Tactic.olean` was unavailable in that environment. It did not check the theorem. The revised source removes that import and replaces the tactic steps with elementary additive algebra; this revision has **not been typechecked**. The following GCP transfer failed because the existing gcloud credentials required interactive reauthentication. The retained source-only environment also has the previously documented dependency worktree and compiled-artifact provenance limitations; any successful development run there would not itself be a clean source replay.
+
+Remaining to-do list: restore GCP authentication, run and repair the revised draft as needed, perform a clean provenance-checked replay, establish its infinite-dimensional application and physical hypotheses, complete the manuscript and certify the supported claims.
