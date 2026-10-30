@@ -97,6 +97,8 @@ conversion also includes 2 Theta'(t) I_t, with the angular tower and local
 counterterms retained; see [the regulator audit](tangent-regulator-normalization.md)
 and [the flat contact argument](flat-product-contact.md).
 
+The [weighted cubic limit](flat-weighted-cubic-leading-limit.md) derives the leading flat coefficient without the stronger product-tail hypothesis; the [integrable-fifth-derivative result](flat-log-coefficient-integrable-fifth.md) gives a sufficient explicit-log-jet class with an o(t^3 |log t|) remainder. Neither applies the result to the full physical response. The [flat scalar form-factor comparison](flat-dirac-scalar-form-factor-comparison.md) excludes one simple scalar-potential identification but does not settle novelty.
+
 The [canonical/Euclidean comparison](canonical-euclidean-contact-matching.md)
 shows that the RN Hamiltonian-square cut contact is not yet identified with
 the product-frame orbit contact or its separate angular factor.
