@@ -64,6 +64,28 @@ singular-coefficient heat expansions before making any independent novelty
 claim for that term. The source also does not supply the candidate's changing
 paired first-order domain or a regulator-uniform curved metric remainder.
 
+## Singular-weight comparison
+
+Van den Berg, Gilkey and Kirsten, [Heat Trace Asymptotics with Singular
+Weight Functions II](https://people.maths.bris.ac.uk/~mamvdb/pdfs/Publication91.pdf),
+J. Geom. Anal. 21 (2011), Theorems 1.4 and 1.6, treat a smooth Laplace-type
+operator with mixed boundary conditions and a weight F=r^(-alpha) times a
+smooth collar function, for Re(alpha)<1. They derive boundary powers
+t^((ell-alpha)/2), relative to the boundary prefactor, and compute the first
+three boundary invariants. This is directly relevant to the mixed boundary
+setting and shows that analytic families of singular boundary weights are
+established prior art. Differentiating a power in alpha formally produces a
+logarithmic weight and a log(t) term, but interchanging that differentiation
+with the full asymptotic remainder requires its own uniformity proof.
+
+The candidate's log profile enters the operator's metric variation and its
+mixed second response, including principal-symbol and density vertices; it is
+not merely a fixed weight multiplying an unchanged smooth heat operator. The
+cited theorem therefore does not by itself give the candidate coefficient,
+nor does that distinction establish novelty. A complete comparison needs the
+relevant differentiated weighted coefficients, permitted boundary
+regularity, and any further prior work on varying nonsmooth metrics.
+
 ## Decision impact
 
 The prior result materially raises the novelty bar for the leading cubic
