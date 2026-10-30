@@ -1,0 +1,9 @@
+﻿# GCP mode adjoint equality check
+
+Run `paper1-mode-adjoint-6e2b26f-20261029` exited 0 on `quantyra-lean-builder-01`, project `quantyra-lean-cert-20260915`, zone `us-central1-a`, with Lean 4.30.0. It checked `mode_adjoint_eq_draft`, deriving both adjoint inclusions and equality of the actual `LinearPMap` adjoint with the candidate mode adjoint under a dense original domain and a symmetric total linear fiber map. Its axiom report lists `propext`, `Classical.choice`, and `Quot.sound`. This discharges the adjoint-domain equality assumption of the earlier mode square-domain theorem at this abstract scope.
+
+The remote and local source SHA-256 match `089436db004ed6dc7e2f4e71ea2fdcbe811bfbdad1de70f665056954754d945d`; its local Git blob `280516ca0ba1d17f960dae77ee228ba20806803c` matches commit `6e2b26f`. The [raw log](run.log) SHA-256 is `406e6e8121dc728a47533fcee915714114ae01fd10e4345a2b781023e52bc429`. The run used GCP-built mode `.olean` files from the [formal-adjoint campaign](../gcp-mode-adjoint-20261029/README.md), with hashes logged. The source was transferred by SCP after one connection-closed failure and a successful retry; its hash was compared but a full repository bundle was not independently checked on the VM. The reused [source-only environment](../gcp-sourceonly-6858aa7/README.md) retains its dependency-worktree and provenance caveats.
+
+The theorem does not establish that the physical chirality map is symmetric or maps the physical domains, prove the unbounded square action or product realization, or certify the response or paper. A builder stop was requested after the run.
+
+Remaining to-do list: combine the checked adjoint and domain theorems, formalize the actual square action, verify physical hypotheses and response, complete novelty and manuscript, and certify supported claims on GCP.
