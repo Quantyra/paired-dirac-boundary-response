@@ -46,6 +46,8 @@ same constants. The two partner terms are retained and the estimate controls
 the complete mixed derivative, including both first-vertex orderings and the
 mixed second vertex through holomorphic differentiation.
 
+For the physical RN-AdS conformal interpolation, `conformal-interpolation-gap-loss.md` gives interior trial functions showing that the assumed positive gap cannot be uniform in both the interpolation parameter and moving cutoff, even before the endpoint r=1 is reached. Thus (5) is not a proof of that physical limit; a different weighted estimate or cancellation is needed.
+
 If either partner has a zero mode, the simple gap assumption can fail. A
 projection onto a nonzero spectral subspace and differentiation of its
 parameter-dependent kernel projection would need a separate argument; (5)
