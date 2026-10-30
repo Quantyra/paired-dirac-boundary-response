@@ -130,6 +130,15 @@ Equation (4.7) is a source identity whose physical hypotheses and complete trace
 
 The source's localized tangent-subtracted curved remainder and the endpoint conversion are distinct observables; see `../notes/p1d-response-versus-conversion.md`. Their geometric vertices, weak boundary completion, gluing and regulator limits remain open. No global extension is claimed here.
 
+## Relation to prior work — preliminary
+
+Local elliptic boundary conditions, adjoint boundary spaces and regularity for Dirac-type operators are part of the established theory; see [Bär and Ballmann](https://arxiv.org/abs/1307.3021). Propositions 2.1 and 3.1 apply those domain inputs to the stated congruence and paired involution; the general existence of projector boundary conditions is not claimed as a contribution here.
+
+Heat coefficients for nonsmooth interfaces and second-order boundary couplings also have substantial prior literature. [Gilkey, Kirsten and Vassilevich on transmittal conditions](https://arxiv.org/abs/hep-th/0101105) calculate singular-surface coefficients, while their [transfer-boundary paper](https://arxiv.org/abs/hep-th/0208130) computes the first five heat coefficients for transfer conditions. A derivative jump, doubled geometry or conformal variation alone is therefore insufficient to distinguish this work. The precise relationship between the physical composed Dirac-square domain and those interface conditions still needs a term-by-term comparison.
+
+[Smith](https://arxiv.org/abs/1809.05614) relates finite relative heat-trace expansions to Sobolev regularity for compactly supported Schrödinger potentials on complete manifolds. That result is relevant to the regularity and remainder analysis, but its hypotheses do not by themselves give the paired mixed metric-response and common-regulator estimate sought in Section 5. The flat Dirac multiplier in (4.1) is not equal, after an arbitrary local polynomial of degree at most three and constant scaling, to the specific scalar-potential multiplier x² integral_0^1 exp[-alpha(1-alpha)x] d alpha; a coefficient comparison is in `../notes/flat-dirac-scalar-form-factor-comparison.md`. This only excludes that particular reduction. It does not establish that the boundary coefficients or the complete paper are new, and the scalar jump benchmark's normalization remains unresolved.
+
+The comparisons above are partial. Later literature, exact boundary and trace normalizations, and the completed result must be assessed before a publication or novelty decision.
 ## Verification and prior art — work in progress
 
 The exact scope of any Lean certification must match the statements actually checked on GCP and include clean source and dependency provenance. A clean replay currently covers only a limited abstract algebraic congruence, not Propositions 2.1 or 3.1 in their entirety. The general elliptic-boundary and semigroup results used here are existing mathematics. A defensible paper-level novelty decision requires the pending closest-prior-art comparison.
