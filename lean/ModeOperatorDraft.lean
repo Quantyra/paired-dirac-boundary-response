@@ -27,13 +27,15 @@ theorem mode_square_domain_draft
     have hxD : x ∈ D.domain := hx
     refine ⟨hxD, ?_⟩
     have hyD : D ⟨x, hxD⟩ + a • G x ∈ D.adjoint.domain := by
-      simpa [hadj, modeOperator] using hy
+      rw [hadj] at hy
+      simpa [modeOperator] using hy
     exact (mode_composition_domain D.adjoint.domain _ _ a (hG x hxD)).1 hyD
   · rintro ⟨hx, hy⟩
     have hxP : x ∈ (modeOperator D G a).domain := hx
     refine ⟨hxP, ?_⟩
     have hyP := (mode_composition_domain D.adjoint.domain _ _ a (hG x hx)).2 hy
-    simpa [hadj, modeOperator] using hyP
+    rw [hadj]
+    simpa [modeOperator] using hyP
 
 end PairedDirac
 
