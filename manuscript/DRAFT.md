@@ -210,6 +210,11 @@ For the single V_uw term, a fixed conformal insertion b can be moved to a refere
  Tr[b K_a V_uw K_c]=Tr[b K_t V_uw]+Tr([K_c,b]K_a V_uw). (5.3)
 
 For c>=t/2 the reference is Tr[b V_uw K_t] and the correction is Tr([b,K_a]V_uw K_c). The reference traces are conjugate. Under the form-domain and weighted smoothing assumptions in `../notes/conformal-second-vertex-reference-traces.md`, they are bounded using the decaying directions and the commutators of b with D, without bounding the bare logarithmic insertion. The remaining correction requires an unsandwiched trace-class bound or another justified form estimate. These fixed-time conditional statements do not control the two ordered vertices or the common regulator.
+For the stipulated smooth four-dimensional finite-cut model, the ordered terms containing at least one first-vertex Green boundary form have a separate conditional estimate. Assume the uniform graph, trace, mixed-domain and heat-smoothing hypotheses and cubic boundary weights in `../notes/finite-cut-boundary-joint-proper-time-path.md`. If delta is the outer cut and 0<t<=1, their complete ordered heat contribution obeys
+
+ |R_boundary(delta,t)| <= C[delta^(3/2)t^(-9/4)+delta^3 t^(-3/2)]. (5.4)
+
+For the ordinary four-dimensional heat proper-time weight dt/t, the contribution over [epsilon,1] tends to zero along delta=epsilon^p for any p>3/2. This is a sufficient joint path for these boundary pieces under the stated hypotheses, not a claim of path independence. The bound already uses the assembled four-dimensional trace; applying an extra angular factor requires a separate calculation. The physical source identification, bulk-bulk and second-vertex terms, subtractions and the complete regulator remain open.
 A proof of the source's sufficient t^(3/2) bound must identify the physical and tangent families, their localizations, normalization, contact and restoration terms on one regulator, and estimate their complete difference uniformly in the declared rough family. Equations (5.1)--(5.2) specify the terms but do not provide that estimate or permit the cutoff and short-time limits to be interchanged. Weak boundary completion, gluing, angular and thermal sums, and regulator limits remain open. No global extension is claimed here.
 
 ## Relation to prior work — preliminary
