@@ -1,0 +1,53 @@
+Fri Oct 30 13:32:14 UTC 2026
+quantyra-lean-builder-01
+paper1-clean-replay.bundle: OK
+/home/dfredriksen_quantyra_org/paper1-gitmeta-c5ea003.tar.gz: OK
+/home/dfredriksen_quantyra_org/lean-4.30.0-linux-paper1.tar.zst: OK
+Cli.tar: OK
+LeanSearchClient.tar: OK
+Qq.tar: OK
+aesop.tar: OK
+batteries.tar: OK
+importGraph.tar: OK
+mathlib.tar: OK
+plausible.tar: OK
+proofwidgets.tar: OK
+Cloning into 'source'...
+HEAD is now at 2cf3e32 Prepare clean source-only Lean replay
+2cf3e3285d452b4256aab5ec2c2735bfe4997c5b
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Lemmas.olean.private: Wrote only 6656 of 10240 bytes
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Basic.olean.server: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Lemmas.ilean: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Lemmas.ir: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Basic.ir: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Basic.ilean: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Lemmas.olean.server: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Basic.olean: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtDTreeMap/Basic.olean.private: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtHashMap.olean: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtHashSet.ir: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Lemmas.olean: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Lemmas.olean.private: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Basic.olean.server: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Lemmas.ilean: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Lemmas.ir: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Basic.ir: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Basic.ilean: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Lemmas.olean.server: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Basic.olean: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/ExtTreeSet/Basic.olean.private: Cannot open: No such file or directory
+tar: lean-4.30.0-linux/lib/lean/Std/Data/DHashMap.olean.private: Cannot write: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/DTreeMap: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/DTreeMap: Cannot mkdir: No space left on device
+tar: lean-4.30.0-linux/lib/lean/Std/Data/DTreeMap/Iterator.olean.server: Cannot open: No such fil
