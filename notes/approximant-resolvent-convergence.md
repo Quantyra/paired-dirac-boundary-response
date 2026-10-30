@@ -82,6 +82,25 @@ blocks are controlled by the trace Cauchy--Schwarz inequality. Therefore
 
     ||exp(-t L_b_n)-exp(-t L_b)||_1 -> 0,   for each fixed t>0.
 
+In fact, convergence is uniform on every compact positive-time interval
+[t_0,T], t_0>0. Put a=exp(-2B)/2 and c=exp(-2B)G^2/4. The preceding
+eigenvalue bound gives the uniform estimate
+
+    Tr exp[-(t_0/2)L_b_n] <= exp(c t_0/2) Tr exp[-a(t_0/2)L_0] = H.
+
+For s,t in [t_0,T], the spectral theorem and
+lambda exp[-(t_0/2)lambda] <= 2/(e t_0) imply
+
+    ||exp(-t L_b_n)-exp(-s L_b_n)||_1
+        <= (2H/(e t_0)) |t-s|.
+
+The same bound applies to L_b. Choose a finite time grid of mesh eta; the
+triangle inequality and the bound above reduce the supremum of the
+trace-norm difference over [t_0,T] to its maximum at the grid points plus
+4H eta/(e t_0). First take n to infinity at the finitely many grid points,
+then eta to zero. This conclusion remains conditional on the same fixed-seed
+and global uniform graph hypotheses.
+
 This argument depends on the uniform global first-derivative bound, the
 common form domain, and the seed trace-class hypothesis. It supplies neither
 a small-time bound uniform in n nor convergence of differentiated and
