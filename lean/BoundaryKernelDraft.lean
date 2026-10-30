@@ -70,8 +70,30 @@ theorem embedded_boundary_kernel_eq_iff
     exact (boundary_kernel_eq_iff A T N htrace).mp hker
   · intro hN
     rw [boundary_kernel_eq_of_zero A T N hN]
+/-- A tangential operator that flips the involution eigenspaces has zero
+compression to the allowed eigenspace. -/
+theorem tangential_compression_zero
+    (chi P C : V →ₗ[ℂ] V)
+    (hplus : ∀ x, chi (P x) = P x)
+    (hP : ∀ x, P (chi x) = P x)
+    (hanti : ∀ x, chi (C x) = -C (chi x)) :
+    ∀ x, P (C (P x)) = 0 := by
+  intro x
+  have hflip : P (C (P x)) = -P (C (P x)) := by
+    calc
+      P (C (P x)) = P (chi (C (P x))) := (hP _).symm
+      _ = P (-C (chi (P x))) := by rw [hanti]
+      _ = -P (C (P x)) := by rw [hplus, map_neg]
+  have hsum : P (C (P x)) + P (C (P x)) = 0 := by
+    nth_rw 2 [hflip]
+    exact add_neg_cancel _
+  have htwo : (2 : ℂ) • P (C (P x)) = 0 := by
+    simpa [two_smul] using hsum
+  exact (smul_eq_zero.mp htwo).resolve_left (by norm_num)
 end PairedDirac
 
 #print axioms PairedDirac.boundary_kernel_eq_iff
 
 #print axioms PairedDirac.embedded_boundary_kernel_eq_iff
+
+#print axioms PairedDirac.tangential_compression_zero
