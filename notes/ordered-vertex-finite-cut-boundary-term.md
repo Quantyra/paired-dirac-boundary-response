@@ -27,10 +27,10 @@ product without retaining the Green boundary form.
 With a fixed Green-sign convention, that boundary contribution has fiber
 factor, up to the overall convention-dependent sign,
 
-    Pi_+ c(n) C_v Pi_+
-       = E_b^2 (partial_n v) Pi_+.                      (2)
+    Pi_+ [E_b^2 c(n)] C_v Pi_+
+       = E_b^4 (partial_n v) Pi_+.                      (2)
 
-Here c(n)^2=1. Unless the normal jet of v vanishes at the particular cut,
+Here E_b^2 c(n) is the normal symbol in the Green form for D_b, and c(n)^2=1. Unless the normal jet of v vanishes at the particular cut,
 (2) is generally nonzero. Its existence is not removed by the fact that
 Pi_+ c(tangential) Pi_+=0. A tangentially varying direction has additional
 terms and must be analyzed separately. At the compactified limiting boundary
