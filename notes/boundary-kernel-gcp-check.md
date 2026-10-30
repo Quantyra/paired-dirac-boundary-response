@@ -72,6 +72,23 @@ for complex linear maps. It captures the algebraic cancellation used for
 tangential Clifford multiplication. The identification of these maps with
 physical bundle operators, the Clifford relations, Sobolev traces and the
 normal-jet criterion are not proved by this check.
+## Involution projector specialization
+
+The source at e88e6ea111af6aa098654041626f73b8dba522b4 passed Lean 4.30.0
+on the same GCP builder with exit 0. The added theorem
+`involution_tangential_compression_zero` reports [propext, Classical.choice,
+Quot.sound]. The source file SHA-256 is
+213fb0bafa84eff9f787c6f3b708978e5067632dbc40f1d6413e2c577e0201d4;
+the bundle SHA-256 is
+677edc41c537a083114534019695cbf49105ae71eafda836a5424f29adbdadab.
+The same source-only dependency-worktree warnings apply.
+
+For complex linear maps chi and C, the theorem constructs P=(1+chi)/2
+and proves P C P=0 from chi²=1 and chi C=−C chi. These are the abstract
+algebraic relations recorded for the physical involution and tangential
+Clifford action. Their representation on the actual global spinor bundle,
+the trace and elliptic facts, and the paper's response statements are not
+formalized by this theorem.
 Remaining to-do list: formalize and verify the geometric interpretation and
 remaining claims on GCP, resolve the physical and novelty audits, and prepare
 the manuscript.
