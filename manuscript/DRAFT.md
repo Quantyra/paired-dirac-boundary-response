@@ -45,6 +45,27 @@ The fixed-seed hypotheses and source-specific limits of this proposition are aud
 
 The source records a candidate J and matched copy/bundle data. The algebraic transition check is in `../notes/source-paired-bundle-transition-check.md`; equality with the physical global realization remains to be checked. Equation (3.1) is a per-mode operator bound. It does not justify summing a full angular tower or removing a proper-time regulator.
 
+**Proposition 3.2 (bounded resolvent variation).** Let Q0=JD, and suppose the hypotheses of Proposition 3.1 hold with ||b||_infinity<=B=1/1000. For M>0 and complex bounded z define, for each sign,
+
+ S_plus/minus(z)=exp((b+z)/2) [M exp(b+z) +/- Q0]^(-1)
+                                      exp((b+z)/2).         (3.2)
+
+For ||z||_infinity<r=1/8, the inverse in (3.2) exists by the Neumann series and S_plus/minus is holomorphic as a bounded-operator-valued function. At z=0 its first two derivatives obey
+
+ ||DS_plus/minus(0)[u]|| <= 10.56 ||u||_infinity/M,
+ ||D²S_plus/minus(0)[u,v]|| <= 337.92 ||u||_infinity||v||_infinity/M. (3.3)
+
+For real z with the required Lipschitz multiplier domain preservation, these operators are the actual inverses of M +/- Q_(b+z). In particular, at z=0,
+
+ (D_b*D_b+M²)^(-1)=[S_plus(0)+S_minus(0)]/(2M).           (3.4)
+
+*Proof.* Skew-adjointness of Q0 and positivity of M exp(b) give ||(M exp(b) +/- Q0)^(-1)||<=exp(B)/M: the same lower bound for each adjoint gives surjectivity. For complex z, the perturbation M exp(b)(exp(z)-1) relative to either inverse has norm at most q=exp(2B)(exp(r)-1)<0.134. The Neumann series gives a holomorphic inverse and, with the two exterior multiplier norms,
+
+ ||S_plus/minus(z)|| <= exp(2B+r)/[M(1-q)] < 1.32/M.
+
+Cauchy's estimate on a radius-r disk in the direction u gives the first bound. For the mixed derivative use two disks of radii r/(2||u||) and r/(2||v||), so their sum stays in the ball; Cauchy's coefficient bound gives 4(1.32)/(M r²)=337.92/M. Zero directions are immediate. The inverse and factorization identities on the actual domains follow by conjugating M +/- Q_b with E_b and using the spectral calculus of the skew-adjoint Q_b. The exact numerical comparisons are detailed in `../notes/resolvent-variation-constants.md`, and the domain ordering is in `../notes/paired-square-resolvent.md`. □
+
+For arbitrary complex L-infinity z, (3.2) is a bounded analytic continuation; it does not assert that multiplication by exp(-(b+z)/2) preserves a first-order operator domain. The constants are sufficient estimates, not measured physical margins. They do not make the angular trace summable or establish the common regulator.
 ## 4. Tangent boundary response — work in progress
 
 The planned theorem must specify the physical source, full angular and thermal spectra, state, paired domains, contact terms, and common regulator. The ordinary argument and first unsupported implication are tracked in `../notes/claim-dependencies.md` and `../notes/proof-audit.md`. No response theorem is asserted in this draft section.
