@@ -1,0 +1,24 @@
+7c99f5610cf1af8fbac655b383979ad3b73d04f252fa08c37da7eeccf8a1d53d  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-adjoint-9cf878f-20261029/ModeAdjointDraft.lean
+e2470a7ab630cd080610ffdb0aabe8c4779d6c3944bcdfd73999b7f00e3bf83c  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-adjoint-9cf878f-20261029/ModeDomainDraft.lean
+0081f5b8fc3f06d436147fec9e350569019fa91037bd88b42357d9572d307b7d  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-adjoint-9cf878f-20261029/ModeOperatorDraft.lean
+7c5402e9fe23a9e3d83cc7ca7f077f20904c5a06b0e1602289ba9f3829f7166f  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean/SquareDomainDraft.olean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+'PairedDirac.mode_composition_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mode_square_cross_cancel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mode_square_domain_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModeAdjointDraft.lean:25:15: error: Type mismatch
+  ↑D.adjoint ⟨↑y, ⋯⟩ + star a • G ↑y
+has type
+  H
+but is expected to have type
+  ↥(modeOperator D G a).domain
+'PairedDirac.mode_formal_adjoint_draft' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

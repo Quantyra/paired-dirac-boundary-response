@@ -1,0 +1,9 @@
+﻿# GCP mode formal-adjoint check
+
+Run `paper1-mode-adjoint-6f90b6b-20261029` exited 0 on `quantyra-lean-builder-01`, project `quantyra-lean-cert-20260915`, zone `us-central1-a`, using Lean 4.30.0. It checked `mode_formal_adjoint_draft`; its axiom report lists `propext`, `Classical.choice`, and `Quot.sound`. This is the formal Green identity for the partially defined mode operator and its candidate adjoint, assuming dense original domain and a symmetric total linear fiber map. It does not establish equality of the closed adjoints, boundedness of the fiber map, the geometric hypotheses or the physical mode square.
+
+The checked source SHA-256 is `b2465e122dfa093f4175eebd2fac1d26024ddf7ca36ae520bc03d1b601211e81`, matching the local file; its Git blob `3cfa457b5923a8070271cb8b625678b4ae34e892` matches commit `6f90b6b`. The [success log](success.log) SHA-256 is `aa2d381c0decee96152ce097e566a66d9b9be94534d5b951e6329ed68befd550`. The run reused mode prerequisites compiled on GCP in the first attempt and their recorded `.olean` hashes. The source was transferred by SCP and compared by hash; it was not checked through a full verified repository bundle on the VM.
+
+[Attempt 1](attempt1.log) failed on a Hilbert-space subtype coercion. [Attempt 2](attempt2.log) failed on a remaining definitional equality; both contain `sorryAx` and are not certificates. The final source supplies explicit coercions and closes that equality. The inherited [source-only environment](../gcp-sourceonly-6858aa7/README.md) retains documented dependency-worktree warnings and provenance caveats. The prior stop operation completed before this builder was restarted; another stop was requested after the check.
+
+Remaining to-do list: prove the reverse adjoint-domain inclusion and actual square action, verify the physical domain and response, complete novelty and manuscript, and certify the supported theorem package on GCP.
