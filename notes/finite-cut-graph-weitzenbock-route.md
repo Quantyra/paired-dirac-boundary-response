@@ -34,6 +34,17 @@ that
 
   ||f||_H1 <= C_0 (||D f||_2+||f||_2), f in V.        (3)
 
+A concrete constant can be carried through the absorption. Write R0=sup||R||, S0=sup||S_0|| and T=C_T, and use ||f||_H1 <= ||f||+||nabla f||. From (1)--(2),
+
+ ||nabla f||² <= ||D f||²+(R0+S0 T)||f||²
+                       +S0 T ||f|| ||nabla f||.
+
+Young's inequality gives
+
+ ||f||_H1² <= 2||D f||²
+          +[1+2R0+2S0 T+(S0 T)²]||f||².                 (3a)
+
+Hence one may take C0=sqrt(max{2,1+2R0+2S0 T+(S0 T)²}) in (3), using sqrt(a²+b²)<=a+b. This is an analytic graph constant under the stated identity and uniform bounds; it is not a physical admission margin. The fixed-seed curvature and trace estimates in `rn-weitzenbock-curvature-bound.md` and `rn-moving-cut-uniform-trace.md` supply candidate R0,T, while `rn-mixed-robin-coefficient-bounds.md` and the fixed-seed cut geometry control the relevant geometric zero-order boundary coefficient when the stated Gauss convention and realization are verified.
 The extension from smooth f to V requires smooth boundary-compatible core
 density in H1; this is a separate assumption in the actual bundle setting.
 Uniform half-chart geometry with bounded overlap is a sufficient route to
