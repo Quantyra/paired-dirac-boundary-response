@@ -22,20 +22,23 @@ D is D_v=-vD-C_v/2, hence its square-form derivative is exactly
                         - (1/2)<Df,C_v g>.                 (2)
 
 For smooth f,g in the actual first-order domain, apply (1) to z=v Dg
-and z=C_v g, and apply its conjugate to the other gradient term. This gives
+and z=C_v g, and apply its conjugate to the other gradient term. The bulk
+expression q_v^bulk uses the formal differential adjoints, and the full
+boundary contribution is
 
-  q_v(f,g) = q_v^bulk(f,g) + <gamma f,H_v gamma g>_boundary, (3)
+  q_v(f,g) - q_v^bulk(f,g)
+    = -2<gamma f,S v gamma(Dg)>
+      - (1/2)<gamma f,(S C_v + C_v* S*)gamma g>.             (3)
 
-where the bulk expression uses the formal differential adjoints and
-
-  -2<gamma f,S v gamma(Dg)> - (1/2)<gamma f,(S C_v
-                                      + C_v* S*)gamma g>. (4)
+The first term depends on the trace of Dg; it is not a boundary multiplier
+on gamma g and is not generally zero on the first-order domain.
 
 For g in Dom L,
 gamma(Dg) belongs to the complementary adjoint trace subspace. The Green
 annihilator property therefore makes that principal boundary pairing zero.
 It must not be discarded for arbitrary g merely in the first-order domain.
-Thus, for smooth g in Dom L and smooth f in Dom D, the actual multiplier is
+Thus, for smooth g in Dom L and smooth f in Dom D, the boundary contribution
+is <gamma f,H_v gamma g> with multiplier
 
   H_v = -(1/2) P(S C_v + C_v* S*)P.                        (5)
 
