@@ -6,6 +6,12 @@ lattice. It is a model estimate under the explicit self-adjointness and lapse
 hypotheses below, not an identification of the physical Euclidean square or
 its determinant regulator, and it is not Lean certified.
 
+The subsequent `euclidean-canonical-unitary-half-density.md` shows that
+the unitary Euclidean coordinate representative is a symmetric lapse
+congruence, not this left-lapse model. Its thermal gap has a separate
+conditional argument there; the joint cut estimates below have not yet
+been transferred to that corrected operator.
+
 Let H_mu be the self-adjoint radial Hamiltonian on each full and cut
 half-line with the local sigma_1 boundary projector. Take
 P_(mu,nu)=f(H_mu+i nu), with f real and f>=f0>0, and L_(mu,nu)=P*P on
