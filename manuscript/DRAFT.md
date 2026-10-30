@@ -52,6 +52,14 @@ If U_zeta(s,t) is the fundamental matrix, variation of constants yields
           -integral_(s0)^s1 U_zeta(s0,s)(0,i f^(-1/2) sigma_2 g(s))ds. (2.5)
 
 Thus a homogeneous boundary plane at s1 is carried to an affine plane at s0, with a displacement depending on the removed-collar source. For bounded f^-1 and integrable coefficients, the displacement is bounded by exp(h)||f^(-1/2)||_infinity sqrt(s1-s0)||g||_L2, where h is the integral of an operator-norm majorant for K_zeta. The exact model assumptions and a fixed-mode nonreal Poisson estimate are in `../notes/symmetric-lapse-inhomogeneous-transfer.md` and `../notes/symmetric-lapse-nonreal-poisson.md`. These estimates do not by themselves establish the physical boundary relation, summability over modes, or a trace-norm regulator limit.
+### Physical conformal endpoint and the mode gap
+
+The preceding fixed-collar estimates do not automatically extend to the physical infinity limit. In the fixed RN-AdS asymptotics, let y be product-orbit proper distance from infinity, U=b_sphere/r=y/L4+O(y³), and f=b_sphere/L4+O(y²) the product lapse. The physical operator in the product Hilbert space is the congruence sqrt(U) D_hat sqrt(U). In the symmetric-lapse mode representation, F=f U and the coordinate x defined by dx/dy=1/U satisfies x=L4 log y+O(y²)+constant; the endpoint is at x=-infinity.
+
+On compactly supported sections, unitary change of radial measure turns the mode expression sqrt(F)(-i sigma_2 partial_s+mu a+i nu)sqrt(F) into -i sigma_2 partial_x+F(mu a+i nu), where the bounded matrix a includes the angular Clifford factor. The potential tends to zero as x->-infinity for each fixed mu and nu. Translated, increasingly broad normalized compactly supported test functions have derivative norm tending to zero, and their supports escape into this end. Their images under the mode operator therefore tend to zero. For any closed realization containing this interior core, the associated positive square has no positive lower form bound. Likewise finite-cut lower bounds cannot remain uniformly positive when the cut moves beyond these supports. The calculation and hypotheses are detailed in `../notes/physical-endpoint-long-cylinder-gap.md`.
+
+This does not prove that zero is an eigenvalue or determine a renormalized physical response. It shows that the positive product-mode gap in the conditional model below cannot be imported into the physical conformal endpoint. The product-frame conversion and the physical congruenced square are distinct operators; their domains, normalization, contact terms and regulator require a separate comparison.
+
 ## 3. Paired factorization
 
 **Proposition 3.1 (conditional mass resolvent).** In addition to Proposition 2.1, suppose J is a bounded unitary involution, commutes with E_b, and D*=-JDJ as an equality of closed operators. Then Q_b=J D_b is skew-adjoint, D_b*D_b=-Q_b², and for M>0,
