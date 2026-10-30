@@ -1,6 +1,6 @@
-# Regular bolt obstruction to the symmetric-lapse domain hypothesis
+# Regular bolt check of the symmetric-lapse domain hypothesis
 
-This tests the sufficient domain assumption in `euclidean-canonical-unitary-half-density.md` and `product-conversion-zero-sector-thermal-gap.md` against the regular bolt modes in `bolt-cartesian-mode.md`. It is a domain mismatch, not a proof that the physical Dirac operator has no gap.
+This tests the sufficient domain assumption in `euclidean-canonical-unitary-half-density.md` and `product-conversion-zero-sector-thermal-gap.md` against the regular bolt modes in `bolt-cartesian-mode.md`. It corrects a tempting half-density mismatch; it does not prove the full mode-domain identification.
 
 At the regular bolt, write the orbit metric d rho²+a(rho)² d tau², with a(rho)=kappa rho[1+O(rho²)] and f=1/a. The canonical coordinate s in `euclidean-canonical-unitary-half-density.md` satisfies d rho/ds=1/f=a, hence |ds/d rho|=f~1/(kappa rho). The sign depends on orientation and is irrelevant below.
 
