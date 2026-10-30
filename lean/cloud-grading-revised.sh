@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-run="$HOME/quantyra-space-runs/paper1-grading-revised-20261030c"
+run="$HOME/quantyra-space-runs/paper1-grading-revised-20261030d"
 base="$HOME/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029"
 mkdir "$run"
 exec > >(tee "$run/run.log") 2>&1

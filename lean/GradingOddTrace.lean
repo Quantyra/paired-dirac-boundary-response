@@ -16,14 +16,14 @@ theorem grading_odd_trace_zero (G X : Matrix ι ι ℂ)
       G * X * G = -(X * G * G) := by rw [hodd, Matrix.neg_mul]
       _ = -X := by rw [Matrix.mul_assoc, hG, Matrix.mul_one]
   have htr : Matrix.trace (G * X * G) = Matrix.trace X := by
-    rw [Matrix.mul_assoc, Matrix.trace_mul_comm, ← Matrix.mul_assoc, hG, Matrix.one_mul]
+    rw [Matrix.mul_assoc, Matrix.trace_mul_comm, Matrix.mul_assoc, hG, Matrix.mul_one]
   rw [hconj, Matrix.trace_neg] at htr
   have hz : Matrix.trace X + Matrix.trace X = 0 := by
     calc
       Matrix.trace X + Matrix.trace X = -Matrix.trace X + Matrix.trace X := by rw [htr]
       _ = 0 := neg_add_cancel _
   have htwo : (2 : ℂ) * Matrix.trace X = 0 := by simpa [two_mul] using hz
-  exact (mul_eq_zero.mp htwo).resolve_left (by decide)
+  exact (mul_eq_zero.mp htwo).resolve_left (by exact two_ne_zero)
 
 end PairedDirac
 
