@@ -161,7 +161,7 @@ For a stipulated product model, suppose the complete antiperiodic thermal decomp
 
  ||A_r psi||>=kappa exp(-r||b||_infinity)||psi||.         (4.11)
 
-Consequently its two partner squares agree and have a positive lower bound. With the stated compact heat and form-differentiability assumptions this supplies large-time integrability at fixed positive cutoff for the finite zero sector. The assumed thermal gap requires the actual mode domains and bolt regularity; it does not follow from antiperiodicity alone. The detailed conditional argument is in `../notes/product-conversion-zero-sector-thermal-gap.md`.
+Consequently its two partner squares agree and have a positive lower bound. With the stated compact heat and form-differentiability assumptions this supplies large-time integrability at fixed positive cutoff for the finite zero sector. The assumed thermal gap requires the actual mode domains and bolt regularity; it does not follow from antiperiodicity alone. For each fixed nonzero thermal mode, `../notes/bolt-symmetric-lapse-domain-equality.md` establishes the symmetric-lapse domain equality under explicit smooth compact product, common bundle, physical projector and graph-core hypotheses. Applying that result to the source and obtaining uniform rough-family control remain separate obligations. The detailed conditional argument is in `../notes/product-conversion-zero-sector-thermal-gap.md`.
 
 This finite-model endpoint is not yet identified with the source's lowest-Landau-level state, cocycle, physical-half normalization or common subtraction. No zero-mode block is discarded or added twice, and no ultraviolet limit follows from (4.11).
 ## 5. Curved trace extension — work in progress
