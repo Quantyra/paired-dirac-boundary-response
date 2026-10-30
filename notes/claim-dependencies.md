@@ -99,6 +99,19 @@ and [the flat contact argument](flat-product-contact.md).
 
 The [weighted cubic limit](flat-weighted-cubic-leading-limit.md) derives the leading flat coefficient without the stronger product-tail hypothesis; the [integrable-fifth-derivative result](flat-log-coefficient-integrable-fifth.md) gives a sufficient explicit-log-jet class with an o(t^3 |log t|) remainder. Neither applies the result to the full physical response. The [flat scalar form-factor comparison](flat-dirac-scalar-form-factor-comparison.md) excludes one simple scalar-potential identification but does not settle novelty.
 
+The [fixed-period compact-double result](compact-flat-small-time-winding.md)
+now gives the cubic coefficient for actual mixed heat-trace derivatives in
+the stipulated compact flat model, under the stated form, folding and trace
+hypotheses. Its cubic-log coefficient retains the stronger explicit Fourier
+product-tail hypothesis. The free-seed [contact trace and half factor]
+(free-tangent-contact-trace-class.md) and [thermal image bound]
+(fixed-period-flat-contact-images.md) concern the same declared flat
+normalization. These do not identify the source's physical curved observable
+or justify its regulator limit. The raw tangent integral is GCP Lean-checked
+as recorded in [the receipt](../evidence/gcp-raw-tangent-20261030/README.md);
+the momentum-to-trace argument, coefficient asymptotics and physical
+realization are not thereby certified.
+
 The [canonical/Euclidean comparison](canonical-euclidean-contact-matching.md)
 shows that the RN Hamiltonian-square cut contact is not yet identified with
 the product-frame orbit contact or its separate angular factor.
