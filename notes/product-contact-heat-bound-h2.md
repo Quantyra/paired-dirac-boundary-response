@@ -35,10 +35,22 @@ The estimate still includes the entire insertion-time interval; whichever heat f
 
 with the log factor unnecessary for strictly cubic directions. This is a same-operator insertion comparison; changing the cut and its boundary condition requires a separate estimate.
 
-If the full angular factor satisfies |Theta'(t)|<=C_theta t^-2 for 0<t<=1, as suggested by the source's angular expansion but to be verified with its actual spectrum and zero modes, then at the cutoff time t=epsilon the weighted contact error is
+The source's recorded nonzero angular tower has M_n²=n(n+q)/b_sphere² and d_n=2(q+2n), n>=1, including both nonzero signs. The explicit all-mode estimate in `angular-weighted-locality.md` gives
+
+  Theta(t) <= 2 b_sphere²/t + (q+2) sqrt(pi) b_sphere/sqrt(t),
+  0 <= -Theta'(t) <= [2/(e t)] Theta(t/2).                     (6a)
+
+Consequently, for 0<t<=1,
+
+  |Theta'(t)| <= C_theta t^-2,
+  C_theta=[8 b_sphere²+2 sqrt(2pi)(q+2)b_sphere]/e.             (6b)
+
+The last inequality uses t^(-3/2)<=t^-2. A finite zero-mode contribution has constant heat weight and zero derivative, so it does not change (6b); it must still be retained in the separate geometric and orbit sectors. The termwise differentiation in (6a) is justified by uniform convergence of the exponentially damped series on every positive-time interval. This is the complete recorded tower, not a finite-mode truncation. Matching its stated degeneracies and zero-sector allocation to the actual physical trace remains a separate obligation.
+
+Under this recorded angular spectrum, at the cutoff time t=epsilon the weighted contact error is
 
   O(delta^(7/2)(1+|log delta|) epsilon^(-2-eta)).             (6)
 
 For example, delta=epsilon^p makes (6) tend to zero whenever p>(4+2eta)/7. This is only one compatibility condition for the contact term. The geometric variation, boundary transport, the Taylor subtractions and all other regulator errors need their own estimates for the same path. Equation (6) is not a proof of common-regulator removal or a bound on the curved remainder. No numerical or Lean certification is claimed.
 
-Remaining to-do list: prove (1) and the angular bound for the actual source, combine every mixed term and subtraction on one regulator path, resolve novelty, finish the manuscript, and certify supported claims in Lean on GCP.
+Remaining to-do list: prove (1) for the actual source and match the angular allocation, combine every mixed term and subtraction on one regulator path, resolve novelty, finish the manuscript, and certify supported claims in Lean on GCP.
