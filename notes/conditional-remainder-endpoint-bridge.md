@@ -34,8 +34,8 @@ Indeed, integrate (2) between positive cutoffs and use the Cauchy criterion;
 no interchange of the regulator limit and the trace is implicit. If the same
 bound holds with one A for all physical-side regulators, (3) is uniform in
 those regulators. It still does not show that their finite parts converge:
-that additionally requires convergence of J_reg(e) at a fixed e>0, for
-example, and of all local restorations. If J_reg(e*) converges for every
+that additionally requires convergence of J_reg(e) at arbitrarily small
+fixed positive e, including all local restorations. If J_reg(e*) converges for every
 0<e*<=t0 and (3) holds uniformly, then J_reg(0) is Cauchy as the regulator
 is removed: first choose e* small enough to control the uniform errors, then
 choose the regulators small enough to control their fixed-e* difference. The
