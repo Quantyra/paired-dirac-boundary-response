@@ -10,7 +10,7 @@ abbrev W := Fin 2 → Fin 2 → ℂ
 
 def tau : W →ₗ[ℂ] W where
   toFun v i j := if i = 0 then v i j else -v i j
-  map_add' := by intro x y; ext i j; fin_cases i <;> simp
+  map_add' := by intro x y; ext i j; fin_cases i <;> simp [add_comm]
   map_smul' := by intro a x; ext i j; fin_cases i <;> simp
 
 def normal : W →ₗ[ℂ] W where
@@ -20,7 +20,7 @@ def normal : W →ₗ[ℂ] W where
 
 def timeGamma : W →ₗ[ℂ] W where
   toFun v i j := if i = j then -v i j else v i j
-  map_add' := by intro x y; ext i j; fin_cases i <;> fin_cases j <;> simp
+  map_add' := by intro x y; ext i j; fin_cases i <;> fin_cases j <;> simp [add_comm]
   map_smul' := by intro a x; ext i j; fin_cases i <;> fin_cases j <;> simp
 
 theorem tau_sq (v : W) : tau (tau v) = v := by
