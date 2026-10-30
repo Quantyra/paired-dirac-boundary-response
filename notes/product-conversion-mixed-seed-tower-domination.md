@@ -36,7 +36,7 @@ The integral of each endpoint singularity x^(-1/2) is finite. Formula (5) is a b
 
 For t in a fixed compact interval [epsilon,T] with epsilon>0, assume sup_delta Tr exp[-(epsilon/4)L_delta]<infinity, which follows for the stipulated small smooth cuts from the uniform H2 route. Then (5) is bounded by a constant times (1+M)^2 exp(-epsilon M²/4), uniformly in cut and r. The recorded angular masses M_n²=n(n+q)/b_sphere² and degeneracies 2(q+2n) make the sum of this majorant finite. The nonzero angular modes are not truncated; a finite zero sector must be included separately.
 
-Consequently, under the stated form differentiability and uniform trace hypotheses, the mass-tower sum in the source's first two seed jets may be differentiated and summed on [epsilon,T]. The termwise first vertex in `graded-mass-conversion-positive-cut.md` retains r L_v, 2(1-r)M²v and the grading-odd commutator. Integrating r and using the stated grading/trace identity yields both terms
+Consequently, the sums of the per-mode derivatives at the seed converge absolutely and uniformly on [epsilon,T]. To identify them with derivatives of the summed family, one must additionally prove a summable derivative bound throughout a common parameter neighborhood, or an equivalent uniform difference-quotient bound; (5) at the seed alone does not supply that interchange. The termwise first vertex in `graded-mass-conversion-positive-cut.md` retains r L_v, 2(1-r)M²v and the grading-odd commutator. Integrating r and using the stated grading/trace identity yields both terms
 
   Theta(t)[D_v T_t(u)+D_u T_t(v)]/2 + 2 Theta'(t) I_t(u,v).
 
