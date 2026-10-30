@@ -25,12 +25,30 @@ and its adjoint, yield
   ||(lambda-L_delta)^(-1)-(lambda-L_0)^(-1)||
        <= C delta / (|lambda-a|+M^2).                          (2)
 
-Here the contour leaves a+1/t along two fixed rays in the left half-plane,
-with a joining arc of radius 1/t around a; its angle is chosen outside the
-common form sector. The two resolvent factors from H to the mass-weighted
-form space each contribute C/(|lambda-a|+M^2)^(1/2). This follows by
-rotating the sectorial form and applying Lax--Milgram; the same estimate for
-the adjoint controls the dual factor. The constants are independent of M.
+Use rays lambda=a+s exp(+-i theta), s>=1/t, with theta strictly between
+the common shifted-form sector angle and pi/2. Join their endpoints by the
+arc |lambda-a|=1/t on the side outside that sector, passing through the
+negative-real direction. Thus the rays lie in the right half-plane; the
+arc avoids the spectrum, and |exp(-t(lambda-a))| is uniformly bounded on
+it. The previous description incorrectly called the rays left-half-plane.
+
+To see the resolvent factors, shift each form by a=c M^2/2. Its real part
+still dominates c_0 (||v||_V^2+M^2||v||^2), and its imaginary part is at
+most a fixed multiple of its real part. For mu=lambda-a on the contour,
+rotate the form q-a<.,.>-mu<.,.> by a contour-dependent unit complex
+number. Separation of arg(mu) from the closed sector gives, uniformly,
+
+  |q(v,v)-lambda||v||^2|
+      >= c_1 (||v||_V^2+(M^2+|mu|)||v||^2).                   (2a)
+
+The fixed rotation yields the same lower bound for the real part. Lax--
+Milgram gives ||(lambda-L)^(-1) f|| <= C||f||/(M^2+|mu|), and inserting
+this into the coercive inequality gives
+||(lambda-L)^(-1) f||_(V,M) <= C||f||/(M^2+|mu|)^(1/2).
+Apply the same argument to the adjoint form for the other factor. The form
+resolvent identity gives (2); all constants are independent of M. The arc
+stays outside the sector by a fixed angular margin, including at its two
+endpoints, so the same estimates apply there.
 Dunford's formula then gives
 
   ||T_delta(t)-T_0(t)|| <= C delta exp(-c' M^2 t),             (3)
