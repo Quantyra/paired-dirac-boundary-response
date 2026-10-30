@@ -98,9 +98,50 @@ theorem full_sphere_gamma_compression :
     ext s i j
     fin_cases s <;> rfl
   exact PairedDirac.compression_with_commuting_factor P C sphereSpinOne hcompress hcomm
+/-- Local fixed-flux time-reflection lift U=1⊗sigma₁⊗c_S. -/
+def reflectionU : Full →ₗ[ℂ] Full where
+  toFun v s i j := if s = 0 then v s i (if j = 0 then 1 else 0)
+    else -v s i (if j = 0 then 1 else 0)
+  map_add' := by intro x y; ext s i j; fin_cases s <;> simp [add_comm]
+  map_smul' := by intro a x; ext s i j; fin_cases s <;> simp
+
+/-- Local partner J=tau₁⊗sigma₁⊗1. -/
+def partnerJ : Full →ₗ[ℂ] Full where
+  toFun v s i j := v s (if i = 0 then 1 else 0) (if j = 0 then 1 else 0)
+  map_add' := by intro x y; ext s i j; simp
+  map_smul' := by intro a x; ext s i j; simp
+
+def chiFull : Full →ₗ[ℂ] Full := (liftOrbit tau).comp (liftOrbit normal)
+def timeFull : Full →ₗ[ℂ] Full := liftOrbit timeGamma
+def normalFull : Full →ₗ[ℂ] Full := liftOrbit normal
+def sphereFull : Full →ₗ[ℂ] Full := (liftOrbit sphereOrbit).comp sphereSpinOne
+
+theorem reflection_involution (v : Full) : reflectionU (reflectionU v) = v := by
+  ext s i j; fin_cases s <;> fin_cases i <;> fin_cases j <;> simp [reflectionU]
+
+theorem reflection_time (v : Full) : reflectionU (timeFull v) = -timeFull (reflectionU v) := by
+  ext s i j; fin_cases s <;> fin_cases i <;> fin_cases j <;> simp [reflectionU, timeFull, liftOrbit, timeGamma]
+
+theorem reflection_normal (v : Full) : reflectionU (normalFull v) = normalFull (reflectionU v) := by
+  ext s i j; fin_cases s <;> fin_cases i <;> fin_cases j <;> simp [reflectionU, normalFull, liftOrbit, normal]
+
+theorem reflection_sphere (v : Full) : reflectionU (sphereFull v) = sphereFull (reflectionU v) := by
+  ext s i j; fin_cases s <;> fin_cases i <;> fin_cases j <;> simp [reflectionU, sphereFull, liftOrbit, sphereOrbit, sphereSpinOne]
+
+theorem reflection_chi (v : Full) : reflectionU (chiFull v) = chiFull (reflectionU v) := by
+  ext s i j; fin_cases s <;> fin_cases i <;> fin_cases j <;> simp [reflectionU, chiFull, liftOrbit, tau, normal]
+
+theorem partner_chi (v : Full) : partnerJ (chiFull v) = -chiFull (partnerJ v) := by
+  ext s i j; fin_cases s <;> fin_cases i <;> fin_cases j <;> simp [partnerJ, chiFull, liftOrbit, tau, normal]
+
+theorem reflection_partner (v : Full) : reflectionU (partnerJ v) = partnerJ (reflectionU v) := by
+  ext s i j; fin_cases s <;> fin_cases i <;> fin_cases j <;> simp [reflectionU, partnerJ]
 end PairedDirac.Orbit
 
 #print axioms PairedDirac.Orbit.paired_time_compression
 #print axioms PairedDirac.Orbit.paired_sphere_orbit_compression
 
 #print axioms PairedDirac.Orbit.full_sphere_gamma_compression
+
+#print axioms PairedDirac.Orbit.reflection_sphere
+#print axioms PairedDirac.Orbit.partner_chi
