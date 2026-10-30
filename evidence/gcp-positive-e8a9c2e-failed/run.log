@@ -1,0 +1,53 @@
+Fri Oct 30 03:01:10 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/paper1-positive-e8a9c2e.bundle: OK
+Cloning into '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-positive-sourceonly-e8a9c2e-20261029/source'...
+Note: switching to 'e8a9c2e683b3ab822cb56eb212cdc7c8e500a4ef'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at e8a9c2e Draft positive square quadratic identity
+e8a9c2e683b3ab822cb56eb212cdc7c8e500a4ef
+d0a2f58e5793fce6db78b3978a875dc73b8f892c9331bf8b2d3bf7ba018da033  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-positive-sourceonly-e8a9c2e-20261029/source/lean/PairedDirac.lean
+a6cb6bd42a3d07a532c1384cc5a61eef2b10fefe2c9f270f24254f3b9af52306  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-positive-sourceonly-e8a9c2e-20261029/source/lean/AdjointDraft.lean
+e2d877913595870a5eecdd68418913793ad178dc2ad7cc029b3a973a2f19d668  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-positive-sourceonly-e8a9c2e-20261029/source/lean/SquareDomainDraft.lean
+b6ab930514cdec9f664ac8dc1489bdd1641a11f7578b01d049cbda0047f88c14  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-positive-sourceonly-e8a9c2e-20261029/source/lean/GraphBoundsDraft.lean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+'PairedDirac.congruence_formalAdjoint_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.congruence_adjoint_forward_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.congruence_adjoint_domain_reverse_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.congruence_adjoint_eq_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mem_squareDomain_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.congruence_squareDomain_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_domain_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mem_positiveSquare_domain_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+PositiveSquareDraft.lean:60:8: error: typeclass instance problem is stuck
+  InnerProductSpace ?m.59 ?m.60
+
+Note: Lean will not try to resolve this typeclass instance problem because the first, second, third, and fourth type arguments to `InnerProductSpace` are metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+'PairedDirac.positiveSquare_inner_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_nonneg_draft' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
