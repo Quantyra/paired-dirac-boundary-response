@@ -1,0 +1,9 @@
+﻿# GCP operator-level mode square identity
+
+Run `paper1-mode-square-operator-b7fed22-20261029` exited 0 on `quantyra-lean-builder-01`, project `quantyra-lean-cert-20260915`, zone `us-central1-a`, using Lean 4.30.0. It checked `mode_positive_square_operator_draft`, an equality of actual partially defined `LinearPMap` positive squares: the mode square equals the original square plus the scalar shift `−a²`. The theorem includes both composition-domain equality and pointwise action. It assumes dense original domain, a symmetric total fiber map, its mapping into the adjoint domain, the adjoint intertwining and involution identities, and `star a = −a`. Its axiom report lists `propext`, `Classical.choice`, and `Quot.sound`.
+
+The remote and local operator-source SHA-256 match `e5c0f2e1322abaf7680c03d46e842ca70847d7b30ae54dcc58b27d26abbff175`; local Git blob `986baac49578a39a9a04f973a7dfc7d267f3e0dc` matches commit `b7fed22`. The checked action-source SHA-256 matches `f0e1e6de1dc3be5bbfa701c6c0818138ff21214d5a07d2563fe5883aaa2be4f1`, and its blob `f0a92729851c138d1ae9c77c86588510a29b7493` matches that commit. The [raw log](run.log) SHA-256 is `c33ff06a7a44b2ff8d27045f5e07f78eba92382eece14bffb4a4f2c0df133dae`. The action prerequisite was rebuilt on GCP; other GCP-built `.olean` hashes appear in the log. Source was SCP-transferred and hash-compared, not checked through a full verified repository bundle on the VM. The reused [source-only environment](../gcp-sourceonly-6858aa7/README.md) retains documented dependency-worktree and provenance caveats.
+
+This checks the conditional abstract operator identity, not the physical chirality, boundary domains, global product decomposition, heat response or the paper. A builder stop was requested after the run.
+
+Remaining to-do list: establish the physical hypotheses and response, complete the novelty decision and manuscript, and certify the supported theorem package on GCP.

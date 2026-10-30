@@ -1,0 +1,25 @@
+f0e1e6de1dc3be5bbfa701c6c0818138ff21214d5a07d2563fe5883aaa2be4f1  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-square-operator-b7fed22-20261029/ModeSquareActionDraft.lean
+e5c0f2e1322abaf7680c03d46e842ca70847d7b30ae54dcc58b27d26abbff175  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-square-operator-b7fed22-20261029/ModeSquareOperatorDraft.lean
+5304c14b466f83f0f5ddbaae6e822fcec69d7c6d0d65a7d9e02ae4affd4dab88  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-action-3f239e6-20261029/ModeAdjointDraft.olean
+05b6f774ccd2d2fb83cad5ead362b95121cb52faaef7f1c93f0e9b73750991ee  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean/PositiveSquareDraft.olean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+Try this:
+  [apply] abel_nf
+ModeSquareActionDraft.lean:53:13: warning: This simp argument is unused:
+  neg_one_smul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵n̵e̵g̵_̵o̵n̵e̵_̵s̵m̵u̵l̵,̵ ̵n̵e̵g̵_̵m̵u̵l̵,̵[̲n̲e̲g̲_̲m̲u̲l̲,̲ neg_smul, one_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.mode_square_action_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mode_positive_square_operator_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
