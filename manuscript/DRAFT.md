@@ -34,6 +34,13 @@ The positive square is D_b*D_b on the composition domain {psi in Dom(D_b): D_b p
 
 The fixed-seed hypotheses and source-specific limits of this proposition are audited in `../notes/paired-multiplier-domains.md` and `../notes/finite-cut-elliptic-domain-bridge.md`. This result does not provide a uniform trace bound or a renormalized response.
 
+### A finite-cut boundary is an additional choice
+
+The infinity projector cannot be transported to an arbitrary finite cut merely by imposing the same matrix there. To see the distinction in a separated zero-energy test, consider H=-i sigma_2 partial_x+mu a(x) sigma_1 on x0<=x<=x1, with real integrable a, nonzero angular eigenvalue mu, and P_minus psi(x1)=0 for P_plus/minus=(1+/-sigma_1)/2. The equation H psi=0 is partial_x psi=-mu a sigma_3 psi. With lambda=mu integral_(x0)^x1 a(x)dx and sigma_1 eigenvectors v_plus/minus, the boundary data induced at x0 lie in
+
+ span{cosh(lambda) v_plus+sinh(lambda) v_minus}.            (2.3)
+
+Unless lambda=0, this is not the local P_minus psi(x0)=0 plane. The sign of lambda depends on radial orientation, but the mixing does not. This exact test is derived in `../notes/finite-cut-boundary-transport.md`. It does not determine the full physical Dirichlet-to-Neumann relation: nonzero spectral parameters, both copies, the other endpoint, angular sectors and inhomogeneous collar sources must also be retained. Propositions 2.1 and 3.1 apply to any realization satisfying their stated domains; applying them to a finite-cut model does not by itself identify that model with transported infinity data.
 ## 3. Paired factorization
 
 **Proposition 3.1 (conditional mass resolvent).** In addition to Proposition 2.1, suppose J is a bounded unitary involution, commutes with E_b, and D*=-JDJ as an equality of closed operators. Then Q_b=J D_b is skew-adjoint, D_b*D_b=-Q_b², and for M>0,
