@@ -1,4 +1,4 @@
-﻿# Small-time winding bound on a fixed compact flat double
+# Small-time winding bound on a fixed compact flat double
 
 This strengthens the positive-time exhaustion in
 `compact-exhaustion-rough-flat-hessian.md`: the same winding calculation
@@ -88,6 +88,36 @@ supply that logarithmic jet. The coefficients include the declared half and
 fiber conventions; equality to the actual physical trace remains an open
 hypothesis. The local subtraction is explicitly the flat polynomial, not a
 claim about the source's full curved counterterm.
+
+## A weaker sufficient logarithmic-tail hypothesis
+
+The preceding O(t^3) statement is not the only route to the logarithmic
+coefficient. Suppose instead that each profile is
+
+  u=chi(c_u |y|^3+d_u |y|^4 log|y|)+h_u,
+  v=chi(c_v |y|^3+d_v |y|^4 log|y|)+h_v,
+
+where chi is even, smooth and compactly supported, equal to one near zero,
+and the remainders satisfy the precise one-sided derivative and integrable
+fifth-derivative conditions of `flat-log-coefficient-integrable-fifth.md`.
+Those hypotheses imply the required H3 and W1,infinity regularity on the
+compact support and give the plane expansion with o(t^3 |log t|), rather
+than O(t^3), as the remainder. Since (1) is o(t^p) for every p, it is in
+particular o(t^3 |log t|). Therefore the actual compact-model derivative
+with the common subtraction satisfies
+
+  B_(L,T)(t) = -15 c_u c_v/(1024 sqrt(pi)) t^(5/2)
+       -(c_u d_v+d_u c_v)/(70 pi) t^3 log(t)
+       + o(t^3 |log t|).                                       (3)
+
+Equivalently, subtracting the displayed cubic term and dividing by
+ t^3 log(t) gives the displayed logarithmic coefficient. This conclusion
+does not upgrade the remainder to O(t^3): that stronger conclusion still
+requires the earlier, stronger product-tail condition. The integrable fifth
+derivative is itself an additional hypothesis and is not implied by the
+source's general weighted bound; its oscillating logarithmic amplitudes
+remain outside this claim. The compact model, normalization and physical
+limitations above are unchanged.
 
 Remaining to-do list: match the actual physical bundle and trace, prove the
 curved response and regulator, settle novelty and scope, complete the
