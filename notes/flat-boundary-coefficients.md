@@ -8,7 +8,7 @@ folding and one-half identification remain separate obligations. The Fourier
 tail hypotheses below are also inputs; deriving them for every admitted
 mass/log field and cutoff is not attempted here.
 
-The later [orbit-fiber audit](flat-orbit-fiber-normalization.md) finds that the displayed rank-two full-plane multiplier and the rank-four paired half-trace differ by an additional factor unless a one-half normalization is specified. All coefficients below retain the explicitly conditional normalization in (1); they are not yet identified with the unweighted paired heat trace.
+The [orbit-fiber audit](flat-orbit-fiber-normalization.md) distinguishes the unweighted rank-four paired half-trace from the per-exterior source normalization. Under the stated flat folding assumptions, the latter supplies the additional one-half factor used in (1). The historical tangent K(t), determinant and common-regulator identification still require an explicit physical audit; the coefficients below remain conditional on it.
 
 Let R3(x)=F(x)-1+x^2/120-x^3/840. As x approaches zero,
 
