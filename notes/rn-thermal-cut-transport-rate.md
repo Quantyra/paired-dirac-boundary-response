@@ -39,6 +39,8 @@ at fixed positive t also makes the bound vanish. Neither observation by
 itself justifies exchanging the cut, heat and regulator limits, and the
 rate in (2) is not claimed optimal.
 
+For the homogeneous first-order Euclidean equation, `euclidean-thermal-boundary-spectral-parameter.md` instead gives z=-i nu_k. The bounds above still apply because they depend only on |z|; the transported lines are generally different. `thermal-zero-sector-boundary-nonuniformity.md` gives an exact zero-angular-sector illustration.
+
 The identification z=nu_k and the product heat weight are model assumptions:
 the canonical spectral equation, Euclidean lapse, actual paired domain and
 physical thermal/angle decomposition have not been shown to produce this
