@@ -41,6 +41,7 @@ zeroth-order coefficient built from the metric, connection and first-order
 terms; its uniform bounds require the corresponding common local gauges and
 connection estimates.
 
+The geometric and gauge inputs can be made more concrete for the fixed standard seed. `rn-physical-cut-uniform-geometry.md` gives uniformly controlled physical boundary charts and second fundamental form near r=R, and `rn-cut-monopole-local-gauges.md` constructs uniformly controlled local magnetic gauges for the matched-copy connection. In those frames, uniform C5 physical-chart bounds on f_e control E_e and its derivatives through order five, while the fixed seed controls metric, spin connection and magnetic coefficients to the finite orders required by the displayed square and boundary expressions. Consequently the local coefficient boundedness required to express the Robin condition in those frames follows under the same stipulated operator, projector and gauge identification. This is a coefficient check, not a proof of a uniform mixed elliptic estimate or of equality with the source's actual boundary realization.
 This checks the radial coefficient portion of the mixed-boundary regularity
 hypotheses, not the full boundary theorem. The smooth bundled projector,
 uniform coordinate/gauge bounds, domain equivalence and applicable H3
