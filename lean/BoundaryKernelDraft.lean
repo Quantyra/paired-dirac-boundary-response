@@ -90,6 +90,22 @@ theorem tangential_compression_zero
   have htwo : (2 : ℂ) • P (C (P x)) = 0 := by
     simpa [two_smul] using hsum
   exact (smul_eq_zero.mp htwo).resolve_left (by norm_num)
+/-- The canonical + projector of an involution satisfies the hypotheses
+needed for tangential compression. -/
+theorem involution_tangential_compression_zero
+    (chi C : V →ₗ[ℂ] V)
+    (hinv : ∀ x, chi (chi x) = x)
+    (hanti : ∀ x, chi (C x) = -C (chi x)) :
+    let P : V →ₗ[ℂ] V := (1 / 2 : ℂ) • (LinearMap.id + chi)
+    ∀ x, P (C (P x)) = 0 := by
+  let P : V →ₗ[ℂ] V := (1 / 2 : ℂ) • (LinearMap.id + chi)
+  have hp : ∀ x, chi (P x) = P x := by
+    intro x
+    simp [P, map_add, map_smul, hinv, add_comm]
+  have hP : ∀ x, P (chi x) = P x := by
+    intro x
+    simp [P, hinv, add_comm]
+  exact tangential_compression_zero chi P C hp hP hanti
 end PairedDirac
 
 #print axioms PairedDirac.boundary_kernel_eq_iff
@@ -97,3 +113,5 @@ end PairedDirac
 #print axioms PairedDirac.embedded_boundary_kernel_eq_iff
 
 #print axioms PairedDirac.tangential_compression_zero
+
+#print axioms PairedDirac.involution_tangential_compression_zero
