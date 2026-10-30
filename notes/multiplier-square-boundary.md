@@ -110,7 +110,35 @@ term generally changes. This special smooth finite-cut observation does not
 justify freezing square domains for arbitrary rough families or prove
 uniformity in a limiting cut.
 
+## Collar normal jet and the explicit log smoothing
+
+For the source's physical-side collar b(y)=c y^3+r(y), with |c|<=K and
+|r'(y)|<=100 K y^3 (1+log(1/y)), one has
+
+    |b'(y)| <= 3 K y^2 + 100 K y^3 (1+log(1/y)) -> 0.
+
+Hence the limiting physical-side y derivative has zero trace. If the normal
+derivative is a bounded scalar multiple of partial_y in the relevant collar
+chart, it also tends to zero. This does not say b' vanishes at a finite
+positive cut: at y=eta the displayed expression only bounds its size.
+Comparing square domains at different cuts also requires identifying their
+Hilbert spaces and domains, not merely comparing this coefficient.
+
+For a pure logarithmic jet, the source's smoothing replaces y^4 log y by
+g_epsilon(y)=y^4 log(sqrt(y^2+epsilon^2)). Define g(0)=g_epsilon(0)=0.
+For 0<y<=delta and epsilon>0, log(1+z)<=z gives
+
+    |g_epsilon(y)-g(y)| <= (epsilon^2/2) y^2,
+    |g_epsilon'(y)-g'(y)| <= 3 epsilon^2 y.
+
+The derivative estimate follows by differentiating the difference; both
+first derivatives extend by zero at y=0. Thus this explicit replacement
+preserves the zero first jet and converges in W1,infinity on the fixed
+physical-side collar. The cubic term is left unchanged. This argument covers
+the explicit logarithmic term only; the source's claimed regularization of a
+general weighted remainder and uniform higher-derivative bounds still require
+their own construction and verification.
+
 Remaining to-do list: verify first-order elliptic hypotheses and the intrinsic
-flip for the actual global paired bundle; connect the selected mass/log jets
-to the boundary trace; audit rough and cut limits; and certify supported
-operator statements on GCP.
+flip for the actual global paired bundle; audit general remainder smoothing,
+rough and cut limits; and certify supported operator statements on GCP.
