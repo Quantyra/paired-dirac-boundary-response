@@ -109,6 +109,20 @@ The cubic term is Proposition 4.1. For the logarithmic term, split frequencies a
 
 The remainder in (4.4) is not asserted to be O(t³). The bound on the weighted remainder alone does not select a unique logarithmic jet, so (4.4) requires the additional hypotheses above. The half normalization, all physical vertices and the curved common-regulator limit remain to be matched. A GCP Lean development receipt checks an identity between two integral representations of the tangent form factor; it does not certify the numerical integral in Proposition 4.1, the proposition as a whole, or the physical response.
 
+**Proposition 4.3 (all-frequency flat bound).** Define R2(x)=F(x)-1+x²/120 and, with the Fourier and half-normalization conventions of (4.2),
+
+ r_flat(t;u,w)=(1/(pi t)) integral_R conjugate(uhat(k)) what(k)
+                                  R2(t k²) dk/(2pi).        (4.8)
+
+For real even localized u,w in H3(R),
+
+ |r_flat(t;u,w)| <= t²/(420pi) ||u'''||_(L2,half)||w'''||_(L2,half),
+ integral_0^t0 |r_flat| dt/t²
+       <= t0/(420pi) ||u'''||_(L2,half)||w'''||_(L2,half). (4.9)
+
+*Proof.* For phi(z)=(1+z)exp(-z), the identity phi(z)-1+z²/2=integral_0^z s(1-exp(-s))ds and the beta integrals in (4.1) give 0<=R2(x)<=min(x³/840,x²/120) for x>=0. Use the cubic bound in (4.8), then Parseval and Cauchy--Schwarz. For even full-line fields the squared L2 norm of the third derivative is twice its half-line norm, giving the factor in (4.9). The entire Fourier integral is retained and the norms include the localization transition. □
+
+This establishes integrability of the specified flat diagnostic, not the curved tangent-subtracted response. The source's separate sufficient target is a uniform |r_curved(t)|<=A(K)||u||_A||w||_A t^(3/2), with unknown A(K), for its fully localized mixed response. Its density, second vertex, contact, cutoff terms and common regulator must be specified and controlled together; see `../notes/p1d-response-versus-conversion.md`.
 ### Regulated conversion and the separate contact
 
 The flat geometric multiplier does not by itself give the regulated action Hessian. In the source's physical-half, time-reduced trace convention, write
