@@ -89,6 +89,43 @@ prove that the trace-class hypotheses hold for rough mass/log directions, or
 justify the regular-bolt, finite-cut, thermal, angular, density/contact and
 common-regulator limits. Those are independent obligations.
 
+
+## First-order folding for even Lipschitz multipliers
+
+The smoothness assumption on b can be weakened for the fixed flat operator
+identity. Let b be real, even and W^{1,infinity} on the full cylinder,
+with E = exp(−b/2). Then E and E^{-1} are bounded W^{1,infinity}
+multipliers. Assume the standard H¹ gluing and trace theorems and the
+complementary H¹ half-cylinder adjoint domain as above. No smooth
+approximation or fixed square-domain assertion is needed.
+
+On the full cylinder D is closed on H¹, and multiplication by E and E^{-1}
+preserves H¹. Hence D_b = E D E is closed on H¹ by the graph-preimage
+argument. Since E is real, D_b* = −D_b on this domain. Reflection R
+preserves H¹, and E commutes with R because b is even almost everywhere.
+The distributional chain and product rules therefore give (1) on H¹:
+U and Gamma anticommute with D_b. Equivalently, these identities first hold
+on smooth compactly supported spinors and extend by the graph bounds.
+
+The normalized H¹ extension across y = 0 is still continuous across the
+interface exactly when Pi_- trace(psi) = 0. It maps the half-domain onto
+the U-even H¹ subspace. D_b sends that subspace into the U-odd L² subspace;
+the latter restricts to the half-cylinder without imposing an additional
+condition on an L² vector. Thus the extension intertwines the actual
+closed first-order operators, including their domains. Taking adjoints
+gives the intertwining of the positive squares on their composition domains.
+A normal derivative of b at the seam is not required for this first-order
+argument, and no pointwise Robin formula is asserted at Lipschitz regularity.
+
+U and Gamma commute with the full square by their domain-preserving
+anticommutation with D_b. Consequently the trace argument (2) remains valid
+for any trace-class A commuting with both symmetries, including a relative
+heat operator whenever it is trace class. This extends the exact positive-time
+half-trace identity to the Lipschitz family under those trace hypotheses.
+It does not establish trace-norm differentiability in parameters, the
+rough short-time asymptotic, or the physical curved and regulator limits.
+In particular, interchanging approximation, differentiation and the t → 0
+limit still requires independent estimates.
 Remaining to-do list: audit the exact paired representation and trace-class
 hypotheses, extend only the justified pieces to the selected rough profiles,
 compare prior work, and formalize the supported operator and response results
