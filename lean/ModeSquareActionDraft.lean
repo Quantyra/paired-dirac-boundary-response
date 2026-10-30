@@ -34,9 +34,7 @@ theorem mode_square_action_draft
     exact hmem
   have heval : (modeOperator D G a).adjoint ⟨(modeOperator D G a) x, hact⟩ =
       modeAdjointCandidate D G a ⟨(modeOperator D G a) x, hmem⟩ := by
-    have heq := mode_adjoint_eq_draft D G a hDense hSymm
-    cases heq
-    rfl
+    exact ((mode_adjoint_forward_draft D G a hDense hSymm).2 rfl).symm
   rw [heval]
   change D.adjoint ⟨D x + a • G x, _⟩ + star a • G (D x + a • G x) = _
   have hsub : (⟨D x + a • G x, _⟩ : D.adjoint.domain) =
