@@ -19,6 +19,17 @@ theorem mode_composition_domain
   · intro h
     exact W.add_mem h (W.smul_mem a hg)
 
+/-- The algebraic cross-term cancellation in a mode square, given the
+intertwining and involution identities. Domain obligations are separate. -/
+theorem mode_square_cross_cancel
+    (D A G : H →ₗ[ℂ] H) (a : ℂ) (x : H)
+    (hintertwine : A (G x) = G (D x)) (hinvolution : G (G x) = x) :
+    A (D x + a • G x) - a • G (D x + a • G x) =
+      A (D x) - (a * a) • x := by
+  simp only [map_add, map_smul, smul_add, smul_smul, hintertwine, hinvolution]
+  abel
 end PairedDirac
 
 #print axioms PairedDirac.mode_composition_domain
+
+#print axioms PairedDirac.mode_square_cross_cancel
