@@ -173,6 +173,12 @@ The source records, at positive common cutoff and under its paired-domain, gradi
  J_t''[u,v]=Theta(t)/2 [D_v T_t(u)+D_u T_t(v)]
                          +2 Theta'(t) I_t(u,v).             (4.10)
 
+For fixed q>=0 and b_sphere>0, the complete nonzero tower has the following small-time expansion. Put a=t/b_sphere^2. Then
+
+ Theta(t)=2/a-q-1/3+a(q^2/6-1/30)+O_q(a^2),
+ -Theta'(t)=b_sphere^(-2)[2/a^2-q^2/6+1/30+O_q(a)].        (4.9a)
+
+To see this, set f(x)=x(x+q) and g_a(x)=2 f'(x) exp(-a f(x)). The integral of g_a is 2/a. Euler--Maclaurin through the third derivative gives the displayed endpoint coefficients; after scaling y=sqrt(a)x, the integral of |g_a^(6)| is O_q(a^2). For the derivative, apply the same argument separately to f g_a, whose integral is 2/a^2 and whose sixth-derivative integral is O_q(a); this avoids differentiating an unspecified remainder. Details are in `../notes/magnetic-angular-subleading-asymptotics.md`. The expansion keeps both nonzero sphere signs as already included in d_n. It does not allocate the finite zero sector, prove a uniform varying-q estimate, or identify the physical response.
 Here D_v denotes the geometric variation on the identified fixed Hilbert space, and J_t is the endpoint conversion between the source's geometric and variable-mass regulated actions. The contact is symmetric by trace cyclicity and s -> t-s. The n=0 sector and its lowest-Landau-level allocation are separate from the displayed n>=1 sum. A further source action normalization is not absorbed into (4.10); the angular multiplicities already contain their recorded sign degeneracy.
 
 Equation (4.10) is a source identity whose physical hypotheses and complete trace interchanges remain to be independently verified, not a consequence of Proposition 4.1 alone. In particular, neither the geometric term nor the contact may be omitted when the common cutoff is removed. The source notation and the distinction between operator heat kernels and scalar heat traces are audited in `../notes/tangent-regulator-normalization.md`; the separate zero-sector allocation is in `../notes/source-angular-zero-mode-allocation.md`. The endpoint (4.10) must also not be identified with the tangent-subtracted P1-D proper-time remainder without an additional argument.
