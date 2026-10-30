@@ -136,6 +136,60 @@ identified logarithmic coefficient. The weighted bounds alone do not specify
 a unique y^4 log y coefficient: they allow a remainder of that same order.
 The physical paired trace, curved geometry and common regulator remain
 separate hypotheses.
-Remaining to-do list: determine the additional hypotheses needed for the logarithmic tail,
+
+## A sufficient remainder condition for the logarithmic coefficient
+
+The detailed O(|k|^{-10}) product remainder in (2) can be weakened. Let
+each real even localized profile have the decomposition
+
+    u = c_u chi |y|^3 + d_u chi |y|^4 log|y| + v_u,
+    w = c_w chi |y|^3 + d_w chi |y|^4 log|y| + v_w,
+
+where chi is smooth, even, compactly supported and one near zero. Suppose
+v_u,v_w are compactly supported and their fifth distributional derivatives
+belong to L¹(R). A sufficient physical-side condition is that, after the
+two displayed jets are removed, the derivatives through order five satisfy
+|v^(j)(y)| <= C y^(4+alpha−j) near zero for some alpha>0, with compatible
+even traces and integrable fifth derivative in the localization region.
+The distributional condition also allows other remainders, including a
+smooth y^4 term.
+
+Fourier transformation and the Riemann–Lebesgue lemma then imply
+vhat(k)=o(|k|^{-5}). Combining this with the explicit pure-jet transforms
+gives, for |k|→infinity,
+
+    conjugate(uhat(k)) what(k)
+      = 144 c_u c_w |k|^{-8}
+        − 288 pi C |k|^{-9} + o(|k|^{-9}),
+    C = c_u d_w+d_u c_w.
+
+The little-o is sufficient to determine the coefficient of t^3 log t,
+although it need not give an O(t^3) residual. To see this, subtract the
+complete pure-cubic contribution and denote the remaining Fourier product
+by |k|^{-9} q(k) for |k|>=K. Then q(k) is bounded and tends to
+−288 pi C. On K<=|k|<=t^{-1/2}, the expansion
+R3(t k²)=−t^4 k^8/10080+O(t^5 k^10) reduces the leading integral to
+a constant times
+
+    ∫_K^(t^{-1/2}) q(k) dk/k.
+
+Dividing by log(t^{-1/2}) makes this integral tend to −288 pi C:
+split it at a fixed large K0, bound the initial part, and use uniform
+closeness of q to its limit beyond K0. The Taylor error is O(t^4) before
+the 1/t prefactor. On |k|>=t^{-1/2}, bounded q and the all-frequency
+growth R3(x)=O(1+x^3) give O(t^4) before that prefactor. Bounded
+frequencies and the cutoff-dependent correction to the pure-cubic term
+contribute O(t^3). Therefore, with the normalization in (1),
+
+    B_t(u,w)
+      = −15 c_u c_w t^(5/2)/(1024 sqrt(pi))
+        − C t^3 log(t)/(70 pi) + o(t^3 |log t|).
+
+This statement keeps the logarithmic coefficient but does not determine
+the finite t^3 term. The weighted bounds by themselves do not imply the
+additional L¹ fifth-derivative condition after the logarithmic jet is
+removed; it must be established for the chosen directions. The calculation
+remains conditional on the flat multiplier and physical-half normalization.
+Remaining to-do list: verify the stated logarithmic remainder condition for the selected fields,
 justify the paired folding and density/contact terms, compare exact results
 with prior literature, and certify supported analytic statements in Lean on GCP.
