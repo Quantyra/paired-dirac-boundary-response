@@ -1,4 +1,4 @@
-﻿# Source-only GCP development build
+# Source-only GCP development build
 
 Run `paper1-sourceonly-6858aa7-20261029` exited 0 with Lean 4.30.0. Its driver verifies the source bundle, toolchain archive, manifest and nine reconstructed dependency archives; the recorded tree comparison reports matching paths, modes and Git blob identities. The task-owned build used `lake --no-cache build PairedDirac`, followed by no-cache Lean checks of the graph-closedness and adjoint drafts. All reported axioms are `propext`, `Classical.choice`, and `Quot.sound`. Raw log SHA-256: `fd5dcf98d5384e359c34cd18bbd6e86363f8fbd86a6f036ccf7fb704a0b2e387`.
 
@@ -46,3 +46,9 @@ but no recorded call trace proves exactly which operation wrote this file.
 The tracked package-lock and all other tracked dependency bytes still match
 the trees. The worktree audit remains exit 1 for the extra artifact; no
 claim of a clean worktree is made.
+
+## Publisher release digest comparison
+
+The [recorded GitHub release metadata](lean-release-digest.json), retrieved from the official `leanprover/lean4` v4.30.0 release, identifies `lean-4.30.0-linux.tar.zst` as SHA-256 `4dad74141c2c119ca1aa626656be83b8e14238afba97271fd7bf1eb3f081b319`. This equals the archive digest checked by the GCP driver. Together with the ownership-independent extraction comparison above, this closes the previously identified publisher-digest mismatch question under trust in the GitHub release metadata and the retained audit logs. It is not a signature verification or an independent replay of the GCP build, and does not validate the dependency build artifacts or the paper's physical claims.
+
+Remaining to-do list: review the remaining dependency and build provenance, establish the physical and response hypotheses, prepare the manuscript, and certify its supported claims in Lean on GCP.

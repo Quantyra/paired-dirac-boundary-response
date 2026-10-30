@@ -1,0 +1,11 @@
+﻿{
+    "source":  "https://api.github.com/repos/leanprover/lean4/releases/tags/v4.30.0",
+    "checked_utc":  "2026-10-30T05:39:56.7040293Z",
+    "release_tag":  "v4.30.0",
+    "asset_name":  "lean-4.30.0-linux.tar.zst",
+    "asset_size_bytes":  529208534,
+    "publisher_digest":  "sha256:4dad74141c2c119ca1aa626656be83b8e14238afba97271fd7bf1eb3f081b319",
+    "download_url":  "https://github.com/leanprover/lean4/releases/download/v4.30.0/lean-4.30.0-linux.tar.zst",
+    "recorded_gcp_digest":  "sha256:4dad74141c2c119ca1aa626656be83b8e14238afba97271fd7bf1eb3f081b319",
+    "match":  true
+}
