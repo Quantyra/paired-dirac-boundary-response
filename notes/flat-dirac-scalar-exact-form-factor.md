@@ -60,9 +60,10 @@ ordinary argument, without division by x.
 The GCP Lean theorem in `lean/FlatFormFactorIntegral.lean` checks the first
 endpoint identity and the equality of the compact expression to (3), using
 actual interval integrals. See `evidence/gcp-flat-integral-20261030/README.md`
-for the successful log and build provenance. It does not yet formalize the
-second endpoint identity, the passage from F_raw, the momentum calculation,
-or the physical trace/folding. Those remain separate proof obligations.
+for the successful log and build provenance. The GCP theorem in `lean/RawTangentFormFactor.lean` now checks the second
+endpoint identity and equality of F_raw and the compact expression; see
+`evidence/gcp-raw-tangent-20261030/README.md`. The momentum calculation and
+physical trace/folding remain separate proof obligations.
 
 ## Consequences for the specific scalar reduction
 
