@@ -1,4 +1,4 @@
-﻿# Fixed-time chain rule for the proper-coordinate bridge
+# Fixed-time chain rule for the proper-coordinate bridge
 
 This proves the auxiliary bridge chain rule assumed in
 `moving-insertion-bridge-remainder.md`, under explicit fixed-coordinate
@@ -35,7 +35,7 @@ an integrable majorant, independent of the bridge path.
 
 For the radial Weyl family in `weyl-proper-bridge-direction.md`, let
 Y_s(y)=integral_0^y exp(s v(x))dx and y_s its inverse on a common collar.
-If f is W^{2,infinity}, v is W^{2,infinity}, and the fixed extensions are
+If f is W^{3,infinity}, v is W^{2,infinity}, and the fixed extensions are
 chosen so that the transformations and supports are compatible, the
 implicit formula y_s'(Y)=exp[-s v(y_s(Y))] and the chain rule show
 
