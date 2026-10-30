@@ -1,5 +1,7 @@
 # Finite and zero conversion modes at positive heat time
 
+The later [thermal-gap argument](product-conversion-zero-sector-thermal-gap.md) supplies a conditional large-time endpoint for the stipulated compact zero-sector model, without identifying the source LLL observable.
+
 This complements `conversion-massive-moving-cut-comparison.md` for a fixed
 finite set of masses 0<=M<=M_*. It compares compact-model heat traces at
 positive time. It does not identify the physical lowest-Landau-level
