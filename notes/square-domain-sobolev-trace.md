@@ -53,6 +53,29 @@ version; connection terms are absorbed into the prescribed normal jet.
 For a textbook trace result and context see, for example, the joint-jet
 statement in [CMU Sobolev notes](https://www.math.cmu.edu/cna/LectureNotesFiles/SOB%2BInt.pdf).
 
+### Fourier estimate and normal convention
+
+For completeness, write F₀(z)=(1+z)e^(−z) and F₁(z)=z e^(−z).
+The displayed lift is F₀(λy)v̂+λ^(−1)F₁(λy)â. For any nonnegative
+integers j,k with j+k≤2, differentiation in j tangential directions
+and k normal directions, followed by z=λy, gives a squared L²_y norm
+bounded by a constant times
+
+    |ξ|^(2j) [λ^(2k−1)|v̂|² + λ^(2k−3)|â|²].
+
+The constants are finite integrals of |F₀^(k)|² and |F₁^(k)|². Since
+λ≥1 and |ξ|≤λ, both powers are bounded respectively by λ³ and λ when
+j+k≤2. Integrating in ξ proves the advertised H² estimate. The upper bound
+also includes lower derivatives and the cross term by |x+y|²≤2|x|²+2|y|²;
+no equality of Sobolev norms or hidden low-frequency cutoff is used.
+
+The displayed derivative at y=0 is the derivative in increasing y. If the
+chosen geometric n points in the other direction, prescribe −a in that
+formula. For a connection, γ₀∇_nψ=γ₀∂_nψ+ω_n v, so prescribe the ordinary
+normal jet a−ω_n v before applying the scalar local lifting. These are
+bounded adjustments because the connection is smooth. Thus the choice of
+normal orientation and the connection term do not change the claimed
+surjectivity, but must be fixed consistently in an implementation.
 Let ψ be this lift. Its boundary value lies in P E, so ψ∈Dom(D), and
 Dψ∈H¹ because ψ∈H² and D has smooth coefficients. The choice of a gives
 Pγ₀(Dψ)=0. Hence ψ∈ker A and Tψ=v, proving surjectivity and the stated
