@@ -59,7 +59,7 @@ theorem positiveSquare_add_one_surjective_draft
   refine ⟨x, ?_⟩
   change (u : H) + D.adjoint ⟨D u, hDu⟩ = f
   rw [hvalue]
-  exact add_sub_cancel_comm _ _
+  simp [add_comm]
 
 end PairedDirac
 
