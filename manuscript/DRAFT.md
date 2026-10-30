@@ -177,6 +177,24 @@ Here D_v denotes the geometric variation on the identified fixed Hilbert space, 
 
 Equation (4.10) is a source identity whose physical hypotheses and complete trace interchanges remain to be independently verified, not a consequence of Proposition 4.1 alone. In particular, neither the geometric term nor the contact may be omitted when the common cutoff is removed. The source notation and the distinction between operator heat kernels and scalar heat traces are audited in `../notes/tangent-regulator-normalization.md`; the separate zero-sector allocation is in `../notes/source-angular-zero-mode-allocation.md`. The endpoint (4.10) must also not be identified with the tangent-subtracted P1-D proper-time remainder without an additional argument.
 
+**Assembled flat conversion at a common cutoff.** For the declared rank-two flat model with the per-exterior convention, put a=alpha(1-alpha) and define
+
+ A(x)=integral_0^1 exp(-a x) d alpha,
+ I(x)=integral_0^1 [1+x(1-2alpha)^2/4] exp(-a x) d alpha.
+
+The geometric contribution and contact in (4.10), evaluated in this model before local subtraction, have the combined Fourier multiplier
+
+ Theta(t) I(t k^2)/(2 pi t) + Theta'(t) A(t k^2)/(2 pi).   (4.10a)
+
+This retains the exact nonzero angular tower in both terms. Let J_2(t;u,w) be the resulting bilinear form after subtracting the Taylor polynomials of I and A through x^2, with the same exact factors Theta and Theta'. For real even localized H^3 profiles, the all-frequency Taylor bounds and dominated convergence give
+
+ J_2(t;u,w) = [b_sphere^2/(840 pi)] t
+                 integral_0^infinity u'''(y) w'''(y) dy + o(t). (4.10b)
+
+Indeed, the cubic coefficients of I and A are -1/1680 and -1/840, while the recorded tower has t Theta(t) -> 2 b_sphere^2 and t^2 Theta'(t) -> -2 b_sphere^2. The full-line Fourier pairing equals twice the half-line pairing for these even profiles. The geometric and contact contributions to (4.10b) have opposite signs but do not generally cancel. The individual multipliers and angular limit are derived in `../notes/flat-conversion-leading-remainder.md` and `../notes/angular-flat-contact-leading-remainder.md`.
+
+Equation (4.10b) tends to zero at the cutoff endpoint but is generally only O(t) for this specified subtraction. Subtracting an additional cubic local term changes the pointwise remainder; the exact relation between these two subtraction conventions is in `../notes/flat-conversion-subtraction-matching.md`. This is a flat-model result, not an identification of the physical source response, its curved subtraction, or the P1-D integrand. The zero-sector allocation and physical common-regulator passage remain separate.
+
 **Positive-cutoff tower statement for a product model.** For the stipulated compact product-mode realization, assume the common H1 projector domain, a uniform first-order graph estimate, domain-preserving W1,infinity scalar multipliers, the real mass gap, and the individual-mode form differentiability specified in `../notes/product-conversion-form-differentiability.md` and `../notes/product-conversion-neighborhood-tower-derivative.md`. On any fixed interval t in [epsilon,T], epsilon>0, the mode derivative has a summable majorant over all n>=1. In particular the mixed seed derivative of the endpoint conversion can be obtained by summing the mode derivatives and integrating the interpolation parameter, with the grading-odd term canceled only under its separate domain and trace hypotheses.
 
 The mechanism is as follows. For A_r(b)=E_r[Q+M exp(b)]E_r and P_r=A_r* A_r, the real mass gap bounds M||psi|| by a uniform multiple of ||A_r psi||. Together with the scalar commutator bound this controls the first form derivative by the form norm of 1+P_r, uniformly in M. The trace Duhamel formula then bounds the derivative by a polynomial in t^-1 times Tr exp[-tP_r/4]. On [epsilon,T], the heat and mass-gap estimates give a polynomial in M times exp(-c_epsilon M²); the source multiplicities grow linearly while M_n² grows quadratically, so the complete nonzero tower is summable. Individual differentiability plus a uniform real-neighborhood majorant justifies termwise differentiation. A finite zero sector is handled in its separately declared allocation.
