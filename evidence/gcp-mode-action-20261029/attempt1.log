@@ -1,0 +1,49 @@
+1e2a71db8e2fb27aff04c8c2f9f75f7a9a27d5dd4f5c63764a30a8323f60fb2c  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-action-3f239e6-20261029/ModeAdjointDraft.lean
+f484109fd8ddbbb41ec46a140f1d1acfc3091f7a9dec3a17fba355b279528aac  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-action-3f239e6-20261029/ModeSquareActionDraft.lean
+84aade86a91eb7da0517b9bf21c12d7de897b987afb061487da9f6b028e88534  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-adjoint-9cf878f-20261029/ModeOperatorDraft.olean
+0877bf2a73e0a339299340a2ed51203e286b24b1b8d84feb2876bc42ead9429b  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-adjoint-9cf878f-20261029/ModeDomainDraft.olean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+'PairedDirac.mode_formal_adjoint_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mode_adjoint_eq_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mode_square_domain_from_adjoint_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModeSquareActionDraft.lean:29:6: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => ↑_a ⟨↑(modeOperator D G a) x, ⋯⟩ = ↑D.adjoint ⟨↑D x, hx⟩ - (a * a) • ↑x
+Error: Application type mismatch: The argument
+  mode_adjoint_eq_draft D G a hDense hSymm
+has type
+  (modeOperator D G a).adjoint = modeAdjointCandidate D G a
+but is expected to have type
+  _a = modeAdjointCandidate D G a
+in the application
+  congrArg (fun _a => ↑(modeOperator D G a) x ∈ _a.domain) (mode_adjoint_eq_draft D G a hDense hSymm)
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+H : Type u_1
+inst✝² : NormedAddCommGroup H
+inst✝¹ : InnerProductSpace ℂ H
+inst✝ : CompleteSpace H
+D : H →ₗ.[ℂ] H
+G : H →ₗ[ℂ] H
+a : ℂ
+hDense : Dense ↑D.domain
+hSymm : ∀ (x y : H), inner ℂ (G x) y = inner ℂ x (G y)
+hG : ∀ x ∈ D.domain, G x ∈ D.adjoint.domain
+hInt : ∀ (x : ↥D.domain), ↑D.adjoint ⟨G ↑x, ⋯⟩ = G (↑D x)
+hInv : ∀ (x : H), G (G x) = x
+ha : star a = -a
+x : ↥D.domain
+hx : ↑D x ∈ D.adjoint.domain
+⊢ ↑(modeOperator D G a).adjoint ⟨↑(modeOperator D G a) x, ⋯⟩ = ↑D.adjoint ⟨↑D x, hx⟩ - (a * a) • ↑x
+'PairedDirac.mode_square_action_draft' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
