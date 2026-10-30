@@ -62,6 +62,25 @@ the copy involution parallel. The global identification, spin structure at
 the regular bolt and the stated Gauss formula are still source hypotheses,
 not independently established by this pointwise calculation.
 
+The parallel-copy part has a direct bundle formulation. Before choosing a
+common trivialization, let the folded bundle be E_L direct-sum E_R with
+connection nabla_L direct-sum nabla_R, and define tau_3 to act by +1 on
+E_L and -1 on E_R. For a section (s_L,s_R),
+
+    nabla[tau_3(s_L,s_R)]
+      = (nabla_L s_L,-nabla_R s_R) = tau_3 nabla(s_L,s_R).
+
+Thus tau_3 is parallel for any block-diagonal connection; equality of the
+two connections is not needed for this particular statement. A unitary
+bundle identification is still needed for the source's common matrix
+representation and for copy-exchanging operators, and it must intertwine
+the relevant structures when those operations are used. The pinned
+[coupled-domain source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/coupled-fermion-domain.md)
+states a fixed spin-frame and magnetic-bundle map and matching pulled-back
+bundles; it does not by itself establish every global geometric hypothesis
+of this paper. Off-diagonal connection terms would invalidate the simple
+parallelism argument and need to be checked separately.
+
 ## H2 regularity from the first-order theorem
 
 Assume the smooth compact finite-cut setting and the D-elliptic projector
