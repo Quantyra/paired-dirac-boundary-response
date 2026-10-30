@@ -137,6 +137,20 @@ Robin coefficient and source sign convention, and compare the actual
 closed realizations. The required global parallel J itself remains an
 application-specific hypothesis.
 
+In the source's displayed normal-frame matrices gamma_n=sigma_1 and
+J=tau_1 gamma_n, the candidate splitting simplifies further. The same U
+obeys the exact pointwise identities
+
+    U tau_3 U^(-1) = J,      U J U^(-1) = -tau_3.
+
+For example T chi=tau_1 tau_3 gamma_n=-i tau_2 gamma_n, and the identities
+follow from the Pauli relations and gamma_n^2=1. Thus in that frame the
+candidate S=U J U^(-1) is simply -tau_3, the standard copy-sign involution
+with the side labels exchanged. This strengthens the boundary algebraic
+match: it is not necessary to invent a new pointwise matrix for the side
+splitting. It does not by itself extend that frame through the bolt or
+verify the full transformed bulk coefficients and domain globally.
+
 At the boundary, the side identification can be made explicit under these
 assumptions. Put E_side^+ and E_side^- for the S eigensubbundles and write
 psi'=psi_+ + psi_-. Since T is unitary and anticommutes with S, its
