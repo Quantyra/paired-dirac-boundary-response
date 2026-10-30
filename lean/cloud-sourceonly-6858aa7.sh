@@ -29,9 +29,8 @@ cd source
 git checkout --detach 6858aa7dd45f717f8302f4ae6bfa3a7926fe68b5
 git rev-parse HEAD
 sha256sum lean/PairedDirac.lean lean/lean-toolchain lean/lakefile.toml
-mkdir "$run/toolchain"
-tar --zstd -xf "$HOME/lean-4.30.0-linux-paper1.tar.zst" -C "$run/toolchain"
-export PATH="$run/toolchain/lean-4.30.0-linux/bin:$PATH"
+# Reuse the toolchain extracted and verified by the completed exact-tree run.
+export PATH="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin:$PATH"
 cd lean
 lean --version
 lake --version
