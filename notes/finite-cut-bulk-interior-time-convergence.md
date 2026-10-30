@@ -24,6 +24,10 @@ sequence j->infinity, e->0, assume:
    `finite-cut-ordered-bulk-interior-time.md`. The raw weighted cutoff gives
    this convergence for the displayed collar fields; any interior smoothing
    must satisfy its own matching assumption.
+4. The bulk-vertex decompositions admit either finitely many global bounded
+   differential factors or a uniformly locally finite atlas with a
+   square-summable partition estimate for the L2 coefficient norms. This
+   is required to sum chartwise trace estimates on the noncompact space.
 
 On a fixed compact interior chart, let A_(j,e) be an order-k differential
 factor, k<=2, whose coefficients and derivatives through order k converge
@@ -67,7 +71,7 @@ preceding interior-time note. Strong convergence of the unweighted heat
 factors and Hilbert--Schmidt convergence (1)--(2), together with the fact
 that strong bounded operators multiply convergent Hilbert--Schmidt factors
 continuously in Hilbert--Schmidt norm, imply convergence of each split trace
-in its equation (3). Summing the finite local expression gives, for each
+in its equation (3). Summing under hypothesis 4 gives, for each
 0<s<t,
 
  Tr_form[q_(u_e)^bulk K_(j,e,s) q_(w_e)^bulk K_(j,e,t-s)]
