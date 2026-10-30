@@ -51,6 +51,7 @@ theorem mode_square_action_draft
   simp only [neg_smul, smul_add, smul_smul]
   abel
   simp only [neg_one_smul, neg_mul, neg_smul, one_smul]
+  rfl
 
 end PairedDirac
 
