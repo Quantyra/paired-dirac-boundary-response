@@ -85,6 +85,57 @@ explicit Fourier-tail and normalization assumptions. They neither prove the
 paired folding factor nor transfer these coefficients to a rough curved base
 metric or the commonly regulated full physical action.
 
-Remaining to-do list: prove (2) for the selected localized mass/log class,
+
+## Leading cubic coefficient for the weighted remainder class
+
+The leading cubic–cubic term does not require the detailed product expansion
+(2). Let u and w be real even localized profiles, smooth away from zero,
+whose physical-side collars have
+
+    u(y)=c_u y^3+r_u(y),   w(y)=c_w y^3+r_w(y),
+
+and whose remainders satisfy the j=0,...,4 weighted bounds (4) in the
+[rough-variation source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md).
+Assume the localized profiles have integrable fourth derivatives away from
+the seam; a smooth compact cutoff and the source's C5 interior charts
+suffice. Then, distributionally,
+
+    u'''' = 12 c_u delta_0 + h_u,    w'''' = 12 c_w delta_0 + h_w,
+    h_u,h_w ∈ L¹(R).
+
+Indeed r^(j)(y) tends to zero for j=0,1,2,3, so the even extension has
+matching traces through order three and creates no delta term on the fourth
+derivative. Its ordinary fourth derivative is locally integrable because
+it is bounded by a multiple of 1+log(1/|y|). The reflected cubic contributes
+12 c delta_0; cutoff-transition derivatives are integrable. Hence the
+Riemann–Lebesgue lemma gives, as |k|→infinity,
+
+    k^4 uhat(k) → 12 c_u,     k^4 what(k) → 12 c_w,
+
+and both functions k^4 uhat(k), k^4 what(k) are uniformly bounded on R.
+
+Under the full-plane multiplier and half-trace normalization in (1), put
+s=sqrt(t) k and define the bracket to be zero at s=0:
+
+    t^(−5/2) B_t(u,w)
+      = 1/pi ∫_R [R3(s²)/s^8]
+             [k^8 conjugate(uhat(k)) what(k)]_(k=s/sqrt(t)) ds/(2pi).
+
+The bracket is uniformly bounded and converges pointwise for s ≠ 0 to
+144 c_u c_w. The scaled kernel is integrable: R3(s²)=O(s^8) near zero
+and R3(s²)=O(s^6) at infinity. Dominated convergence therefore gives
+
+    lim_(t↓0) t^(−5/2) B_t(u,w)
+      = (144/pi²) J c_u c_w
+      = −15 c_u c_w/(1024 sqrt(pi)).
+
+This proves the leading coefficient for the weighted reflected remainder
+class in the flat multiplier model, not just for the pure cubic/log example.
+It gives an o(t^(5/2)) remainder, not a uniform O(t³ log t) estimate or an
+identified logarithmic coefficient. The weighted bounds alone do not specify
+a unique y^4 log y coefficient: they allow a remainder of that same order.
+The physical paired trace, curved geometry and common regulator remain
+separate hypotheses.
+Remaining to-do list: determine the additional hypotheses needed for the logarithmic tail,
 justify the paired folding and density/contact terms, compare exact results
 with prior literature, and certify supported analytic statements in Lean on GCP.
