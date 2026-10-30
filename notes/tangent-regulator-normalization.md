@@ -29,13 +29,14 @@ The second term in (1) is a product-gradient/contact contribution and is
 not supplied by the geometric heat Hessian alone.
 
 The pinned [smearing note](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-smeared-heat-projection-domain.md)
-uses a heat-trace shorthand K(t) in the identity
+explicitly defines K_s(t)=Tr exp(−t L_s) as a scalar heat trace on the
+physical half with rank two, and writes
 
-    delta_v delta_u K(t)
+    delta_v delta_u K_0(t)
        = −2t partial_t D_v Tr_bar[u exp(−t L)].              (2)
 
-As written, its left side must be read as a scalar traced quantity; it
-cannot literally be the operator K_t just defined above. The
+Thus K_s(t) in that note is a scalar trace, whereas K_t in the later
+conversion note is an operator. The two notations must not be conflated. The
 [rough-variation note](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md)
 uses the same traced shorthand for its tangent calculation. The
 normalization of the physically intended trace is fixed by the source's
