@@ -9,10 +9,18 @@ Assume the two-localized-insertion estimate of the cited note for u and v_near, 
   Tr exp(-rL) <= C r^(-1),
   ||1_K exp(-rL) 1_F||_op <= C exp(-d0²/(c r)),          (1)
 
-for 0<r<=t0, with analogous bounds for Ltilde. The off-diagonal estimate must hold for the chosen sets and be uniform across the family under consideration. A positive d0 may be smaller than the geometric d if required by the metric comparison.
+for 0<r<=t0, with analogous bounds for Ltilde. The off-diagonal estimate is required not only for K and F but also for the separated intermediate sets used below, with uniform constants across the family. A full Davies estimate for all separated measurable sets is a sufficient hypothesis. The displayed K--F estimate alone does not imply the estimates for those intermediate sets.
 
-For a=t-s,b=s>0, insert a spatial partition between the heat halves as in the cited locality note. Each compressed heat operator P_K e^(-aL) P_F is Hilbert--Schmidt with a bound C a^(-N) exp(-c1/a), and the reverse compression has the analogous bound. These follow from (1), heat-trace splitting and a partition into sets separated from K or F. Schatten Holder then bounds the far contact integrand by C ||u||_infinity ||v||_infinity a^(-N)b^(-N) exp[-c1/a-c1/b].
-Since a+b=t and 1/a+1/b>=4/t, integration over 0<s<t gives
+For a=t-s,b=s>0, choose a measurable neighborhood P of K such that both dist(P,F) and dist(K,P^c) are positive. Split H_r=exp(-rL) as H_(r/2)^2 and insert P+P^c. Schatten Holder gives
+
+ ||P_K H_r P_F||_2 <= ||P_K H_(r/2)||_2 ||P H_(r/2) P_F||_op
+                    +||P_K H_(r/2) P^c||_op ||H_(r/2) P_F||_2. (1a)
+
+The two Hilbert--Schmidt factors are at most [Tr H_r]^(1/2)<=C r^(-1/2), and the two operator factors have exponential off-diagonal bounds by the strengthened hypothesis. Consequently ||P_K H_r P_F||_2<=C r^(-1/2) exp(-c1/r); the reverse estimate follows by adjoints. In the far contact, U=P_K U and V_far=P_F V_far, so inserting these supports and applying Schatten Holder to the two compressed heat operators gives
+
+ |Tr[U H_a V_far H_b]| <= C ||u||_infinity ||v||_infinity
+        (ab)^(-1/2) exp[-c1/a-c1/b].                       (1b)
+Since a+b=t and 1/a+1/b>=4/t, absorb each inverse half-power into half of its exponential and integrate over 0<s<t. This gives
 
   |I_L(t;u,v_far)| <= C' ||u||_infinity ||v||_infinity
                          t^(-N') exp(-c'/t),               (2)
