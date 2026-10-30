@@ -61,6 +61,30 @@ D*-ellipticity and the same regularity reasoning give the complementary H1
 adjoint domain. This does not make the original first-order realization
 self-adjoint: its boundary subspace and its adjoint subspace are different.
 
+## Closed partner identity from the finite-cut domains
+
+Suppose in addition that a globally defined bounded unitary involution J is
+parallel for the full spin and twisting connection, commutes with Clifford
+multiplication, and anticommutes with chi on the boundary. The first two
+conditions imply D_formal J=J D_formal distributionally. The last maps
+the H1 chi=+ trace space onto the H1 chi=- trace space. If the formal bulk
+adjoint is -D_formal and the two H1 domain identifications above hold, then
+
+    D* = -J D J
+
+as closed operators, including equality of domains: the right-hand domain
+is J Dom(D), exactly the complementary H1 space, and its action agrees with
+-D_formal there. Consequently Q=J D is skew-adjoint, because
+Q*=D* J=-J D=-Q with its natural adjoint domain equal to Dom(D).
+
+The pinned paired-phase source records the required pointwise Clifford and
+projector identities for J=tau_1 tensor sigma_1. This derivation isolates the
+additional global condition: J must intertwine the full pulled-back spin and
+magnetic connections, not merely commute with the displayed gamma matrices.
+The source assumes identical exteriors and a fixed bundle identification;
+verifying that this identification supplies a globally parallel J remains
+an application-specific obligation. No limiting-cut assertion follows.
+
 ## What this does and does not settle
 
 This gives an established route to the H1 assumptions on each compact smooth
