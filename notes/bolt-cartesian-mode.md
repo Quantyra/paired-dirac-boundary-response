@@ -1,4 +1,4 @@
-﻿# Regular disk spinors and lowest thermal radial modes
+# Regular disk spinors and lowest thermal radial modes
 
 Status: conditional local domain argument, not a global paired-domain proof
 or a Lean certificate. It connects [the critical form analysis](bolt-critical-form.md)
@@ -56,9 +56,43 @@ This is stronger than a comparison of formal indicial roots, but it does not
 assert equality of global operator domains or specify an independent
 boundary condition at the bolt.
 
+## Extension to every fixed thermal mode
+
+For p_j=(j+1/2)κ, j∈Z, the two leading inverse-square coefficients are
+
+    p_j²/κ² ± p_j/κ = ν_±²−1/4,
+    {ν_+,ν_−}={|j+1|,|j|}.                              (2)
+
+The polar spin phases shift the two Cartesian angular labels by one, so
+they are j and j+1 up to exchanging the spin components and reversing the
+orientation convention. A smooth Cartesian Fourier coefficient of angular
+index n is O(ρ^{|n|}), and its first radial derivative is
+O(ρ^{|n|−1}) for |n|≥1. This follows by applying Taylor's theorem in x,y:
+a polynomial of degree below |n| has no nth angular Fourier component.
+For n=0 the averaged linear term vanishes, as used above. After multiplying
+by √a, the regular radial behavior is O(ρ^{ν+1/2}) for the corresponding
+ν in (2), with the sharper n=0 statement (1).
+
+For ν≥1, an ordinary cutoff supported in ρ<2ε, equal to zero for ρ≤ε
+and with derivative O(ε^(−1)), changes the local form norm of a smooth
+mode by O(ε^{2ν}) in squared norm. This follows from the O(ρ^{ν+1/2})
+field and O(ρ^{ν−1/2}) derivative bounds, including the ρ^(−2) potential
+term. Thus the same density argument identifies the regular smooth core's
+local form closure with the away-from-bolt radial form closure for each
+fixed ν≥1, under the unitary frame, rotation and core hypotheses above.
+The critical ν=0 case uses the logarithmic cutoff already described.
+
+The other formal solution for ν≥1 behaves as ρ^{1/2−ν} and is not L²
+near the bolt (at ν=1 the integral diverges logarithmically). For ν=0,
+the second solution √ρ logρ is L² but is excluded by the form argument.
+This fixed-mode calculation gives no uniform bound as |j|→∞: lower-order
+coefficient constants can depend on j, so an interchange with the thermal
+sum or a Gaussian localization estimate still needs a separate uniform
+argument. It also does not establish the global paired outer domain or the
+physical spin-frame identification.
 The precise sign assignment between the two spin components and the
 source's Γ eigensectors must still be matched to its global gamma convention.
-The argument does not cover arbitrary thermal modes, a different spin
+The argument does not cover uniform thermal summation, a different spin
 structure, the global paired outer boundary, or a heat-kernel localization
 estimate. No numerical computation is needed for the local frame and form
 comparison.
