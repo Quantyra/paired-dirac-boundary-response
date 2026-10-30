@@ -259,6 +259,29 @@ This is an all-frequency bound for the stated flat Fourier expression.
 It does not extract a universal logarithmic coefficient from the broader
 weighted family, control the curved paired trace, or justify a
 regulator interchange.
+
+## Integrated flat diagnostic
+
+The uniform estimate (6) gives an explicit contribution to the subtracted
+proper-time integral in this flat model. For 0<T<=min(1,t0), let
+L_T=log(1/T) and A=15/(1024 sqrt(pi)). Then
+
+    |∫_0^T [B_t(u,w)+A c_u c_w t^(5/2)] dt/t²|
+      <= (C K_u K_w T²/2)
+         [1 + L_T³ + (3/2)L_T² + (3/2)L_T + 3/4].
+
+The bound follows by integrating t(1+|log t|³); integration by parts
+three times gives the displayed polynomial. The leading term itself
+integrates exactly to
+
+    ∫_0^T [−A c_u c_w t^(5/2)] dt/t²
+      = −(2A/3) c_u c_w T^(3/2).
+
+Both expressions include the cutoff and interior constants already required
+for (6). They are estimates of the fixed flat tangent diagnostic, not
+physical admission margins or bounds on a curved quantum action.
+The constant C has not been evaluated numerically and the physical
+normalization and common-regulator bridge remain separate obligations.
 Remaining to-do list: determine whether broader selected fields meet the logarithmic remainder condition,
 justify the paired folding and density/contact terms, compare exact results
 with prior literature, and certify supported analytic statements in Lean on GCP.
