@@ -25,6 +25,15 @@ and the elementary transfer majorant has the schematic form
 
 with C uniform only if the collar and lift hypotheses are uniform. For ell<=c t/C with c small enough, the exp(h) growth in nu_j² and the ray variable |z| is absorbed by the explicit thermal and contour heat factors. Linear |mu_n| and |nu_j| terms are absorbed by Young's inequality when |mu_n| is controlled by a fixed multiple of 1+M_n. The angular exp(-t M_n²) then provides the Gaussian mass damping. The resulting polynomial sums are of the type estimated in `symmetric-lapse-transfer-summability-test.md`.
 
+## Source-family qualification
+
+The scalar-shift hypothesis is compatible with the source's recorded separated seed square L2+M_n². It is not automatic for its full Weyl family. In `full-weyl-angular-vertices.md`, the full congruenced mode square has angular contribution
+
+  exp(-2b)[mu²-i mu G c(db)].                              (5)
+
+For nonconstant b this is a bounded position-dependent endomorphism, including a gradient term, rather than the constant mu² identity. At b=0 it reduces to the scalar shift mu²; even a nonzero constant b changes the scalar value to mu² exp(-2b). Hence the shifted contour using M_n² cannot be applied uniformly to that full family by the seed separation alone. A separately proved lower bound for the complete mode square may still supply damping, but it must retain its own actual domain and vertices.
+
+Likewise the interpolating variable-mass conversion family contains M exp((1-r)b) in its first-order operator. Its real mass-gap proof yields a Gaussian majorant without asserting exact scalar-shift factorization. These are distinct mechanisms: (2) uses an exact spectral shift, while the product conversion uses an inequality. Neither proves the physical curved tangent subtraction.
 The shift does not prove a trace-norm resolvent comparison or a uniformly polynomial Poisson constant. Those must hold on the shifted contour, including the arc and its distance to the actual spectrum, with all boundary-source and removed-collar terms. If the mode gap, scalar mass separation, or common full/cut domain fails, the displayed damping is not available in this form. In particular no inference is made from the product-model gap to the physical rough geometry without proving those hypotheses. This is not a common-regulator theorem or Lean certification.
 
 Remaining to-do list: establish physical mode separation and uniform gaps, prove shifted-contour trace-norm estimates and boundary matching, complete the response and regulator, resolve novelty, finish the manuscript, and certify supported claims on GCP.
