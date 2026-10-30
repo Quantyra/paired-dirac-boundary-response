@@ -168,6 +168,24 @@ the whole boundary, that the bulk operators match the source's hypotheses,
 or that their closed realizations agree. In particular, the first-order
 paired operator still has its separately specified domain.
 
+The connection matching can be stated without assuming I is tangentially
+parallel. For X tangent to the boundary and a section v of E_side^+,
+the induced connection on Hom(E_side^+,E_side^-) gives
+
+    (nabla_X I)v = (nabla'_X T)v
+                 = U tau_3 c(nabla_X n) U^(-1) v.
+
+Here S is parallel, so its eigensubbundle projections commute with the
+connection; the right-hand side lies in E_side^- because differentiating
+{S,T}=0 gives {S,nabla'_X T}=0. Thus I is normal-parallel for the chosen
+collar but can have a tangential connection defect controlled by the shape
+operator. In a smooth finite-cut comparison this defect is explicit data
+to be matched to the two side connections, rather than an unexplained
+extra vertex or a reason by itself to reject transmittal conditions. The
+source's hypotheses and local formulas must still be checked for the actual
+induced connections and endomorphism; the identity gives no uniform bound
+as the cut or metric varies.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces
