@@ -98,3 +98,53 @@ theorem positiveSquare_dense_draft
 end PairedDirac
 
 #print axioms PairedDirac.positiveSquare_dense_draft
+namespace PairedDirac
+
+variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+variable [CompleteSpace H]
+
+/-- The adjoint of the square has no additional domain vectors. -/
+theorem positiveSquare_adjoint_domain_reverse_draft
+    (D : H →ₗ.[ℂ] H) (hClosed : D.IsClosed)
+    (hDense : Dense (D.domain : Set H)) :
+    (positiveSquare D).adjoint.domain ≤ (positiveSquare D).domain := by
+  let P := positiveSquare D
+  have hPDense : Dense (P.domain : Set H) := positiveSquare_dense_draft D hClosed hDense
+  intro y hy
+  let z : H := P.adjoint ⟨y, hy⟩
+  obtain ⟨u, hu⟩ := positiveSquare_add_one_surjective_draft D hClosed hDense (y + z)
+  have hyu : y = (u : H) := by
+    apply sub_eq_zero.mp
+    apply (inner_self_eq_zero (𝕜 := ℂ)).mp
+    obtain ⟨v, hv⟩ := positiveSquare_add_one_surjective_draft D hClosed hDense (y - (u : H))
+    have hadj : inner ℂ z (v : H) = inner ℂ y (P v) :=
+      LinearPMap.adjoint_isFormalAdjoint hPDense ⟨y, hy⟩ v
+    have hsym : inner ℂ (P u) (v : H) = inner ℂ (u : H) (P v) :=
+      positiveSquare_symmetric_draft D hDense u v
+    have hzero : inner ℂ (y - (u : H)) ((v : H) + P v) = 0 := by
+      calc
+        inner ℂ (y - (u : H)) ((v : H) + P v) =
+            inner ℂ (y + z) (v : H) - inner ℂ ((u : H) + P u) (v : H) := by
+          simp only [inner_sub_left, inner_add_right, inner_add_left]
+          rw [← hadj, ← hsym]
+          abel
+        _ = 0 := by rw [hu]; simp
+    simpa [hv] using hzero
+  simpa [hyu] using u.property
+
+/-- The actual adjoint square is self-adjoint. -/
+theorem positiveSquare_selfAdjoint_draft
+    (D : H →ₗ.[ℂ] H) (hClosed : D.IsClosed)
+    (hDense : Dense (D.domain : Set H)) :
+    (positiveSquare D).adjoint = positiveSquare D := by
+  have hPDense := positiveSquare_dense_draft D hClosed hDense
+  have hf := positiveSquare_le_adjoint_draft D hDense hPDense
+  have hr := positiveSquare_adjoint_domain_reverse_draft D hClosed hDense
+  apply Eq.symm
+  apply LinearPMap.eq_of_le_of_domain_eq hf
+  exact le_antisymm hf.1 hr
+
+end PairedDirac
+
+#print axioms PairedDirac.positiveSquare_adjoint_domain_reverse_draft
+#print axioms PairedDirac.positiveSquare_selfAdjoint_draft
