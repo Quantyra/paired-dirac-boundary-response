@@ -1,5 +1,7 @@
 # Physical log-cubic single-insertion trace obstruction
 
+The later [local-test argument](rn-log-cubic-trace-obstruction-local-test.md) removes the diagonal-lower-bound hypothesis for the specified fixed RN-AdS geometric model. This note retains the conditional diagonal route for comparison.
+
 This examines assumption (5) of `massive-mixed-heat-infrared-bound.md` for the actual physical log-cubic scalar. It gives a conditional obstruction, not a divergence of the full mixed response or renormalized action. The conditional input is a uniform positive lower bound on the fixed physical heat-kernel diagonal in the asymptotic end.
 
 Let X be the fixed RN-AdS exterior with physical volume r² dr d tau dOmega, and let u=b_conf v be the stationary scalar in `conformal-log-direction-physical-volume.md`, with nonzero cubic coefficient c_v. Then u is bounded, has a fixed nonzero sign for all sufficiently large r, and
