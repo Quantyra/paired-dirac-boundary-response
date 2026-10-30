@@ -111,25 +111,27 @@ The remainder in (4.4) is not asserted to be O(t³). The bound on the weighted r
 
 **Conditional compact-model transfer.** Fix a thermal period T>0 and a radial double of circumference 2L, with L>2R and profiles supported in [-R,R]. Under the compact form-differentiation, folding and per-exterior trace conventions stated in `../notes/compact-flat-small-time-winding.md`, the actual compact flat-model mixed derivative and its Fourier-defined counterpart differ by
 
-  O((1+t^(-N)) exp(-c/t) ||u||_H2 ||w||_H2),              (4.10)
+  O((1+t^(-N)) exp(-c/t) ||u||_H2 ||w||_H2),              (4.6)
 
-for some c>0 and finite N at fixed L,R,T. The estimate retains radial winding and external sampling images; the compact mixed second vertex is included. A common local polynomial subtraction agrees by periodic Parseval for profiles with no overlap with nonzero translates. Consequently (4.3), and (4.4) under its stronger jet assumptions, also hold for this declared compact model. This is not yet an identification with the physical curved trace or its common regulator.
+for some c>0 and finite N at fixed L,R,T. This comparison is between the compact derivative and the Fourier-defined cylinder form at the same fixed T. It retains radial winding and external sampling images; the compact mixed second vertex is included. A separate fixed-period comparison to the infinite-thermal-line form bounds nonzero thermal images by C ||u||_2 ||w||_2 exp[-T²/(4t)](t^-1+t^-2+t^-3), under the hypotheses of `../notes/fixed-period-flat-boundary-coefficients.md`. Both estimates are superpolynomial at fixed T; neither is uniform as T approaches zero. A common local polynomial subtraction agrees by periodic Parseval for profiles with no overlap with nonzero translates. Consequently (4.3), and (4.4) under its stronger jet assumptions, also hold for this declared compact model. This is not yet an identification with the physical curved trace or its common regulator.
 
 The distinction between fiber and action normalization matters: the recorded folded orbit fiber is rank four, whereas F in (4.1) was computed using one rank-two sector. Under the stated flat folding identities, the unnormalized rank-four paired half trace equals the full-line rank-two trace; the extra per-exterior factor in (4.2) must come from the source's specified averaging or action convention, not be applied twice. The detailed ledger is in `../notes/flat-orbit-fiber-normalization.md` and `../notes/tangent-regulator-normalization.md`.
+
 **Proposition 4.3 (all-frequency flat bound).** Define R2(x)=F(x)-1+x²/120 and, with the Fourier and half-normalization conventions of (4.2),
 
  r_flat(t;u,w)=(1/(pi t)) integral_R conjugate(uhat(k)) what(k)
-                                  R2(t k²) dk/(2pi).        (4.8)
+                                  R2(t k²) dk/(2pi).        (4.7)
 
 For real even localized u,w in H3(R),
 
  |r_flat(t;u,w)| <= t²/(420pi) ||u'''||_(L2,half)||w'''||_(L2,half),
  integral_0^t0 |r_flat| dt/t²
-       <= t0/(420pi) ||u'''||_(L2,half)||w'''||_(L2,half). (4.9)
+       <= t0/(420pi) ||u'''||_(L2,half)||w'''||_(L2,half). (4.8)
 
-*Proof.* For phi(z)=(1+z)exp(-z), the identity phi(z)-1+z²/2=integral_0^z s(1-exp(-s))ds and the beta integrals in (4.1) give 0<=R2(x)<=min(x³/840,x²/120) for x>=0. Use the cubic bound in (4.8), then Parseval and Cauchy--Schwarz. For even full-line fields the squared L2 norm of the third derivative is twice its half-line norm, giving the factor in (4.9). The entire Fourier integral is retained and the norms include the localization transition. □
+*Proof.* For phi(z)=(1+z)exp(-z), the identity phi(z)-1+z²/2=integral_0^z s(1-exp(-s))ds and the beta integrals in (4.1) give 0<=R2(x)<=min(x³/840,x²/120) for x>=0. Use the cubic bound in (4.7), then Parseval and Cauchy--Schwarz. For even full-line fields the squared L2 norm of the third derivative is twice its half-line norm, giving the factor in (4.8). The entire Fourier integral is retained and the norms include the localization transition. □
 
 This establishes integrability of the specified flat diagnostic, not the curved tangent-subtracted response. The source's separate sufficient target is a uniform |r_curved(t)|<=A(K)||u||_A||w||_A t^(3/2), with unknown A(K), for its fully localized mixed response. Its density, second vertex, contact, cutoff terms and common regulator must be specified and controlled together; see `../notes/p1d-response-versus-conversion.md`.
+
 ### Regulated conversion and the separate contact
 
 The flat geometric multiplier does not by itself give the regulated action Hessian. In the source's physical-half, time-reduced trace convention, write
@@ -137,19 +139,20 @@ The flat geometric multiplier does not by itself give the regulated action Hessi
  T_t(u)=Tr_bar[u exp(-tL)],
  I_t(u,v)=integral_0^t Tr_bar[u exp(-(t-s)L) v exp(-sL)] ds,
  Theta(t)=sum_(n>=1) d_n exp(-t M_n²),
- M_n²=n(n+q)/b_sphere²,  d_n=2(q+2n).                     (4.6)
+ M_n²=n(n+q)/b_sphere²,  d_n=2(q+2n).                     (4.9)
 
 The source records, at positive common cutoff and under its paired-domain, grading and differentiation hypotheses,
 
  J_t''[u,v]=Theta(t)/2 [D_v T_t(u)+D_u T_t(v)]
-                         +2 Theta'(t) I_t(u,v).             (4.7)
+                         +2 Theta'(t) I_t(u,v).             (4.10)
 
-Here D_v denotes the geometric variation on the identified fixed Hilbert space, and J_t is the endpoint conversion between the source's geometric and variable-mass regulated actions. The contact is symmetric by trace cyclicity and s -> t-s. The n=0 sector and its lowest-Landau-level allocation are separate from the displayed n>=1 sum. A further source action normalization is not absorbed into (4.7); the angular multiplicities already contain their recorded sign degeneracy.
+Here D_v denotes the geometric variation on the identified fixed Hilbert space, and J_t is the endpoint conversion between the source's geometric and variable-mass regulated actions. The contact is symmetric by trace cyclicity and s -> t-s. The n=0 sector and its lowest-Landau-level allocation are separate from the displayed n>=1 sum. A further source action normalization is not absorbed into (4.10); the angular multiplicities already contain their recorded sign degeneracy.
 
-Equation (4.7) is a source identity whose physical hypotheses and complete trace interchanges remain to be independently verified, not a consequence of Proposition 4.1 alone. In particular, neither the geometric term nor the contact may be omitted when the common cutoff is removed. The source notation and the distinction between operator heat kernels and scalar heat traces are audited in `../notes/tangent-regulator-normalization.md`; the separate zero-sector allocation is in `../notes/source-angular-zero-mode-allocation.md`. The endpoint (4.7) must also not be identified with the tangent-subtracted P1-D proper-time remainder without an additional argument.
+Equation (4.10) is a source identity whose physical hypotheses and complete trace interchanges remain to be independently verified, not a consequence of Proposition 4.1 alone. In particular, neither the geometric term nor the contact may be omitted when the common cutoff is removed. The source notation and the distinction between operator heat kernels and scalar heat traces are audited in `../notes/tangent-regulator-normalization.md`; the separate zero-sector allocation is in `../notes/source-angular-zero-mode-allocation.md`. The endpoint (4.10) must also not be identified with the tangent-subtracted P1-D proper-time remainder without an additional argument.
+
 ## 5. Curved trace extension — work in progress
 
-The source's localized tangent-subtracted curved remainder and the endpoint conversion (4.7) are distinct observables; see `../notes/p1d-response-versus-conversion.md`. To specify the mixed response before estimating it, let a positive-cutoff form family q_(s,r) have a common form domain and write its first and mixed derivatives as V_u, V_w and V_uw in a finite-dimensional Galerkin approximation. If K_t is the unperturbed heat matrix, the exact mixed heat derivative is
+The source's localized tangent-subtracted curved remainder and the endpoint conversion (4.10) are distinct observables; see `../notes/p1d-response-versus-conversion.md`. To specify the mixed response before estimating it, let a positive-cutoff form family q_(s,r) have a common form domain and write its first and mixed derivatives as V_u, V_w and V_uw in a finite-dimensional Galerkin approximation. If K_t is the unperturbed heat matrix, the exact mixed heat derivative is
 
  K_uw(t)=integral_(a,b,c>=0; a+b+c=t)
        [K_a V_u K_b V_w K_c+K_a V_w K_b V_u K_c] da db
