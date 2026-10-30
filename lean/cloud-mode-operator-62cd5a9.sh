@@ -7,7 +7,7 @@ mkdir "$run" || exit $?
 exec > >(tee "$run/run.log") 2>&1
 trap 'code=$?; printf "%s\n" "$code" > "$run/exit-code"' EXIT
 set -e
-cp "$HOME/ModeDomainDraft-62cd5a9.lean" "$run/ModeDomainDraft.lean"
+cp "$HOME/ModeDomainDraft-f35e797.lean" "$run/ModeDomainDraft.lean"
 cp "$HOME/ModeOperatorDraft-62cd5a9.lean" "$run/ModeOperatorDraft.lean"
 sha256sum "$run"/*.lean "$prior/SquareDomainDraft.olean"
 export PATH="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin:$PATH"
