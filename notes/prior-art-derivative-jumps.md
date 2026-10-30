@@ -26,6 +26,14 @@ jump. The source's E is a potential; signs of E versus V disappear in that
 square. A mixed Hessian comparison must still account for the factor from
 polarizing/differentiating the quadratic expression.
 
+This paragraph reports the value stated by the source; it is not an
+independently verified coefficient. The subsequent
+[normalization audit](scalar-jump-normalization-audit.md) identifies an
+apparent mismatch between the source's intermediate expansion and its
+stated jump formula, and an independent Duhamel calculation gives a
+different candidate value. The discrepancy remains open and prevents using
+either numerical value as a settled benchmark.
+
 ## Overlap and necessary comparison
 
 The existence of a half-integer surface term arising from a nonsmooth field,
