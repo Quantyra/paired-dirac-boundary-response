@@ -68,7 +68,28 @@ Cauchy's estimate on a radius-r disk in the direction u gives the first bound. F
 For arbitrary complex L-infinity z, (3.2) is a bounded analytic continuation; it does not assert that multiplication by exp(-(b+z)/2) preserves a first-order operator domain. The constants are sufficient estimates, not measured physical margins. They do not make the angular trace summable or establish the common regulator.
 ## 4. Tangent boundary response — work in progress
 
-The planned theorem must specify the physical source, full angular and thermal spectra, state, paired domains, contact terms, and common regulator. The ordinary argument and first unsupported implication are tracked in `../notes/claim-dependencies.md` and `../notes/proof-audit.md`. No response theorem is asserted in this draft section.
+The following is a flat diagnostic with its normalization declared explicitly. It does not yet identify the source's physical response, full angular tower, state, or common regulator.
+
+Let a=alpha(1-alpha) and define
+
+ F(x)=1/2+(1/2) integral_0^1 (1+a x) exp(-a x) d alpha,
+ R3(x)=F(x)-1+x²/120-x³/840.                              (4.1)
+
+For real even compactly supported profiles u,w on the normal line, use the Fourier convention uhat(k)=integral exp(-iky)u(y)dy, and set
+
+ B_t(u,w)=(1/(pi t)) integral_R conjugate(uhat(k)) what(k)
+                              R3(t k²) dk/(2pi).            (4.2)
+
+In the stipulated rank-two flat orbit model, the full-plane mixed geometric heat-trace density has multiplier 2F(tk²)/(pi t). Formula (4.2) uses the conditional per-exterior half normalization and subtracts the displayed local Taylor terms. The momentum calculation, including the second vertex, is given in `../notes/flat-tangent-multiplier.md`; the physical folding and normalization remain application hypotheses.
+
+**Proposition 4.1 (flat cubic coefficient).** Suppose, near zero, u(y)=c_u |y|³+r_u(|y|) and w(y)=c_w |y|³+r_w(|y|), with |r^(j)(y)|<=C y^(4-j)(1+|log y|) for j<=4. Assume smoothness away from zero, compact support, and integrable exterior fourth derivatives. Then the explicitly defined bilinear form (4.2) satisfies
+
+ lim_(t->0) t^(-5/2) B_t(u,w)
+                   =-15 c_u c_w/(1024 sqrt(pi)).           (4.3)
+
+*Proof.* Distributionally, u''''=12 c_u delta_0+g_u with g_u in L1, and likewise for w. The Riemann--Lebesgue lemma gives k⁴ uhat(k)->12 c_u and the analogous limit for w, with these quantities bounded. Set s=sqrt(t)k in (4.2). The scaled kernel R3(s²)/s⁸ is integrable: R3(x)=O(x⁴) at zero and R3(x)=O(1+x³) at infinity. Dominated convergence therefore reduces the limit to 144 c_u c_w/pi² times the integral of that kernel on (0,infinity). Direct integration gives integral_0^infinity R3(s²)ds/s⁸=-5 pi^(3/2)/49152, yielding (4.3). The integral and endpoint justifications are recorded in `../notes/tangent-integral-argument.md`; the full weighted-profile argument is in `../notes/flat-weighted-cubic-leading-limit.md`. □
+
+The bound on the weighted remainder alone does not select a unique logarithmic jet, so no logarithmic coefficient is claimed without further hypotheses. The half normalization, all physical vertices and the curved common-regulator limit remain to be matched. A GCP Lean receipt covers the raw tangent integral at a narrower scope; it does not certify Proposition 4.1 or the physical response.
 
 ## 5. Curved trace extension — work in progress
 
