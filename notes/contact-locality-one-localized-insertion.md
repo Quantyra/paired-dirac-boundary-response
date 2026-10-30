@@ -27,6 +27,19 @@ Since a+b=t and 1/a+1/b>=4/t, absorb each inverse half-power into half of its ex
 
 with constants independent of the insertion endpoint. The same holds for Ltilde. Combine (2) with the existing near-insertion locality estimate to obtain the same exponential form for |I_L(t;u,v)-I_Ltilde(t;u,v)|. The far values of v need not agree between the two models; the norm bound covers both.
 
+## All-set Davies estimate for the auxiliary cylinder
+
+For the explicit compact reflected cylinder of `compact-reflected-auxiliary.md`, take its fixed flat-coordinate metric d0 and D_f=gamma_y partial_y+f gamma_tau partial_tau, with 0<m<=f<=M. Real Lipschitz scalar weights preserve the H1 form domain and
+
+ ||[D_f,phi]|| <= a ||d phi||_(infinity,d0), a=max(1,M),
+
+using the Clifford relations. The weighted-form calculation in `paired-form-davies-estimate.md` therefore gives, for every pair of measurable sets E,F with d0(E,F)>0,
+
+ ||1_E exp(-r D_f*D_f) 1_F|| <= exp[-d0(E,F)^2/(4 a² r)]. (3)
+
+This is exactly the all-set assumption needed for P and P^c above, with the same a for any family sharing M. The compact auxiliary heat-trace bound Tr exp(-rL)<=C r^-1 follows from `auxiliary-uniform-ellipticity.md` under its fixed periods, rank and uniform lower/derivative bounds. The U-even half-cylinder restriction inherits (3) for reflection-invariant even extensions of the scalar weights and sets; the reflected distance must be used, with the positive separation checked for the chosen K,F. The smooth half-domain reflection identification is unnecessary for the all-set estimate on the compact full double itself.
+
+For the physical model the same weighted-form proof applies if its actual first-order H1 domain is preserved by scalar Lipschitz weights and the Clifford bound and metric comparison are uniform; its separate uniform heat-trace bound is still required. This is a conditional verification of the needed hypotheses, not proof that the physical and auxiliary bundles or operators coincide on the collar.
 This extends only the contact localization theorem. Establishing the required physical/auxiliary common collar and the uniform heat, domain and off-diagonal estimates remains necessary. The angular multiplier and physical-half normalization must be applied separately; a polynomial angular factor preserves exponential smallness for fixed positive separation. No Lean certification is claimed.
 
 Remaining to-do list: verify source matching and the stated heat estimates, control geometric vertices and the regulator, resolve novelty, finish the manuscript, and certify supported claims in Lean on GCP.
