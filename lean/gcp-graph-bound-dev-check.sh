@@ -21,6 +21,16 @@ for name in PairedDirac GraphBoundsDraft GraphBoundsComposedDraft; do
 done
 cd "$run/sources"
 sha256sum ./*.lean > "$run/source-sha256.txt"
+# Record workspace provenance; this development check does not make a clean-replay claim.
+if git -C "$workspace" rev-parse --show-toplevel > "$run/workspace-root.txt" 2>/dev/null; then
+  git -C "$workspace" rev-parse HEAD > "$run/workspace-commit.txt"
+  git -C "$workspace" status --porcelain > "$run/workspace-status.txt"
+else
+  printf '%s\n' 'Workspace is not a Git worktree.' > "$run/workspace-status.txt"
+fi
+if [[ -f "$workspace/lake-manifest.json" ]]; then
+  sha256sum "$workspace/lake-manifest.json" > "$run/lake-manifest-sha256.txt"
+fi
 cd "$workspace"
 lake --no-cache env printenv PATH > "$run/inherited-path.txt"
 lake --no-cache env printenv LEAN_PATH > "$run/inherited-lean-path.txt"
