@@ -75,6 +75,13 @@ The running exact-tree workspace has not been modified or used to compile
 this draft. Its GCP development run, dependency audit and axiom report remain
 to be obtained.
 
+The graph-draft driver from commit `e135b3d` has been transferred to GCP.
+Local and remote SHA-256 agree at
+`2e1d37ee82cc36829906d6955f8b1fe1cc20d67854b0b898608bc442d37918e6`,
+and `bash -n` reported no syntax error. It has not been executed: it requires
+the existing exact-tree build's recorded exit code to be zero and uses that
+build environment only for a development check.
+
 The present `congruence_domain` theorem is definitional because the candidate
 map was constructed with the original domain; `invariant_preimage` proves
 the matching natural right-composition domain only from both forward and
