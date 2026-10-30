@@ -69,6 +69,45 @@ including the cutoff and all frequencies. The Duhamel normalization remains
 to be checked independently against the source's operator and trace
 conventions; this calculation alone does not establish the Dirac result.
 
-Remaining to-do list: independently audit the Duhamel prefactor and source
-conventions, seek a primary-source cross-check, justify the Dirac folding,
+## Trace normalization and general moment check
+
+Write H_0=-Delta on R^2 and H_lambda=H_0+lambda V(y). The coefficient
+of lambda^2 in the relative heat trace per unit tangential length is
+
+    integral_(0<u<v<t) Tr_length[
+      exp(-(t-v)H_0) V exp(-(v-u)H_0) V exp(-u H_0)] du dv.
+
+By cyclicity, setting r=v-u gives integral_0^t (t-r) F(r) dr, where
+F(r)=Tr_length[exp(-(t-r)H_0) V exp(-r H_0) V]. Exchange of the
+two factors gives F(r)=F(t-r), so the triangle integral is
+(t/2) integral_0^t F(r) dr. In momentum representation completing the
+square in the two-dimensional Gaussian yields
+
+    F(at) = (4 pi t)^(-1) integral_R dk/(2 pi)
+                    |V-hat(k)|^2 exp(-a(1-a)t k^2).
+
+Thus the quadratic coefficient has precisely t^2/2 times (4 pi t)^(-1),
+or t/(8 pi), as used above. There is no additional mixed-derivative factor:
+this is the coefficient of lambda^2; differentiation twice would multiply
+it by two. The source's Eq. (22) likewise defines K2 as the coefficient
+quadratic in E over the ordered triangle. The relative trace or a finite
+periodic tangential box supplies the infrared interpretation; the displayed
+Gaussian calculation is per unit length.
+
+The source's Eq. (28) at n=2p+1, inserted into Eq. (27), gives the
+coefficient of integral E E^(2p+1)
+
+    Gamma(p+3/2)/[4 (2p+2)! sqrt(pi)]
+       = 1/[4^(p+2) (p+1)!].
+
+This differs from its displayed Eq. (31) by 1/(p+1)!; the p=0 case
+agrees, while p=1 gives one half. With the source's one-sided test function,
+E^(j)(0)=0 for j<p, and integration by parts gives
+integral E E^(2p+1)=(-1)^(p+1) E^(p)(0)^2/2. These algebraic checks
+strengthen the evidence of an internal normalization mismatch, but do not
+resolve whether a convention or another issue accounts for it. An independent
+review and a direct check of the publisher's version are still needed.
+
+Remaining to-do list: independently review this prefactor and source
+conventions, inspect the publisher's version, justify the Dirac folding,
 and revise the comparison only after the normalization is settled.
