@@ -55,6 +55,11 @@ failure. The driver checks source archives but does not disable or
 authenticate fetched binary build artifacts. Acceptance must inspect whether
 Lake used such artifacts and their provenance, or use a fresh verified
 source-only build. Do not restart solely because observation is slow.
+The pinned GCP Lake 5.0.0 help explicitly documents `--no-cache` as building
+packages locally without downloading build caches. A subsequent clean,
+task-owned source-only run should use `lake --no-cache build PairedDirac`
+and record its command, source identities and complete output; this option
+has not been applied retroactively to the current live run.
 
 The present `congruence_domain` theorem is definitional because the candidate
 map was constructed with the original domain; `invariant_preimage` proves
