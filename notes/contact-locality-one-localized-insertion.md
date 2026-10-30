@@ -11,16 +11,8 @@ Assume the two-localized-insertion estimate of the cited note for u and v_near, 
 
 for 0<r<=t0, with analogous bounds for Ltilde. The off-diagonal estimate must hold for the chosen sets and be uniform across the family under consideration. A positive d0 may be smaller than the geometric d if required by the metric comparison.
 
-For a=t-s,b=s>0, write U and V_far for the multipliers and P_K,P_F for the corresponding supports. Split each heat factor in half. Schatten Hölder yields
-
- |Tr[U e^(-aL) V_far e^(-bL)]|
-  <= ||u||_infinity ||v||_infinity
-       ||P_K e^(-aL/2)||_2 ||e^(-aL/2) P_F||_op
-       ||P_F e^(-bL/2) P_K||_op ||e^(-bL/2) P_K||_2,
-
-where the middle two factors may be obtained by inserting P_F and P_K at the scalar multipliers and using operator norms. More directly and without relying on an off-diagonal factor on both halves, insert a spatial partition between the heat halves as in the cited locality note: each compressed heat operator P_K e^(-aL) P_F is Hilbert--Schmidt with a bound C a^(-N) exp(-c1/a), and the reverse compression has the analogous bound. These follow from (1), heat-trace splitting and a partition into sets separated from K or F. Schatten Hölder then bounds the far contact integrand by C ||u||_infinity ||v||_infinity a^(-N)b^(-N) exp[-c1/a-c1/b].
-
-The displayed preliminary four-factor inequality is valid only when its stated intermediate support insertions are justified; the partition argument is the operative estimate. Since a+b=t and 1/a+1/b>=4/t, integration over 0<s<t gives
+For a=t-s,b=s>0, insert a spatial partition between the heat halves as in the cited locality note. Each compressed heat operator P_K e^(-aL) P_F is Hilbert--Schmidt with a bound C a^(-N) exp(-c1/a), and the reverse compression has the analogous bound. These follow from (1), heat-trace splitting and a partition into sets separated from K or F. Schatten Holder then bounds the far contact integrand by C ||u||_infinity ||v||_infinity a^(-N)b^(-N) exp[-c1/a-c1/b].
+Since a+b=t and 1/a+1/b>=4/t, integration over 0<s<t gives
 
   |I_L(t;u,v_far)| <= C' ||u||_infinity ||v||_infinity
                          t^(-N') exp(-c'/t),               (2)
