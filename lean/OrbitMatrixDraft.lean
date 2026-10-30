@@ -111,10 +111,10 @@ def partnerJ : Full →ₗ[ℂ] Full where
   map_add' := by intro x y; ext s i j; simp
   map_smul' := by intro a x; ext s i j; simp
 
-def chiFull : Full →ₗ[ℂ] Full := (liftOrbit tau).comp (liftOrbit normal)
+noncomputable def chiFull : Full →ₗ[ℂ] Full := (liftOrbit tau).comp (liftOrbit normal)
 def timeFull : Full →ₗ[ℂ] Full := liftOrbit timeGamma
 def normalFull : Full →ₗ[ℂ] Full := liftOrbit normal
-def sphereFull : Full →ₗ[ℂ] Full := (liftOrbit sphereOrbit).comp sphereSpinOne
+noncomputable def sphereFull : Full →ₗ[ℂ] Full := (liftOrbit sphereOrbit).comp sphereSpinOne
 
 theorem reflection_involution (v : Full) : reflectionU (reflectionU v) = v := by
   ext s i j; fin_cases s <;> fin_cases i <;> fin_cases j <;> simp [reflectionU]
