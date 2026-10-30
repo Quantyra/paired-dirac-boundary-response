@@ -209,6 +209,56 @@ source states the weighted admission separately from its special tangent
 directions; the stronger conclusion is confined to the latter unless
 additional regularity is proved. In particular, this check neither resolves
 the curved-regulator bridge nor certifies the published paper.
+
+## Uniform weighted-class error for the leading cubic term
+
+The weighted j<=5 assumptions give a quantitative version of the leading
+coefficient, uniform on a bounded family, under fixed localization and
+interior-chart constants. Let the reflected localized profiles have
+|c|<=K and |r^(j)(y)|<=K A_j y^(4−j)(1+log(1/y)) on 0<y<=delta,
+and assume the cutoff-transition derivatives through order five are
+bounded in L¹ by C K uniformly. Then for |k|>=2,
+
+    |k^4 uhat(k)−12 c_u| <= C K (1+log²|k|)/|k|,      (5)
+
+with an analogous estimate for w. Constants may depend on delta, the fixed
+A_j, and the fixed localization and chart bounds, but not on the field or k.
+
+To prove (5), write u''''=12 c_u delta_0+h_u as above. On
+0<|y|<=delta, |h_u(y)|<=C K(1+log(1/|y|)) and its ordinary derivative
+satisfies |h_u'(y)|<=C K |y|^{-1}(1+log(1/|y|)). Split the Fourier
+integral for h_u at |y|=1/|k|. The inner interval has L¹ mass bounded by
+C K(1+log|k|)/|k|. On the remaining two intervals, one integration by
+parts gives boundary contributions of the same order and a derivative
+integral bounded by C K(1+log²|k|)/|k|. The fixed cutoff and interior
+regions contribute the stated uniform transition bound. When 1/|k| is
+not below delta, enlarge C using the uniform L¹ bound on h_u.
+
+Consequently, for |k|>=2, the difference between the Fourier product and
+144 c_u c_w |k|^{-8} is bounded by
+
+    C K_u K_w (1+log²|k|) |k|^{-9}.
+
+Use R3(x)=O(x^4) for x<=1 and R3(x)=O(1+x^3) for x>=1. Splitting
+the integral in (1) at |k|=t^{-1/2} shows that, for sufficiently small
+t>0, the product error contributes at most
+
+    C K_u K_w t^3 (1+|log t|^3).
+
+Indeed the intermediate region gives
+t^3 ∫_2^{t^{-1/2}}(1+log² k) dk/k, and the high-frequency region
+gives at most C t^3(1+|log t|²). The bounded-frequency portion and the
+cutoff correction to the pure cubic leading integral are O(t^3) under
+the same uniform localization bounds. Therefore the conditional flat
+bilinear satisfies the uniform estimate
+
+    |B_t(u,w) + [15/(1024 sqrt(pi))] c_u c_w t^(5/2)|
+       <= C K_u K_w t^3 (1+|log t|^3).                    (6)
+
+This is an all-frequency bound for the stated flat Fourier expression.
+It does not extract a universal logarithmic coefficient from the broader
+weighted family, control the curved paired trace, or justify a
+regulator interchange.
 Remaining to-do list: determine whether broader selected fields meet the logarithmic remainder condition,
 justify the paired folding and density/contact terms, compare exact results
 with prior literature, and certify supported analytic statements in Lean on GCP.
