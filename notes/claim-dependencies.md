@@ -1,4 +1,4 @@
-﻿# Paper 1 claim and dependency ledger
+# Paper 1 claim and dependency ledger
 
 Status: working extraction for S001.1, not a completed proof audit, research
 decision, manuscript, or Lean certificate. The pinned historical source is
@@ -18,7 +18,10 @@ chi=tau_3 gamma_n and Pi_±=(1±chi)/2. The positive square is D*D on its
 composition domain. Finite-cut compactness and the smooth-bolt statement are
 source setup assumptions, not independently reconstructed physical geometry.
 The global magnetic pullback and spin map, projector compatibility and
-closed-domain realization remain application-specific checks; see
+closed-domain realization remain application-specific checks. An explicit
+[collar transport test](finite-cut-boundary-transport.md) shows that the
+infinity projector does not generally remain the same local projector at
+a finite cut; physical matching must be proved or assumed. See
 [magnetic matching](global-magnetic-partner-matching.md) and the
 [elliptic bridge](finite-cut-elliptic-domain-bridge.md).
 
