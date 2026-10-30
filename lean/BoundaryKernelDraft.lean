@@ -129,6 +129,16 @@ theorem paired_clifford_tangential_compression
     change tau (gn (gt x)) = -gt (tau (gn x))
     rw [hantic, map_neg, htc]
   exact involution_tangential_compression_zero chi gt hinv hanti
+/-- An independent sphere-factor map commuting with the orbit projector
+preserves the tangential compression cancellation. -/
+theorem compression_with_commuting_factor
+    (P C G : V →ₗ[ℂ] V)
+    (hcompress : ∀ x, P (C (P x)) = 0)
+    (hcomm : ∀ x, G (P x) = P (G x)) :
+    ∀ x, P (C (G (P x))) = 0 := by
+  intro x
+  rw [hcomm]
+  exact hcompress (G x)
 end PairedDirac
 
 #print axioms PairedDirac.boundary_kernel_eq_iff
@@ -140,3 +150,5 @@ end PairedDirac
 #print axioms PairedDirac.involution_tangential_compression_zero
 
 #print axioms PairedDirac.paired_clifford_tangential_compression
+
+#print axioms PairedDirac.compression_with_commuting_factor
