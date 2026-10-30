@@ -61,6 +61,23 @@ x is in Dom(D_E) and D_E x lies in Dom(D_E*). The displayed square-domain
 formula follows. No separate boundary condition is inserted into this
 abstract identity.
 
+For formalization, closedness also has a direct graph-preimage proof. Define
+the continuous linear equivalence Phi on H x H by
+
+    Phi(x,y)=(E x,E^(-1) y).
+
+The exact graph identity is
+
+    graph(D_E) = Phi^(-1)(graph(D)).
+
+For the forward direction, y=E D(E x) gives E^(-1)y=D(E x). Conversely,
+if E x lies in Dom(D) and E^(-1)y=D(E x), inverse domain invariance gives
+x=E^(-1)(E x) in Dom(D), and the equation gives y=D_E x. Since Phi is
+continuous, the inverse image of the closed graph of D is closed. This
+formulation uses the actual partially defined operator graph and both
+directions of domain invariance; it supplies a concrete next Lean lemma,
+not a formal proof or a replacement for the adjoint argument.
+
 For the graph estimates, C x = D E x - E D x gives D_E x = E^2 D x + E C x.
 Rearranging gives D x = E^(-2) D_E x - E^(-1) C x. The triangle inequality
 and operator norm bounds yield the two estimates. Together with the shared
