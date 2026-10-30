@@ -49,23 +49,50 @@ completion of the radial square its basic internal Gaussian is
    = (4 pi t)^(-1/2) sum_(m in Z) exp(-m^2 L^2/t)
                                   exp(2 i m L alpha k_n).      (3)
 
-Polynomial momentum factors are obtained by differentiating the shifted
-Gaussian or using Gaussian moments; the thermal momentum square is retained
-as in `fixed-period-flat-geometric-images.md`. The m=0 term gives exactly
-the noncompact fixed-period multiplier sampled at k_n, with the corresponding
-periodic Fourier pairing. The m!=0 terms are radial windings.
+Write P=p+alpha k, v_alpha=1-2alpha, and H_t=(4 pi t)^(-1/2).
+The radial part of the traced first vertex is
 
-For t in [t0,t1] and 0<=alpha<=1, differentiating the displayed Gaussian
-and once in t introduces only a fixed polynomial in |k_n|, |m|L and inverse
-powers of t; its degree in k is at most four. The thermal Gaussian sums and
-their first two t derivatives are uniformly finite on this interval. For
-L sufficiently large, the sum over m!=0 of each such polynomial times
-exp(-m^2 L^2/t) is bounded by C exp(-L^2/(2t1)). Cauchy--Schwarz and
-periodic Parseval control the resulting weighted sum by
-C ||u||_H2 ||v||_H2, uniformly in L because the profiles vanish near the
-identified radial seam. This gives the winding part of (2), including the
-mixed second vertex through the complete positive-time variation identity.
+  (2p+k)^2 = 4P^2+4v_alpha k P+v_alpha^2 k^2.                  (4a)
 
+Poisson summation of the shifted Gaussian gives the mth term in (3). With a
+consistent Fourier-sign convention, its first two P moments are H_t times
+exp(-m^2 L^2/t) exp(2 i m L alpha k) multiplied by, respectively,
+
+  i m L/t,             1/(2t)-m^2 L^2/t^2.                     (4b)
+
+A reversal of the Poisson convention conjugates the first expression and the
+phase; all estimates below are unchanged. These identities follow by
+differentiating the Gaussian transform with respect to its Fourier variable.
+The thermal momentum square contributes a separate fixed lattice sum and is
+not replaced by a radial moment. For m=0, the resulting expression is exactly
+the noncompact fixed-period multiplier sampled at k_n.
+
+For m!=0, (4a)-(4b), the factor exp[-alpha(1-alpha)t k^2], and one t
+derivative show that the mixed-Hessian winding multiplier is bounded on
+[t0,t1] by
+
+  C_T,t0,t1 (1+k^4)(1+|m|L)^N exp(-m^2 L^2/t1)               (4c)
+
+for one finite integer N. The k^4 comes from the k^2 vertex multiplied by the
+k^2 generated when the time derivative hits the completed-square exponential;
+the phase has no t dependence. No frequency truncation is used. The fixed
+thermal Gaussian sums and their first two derivatives are uniformly finite on
+[t0,t1]. For L>=1, a polynomial is absorbed into half the Gaussian exponent:
+
+  sum_(m!=0)(1+|m|L)^N exp(-m^2 L^2/t1)
+     <= C_N,t1 exp(-L^2/(2t1)).                               (4d)
+
+The periodic Fourier coefficients of the supported profiles obey, by
+Cauchy--Schwarz and Parseval,
+
+  (2L) sum_n (1+k_n^4)|conj(u_n) v_n|
+       <= C ||u||_(H2(R)) ||v||_(H2(R)).                      (4e)
+
+The norms agree with the periodic norms because the profiles vanish near the
+identified seam. Equations (4c)-(4e) prove the internal-winding part of (2),
+including the mixed second vertex through the complete positive-time
+variation identity. This step assumes that compact trace identity; it does not
+infer it from a formal first vertex alone.
 For the m=0 term, the periodic external-mode sum is a periodization of the
 noncompact Fourier pairing. Its image estimate can be made explicit without
 assuming a uniform Taylor expansion in k. By I=(1+A)/2, the fixed-period
