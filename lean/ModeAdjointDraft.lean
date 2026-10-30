@@ -26,6 +26,7 @@ theorem mode_formal_adjoint_draft
   rw [inner_add_left, inner_add_right, inner_smul_left, inner_smul_right]
   rw [(LinearPMap.adjoint_isFormalAdjoint hDense).symm ⟨x, x.property⟩ ⟨y, y.property⟩]
   rw [hSymm]
+  rfl
 
 end PairedDirac
 
