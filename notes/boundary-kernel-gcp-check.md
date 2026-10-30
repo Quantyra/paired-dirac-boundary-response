@@ -56,6 +56,22 @@ nonzero allowed fiber and Clifford invertibility. The Lean theorem assumes
 surjectivity onto its entire chosen trace space; the ordinary proof's local
 smooth test sections alone do not automatically establish that assumption
 for an arbitrarily chosen Sobolev trace space.
+## Tangential Clifford compression
+
+The source at c49ccdb165cd7c2c4b8c8273ec569aaeda35abfa passed Lean 4.30.0
+on the same GCP builder with exit 0. The added theorem
+`tangential_compression_zero` reports [propext, Classical.choice, Quot.sound].
+The source file SHA-256 is
+df91bd774164c08e97c1f1bcbaac672da5bc101c3a4ee5b07724b1ed9e505d2d;
+the transferred bundle SHA-256 is
+74eea640bc803ec2d042932fb2046f74452942b118398fd930624f42d7146062.
+The same source-only dependency-worktree warnings apply.
+
+The theorem derives P C P=0 from chi P=P, P chi=P, and chi C=−C chi
+for complex linear maps. It captures the algebraic cancellation used for
+tangential Clifford multiplication. The identification of these maps with
+physical bundle operators, the Clifford relations, Sobolev traces and the
+normal-jet criterion are not proved by this check.
 Remaining to-do list: formalize and verify the geometric interpretation and
 remaining claims on GCP, resolve the physical and novelty audits, and prepare
 the manuscript.
