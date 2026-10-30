@@ -22,6 +22,16 @@ as a form inequality on V. The two factors exp(-B/2) arise from the outer and in
 
 Inequality (4) supplies the common angular and thermal lower bound required for a shifted contour with lambda=exp(-2B)(mu²+kappa² nu²). It is a lower-bound shift of the complete nonconstant mode square, not an assertion that its angular contribution is the constant mu². In particular the gradient-dependent term in `full-weyl-angular-vertices.md` and all its variations remain present in the response. To use (4) in the transfer estimate, the shifted parameter contributes a term proportional to mu²+nu² in h, which can be absorbed by the heat factor when ell/t is sufficiently small as in the summability test.
 
+## Shifted contour without scalar factorization
+
+Let A_(mu,nu) denote the complete self-adjoint square in (4), and let lambda_(mu,nu)=exp(-2B)(mu²+kappa² nu²). Since A_(mu,nu)-lambda_(mu,nu)>=0, the shifted functional calculus formula applies directly to this *whole* operator:
+
+ exp(-t A_(mu,nu))=(1/(2pi i)) integral_(Gamma_t)
+   exp[-t(lambda_(mu,nu)+z)] (lambda_(mu,nu)+z-A_(mu,nu))^(-1) dz. (5)
+
+Here Gamma_t is the contour in `shifted-heat-contour-mode-damping.md`. This yields the factor exp[-t lambda_(mu,nu)] without writing A as a scalar shift plus an independent orbit operator. If the full and cut squares share the same lower-bound constants, they can use the same lambda and contour. The remaining shifted resolvent depends on the full varied mode operator, including its nonconstant angular term.
+
+The fixed symmetric-lapse transfer matrix in `symmetric-lapse-inhomogeneous-transfer.md` was derived for its own separated expression. It cannot be substituted into (5) for the full Weyl operator without deriving its conjugation, source term, boundary flux and actual domains. A sufficient future estimate would bound the resulting full-Weyl transfer exponent by C ell(1+mu²+nu²+|z|+|mu|+|nu|), with constants uniform in the declared field family and cut; combined with (5) and sufficiently small ell/t, the elementary absorption argument applies. This is a target hypothesis, not an established transfer bound.
 For the physical source, the complementary-domain relation, fixed-mode decomposition, thermal bound including the bolt, uniform cut constants, and identification of the canonical transfer variables remain to be verified. A square lower bound alone does not prove mode-uniform Poisson trace estimates, geometric vertices, a regulator limit, or a physical admission margin. No Lean certification is claimed.
 
 Remaining to-do list: verify physical mode domains and uniform gap hypotheses, prove shifted-contour trace estimates and boundary matching, complete the response and regulator, resolve novelty, finish the manuscript, and certify supported claims on GCP.
