@@ -46,7 +46,8 @@ theorem mode_square_action_draft
   rw [hsub]
   change D.adjoint.toFun (⟨D x, hx⟩ + a • ⟨G x, hG x x.property⟩) +
       star a • G (D x + a • G x) = _
-  rw [map_add, map_smul, hInt, ha, map_add, map_smul, hInv]
+  have hInt' : D.adjoint.toFun ⟨G x, hG x x.property⟩ = G (D x) := hInt x
+  rw [map_add, map_smul, hInt', ha, map_add, map_smul, hInv]
   simp only [neg_smul, smul_add, smul_smul]
   abel
 
