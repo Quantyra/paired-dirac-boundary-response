@@ -110,3 +110,9 @@ failure and must be retained; a helper lemma cannot certify the paper.
 Remaining to-do list: implement and verify the actual unbounded-operator
 lemma on GCP, retain complete source and axiom evidence, then formalize the
 geometric domain and tangent response at the scope the paper ultimately claims.
+
+## Clean composed graph replay (2026-10-30)
+
+The clean source-only GCP replay checked `congruence_graph_lower_composed_draft` with standard reported axioms and no reported `sorryAx`; see [the receipt](../evidence/gcp-graph-clean-20261030/README.md) for the pinned base, exact overlay, dependencies, logs and limitations. This supersedes the earlier statement that the graph-draft run had not been obtained. It is an abstract conditional result, not a certificate for the physical assumptions or the paper.
+
+Remaining to-do list: establish the physical realization and response, resolve novelty, complete the manuscript, and certify its supported claims in Lean.

@@ -1,0 +1,2 @@
+'PairedDirac.congruence_graph_upper_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.congruence_graph_lower_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
