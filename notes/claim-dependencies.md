@@ -92,6 +92,10 @@ conversion also includes 2 Theta'(t) I_t, with the angular tower and local
 counterterms retained; see [the regulator audit](tangent-regulator-normalization.md)
 and [the flat contact argument](flat-product-contact.md).
 
+The [canonical/Euclidean comparison](canonical-euclidean-contact-matching.md)
+shows that the RN Hamiltonian-square cut contact is not yet identified with
+the product-frame orbit contact or its separate angular factor.
+
 **Dependencies and status.** An ordinary full-plane multiplier derivation and
 all-frequency remainder calculations exist; the physical folding, trace
 normalization and actual curved-to-tangent identification remain conditional.
