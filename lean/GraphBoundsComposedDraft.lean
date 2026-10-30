@@ -1,4 +1,4 @@
-﻿import GraphBoundsDraft
+import GraphBoundsDraft
 
 /-! Unverified draft: sharpen the reverse graph estimate using a bound on
     the composed inverse-multiplier commutator. Check only on GCP. -/

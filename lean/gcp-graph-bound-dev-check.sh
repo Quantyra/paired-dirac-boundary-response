@@ -37,7 +37,7 @@ lake --no-cache env printenv LEAN_PATH > "$run/inherited-lean-path.txt"
 export PATH="$(cat "$run/inherited-path.txt")"
 export LEAN_PATH="$run/sources:$(cat "$run/inherited-lean-path.txt")"
 cd "$run/sources"
-printf "%s  %s\n" 8c11cfe1b16f88e54f81df105d26cfa038c20baff11968421c5b4fbcb81d2bf9 GraphBoundsComposedDraft.lean | sha256sum -c -
+printf "%s  %s\n" 7d3309e705a992be7c7e4e01a810c7d1f1e5bf008a92c8fed0bab59158703354 GraphBoundsComposedDraft.lean | sha256sum -c -
 lean --version | tee "$run/lean-version.txt"
 grep -F "version 4.30.0" "$run/lean-version.txt"
 for name in PairedDirac GraphBoundsDraft GraphBoundsComposedDraft; do
