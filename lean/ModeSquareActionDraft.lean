@@ -50,6 +50,7 @@ theorem mode_square_action_draft
   rw [map_add, map_smul, hInt', ha, map_add, map_smul, hInv]
   simp only [neg_smul, smul_add, smul_smul]
   abel
+  simp only [neg_one_smul, neg_mul, neg_smul]
 
 end PairedDirac
 
