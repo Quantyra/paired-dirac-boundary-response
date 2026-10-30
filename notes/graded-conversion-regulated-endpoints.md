@@ -12,6 +12,8 @@ A_r(b) from the graded conversion note. Put B=||b||_infinity and
  P_r=A_r* A_r,  Pbar_r=A_r A_r*,
  Gamma_e(r)=1/2 integral_e^infinity Tr exp(-t P_r) dt/t.  (1)
 
+The later [proper-time tower argument](product-conversion-proper-time-differentiation.md) proves the integrability and sum interchange for the stipulated positive-mass product model under its uniform seed and domain hypotheses.
+
 Take M>0 and e>0, with the smooth compact form-differentiability and
 trace-class hypotheses of that note. Assume the differentiated heat traces
 are integrable in t and allow the cyclic trace operations below; the gap
