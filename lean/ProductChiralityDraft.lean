@@ -12,7 +12,7 @@ theorem chirality_is_sphere_orbit (v : W) :
 
 theorem chirality_square (v : W) : sphereOrbit (sphereOrbit v) = v := by
   ext i j
-  fin_cases i <;> fin_cases j <;> simp [sphereOrbit, Complex.I_mul_I]
+  fin_cases i <;> fin_cases j <;> simp [sphereOrbit, ← mul_assoc, Complex.I_mul_I]
 
 theorem chirality_swaps_projector (v : W) :
     sphereOrbit ((tau.comp normal) v) = -(tau.comp normal) (sphereOrbit v) := by
