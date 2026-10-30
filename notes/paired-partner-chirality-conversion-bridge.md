@@ -68,8 +68,10 @@ it does not establish that the physical copy pullbacks and conformal product
 realize it, that the source's physical-half/time-reduced normalization matches,
 or that the rough small-time remainder and common regulator are controlled.
 
-No numerical or Lean check is claimed for this bridge. Existing GCP checks of
-other abstract domain statements do not certify (1)--(4).
+The [GCP Lean check](../evidence/gcp-partner-chirality-20261030/README.md)
+verifies the domain-aware anticommutation algebra in (4) from explicitly
+assumed domain and intertwining hypotheses. It does not establish those
+hypotheses, skew-adjointness, or the physical conversion.
 
 Remaining to-do list: verify the global physical bundle and cut realization,
 match source normalization and subtractions, complete the novelty audit and
