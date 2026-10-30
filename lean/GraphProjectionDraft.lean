@@ -115,7 +115,6 @@ theorem positiveSquare_adjoint_domain_reverse_draft
   obtain ⟨u, hu⟩ := positiveSquare_add_one_surjective_draft D hClosed hDense (y + z)
   have hyu : y = (u : H) := by
     apply sub_eq_zero.mp
-    apply (inner_self_eq_zero (𝕜 := ℂ)).mp
     obtain ⟨v, hv⟩ := positiveSquare_add_one_surjective_draft D hClosed hDense (y - (u : H))
     have hadj : inner ℂ z (v : H) = inner ℂ y (P v) :=
       LinearPMap.adjoint_isFormalAdjoint hPDense ⟨y, hy⟩ v
@@ -129,7 +128,8 @@ theorem positiveSquare_adjoint_domain_reverse_draft
           rw [← hadj, ← hsym]
           abel
         _ = 0 := by rw [hu]; simp
-    simpa [hv] using hzero
+    rw [hv] at hzero
+    exact (inner_self_eq_zero (𝕜 := ℂ)).mp hzero
   simpa [hyu] using u.property
 
 /-- The actual adjoint square is self-adjoint. -/
