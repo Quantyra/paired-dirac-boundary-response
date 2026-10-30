@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Analysis.InnerProductSpace.LinearPMap
 
 /-! Algebraic core of the finite-cut square boundary criterion.
 Geometric traces, elliptic jet extension and Clifford invertibility are
