@@ -74,6 +74,32 @@ be accounted for; even a smooth extension can generate connection terms.
 The transformed Robin operator and the two bulk blocks must also match the
 transmittal model. None of these follows solely from U chi U^(-1)=tau_1.
 
+With a smooth extension of U to a collar, write psi'=U psi and define the
+transformed connection by nabla'_X=U nabla_X U^(-1). The paired mixed
+condition transforms exactly to
+
+    P_- psi'=0,    P_+ (nabla'_n+s) psi'=0,
+    P_+=(1+T)/2, P_-=1-P_+,
+
+where s=K/2-(partial_n b)/2 in the square note's normal convention. No
+additional term is lost: derivatives of U are contained in nabla'. For
+comparison to two uncoupled bulk copy bundles, however, the transformed
+connection must preserve the relevant splitting. Its failure to preserve the
+symmetric/antisymmetric splitting is measured exactly by
+
+    nabla'_X T = U (nabla_X chi) U^(-1).
+
+If tau_3 is parallel and chi=tau_3 c(n), Clifford compatibility gives
+nabla_X chi=tau_3 c(nabla_X n). Thus a normal-parallel extension of n makes
+the normal commutator vanish, while tangential derivatives can contain the
+second fundamental form. This calculation uses the full bulk connection;
+the intrinsic boundary connection in the square-domain calculation is a
+different connection and can preserve chi. A nonzero tangential commutator
+shows that the symmetric/antisymmetric decomposition is not parallel for
+the transformed connection, but does not by itself rule out another
+identification or all transmittal formulations. The actual copy-block
+condition, zeroth-order terms, and normal orientation remain to be matched.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces
