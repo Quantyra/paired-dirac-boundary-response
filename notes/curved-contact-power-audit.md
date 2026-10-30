@@ -1,4 +1,9 @@
-﻿# Curved remainder: power-counting audit of the contact bridge
+# Curved remainder: power-counting audit of the contact bridge
+> Correction: The frozen source defines P1-D as a mixed heat-response
+> remainder after subtraction of the localized tangent contribution, not as
+> the endpoint conversion J_t''. The component power comparison below applies
+> only to that separately specified endpoint diagnostic. It cannot by itself
+> establish an obstruction to P1-D; see [the observable audit](p1d-response-versus-conversion.md).
 
 Status: comparison of existing conditional estimates with the sufficient
 P1-D target in [the claim ledger](claim-dependencies.md). It is not a lower

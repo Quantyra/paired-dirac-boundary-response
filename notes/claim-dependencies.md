@@ -113,7 +113,7 @@ response has not been Lean-certified.
 ## P1-D: proposed curved trace extension
 
 **Target.** For the fully specified paired curved operator, common regulator,
-complete thermal/angular sectors and subtracted mixed response, establish the
+complete thermal/angular sectors and mixed heat response after subtracting the localized tangent contribution with its cutoff terms, establish the
 source's sufficient estimate |r_curved(g;u,w;t)|≤A(K)||u||_A||w||_A t^(3/2)
 for 0<t≤0.001, uniformly over the declared rough family and physical-side
 regulators, plus the required positive-time convergence and continuity.
@@ -122,7 +122,7 @@ A(K) is unknown. This is a proposed extension, not a proved paper theorem.
 **First unsupported implication.** The fixed-domain or norm-resolvent
 arguments and the flat all-frequency calculation do not provide this uniform
 subtracted curved trace bound, nor do they justify the regulator interchanges.
-The first proof obligation is an actual mixed-boundary kernel estimate with
+This is a proper-time integrand remainder, not the endpoint conversion J_t''. The [observable audit](p1d-response-versus-conversion.md) explains why an endpoint-conversion power count cannot by itself prove or disprove this target. The first proof obligation is an actual mixed-boundary kernel estimate with
 all geometric, density and contact vertices and a stated uniform atlas.
 The full signed quantum response G_t is not a prerequisite for the narrower
 operator/tangent package, but neither package proves P1-D.
