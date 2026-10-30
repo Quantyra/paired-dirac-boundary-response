@@ -1,4 +1,4 @@
-﻿# Heat-damped zero-energy angular boundary mismatch
+# Heat-damped zero-energy angular boundary mismatch
 
 This is an exact consequence of the zero-energy boundary-plane calculation in `finite-cut-angular-boundary-nonuniformity.md`, combined with the stipulated magnetic sphere spectrum in `source-angular-zero-mode-allocation.md`. It is a comparison of angular projection matrices, not the physical square heat kernel or its spectral-dependent boundary map.
 
@@ -21,6 +21,12 @@ The last inequality uses d_n=O(n), |mu_n|=O(n), mu_n²>=n²/b² and a Gaussian s
 
 Consequently the damped mismatch tends to zero in trace norm at every fixed positive t. For the standalone integral against dt/t over [epsilon,1], (2) gives O(A_delta epsilon^(-3/2)); a joint path with A_delta=o(epsilon^(3/2)) is sufficient for this angular matrix quantity. No path independence or physical cutoff exponent is asserted.
 
+For the fixed RN product seed, write B(u)=X+u²-2a_m u³+h_m u⁴ with X>0 and cut u=delta. The canonical relation is ds/du=b/B and the coefficient of the *dimensionless* sphere eigenvalue lambda_n=±sqrt(n(n+q)) is sqrt(B)/b. Hence its collar integral is
+
+ I_delta=integral_0^delta du/sqrt(B(u))
+        =delta/sqrt(X)-delta³/(6 X^(3/2))+O(delta⁴).      (4)
+
+In (2)--(3) we instead use the dimensionful mu_n=lambda_n/b. The coefficient multiplying that mu_n is sqrt(B), so the A_delta in those equations is b I_delta. This distinction of eigenvalue conventions prevents a missing factor b. Under these fixed-seed assumptions A_delta=O(delta), so delta=o(epsilon^(3/2)) is sufficient for the standalone dt/t angular-matrix integral. This is still a condition for that diagnostic, not an established physical regulator path.
 The heat factor here is an independently inserted angular spectral multiplier. It is not automatically a factor of the full nonconstant Weyl square, and the transported plane at nonzero spectral parameter and the removed-collar source term are absent. Equations (2)--(3) therefore do not prove convergence of the full resolvent, heat response, physical boundary condition or regulator. Those require the actual domains, flux and source estimates, as well as angular and thermal normalization. No Lean certification is claimed.
 
 Remaining to-do list: establish spectral-dependent physical boundary matching and full heat comparison, complete the mixed response and regulator, finish novelty and manuscript, and certify supported claims on GCP.
