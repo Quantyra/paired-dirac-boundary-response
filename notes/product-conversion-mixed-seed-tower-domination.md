@@ -1,5 +1,7 @@
 # Positive-time domination of the differentiated conversion tower
 
+The later [neighborhood argument](product-conversion-neighborhood-tower-derivative.md) supplies a uniform derivative majorant and the termwise interchange for the stipulated real finite-cut model. This note retains the seed estimate and its independent scope.
+
 This addresses termwise differentiation of the source conversion at the product seed, using the actual geometric and contact contributions. It strengthens the fixed-time assumptions in `graded-mass-conversion-positive-cut.md` for the stipulated compact skew-adjoint model. It does not establish the physical trace, a curved-family theorem, or the ultraviolet finite part.
 
 ## Uniform form vertex
