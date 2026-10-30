@@ -8,6 +8,8 @@ folding and one-half identification remain separate obligations. The Fourier
 tail hypotheses below are also inputs; deriving them for every admitted
 mass/log field and cutoff is not attempted here.
 
+The later [orbit-fiber audit](flat-orbit-fiber-normalization.md) finds that the displayed rank-two full-plane multiplier and the rank-four paired half-trace differ by an additional factor unless a one-half normalization is specified. All coefficients below retain the explicitly conditional normalization in (1); they are not yet identified with the unweighted paired heat trace.
+
 Let R3(x)=F(x)-1+x^2/120-x^3/840. As x approaches zero,
 
     R3(x) = -x^4/10080 + O(x^5),
