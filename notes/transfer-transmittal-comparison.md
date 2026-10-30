@@ -54,6 +54,26 @@ zeroth-order boundary terms. The paired projector and Robin coefficient must
 then match the transformed subspaces and v/2. These conditions are concrete
 tests, not an assertion that the physical paired operator is transmittal.
 
+For the recorded projector chi=tau_3 gamma_n there is a specific pointwise
+unitary mapping of its value subspaces to the symmetric/antisymmetric copy
+subspaces. In the common folded fiber representation, set T=tau_1 and
+
+    U=(1+T chi)/sqrt(2).
+
+Here T and chi are Hermitian involutions with T chi=-chi T, so T chi is
+skew-adjoint and squares to -1. Hence U is unitary and a direct multiplication
+gives U chi U^(-1)=T. Therefore U Pi_+ U^(-1)=(1+tau_1)/2, the projector
+onto symmetric copy values, and U Pi_- U^(-1) is the antisymmetric projector.
+The abstract value-space match is consequently explicit, not merely a rank
+count. The sign of U matters for this identity.
+
+This is only a boundary-fiber calculation. The map U must extend as a
+globally defined bundle unitary compatible with the actual spin and magnetic
+identifications. Its derivatives and conjugation of the bulk operator must
+be accounted for; even a smooth extension can generate connection terms.
+The transformed Robin operator and the two bulk blocks must also match the
+transmittal model. None of these follows solely from U chi U^(-1)=tau_1.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces
