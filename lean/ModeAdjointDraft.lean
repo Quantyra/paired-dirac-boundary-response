@@ -21,8 +21,8 @@ theorem mode_formal_adjoint_draft
     (hSymm : ∀ x y : H, inner ℂ (G x) y = inner ℂ x (G y)) :
     (modeOperator D G a).IsFormalAdjoint (modeAdjointCandidate D G a) := by
   intro x y
-  change inner ℂ (D ⟨x, x.property⟩ + a • G x) y =
-    inner ℂ x (D.adjoint ⟨y, y.property⟩ + star a • G y)
+  change inner ℂ (D ⟨x, x.property⟩ + a • G (x : H)) (y : H) =
+    inner ℂ (x : H) (D.adjoint ⟨y, y.property⟩ + star a • G (y : H))
   rw [inner_add_left, inner_add_right, inner_smul_left, inner_smul_right]
   rw [(LinearPMap.adjoint_isFormalAdjoint hDense).symm ⟨x, x.property⟩ ⟨y, y.property⟩]
   rw [hSymm]
