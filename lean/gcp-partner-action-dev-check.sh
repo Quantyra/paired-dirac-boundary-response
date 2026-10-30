@@ -20,13 +20,16 @@ done
 cd "$run/sources"
 sha256sum ./*.lean > "$run/source-sha256.txt"
 cd "$workspace"
-lake --no-cache env lean --version
+lake --no-cache env printenv PATH > "$run/inherited-path.txt"
 lake --no-cache env printenv LEAN_PATH > "$run/inherited-lean-path.txt"
+export PATH="$(cat "$run/inherited-path.txt")"
 export LEAN_PATH="$run/sources:$(cat "$run/inherited-lean-path.txt")"
 cd "$run/sources"
+printf "%s  %s\n" ddb6706659c8dbd22fe4e401f71eb365720a3a38871f561078ee30ece4515d8c PartnerSquareActionDraft.lean | sha256sum -c -
+lean --version
 for name in PairedDirac AdjointDraft SquareDomainDraft PositiveSquareDraft PartnerSquareDomain PartnerSquareActionDraft; do
   echo "Checking $name"
-  (cd "$workspace" && lake --no-cache env env LEAN_PATH="$LEAN_PATH" lean -o "$run/sources/$name.olean" "$run/sources/$name.lean") 2>&1 | tee "$run/$name.log"
+  lean -o "$name.olean" "$name.lean" 2>&1 | tee "$run/$name.log"
   if grep -q 'sorryAx' "$run/$name.log"; then echo 'sorryAx found' >&2; exit 1; fi
 done
 sha256sum -c "$run/source-sha256.txt"
