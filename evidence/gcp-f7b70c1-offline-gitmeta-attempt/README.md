@@ -48,6 +48,27 @@ at the specified commit. The build succeeded against the archive contents,
 but it must not be described as an acceptance build against the pinned Git
 tree. A verified source acquisition and fresh GCP build are required.
 
+Follow-up: a complete archive/tree comparison found 8,769 paths in each,
+with no missing or extra paths and 8,767 raw-byte differences. All 8,767
+match their expected Git blob IDs and modes after CRLF-to-LF conversion;
+the other two already match. The sampled imported Lean file has CRLF line
+endings in the build workspace. Thus the observed discrepancy is explained
+at the byte level by line-ending conversion across this Mathlib archive;
+it is not evidence of different substantive source text. The strict archive
+check still fails, and normalized equivalence alone is not a fresh exact-byte
+acceptance build. The replacement archive and all other packages remain to
+be verified separately.
+
+The same archive/tree comparison was subsequently run for the other eight
+recorded dependency repositories. Each had identical path counts and no
+missing or extra entries. Every raw-byte mismatch also matched its tree blob
+and mode after CRLF-to-LF conversion: Cli 11/12 files, LeanSearchClient
+15/15, Qq 35/35, aesop 258/258, batteries 272/273, importGraph 54/56,
+plausible 35/35, and proofwidgets 82/100. These comparisons use the retained
+local Git trees; they do not independently authenticate every tree against
+its upstream repository. They establish the measured line-ending pattern,
+not an exact-byte acceptance build.
+
 Remaining to-do list: audit dependency contents and exact-source evidence,
 formalize and verify the remaining operator and response claims, and retain
 the corresponding independent acceptance receipts.

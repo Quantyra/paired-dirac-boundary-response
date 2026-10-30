@@ -38,10 +38,11 @@ dependencies; the offline Git-metadata retry used verified source and toolchain
 archives and completed successfully on GCP. The metadata-only
 shallow clones produce local-change warnings, so the dependency content and
 exact identities need an acceptance audit even if compilation succeeds.
-That audit has now found mismatched worktree and recorded-tree blob IDs,
-including the directly imported LinearPMap source; see the receipt. The
-successful build is not acceptance evidence for the pinned Git tree. Do not
-reuse its dependency provenance for a certification claim until resolved.
+The audit found mismatched worktree and recorded-tree blob IDs, including the
+directly imported LinearPMap source. A full Mathlib archive comparison then
+showed that all 8,767 mismatches match the tree after CRLF-to-LF conversion;
+see the receipt. The raw bytes still differ and other packages remain unaudited,
+so the successful build is not yet an exact-source acceptance result.
 
 The present `congruence_domain` theorem is definitional because the candidate
 map was constructed with the original domain; `invariant_preimage` proves
