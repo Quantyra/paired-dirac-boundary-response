@@ -114,6 +114,29 @@ requires a suitable alternative side splitting and its connection and bulk
 compatibility, or a more general identification. This observation does not
 exclude such an alternative.
 
+The source's partner involution J supplies a candidate for that alternative.
+Assume the global hypotheses of the
+[finite-cut bridge](finite-cut-elliptic-domain-bridge.md): J is parallel,
+commutes with the Dirac Clifford action, and anticommutes with chi at the
+boundary. Let S=U J U^(-1). Then S is a unitary involution parallel for
+nabla', and {S,T}=0 at the boundary. Consequently its two eigensubbundles
+are exchanged by T, as required for a transmittal side splitting. Moreover,
+if the scalar multiplier commutes with J, J commutes with the *bulk
+differential expression* D_b and its formal square, so S commutes with the
+corresponding conjugated bulk expression. Thus, under those assumptions,
+there is an algebraic and connection-level candidate for two decoupled bulk
+sides; the earlier original-copy mismatch does not exclude it.
+
+This does not say J preserves the paired first-order boundary domain. It
+exchanges that domain with its adjoint domain, and likewise exchanges the
+partner squares as closed operators. The claim above concerns bulk
+expressions and a splitting before the transmittal boundary condition is
+imposed. To obtain an operator equivalence one must globally identify the
+two S-eigenbundles, match their normal connections, verify the transformed
+Robin coefficient and source sign convention, and compare the actual
+closed realizations. The required global parallel J itself remains an
+application-specific hypothesis.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces
