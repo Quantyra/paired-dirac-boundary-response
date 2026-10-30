@@ -106,6 +106,29 @@ Clifford anticommutation relations, then proves the paired projector's
 compression vanishes. It remains an abstract linear-map theorem: the
 matrix identities and their global bundle interpretation, the Sobolev
 and domain results, and the response are not certified by this check.
+## Explicit rank-four orbit matrices
+
+The source at b50896394299b42d5938dc767f08899567f4788d passed Lean 4.30.0
+on the GCP builder with exit 0. After compiling BoundaryKernelDraft, Lean
+checked `PairedDirac.Orbit.paired_time_compression` with axioms [propext,
+Classical.choice, Quot.sound]. OrbitMatrixDraft.lean SHA-256 is
+50cdd85a303d4fbbcb6d5a75e14970629e7051f330bccee475454448b678e632;
+BoundaryKernelDraft.lean SHA-256 is
+021a0392932f8636ca66854c59967f5af5448e60d08bc1852d9c1a1592dd5240;
+the Git bundle SHA-256 is
+933247eb41736d08bc4213965e9a611f72a508220d73cd4233a76aea66af8520.
+The previously recorded source-only dependency-worktree warnings apply.
+
+The first run at 013570f exited 1 on two additive-linearity goals and
+reported sorryAx for declarations depending on those incomplete proofs;
+it was not accepted. Commit b508963 repaired those goals and the successful
+run has no sorryAx in the printed theorem dependencies.
+
+The verified finite-dimensional maps implement tau_3⊗1, 1⊗sigma_1 and
+−tau_3⊗sigma_3 on the rank-four orbit fiber. Their relations instantiate
+the abstract paired projector theorem for the time-tangential gamma. This
+check does not cover the sphere-tangential gamma factors, global transition
+functions, physical domains, traces, or heat response.
 Remaining to-do list: formalize and verify the geometric interpretation and
 remaining claims on GCP, resolve the physical and novelty audits, and prepare
 the manuscript.
