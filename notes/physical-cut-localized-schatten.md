@@ -34,11 +34,13 @@ H5 norm at most C t^(-5/2)||f||_2, by the uniform estimates for each
 semigroup. The local L2 norm is bounded by (2). Interpolating to H^(9/2) and
 using H^(9/2)->C2 in four dimensions yields, for k<=2,
 
-  ||T_(delta,k)(t)|| <= C t^(-9/4)
+  ||T_(delta,k)(t)|| <= C delta^(-M_2) t^(-9/4)
                               exp(-c_1 d_delta^2/t).     (3)
 
 The exponent c_1 is smaller than in (2), and absorbs the 1/10 interpolation
-power. The estimate holds uniformly in all cut and field approximants
+power. The polynomial factor accounts for the physical volume of the output
+region when converting local pointwise bounds to an L2 operator bound.
+The estimate holds uniformly in all cut and field approximants
 satisfying the stated hypotheses. Multiplication by chi_delta and its
 physical derivatives is included in the chart estimates.
 
