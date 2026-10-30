@@ -40,6 +40,38 @@ theorem boundary_kernel_eq_iff (A : V →ₗ[ℂ] B)
   · exact boundary_perturbation_zero_of_kernel_eq A T N htrace
   · exact boundary_kernel_eq_of_zero A T N
 
+/-- The same equivalence after embedding the common regularity space into
+an ambient space, conditional on injectivity of that embedding. -/
+theorem embedded_boundary_kernel_eq_iff
+    {H : Type*} (j : V → H) (hj : Function.Injective j)
+    (A : V →ₗ[ℂ] B) (T : V →ₗ[ℂ] C) (N : C →ₗ[ℂ] B)
+    (htrace : ∀ c : C, ∃ x : V, A x = 0 ∧ T x = c) :
+    j '' ((A - N.comp T).ker : Set V) = j '' (A.ker : Set V) ↔ N = 0 := by
+  constructor
+  · intro hdom
+    have hker : (A - N.comp T).ker = A.ker := by
+      apply Submodule.ext
+      intro x
+      constructor
+      · intro hx
+        have hy : j x ∈ j '' (A.ker : Set V) := by
+          rw [← hdom]
+          exact ⟨x, hx, rfl⟩
+        obtain ⟨y, hy, hxy⟩ := hy
+        have h : y = x := hj hxy
+        simpa [h] using hy
+      · intro hx
+        have hy : j x ∈ j '' ((A - N.comp T).ker : Set V) := by
+          rw [hdom]
+          exact ⟨x, hx, rfl⟩
+        obtain ⟨y, hy, hxy⟩ := hy
+        have h : y = x := hj hxy
+        simpa [h] using hy
+    exact (boundary_kernel_eq_iff A T N htrace).mp hker
+  · intro hN
+    rw [boundary_kernel_eq_of_zero A T N hN]
 end PairedDirac
 
 #print axioms PairedDirac.boundary_kernel_eq_iff
+
+#print axioms PairedDirac.embedded_boundary_kernel_eq_iff
