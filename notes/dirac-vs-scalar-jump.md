@@ -40,6 +40,13 @@ potential-only quadratic term below does not represent the complete answer.
 
 ## Scalar potential-only benchmark
 
+**Normalization audit open:** Equation (2) below faithfully applies the
+published jump coefficient, but the same source's Eqs. (27)--(28) appear to
+give half that coefficient for p=1. See
+[the normalization audit](scalar-jump-normalization-audit.md). Until this
+discrepancy is resolved, neither (2) nor the numerical difference below is
+an independently verified benchmark.
+
 Take two localized pure cubic directions with b_u=c_u |y|^3 and
 b_w=c_w |y|^3 near the seam. The zero-order component in (1) is
 V_u=3 c_u |y| and V_w=3 c_w |y| near zero. In the comparator's convention
