@@ -66,7 +66,41 @@ theorem paired_sphere_orbit_compression :
     ∀ v, P (sphereOrbit (P v)) = 0 := by
   exact PairedDirac.paired_clifford_tangential_compression tau normal sphereOrbit
     tau_sq normal_sq tau_normal tau_sphere normal_sphere
+/-- Coordinate realization of the tensor product of the rank-four orbit
+fiber with a two-component sphere-spin fiber. -/
+abbrev Full := Fin 2 → W
+
+def liftOrbit (A : W →ₗ[ℂ] W) : Full →ₗ[ℂ] Full where
+  toFun v s := A (v s)
+  map_add' := by intro x y; ext s i j; simp
+  map_smul' := by intro a x; ext s i j; simp
+
+def sphereSpinOne : Full →ₗ[ℂ] Full where
+  toFun v s := v (if s = 0 then 1 else 0)
+  map_add' := by intro x y; ext s i j; simp
+  map_smul' := by intro a x; ext s i j; simp
+
+theorem full_sphere_gamma_compression :
+    let orbitP : W →ₗ[ℂ] W := (1 / 2 : ℂ) • (LinearMap.id + tau.comp normal)
+    let P := liftOrbit orbitP
+    let C := liftOrbit sphereOrbit
+    ∀ v, P (C (sphereSpinOne (P v))) = 0 := by
+  let orbitP : W →ₗ[ℂ] W := (1 / 2 : ℂ) • (LinearMap.id + tau.comp normal)
+  let P := liftOrbit orbitP
+  let C := liftOrbit sphereOrbit
+  have hcompress : ∀ v, P (C (P v)) = 0 := by
+    intro v
+    ext s i j
+    change (orbitP (sphereOrbit (orbitP (v s)))) i j = 0
+    exact congrFun (congrFun (paired_sphere_orbit_compression (v s)) i) j
+  have hcomm : ∀ v, sphereSpinOne (P v) = P (sphereSpinOne v) := by
+    intro v
+    ext s i j
+    fin_cases s <;> rfl
+  exact PairedDirac.compression_with_commuting_factor P C sphereSpinOne hcompress hcomm
 end PairedDirac.Orbit
 
 #print axioms PairedDirac.Orbit.paired_time_compression
 #print axioms PairedDirac.Orbit.paired_sphere_orbit_compression
+
+#print axioms PairedDirac.Orbit.full_sphere_gamma_compression
