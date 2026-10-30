@@ -1,5 +1,7 @@
 # H2 and positive-time tower bounds for the mass interpolation
 
+The later [mass-uniform argument](product-mass-uniform-h2-tower.md) removes the polynomial mass loss in this note under the same real-gap and adjoint hypotheses.
+
 This extends `product-h2-uniform-bounded-congruence.md` to the source's stipulated product-mode mass interpolation. It gives a uniform cut and field estimate with explicit polynomial mass dependence, then uses the positive-mass gap to retain the full angular tower. It does not identify the physical trace or remove its ultraviolet regulator.
 
 ## Assumptions and H2 estimate
