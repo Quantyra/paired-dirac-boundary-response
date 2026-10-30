@@ -43,6 +43,34 @@ sectorial resolvents, and the holomorphic form theorem and the resolvent
 identity give operator-norm convergence of their heat semigroups uniformly
 for z in a smaller closed polydisc and t in [t0,T].
 
+## Explicit uniform form and resolvent control
+
+On the flat torus the Clifford identity gives
+||Df||²+||f||²=||f||_{H¹}² with the standard Fourier Sobolev norm.
+For a real base field with ||b||_infinity<=B and ||db||_infinity<=G,
+the weak product rule yields
+
+    ||D_b f|| <= e^B (||Df|| + G||f||/2),
+    ||Df|| <= e^B ||D_b f|| + G||f||/2.
+
+Thus the coercivity constants can be chosen from uniform B,G bounds; they
+are independent of n. Products and the exponential power series in
+W^{1,infinity} show that, on a fixed bounded polydisc, the form difference
+is bounded by C times the W^{1,infinity} distance between the three input
+fields. The perturbation from z=0 is bounded by C(|z1|+|z2|)||f||_{H¹}
+||g||_{H¹}. Taking a common sufficiently small radius and a common shift
+c' retains at least half the real-part coercivity for every large n.
+
+For lambda outside a common shifted sector, the associated variational
+resolvents are uniformly bounded between H and H¹, and between H^{-1}
+and H¹ after the usual lambda-dependent weighting. Subtracting their
+variational equations gives the resolvent identity through V* and V;
+the form-norm difference tends uniformly to zero. The standard sectorial
+contour representation of the analytic semigroup, with t>=t0>0, turns
+that estimate into operator-norm semigroup convergence. The shift contributes
+only a common exponential factor on a bounded positive-time interval.
+This also makes clear that the complex continuation depends on the form,
+not on assuming a complex first-order operator is skew-adjoint.
 ## Trace-class and Cauchy step
 
 Write S_z(t)=exp(−t A_z) for the complex form operator. Uniform sectorial
@@ -67,6 +95,20 @@ polydisc and positive-time interval. The same factorization also shows
 trace-norm holomorphy: local operator-norm holomorphy and local S_p bounds
 give S_4 holomorphy, and multiplication S_4^4 → S_1 is continuous.
 
+The interpolation used above follows directly from singular values:
+for 2<p<4 and any compact T,
+
+    ||T||_4^4 <= ||T||^{4-p} ||T||_p^p.
+
+Apply it to a difference of semigroups, whose S_p norm is bounded by the
+sum of the two uniform bounds. Thus operator-norm convergence has an
+explicit S_4 modulus. The same inequality makes operator-norm continuous
+parameter dependence S_4-continuous. On a smaller polydisc, the ordinary
+operator-valued Cauchy integral formula holds in S_4 as well: its integrand
+is S_4-continuous, and the S_4 integral maps to the same bounded-operator
+integral. It therefore supplies S_4 derivatives. Four-factor
+multiplication gives S_1 holomorphy, rather than assuming that operator-norm
+holomorphy automatically implies trace-norm holomorphy.
 Apply the two-variable Cauchy formula on fixed circles inside the polydisc.
 Uniform trace-norm convergence on those circles passes through the contour
 integrals, proving convergence of the mixed derivatives uniformly for
