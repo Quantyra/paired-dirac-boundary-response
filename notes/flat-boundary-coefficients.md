@@ -190,6 +190,25 @@ the finite t^3 term. The weighted bounds by themselves do not imply the
 additional L¹ fifth-derivative condition after the logarithmic jet is
 removed; it must be established for the chosen directions. The calculation
 remains conditional on the flat multiplier and physical-half normalization.
-Remaining to-do list: verify the stated logarithmic remainder condition for the selected fields,
+
+## Check against the source's selected tangent directions
+
+Section 4 of the pinned rough-variation note specifies
+u=c_u |y|^3+d_u y^4 log|y|, and likewise w, near the seam, with a
+smooth localization equal to one there. For those selected directions,
+subtracting the displayed jets using the same cutoff leaves a remainder
+that is zero on a seam neighborhood. If the remainder and localization are
+C5 and compactly supported away from the seam, their fifth weak derivatives
+are integrable. Thus the additional condition above holds for the source's
+explicit tangent test, and the flat multiplier model recovers its two
+displayed coefficients under the previously stated trace normalization.
+
+This does not show that every direction in the larger weighted family has
+a well-defined logarithmic jet or an L¹ fifth-derivative remainder. The
+source states the weighted admission separately from its special tangent
+directions; the stronger conclusion is confined to the latter unless
+additional regularity is proved. In particular, this check neither resolves
+the curved-regulator bridge nor certifies the published paper.
+Remaining to-do list: determine whether broader selected fields meet the logarithmic remainder condition,
 justify the paired folding and density/contact terms, compare exact results
 with prior literature, and certify supported analytic statements in Lean on GCP.
