@@ -1,6 +1,6 @@
 #!/bin/bash
 set -uo pipefail
-run="$HOME/quantyra-space-runs/paper1-lake-hash-reproduction-20261029"
+run="$HOME/quantyra-space-runs/paper1-lake-hash-reproduction-retry-20261029"
 base="$HOME/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029"
 mkdir "$run" || exit $?
 exec > >(tee "$run/run.log") 2>&1
