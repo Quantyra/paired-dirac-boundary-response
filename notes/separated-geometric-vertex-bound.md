@@ -29,11 +29,10 @@ Here the second factor with D* is defined by the adjoint of
 1_F D K_(t-s) 1_E. The two bracketed operators are Hilbert--Schmidt by the
 separated derivative bounds. Schatten Holder gives
 
-  |(2)| <= C t^(-N) exp[-c d^2/s-c d^2/(t-s)]        (3)
+  |(2)| <= C t^(-N) exp[-c' d^2/s-c' d^2/(t-s)]        (3)
 
-with the actual endpoint polynomial powers absorbed into the notation on
-the right. More precisely, they are finite powers of s and t-s; their
-integral is controlled by decreasing c and increasing N. For V_B one of
+after decreasing c to c'>0 to absorb the finite endpoint polynomial
+powers; constants can depend on the fixed positive separation d. For V_B one of
 the derivative factors is replaced by an ordinary off-diagonal heat factor;
 for V_C the other is replaced. These terms obey the same kind of bound, with
 constants depending on the coefficient and smearing norms. Matrix ordering
