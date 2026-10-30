@@ -1,4 +1,4 @@
-﻿# Ordered first-vertex momentum kernel
+# Ordered first-vertex momentum kernel
 
 Status: ordinary flat-plane spin and Gaussian calculation for smooth compact
 radial profiles. It gives the first-vertex part of the mixed Dirac tangent
@@ -73,7 +73,7 @@ Clifford contribution; it is not a scalar-potential-only kernel. Equation
 settle the scalar-jump benchmark or establish novelty.
 
 The physical half trace, copy/sector factors, rough seam and regulator
-remain separate obligations. No numerical computation is needed.
+remain separate obligations. An exploratory midpoint integration used 100,000 intervals at x=0.1, 1 and 10; the differences between the two sides of (4), after multiplying by 2πt, were approximately -2.1e-11, -2.6e-10 and -9.5e-9. No tolerance was declared before this run, so it is a transcription diagnostic, not acceptance evidence. The argument rests on the analytic identity.
 
 Remaining to-do list: compare (3) with applicable scalar/spinor prior form
 factors, verify physical folding and rough limits, and certify supported
