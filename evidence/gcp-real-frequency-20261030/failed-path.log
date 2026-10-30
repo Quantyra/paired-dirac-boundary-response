@@ -1,0 +1,34 @@
+caec4ddabf2cebe0bf322efb54ad1ed4ba02dc583ef7b57d5f1359e6776d15bf  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-real-frequency-20261030a/ModeRealFrequencyDraft.lean
+e5c0f2e1322abaf7680c03d46e842ca70847d7b30ae54dcc58b27d26abbff175  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-real-frequency-20261030a/ModeSquareOperatorDraft.lean
+8802e0ad25750b572c54dd0a0574894e29b398e6be468f84ea70366db733fb8c  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-square-operator-b7fed22-20261029/ModeSquareActionDraft.olean
+5304c14b466f83f0f5ddbaae6e822fcec69d7c6d0d65a7d9e02ae4affd4dab88  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-action-3f239e6-20261029/ModeAdjointDraft.olean
+05b6f774ccd2d2fb83cad5ead362b95121cb52faaef7f1c93f0e9b73750991ee  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean/PositiveSquareDraft.olean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+ModeSquareOperatorDraft.lean:1:0: error: unknown module prefix 'ModeOperatorDraft'
+
+No directory 'ModeOperatorDraft' or file 'ModeOperatorDraft.olean' in the search path entries:
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-real-frequency-20261030a
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-square-operator-b7fed22-20261029
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mode-action-3f239e6-20261029
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/build/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/lib/lean
+/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/lib/lean
