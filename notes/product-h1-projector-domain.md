@@ -1,67 +1,38 @@
-# Product mode closure and the H1 projector domain
+﻿# H1 projector domain of the constructed product operator
 
-This is an ordinary conditional domain-identification argument extending
-`paired-product-domain-closure.md`. It identifies the constructed closed
-product realization with the natural H1 projector realization on a compact
-smooth product. It does not reconstruct the physical copy map or certify a
-Lean theorem.
+This establishes the Sobolev-domain identification for the explicitly constructed product realization in [the mode-closure argument](paired-product-domain-closure.md). It assumes a smooth compact orbit with boundary, a compact smooth sphere with fixed twisting, and a genuine product bundle and metric. It does not independently establish that the physical pullbacks realize those assumptions.
 
-Let X=O x S, where O is a compact smooth orbit surface with smooth boundary
-and S is a closed compact sphere carrying a fixed smooth Hermitian spin and
-magnetic bundle. Use product metrics and a product bundle identification.
-Let B be the self-adjoint elliptic sphere Dirac operator, with an orthonormal
-eigenbasis e_j and real eigenvalues mu_j, including multiplicities. Let D
-be the closed orbit Dirac realization on
+Let H_o=L2(X_o,E_o), H_s=L2(S²,E_s), with sphere Dirac B self-adjoint and compact resolvent. Assume the orbit operator D_b has domain
 
-    V={v in H1(O;E_O): Pi_- trace(v)=0}.
+    V={f in H1(X_o,E_o): Pi_- trace(f)=0},
 
-Assume its graph norm is equivalent to the H1 norm on V, the complementary
-adjoint and chirality identities of `paired-product-domain-closure.md` hold,
-and Pi_- acts only in the orbit fiber and is independent of the sphere point.
-Define P as the closure of the finite-mode operator D+i Gamma B described in
-that note. Its exact graph identity gives the sequence norm
+and the elliptic graph equivalence
 
-    ||psi||^2+||P psi||^2
-      = sum_j (||psi_j||^2+||D psi_j||^2+mu_j^2||psi_j||^2). (1)
+    c ||f||_H1 <= ||f||+||D_b f|| <= C ||f||_H1             (1)
 
-Then
+on V. Let Pi_- act only in the orbit fiber and have smooth boundary coefficients. Assume the chirality and complementary-domain relations used in the mode-closure argument. On H_o tensor H_s construct P by closure of finite sphere-mode sums with coefficients in V. Its exact graph norm was shown there to be
 
-    Dom(P)={psi in H1(X;E): Pi_- trace(psi)=0},          (2)
+    ||P psi||²+||psi||²
+       = sum_j [||D_b psi_j||²+(1+mu_j²)||psi_j||²].        (2)
 
-with equivalent graph and H1 norms. The trace in (2) is the usual H1 trace
-on boundary O x S, and the projector is pulled back from the orbit boundary.
+The sphere elliptic estimate identifies the H1 sphere norm with the graph norm of B. Standard product Sobolev theory, applied in a finite bundle atlas and then by the sphere spectral theorem, gives
 
-For the proof, elliptic graph-norm equivalence on V bounds the first two
-summands in (1) above and below by ||psi_j||^2_H1(O). Ellipticity of B on
-closed S gives ||v||_H1(S) equivalent to ||v||+||Bv||. Applying this
-fiberwise and using Fubini, Parseval and standard product Sobolev charts,
+    H1(X_o x S²,E_o tensor E_s)
+      = H1(X_o; L2(S²)) intersect L2(X_o; H1(S²)),          (3)
 
-    ||psi||^2_H1(X) comparable to
-      sum_j (||psi_j||^2_H1(O)+(1+mu_j^2)||psi_j||^2_L2(O)). (3)
+with equivalent norms. In the sphere eigenbasis, (3) is exactly the finiteness of
 
-First let psi be in the closure domain. Finite-mode graph approximants
-satisfy the projector condition. Equations (1)--(3) make them Cauchy in H1,
-and continuity of the trace puts their limit in the right side of (2).
+    sum_j [||psi_j||_H1(X_o)²+(1+mu_j²)||psi_j||_L2(X_o)²]. (4)
 
-Conversely, let psi be H1 with the projector trace condition. The finite
-sphere spectral projections S_N onto |mu_j|<=N converge strongly in H1(X):
-this follows from (3), including the orbit weak derivatives. They commute
-with Pi_- and with the product trace, so each S_N psi obeys the projector
-condition. Each of its finitely many orbit coefficients is in H1(O) and has
-allowed trace, hence belongs to V. Thus S_N psi is in the finite-mode core,
-and (1)--(3) show convergence in the graph norm. This proves (2), including
-both domain inclusions, without imposing an H2 square domain.
+By (1), (2) and (4) are equivalent for mode coefficients in V.
 
-The compactness, fixed product bundle and projector independence are
-substantive: angular-dependent projectors, nonproduct metrics, noncompact
-cut removal, and moving or coupled boundary conditions need separate
-arguments. Under the assumptions, this closes the additional product-domain
-hypothesis for the explicitly constructed operator; identifying it with the
-physical pullback still requires the actual global spin/copy and magnetic
-maps, normal convention and chosen boundary realization. It gives no
-regulator-uniform response estimate or novelty verdict. No numerical
-calculation is used.
+The boundary trace map H1(X_o x S²)→H^(1/2)(partial X_o x S²) is continuous. Spectral projections in the sphere variable commute with the trace and with Pi_-. For a finite-mode truncation, the projector condition is therefore equivalent to Pi_- trace(psi_j)=0 for every retained coefficient. As the truncations converge in H1 by (4), continuity of trace proves both directions: the closure domain of P is exactly
 
-Remaining to-do list: establish the physical bundle and boundary matching,
-complete the full response and regulator, resolve prior art, prepare the
-manuscript, and certify supported claims in Lean on GCP.
+    {psi in H1(X_o x S²,E_o tensor E_s):
+                  Pi_- trace(psi)=0}.                        (5)
+
+This is the full H1 projector space of the constructed product model, with no artificial boundary at the smooth orbit bolt. It also identifies finite sphere-mode sums of V vectors as a graph core. The adjoint and square-domain identities then follow from the direct-sum construction and its complementary-domain mode calculation; equality of the first-order H1 domain is not an assertion that the square domain remains fixed as b varies.
+
+To transfer (5) to the actual physical finite cut, the product metric and twisted bundle, copy/spin pullbacks, normal projector, first-order expression, regular bolt and chosen closed realization must be identified with the model. The cited source asserts product separation, but that assertion alone does not prove these identifications. An unbounded conformal factor at a limiting cut also needs a separate uniform analysis. No heat-regulator or Lean certification follows from this domain calculation.
+
+Remaining to-do list: verify the physical product and bundle identifications, complete response and novelty audits, prepare the manuscript, and certify supported results in Lean on GCP.
