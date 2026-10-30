@@ -1,0 +1,8 @@
+Fri Oct 30 02:54:26 UTC 2026
+quantyra-lean-builder-01
+b38bd65495bdd407629df9c03bab59d99438adc61af0d4a405bfb712c4780516  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-lake-hash-reproduction-retry-20261029/package-lock.json
+cbd5808f233893054b33157763c6e3877b35ac17305169eded6868bf19a19fb6  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-lake-hash-reproduction-retry-20261029/AuditHash.lean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+b60f08dda4702ea470b5748ef7b62a06ce64365403eac7750a25cbd70ae51248  package-lock.json.hash
+b60f08dda4702ea470b5748ef7b62a06ce64365403eac7750a25cbd70ae51248  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets/widget/package-lock.json.hash
+PASS: isolated Lake text hash matches the observed artifact
