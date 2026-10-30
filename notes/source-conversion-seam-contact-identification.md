@@ -1,0 +1,19 @@
+# Source conversion contact and original-seam cancellation
+
+This identifies the scalar contact of `original-seam-cubic-contact-vanishing.md` with one term of the recorded seed conversion. It does not identify that conversion with the distinct P1-D curved remainder, or prove the source's global response.
+
+In equations (2)--(3) of the frozen [variable-direction conversion source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-variable-contact-conversion.md), L=-D^2 is the original paired two-dimensional square, K(t)=exp(-tL), and
+
+  I_e(u,v)=integral_0^e Tr_bar[u K(e-s) v K(s)] ds,
+  J''_e[u,v]=Theta(e)/2 [D_v T_e(u)+D_u T_e(v)]
+                         +2 Theta'(e) I_e(u,v).             (1)
+
+The source obtains the second term from the scalar angular-mass vertex and states that the grading-odd commutator has zero scalar-smeared trace. Thus its I_e has exactly the order of scalar insertions in the Duhamel contact in the seam note; cyclicity and s -> e-s give symmetry. The factor 2 Theta'(e), the physical-half/time-reduced trace convention, and the geometric term in (1) are retained. This is an identification of the displayed contact term, conditional on the source's operator, grading, trace and differentiation claims; it is not a new proof of those claims or of the entire conversion formula.
+
+The frozen [stationary boundary-layer source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/stationary-massive-boundary-layer.md) states that the actual separated square has constant complementary Dirichlet/Neumann projectors in its half-density frame at the geodesic original boundary and that angular masses enter as scalar constants. The frozen [rough-domain source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md) records the first-order paired domains, the composition square domain, and cubic directions. Subject to independently verifying that this square realizes the smooth local mixed Laplace problem in the geometric frame and that the scalar multipliers preserve the stated jets, the previous fixed-seam calculation therefore applies to the contact in (1) for every fixed smooth approximant. Its a_n boundary coefficients vanish for n<=8. Multiplication by the scalar angular factor and the source's fixed trace normalization leaves a zero coefficient zero.
+
+This conclusion does not remove any bulk coefficient, the geometric variation in (1), a boundary contribution from another vertex, the zero-mode or lowest-Landau-level allocation, or the common subtraction. In particular, the exact paired reflected trace uses an even double that can be only C2,1: smooth half-side coefficient identities do not prove a uniform heat remainder as the approximant is removed. Equation (1) is the endpoint conversion, whereas the localized tangent-subtracted P1-D integrand is a different observable; see `p1d-response-versus-conversion.md`.
+
+The source itself records a bridge argument and proposed remainder for its contact. An independent audit must check its weak integration by parts, coefficient regularity, boundary distributions, angular summation, thermal images, bolt gluing and constants before adopting that conclusion. This note does not upgrade a recorded source argument to a verified theorem or Lean certificate.
+
+Remaining to-do list: audit the original paired mixed realization and source bridge, prove the joint remainder and physical normalization, resolve novelty, finish the manuscript, and certify supported claims in Lean on GCP.
