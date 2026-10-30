@@ -147,6 +147,22 @@ relations with tau₃ and the normal gamma, then applies the paired projector
 lemma. The independent sphere-spin factor, tensor-product realization,
 global transitions, Sobolev domains and heat response are not established
 by this orbit-factor calculation.
+## Independent commuting factor
+
+At commit a8e98ff04a16293e851a0bf7569d748321c9574a, Lean 4.30.0 on the
+GCP builder checked `compression_with_commuting_factor` with exit 0 and
+axioms [propext, Classical.choice, Quot.sound]. BoundaryKernelDraft.lean
+SHA-256 is d69b0c633117fd32f951e40d8d90dd435913083faf468954a4a586ab4f36306f;
+the transferred bundle SHA-256 is
+f4296bab5daa0356d9f19e04ad8b64cb901deaeeb05caad40a36d3a6423f9807.
+The same source-only dependency-worktree warnings apply.
+
+The abstract theorem proves P C G P=0 when P C P=0 and G commutes with P.
+It is the algebraic step for adding an independent sphere-spin factor to
+the checked orbit cancellation. It does not itself construct the tensor
+product or prove the physical sphere gamma commutes with the orbit projector;
+those identifications, the global bundle, and the operator domain remain
+outside this check.
 Remaining to-do list: formalize and verify the geometric interpretation and
 remaining claims on GCP, resolve the physical and novelty audits, and prepare
 the manuscript.
