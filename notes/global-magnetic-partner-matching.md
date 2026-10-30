@@ -69,6 +69,41 @@ The spin-bundle identification and its relation to the orbit-orientation
 convention remain independent checks. No numerical computation is needed for
 this topological argument; numerical checks cannot replace these identities.
 
+
+## Explicit check for the recorded static monopole ansatz
+
+The source [magnetic boundary note](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/angular-boundary-response.md)
+uses the central-patch potential A = −P cos(theta) dphi, P = q/2, and
+understands monopole patch constants. For the same oriented angular
+coordinates, regular choices on the north and south charts are
+
+    A_N = P(1 − cos(theta)) dphi,
+    A_S = −P(1 + cos(theta)) dphi,
+    A_N − A_S = q dphi,
+    F = P sin(theta) dtheta ∧ dphi.
+
+The north/south gauge transformation is exp(i q phi) or its inverse,
+according to the covariant-derivative convention; the choice must be the
+same on both copies. For integer q it is single valued. These potentials
+are smooth on their respective spherical charts and have no orbit component,
+so their pullbacks to the regular orbit disk are smooth at the bolt.
+
+If the recorded identical-exterior assumption means that the two physical
+pullbacks use these same local one-forms and the same transition functions,
+then F_L = F_R on the whole finite-cut exterior, and the identity boundary
+map is connection-preserving in both charts. The relative parallel section
+is explicitly the constant 1 in these matched gauges. Thus the magnetic
+part of the criterion is verified for this concrete static ansatz; it is not
+merely an abstract consequence of equal integrated flux.
+
+This conclusion is conditional on the actual copy diffeomorphism pulling
+the signed two-form to the same F, and on the boundary identification being
+the identity in these matched gauges as the coupled-domain note prescribes.
+Opposite *outward* orientations do not independently fix the sign of the
+pulled-back angular two-form. Nor does this calculation transfer to a
+different source-free Maxwell completion with additional nonzero
+field-strength corrections or a changed physical boundary map. The global
+spin and closed-operator checks remain separate.
 Remaining to-do list: verify the physical curvature, smooth bolt, connection
 and boundary-map hypotheses in the pinned source; establish the actual
 projector domains; complete the response and prior-art audits; and certify
