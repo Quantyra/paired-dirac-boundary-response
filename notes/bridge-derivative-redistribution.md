@@ -1,4 +1,4 @@
-﻿# Six-derivative redistribution: scope and boundary obstruction
+# Six-derivative redistribution: scope and boundary obstruction
 
 Status: ordinary supporting lemma for the proposed curved remainder, not a
 proof of that remainder or a Lean certificate. The pinned
@@ -55,6 +55,41 @@ physical-side regularization: the expansion, expectation, parameter
 differentiations and uniform passage to the rough limit each need their own
 justification. These issues are independent of the finite Gaussian moments.
 
+## Explicit B-term derivative and a nonuniformity test
+
+Let Q_h=B_h² and suppose temporarily that f is smooth enough to differentiate
+under the path integral. The product rule gives exactly
+
+    ∂_h⁶(h²Q_h) = h² Q_h^(6) + 12h Q_h^(5) + 30 Q_h^(4),
+    B_h^(k) = ∫₀¹ ξ_α^k f^(k+1)(y+hξ_α) dα.
+
+The Q_h^(6) term contains 2B_h B_h^(6), so an intermediate-point
+sixth derivative can contain h² f' f^(7), with path averages and additional
+factors from the exponential and A_h. At h=0 the explicit h² makes the
+first two displayed terms vanish, and the surviving Q_0^(4) involves at
+most f^(5). Thus identifying only the Taylor coefficient at zero does not
+by itself control the sixth derivative at all intermediate h needed by a
+standard integral remainder. The formula is an exact product-rule identity;
+it does not assert that this isolated term survives all other bridge terms
+or expectation cancellations.
+
+The following periodic example shows why one cannot simply bound a separated
+f' f^(7) integral by a uniform W^{3,∞} bound. On [0,2π], set
+
+    f_N(y)=2+N^(−3) sin(Ny),   N=1,2,... .
+
+The functions are uniformly positive and uniformly bounded in W^{3,∞}, but
+
+    ∫₀^{2π} f_N'(y) f_N^(7)(y) dy
+       = −∫₀^{2π} |f_N^(4)(y)|² dy = −π N².
+
+The equality is three integrations by parts, with periodic boundary terms
+zero. Hence an estimate for the actual bridge must use more structure than
+an absolute term-by-term W³ bound on this separated product. The explicit
+h², path shifts, Gaussian averaging, other factors and possible cancellations
+may provide that structure; this example neither models the complete bridge
+nor disproves its claimed remainder. It does show that dropping those
+features before estimating the high-derivative term is invalid.
 Thus the lemma validates one isolated redistribution mechanism and identifies
 two concrete audit obligations for applying it to the retained bridge. It
 does not disprove the source's contact estimate, prove its stronger curved
