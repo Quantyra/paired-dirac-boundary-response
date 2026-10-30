@@ -22,6 +22,12 @@ estimate supplies uniform shifted coercivity directly; no cut-uniform
 Poincare inequality is needed for this particular shifted form argument.
 This is a conditional implication, not an independent proof of (1).
 
+The conditional graph derivation in `finite-cut-graph-weitzenbock-route.md` now gives a concrete way to choose C_g. Under its energy identity, uniform curvature, boundary and trace bounds, and core-density assumptions, let
+
+ C0²=max{2,1+2R0+2S0 T+(S0 T)²},
+ C_g=C0 max{exp(B),1+G/2},                                (2a)
+
+where B and G uniformly bound ||b||_infinity and ||db||_infinity. Substitution into (2) provides a common shifted-coercivity constant under those hypotheses. This connects the specific fixed-seed curvature and trace checks to the form estimate without requiring a positive spectral gap. The actual physical projector realization, Gauss identity and uniform constants still have to match the stated model. These constants are analytic estimates, not physical admission margins.
 For the boundary operator, assume the smooth Gauss decomposition and H2
 composition-domain description of `multiplier-square-boundary.md`, and
 write P for the allowed projection and S_b=K/2-(partial_n b)/2. With a fixed
