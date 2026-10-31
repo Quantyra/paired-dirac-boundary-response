@@ -166,28 +166,43 @@ decisions; certify supported claims on GCP.
 
 For this paragraph only, assume the compactly supported directions stay a
 positive distance from the seam and the exact singular path functional
-`mathcal G_y` in the proof above has four uniformly bounded Frechet
-derivatives in the path supremum norm. Its constant-path value is
-`mathcal G_y(0)=Q_(u,w)(y)`. Bridge symmetry gives
-`E[D mathcal G_y(0)[xi]]=E[D^3 mathcal G_y(0)[xi,xi,xi]]=0`. Taylor's formula
-through degree three therefore yields
+`H_0` below has four uniformly bounded Frechet derivatives in the path
+supremum norm. At a fixed path, put `W=A_h^(-1/2)`, `R=S_b^(-1)-1`, and
+`Z=B_h^2/(4A_h)`. The leading mixed path integrand and its first explicit
+`t` correction from the orbit exponential are
 
-    E[mathcal G_y(sqrt(t) xi)]
+    H_0 = D_uw[W R]|_(b=0),
+    H_1 = D_uw[W Z R]|_(b=0).
+
+Because `R|_(b=0)=0`, these are respectively
+
+    H_0=W_u R_w+W_w R_u+W R_uw,
+    H_1=Z H_0+W(Z_u R_w+Z_w R_u),
+
+with all jets evaluated at the same path. The constant-path value of `H_0`
+is `Q_(u,w)(y)`. Assume also the path regularity needed for a second-order
+Taylor bound on `H_1`. Bridge symmetry gives zero expectation for the odd
+linear and cubic terms in `H_0`. Taylor's formula then yields
+
+    E[H_0(sqrt(t) xi)+t H_1(sqrt(t) xi)]
       = Q_(u,w)(y)
-        + (t/2) E[D^2 mathcal G_y(0)[xi,xi]] + O(t^2),
+        + t[(1/2) E[D^2 H_0(0)[xi,xi]]+H_1(0)] + O(t^2),
 
-uniformly on the interior support. Substitution into the singular tower term
-`C/(2 pi t^2) E[mathcal G_y(sqrt(t)xi)]` identifies its next coefficient:
+uniformly on the interior support. Thus the singular tower contribution has
+the next coefficient
 
     partial_uw Delta_sc(t;y)
       = C Q_(u,w)(y)/(2 pi t^2)
-        + C E[D^2 mathcal G_y(0)[xi,xi]]/(4 pi t) + O(1).   (2)
+        + C[(1/2) E[D^2 H_0(0)[xi,xi]]+H_1(0)]/(2 pi t)
+        + O(1).                                             (2)
 
-The bounded remainder in (2) also uses the bounded tower remainder and the
-exponentially small nonzero thermal images from the preceding interior
-argument. Formula (2) defines the next local coefficient without expanding
-its large pointwise expression; its covariance is the fixed bridge
-covariance `2(min(s,r)-sr)`.
+In particular, the `H_1` term is required: it comes from the explicit factor
+`exp(t B_h^2/(4A_h))` in the exact bridge weight and is of the same order as
+the path-Hessian contraction. The bounded remainder in (2) also uses the
+full-product `O(1)` estimate for the nonsingular tower part in
+[`full-weyl-curved-scalar-tower-formula.md`](full-weyl-curved-scalar-tower-formula.md)
+and the exponentially small image bounds. Formula (2) leaves the path
+Hessian unexpanded; its covariance is `2(min(s,r)-sr)`.
 
 This is a smooth-interior coefficient only. The uniform `W^(3,infinity)`
 seam hypotheses used for the leading term give only a Lipschitz first path
@@ -197,7 +212,9 @@ To use (2) in P1, one must express its Hessian coefficient as the source's
 prescribed local tangent/contact/density subtraction and then prove a
 uniform rough-seam remainder. No such identification follows from (2), and
 it does not include the matrix commutator, boundary transgression or LLL.
-Numerical role: none.
+Correction to the initial `418235c` version: that version included the path-
+Hessian term but omitted `H_1` from the explicit `t B_h^2/(4A_h)` exponent.
+This commit supplies the corrected coefficient. Numerical role: none.
 
 ## Extension to the admitted rough seam profiles
 
