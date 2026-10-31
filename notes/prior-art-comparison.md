@@ -156,15 +156,15 @@ P1's actual bundle, connection, physical density/contact/LLL allocation,
 or common regulator with their folded heat trace. The `a_4` formulas must
 not be cited as direct calculations of P1's higher-order coefficients.
 
-Required follow-up before a novelty disposition: substitute P1's folded
-geometry and Robin endomorphism into the interface/folding conventions,
-compare the full operator vertices and trace normalization, and determine
-whether any P1 coefficient is already a specialization of the known
-interface heat coefficients. The source is close prior art and materially
-raises the comparison bar; it does not itself establish P1's higher-order
-mixed response or its physical common-regulator limit. This source-level
-comparison is evidence-based but not an independent rederivation of its
-heat-coefficient formulas.
+Required follow-up before a novelty disposition: compare P1's full operator
+vertices and trace normalization with the interface/folding conventions, and
+determine whether any P1 coefficient is already a specialization of the
+known interface heat coefficients. The finite-cut boundary and square match
+is now established conditionally below. The source is close prior art and
+materially raises the comparison bar; it does not itself establish P1's
+higher-order mixed response or its physical common-regulator limit. This
+source-level comparison is evidence-based but not an independent
+rederivation of its heat-coefficient formulas.
 
 ### Boundary-jet normalization audit
 
@@ -188,17 +188,18 @@ structural match, not merely a dimension count.
 
 The boundary comparison now has a sharper finite-cut scope. The pinned
 source transition check establishes the global partner `J` for its stipulated
-identical-copy bundle. The [transmittal comparison](transfer-transmittal-comparison.md)
-derives the side splitting and Robin jump; in the pinned normal frame its
-new explicit tangential calculation matches the interface `B_j` term in the
-reflection-symmetric seed after aligning normal signs. The full closed
-operator equivalence for the varying family, including the transformed
-magnetic connection and the Weyl-transformed interface endomorphism, is not
-yet established. In particular, P1's `(K-partial_n b)/2` Robin coefficient
-has not been substituted into the interface `U(b)` law in a single matched
-normal convention. Neither the four-dimensional `a4` anomaly formulas nor
-their folding statement computes P1's proposed higher-order response or its
-physical regulator limit.
+identical-copy bundle. The [finite-cut square
+crosswalk](finite-cut-interface-square-crosswalk.md) matches the varying
+Robin coefficient, including a nonzero normal jet, and the varying
+tangential connection under reflection symmetry. With the pinned global `J`,
+its fold and side-sign factorization establish equality of the positive
+closed interface square and the density-transported P1 composition square,
+including actual domains and trace multiplicity, at that smooth finite cut.
+This does not identify the first-order P1 realization with the self-adjoint
+interface Dirac or establish the moving endpoint or physical response.
+Neither the four-dimensional `a4` anomaly formulas nor their folding
+statement computes P1's proposed higher-order response or its physical
+regulator limit.
 
 ### Screened order coverage
 
@@ -243,17 +244,18 @@ already recorded fixed-cut identity and the boundary term
 the conformal normal and mean-curvature conventions must be aligned when
 expressing the transported Robin operator in `g_b`.
 
-Consequently, if the global side identification and the square-domain
-transmittal match in [the comparison note](transfer-transmittal-comparison.md)
-hold for this particular cut, P1's smooth finite-cut conformal *square* lies
-in the geometric interface Laplace-type family treated by
-Gilkey--Kirsten--Vassilevich. Their 2001 analysis explicitly applies a
-conformal variation with a continuous parameter that need not be smooth
-across the interface and determines the interface heat invariants through
-`a4`; their 2020 paper specializes the `a4` anomaly to a conformal spinor.
-Thus the smooth fixed-cut `a4` coefficient is close conditional prior art,
-but the exact P1 square decomposition and trace multiplicity must be
-established before calling it an identical specialization.
+Under the pinned identical-copy bundle and global `J` hypotheses, the
+[finite-cut square crosswalk](finite-cut-interface-square-crosswalk.md)
+establishes the square-domain transmittal match and trace multiplicity.
+Consequently P1's smooth finite-cut conformal *square* lies in the geometric
+interface Laplace-type class treated by Gilkey--Kirsten--Vassilevich for that
+conditional model. Their 2001 analysis explicitly applies a conformal
+variation with a continuous parameter that need not be smooth across the
+interface and determines the interface heat invariants through `a4`; their
+2020 paper specializes the `a4` anomaly to a conformal spinor. Thus the
+smooth fixed-cut `a4` coefficient is close conditional prior art. This
+identification does not match the physical endpoint, source normalization,
+mass-mixed vertices or common-regulator observable.
 
 There is a first-order realization distinction that prevents a shortcut.
 For P1, the source finite-cut operator has complementary adjoint domains and
@@ -262,21 +264,23 @@ does not vanish on the allowed `Pi_+` trace space. The interface Dirac
 realization instead has continuous spinor data across two sides, for which
 the two oppositely oriented boundary Green terms cancel. A unitary
 identification cannot equate these first-order closed operators. The
-remaining plausible comparison is at the level of squares: derive whether
-the folded interface square is the direct sum of P1's `D^*D` and `DD^*`
-realizations (with the exact trace factor), or give the correct block
-decomposition. P1's partner involution makes the two spectra equal at a
-fixed cut, but that fact alone does not prove the interface decomposition.
+square-level comparison is now closed conditionally by the exact side-sign
+factorization: the constructed interface square is unitarily equal to the
+density-transported P1 composition square, with no additional trace
+multiplier. This proves the square relationship directly rather than
+inferring it from equality of the `D^*D` and `DD^*` spectra. The P1
+first-order realization remains distinct from the self-adjoint interface
+first-order realization.
 
-The conditional family crosswalk still does not close P1. The global
-side-bundle/connection match is not verified for the physical source or its
-moving endpoint; the published interface formulas do not establish P1's
-common-regulator, contact/density/LLL allocation, or source-observable map;
-and the screened interface formulas do not supply P1's proposed `a7` or
-log-`a8` mixed mass/log response. The exact coefficient specialization at
-the first relevant P1 order and the physical endpoint transfer remain open.
+The conditional finite-cut square identification still does not close P1.
+Its hypotheses do not establish the source's moving endpoint; the published
+interface formulas do not establish P1's common-regulator,
+contact/density/LLL allocation, or source-observable map; and the screened
+interface formulas do not supply P1's proposed `a7` or log-`a8` mixed
+mass/log response. The exact coefficient specialization at the first
+relevant P1 order and the physical endpoint transfer remain open.
 
-Remaining to-do list: perform the exact folded-operator and coefficient
-specialization check; close the physical source/common-regulator bridge;
-then complete the novelty decision, supported manuscript and GCP Lean
-certification.
+Remaining to-do list: compare the transformed mass-mixed vertices and
+specialize the interface coefficients at the first relevant P1 order; close
+the physical source/common-regulator bridge; then complete the novelty
+decision, supported manuscript and GCP Lean certification.
