@@ -192,6 +192,30 @@ bound the zero-image mixed correction density by
     |partial_uw Delta_sc(t;y)|_Hit
         <= C U W t^(-2) E[1_Hit r^6].                    (12)
 
+The product-rule identity also has a direct Duhamel interpretation. At a
+fixed finite cut, set
+
+    H_(mu,b)=L_b+mu^2 S_b,
+    Hbar_(mu,b)=L_b+mu^2 I,
+    V_(mu,b)=mu^2(S_b-I).
+
+On the common domain with trace-class positive-time semigroups, Duhamel gives
+
+    Tr(e^(-t H_(mu,b))-e^(-t Hbar_(mu,b)))
+      =-integral_0^t Tr(e^(-(t-s)H_(mu,b))
+                          V_(mu,b)e^(-s Hbar_(mu,b))) ds. (12a)
+
+At the seed `S_0=I`, so `V_(mu,0)=0`. Differentiating (12a) twice
+collects the mixed angular second vertex `V_uw`, the ordered angular-angular
+pairs, and both orbit-angular pairs formed from `L_u` or `L_w` with `V_w`
+or `V_u`. On the bridge side the same derivative is exactly (11). Therefore
+(13) bounds the **combined scalar-sector seam-hit contribution**, including
+its orbit-angular Duhamel cross terms; it is not merely the subterm with
+both derivatives on `Theta(t S_b)`. This identification uses the common-
+domain and trace hypotheses of the exact scalar-tower formula. It does not
+include the `mu C_b` matrix commutator or the source's localized tangent
+subtraction.
+
 Here the differentiated nonzero images are superpolynomially small by the
 explicit winding estimate above. Integrating (12) with (1) for `k=6`
 proves

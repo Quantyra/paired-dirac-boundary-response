@@ -107,13 +107,20 @@ the curved source transfer.
 Because `-Theta'(t)=O(t^-2)` and `Theta''(t)=O(t^-3)`, termwise sufficient
 targets for a subtracted total `O(t^(3/2))` correction are `O(t^(7/2))` for
 the orbit-insertion and odd-odd kernels, and `O(t^(9/2))` for the even-even
-kernel. These powers are sufficient bookkeeping, not necessary individual
-bounds; combined cancellations may improve them. The fixed-product
-positive-time estimates do not establish any of these small-time subtracted
-bounds. The first concrete curved obligation is to estimate the surviving
-scalar orbit-angular insertions with the actual localized tangent
-subtraction and common regulator, and to control the remaining even-even
-ordered first-vertex products.
+kernel after the Duhamel simplex is included. These powers are sufficient
+bookkeeping, not necessary individual bounds; combined cancellations may
+improve them. The [scalar angular-mass bridge-hit estimate](full-weyl-curved-scalar-joint-hit-bound.md)
+now controls the combined scalar-sector seam-hit contribution by
+`O(t^(3/2))` under its common-domain and bridge hypotheses. Its product-rule
+formula is the Duhamel sum of the scalar mixed angular vertex, angular-angular
+pairs, and scalar orbit-angular pairs; it excludes the matrix `mu C_b`
+commutator and does not implement the source's localized tangent subtraction.
+The flat boundary-minus-tangent pieces for odd-odd and even-even products are
+also recorded separately. The first remaining scalar obligation is the
+non-hit local response: derive and match it, together with the prescribed
+tangent subtraction, density/contact, and moving cut under one common
+regulator. The curved matrix/odd-odd sector and physical boundary terms also
+remain open.
 Density/contact, boundary transgression, thermal images and LLL still need
 inclusion.
 
