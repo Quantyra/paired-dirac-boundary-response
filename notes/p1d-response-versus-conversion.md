@@ -424,6 +424,21 @@ ledger must account for it. This refines the necessary match and does not
 prove that the full response fails the `t^(3/2)` bound: derivative-insertion
 terms, other sectors, and the source subtraction may alter the total.
 
+### Order-zero coefficient ledger to close
+
+The following entries are inputs to the required cancellation identity, not
+terms that may yet be summed into the physical response:
+
+| Sector | Current coefficient evidence | Missing item before inclusion in `C_other` |
+| --- | --- | --- |
+| Section 4 tangent subtraction | Exact flat multiplier and local terms through the source's stated `x^3` subtraction order. | Curved localization maps, transition derivatives, and their order-zero coefficient on the physical Hilbert space. |
+| Odd-odd same-boundary plus defect | Fixed-interior smooth coefficient `-b_S^2/(6 pi) integral (h' u'w'+u''w'') dmu + O(t)` after flat `a_0`, in raw rank-two normalization. | Its source-selected localized subtraction, extension through the seam and moving cut, and physical-half normalization. |
+| Full-Weyl angular and orbit-angular vertices | Exact flat positive-time multipliers and angular sums; fixed-seed positive-time bounds for the purely angular pair. | The complete curved order-zero coefficient and its common-regulator relation to the Section 4 tangent and source contact. |
+| Source geometric conversion and contact | Common-cutoff seed conversion finite part is recorded as an imported parent calculation; a scalar curved subfamily has a separate contact comparison. | Independent P1 derivation, full-Weyl correction, density and boundary terms in the same observable and normalization. |
+| Density, boundary transgression, LLL and local restorations | Separately identified in the source action as terms that must be retained. | Their actual order-zero coefficients on one Hilbert space and regulator. |
+
+Thus the necessary equation `C_other=+(b_S^2/(6 pi)) integral (h' u'w'+u''w'') dmu` is not currently evaluable: its left side is not a known coefficient, and entries above use different model scopes and normalizations. The first completion task is to derive each entry from the same physical response and subtraction, then compare coefficients before any `t^(3/2)` estimate. This ledger makes no claim that the sum is nonzero or that the target fails.
+
 Concrete claim: the fixed-interior defect creates the displayed raw
 rank-two `t^0` coefficient, so P1-D requires its subtraction or a proved
 cancellation. First unsupported implication: identify this component in
