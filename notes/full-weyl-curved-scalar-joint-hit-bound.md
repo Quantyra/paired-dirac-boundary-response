@@ -132,13 +132,26 @@ This includes the derivatives on the zero-image scalar Brownian factor,
 provided the pathwise jets (3) hold. The fixed physical-half factor, when
 justified for this scalar subfamily, only multiplies the constant by `1/2`.
 
-For a nonzero antiperiodic image `k`, the image factor is
-`exp[-k^2 T^2/(4t A_h)] cos[k T B_h/(2 A_h)]`. Its first and mixed field
-derivatives are finite sums of this same Gaussian factor times polynomials
-in `k`, `t^(-1)`, and the jets in (3). Since `A_h<=a1`, the factor is at
-most `exp[-k^2 T^2/(4t a1)]`; summing any such polynomial over `k!=0`
-is `O(t^N)` for every fixed `N`, uniformly on the bounded collar family.
-The Brownian polynomial factors have bounded moments there. Thus the
+For a nonzero antiperiodic image `k`, write
+
+    E_k=exp[-k^2 T^2/(4t A_h)],
+    phi_k=k T B_h/(2 A_h).
+
+With `A_h` bounded above and below, the chain rule gives
+
+    |(E_k)_u| <= C k^2 t^(-1) |(A_h)_u| E_k,
+    |(E_k)_uw| <= C[(k^2/t)|(A_h)_uw|
+                         +(k^4/t^2)|(A_h)_u(A_h)_w|] E_k,
+
+and derivatives of `phi_k` are bounded by `C|k|` times the corresponding
+`B_h` jets plus products with the `A_h` jets. Differentiating
+`E_k cos(phi_k)` therefore gives `E_k` times a finite polynomial in
+`|k|,t^(-1)` and the jets in (3). Since
+`E_k<=exp[-k^2 T^2/(4t a1)]`, each polynomially weighted image sum is
+`O(t^N)` for every fixed `N`, uniformly on the bounded collar family.
+This remains true after multiplication by `Theta(tS_b)` and its first two
+field derivatives, which grow at most polynomially in `t^(-1)`; the
+Brownian polynomial factors have bounded moments there. Thus the
 differentiated nonzero-image contribution is superpolynomially small and
 does not change (8).
 
