@@ -348,9 +348,15 @@ that the surviving orbit-angular cross terms are of the same leading order
 as the pure angular term and must be included when matching the complete
 local subtraction and source contact. With the conditional half factor, the
 same diagnostic has `D_flat=3C/(pi t^2)+O(1)` and
-`C_src=-C/(pi t^2)+O(t^(-1))`, so `D_flat-C_src` has leading coefficient
-`4C/pi`. The geometric bracket and the physical source endpoint are still
-not included.
+`C_src=-C/(2 pi t^2)+O(t^(-1))`, so `D_flat-C_src` has leading coefficient
+`7C/(2 pi)`. The earlier `-C/pi` contact and `4C/pi` bracket assignment in
+this note's previous version used an inconsistent contact normalization; the
+explicit calculation is in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md),
+and the crosswalk has been corrected in
+[`parent-curved-heat-bridge-p1-crosswalk.md`](parent-curved-heat-bridge-p1-crosswalk.md).
+The geometric bracket and the physical source endpoint are still not
+included.
 
 Numerical role: none.
 

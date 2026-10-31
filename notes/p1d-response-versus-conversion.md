@@ -154,6 +154,22 @@ commutator/boundary/LLL allocation, or any common-regulator endpoint. The
 older allocation `D_flat-C_src=4C/pi` with a vanishing orbit bracket used an
 incorrect contact factor and is superseded.
 
+#### Rational coefficient bookkeeping prepared for Lean
+
+[`FlatSourceContactLedger.lean`](../lean/FlatSourceContactLedger.lean) now
+states the exact rational algebra after factoring out the common
+`1/(pi t^2)` and insertion pairing. It checks the source-contact coefficient
+`-CU/2`, the conditional physical-half full correction `3CU`, the
+correction-minus-contact coefficient `7CU/2`, and the final ledger coefficient
+`4CU` after adding the orbit bracket `CU/2`. Its SHA-256 is
+`b21468d3fe08878c15b33ed29578599676ba3aabdbd0c0288c71b3269672f67f`.
+The exact-source GCP runner is
+[`cloud-flat-source-contact-ledger-20261031.sh`](../lean/cloud-flat-source-contact-ledger-20261031.sh).
+Neither source nor runner has been executed; the current GCP token-refresh
+failure prevents certification. Even a successful replay would certify only
+this rational bookkeeping, not the coefficient inputs, heat estimates,
+physical normalization or common-regulator identity.
+
 Consequently, the bridge-hit estimate in
 [`full-weyl-curved-angular-factor-defect.md`](full-weyl-curved-angular-factor-defect.md)
 cannot yet be assigned to the source's `r_curved`: it bounds one model

@@ -68,22 +68,48 @@ coefficient to match in the local subtraction, not a counterterm assignment;
 orbit variations, physical normalization and source contacts remain to be
 included.
 
-Comparing this frozen scalar coefficient with the source contact expansion
-under the physical-half normalization gives opposite leading terms:
-`+(C/pi)(uw/f_0)t^(-2)` from the scalar angular factor and
-`-(C/pi)(uw/f_0)t^(-2)` from `2 Theta'(t) I_t`. The exact finite-cut ledger
-contains `D-C_src`, so this pair adds inside that bracket; it is not a
-standalone cancellation. Any cancellation in the full ledger must be derived
-with its separate geometric bracket and retained terms. Neither coefficient
-may be dropped on the basis of this leading comparison.
+**Normalization correction.** The earlier version of this crosswalk stated
+that the source contact is `-(C/pi)(uw/f_0)t^(-2)` and cancels the leading
+scalar angular term. That factor is inconsistent with the exact contact
+identity and the tower convention used in the later flat-ledger audit. With
+`C=2 b_0^2`, `Theta'(t)=-C/t^2+O(1)`, and
+`I_t=(1/(4 pi)) integral uw/f_0+O(t)`, the source contact is
 
-The existing flat rank-two `k=0` Duhamel decomposition also gives a
+    C_src=2 Theta'(t) I_t
+         =-(C/(2 pi))(uw/f_0)t^(-2)+O(t^(-1)).
+
+The scalar angular-factor term after the conditional physical-half factor is
+`+(C/pi)(uw/f_0)t^(-2)`, so it does not cancel the contact; their sum is
+`+(C/(2 pi))(uw/f_0)t^(-2)`. In the flat constant-direction check, the
+complete correction `D_flat` also contains the orbit-angular ordered terms:
+the pure angular and cross terms are respectively `C/pi` and `2C/pi` after
+the half factor, giving `D_flat=3C/pi`. Hence
+`D_flat-C_src=7C/(2 pi)`, not `4C/pi`. The separate orbit bracket is
+`H_orb-G_src=C/(2 pi)`, so the two ledger brackets sum to `4C/pi`, agreeing
+with `H_FW-J_src''` under the declared flat common normalization. This
+reconciles with the detailed derivation in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md);
+the earlier cancellation and `4C/pi` assignment to `D_flat-C_src` are
+superseded and must not be reused.
+
+The normalization follows directly from the pinned parent conversion at
+commit `fa84a1bf0e033825a7a76a7d03b48317bb9c5756`: Eq. (3) gives
+`C_src=2 Theta' I_t`. At the flat seed, Eq. (5) gives the source-side
+`I_t=(4 pi)^(-1) integral_{y>0} 2uw`; for balanced even profiles, with
+`U_R=integral_R uw=2 integral_{y>0}uw`, this is
+`(4 pi)^(-1) U_R`. The parent tower expansion is
+`Theta=2b_0^2/t+O(1)`, while this crosswalk uses the P1 convention
+`C=2b_0^2`, hence `Theta'=-C/t^2+O(1)`. Multiplying these flat-seed
+factors gives `C_src=-(C/(2 pi))t^(-2)U_R`, fixing the half-factor
+unambiguously.
+
+The existing flat rank-two `k=0` Duhamel decomposition gives the same
 normalization check: its tower-summed pure angular term is
 `2C/(pi t^2)+O(1)`, and the orbit-angular cross terms contribute
 `4C/(pi t^2)+O(1)` before the physical-half factor. Thus the full flat
-diagnostic has `D_flat=3C/(pi t^2)+O(1)` after that conditional factor;
-combined with `C_src=-C/(pi t^2)+O(t^(-1))`, the finite-cut bracket
-`D_flat-C_src` has leading coefficient `4C/pi`. This is a flat
+diagnostic has `D_flat=3C/(pi t^2)+O(1)` after that conditional factor.
+With the corrected `C_src=-C/(2 pi t^2)+O(t^(-1))`, the finite-cut bracket
+`D_flat-C_src` has leading coefficient `7C/(2 pi)`. This is a flat
 constant-direction check only, not a curved endpoint estimate.
 
 The joint scalar-hit result is detailed in

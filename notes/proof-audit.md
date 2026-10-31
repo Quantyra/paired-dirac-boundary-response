@@ -439,3 +439,40 @@ trace summation, heat-trace differentiation, or the common regulator.
 Remaining to-do list: establish the physical partner and multiplier/domain
 hypotheses; formalize the Cauchy derivative and rational constant claims on
 GCP; prove the trace-level response and its common-regulator limit.
+
+### Flat source-contact factor correction and Lean draft (2026-10-31 HST)
+
+The flat common-normalization ledger in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md)
+gives `Theta'=-C/t^2+O(1)`, `I_t=U/(4 pi)+O(t)`, and
+`C_src=2 Theta'I_t=-(C/(2 pi))U t^(-2)+O(t^(-1))`, with `C=2b_0^2` and
+`U=integral_R uw`. The paired crosswalk and scalar joint-hit note previously
+used `-C/pi` for this contact and consequently misassigned
+`D_flat-C_src=4C/pi`; both have now been corrected. The complete conditional
+flat ledger has `D_flat=3C/pi`, `D_flat-C_src=7C/(2 pi)`,
+`H_orb-G_src=C/(2 pi)`, and total `H_FW-J_src''=4C/pi`, all multiplying
+`U t^(-2)`. This is coefficient bookkeeping at a flat model normalization,
+not a curved physical endpoint or a theorem that the sectors cancel.
+
+[`FlatSourceContactLedger.lean`](../lean/FlatSourceContactLedger.lean)
+formalizes the rational factors after stripping `pi^(-1) U t^(-2)`;
+the pinned GCP-only replay is
+[`cloud-flat-source-contact-ledger-20261031.sh`](../lean/cloud-flat-source-contact-ledger-20261031.sh).
+The source SHA-256 is
+`b21468d3fe08878c15b33ed29578599676ba3aabdbd0c0288c71b3269672f67f`.
+The Lean source is uncompiled and has no receipt because GCP authentication
+cannot currently refresh. Its scope excludes the analytic coefficient
+inputs, physical source matching and common-regulator limit.
+
+Concrete claim: given the displayed coefficient inputs, rational algebra
+yields the corrected contact and total-ledger factors. Ordinary argument:
+apply the source's exact contact identity, the even-folding normalization,
+and the previously derived flat Duhamel coefficients, then collect rational
+factors. First unsupported implication: prove these coefficients are the
+complete physical response terms under one regulator and transfer the ledger
+to the curved source observable. Numerical role: none. Lean role: certify
+only the rational coefficient identities after exact-source GCP replay.
+
+Remaining to-do list: replay the rational ledger on GCP; close the curved
+response sectors and physical source-observable bridge; finish the novelty
+decision and manuscript; certify the supported final claims.
