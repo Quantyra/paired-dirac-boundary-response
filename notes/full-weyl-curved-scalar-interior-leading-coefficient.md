@@ -54,7 +54,7 @@ Since `F_0=0`, the mixed derivative of `W_0 F_b` has only
 `(W_0)_u F_w+(W_0)_w F_u+W_0 F_uw`. Substituting the limits above gives
 
     partial_uw Delta_sc(t;y)
-      = C/(2 pi t^2) Q_{u,w}(y) + o(t^(-2)),
+      = C/(2 pi t^2) Q_{u,w}(y) + O(t^(-1)),
 
 where
 
@@ -68,11 +68,29 @@ The first `4uw/f_0` in (1) comes from the angular-factor Hessian. The other
 weight. Thus the frozen angular-factor coefficient alone is not the complete
 leading coefficient even within this scalar component.
 
-The limit is uniform on compact subsets of the interior for smooth bounded
-data. With compactly supported directions, the bridge tails and differentiated
-nonzero thermal images are negligible at this order; integrating over the
-support gives the corresponding integrated leading coefficient with an
-`o(t^(-2))` remainder. The tower normalization here is exactly the one in
+For the stated `O(t^(-1))` remainder, assume `f_0,u,w` have bounded derivatives
+through order three on a fixed collar containing the direction supports,
+`f_0>=c>0` there, and the bridge coefficients and their first two field jets
+are bounded on that collar. The fixed-`y` leading expectation is
+
+    G_t(y)=E[-(W_0)_u S_w-(W_0)_w S_u
+                       +W_0(2 S_u S_w-S_uw)]_0.
+
+It converges to `Q_{u,w}(y)`. Taylor-expand its path integrand at the
+constant path `z_s=y`. The order-`sqrt(t)` term is linear in the centered
+Gaussian bridge and has zero expectation; the second-order Taylor remainder
+is bounded by `C t E[sup_s |xi_s|^2]`. Thus `G_t=Q+O(t)` uniformly on compact
+interior subsets. The bounded `rho',rho''` terms in the tower expansion
+contribute `O(1)` after the heat prefactor, and differentiated nonzero
+thermal images are exponentially small for fixed positive period. This
+proves the displayed `O(t^(-1))` remainder after expectation. No pathwise
+`O(t)` expansion is used. With compactly supported directions, the bridge
+tails away from the collar are exponentially small; integration gives the
+same `O(t^(-1))` remainder. The scalar difference and its first two field
+jets vanish near the moving collar endpoints to algebraic order because the
+directions vanish there, so movement of the `y=Y_b(x)` endpoint contributes
+no term at this order for this scalar difference. This does not dispose of
+endpoint terms in the complete response. The tower normalization here is exactly the one in
 `Delta_sc`; an additional physical-half or partner factor must only be
 applied if established by the source-to-observable transfer.
 
