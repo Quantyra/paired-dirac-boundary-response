@@ -123,3 +123,50 @@ The primary-source screen also checked Talebi and Vertman, [*Spectral geometry o
 The theorem concerns a fixed operator on a prescribed smooth fibred-boundary geometry. It does not give a mixed second variation of a Weyl-congruence family, P1's paired local projector and composition domains, the angular-mass/commutator vertices, the source's contact/density/LLL allocation, or a common-regulator comparison with the canonical observable. The geometry and normal-operator hypotheses have not been matched to the paper's physical endpoint. This is adjacent endpoint/heat-calculus prior art, not a direct P1 theorem or a novelty verdict. The literature search remains limited.
 
 Remaining to-do list: complete the physical source/common-regulator bridge, match the full transformed Hessian and its coefficients, finish the novelty decision and manuscript, and certify supported claims on GCP.
+
+## Close structural prior art: symmetric Dirac interfaces
+
+The focused screen also checked Herzog, Huang and Vassilevich, [*Interface
+Conformal Anomalies*](https://arxiv.org/abs/2005.01689), arXiv v1 (2020),
+Sections 2--3, especially Eqs. (4), (11)--(15), (20), (32)--(37). This is
+closer structurally than the previously listed scalar and generic
+transmittal comparisons. It treats a four-dimensional massless Dirac field
+on a symmetric codimension-one interface: the metric is continuous but can
+fail to be smooth, the two extrinsic curvatures need not match, and the
+spinor has continuous value with a jump condition on the sum of inward
+normal derivatives. The Dirac-square matching coefficient is
+`U=(K^+ + K^-)/2`, and the connection jump is specified explicitly. In the
+reflection-symmetric case the authors fold the interface into boundary
+problems; they state the spinor heat coefficients are twice those of the
+folded conformal-spinor boundary problem. Their four-dimensional result
+computes the integrated conformal anomaly from `a_4`, including cubic
+extrinsic-curvature invariants and normal derivatives of the smearing
+function.
+
+This removes any broad novelty claim for paired/folded Dirac interface
+conditions, symmetric-interface Dirac conformal anomalies, or the mere
+presence of cubic extrinsic-curvature terms. It is not yet an exact match to
+P1. Its interface problem is a massless symmetric Dirac transmission model
+with a particular matching and trace-anomaly observable. P1's candidate
+full-Weyl response varies a scalar congruence and mass on a declared paired
+realization, and its conditional cubic and cubic-log terms occur at
+`a_7` (`t^(3/2)`) and log-`a_8` (`t^2 log t`) orders, not the integrated
+four-dimensional `a_4` anomaly computed there. No derivation identifies
+P1's actual bundle, connection, physical density/contact/LLL allocation,
+or common regulator with their folded heat trace. The `a_4` formulas must
+not be cited as direct calculations of P1's higher-order coefficients.
+
+Required follow-up before a novelty disposition: substitute P1's folded
+geometry and Robin endomorphism into the interface/folding conventions,
+compare the full operator vertices and trace normalization, and determine
+whether any P1 coefficient is already a specialization of the known
+interface heat coefficients. The source is close prior art and materially
+raises the comparison bar; it does not itself establish P1's higher-order
+mixed response or its physical common-regulator limit. This source-level
+comparison is evidence-based but not an independent rederivation of its
+heat-coefficient formulas.
+
+Remaining to-do list: perform the exact folded-operator and coefficient
+specialization check; close the physical source/common-regulator bridge;
+then complete the novelty decision, supported manuscript and GCP Lean
+certification.
