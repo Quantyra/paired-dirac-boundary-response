@@ -536,6 +536,74 @@ coefficient; control the moving-cut/common-regulator transfer and all
 response sectors; finish the novelty decision and manuscript; certify
 supported claims on GCP.
 
+### Frozen-coefficient interior trace diagnostic
+
+There is an explicit local model for the leading contribution of (12). Freeze
+`h` and the scalar insertions `a=u'`, `b=w'` at one interior point, discard
+curvature and boundary effects, and take the orbit model on `R^2` with
+`Q_0=-partial_y^2-partial_tau^2`. Put
+`C=c(e_y)c(e_tau)`, so `C^2=-I`; (12) gives
+
+    Q_X-Q_0 = h^2 I - 2h C partial_tau
+            = -(partial_tau+hC)^2 + partial_tau^2.
+
+The two eigenvalues of `C` are `+i` and `-i`. Thus for `s+r=t` and
+`sigma=sr/t`, completing the square in Fourier momentum gives the exact
+rank-two trace density
+
+    tr_density(exp(-s Q_0) exp(-r Q_X))
+       = 2/(4 pi t) exp(-sigma h^2),
+    tr_density(exp(-t Q_0)) = 2/(4 pi t).
+
+For the defect word with constant insertions, its difference is therefore
+`(2/(4 pi t))(exp(-sigma h^2)-1)`. Since `0<=sigma<=t/4`, its first small-time
+term is
+
+    -(h^2/(2 pi)) (sr/t^2) + O(h^4 t).
+
+For the ordered odd-odd word as normalized above, multiply by `ab`, the
+external factor `(t-r)`, and integrate `0<=r<=t`:
+
+    integral_0^t (t-r) (2/(4 pi t))
+         (exp(-r(t-r)h^2/t)-1) dr
+       = -h^2 t^2/(24 pi) + O(h^4 t^3).
+
+The reversed word has the same frozen scalar coefficient. Restoring the
+explicit angular mass factor and summing its tower therefore gives the
+conditional model diagnostic
+
+    R_defect,freeze(t)
+       = -(h^2 a b t^2/(12 pi)) sum_n d_n mu_n^2 exp(-t mu_n^2)
+         + O(t^3 sum_n d_n mu_n^2 exp(-t mu_n^2)),
+
+where the error constant depends on the frozen coefficients. If
+`-Theta'(t)=sum_n d_n mu_n^2 exp(-t mu_n^2) ~ C_Theta t^(-2)`, the leading
+model term is the finite local density `-C_Theta h^2 a b/(12 pi)`.
+
+This computation includes both the scalar `h^2` term and the ordered pair of
+first-order connection-shift insertions: the exponential is their combined
+Gaussian momentum integral. Keeping only the scalar term in (12) would give
+the wrong model coefficient. This is not yet the curved coefficient. The
+actual local parametrix has varying `h`, orbit curvature and spin connection;
+the orbit measure, same-boundary word, cutoff-transition terms, source
+density/contact subtraction and other response sectors have not been
+included. The next ordinary check is to reproduce the frozen coefficient by
+the local heat parametrix for the actual `Q,Q_X` pair and identify precisely
+which additional jets contribute at the same order.
+
+Concrete claim: in the flat frozen-coefficient rank-two model, the defect
+word has the exact Gaussian factor and leading ordered-pair coefficient
+displayed above. Ordinary argument: diagonalize `C`, complete the two
+Fourier squares, expand `exp(-sr h^2/t)`, and integrate the Duhamel time.
+First unsupported implication: show this is the corresponding coefficient
+of the curved localized trace and combine it with the same-boundary and
+physical source/contact ledger. Numerical role: none; the Gaussian integrals
+are exact.
+
+Remaining to-do list: derive the curved parametrix coefficient and its
+same-boundary/source matching; close moving-cut/common-regulator transfer;
+finish novelty and manuscript decisions; certify supported claims on GCP.
+
 ### Sector scope for the interior commutator
 
 The localized identity (8) is for the boundary-condition/conjugation defect
