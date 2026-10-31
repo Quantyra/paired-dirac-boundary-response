@@ -4,6 +4,9 @@ Current coverage has expanded beyond the historical initial status below:
 see the GCP receipts for the abstract congruence, projected trace, mode
 square and radial comparison results. The flat form-factor coefficient
 obstruction is checked in `evidence/gcp-flat-form-factor-20261030/README.md`.
+The rational polynomial cancellation in the full-Weyl angular tangent jet is
+checked in `evidence/gcp-full-weyl-angular-jet-20261030/README.md`; this does
+not formalize its analytic remainders or physical trace transfer.
 Geometric hypotheses, analytic response and full paper certification remain open.
 
 ## Historical initial campaign
