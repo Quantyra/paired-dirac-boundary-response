@@ -181,3 +181,26 @@ Remaining to-do list: prove the curved mixed-boundary trace input; match all
 other response and source terms under the common regulator; complete the
 theorem-specific novelty audit and manuscript; certify supported claims in
 Lean on GCP.
+
+### Scalar/contact algebra formalization draft (2026-10-31 HST)
+
+`lean/CurvedScalarContactJet.lean` states the pointwise rational-jet
+regrouping behind the local identity in
+[`full-weyl-curved-scalar-interior-leading-coefficient.md`](full-weyl-curved-scalar-interior-leading-coefficient.md).
+It encodes the derivative jets directly and proves only the polynomial
+rearrangement, conditional on `f != 0`. This is an uncompiled GCP-bound
+development draft; no Lean invocation was made locally and no certificate is
+claimed. Even after a successful GCP check, it will not cover derivation of
+the Hessian expansion, vanishing integrated fluxes, heat traces or the
+physical observable.
+
+Concrete claim: the expanded nine-term rational jet expression equals its
+grouped total-derivative form under `f != 0`. Ordinary argument: clear the
+nonzero denominators and normalize the polynomial identity. First unsupported
+implication: prove the Hessian expansion and integrate under the admitted
+source jets; the full response and common regulator remain open. Numerical
+role: none.
+
+Remaining to-do list: compile and audit the exact Lean source on GCP; formalize
+additional supported algebra only after source checks; prove the curved
+mixed-boundary estimate and close all physical sectors and regulator limits.
