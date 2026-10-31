@@ -16,8 +16,9 @@ families, the localization maps, the complete subtracted integrand, and its
 normalization. The identities below compare declared positive-time
 diagnostics but do not supply that missing definition.
 The [candidate operational-definition contract](p1d-operational-definition-proposal.md)
-spells out a full-Weyl option and the remaining source/action choices; it is
-a proposal pending confirmation, not an adopted definition.
+spells out distinct orbit-only and full-Weyl tangent choices and the remaining
+source/action inputs; it is a proposal pending confirmation, not an adopted
+definition.
 
 By contrast, [the conversion source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-variable-contact-conversion.md), equations (2)–(3), defines J_e as the endpoint difference between two regulated actions. Its second variation includes a geometric heat variation and 2 Theta'(e) I_e. That endpoint is not itself the r_curved integrand specified above. A formula relating the two, including all subtractions, measure factors and endpoint terms, would need to be derived before their power bounds can be compared.
 
