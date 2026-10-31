@@ -20,8 +20,8 @@ theorem source_geometric_endpoint_action
   congr 1
   have hexp : Real.exp (-b / 2) * Real.exp b * Real.exp (-b / 2) = 1 := by
     rw [← Real.exp_add, ← Real.exp_add]
-    congr 1
-    ring
+    have hz : (-b / 2 + b) + (-b / 2) = 0 := by ring
+    rw [hz]
     simp
   calc
     Real.exp (-b / 2) •
@@ -34,3 +34,5 @@ theorem source_geometric_endpoint_action
             Real.exp (-b / 2) * (m * Real.exp b) * Real.exp (-b / 2)
                 = m * (Real.exp (-b / 2) * Real.exp b * Real.exp (-b / 2)) := by ring
             _ = m := by rw [hexp, mul_one]
+
+#print axioms source_geometric_endpoint_action
