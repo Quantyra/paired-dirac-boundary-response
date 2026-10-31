@@ -22,8 +22,8 @@ theorem skew_real_inner_zero_draft
   rw [hAction] at h
   have hre := congrArg Complex.re h
   have hsym : (inner ℂ (x : H) (Q x)).re = (inner ℂ (Q x) (x : H)).re := by
-    rw [inner_conj_symm]
-    simp
+    have hc := congrArg Complex.re (inner_conj_symm (𝕜 := ℂ) (x := (x : H)) (y := Q x))
+    simpa only [Complex.conj_re] using hc.symm
   simp only [inner_neg_left, Complex.neg_re] at hre
   rw [hsym] at hre
   linarith
@@ -33,7 +33,7 @@ theorem skew_mass_lower_draft
     (hSkew : Q.adjoint = negativePMap Q) (m : ℝ) (hm : 0 < m)
     (x : Q.domain) :
     m * ‖(x : H)‖ ≤ ‖(m : ℂ) • (x : H) + Q x‖ :=
-  mass_skew_lower_bound_draft m x (Q x) hm
+  mass_skew_lower_bound_draft m (x : H) (Q x) hm
     (skew_real_inner_zero_draft Q hDense hSkew x)
 
 end PairedDirac

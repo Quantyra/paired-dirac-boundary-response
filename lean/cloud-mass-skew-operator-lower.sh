@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-run="$HOME/quantyra-space-runs/paper1-mass-skew-operator-lower-20261030a"
+run="$HOME/quantyra-space-runs/paper1-mass-skew-operator-lower-20261030c"
 base="$HOME/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029"
 lower="$HOME/quantyra-space-runs/paper1-mass-skew-lower-20261030c"
 prior="$HOME/quantyra-space-runs/paper1-partner-skew-20261030a"
