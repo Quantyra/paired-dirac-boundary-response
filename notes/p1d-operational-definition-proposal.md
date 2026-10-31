@@ -16,11 +16,13 @@ formula for `r_curved` remains incomplete.
 
 ## Candidate object
 
-Fix the source-prescribed seed Hilbert space and, for every finite physical
-cut `eta>0`, a unitary identification `U_eta` to that space. On that common
-space write `L_eta(s,r)` for the positive square along the actual paired
-full-Weyl two-parameter family and `C_eta(s,r)` for the transported trace
-density or insertion. For `t>0`, define
+Fix the source-prescribed seed Hilbert space `H_0`. For every finite physical
+cut `eta>0`, let `H_eta` be its physical Hilbert space and let
+`U_eta:H_eta->H_0` be the source-prescribed unitary identification. On the
+common space, write `L_eta(s,r)=U_eta L_phys,eta(s,r) U_eta^*` for the
+transported positive square along the actual paired full-Weyl two-parameter
+family, and `C_eta(s,r)` for the transported trace density or insertion.
+For `t>0`, define
 
     F_eta(s,r;t) = Tr[C_eta(s,r) exp(-t L_eta(s,r))],
     H_eta(t;u,w) = partial_s partial_r F_eta(0,0;t).
@@ -39,9 +41,13 @@ After transporting the cut problem to the fixed seed Hilbert space by
 representative is `U_eta^* M_chi U_eta`. Set `u_chi=chi*u` and
 `w_chi=chi*w` on the fixed space. Derivatives of `chi` are retained through
 these localized directions; they are not discarded as lower-order errors.
-This fixes a cutoff convention for the candidate, but does not prove its
-uniform transfer through `U_eta` as `eta` tends to zero. The exact tangent subtraction is
-not determined by the frozen source. Two distinct documented choices are:
+The multiplier norm is exactly uniform by unitarity:
+`||U_eta^* M_chi U_eta||=||M_chi||=||chi||_infinity`. This does not give
+uniform first- or second-derivative multiplier bounds, graph-commutator
+bounds, or moving-domain transfer when the physical coordinates vary with
+`eta`; those remain proof obligations. The full subtraction formula is not
+determined by the frozen source. Section 4 is the best-supported tangent
+candidate; the full-Weyl expression below is the comparison alternative.
 
 **Section 4 tangent candidate.** Section 4 of the frozen source gives
 `H_t(k)=2F(t k^2)/(pi t)` and separately retains the massive angular weight
@@ -124,9 +130,11 @@ not evidence that the full P1-D bound fails.
    Section 4 diagnostic; verify whether full-Weyl angular-mass variations
    remain in `r_curved` or receive a separate action subtraction. Distinguish both from
    endpoint conversion `J_e''`.
-2. Verify the source's physical maps `U_eta` transport the fixed cutoff
-   convention above with uniform bounds as `eta` tends to zero; state whether
-   the theorem is uniform in any larger cutoff family.
+2. Prove uniform first- and second-derivative and graph-commutator bounds
+   for the physical representatives of `M_chi` under `U_eta`, and establish
+   the moving-domain transfer as `eta` tends to zero. The multiplier norm
+   itself is already uniform by unitarity. State whether the theorem is
+   uniform in any larger cutoff family.
 3. Give the signed formula for `A_eta`, including density, contact,
    transgression, LLL/cocycle, and finite local terms.
 4. Confirm that the half-trace, boundary-length and whole-action factors
