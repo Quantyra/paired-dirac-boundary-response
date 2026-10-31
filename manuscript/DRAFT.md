@@ -270,6 +270,18 @@ A proof of the source's sufficient t^(3/2) bound must identify the physical and 
 
 For each angular mode, the full-Weyl congruence also changes the angular part of the square. Relative to the orbit-only square with the angular mass held fixed, its exact seed vertices are `Delta'[u]=-2 mu^2 u-i mu G c(du)` and `Delta''[u,w]=4 mu^2 uw+2i mu G c(d(uw))`. The mixed positive-time heat response therefore adds the two ordered cross terms with the orbit vertices and the ordered pair of correction vertices, as well as this mixed second vertex; see `../notes/full-weyl-orbit-correction-vertices.md` for the Duhamel formula. These operator identities make the correction explicit but establish no angular-summed heat bound, physical density/contact transfer, or common-regulator source matching. The parent curved orbit-sector remainder cannot be transferred to the full-Weyl response until those terms are controlled.
 
+### Smooth-interior scalar/contact comparison
+
+In the scalar angular-mass subfamily, combine the path-Hessian coefficient `K_2` with the explicit path term `H_1`. For `J=u'X_w+w'X_u`, direct substitution of the source jets `f_u=-uf+f'X_u`, `X_u'=-u` and their `w` counterparts gives the local identity
+
+    K_2+H_1 = -2u'w'/f + (f'J/(3f^2))' + (2f'/(3f^2))(uw)'.
+
+The seam and outer fluxes vanish under the stated cubic source jets and compact direction localization. With `g=dy^2+f(y)^(-2)d tau^2`, `R=2f''/f-4(f'/f)^2` and `dmu=dy/f`, integration gives
+
+    integral (K_2+H_1)dy = -6 integral (Ruw/6+u'w'/3)dmu.   (5.5)
+
+Thus, under the conditional physical-half normalization, this scalar coefficient is `-3` times the specified source-contact coefficient. The pair in the `D_scalar-C_src` bracket contributes `-4` times that contact coefficient; the scalar subfamily alone does not cancel the source contact. The derivation and pointwise jet algebra are recorded in `../notes/full-weyl-curved-scalar-interior-leading-coefficient.md` and `../notes/proof-audit.md`. This is not the full physical response: the curved commutator, orbit, density, boundary transgression, LLL, local restorations, moving-cut endpoint and common-regulator matching remain open.
+
 ## Relation to prior work — preliminary
 
 Local elliptic boundary conditions, adjoint boundary spaces and regularity for Dirac-type operators are part of the established theory; see [Bär and Ballmann](https://arxiv.org/abs/1307.3021). Propositions 2.1 and 3.1 apply those domain inputs to the stated congruence and paired involution; the general existence of projector boundary conditions is not claimed as a contribution here.
