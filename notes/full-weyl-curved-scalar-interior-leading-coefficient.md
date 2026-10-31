@@ -836,10 +836,11 @@ By contrast, the localized scalar angular-mass bridge computed above gives
 
     D_scalar(t)|_(U_1/t) = -b_s^2/(pi t) U_1.
 
-The exact mode-square decomposition in
-`full-weyl-orbit-correction-vertices.md` writes the difference between these
-families as the commutator correction. Thus, in this declared flat model, the
-commutator-involving vertices, including their ordered cross terms, must supply
+The exact mode-square decomposition writes the difference between these
+families as the gradient commutator correction: the scalar `mu^2 exp(-2b)`
+subfamily, including its orbit-angular cross terms, is already contained in
+`D_scalar`. Thus, in this flat model the commutator-involving vertices,
+including their ordered cross terms, must supply
 
     D_comm(t)|_(U_1/t) = +b_s^2/(2 pi t) U_1.             (8)
 
