@@ -73,7 +73,7 @@ Here `Delta_u=(Delta_mu)'[u]`, `Delta_w=(Delta_mu)'[w]`, and `Delta_mu''` is (3)
 
 ## Scope and first remaining estimate
 
-Equations (2)-(4) sharpen the first missing implication recorded in `parent-curved-heat-bridge-p1-crosswalk.md`: beyond the parent orbit-sector remainder, the full-Weyl correction contains a zeroth-order angular-mass vertex and a first-order gradient vertex, their mixed second vertex, their mutual ordered products, and cross terms with the orbit vertices. To transfer a `t^(3/2)` subtracted bound, estimate the localized, subtracted trace of (4), summed over the actual angular tower with the same regulator and uniformity in the admitted curved family. The estimate must account for density and contact variations, boundary transgression, thermal images, and the separate LLL/anomaly block. The displayed vertices alone do not control their angular sum or the small-time finite part.
+Equations (2)-(4) sharpen the first missing implication recorded in `parent-curved-heat-bridge-p1-crosswalk.md`: beyond the parent orbit-sector remainder, the full-Weyl correction contains a zeroth-order angular-mass vertex and a first-order gradient vertex, their mixed second vertex, their mutual ordered products, and cross terms with the orbit vertices. The purely angular part (the mixed angular vertex and the two ordered angular-angular products) already has an absolute tower majorant at each positive time on the fixed product seed; see [`angular-vertex-heat-majorant.md`](angular-vertex-heat-majorant.md), especially equations (2)-(4). Under its compact two-dimensional orbit heat bound, that estimate is only `O(t^(-2))` before subtraction. The remaining estimate for transfer of a `t^(3/2)` subtracted bound is the orbit-angular cross terms in (4), together with their curved localized subtraction and uniformity in the admitted physical family under the same regulator. Density/contact variations, boundary transgression, thermal images, and the separate LLL/anomaly block must also be matched. The fixed-seed angular majorant does not control these terms or the small-time finite part.
 
 ## Mode-uniform relative-form bounds for the correction vertices
 
@@ -106,14 +106,16 @@ not an angular trace estimate. The constants are finite when the displayed
 direction norms are finite; their finiteness does not follow from the
 original rough-field class without checking its multiplier hypotheses.
 
-The first correction vertex also appears in the two ordered products in the
-Duhamel Hessian difference (4). Bounds (5)--(6) therefore provide a
-mode-uniform form input for a localized heat-sandwich argument, but they do
-not prove its trace-ideal hypotheses, small-time subtraction, summation of
-the ordered products, or the physical density/contact/LLL and boundary
-transgression transfer. In particular they do not establish the required
-`t^(3/2)` subtracted remainder.
+The first correction vertex also appears in the orbit-angular cross terms in
+the Duhamel Hessian difference (4). The purely angular second-vertex and
+angular-angular ordered contributions are already summed by
+`angular-vertex-heat-majorant.md`; bounds (5)--(6) instead provide a
+mode-uniform form input for estimating the still-open orbit-angular terms.
+They do not prove the cross-term trace-ideal hypotheses, small-time
+subtraction, or the physical density/contact/LLL and boundary-transgression
+transfer. In particular they do not establish the required `t^(3/2)` curved
+subtracted remainder.
 
 No numerical result or Lean claim is made. These ordinary identities are candidates for a narrowly scoped GCP formalization only after the operator and domain representation is fixed; formalizing them would not certify the heat-kernel bound.
 
-Remaining to-do list: prove the curved angular correction bound and source matching; finish novelty and manuscript; certify supported claims on GCP.
+Remaining to-do list: bound the orbit-angular Duhamel cross terms after local subtraction, prove curved source matching under the common regulator, finish novelty and manuscript, and certify supported claims on GCP.

@@ -43,6 +43,16 @@ common regulator, and P1-C claim remain open.
 The following entries record the scope of later work alongside the original
 audit. They do not close the paper's source, novelty or certification gates.
 
+The fixed-product pure angular part is no longer wholly open: the ordinary
+[`angular-vertex-heat-majorant.md`](angular-vertex-heat-majorant.md) bounds
+the second angular vertex and the two angular-angular ordered terms, sums the
+massive tower absolutely at each positive time, and gives only a crude
+`O(t^(-2))` compact-orbit bound before subtraction. The correction-vertex
+note adds relative-form bounds uniform in angular mass (technical commit
+`e9bc9fa`). The orbit-angular cross terms in the mixed Duhamel formula,
+curved localization and the common-regulator subtraction remain open. Neither
+fixed-product result supplies P1-C or P1-D.
+
 | Dependency | Later evidence | What remains unproved |
 | --- | --- | --- |
 | Partner square domain | The [finite-cut domain instantiation](source-finite-cut-domain-instantiation.md) gives the ordinary compact-smooth partner proof. The [GCP partner-domain receipt](../evidence/gcp-partner-square-domain-20261030/README.md) checks the abstract composition-domain equivalence from an assumed adjoint-domain characterization. The [clean paired skew-operator receipt](../evidence/gcp-partner-skew-operator-clean-20261030/README.md) checks the operator equality under explicit partner domain/action assumptions, and the [clean mass-resolvent receipt](../evidence/gcp-mass-skew-resolvent-clean-20261030/README.md) certifies the positive mass bijection and estimate from skew-adjointness. | The source-to-L2 realization bridge is an ordinary imported-elliptic argument, not Lean-formalized. Rough-family/endpoint extension and complete response remain open. The abstract receipts do not establish trace response or whole-paper certification. |
