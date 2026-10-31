@@ -1,4 +1,4 @@
-﻿# Source scope of the moving physical-cut realization
+# Source scope of the moving physical-cut realization
 
 This audit compares the moving-cut hypotheses in the conditional physical locality argument with the pinned paired-source model. It does not change the finite-cut theorem or establish a source-to-trace limit.
 
@@ -14,9 +14,9 @@ Thus the source establishes a specified smooth finite-cut model and the canonica
 
 ## First unsupported implication
 
-The conditional comparison in `physical-cut-interior-operator-locality.md` needs `D_delta` and the complete `D` to have compatible bundle identifications and first-order domains over the moving-cut family, with uniform graph/product estimates and a domain-preserving cutoff Duhamel identity. The RN geometry and local-gauge notes bound the metric, connection coefficients and cut derivatives once those identifications are chosen. The source's one finite-cut model and its fixed pulled-back bundle map do not establish that the physical regularization uses that same realization at every moving cut, nor that it is the same regularization as the canonical infinity data.
+The conditional comparison in `physical-cut-interior-operator-locality.md` needs compatible bundle identifications and first-order domains over the moving-cut family, uniform graph/product estimates, and a domain-preserving cutoff Duhamel identity. These operator inputs have now been instantiated for an explicitly imposed auxiliary RN spherical-cut family in [`rn-spherical-auxiliary-cut-family-instantiation.md`](rn-spherical-auxiliary-cut-family-instantiation.md). The RN geometry, matched monopole transitions, uniform trace/graph route, scalar weight preservation and Davies bound are assembled there.
 
-This is a source/realization matching gap, not an obstruction to defining auxiliary matched finite-cut problems. To close it, one needs either (i) an explicit construction of the full moving-cut bundle/projector family and proof that it represents the declared physical source regulator, or (ii) a direct source-to-complete trace comparison that does not rely on that identification. A uniform finite-cut graph estimate or a scalar Davies estimate alone cannot supply the missing identification.
+The remaining source gap is narrower and decisive: the auxiliary spherical-cut response is not yet proved to be the canonical conformal-infinity source response under the same proper-time regulator. The source finite-cut conformal covariance equation is a domain identity, not a determinant identity or uniform heat-trace limit. Close this by proving the auxiliary-to-canonical trace/regulator conversion with all boundary, density/contact and LLL terms, or by deriving a direct trace comparison that avoids the auxiliary family. Uniform graph or scalar Davies estimates alone do not supply that trace conversion.
 
 ## Consequences for the paper claim
 
