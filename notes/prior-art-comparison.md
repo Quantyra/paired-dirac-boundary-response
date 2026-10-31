@@ -335,3 +335,43 @@ This is close prior art for metric variation of a Dirac operator whose composed 
 Concrete claim: the cited paper already varies a Dirac metric family with a changing second-order boundary condition and evaluates the anomaly variation using weighted heat coefficients under its stated restrictions. Ordinary argument: inspect Eqs. (2.12), (4.1)–(4.5), (4.12), and Appendix B of the versioned primary source. First unsupported implication: show whether the P1 paired first-order family and mixed scalar-congruence response reduce to any specialization of that framework; the differences listed above are not a proof of non-equivalence. Numerical role: none.
 
 Remaining to-do list: make the exact paired-domain/observable comparison; close the full P1 source bridge and common-regulator estimate; finish the theorem-specific literature screen and S001 decision; certify supported claims on GCP.
+
+### Conditional P1 operator-class overlap with the 2018 boundary variation
+
+The P1-specific finite-cut notes sharpen the comparison. On a smooth compact
+cut, the density unitary sends `E_b D_g E_b` to the geometric conformal Dirac
+operator `D_(g_b)`, `g_b=e^(2b)g`, and its actual composition domain has
+`Pi_- psi=0` plus a local Robin condition on `Pi_+`. In the original frame the
+Robin coefficient is `(K-partial_n b)/2`; after density transport it is the
+geometric `K_b/2` condition, including nonzero normal jets. These calculations
+are detailed in
+[`smooth-finite-cut-heat-prior-art-instantiation.md`](smooth-finite-cut-heat-prior-art-instantiation.md)
+and [`finite-cut-interface-square-crosswalk.md`](finite-cut-interface-square-crosswalk.md).
+
+Kurkov-Vassilevich's 4D square has the same abstract local mixed
+Dirichlet/Robin form: their Eq. (4.1) imposes `Pi_-`, and Eqs. (4.4)-(4.5)
+derive the complementary Robin condition with `S=-K/2`, after aligning the
+normal convention. Thus their weighted-coefficient method is directly
+relevant to P1's *smooth finite-cut operator class*, conditional on identifying
+the projector bundles and first-order realizations. This does not identify
+the spectral functionals: their computed variation is the parity-odd eta
+anomaly, while P1's target includes the even heat-trace response, mixed
+mass/log directions, angular tower and LLL, rough seam, and physical common
+regulator. Nor does their restricted Gaussian-coordinate variation by itself
+supply the uniform moving-cut family theorem. The overlap raises the novelty
+bar for the smooth domain and heat-coefficient machinery; it does not settle
+the distinct response claim.
+
+Concrete claim: under the stated smooth finite-cut and bundle-identification
+hypotheses, P1 and the 2018 source use the same local mixed Dirichlet/Robin
+operator class after conformal density transport and normal-sign alignment.
+Ordinary argument: combine the exact P1 conformal Dirac unitary identity and
+Robin transport with the source's explicit bag-square condition. First
+unsupported implication: verify the global projector/first-order realization
+identification in the actual paired bundle, then compare P1's mixed
+mass/log heat response to the source's eta variation and coefficient data.
+Numerical role: none.
+
+Remaining to-do list: verify the smooth bundle identification in the final
+operator statement; close P1's physical source bridge and common-regulator
+response; finish the novelty decision; certify supported claims on GCP.
