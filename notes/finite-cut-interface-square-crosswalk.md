@@ -114,6 +114,61 @@ back transition. This closes the local varying-connection coefficient
 comparison under the pinned identical-copy hypotheses, not the global closed
 operator or trace-multiplicity comparison.
 
+### Closed-square factorization under the global partner hypothesis
+
+The global domain step has an exact abstract factorization, conditional on
+the already recorded fixed-cut `J` bundle hypothesis. Let `P_b` be the
+density-transported closed P1 first-order operator on `L2(g_b)` over the
+smooth compact cut, with allowed projector trace `chi=+1`; its adjoint has
+allowed trace `chi=-1`. Assume `J` is a
+parallel unitary involution, commutes with the bulk differential expression,
+and anticommutes with `chi`, so it maps `Dom(P_b)` unitarily onto
+`Dom(P_b^*)`. The source's transition check verifies these hypotheses for
+its stipulated identical-copy bundle, including the bolt chart.
+
+Extend the boundary fold `F=(1+tau_1 chi)/sqrt(2)` to a smooth global unitary
+on the finite cut. This can be done in a collar: write
+`F_theta=cos(theta)+sin(theta) tau_1 chi`, take `theta=pi/4` at the boundary,
+and smoothly lower `theta` to zero before leaving the collar, where `chi`
+uses the collar unit normal. Set
+
+    P'_b = F P_b F^(-1),   T = F chi F^(-1) on the boundary,
+    S = F J F^(-1).
+
+Then `Dom(P'_b)` is the `T=+1` trace space, `S` is a global parallel
+involution for the transformed connection, commutes with `P'_b`, and
+`S T=-T S` at the boundary.
+In particular, `S` exchanges `Dom(P'_b)` and `Dom(P_b'^*)`. The `T=+1`
+trace space identifies the two `S` side bundles by the map
+`T|_(E_S^+)`, which is the transmittal continuity condition.
+
+Define the interface realization `A_b=S P'_b` on `Dom(A_b)=Dom(P'_b)`.
+Its adjoint is `A_b^*=P_b'^* S`, with
+`Dom(A_b^*)=Dom(P'_b)`: indeed, `S phi` belongs to `Dom(P_b'^*)` exactly
+when `phi` belongs to `Dom(P'_b)`. Consequently the positive closed squares
+agree exactly:
+
+    Dom(A_b^* A_b) = {phi in Dom(P'_b): P'_b phi in Dom(P_b'^*)}
+                    = Dom(P_b'^* P'_b),
+    A_b^* A_b = P_b'^* P'_b.
+
+This proves equality of the full closed second-order realizations, not just
+their formal expressions or boundary jets, under the listed global
+hypotheses. Since `F` is unitary, it also fixes the trace multiplicity:
+there is no extra factor beyond the actual paired-bundle rank, and
+`Tr(exp(-t A_b^*A_b))=Tr(exp(-t P_b^*P_b))` whenever these heat operators
+are trace class. For a formally skew-adjoint massless Dirac expression with
+`[S,P'_b]=0`, `i A_b` is a self-adjoint interface Dirac operator and
+`(iA_b)^2=A_b^*A_b`; commuting scalar mass terms remain zeroth-order side
+data and must be carried in the interface model separately.
+
+The construction is global because the source-stipulated `J` patches
+globally and the collar fold has an explicit unitary extension. It does not
+show equality with an interface built from independently prescribed side
+bundles or arbitrary interface data. The local conformal Robin and `B_j`
+matches above identify this constructed realization with the symmetric
+geometric interface coefficients on the declared finite-cut family.
+
 ## First-order distinction
 
 P1's `D` is not symmetric: its allowed trace space is preserved by the
@@ -125,15 +180,12 @@ identifying `D` itself with the self-adjoint interface Dirac operator.
 
 ## First unsupported implication
 
-The local boundary pieces now match at the symmetric finite cut: folded
-Dirichlet/Robin boundary jets including nonzero normal jet, and the varying
-`B_j` spin-connection term. The remaining finite-cut proof is to establish
-the global side-bundle identification and prove equality of the full closed
-second-order domains and trace multiplicity. Once that identity is
-established, unitary equivalence gives equality of the fixed-cut heat traces
-and all fixed-cut local heat coefficients. It would still give no uniform
-moving-cut limit, physical source/contact/LLL match, or common-regulator
-response.
+The closed-square factorization above completes the symmetric finite-cut
+domain and trace-multiplicity comparison under the pinned global `J`
+hypotheses. It still gives no uniform moving-cut limit, physical
+source/contact/LLL match, or common-regulator response, and it does not
+identify the P1 first-order realization with the self-adjoint interface
+operator.
 
 ## Numerical and Lean roles
 
@@ -143,7 +195,6 @@ that would not prove the smooth geometric gluing, elliptic regularity, or
 trace-class heat identity. Lean certification of supported algebra remains
 GCP-only under the Space protocol.
 
-Remaining to-do list: establish global side-bundle identification and the
-full closed-domain and trace-multiplicity identity, then compare the P1
-response coefficients with the resulting interface formula and close the
-physical source/common-regulator bridge.
+Remaining to-do list: compare the P1 response coefficients with the resulting
+interface formula and close the physical source/common-regulator bridge;
+audit any variable-mass side terms and certify supported claims on GCP.
