@@ -843,10 +843,10 @@ combined commutator/cross-vertex sector must supply
 
     D_comm(t)|_(U_1/t) = +b_s^2/(2 pi t) U_1.             (8)
 
-The cancellation of the `U_1` leading `t^(-2)` scalar term by that sector is
-also required, since the complete Duhamel correction has no discrepancy in
-that leading coefficient beyond the pure angular term already recorded in
-the flat ledger. Equation (8) is a fixed-product flat coefficient target,
+The complete Duhamel correction and the scalar angular-mass subfamily have
+the same leading `t^(-2)` coefficient in this flat model, so the commutator
+sector contributes no term at that order. Equation (8) is a fixed-product
+flat coefficient target,
 not a proof of the vertex contribution or a curved estimate. It shows why
 the scalar `K_2+H_1` result must not be matched to the source contact alone.
 The source geometric bracket and contact are separate again in
