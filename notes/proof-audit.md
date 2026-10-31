@@ -47,6 +47,32 @@ common regulator, and P1-C claim remain open.
 The following entries record the scope of later work alongside the original
 audit. They do not close the paper's source, novelty or certification gates.
 
+### Corrected canonical Euclidean operator and cut-model scope
+
+The unitary half-density calculation in
+[`euclidean-canonical-unitary-half-density.md`](euclidean-canonical-unitary-half-density.md)
+identifies the fixed-product thermal operator as
+`P_sym=sqrt(f)(H_mu+i nu)sqrt(f)=f(H_mu+i nu)-(i/2)sigma_2 f'`.
+The earlier left-lapse expression `P_left=f(H_mu+i nu)` is generally a
+different operator. Consequently, the `P_left` collar and resolvent estimates
+remain valid for their declared model but cannot be transferred to the
+physical Euclidean square by notation or coordinate change alone.
+
+For the corrected expression, the ordinary notes
+[`symmetric-lapse-square-domain-traces.md`](symmetric-lapse-square-domain-traces.md)
+and [`symmetric-lapse-localized-joint-cut-limit.md`](symmetric-lapse-localized-joint-cut-limit.md)
+give local composition-domain flux traces and a localized joint cut, angular,
+thermal and mass-regulator estimate under explicit product-model domain,
+coefficient, collar-support and local-projector assumptions. The latter
+controls a baseline localized square-resolvent difference, including the
+removed-collar term; it does not differentiate the family in the mass/log
+directions. The first unsupported implication is still the match from these
+local-projector model domains to the source's global spin/copy bundle,
+regular bolt and conformal-infinity data, followed by the complete mixed
+response vertices and physical common regulator. Numerical role: none for
+these operator-domain and conditional estimates. The estimates are not Lean
+certificates.
+
 The fixed-product pure angular part is no longer wholly open: the ordinary
 [`angular-vertex-heat-majorant.md`](angular-vertex-heat-majorant.md) bounds
 the second angular vertex and the two angular-angular ordered terms, sums the
