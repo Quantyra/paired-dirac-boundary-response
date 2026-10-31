@@ -391,3 +391,28 @@ Remaining to-do list: establish curved/domain transfer and match every
 correction vertex and physical sector to the prescribed source subtraction;
 close the common-regulator endpoint; complete novelty and manuscript review;
 certify supported claims on GCP.
+
+## Rough seam extension of the scalar local coefficient (2026-10-31)
+
+Technical commit `f0b8eef` extends the scalar angular-mass correction's
+leading coefficient from smooth interior directions to the admitted
+even-folded cubic/log family in `W^(3,infinity)`. The bridge path functional
+has a uniformly Lipschitz derivative; centering of the Brownian bridge
+cancels its `sqrt(t)` term, leaving
+`partial_uw Delta_sc = C Q_(u,w)/(2 pi t^2)+O(t^(-1))` uniformly across the
+seam collar. For compactly localized directions,
+`integral Q_(u,w)=12 integral uw/f_0`. A jump in the cubic third derivative
+is allowed; no uniform `C^4` bound is used.
+
+This is a rough-family local matching coefficient, not an endpoint estimate:
+the `O(t^(-1))` error is not integrable against `dt/t^2`. It does not identify
+`Q` with the source's prescribed tangent/contact/density subtraction or
+include the matrix commutator, boundary terms, LLL or moving-cut transfer.
+First unsupported implication: match the coefficient and enough subsequent
+local terms to the actual source subtraction, then prove an endpoint-
+integrable remainder. Numerical role: none.
+
+Remaining to-do list: derive the next rough scalar local terms and match the
+complete source subtraction; control matrix, boundary, density/contact and
+LLL sectors under the same regulator; close the endpoint; complete novelty,
+manuscript and GCP certification.
