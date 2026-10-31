@@ -1,4 +1,4 @@
-# Physical cut comparison: tail/locality reduction
+﻿# Physical cut comparison: tail/locality reduction
 
 This reduces the quantitative cut-to-complete response comparison to one
 explicit separated-interior heat-locality estimate. The tail and path
@@ -69,15 +69,32 @@ available.
 Under the hypotheses of the conditional assembly, its contribution to the
 proper-time integral is at most a polynomial in delta^(-1) and epsilon^(-1) times
 exp[-c_0(1-a)^2 |log delta|^2/t0], hence tends to zero along any power-law
-delta=epsilon^p. For the tail bound (2), it suffices that 3ap/2>3, or
+delta=epsilon^p. To check the endpoint, put L=|log delta| and
+c=c_0(1-a)^2. For L large enough that X=cL^2/t0>=1, the substitution
+y=cL^2/t gives
+
+  integral_0^t0 t^(-N) exp(-cL^2/t) dt/t
+    = (cL^2)^(-N) integral_X^infinity y^(N-1) exp(-y) dy
+    <= C_(N,c,t0) (1+L^q) exp(-cL^2/t0),                 (5)
+
+for each fixed N>=0 and some finite q. The last bound is the elementary
+incomplete-gamma tail estimate (for N=0, use the exponential-integral bound).
+Thus any extra fixed powers of epsilon^(-1) and delta^(-1) are dominated:
+with delta=epsilon^p, their product with the right side of (5) is bounded by
+a polynomial in |log epsilon| times
+exp(-c p^2 |log epsilon|^2/t0 + C|log epsilon|), which tends to zero.
+This closes only the time-endpoint and power-path bookkeeping, conditional on
+(4) and the stated uniform estimates.
+
+For the tail bound (2), it suffices that 3ap/2>3, or
 p>2/a. For example,
 
-  a=1/2,  delta=epsilon^5,  eta=epsilon^8                 (5)
+  a=1/2,  delta=epsilon^5,  eta=epsilon^8                 (6)
 
 gives a tail error O(epsilon^(3/4)), satisfies the separate boundary
 requirement p>3/2 and background/direction requirement q=8>15/2, and has
 eta/delta->0. The earlier delta=epsilon^2 path suffices for the boundary
-pieces but not for the crude full-tail comparison (2); (5) is a stronger
+pieces but not for the crude full-tail comparison (2); (6) is a stronger
 candidate joint path, not an optimal rate or admission margin.
 
 Even if (4) is proved, comparison of the cut and complete physical
@@ -89,3 +106,4 @@ Remaining to-do list: verify the physical bundle/domain and weighted-form
 hypotheses for the conditional separated-interior estimate (4), match source
 normalization and subtractions, complete novelty and manuscript, and certify
 supported claims in Lean on GCP.
+
