@@ -50,8 +50,13 @@ The finite-cut source model's projector and adjoint-domain argument is audited
 in [`source-finite-cut-domain-instantiation.md`](source-finite-cut-domain-instantiation.md).
 For the static zero-angle RN seed, the parent source's finite-cut conformal
 domain derivation supplies the physical-to-product unitary and projector
-identification; no extension to other frames or varying boundary angles is
-asserted.
+identification at the conformal boundary in the compactified product frame.
+This does not identify the source-induced domain on an arbitrary finite
+physical radial truncation: the source explicitly requires separate matching
+there, and the exact collar test in
+[`finite-cut-boundary-transport.md`](finite-cut-boundary-transport.md) shows
+that the transported projector generally mixes angular modes. No extension
+to other frames or varying boundary angles is asserted.
 
 On this fixed cut E=u^(1/2) and E^(-1) are smooth bounded multipliers that
 preserve both projector domains. Thus P=U D_g U^(-1)=E D_hat E has
@@ -107,14 +112,16 @@ D_g and D_hat.
 
 ## Angular-mode form of the finite-cut physical operator
 
-For the stationary RN seed, the source-side finite-cut conformal-domain
-derivation also gives the following application-specific inputs: the
-conformal spinor map takes the physical mixed domain to the same product-frame
-projector domain, and that domain is independent of sphere angular
-eigenspaces. These statements are recorded in the parent source repository's
+For the stationary RN seed, the source-side conformal-domain derivation also
+gives the following application-specific inputs at the conformal boundary
+of the compactified product: the conformal spinor map takes the physical
+mixed domain to the same product-frame projector domain, and that domain is
+independent of sphere angular eigenspaces. These statements are recorded in the parent source repository's
 `notes/stationary-exterior-conformal-domain.md`, commit `08cb71afea3f0e5310cac8a50c05d5007555641f`
 (file blob `b9117fa2b2e9e9e2cec36e1c71f52f414b5349b9`). They apply to the
-static zero-angle finite-cut seed under its stated spin/bundle identification.
+static zero-angle conformal-boundary realization under its stated spin/bundle
+identification. At a finite physical radial cutoff, the propagated domain
+requires an additional boundary transport argument.
 
 The product-frame Dirac expression separates into orbit modes
 `D+i mu G`, with the chiral LLL treated as a distinct zero sector. Since
@@ -128,11 +135,12 @@ exactly
 This is the full-Weyl mode family of
 [`full-weyl-angular-mode-correction.md`](full-weyl-angular-mode-correction.md),
 not the source conversion's fixed-angular-mass orbit-only family. Its
-angular-mass and commutator vertices therefore belong in the physical finite-
-cut response. The LLL remains separate. The identification establishes a
-modewise operator expression and domain on each finite cut; it supplies no
-cut-uniform graph or trace estimate, density/contact normalization,
-small-time subtraction, or common-regulator limit.
+angular-mass and commutator vertices therefore belong in the physical
+response for this realization. The LLL remains separate. At a finite radial
+cut, (4) describes the imposed local-projector model unless its boundary
+condition has been matched to the source at infinity. Even where (4) applies,
+it supplies no cut-uniform graph or trace estimate, density/contact
+normalization, small-time subtraction, or common-regulator limit.
 
 The positive physical square transported by U is the actual composition
 square in (3). Its principal symbol is u^2 times the

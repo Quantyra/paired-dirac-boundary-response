@@ -56,7 +56,12 @@ finite-cut bounded multiplier arguments alone do not provide a uniform
 outer-limit heat-trace comparison. A full comparison must still specify the
 transformed square domains, coincidence vertices, thermal modes and common
 cutoff, and relate the full-Weyl observable to the conversion and canonical
-Hamiltonian trace.
+Hamiltonian trace. Moreover, an arbitrary finite physical radial cutoff is
+not a boundary condition supplied by the source at conformal infinity; the
+transported projector must be derived there. The explicit collar test in
+[`finite-cut-boundary-transport.md`](finite-cut-boundary-transport.md) shows
+that it generally mixes the two boundary subspaces by an angular-dependent
+amount.
 
 Likewise, a canonical Hamiltonian trace is integrated over a Lorentzian
 spatial radial Hilbert space, while the Euclidean product-frame orbit trace

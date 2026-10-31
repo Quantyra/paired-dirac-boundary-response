@@ -102,7 +102,10 @@ The additional [`full-Weyl/orbit correction analysis`](full-weyl-orbit-correctio
 now establishes mixed-derivative interchange with the angular tower on a
 fixed compact cut and positive-time window, using common first-order mode
 forms and Schatten smoothing. The [mode-domain argument](full-weyl-mode-form-domain.md)
-matches that hypothesis to the pinned static zero-angle RN finite-cut model.
+matches that hypothesis to the pinned static zero-angle RN compactified
+conformal-boundary realization and to finite-cut models with a separately
+matched projector. It does not transfer the infinity condition to arbitrary
+finite radial cutoffs; see [the collar test](finite-cut-boundary-transport.md).
 This closes a fixed-cut interchange dependency only; it gives no small-time
 subtraction, moving-cut uniformity, physical density/contact transfer, or
 common-regulator source-observable identity.
