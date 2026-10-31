@@ -193,6 +193,22 @@ side of the ledger more strongly than the positive-time algebra (4) alone;
 the calculation is an imported parent result, not independently re-proved
 in this crosswalk.
 
+In the flat product specialization, the finite term of the parent Eq. (9)
+also matches the constant term of Eq. (2) above after converting its
+physical-side integral to the even full-line convention. Let
+`U_j^+=integral_(y>0) u^(j)w^(j)dy` in the parent note and
+`U_j=integral_R u^(j)w^(j)dy=2 U_j^+` for the balanced even profiles here.
+The parent angular notation has `C=b_0^2`, `H_0=C_0`, and
+`H_1=C_1/b_0^2`. Setting `R=0` and `Delta=partial_y^2` in Eq. (9) gives
+
+    C_1/(pi b_0^2) U_0 - C_0/(24 pi) U_1
+                         - b_0^2/(120 pi) U_2,
+
+which is exactly the `t^0` term of the flat source bilinear (2). This checks
+the finite-conversion normalization for the massive tower in this flat
+specialization. It does not match the divergent `t^-2` and `t^-1` terms,
+the full-Weyl Hessian, or the source's physical `r_curved`.
+
 The scope boundary remains material. The parent source explicitly leaves
 the full variable-background strong-graph conversion and nonlinear-ball
 admission open; its separately allocated LLL/local blocks must remain in the
