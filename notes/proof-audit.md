@@ -20,9 +20,19 @@ This is the S001.2 working audit, assessed against [the claim ledger](claim-depe
 The full-Weyl flat tangent package now includes the exact angular mode
 vertices, positive-time tower sum, and an all-frequency small-time local
 subtraction in [`full-weyl-angular-local-subtraction.md`](full-weyl-angular-local-subtraction.md).
-This strengthens the fixed-product tangent calculation only. It does not
-close the physical paired-domain match, curved mixed-boundary remainder,
-source contact/density/LLL transfer, common regulator, or P1-C claim.
+[`full-weyl-angular-seam-coefficients.md`](full-weyl-angular-seam-coefficients.md)
+then derives conditional cubic and cubic-log coefficients for the leading
+fixed-product tower kernel under explicit Fourier-tail and half-folding
+hypotheses. GCP receipts through fourth polynomial order are indexed in
+[`gcp-full-weyl-angular-jet4-20261030`](../evidence/gcp-full-weyl-angular-jet4-20261030/README.md).
+These advances strengthen the fixed-product tangent calculation only. The
+operator gap in [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md)
+shows why the product-frame kernel cannot be inserted directly as the
+physical observable: the transported physical square has a different
+principal symbol when the conformal factor varies. No transfer identity
+bridging that difference is established here. The physical paired-domain
+match, curved mixed-boundary remainder, source contact/density/LLL transfer,
+common regulator, and P1-C claim remain open.
 
 The following entries record the scope of later work alongside the original
 audit. They do not close the paper's source, novelty or certification gates.
