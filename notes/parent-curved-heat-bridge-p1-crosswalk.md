@@ -77,6 +77,15 @@ standalone cancellation. Any cancellation in the full ledger must be derived
 with its separate geometric bracket and retained terms. Neither coefficient
 may be dropped on the basis of this leading comparison.
 
+The existing flat rank-two `k=0` Duhamel decomposition also gives a
+normalization check: its tower-summed pure angular term is
+`2C/(pi t^2)+O(1)`, and the orbit-angular cross terms contribute
+`4C/(pi t^2)+O(1)` before the physical-half factor. Thus the full flat
+diagnostic has `D_flat=3C/(pi t^2)+O(1)` after that conditional factor;
+combined with `C_src=-C/(pi t^2)+O(t^(-1))`, the finite-cut bracket
+`D_flat-C_src` has leading coefficient `4C/pi`. This is a flat
+constant-direction check only, not a curved endpoint estimate.
+
 The joint scalar-hit result is detailed in
 [`full-weyl-curved-scalar-joint-hit-bound.md`](full-weyl-curved-scalar-joint-hit-bound.md).
 Thus the parent result plus this scalar component do not yet close P1-C/P1-D.
