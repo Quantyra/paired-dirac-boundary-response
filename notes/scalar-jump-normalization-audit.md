@@ -108,6 +108,21 @@ strengthen the evidence of an internal normalization mismatch, but do not
 resolve whether a convention or another issue accounts for it. An independent
 review and a direct check of the publisher's version are still needed.
 
+## Published-version check
+
+The arXiv record lists v2, revised 11 May 2004, as its last deposited
+version and gives the journal reference *Phys. Rev. D* 70, 045003 (2004).
+The APS article page confirms publication on 9 August 2004 and DOI
+`10.1103/PhysRevD.70.045003` ([APS article record](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.70.045003),
+[arXiv record](https://arxiv.org/abs/hep-th/0404069)). The APS page exposes
+the abstract and metadata but requires credentials for the full text; the
+publisher PDF request was denied. The bibliographic published-version check
+is complete, but equation-level comparison with the published typeset text
+is not. The discrepancy above is an apparent inconsistency in the accessible
+arXiv v2 derivation and conclusion only; it is not evidence that the published
+article contains an error. Keep the scalar benchmark unsettled unless the
+publisher text or an author-verified copy can be inspected.
+
 ## Explicit one-interface comparison
 
 Use the source's own one-sided geometry and take E(x)=x exp(−x) for x≥0
