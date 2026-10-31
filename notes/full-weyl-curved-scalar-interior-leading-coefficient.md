@@ -587,3 +587,45 @@ Remaining to-do list: match the scalar coefficients to the source
 subtraction; close the full-Weyl orbit, matrix, density/contact, boundary and
 LLL terms and common-regulator endpoint; finish novelty/manuscript review and
 GCP Lean certification.
+
+### Explicit source-contact target for the next scalar coefficient
+
+The source conversion note records
+
+    I_t(u,w)=(1/(4 pi)){ integral 2uw dmu
+       +t integral[-Ruw/6-grad(u).grad(w)/3] dmu}+O(t^2),
+    2 Theta'(t) I_t(u,w),
+
+where `dmu=dy/f_0` is the time-reduced measure and
+`Theta'(t)=-C/t^2+O(1)`. The smooth periodic bridge calculation in
+`bridge-contact-low-order.md` independently checks the displayed `I_t`
+coefficients under its smooth periodic hypotheses; the source's rough curved
+remainder and boundary passage remain separate assumptions. Multiplication
+therefore gives the explicit source-contact coefficients
+
+    2 Theta'(t) I_t
+       = -C/(pi t^2) integral uw dmu
+         +C/(2 pi t) integral[Ruw/6
+                              +grad(u).grad(w)/3] dmu+O(1).       (4)
+
+Consequently, in a ledger term `D_scalar-C_src`, the source-contact
+`t^(-1)` contribution enters with the negative of the second coefficient in
+(4). This fixes the comparison target for the integrated scalar coefficient
+`C/(4 pi) integral(K_2+H_1)` after the conditional physical-half factor.
+No equality between these expressions is claimed: the response bracket,
+source observable map, physical normalization, and other sectors must first
+be identified under the same regulator. The leading term of (4) is consistent
+with the previously recorded flat and curved zeroth-jet contact check.
+
+Concrete claim: equation (4) is the coefficient target implied by the
+source's displayed `I_t` expansion and angular-tower asymptotic. Ordinary
+argument: multiply the two expansions and retain powers `t^(-2)` and
+`t^(-1)`. First unsupported implication: derive the integrated `K_2+H_1`
+coefficient in matching source variables and prove its equality, with the
+required sign and half factor, to the source-contact term inside the complete
+P1 ledger. Numerical role: none.
+
+Remaining to-do list: calculate `integral(K_2+H_1)` in source variables;
+verify the rough curved source contact expansion and matching measure; combine
+all remaining P1 sectors under the common regulator; finish novelty and GCP
+certification.
