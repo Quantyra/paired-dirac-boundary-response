@@ -25,8 +25,8 @@ theorem skew_add_one_surjective_draft
   let qu : Q.domain := ⟨Q u₀, hQu⟩
   have hSquare : (positiveSquare Q) u = - Q qu := by
     change Q.adjoint ⟨Q u₀, hAdj⟩ = - Q qu
-    rw [hSkew]
-    rfl
+    simpa [negativePMap] using
+      ((LinearPMap.ext_iff.mp hSkew).2 (hf := hAdj) (hg := hQu))
   let x : Q.domain := u₀ - qu
   refine ⟨x, ?_⟩
   have hx : Q x = Q u₀ - Q qu := by

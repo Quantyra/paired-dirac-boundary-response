@@ -1,0 +1,75 @@
+7c3d243c543a24f2e2d7d8861f54b246f31e2c164bb6a84fa288579cf230910a  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mass-skew-surjective-20261030c/GraphProjectionDraft.lean
+bcbe1e6ad0662954c11c7cbf2f801d82c8b2301195db982633a42fbf6b2fb7ca  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mass-skew-surjective-20261030c/MassSkewSurjectiveDraft.lean
+e17248d88c8388de9ba301426e2a96221c3194355010b29cf0da2bf1f439966f  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-partner-skew-operator-20261030a/PartnerSkewOperatorDraft.olean
+0f76d5c79ab9c7f06412bcf397cf358bd655bdd134f36836f10450d5e9d02716  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-partner-skew-20261030a/PartnerSkewDraft.olean
+d0a87cd35230f5fc2a47fb47b9aa3d24f73976c3c58a1813b57c4fc11d8af8e1  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-partner-skew-20261030a/LeftUnitarySquare.olean
+05b6f774ccd2d2fb83cad5ead362b95121cb52faaef7f1c93f0e9b73750991ee  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean/PositiveSquareDraft.olean
+7c5402e9fe23a9e3d83cc7ca7f077f20904c5a06b0e1602289ba9f3829f7166f  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean/SquareDomainDraft.olean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+GraphProjectionDraft.lean:31:55: warning: This simp argument is unused:
+  WithLp.ofLp_toLp
+
+Hint: Omit it from the simp argument list.
+  simp only [WithLp.prod_inner_apply, WithLp.ofLp_sub, W̵i̵t̵h̵L̵p̵.̵o̵f̵L̵p̵_̵t̵o̵L̵p̵,̵Prod.fst_sub, Prod.snd_sub, Prod.fst_zero,
+  ̲  ̲ ̲ ̲Prod.snd_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+GraphProjectionDraft.lean:32:32: warning: This simp argument is unused:
+  Prod.fst_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [WithLp.prod_inner_apply, WithLp.ofLp_sub, WithLp.ofLp_toLp, Prod.fst_sub, Prod.snd_sub,
+  ̲  ̲ ̲ ̲P̵r̵o̵d̵.̵f̵s̵t̵_̵z̵e̵r̵o̵,̵ ̵Prod.snd_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+GraphProjectionDraft.lean:32:47: warning: This simp argument is unused:
+  Prod.snd_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [WithLp.prod_inner_apply, WithLp.ofLp_sub, WithLp.ofLp_toLp, Prod.fst_sub, Prod.snd_sub,
+  ̲  ̲ ̲ ̲P̵r̵o̵d̵.̵f̵s̵t̵_̵z̵e̵r̵o̵,̵ ̵P̵r̵o̵d̵.̵s̵n̵d̵_̵z̵e̵r̵o̵]̵P̲r̲o̲d̲.̲f̲s̲t̲_̲z̲e̲r̲o̲]̲ at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.graph_projection_identity_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+GraphProjectionDraft.lean:62:8: warning: This simp argument is unused:
+  add_comm
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵a̵d̵d̵_̵c̵o̵m̵m̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.positiveSquare_add_one_surjective_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_dense_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+GraphProjectionDraft.lean:133:2: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+'PairedDirac.positiveSquare_adjoint_domain_reverse_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_selfAdjoint_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+MassSkewSurjectiveDraft.lean:28:4: error: Tactic `assumption` failed
+
+H : Type u_1
+inst✝² : NormedAddCommGroup H
+inst✝¹ : InnerProductSpace ℂ H
+inst✝ : CompleteSpace H
+Q : H →ₗ.[ℂ] H
+hClosed : Q.IsClosed
+hDense : Dense ↑Q.domain
+hSkew : Q.adjoint = negativePMap Q
+f : H
+u : ↥(positiveSquare Q).domain
+hu : ↑u + ↑(positiveSquare Q) u = f
+u₀ : ↥Q.domain := ⟨↑u, ⋯⟩
+hAdj : ↑Q u₀ ∈ Q.adjoint.domain
+hQu : ↑Q u₀ ∈ Q.domain
+qu : ↥Q.domain := ⟨↑Q u₀, hQu⟩
+⊢ ↑Q.adjoint ⟨↑Q u₀, hAdj⟩ = -↑Q qu
+'PairedDirac.skew_add_one_surjective_draft' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
