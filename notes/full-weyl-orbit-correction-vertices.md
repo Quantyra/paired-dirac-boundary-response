@@ -178,10 +178,10 @@ This closes the coercivity step and isolates a sufficient route to massive-
 tower differentiation on a fixed compact cut and positive proper-time
 window. The common-domain holomorphic sectorial family and its uniform
 Schatten smoothing are not yet verified for the actual full-Weyl family, so
-the tower interchange remains conditional. No `epsilon->0` bound,
-moving-cut uniformity, source
-observable identity, physical density/contact or boundary-transgression
-matching, or LLL anomaly transfer. No Lean check is claimed.
+the tower interchange remains conditional. This route supplies no
+`epsilon->0` bound, moving-cut uniformity, source-observable identity,
+physical density/contact or boundary-transgression matching, or LLL anomaly
+transfer. No Lean check is claimed.
 
 ## First and mixed second vertices at the seed
 
