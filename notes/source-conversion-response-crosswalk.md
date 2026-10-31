@@ -72,7 +72,13 @@ additional local term is present; do not claim a flat cancellation under the
 through-`x^2` convention. Even if the actual physical observable removes
 this term, curved localization, moving-insertion control, density/boundary
 terms and LLL transfer remain. These flat estimates are conditional
-evidence, not a physical common-regulator proof.
+evidence, not a physical common-regulator proof. Since the frozen source
+defines `r_curved` after extracting its localized tangent contribution, this
+nonzero coefficient under a truncated subtraction does not contradict its
+`t^(3/2)` target: the exact tangent may remove it. The missing step is to
+identify that extraction with P1's full-Weyl tangent and prescribed local
+restorations, not to infer failure of the source target from this truncated
+flat diagnostic.
 
 **Numerical role.** Numerical checks can audit explicit constants or
 truncation bounds after the analytic endpoint map is proved. They cannot
