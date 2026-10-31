@@ -161,3 +161,58 @@ Remaining to-do list: match (1) against the complete source local subtraction
 and all orbit, matrix, density, contact, LLL and boundary terms; prove the
 non-hit defect and common-regulator endpoint; finish novelty and manuscript
 decisions; certify supported claims on GCP.
+
+## Extension to the admitted rough seam profiles
+
+The leading coefficient above also extends to the admitted even-folded
+cubic/log directions; smoothness through the seam is not needed. Assume the
+source map `b -> f_b` is twice differentiable into `W^(3,infinity)` on the
+fixed collar, as in the source bridge hypotheses used by
+[`full-weyl-curved-scalar-joint-hit-bound.md`](full-weyl-curved-scalar-joint-hit-bound.md).
+Assume the seed coefficient is positive and even, and the admitted directions
+and their first two field jets have uniform `W^(3,infinity)` bounds after
+folding. The profiles `|y|^3` and `|y|^4 log|y|`, with fixed smooth cutoffs,
+satisfy these bounds; the third derivative of the cubic profile may jump.
+
+In the proof above the singular part of the zero-image mixed response is
+`C/(2 pi t^2) E[G(y+sqrt(t) xi)]`, where `G` is the path functional whose
+constant-path value is `Q_(u,w)(y)`. It is built from path averages of
+`f_0,f_u,f_w,f_uw` and their first spatial derivatives, with denominators
+powers of `A_h`, which is bounded below. The `W^(3,infinity)` bounds make
+this functional continuously differentiable in the path supremum norm with
+a uniformly Lipschitz derivative. Taylor's formula therefore gives
+
+    G(y+sqrt(t) xi) = G(y) + sqrt(t) D G_y[xi] + R_t,
+    |R_t| <= C t sup_s |xi_s|^2.
+
+The linear term has zero bridge expectation because `E[xi_s]=0` for every
+`s`; the bridge supremum has finite second moment. Hence
+`E[G(y+sqrt(t)xi)]=Q_(u,w)(y)+O(t)` uniformly for `y` across the seam collar.
+For paths leaving the larger localization chart, use the source bridge's
+exponentially small collar-exit bound with the bounded extensions of the
+coefficients. The differentiated nonzero thermal images are
+superpolynomially small, and
+the bounded tower remainder contributes `O(1)` after the heat prefactor.
+It follows that
+
+    partial_uw Delta_sc(t;y)
+       = C/(2 pi t^2) Q_(u,w)(y) + O(t^(-1))
+
+uniformly on that collar for the rough admitted profiles. The weak integration-
+by-parts identity in the preceding section remains valid for these profiles;
+the cubic vanishing and compact localization remove its endpoint term, giving
+`integral Q_(u,w)=12 integral uw/f_0`.
+
+This extends the leading scalar coefficient from smooth interior directions
+to the rough seam family without a uniform `C^4` assumption. The `O(t^(-1))`
+error is still not integrable against `dt/t^2`. This result does not identify
+the coefficient with the source's prescribed local subtraction, include
+physical density/Jacobian or boundary terms, or prove the common-regulator
+limit. First unsupported implication: match this rough-family coefficient
+and the next local terms to the complete source subtraction before claiming
+a renormalized scalar response. Numerical role: none.
+
+Remaining to-do list: match the rough scalar expansion, including its
+`O(t^(-1))` remainder, to the source subtraction; then combine the orbit,
+matrix, density, contact, boundary and LLL terms under one regulator and
+close the endpoint; finish novelty/manuscript review and GCP certification.
