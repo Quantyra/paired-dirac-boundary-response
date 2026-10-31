@@ -496,6 +496,46 @@ on the sphere factor. First unsupported implication: evaluate the curved
 defect trace and match the same-boundary term plus defect to every curved
 source subtraction term. Numerical role: none.
 
+### Exact interior operator difference
+
+On the common smooth interior core, conjugation gives
+
+    Q_X-Q = X Q X^(-1)-Q = -[Q,X]X^(-1).
+
+The Clifford relation `c(e_tau)^2=-I` gives `X^(-1)=-X` and
+`nabla_(e_tau)X^(-1)=-epsilon h c(e_y)`. Apply the first-order operator
+`[Q,X]` to `X^(-1) psi`, keeping the derivative on `X^(-1)`:
+
+    [Q,X]X^(-1)
+      = -2 epsilon h c(e_y)(nabla_(e_tau)X^(-1))
+        -2 epsilon h c(e_y)X^(-1)nabla_(e_tau) + h^2 I
+      = -h^2 I + 2h c(e_y)c(e_tau)nabla_(e_tau).
+
+Consequently the exact smooth-interior differential expression is
+
+    Q_X-Q = h^2 I - 2h c(e_y)c(e_tau)nabla_(e_tau).       (12)
+
+The scalar potential cancels in this difference because `[V,X]=0` in the
+source product reduction. Formula (12) gives the local perturbation to use
+inside the cutoff Duhamel word. It does not identify a trace coefficient:
+the first-order insertion, its heat-kernel contractions, and the
+same-boundary word must be expanded together with density/contact terms.
+Since `Q` and `Q_X` can have different boundary domains, (12) is only an
+interior-core identity; use the cutoff/common-domain formulation for a
+semigroup statement.
+
+Concrete claim: the source interior conjugation changes the orbit square by
+the first-order operator and scalar term in (12). Ordinary argument: combine
+the verified commutator (11) with `Q_X-Q=-[Q,X]X^(-1)` and differentiate the
+right multiplier before collecting Clifford products. First unsupported
+implication: evaluate its localized Duhamel trace to the required order and
+match it in the complete common-regulator response. Numerical role: none.
+
+Remaining to-do list: calculate and match the localized heat-trace
+coefficient; control the moving-cut/common-regulator transfer and all
+response sectors; finish the novelty decision and manuscript; certify
+supported claims on GCP.
+
 ### Sector scope for the interior commutator
 
 The localized identity (8) is for the boundary-condition/conjugation defect
