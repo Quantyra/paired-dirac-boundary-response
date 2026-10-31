@@ -604,6 +604,70 @@ Remaining to-do list: derive the curved parametrix coefficient and its
 same-boundary/source matching; close moving-cut/common-regulator transfer;
 finish novelty and manuscript decisions; certify supported claims on GCP.
 
+### Interior heat-kernel transport coefficient
+
+The frozen calculation above has an invariant form in the fixed smooth
+interior. Write `nabla^X=X nabla X^(-1)=nabla+B`, where
+`B=X(nabla X^(-1))`. In the source orthonormal frame,
+
+    B(e_y)=0,       B(e_tau)=h C,
+    C=c(e_y)c(e_tau),  C^2=-I,
+    nabla^i B_i=0,   B_i B^i=-h^2 I.
+
+The divergence is covariant and includes the frame derivative:
+`nabla_(e_tau)C=0` and `B(nabla_(e_tau)e_tau)=hB(e_y)=0`; the radial
+contribution vanishes as well. These identities hold for variable `h(y)`.
+
+Fix `eta>0` and restrict the Duhamel ratio to
+`eta<=s/t<=1-eta`. At a trace point in a compact interior set, choose normal
+coordinates and radial gauge for `nabla`. For relative displacement `v`,
+the product of the leading parallel transports for the `Q` and `Q_X` kernels
+is
+
+    I - B_i v^i - (1/2)(nabla_j B_i)v^j v^i
+      + (1/2) B_i B_j v^i v^j + O(|v|^3).
+
+The convolved Gaussian has covariance
+`E[v^i v^j]=2(sr/t)g^(ij)`. The linear term integrates to zero. The scalar
+potential and scalar-curvature first heat amplitudes cancel against the
+same-boundary product since the two heat times sum to `t`. Thus the first
+relative transport coefficient is
+
+    (sr/t) tr(B_iB^i - nabla^i B_i) = -2(sr/t)h^2,
+
+and the mixed-minus-same-boundary trace density has leading term
+
+    -(h^2/(2 pi)) (sr/t^2).                               (15)
+
+This agrees with the exact Fourier calculation in the preceding frozen
+model. Multiplying by the external Duhamel factor `s=t-r` and integrating
+the leading coefficient over `0<=r<=t` gives `-h^2 t^2/(24 pi)` for one
+ordering and `-h^2 t^2/(12 pi)` for both orderings, before the angular
+mass-square sum and the insertion product `u'w'`.
+
+Equation (15) is established here as the local transport coefficient for
+ratios in compact subsets of the open simplex. The extension of its
+remainder uniformly to `r=0,t` has not been proved in this note. The leading
+coefficient is integrable at both endpoints after multiplication by `s`,
+but that fact alone does not bound the parametrix remainder there. A full
+fixed-interior trace asymptotic still needs an endpoint-uniform estimate,
+followed by control of cutoff-transition terms. Even once obtained, it is
+only the `Q_X-Q` defect; the same-boundary word and physical source/contact
+ledger remain separate obligations.
+
+Concrete claim: for a fixed smooth interior cutoff and
+`s/t` bounded away from zero and one, the first relative transport
+coefficient of the odd-odd defect is (15). Ordinary argument: use the
+relative connection `B`, expand the two parallel transports to second order,
+integrate their product against the convolved Gaussian, and use the source
+identities `div B=0`, `B_iB^i=-h^2I`. First unsupported implication: prove
+uniform endpoint remainders and assemble this defect with same-boundary and
+source terms under the common regulator. Numerical role: none.
+
+Remaining to-do list: establish endpoint-uniform parametrix remainders;
+match the defect to the same-boundary/source subtraction; close moving-cut
+transfer and certify supported claims on GCP.
+
 ### Sector scope for the interior commutator
 
 The localized identity (8) is for the boundary-condition/conjugation defect
