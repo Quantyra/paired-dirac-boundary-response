@@ -764,3 +764,55 @@ All other second partials vanish. Substitution of these derivatives and
 expression in the source field jets, with no implicit functional derivative
 left. In particular, the flat result follows by setting `f=1`, `g_u=-u`,
 `g_w=-w`, and using `X_u'=-u`, `X_w'=-w` after integration.
+
+### Integrated Hessian coefficient after integration by parts
+
+For compactly localized directions on the full-line fold, the integration by
+parts in (5) gives a shorter curved formula. Since
+`d(Phi_i(phi(y)))/dy=sum_j Phi_ij(phi) phi_j'`,
+
+    integral Phi_i(phi) phi_i''
+       = -integral sum_(i,j) Phi_ij(phi) phi_i' phi_j',
+
+provided the localized boundary flux vanishes. It does here: every term in
+the flux is paired with a cubic-vanishing direction factor at the seam and
+with a compactly supported direction at the outer edge. Therefore
+
+    integral K_2 = -(1/12) integral phi'^T D^2 Phi(phi) phi' dy.  (6)
+
+This identity extends to the admitted rough profiles by the grouped-jet
+approximation above. To make (6) directly usable, set
+`A=f^2`, `G=g_u`, `U=u`, `H=g_w`, `W=w`, `V=uw`, `J=j`,
+`S=GW+HU`, and `T=8UW-4V+2J`. Expanding with the derivative table gives
+
+    phi'^T D^2 Phi(phi) phi'
+      =[-(15/2)A^(-7/2)S +(3/4)A^(-5/2)T](A')^2
+       +6A^(-5/2)A'W G'
+       +2[3A^(-5/2)H-4A^(-3/2)W]A'U'
+       +6A^(-5/2)A'U H'
+       +2[3A^(-5/2)G-4A^(-3/2)U]A'W'
+       +4A^(-3/2)A'V' -2A^(-3/2)A'J'
+       -4A^(-3/2)G'W' -4A^(-3/2)H'U'
+       +16A^(-1/2)U'W'.                                  (7)
+
+Here `G=f f_u`, `H=f f_w`, and `J=u'X_w+w'X_u`; every term in (7) is
+specified by the source profiles and their ordinary spatial derivatives.
+The next scalar coefficient to compare is now
+
+    C/(4 pi) integral[-(1/12) phi'^T D^2 Phi(phi) phi' + H_1]dy,
+
+under the conditional physical-half normalization. Equation (7) is not yet
+reduced to curvature invariants and is not the complete source ledger. The
+flat substitution reduces (6) to `-2 integral u'w'`, as before.
+
+Concrete claim: (6) and (7) give the integrated curved path-Hessian
+coefficient with no second derivatives of the seven source averages left.
+Ordinary argument: integrate (5) by parts, use the localized seam/outer
+boundary vanishing, and substitute the explicit Hessian of `Phi`. First
+unsupported implication: simplify this expression against the source contact
+and geometric orbit coefficients and then include the remaining full-Weyl
+sectors under one regulator. Numerical role: none.
+
+Remaining to-do list: reduce (7)+`H_1` to the source curvature form; match
+the complete orbit/contact/commutator/density/boundary/LLL ledger; close the
+common-regulator endpoint and certify supported claims in Lean on GCP.
