@@ -14,11 +14,13 @@ The same displayed Eqs. (27)--(32) occur in both the [v1 manuscript dated
 dated 11 May 2004](https://arxiv.org/pdf/hep-th/0404069v2); the factor
 discrepancy is therefore not resolved by the arXiv revision history. In the
 v2 OCR of Eq. (31), the p=1 prefactor is `1/64` multiplying
-`integral E E'''`; Eq. (32) gives `gamma_1=1/128`. By contrast, Eqs. (27)--(28)
-give `1/4 * Gamma(5/2)/(4! sqrt(pi)) = 1/128` multiplying that integral.
+`integral E E'''`; after integration by parts this predicts coefficient
+`1/128` of `E'(0+)^2`. Eq. (32) gives `gamma_1=1/128`, consistent with
+that prediction. By contrast, Eqs. (27)--(28) give
+`1/4 * Gamma(5/2)/(4! sqrt(pi)) = 1/128` multiplying the same integral.
 For the one-sided example with `E(0)=0`, integration by parts gives
-`integral_0^infinity E E''' = E'(0+)^2/2`, so these are coefficients
-`1/256` and `1/128` of `E'(0+)^2`, respectively.
+`integral_0^infinity E E''' = E'(0+)^2/2`, so Eqs. (27)--(28) predict
+`1/256` of `E'(0+)^2`.
 
 The APS record identifies the published article as *Phys. Rev. D* 70,
 045003 (published 9 August 2004), DOI
