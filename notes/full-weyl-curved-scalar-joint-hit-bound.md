@@ -227,6 +227,34 @@ piece therefore requires deriving those coefficients for the scalar
 angular-mass correction, matching them to the original local contacts and
 restorations, and bounding the remaining localized parametrix defect.
 
+## Zeroth spatial-jet coefficient to match in the local subtraction
+
+There is already a necessary zeroth spatial-jet term in that calculation.
+Freeze the directions at a point and hold the orbit Brownian factor fixed;
+equivalently, take the local model with constant `u,w` and no variation of
+`L_b`. Then `S_u=-2u`, `S_w=-2w`, and `S_uw=4uw`, so the exact angular-factor
+Hessian is
+
+    partial_uw Theta(t S_b)|_0
+       =4 u w [t Theta'(t)+t^2 Theta''(t)].
+
+Using `Theta(t)=C/t+rho(t)` with bounded first two derivatives gives
+
+    t Theta'(t)+t^2 Theta''(t)=C/t+O(t),
+
+and therefore the scalar diagonal formula (5) has the frozen local
+contribution
+
+    (1/(2 pi t)) E[W_T(0) partial_uw Theta(t S_b)|_0]
+       = (2 C/pi) E[W_T(0)] u w t^(-2) + lower orders.
+
+This is only the angular-factor, zeroth spatial-jet coefficient; variation
+of `A_h,B_h`, the full orbit-angular Duhamel cross terms, physical-half
+normalization, and the actual source contacts still have to be included.
+In particular it is not itself an assigned counterterm. It provides a
+concrete coefficient that the scalar local expansion must reproduce and
+match before a non-hit remainder estimate can be claimed.
+
 Numerical role: none.
 
 Remaining to-do list: match the scalar terms to the physical common
