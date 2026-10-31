@@ -312,3 +312,49 @@ the bound through exact unitary conjugation for `Q_X`; apply (5). First
 unsupported implication: establish a uniform complement/non-hit subtraction
 and transfer the result through the moving physical cutoff and full
 common-regulator response. Numerical role: none.
+
+## Growing-collar split for the boundary-reflected defect
+
+The fixed-window estimate also applies with a slowly growing scaled width.
+Fix `t0<1` and `A>0`, and let
+
+    rho_t = A sqrt(t log(t0/t)),   0<t<t0/e.
+
+The same Gaussian integration proof as (5), with `R_t=A sqrt(log(t0/t))`,
+gives for the layer `y,y'<=rho_t`
+
+    |T_layer(t;s,r)| <= C A^5 U W t^(3/2) [log(t0/t)]^(5/2),
+    0<s,r<t.                                                (7)
+
+The constant is uniform while `rho_t` stays inside the fixed smooth collar;
+this holds for all sufficiently small `t`. The corresponding proper-time
+integral converges:
+
+    integral_0^(t0/e) t^(-2) |T_layer(t)| dt < infinity,
+
+since `t^(-1/2) [log(t0/t)]^(5/2)` is integrable at zero. This is an
+integrability statement for the localized odd-odd boundary-layer component,
+not the stronger pointwise `O(t^(3/2))` ceiling.
+
+In the boundary heat parametrix, the reflected correction has Gaussian decay
+in the sum of the insertion points' distances to the seam. Outside this
+collar, `exp(-rho_t^2/(c r)) <= (t/t0)^(A^2/c)` for every middle time
+`r<=t`. Thus, after including the finite polynomial powers of `r^(-1)` in
+the parametrix, choosing `A` large makes the boundary-reflected tail smaller
+than any fixed target power of `t`, uniformly at the Duhamel endpoint. This
+isolates the *boundary-reflected* non-hit tail for the fixed pinned operator.
+It does not estimate the local interior difference
+`X exp(-rQ) X^(-1)-exp(-rQ)`: pointwise unitary conjugation changes the local
+connection/transport coefficients, and that contribution must be expanded
+and matched to the curved tangent/source subtraction. It also gives no
+uniformity under moving-cut transfer or common-regulator matching.
+
+Concrete claim: the fixed pinned boundary-reflected defect is integrable
+against `dt/t^2` after the logarithmically widened collar split, and its
+outside-collar tail can be made higher order than any prescribed power under
+the boundary-parametrix Gaussian. Ordinary argument: substitute
+`R_t=A sqrt(log(t0/t))` into (5), integrate its logarithmic power, and use
+the reflected-kernel factor `exp(-(y+y')^2/(cr))` with `r<=t` outside the
+collar. First unsupported implication: compute and match the local interior
+conjugation contribution, then extend to the moving physical cutoff and full
+common-regulator response. Numerical role: none.
