@@ -1,0 +1,71 @@
+﻿# Exact full-Weyl correction vertices relative to the orbit-only square
+
+Status: ordinary fixed-mode operator identity on the common smooth core, under the multiplier and paired-domain hypotheses below. This isolates the extra vertices needed to compare full-Weyl and orbit-only responses. It is not a bound for their heat traces, an endpoint theorem, or a physical source identification.
+
+## Setup
+
+Let `D` be a Dirac-type first-order operator on the two-dimensional orbit factor, `G` a bounded chirality involution commuting with scalar multipliers, and `mu` a fixed real angular mass. Assume the paired mode domains allow the square identity from `full-weyl-angular-mode-correction.md`. For a real scalar field `b`, set
+
+    m_b = exp(-b/2),       D_b = m_b D m_b,       M_b = m_b^2 = exp(-b).
+
+The full-Weyl mode square and the comparison orbit-only square are
+
+    Q_full,mu(b) = D_b* D_b + mu^2 M_b^2 + i mu G [D_b,M_b],
+    Q_orbit,mu(b) = D_b* D_b + mu^2 I.
+
+The latter freezes the angular mass while varying the orbit operator. Their difference is
+
+    Delta_mu(b) = mu^2 (exp(-2b)-1) + i mu G [D_b,exp(-b)].      (1)
+
+All identities below concern this difference; they do not assert that the two complete response traces are interchangeable.
+
+## First and mixed second vertices at the seed
+
+For real directions `u,w`, differentiate at `b=0` (equivalently, at `b=su+tw`, taking the indicated derivatives). On the common smooth core,
+
+    (Delta_mu)'[u] = -2 mu^2 u - i mu G [D,u]
+                    = -2 mu^2 u - i mu G c(du),                 (2)
+
+and
+
+    (Delta_mu)''[u,w] = 4 mu^2 u w + 2 i mu G [D,uw]
+                       = 4 mu^2 u w + 2 i mu G c(d(uw)).         (3)
+
+Here `[D,f]=c(df)` is the Dirac product rule. To see the commutator terms directly, write
+
+    D_b = D + s A_u + t A_w + st A_uw + higher terms,
+    A_u = -(uD+Du)/2,
+    M_b = 1-su-tw+st uw + higher terms.
+
+The mixed coefficient of `[D_b,M_b]` is
+
+    -[A_u,w]-[A_w,u]+[D,uw] = 2[D,uw].
+
+Equivalently, the exact product rule gives `[D_b,M_b]=-exp(-2b)c(db)`, whose first and mixed derivatives yield (2) and (3). The mixed derivative is the genuine `partial_s partial_t` vertex; no extra factor of two is implicit.
+
+## Positive-time response decomposition
+
+At the seed `Delta_mu(0)=0`, so both families have the same unvaried square `Q_0=D*D+mu^2`. Write `V_u=Q_orbit'[u]` and `W_uw=Q_orbit''[u,w]`. Differentiating the heat semigroup by Duhamel on a common invariant core gives the following exact Hessian difference for a fixed smearing `F` (assuming the traces and differentiations exist):
+
+    Tr(F (exp(-t Q_full))''[u,w] - F (exp(-t Q_orbit))''[u,w])
+      = - integral_0^t Tr(F e^{-(t-s)Q_0} Delta_mu''[u,w] e^{-sQ_0}) ds
+        + integral_{0<=s2<=s1<=t} Tr(F e^{-(t-s1)Q_0}
+            [Delta_u e^{-(s1-s2)Q_0} V_w
+             + V_u e^{-(s1-s2)Q_0} Delta_w
+             + Delta_u e^{-(s1-s2)Q_0} Delta_w]
+             e^{-s2 Q_0}) ds2 ds1
+        + integral_{0<=s2<=s1<=t} Tr(F e^{-(t-s1)Q_0}
+            [Delta_w e^{-(s1-s2)Q_0} V_u
+             + V_w e^{-(s1-s2)Q_0} Delta_u
+             + Delta_w e^{-(s1-s2)Q_0} Delta_u]
+             e^{-s2 Q_0}) ds2 ds1.                              (4)
+
+Here `Delta_u=(Delta_mu)'[u]`, `Delta_w=(Delta_mu)'[w]`, and `Delta_mu''` is (3). The two ordered simplices arise from the two parameter orderings in the mixed derivative. In particular, the difference includes the `Delta_u`/`Delta_w` pair as well as the cross terms with the orbit vertices; omitting that pair would not give the Hessian difference. The formula holds for a fixed smearing only; variation of the physical density or insertion must be included separately. The fixed-product formulas in `flat-tangent-angular-mode.md` evaluate the complete response in a special flat model, but do not prove the curved uniform estimates required here.
+
+## Scope and first remaining estimate
+
+Equations (2)-(4) sharpen the first missing implication recorded in `parent-curved-heat-bridge-p1-crosswalk.md`: beyond the parent orbit-sector remainder, the full-Weyl correction contains a zeroth-order angular-mass vertex and a first-order gradient vertex, their mixed second vertex, their mutual ordered products, and cross terms with the orbit vertices. To transfer a `t^(3/2)` subtracted bound, estimate the localized, subtracted trace of (4), summed over the actual angular tower with the same regulator and uniformity in the admitted curved family. The estimate must account for density and contact variations, boundary transgression, thermal images, and the separate LLL/anomaly block. The displayed vertices alone do not control their angular sum or the small-time finite part.
+
+No numerical result or Lean claim is made. These ordinary identities are candidates for a narrowly scoped GCP formalization only after the operator and domain representation is fixed; formalizing them would not certify the heat-kernel bound.
+
+Remaining to-do list: prove the curved angular correction bound and source matching; finish novelty and manuscript; certify supported claims on GCP.
