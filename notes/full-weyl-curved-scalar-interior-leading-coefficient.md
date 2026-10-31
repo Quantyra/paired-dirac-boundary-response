@@ -721,10 +721,7 @@ Formula (5) follows by writing each bridge average as
 `<phi_i(y+h xi)>=phi_i+h phi_i'<xi>+(h^2/2)phi_i''<xi^2>+...`, taking
 expectations, and using the two displayed moments in the second-order Taylor
 formula for `Phi`. It reproduces the flat value `integral K_2=-2 integral
-u'w'` when `f=1`. The expression has not yet been reduced by integration by
-parts to `Ruw/6+grad(u).grad(w)/3`; the flat diagnostic shows that an equality
-with the source contact alone is already false. The curved formula is thus a
-precise source-variable comparison target, not a full-response identity.
+u'w'` when `f=1`. The scalar combination `K_2+H_1` is reduced to the source contact form in the final section below. This is a scalar-subfamily identity, not a full-response identity.
 
 Concrete claim: equation (5) is the exact smooth-interior coefficient of the
 path-Hessian term, and together with `H_1` expresses the next scalar
@@ -816,7 +813,7 @@ unsupported implication: simplify this expression against the source contact
 and geometric orbit coefficients and then include the remaining full-Weyl
 sectors under one regulator. Numerical role: none.
 
-Remaining to-do list: reduce (7)+`H_1` to the source curvature form; match
+Remaining to-do list: match
 the complete orbit/contact/commutator/density/boundary/LLL ledger; close the
 common-regulator endpoint and certify supported claims in Lean on GCP.
 
@@ -923,3 +920,34 @@ For `C=2 b_s^2`, this is `+b_s^2/(pi) U_1/t` in the doubled trace and `+b_s^2/(2
 Concrete claim: the fixed-flat gradient-commutator Duhamel contribution has the stated `U_1/t` coefficient in the sign-paired tower. Ordinary argument: isolate the gradient-gradient term in (7), use zero fiber trace for the mixed vertex and odd-mass cancellation for orbit-gradient terms, sum the tower, and apply dominated convergence using `A<=1`. First unsupported implication: extend the vertex bounds and coefficient through the admitted curved/domain family under the common regulator. Numerical role: none.
 
 Remaining to-do list: derive and bound the curved commutator contribution; match it with the curved scalar, orbit, contact, density, boundary and LLL terms under one regulator; finish novelty and manuscript audits; certify supported Lean statements on GCP.
+
+### Scalar coefficient and the source contact form
+
+Substitute the source jets `f_u=-u f+f'X_u`, `X_u'=-u` and their `w`
+counterparts into (7) and the explicit `H_1`. With
+`J=u'X_w+w'X_u`, the resulting local density obeys
+
+`-(1/12) phi'^T D^2 Phi(phi) phi' + H_1`
+`= -2u'w'/f + ((f'J)/(3f^2))' + (2f'/(3f^2))(uw)'`.
+
+The seam and outer fluxes vanish under the admitted source jets and compact
+direction localization. Integration by parts therefore gives
+
+`integral (K_2+H_1) dy`
+`= integral [-2u'w'/f -(2/3)(f''/f^2-2(f')^2/f^3)uw]dy`
+`= -6 integral [Ruw/6+u'w'/3] dmu`,
+
+using `R=2f''/f-4(f'/f)^2` and `dmu=dy/f`. This fixes the scalar-subfamily
+comparison: under the conditional physical-half normalization its scalar
+`t^-1` coefficient is `-3` times the source contact coefficient. In a
+`D_scalar-C_src` bracket the pair contributes `-4` times that contact
+coefficient, so this scalar piece does not cancel the source contact. This
+does not decide the complete observable: the curved commutator, geometric
+orbit, density, boundary, and LLL terms and the common regulator remain open.
+
+Concrete claim: the integrated smooth-interior `K_2+H_1` coefficient equals
+minus six times the specified source contact form. Ordinary argument: expand
+the exact local formula using source jets, group it into the displayed total
+derivatives and contact density, and use the stated vanishing fluxes. First
+unsupported implication: close the complete curved P1 ledger under the common
+regulator. Numerical role: none.
