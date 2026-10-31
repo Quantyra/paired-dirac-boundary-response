@@ -1,4 +1,4 @@
-﻿# Physical cut comparison: tail/locality reduction
+# Physical cut comparison: tail/locality reduction
 
 This reduces the quantitative cut-to-complete response comparison to one
 explicit separated-interior heat-locality estimate. The tail and path
@@ -106,4 +106,3 @@ Remaining to-do list: verify the physical bundle/domain and weighted-form
 hypotheses for the conditional separated-interior estimate (4), match source
 normalization and subtractions, complete novelty and manuscript, and certify
 supported claims in Lean on GCP.
-
