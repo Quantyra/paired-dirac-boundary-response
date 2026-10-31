@@ -1,0 +1,107 @@
+# Interior leading coefficient for the scalar angular-mass correction
+
+This computes the leading interior coefficient of the scalar-tower heat
+diagonal minus its fixed-angular-mass orbit diagonal. It includes variations
+of both the angular factor and the zero-image Brownian orbit weight. It is a
+component calculation in the scalar bridge representation, not the full
+Weyl response, the source's `r_curved`, or a physical counterterm.
+
+## Setup and fixed-base-point limit
+
+Use the exact positive-time scalar bridge formula and notation in
+[`full-weyl-curved-scalar-tower-formula.md`](full-weyl-curved-scalar-tower-formula.md):
+
+    Delta_sc(t;y) = 1/(2 pi t) E[ W_T(b) (Theta(t S_b)-Theta(t)) ].
+
+Take smooth admitted directions `u,w` supported in a compact interior collar,
+and a smooth positive seed coefficient `f_0`. The zero thermal image has
+
+    W_0=A_h^(-1/2) exp(t B_h^2/(4 A_h)),
+    A_h=int_0^1 f_b(z_s)^2 ds,   B_h=int_0^1 f_b'(z_s) ds,
+    z_s=y+sqrt(t) xi_s.
+
+For fixed interior `y`, the bridge converges to the constant path at `y` as
+`t` decreases to zero. Thus `A_h -> f_0(y)^2`, `W_0 -> 1/f_0(y)`, and the
+first field derivative of the fixed-y coefficient is
+
+    (f_b)_u|_0(y) = -u(y) f_0(y) + f_0'(y) X_u(y),
+    X_u(y) = -int_0^y u(x) dx,
+
+with the analogous formula for `w`. Consequently
+
+    (W_0)_u|_0 -> -(f_0)_u/f_0^2,
+    (W_0)_w|_0 -> -(f_0)_w/f_0^2.
+
+These are limits of the bridge factors, not pathwise small-time expansions.
+
+## Mixed angular and orbit-weight jets
+
+Write `C` for the leading tower coefficient, `Theta(s)=C/s+O(1)`, and
+`F_b=Theta(t S_b)-Theta(t)`. At the seed, `S_0=1`, so `F_0=0`. From the
+coordinate jets in equation (7) of the scalar-tower note,
+
+    S_u=-2u,  S_w=-2w,
+    S_uw=4uw-2u'X_w-2w'X_u
+
+in the constant-path limit. Therefore
+
+    t F_w -> -C S_w = 2Cw,
+    t F_u -> 2Cu,
+    t F_uw -> C(2 S_u S_w-S_uw)
+             = C(4uw+2u'X_w+2w'X_u).
+
+Since `F_0=0`, the mixed derivative of `W_0 F_b` has only
+`(W_0)_u F_w+(W_0)_w F_u+W_0 F_uw`. Substituting the limits above gives
+
+    partial_uw Delta_sc(t;y)
+      = C/(2 pi t^2) Q_{u,w}(y) + o(t^(-2)),
+
+where
+
+    Q_{u,w}
+      = 8uw/f_0
+        +2(u'X_w+w'X_u)/f_0
+        -2 f_0'(uX_w+wX_u)/f_0^2.                 (1)
+
+The first `4uw/f_0` in (1) comes from the angular-factor Hessian. The other
+`4uw/f_0` and the `f_0' X` terms come from differentiating the Brownian orbit
+weight. Thus the frozen angular-factor coefficient alone is not the complete
+leading coefficient even within this scalar component.
+
+The limit is uniform on compact subsets of the interior for smooth bounded
+data. With compactly supported directions, the bridge tails and differentiated
+nonzero thermal images are negligible at this order; integrating over the
+support gives the corresponding integrated leading coefficient with an
+`o(t^(-2))` remainder. The tower normalization here is exactly the one in
+`Delta_sc`; an additional physical-half or partner factor must only be
+applied if established by the source-to-observable transfer.
+
+## Integrated form and scope
+
+Because `X_u'=-u` and `X_w'=-w`,
+
+    d/dy [(u X_w+w X_u)/f_0]
+      =(u'X_w+w'X_u-2uw)/f_0
+        -f_0'(uX_w+wX_u)/f_0^2.
+
+Hence (1) can be rewritten as
+
+    Q_{u,w}=12uw/f_0
+             +2 d/dy [(u X_w+w X_u)/f_0].
+
+For compactly supported `u,w` the total derivative integrates to zero, so
+
+    integral Q_{u,w}(y) dy = 12 integral u(y)w(y)/f_0(y) dy.
+
+This is a new consistency target for the complete local matching: the orbit
+weight changes the integrated scalar coefficient. It does not prove that
+this term is canceled by the orbit Hessian, the matrix `mu C_b` sector, the
+source contact, density/Jacobian variations, local restorations, LLL, or the
+boundary transgression. It is not a bound on the non-hit defect or on
+`r_curved`; those pieces must be combined under the common regulator before
+the S001 physical response claim can be assessed.
+
+Remaining to-do list: match (1) against the complete source local subtraction
+and all orbit, matrix, density, contact, LLL and boundary terms; prove the
+non-hit defect and common-regulator endpoint; finish novelty and manuscript
+decisions; certify supported claims on GCP.

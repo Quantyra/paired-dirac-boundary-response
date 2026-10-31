@@ -213,6 +213,14 @@ preserving the actual contact, density and cutoff terms. Equation (13)
 bounds one part of the scalar angular-mass correction; it is not a bound
 for `r_curved` and not a physical admission margin.
 
+For smooth compactly supported interior directions, the leading constant-path
+coefficient of the scalar correction, including the zero-image orbit-weight
+jets, is derived in
+[`full-weyl-curved-scalar-interior-leading-coefficient.md`](full-weyl-curved-scalar-interior-leading-coefficient.md).
+Its integrated coefficient is a concrete local matching target. It still
+does not provide the complete source subtraction or control the non-hit
+defect.
+
 The path-jet estimate alone cannot be extended by replacing `Hit` with its
 complement. On paths confined to a fixed collar subinterval `y in [a,b]`
 with `a>0`, the estimate `r=y+sqrt(t) Z` and the local factor bound in
