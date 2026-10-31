@@ -34,6 +34,16 @@ stated jump formula, and an independent Duhamel calculation gives a
 different candidate value. The discrepancy remains open and prevents using
 either numerical value as a settled benchmark.
 
+For direct four-dimensional `a7` power counting, the independently derived
+two-dimensional one-interface scalar coefficient in
+[`scalar-jump-general-order.md`](scalar-jump-general-order.md) tensorizes with
+the two extra free tangential heat densities. It gives
+`J^2/[2048 pi^(3/2)] t^(3/2)` per scalar fiber and interface for the coefficient
+of `lambda^2`; substituting `p=1` in the preprint's Eq. (32) gives twice this
+value. This is a scalar-potential comparison only. It does not identify any
+vertex in P1's full-Weyl Dirac variation, and the discrepancy remains
+unsettled against the paywalled published equation text.
+
 ## Overlap and necessary comparison
 
 The existence of a half-integer surface term arising from a nonsmooth field,
