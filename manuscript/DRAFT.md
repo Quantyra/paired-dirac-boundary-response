@@ -78,7 +78,7 @@ At a smooth compact cut, the source-stipulated partner involution gives an exact
 
     P'_b=F P_b F^(-1),  T=F chi F^(-1),  S=F J F^(-1).
 
-On the boundary, `T` gives the transmittal continuity subspace and `S` exchanges its two side bundles. The Robin and tangential connection coefficients agree with the symmetric spinor interface data, including a nonzero normal jet, as detailed in `../notes/finite-cut-interface-square-crosswalk.md`. Define `A_b=S P'_b` on `Dom(P'_b)`. Since `S` exchanges `Dom(P'_b)` and `Dom(P'_b*)`,
+Unitary conjugation carries the actual domains as well as the differential expression: `Dom(P'_b)=F Dom(P_b)`, `P'_b*=F P_b* F^(-1)`, and `Dom(P'_b*P'_b)=F Dom(P_b*P_b)`. The adjoint identity follows by substituting `psi=F xi` and `phi=F eta` in the Green relation and using that `F` preserves the inner product. The square-domain identity then follows from `P'_b(F xi)=F P_b xi`. On the boundary, `T` gives the transmittal continuity subspace and `S` exchanges its two side bundles. The Robin and tangential connection coefficients agree with the symmetric spinor interface data, including a nonzero normal jet, as detailed in `../notes/finite-cut-interface-square-crosswalk.md`. Define `A_b=S P'_b` on `Dom(P'_b)`. Since `S` exchanges `Dom(P'_b)` and `Dom(P'_b*)`,
 
     Dom(A_b*)=Dom(P'_b),
     Dom(A_b* A_b)=Dom(P'_b*P'_b),

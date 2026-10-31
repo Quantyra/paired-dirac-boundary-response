@@ -142,6 +142,22 @@ In particular, `S` exchanges `Dom(P'_b)` and `Dom(P_b'^*)`. The `T=+1`
 trace space identifies the two `S` side bundles by the map
 `T|_(E_S^+)`, which is the transmittal continuity condition.
 
+The fold is a unitary conjugation, including at the adjoint-domain level:
+
+    Dom(P'_b)=F Dom(P_b),
+    Dom(P_b'^*)=F Dom(P_b^*),
+    P_b'^*=F P_b^* F^(-1),
+    Dom(P_b'^* P'_b)=F Dom(P_b^* P_b).
+
+For the adjoint identity, write `phi=F eta` and `psi=F xi` in the defining
+Green relation. Unitarity gives
+`<P'_b psi,phi>=<F P_b xi,F eta>=<P_b xi,eta>`; this equals
+`<xi,P_b^* eta>=<F xi,F P_b^* eta>`. The reverse implication uses the same
+calculation with `F^(-1)`. For the square domain, `P'_b(F xi)=F P_b xi`, so
+membership in `Dom(P_b'^*)=F Dom(P_b^*)` is exactly
+`P_b xi in Dom(P_b^*)`. This verifies both the graph and the complete
+composition domain under the stated closed-operator hypotheses.
+
 Define the interface realization `A_b=S P'_b` on `Dom(A_b)=Dom(P'_b)`.
 Its adjoint is `A_b^*=P_b'^* S`, with
 `Dom(A_b^*)=Dom(P'_b)`: indeed, `S phi` belongs to `Dom(P_b'^*)` exactly
