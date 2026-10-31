@@ -159,36 +159,59 @@ Equation (8) still does not include the matrix-valued `mu C_b` sector,
 matrix Robin local-time weights, the full source tangent subtraction, LLL,
 local restorations or the moving-cut endpoint.
 
-## Curved-minus-tangent scalar hit component
+## Scalar angular-mass correction relative to the orbit family
 
-Let `R_sc,g^hit(t)` denote the left side of (8) before taking its absolute
-value, for the curved coefficient `f0`. Define `R_sc,tan^hit` by the same
-formula, same cutoff directions and same bridge event, with the base inverse
-radius replaced by its seam value `f0(0)` in the scalar tangent model.
-The field-dependent map `Y_b` is retained in both. The constant tangent
-coefficient has `f_tan'=0`; its field derivatives from
-`f_tan,b=exp(-b(x_b))f0(0)` satisfy the same (4) and (3) bounds (in fact
-the `B_h` terms simplify). Thus (8) applies separately to both terms, and
+The exact bridge formula identifies the scalar-tower heat diagonal minus
+the fixed-angular-mass orbit heat diagonal as
 
-    integral_0^delta |R_sc,g^hit(t)-R_sc,tan^hit(t)| dy
-       <= (C_g+C_tan) U W t^(3/2).                       (9)
+    Delta_sc(t;y)=1/(2 pi t) E[ W_T(b) (Theta(t S_b)-Theta(t)) ], (9)
 
-If the common localization cutoff is one on `0<=y<=delta_0`, its transition
-region has `P(Hit)<=exp(-delta_0^2/t)`; all bounded transition-direction
-terms there are superpolynomially small. Equation (9) therefore gives the
-`O(t^(3/2))` target for this specified curved-minus-flat scalar hit
-component. It does not assign the estimate to the whole source
-`r_curved`: that assignment requires proving the source's localized tangent
-prescription is exactly this scalar tangent block plus the complementary
-non-hit and other-vertex blocks under one common insertion and regulator.
+where `W_T=A_h^(-1/2) exp(t B_h^2/(4 A_h)) I_T` includes all thermal
+images. This is the scalar angular-mass part of the full-Weyl/orbit
+correction on the common product-mode realization; the `mu C_b` matrix
+correction is not included. It is an exact positive-time identity under
+the domain and trace assumptions of the curved scalar-tower formula.
+
+Set `F_b=Theta(t S_b)-Theta(t)`. At the seed `S_0=1`, so `F_0=0`. Its
+first two variations are exactly
+
+    F_u=t Theta'(t) S_u,
+    F_w=t Theta'(t) S_w,
+    F_uw=t Theta'(t) S_uw+t^2 Theta''(t) S_u S_w.       (10)
+
+Since `Theta(t)=C/t+rho(t)` with bounded `rho',rho''`, (2) gives
+`|F_u|<=C U r^3/t`, `|F_w|<=C W r^3/t`, and
+`|F_uw|<=C U W r^6/t`. Differentiating the product in (9) uses
+
+    partial_uw(W_T F_b)|_0
+        =(W_T)_u F_w+(W_T)_w F_u+W_T F_uw,              (11)
+
+because the term `(W_T)_uw F_0` vanishes. Equations (5), (10), and (11)
+bound the zero-image mixed correction density by
+
+    |partial_uw Delta_sc(t;y)|_Hit
+        <= C U W t^(-2) E[1_Hit r^6].                    (12)
+
+Here the differentiated nonzero images are superpolynomially small by the
+explicit winding estimate above. Integrating (12) with (1) for `k=6`
+proves
+
+    integral_0^delta |partial_uw Delta_sc(t;y)|_Hit dy
+        <= C_* U W t^(3/2).                              (13)
+
+Thus the seam-hit part of the scalar angular-mass correction relative to
+the parent orbit family has the target power. This is closer to the
+full-Weyl/orbit Duhamel term than a bound on `Theta(tS_b)` alone, but it
+still does not control the non-hit part, local subtractions or the source's
+physical `r_curved` under a common regulator.
 
 ## First unsupported implication
 
-The first unsupported implication is identifying the source's full
-localized tangent prescription with this exact scalar block decomposition,
-while preserving the complementary non-hit response, actual contact,
-density and cutoff terms. Equation (9) bounds one specified component; it
-is not a bound for `r_curved` and not a physical admission margin.
+The first unsupported implication is combining this scalar hit estimate
+with the non-hit local response and source tangent subtraction, while
+preserving the actual contact, density and cutoff terms. Equation (13)
+bounds one part of the scalar angular-mass correction; it is not a bound
+for `r_curved` and not a physical admission margin.
 
 Numerical role: none.
 
