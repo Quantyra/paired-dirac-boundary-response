@@ -868,3 +868,21 @@ Remaining to-do list: verify (8) directly from the commutator vertex
 integrals; derive its curved counterpart and combine with `K_2+H_1`; close
 the full source ledger and endpoint; finish novelty/manuscript review and
 GCP Lean certification.
+
+### Handoff correction: incompatible flat scalar next coefficients
+
+An exact flat coefficient audit shows that the scalar bridge coefficient in the preceding sections is inconsistent with the exact fixed-mode scalar correction. This is a stronger issue than the previously stated inferred commutator target.
+
+In the flat local expansion of the exact fixed-mode full-minus-orbit multiplier (equation (3) of `flat-tangent-angular-mode.md`), summing the massive tower gives
+
+    D_sc,dbl(t,k) = (2 C/(pi t^2)) [3 - t k^2/4 + O(t^2 k^4)]
+
+for the singular leading tower coefficient `Theta(t) ~ C/t`, `-Theta'(t) ~ C/t^2`, and `t Theta''(t) ~ 2C/t^2`. Thus its doubled-trace `U_1/t` coefficient is `-C/(2 pi)`.
+
+By contrast, the flat scalar bridge calculation in this note records `integral K_2=-2 U_1`, and its prefactor gives the doubled-trace coefficient `-C/pi`. The bridge representation is stated to compute the same scalar family `Q_sc=L_b+mu^2 exp(-2b)` relative to `L_b`; therefore the factor-two discrepancy must be resolved. It is not justified to infer a gradient-commutator coefficient by subtracting these inconsistent scalar values. The exact angular-vertex decomposition in `full-weyl-orbit-correction-vertices.md` also algebraically reproduces the complete flat full-minus-orbit addition, reinforcing that the residual inference needs re-audit.
+
+Treat the `-C/pi` bridge next coefficient and the derived `+b_s^2/(2 pi)` commutator target as withdrawn pending reconciliation. Re-derive the bridge covariance/path coefficient and all normalizations against the exact fixed-mode multiplier, checking the relationship between doubled and physical-half traces. Preserve the leading `t^-2` comparison only insofar as independently verified. No curved extension or physical source match follows.
+
+Concrete claim: the current bridge and fixed-mode calculations give incompatible flat scalar `U_1/t` coefficients by a factor of two. First unsupported implication: a corrected coefficient common to both representations, then the commutator split and curved ledger. Numerical role: none.
+
+Remaining to-do list: resolve the factor-two flat scalar coefficient discrepancy; correct the affected coefficient claims; then continue the complete source-observable/common-regulator and novelty audits, with Lean certification on GCP for supported formalizable identities.
