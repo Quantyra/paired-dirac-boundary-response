@@ -429,3 +429,58 @@ used an inconsistent sign for the connection Laplacian and potential. Commit
 `Q=nabla^*nabla+V`, `nabla^*nabla=-nabla^i nabla_i`, the correct formula is
 `[Q,A]=-2(nabla^i A)nabla_i-(nabla^i nabla_i A)+[V,A]`. The exact cutoff
 identity (8) and Duhamel orientation are unchanged.
+
+## Interior commutator in the source orbit metric
+
+The local operator in (10) can be written explicitly in the static orbit
+collar used for the source. Let
+
+    g = dy^2 + f(y)^(-2) d tau^2,
+    e_y = partial_y,       e_tau = f(y) partial_tau,
+    h(y) = f'(y)/f(y).
+
+Choose the Clifford convention so the tangential multiplier in the odd-odd
+identity is `X=epsilon c(e_tau)`, `epsilon in {+1,-1}`. Let the twisting
+connection be unitary and Clifford-compatible, and write
+`Q=nabla^*nabla+V` with the positive connection Laplacian. The orthonormal
+frame connection gives
+
+    nabla_(e_y) e_tau = 0,
+    nabla_(e_tau) e_tau = h e_y,
+    nabla_(e_tau) e_y = -h e_tau.
+
+The twist connection commutes with Clifford multiplication, so
+
+    nabla_(e_y) X = 0,
+    nabla_(e_tau) X = epsilon h c(e_y),
+    nabla^i nabla_i X = -h^2 X.
+
+Substitution into (10) yields the exact smooth-collar identity
+
+    [Q,X] = -2 epsilon h c(e_y) nabla_(e_tau)
+              + h^2 X + [V,X].                         (11)
+
+Here `V` retains the complete zeroth-order endomorphism, including the
+magnetic curvature term in the Lichnerowicz formula. The scalar-curvature
+part of `V` commutes with `X`, while any chirality-valued magnetic term must
+be retained in `[V,X]`. In the flat, constant-field limit `h=0`, that magnetic
+commutator is not zero in general; omitting it would lose the flat
+odd-odd coefficient already calculated in
+`full-weyl-commutator-flat-coefficient.md`.
+
+Equation (11) is an interior operator identity, not yet an asymptotic trace
+coefficient. The next calculation is to insert (11) into the localized
+Duhamel words, use the heat-kernel derivative parametrix, and evaluate the
+mixed multiplier pairing through the required order. The resulting local
+coefficient must then be compared term-by-term with the curved tangent and
+source contact/density/boundary subtraction. The cutoff-transition terms
+remain controlled separately by (8)-(10).
+
+Concrete claim: on the smooth static orbit collar, the commutator needed in
+the localized defect is (11), with a geometric first-order term, a
+`h^2 X` term, and the full endomorphism commutator `[V,X]`. Ordinary
+argument: compute the Levi-Civita derivatives of the orthonormal frame,
+use Clifford compatibility, calculate the rough Laplacian of `X`, and
+substitute in the general Laplace-type commutator. First unsupported
+implication: evaluate its local Duhamel trace coefficient and match every
+curved source subtraction term. Numerical role: none.
