@@ -404,6 +404,20 @@ density, boundary transgression, LLL, and local restorations under the same
 regulator. Equation (5.7) does not identify `r_curved` with either bracket
 or justify the cut and proper-time limits.
 
+For the still-unadopted candidate `r_cand,eta=H_FW+A_eta-T_4,chi`, with
+`A_eta` the signed action terms assigned outside `H_FW`, the same finite-cut
+ledger would read
+
+    r_cand,eta
+      =[H_orb-G_src]+[D-C_src]+[J_src''-T_4,chi]+A_eta. (5.8)
+
+Equation (5.8) requires every bracket to use the same Hilbert space, trace
+density and regulator. It makes the four order-zero matching obligations
+visible, but does not define the frozen source's `r_curved`, establish the
+term allocation in `A_eta`, or prove a cancellation. The candidate and the
+unresolved allocation are detailed in
+`../notes/p1d-operational-definition-proposal.md`.
+
 There is an exact finite-cut identity for the conformal congruence that
 specifies what a physical-to-product trace comparison must retain. Let `D`
 be closed and densely defined on the fixed-cut Hilbert space, let bounded real

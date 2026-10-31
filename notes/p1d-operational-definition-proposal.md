@@ -120,6 +120,29 @@ regulators, followed by positive-time convergence and the stated joint
 endpoint limit. The cutoff `chi`, `U_eta`, `C_eta`, `A_eta`, `c_phys`, and
 order of limits are all part of the theorem statement.
 
+## Conditional exact ledger for the Section 4 candidate
+
+On one fixed finite cut, suppose the physical response has been identified
+with `H_FW`, all terms use the same Hilbert space, trace density and positive
+proper time, and the source conversion satisfies
+`J_src''=G_src+C_src`. Combining `H_FW=H_orb+D` with the source identity gives
+the exact algebraic decomposition
+
+    r_cand,eta
+      = H_FW + A_eta - T_4,chi
+      = [H_orb-G_src] + [D-C_src]
+          + [J_src''-T_4,chi] + A_eta.                 (1)
+
+Here `T_4,chi` is the localized Section 4 tangent candidate and `A_eta` is
+the signed sum of action terms not already included in `H_FW`; the LLL,
+boundary transgression, contacts and finite local restorations must each be
+assigned exactly once. Equation (1) is only an identity for the declared
+candidate after those identifications have been proved. It does not establish
+that the frozen source's verbal `r_curved` equals `r_cand,eta`, that the
+brackets cancel, or that the target estimate holds. It exposes four pieces
+whose order-zero coefficients and common-regulator limits must be matched
+separately before the candidate can be adopted.
+
 ## Why the definition matters
 
 Equation (5.6) of the draft is one fixed-interior odd-odd component after a
