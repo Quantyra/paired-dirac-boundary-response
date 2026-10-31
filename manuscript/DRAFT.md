@@ -290,6 +290,14 @@ The triangle has measure da db, with no additional factorial. For a parameter-de
 
 The mixed square form vertex V_uw includes both cross-products of the first Dirac variations, as well as the two terms containing the mixed Dirac variation. These are retained in addition to any separate density or action-restoration terms. The Galerkin and positive-time passage under the stated holomorphic form and trace hypotheses is developed in `../notes/fixed-cut-moving-insertion-mixed-response.md`; the expressions in (5.1) are not asserted to be individually convergent unregularized form-operator integrals.
 
+There is also a fixed-positive-time assembly on the stipulated smooth four-dimensional physical finite-cut model. Write K_s=exp(-sL), let q_v be the first variation of the square form, and let q_uw be its full mixed second variation. With F_uw(s)=Tr_form[q_u K_s q_w K_(t-s)], the form-Duhamel identity is
+
+    partial_u partial_w Tr(K_t)
+      = integral_0^t (t-s)[F_uw(s)+F_wu(s)] ds
+          - t Tr_form[q_uw K_t].
+
+Under the common smooth-cut, field-approximation, form-trace and heat-smoothing hypotheses, the complete right side converges jointly in the physical cut and field approximants for each fixed t>0; its mixed second-form vertex retains all four terms. Rotation-invariant directions also permit absolute angular-block summation and mixed differentiation at each fixed compact cut and positive time. See `../notes/physical-fixed-time-mixed-response-assembly.md` for the hypotheses and convergence argument. This supplies a conditional fixed-time physical form response, not a small-time-uniform estimate, the source's product-frame physical-half observable, or a common-regulator limit.
+
 For the single V_uw term, a fixed conformal insertion b can be moved to a reference position with an explicit heat-commutator correction. At finite matrix level, for a+c=t and a>=t/2,
 
  Tr[b K_a V_uw K_c]=Tr[b K_t V_uw]+Tr([K_c,b]K_a V_uw). (5.3)
