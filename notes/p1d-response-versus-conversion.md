@@ -133,11 +133,42 @@ commutator vertices, whereas `C_src` is the conversion contact. Any
 cancellation between these brackets needs its own operator and trace
 derivation.
 
+There is a more explicit form for the first bracket when the source's
+fixed-Hilbert-space smearing identity applies on this same cut. Let
+`h_2(t)` be the mixed Hessian of the unweighted two-dimensional orbit heat
+trace `Tr_bar(exp(-t L))`, before adding the angular masses. The frozen
+source identity is
+
+    h_2(t) = -2t partial_t D_w T_t(u)
+           = -2t partial_t D_u T_t(w),
+
+with equality of the two mixed variations. The orbit family holds each
+angular mass fixed, so its massive sum is `H_orb(t)=Theta(t) h_2(t)`;
+the angular weight must stay outside the proper-time derivative. Therefore
+
+    G_src(t) = -Theta(t)/(2t) partial_t h_2(t),
+
+and (4) becomes
+
+    H_FW(t)-J_src''(t)
+      = Theta(t) h_2(t) + D(t)
+        + Theta(t)/(2t) partial_t h_2(t) - 2 Theta'(t) I_t(u,w). (4a)
+
+This is an exact positive-time finite-cut identity only under the source
+smearing identity, common mode domain, trace density, and differentiability
+and angular-sum hypotheses just stated. It does not turn the source's
+geometric term into the orbit Hessian: it relates that geometric term to
+the derivative of the unweighted orbit Hessian. Equation (4a) isolates
+what an endpoint proof must estimate, but does not control the small-time
+subtraction, the LLL, boundary transgression, local restorations, or the
+moving-cut limit.
+
 For local tangent subtractions `T_FW,T_src` at that same cut, set
 `delta_T=T_FW-T_src`. The corresponding remainder ledger is
 
     r_FW(t) - r_src(t)
-      = [H_orb(t)-G_src(t)] + [D(t)-C_src(t)] - delta_T(t). (5)
+      = Theta h_2 + D + Theta/(2t) partial_t h_2
+        - 2 Theta' I_t(u,w) - delta_T(t).                (5)
 
 The source's separate LLL block, physical boundary transgression, local
 action restorations and prescribed normalizations are not included in
