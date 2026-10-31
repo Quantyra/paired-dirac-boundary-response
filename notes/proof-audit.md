@@ -30,6 +30,14 @@ with the derivatives of both partner heat families. All local terms must
 also be retained. This is a precise comparison target, not the physical
 source bridge.
 
+At common finite cut and positive time, the
+[response-versus-conversion ledger](p1d-response-versus-conversion.md)
+separates `H_FW-J_src''` into the orbit/geometric bracket and the
+full-Weyl-correction/source-contact bracket. The identity retains all
+positive-time correction vertices and the `2 Theta' I_t` contact. It does
+not identify the source's tangent-subtracted `r_curved`, assign the cutoff
+and local-action terms, or justify endpoint limits.
+
 The full-Weyl flat tangent package now includes the exact angular mode
 vertices, positive-time tower sum, and an all-frequency small-time local
 subtraction in [`full-weyl-angular-local-subtraction.md`](full-weyl-angular-local-subtraction.md).

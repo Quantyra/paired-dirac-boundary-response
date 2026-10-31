@@ -385,6 +385,25 @@ normalization. Existence and physical normalization of `C_other`, and this
 cancellation identity, have not been proved. This is a necessary matching
 condition, not a disproof of the complete bound.
 
+At a fixed finite cut and positive time, a second exact ledger compares the
+full-Weyl heat Hessian with the source's geometric/variable-mass conversion.
+Assume the massive-mode sums, common form domains, trace density and Duhamel
+identities in `../notes/p1d-response-versus-conversion.md` hold on the same
+Hilbert space. Write `H_FW=H_orb+D`, where `D` contains the mixed correction
+vertex and both ordered orbit/correction and correction/correction terms,
+and write `J_src''=G_src+C_src`, with `C_src=2 Theta'(t) I_t`. Then
+
+    H_FW(t)-J_src''(t)
+      =[H_orb(t)-G_src(t)]+[D(t)-C_src(t)].             (5.7)
+
+This is an algebraic identity under those common-cut assumptions; neither
+bracket is shown to vanish. In particular, `D` is not the conversion contact,
+and `J_src''` is not the localized tangent. To turn (5.7) into a formula for
+`r_curved`, one must still match its tangent and cutoff terms, physical
+density, boundary transgression, LLL, and local restorations under the same
+regulator. Equation (5.7) does not identify `r_curved` with either bracket
+or justify the cut and proper-time limits.
+
 There is an exact finite-cut identity for the conformal congruence that
 specifies what a physical-to-product trace comparison must retain. Let `D`
 be closed and densely defined on the fixed-cut Hilbert space, let bounded real
