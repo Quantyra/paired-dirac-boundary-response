@@ -182,6 +182,41 @@ other response and source terms under the common regulator; complete the
 theorem-specific novelty audit and manuscript; certify supported claims in
 Lean on GCP.
 
+### Endpoint-uniform fixed-interior odd-odd defect coefficient (2026-10-31 HST)
+
+Technical commits `efe4219` and `2b382ac` derive a fixed-model result for
+the localized odd-odd defect away from the seam. Exact unitary kernel
+conjugation reduces the mixed heat product to the relative transport of
+`X`; its linear term has zero fiber trace, and its quadratic term gives the
+rank-two density `-(h^2/(2 pi))(sr/t^2)` uniformly over the closed Duhamel
+simplex. After the two ordered words and the massive sphere tower, the raw
+rank-two local density is `-b_S^2 h^2 u'w'/(6 pi)+O(t)`. The full derivation,
+including the Gaussian covariance and endpoint remainder, is in
+[`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md).
+
+This closes the fixed-interior endpoint asymptotic only. It does not control
+cutoff-transition terms as the cutoff approaches the seam, moving-cut
+domains, physical-half normalization, source contact/density, same-boundary
+word, transgression or LLL. As recorded in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md),
+the raw `t^0` density must either be part of the exact localized tangent
+subtraction or cancel against other vertices before the source's
+`t^(3/2)` remainder target can hold. This is a necessary matching condition,
+not a failure result for the complete response.
+
+Concrete claim: the fixed compactified interior defect has the displayed
+endpoint-uniform local coefficient under the smooth parametrix hypotheses.
+Ordinary argument: use the exact conjugated kernel, covariant Taylor
+expansion and `sr/t` relative Gaussian, then restore the exact angular mass
+shift. First unsupported implication: match it to the source tangent and
+remaining response sectors, including moving-cut and common-regulator
+transfer. Numerical role: none; Lean certification: none for this analytic
+estimate.
+
+Remaining to-do list: prove seam/moving-cut localization; match the
+physical-half source response and all sectors; finish prior art and manuscript;
+certify supported formalizable claims on GCP.
+
 ### Scalar/contact algebra formalization draft (2026-10-31 HST)
 
 `lean/CurvedScalarContactJet.lean` states the pointwise rational-jet

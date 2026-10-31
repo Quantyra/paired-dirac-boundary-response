@@ -292,6 +292,38 @@ limit, spatial-cut removal, or an interchange of those limits. Equations
 (4)--(5) sharpen the finite-cut comparison target but do not close the
 source-observable bridge.
 
+### New necessary matching condition from the interior defect
+
+The fixed-product interior calculation in
+[`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md)
+now gives, for a smooth interior cutoff, the endpoint-uniform odd-odd defect
+component
+
+    R_defect,int(t;z)
+      = -(b_S^2/(6 pi)) h(z)^2 u'(z)w'(z) + O(t)
+
+in the raw rank-two orbit normalization, after the massive tower is summed.
+The coefficient follows from `-Theta'(t)~2b_S^2/t^2`; no orbit measure
+integration, per-exterior physical-half factor or moving-cut transfer has
+been applied. This component is distinct from the same-boundary word and
+from the source contact `2 Theta'(t) I_t`.
+
+The P1-D target is a remainder after its localized tangent subtraction and
+cutoff terms, not the unsubtracted odd-odd word. Therefore, to use a
+`t^(3/2)` remainder bound, the same-regulator ledger must show either that
+this `t^0` interior defect coefficient is included in the specified tangent
+subtraction or that it cancels against explicitly computed full-Weyl/source
+vertices. If neither occurs, this component alone is too large to satisfy
+P1-D's `t^(3/2)` target. This is a necessary condition inferred from the
+component expansion, not a conclusion that P1-D fails: the other response
+sectors and subtraction identity have not been assembled.
+
+Concrete claim: the fixed-interior defect creates the displayed raw
+rank-two `t^0` coefficient, so P1-D requires its subtraction or a proved
+cancellation. First unsupported implication: identify this component in
+the source's exact weak-response/tangent ledger and prove the matching
+physical normalization. Numerical role: none.
+
 Remaining to-do list: derive the exact same-regulator identity between the
 full-Weyl response, source conversion, contact and LLL; then prove the
 uniform curved remainder, finish the physical-domain and novelty audits,
