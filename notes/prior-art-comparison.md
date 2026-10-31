@@ -403,3 +403,13 @@ mass/log coefficients and the physical P1 regulator. Numerical role: none.
 Remaining to-do list: finish the P1 source/common-regulator bridge, complete
 the higher-order and theorem-specific prior-art comparison, decide S001,
 and certify the supported scope on GCP.
+
+## Additional adjacent prior art: eta-invariant variations for local boundary conditions
+
+Ivanov and Vassilevich, [*Anomaly inflow for local boundary conditions*](https://arxiv.org/abs/2208.00476v2), JHEP 09 (2022) 250, study the eta-invariant of Dirac operators on compact manifolds with local boundary conditions using heat-kernel methods. They require strong ellipticity, give the heat-trace coefficient expansion for smooth local projectors, relate the eta variation to heat coefficients, and treat metric variation through the corresponding higher heat coefficient. Their analysis includes Euclidean and complexified chiral-bag conditions and local boundary conditions in odd dimensions.
+
+This is adjacent prior art for local Dirac projectors, heat-kernel anomaly methods, and metric-dependent spectral invariants. It does not compute the paired full-Weyl mixed mass/log Hessian, the angular-mass tower and LLL allocation, rough cubic/log seam terms, or the physical finite-cut/conformal-infinity common-regulator response. It therefore narrows novelty claims based on the general boundary-anomaly method while leaving P1's specific response and physical bridge untested. Compare the final P1 boundary projector and ellipticity hypotheses explicitly before making a novelty decision.
+
+Concrete claim: the cited work establishes eta/heat-kernel anomaly results for strongly elliptic local Dirac boundary problems and discusses metric variations. First unsupported implication: determine whether any specialization matches P1's paired second response after the operator, projector, normalization, and regulator are fixed. Numerical role: none. Lean role: none.
+
+Remaining to-do list: match the final P1 operator and observable against this local-boundary eta framework; close the physical common-regulator response; complete the theorem-specific novelty decision; certify supported claims on GCP.
