@@ -270,7 +270,7 @@ In the inward-normal convention the Robin endomorphism is `S=-K/2`; at the
 conformal boundary of this static seed, `K=0`. These are smooth local mixed
 Dirichlet/Robin conditions. The established mixed-boundary setup for a
 Laplace-type operator on a smooth compact vector bundle is precisely this
-class; see [Branson--Gilkey--Kirsten--Vassilevich, §§1--2](https://arxiv.org/abs/hep-th/9906144),
+class; see [Branson--Gilkey--Kirsten--Vassilevich, Â§Â§1--2](https://arxiv.org/abs/hep-th/9906144),
 which states the mixed decomposition and the elliptic (Lopatinski--Shapiro)
 condition. The finite-cut transport caveat in `full-weyl-mode-form-domain.md`
 continues to apply away from the pinned compactified boundary.
@@ -384,11 +384,11 @@ multiplier `A` in (8), common-domain Duhamel is valid:
     [A, exp(-r Q)]
        = integral_0^r exp(-(r-s)Q) [Q,A] exp(-sQ) ds.    (9)
 
-Write `Q=-(nabla^*nabla+E)` in Laplace-type form. On the smooth core the
-commutator is the explicit first-order differential operator
+Write `Q=nabla^*nabla+V`, where `nabla^*nabla=-nabla^i nabla_i` is the positive
+connection Laplacian and `V` is a smooth endomorphism. On the smooth core,
 
     [Q,A] = -2 (nabla^i A) nabla_i
-             - (nabla^i nabla_i A) - [E,A].             (10)
+             - (nabla^i nabla_i A) + [V,A].             (10)
 
 Thus (8)-(10) reduce the non-hit term to local heat-kernel words with the
 usual common `Q` domain. Expanding the `chi_rho [Q,X]` contribution is the
