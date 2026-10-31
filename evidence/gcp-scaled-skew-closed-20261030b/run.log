@@ -1,0 +1,25 @@
+8d1f5857a2ace5fe7a04513211aecbb72390ef85ac56e184b2a8efeaad40760c  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-scaled-skew-closed-20261030b/ScaledSkewClosedDraft.lean
+5d967115b02d0f86578d7807135ea44b56c57c81ee214968b8d594e9538bf76e  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mass-skew-surjective-20261030d/MassSkewSurjectiveDraft.olean
+7f7813d876eaf820cd91aab40f933bf9feaebd0dd8522ebf455ad52a3c91f261  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mass-skew-surjective-20261030d/GraphProjectionDraft.olean
+e17248d88c8388de9ba301426e2a96221c3194355010b29cf0da2bf1f439966f  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-partner-skew-operator-20261030a/PartnerSkewOperatorDraft.olean
+0f76d5c79ab9c7f06412bcf397cf358bd655bdd134f36836f10450d5e9d02716  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-partner-skew-20261030a/PartnerSkewDraft.olean
+d0a87cd35230f5fc2a47fb47b9aa3d24f73976c3c58a1813b57c4fc11d8af8e1  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-partner-skew-20261030a/LeftUnitarySquare.olean
+05b6f774ccd2d2fb83cad5ead362b95121cb52faaef7f1c93f0e9b73750991ee  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean/PositiveSquareDraft.olean
+7c5402e9fe23a9e3d83cc7ca7f077f20904c5a06b0e1602289ba9f3829f7166f  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-trace-sourceonly-f1f1c26-20261029/source/lean/SquareDomainDraft.olean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+ScaledSkewClosedDraft.lean:11:0: warning: automatically included section variable(s) unused in theorem `PairedDirac.scaled_operator_closed_draft`:
+  [CompleteSpace H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'PairedDirac.scaled_operator_closed_draft' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-run="$HOME/quantyra-space-runs/paper1-scaled-skew-closed-20261030a"
+run="$HOME/quantyra-space-runs/paper1-scaled-skew-closed-20261030b"
 base="$HOME/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029"
 surj="$HOME/quantyra-space-runs/paper1-mass-skew-surjective-20261030d"
 prior="$HOME/quantyra-space-runs/paper1-partner-skew-20261030a"

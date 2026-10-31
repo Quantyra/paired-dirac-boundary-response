@@ -16,7 +16,8 @@ theorem scaled_operator_closed_draft
   have hgraph : ((c • Q).graph : Set (H × H)) =
       (fun p : H × H => (p.1, c⁻¹ • p.2)) ⁻¹' (Q.graph : Set (H × H)) := by
     ext p
-    simp only [Set.mem_preimage, LinearPMap.mem_graph_iff]
+    change p ∈ (c • Q).graph ↔ (p.1, c⁻¹ • p.2) ∈ Q.graph
+    rw [LinearPMap.mem_graph_iff, LinearPMap.mem_graph_iff]
     constructor
     · rintro ⟨x, hx, hy⟩
       refine ⟨x, hx, ?_⟩
