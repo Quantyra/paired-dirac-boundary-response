@@ -52,9 +52,13 @@ both orders of the first-vertex pair and the entire mixed vertex. Passage to
 an infinite angular tower needs a separate summability argument because the
 coefficients grow as mu and mu²; differentiation under the common regulator,
 physical density/contact normalization, and the small-time tangent
-subtraction also require proof. A possible cancellation between opposite
-mu sectors must be proved for the actual multiplicities and domain, not
-assumed from oddness of an isolated vertex.
+subtraction also require proof. The conditional common-orbit cancellation
+between opposite massive signs is proved in
+[`full-weyl-opposite-sign-cross-cancellation.md`](full-weyl-opposite-sign-cross-cancellation.md).
+It removes the odd-gradient terms from the orbit-angular cross response only
+when the sign-pair mode/domain and trace-density identifications there hold;
+it retains the even odd-odd angular products and does not provide the curved
+small-time subtraction.
 
 No numerical calculation is needed for these algebraic derivatives.
 Physical spin/bundle identification and the real family hypotheses remain
