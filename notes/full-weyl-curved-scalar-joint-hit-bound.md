@@ -213,6 +213,20 @@ preserving the actual contact, density and cutoff terms. Equation (13)
 bounds one part of the scalar angular-mass correction; it is not a bound
 for `r_curved` and not a physical admission margin.
 
+The path-jet estimate alone cannot be extended by replacing `Hit` with its
+complement. On paths confined to a fixed collar subinterval `y in [a,b]`
+with `a>0`, the estimate `r=y+sqrt(t) Z` and the local factor bound in
+(12) give only a bound proportional to
+
+    U W t^(-2) integral_a^b E[r^6] dy = O(U W t^(-2)),
+
+not `O(t^(3/2))`. This is a limitation of the estimate, not evidence that
+the actual response diverges: the full local heat expansion and the source's
+prescribed subtraction may cancel these bulk terms. Closing the non-hit
+piece therefore requires deriving those coefficients for the scalar
+angular-mass correction, matching them to the original local contacts and
+restorations, and bounding the remaining localized parametrix defect.
+
 Numerical role: none.
 
 Remaining to-do list: match the scalar terms to the physical common

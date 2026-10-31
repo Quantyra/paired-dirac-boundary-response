@@ -46,15 +46,18 @@ For the scalar angular-mass part, the conditional
 [`curved scalar tower formula`](full-weyl-curved-scalar-tower-formula.md)
 puts `Theta(t S_b)` inside the parent's exact Brownian bridge expectation and
 retains all antiperiodic images. This is an exact representation for the
-subfamily `L_b+mu^2 exp(-2b)`. The joint bridge-hit note now derives the
-source-coordinate path jets for `A_h,B_h`, controls derivatives on the
-zero-image orbit factor and differentiated thermal images, and compares the
-curved scalar hit component with its constant-radius tangent block at
-`O(t^(3/2))`. The estimate remains restricted to seam-hit paths and its
-identification with the source's full localized subtraction is open. It
-does not bound the non-hit local response, the full contact/density/LLL
-allocation, or the commutator sector and its surviving odd-odd pair, which
-still need their own matrix insertion estimate.
+subfamily `L_b+mu^2 exp(-2b)`. The joint bridge-hit note derives the exact
+positive-time scalar correction against the fixed-angular-mass orbit family,
+with factor `Theta(t S_b)-Theta(t)`, and bounds its seam-hit contribution by
+`O(t^(3/2))` using source-coordinate path jets for `A_h,B_h` and the
+differentiated thermal images. Replacing the hit event by its complement in
+the same path-jet estimate gives no small-time decay on a fixed interior
+collar; the prescribed local heat expansion/subtraction must first be
+derived and matched. Thus the scalar estimate remains one component and is
+not identified with the source's `r_curved`. It does not bound the non-hit
+subtracted response, the full contact/density/LLL allocation, or the
+commutator sector and its surviving odd-odd pair, which still need their own
+matrix insertion estimate.
 
 The joint scalar-hit result is detailed in
 [`full-weyl-curved-scalar-joint-hit-bound.md`](full-weyl-curved-scalar-joint-hit-bound.md).
