@@ -59,9 +59,52 @@ shrinks. On a fixed finite angular truncation `|mu|<=M`, by contrast,
 `|tau_mu|<=M A_ell`, so the mismatch tends to zero with `A_ell`.
 
 This only rules out an unweighted operator-norm argument that is uniform over
-the full angular tower. It does not rule out convergence after heat weights,
-resolvent weights, or a common-regulator trace estimate; such a weighted
-transport estimate is precisely what the physical matching still needs.
+the full angular tower. A scalar heat weight does yield the following
+positive-time summability estimate, without addressing the full operator
+semigroup. Use the recorded sphere spectrum
+
+    mu_n^2=n(n+q)/b_0^2,       d_n=2(q+2n),
+    Theta(t)=sum_(n>=1) d_n exp(-t mu_n^2),
+
+from [`angular-weighted-locality.md`](angular-weighted-locality.md). Define
+
+    M(t,A_ell)=sum_(n>=1) d_n exp(-t mu_n^2) delta_n(A_ell),
+    delta_n(A_ell)=|tanh(mu_n A_ell)|/sqrt(1+tanh(mu_n A_ell)^2).
+
+Since `delta_n<=1/sqrt(2)` and `delta_n<=|mu_n|A_ell`, Cauchy--Schwarz
+gives
+
+    M(t,A_ell) <= min(Theta(t)/sqrt(2),
+        A_ell sqrt(Theta(t)(-Theta'(t)))).             (3)
+
+The angular-weight bound `-Theta'(t)<=(2/(e t))Theta(t/2)` then yields
+
+    M(t,A_ell) <= min(Theta(t)/sqrt(2),
+        A_ell sqrt((2/(e t))Theta(t)Theta(t/2))).       (4)
+
+With `H(t)=2b_0^2/t+(q+2)sqrt(pi)b_0/sqrt(t)`, the explicit estimate
+`Theta(t)<=H(t)` from that note makes (4) a finite bound. In particular,
+for fixed `epsilon>0` it is `O(A_ell)` uniformly on `t in [epsilon,T]`.
+As `t` tends to zero, (4) gives only
+
+    M(t,A_ell) <= min(O(b_0^2/t), O(A_ell b_0^2/t^(3/2))). (5)
+
+Thus this model estimate certifies a small relative weighted mismatch along
+paths with `A_ell/sqrt(t)->0`. For a fixed collar width it does not give a
+vanishing relative error as `t->0`; the unweighted-tower branch of (4)
+remains. In fact, for fixed `A_ell>0`, the Riemann-sum scaling
+`s=n sqrt(t)/b_0` gives
+
+    Theta(t) ~ 2 b_0^2/t,
+    M(t,A_ell)/Theta(t) -> 1/sqrt(2),                    (6)
+
+because `|mu_n|A_ell -> infinity` for every fixed `s>0` in that scaling.
+Thus the scalar heat weight alone leaves a nonzero fraction of the projector
+mismatch at short times. This is a statement about the zero-energy collar
+model, not the full response. It also does not control the full heat semigroup with its
+matrix transport, nonzero spectral parameter, thermal images, or the
+physical density/contact terms. A common-regulator physical matching still
+needs a stronger weighted transport argument.
 
 ## Implication for the paper theorem
 
