@@ -366,6 +366,17 @@ coefficient must be identified in the source's tangent/cutoff ledger before
 using a curved `t^(3/2)` remainder claim. The derivation and normalization
 limits are recorded in `../notes/full-weyl-commutator-joint-hit-bound.md`.
 
+This gives a necessary coefficient test for P1-D. At a fixed cut, suppose
+the complete post-subtraction response admits an expansion
+`r_curved(t)=C_odd+C_other+o(1)`, where `C_odd` includes the odd-odd sector
+in (5.6) and `C_other` contains every other vertex, density/contact,
+boundary, LLL and cutoff/restoration term after the same subtraction. Then
+the claimed `O(t^(3/2))` bound forces
+`C_other=+(b_S^2/(6 pi)) integral (h' u'w'+u''w'') dmu` in the raw rank-two
+normalization. Existence and physical normalization of `C_other`, and this
+cancellation identity, have not been proved. This is a necessary matching
+condition, not a disproof of the complete bound.
+
 Away from the seam, use a smooth cutoff `chi_rho` vanishing near the boundary
 and set `F=chi_rho X`, `G=chi_rho X^(-1)`. The exact localized identity is
 
