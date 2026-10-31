@@ -1,9 +1,9 @@
-﻿#!/bin/bash
+#!/bin/bash
 # Fresh source-only replay of the composed graph bound; run only on GCP.
 set -euo pipefail
-run="$HOME/quantyra-space-runs/paper1-scalar-multiplier-graph-clean-20261030a"
+run="$HOME/quantyra-space-runs/paper1-scalar-multiplier-graph-clean-20261030c"
 archives="$HOME/paper1-exact-tree-archives-20261029"
-work="/dev/shm/paper1-scalar-multiplier-graph-clean-20261030a"
+work="/dev/shm/paper1-scalar-multiplier-graph-clean-20261030c"
 mkdir "$run"
 exec > >(tee "$run/run.log") 2>&1
 trap 'code=$?; printf "%s\n" "$code" > "$run/exit-code"; date -u > "$run/finished-utc"' EXIT
@@ -42,7 +42,7 @@ cd "$work/source/lean"
 cp "$HOME/GraphBoundsComposedDraft.lean" GraphBoundsComposedDraft.lean
 cp "$HOME/ScalarMultiplierGraphBoundsDraft.lean" ScalarMultiplierGraphBoundsDraft.lean
 printf '%s  %s\n' '7d3309e705a992be7c7e4e01a810c7d1f1e5bf008a92c8fed0bab59158703354' GraphBoundsComposedDraft.lean | sha256sum -c -
-printf '%s  %s\n' 'bb4336c01635a39142517f62732fa68128fc69a7e26fbe811c01725d1d082205' ScalarMultiplierGraphBoundsDraft.lean | sha256sum -c -
+printf '%s  %s\n' '98db05b89072dda16131802edbf73da48a8a607cc132db82e15f438c1690d701' ScalarMultiplierGraphBoundsDraft.lean | sha256sum -c -
 git -C "$work/source" status --porcelain > "$run/source-overlay-status.txt"
 sha256sum ./*.lean > "$run/lean-source-sha256.txt"
 mkdir -p .lake/packages
@@ -75,6 +75,8 @@ for package in manifest['packages']:
     print(f'Manifest revision verified: {name} {rev}', flush=True)
 PY
 lake --no-cache build PairedDirac Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus Mathlib.Analysis.SpecialFunctions.ExpDeriv Mathlib.Tactic.FunProp Mathlib.Tactic.Ring Mathlib.Tactic.Linarith Mathlib.Tactic.NormNum
+mkdir -p "$HOME/paper1-scalar-graph-build-cache-20261030c"
+cp -a .lake/build/. "$HOME/paper1-scalar-graph-build-cache-20261030c/"
 lean_path="$(lake --no-cache env printenv LEAN_PATH)"
 export LEAN_PATH="$PWD:$lean_path"
 for name in PairedDirac GraphBoundsDraft GraphBoundsComposedDraft ScalarMultiplierGraphBoundsDraft; do

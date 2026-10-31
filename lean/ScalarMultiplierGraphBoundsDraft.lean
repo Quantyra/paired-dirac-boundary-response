@@ -11,7 +11,7 @@ namespace PairedDirac
 variable {H : Type*} [NormedAddCommGroup H] [NormedSpace ℂ H]
 
 theorem scalar_congruence_graph_bounds_draft
-    (D : H →ₚ.[ℂ] H) (E : H ≃L[ℂ] H) (C : H →L[ℂ] H)
+    (D : H →ₗ.[ℂ] H) (E : H ≃L[ℂ] H) (C : H →L[ℂ] H)
     (hE : ∀ x ∈ D.domain, E x ∈ D.domain)
     (hC : ∀ x : D.domain,
       D ⟨E x, hE x x.property⟩ = E (D x) + C x)
@@ -53,13 +53,14 @@ theorem scalar_congruence_graph_bounds_draft
       ‖E.toContinuousLinearMap‖ * ‖C‖ ≤
           Real.exp (B / 2) * (Real.exp (B / 2) * (G / 2)) :=
         mul_le_mul hE_norm hC_norm (norm_nonneg C) (by positivity)
+      _ = (Real.exp (B / 2) * Real.exp (B / 2)) * (G / 2) := by ring
       _ = Real.exp B * (G / 2) := by rw [hExp]
   constructor
   · calc
       ‖(congruence D E.toLinearEquiv hE) x‖ ≤
           ‖E.toContinuousLinearMap‖ ^ 2 * ‖D x‖ +
             ‖E.toContinuousLinearMap‖ * ‖C‖ * ‖(x : H)‖ :=
-        congruence_graph_upper_draft D E.toContinuousLinearMap C hE hC x
+        congruence_graph_upper_draft D E C hE hC x
       _ ≤ Real.exp B * ‖D x‖ +
           (Real.exp B * (G / 2)) * ‖(x : H)‖ :=
         add_le_add
@@ -71,7 +72,7 @@ theorem scalar_congruence_graph_bounds_draft
           ‖E.symm.toContinuousLinearMap‖ ^ 2 *
               ‖(congruence D E.toLinearEquiv hE) x‖ +
             (G / 2) * ‖(x : H)‖ :=
-        congruence_graph_lower_composed_draft D E.toContinuousLinearMap C hE hC
+        congruence_graph_lower_composed_draft D E C hE hC
           (G / 2) hEinvC x
       _ ≤ Real.exp B *
             ‖(congruence D E.toLinearEquiv hE) x‖ +
