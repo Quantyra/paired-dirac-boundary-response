@@ -1,0 +1,12 @@
+Command: lake env lean /tmp/FullWeylSeamCoefficientComparison.lean
+GCP: quantyra-lean-builder-01, project quantyra-lean-cert-20260915, zone us-central1-a
+Lean: 4.30.0, commit d024af099ca4bf2c86f649261ebf59565dc8c622; Lake 5.0.0
+Source SHA-256: 20B628D173228FE68918A3ACD3DAB5725DC498E2D4F37F3EF428B4324CD20322
+Remote source SHA-256: 20b628d173228fe68918a3acd3dab5725dc498e2d4f37f3ef428b4324cd20322
+
+Lake warnings: all nine reused source-only dependency repositories reported local changes (mathlib, plausible, LeanSearchClient, importGraph, proofwidgets, aesop, Qq, batteries, Cli).
+
+'FullWeylSeamCoefficientComparison.fullWeyl_cubic_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FullWeylSeamCoefficientComparison.fullWeyl_log_matches_orbit_leading_tower' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Exit code: 0

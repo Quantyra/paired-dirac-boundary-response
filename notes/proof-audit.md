@@ -26,6 +26,12 @@ fixed-product tower kernel under explicit Fourier-tail and half-folding
 hypotheses. GCP receipts through fourth polynomial order are indexed in
 [`gcp-full-weyl-angular-jet4-20261030`](../evidence/gcp-full-weyl-angular-jet4-20261030/README.md).
 These advances strengthen the fixed-product tangent calculation only. The
+exact algebraic difference between its full-Weyl cubic coefficient and the
+leading angular-weighted orbit-only coefficient, with their leading logarithmic
+coefficient equality, is also checked in
+[`gcp-full-weyl-seam-comparison-20261031`](../evidence/gcp-full-weyl-seam-comparison-20261031/README.md).
+That receipt assumes the conditional model formulas, uses reused dependencies
+with local-change warnings, and certifies coefficient algebra only. The
 operator gap in [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md)
 shows why the product-frame kernel cannot be inserted directly as the
 physical observable: the transported physical square has a different

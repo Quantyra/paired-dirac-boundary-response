@@ -122,10 +122,16 @@ show that physical observables disagree: conversion, density and second
 vertices, the LLL, physical domains, and common-regulator subtractions have
 not been matched here.
 
-No Lean result is claimed for the integral evaluation or its analytic
-remainders. The existing `FullWeylAngularJet` receipt checks only the rational
-polynomial cancellation in the local jet. Formalization should follow only
-after this ordinary argument and its hypotheses are independently audited.
+The exact rational difference between the conditional full-Weyl cubic and
+orbit-only tower coefficients, and the equality of their leading logarithmic
+coefficients, are checked in the GCP receipt
+[`gcp-full-weyl-seam-comparison-20261031`](../evidence/gcp-full-weyl-seam-comparison-20261031/README.md).
+The run uses Lean 4.30.0 and reused source-only dependencies with local-change
+warnings. This verifies coefficient algebra only. No Lean result is claimed
+for the integral evaluation or analytic remainders. The earlier
+`FullWeylAngularJet` receipt checks only the rational polynomial cancellation
+in the local jet. Neither receipt proves the half-folding normalization,
+physical response, or common-regulator transfer.
 
 Remaining to-do list: verify this tangent asymptotic against the exact
 physical paired observable and common regulator, complete novelty review,

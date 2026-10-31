@@ -196,6 +196,14 @@ The source notes are imported evidence, not yet an independently checked P1
 theorem. No physical action, wormhole existence or stability conclusion is
 asserted here.
 
+The exact rational difference between the leading orbit-only tower estimate
+and the full-Weyl angular-tower diagnostic, together with their leading
+logarithmic coefficient equality, is checked by the GCP
+[coefficient-algebra receipt](../evidence/gcp-full-weyl-seam-comparison-20261031/README.md).
+This assumes the conditional tangent formulas and their half-folding
+normalization; it proves neither formula's analytic asymptotics nor their
+physical source conversion.
+
 Remaining to-do list: prove the endpoint identification and hypothesis match;
 finish the P1-C and novelty audits; formalize the supported claim on GCP; then
 complete the manuscript at the proved scope.

@@ -1,0 +1,7 @@
+Attempt 1: source hash 9F9712318A5FB3949DE73003F849C35E14DE1CD303CC1A65F73086381F1513D7. Lean received a UTF-8-BOM source without imports. It reported an initial token error, missing real-number/tactic instances, and unknown theorem identifiers. Not accepted.
+
+Environment setup: the noninteractive SSH shell did not include the cached toolchain directory in PATH (`lake: command not found`). One attempt to export PATH was malformed by remote command quoting and failed before Lean ran. The accepted command uses the explicit cached Lake binary.
+
+Attempt 2: source hash 2DA12A2CB400F44F21813AE29AA12E8DA274C46DCD1F323B33CBAFC538EC4F07 added `import Mathlib`, but the retained workspace lacked `.lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean`. Not accepted.
+
+Attempt 3: source hash 9674D0A93D2C8FA6CD273B472D083F4B58CCDFD25E091D70DD9E29E9CDA560D9 narrowed imports to `Mathlib.Data.Real.Basic` and `Mathlib.Tactic.Ring`. The identities elaborated, but definitions using real division were rejected as computable definitions because `Real.instDivInvMonoid` is noncomputable. The final source adds `noncomputable section` and is accepted at the SHA recorded in the receipt.
