@@ -60,8 +60,8 @@ Indeed, `exp(-2b)>=a_b`, while the norm of the commutator multiplier
 `Q_orbit,mu(b)=D_b*D_b+mu^2 I`. Therefore, if
 `Tr(exp(-epsilon D_b*D_b))` is uniformly bounded over the chosen compact
 field family, then for every `epsilon>0` the full and orbit heat traces have
-an absolute Gaussian majorant in `|mu|` for `t in [epsilon,T]`. Therefore,
-for sphere masses `mu_n` growing linearly in `n` with multiplicities
+an absolute Gaussian majorant in `|mu|` for `t in [epsilon,T]`.
+For sphere masses `mu_n` growing linearly in `n` with multiplicities
 `d_n=O(n)`, the tower series
 
     sum_(n>=1) d_n integral_epsilon^T (dt/t)
@@ -80,6 +80,63 @@ This is only a regulated comparison at fixed spatial cut and
 `epsilon<=t<=T`. It does not justify `epsilon->0`, `T->infinity`, removal of
 the spatial cut, equality with the source conversion, or inclusion of the
 separate LLL/anomaly term.
+
+## Mixed-derivative tower on a fixed proper-time window
+
+For the mixed response, assume in addition that `b` varies in a bounded
+`W^(1,infinity)` field set, that the real directions `u,w` lie in
+`W^(1,infinity)`, and that the compact-cut quadratic-form family is twice differentiable
+on the first-order form domain. Restrict to the massive tower, with `|mu|`
+bounded below by a positive constant. Assume uniform quadratic-form
+comparability of the positive square to
+
+    ||D psi||^2 + (1+mu^2)||psi||^2,                       (1d)
+
+with comparison constants depending on the field ball and fixed cut, not on
+`mu`. Establishing this coercivity, including the positive lower bound on the
+massive spectrum, is a hypothesis here; (1c) supplies only part of its proof.
+The second-order operator domains need not be common.
+
+The first and mixed second derivatives of the correction at general `b` are
+multiplication operators:
+
+    Delta_mu,b'[v]
+      = -2 mu^2 v exp(-2b)
+        + 2 i mu v exp(-2b) G c(db)
+        - i mu exp(-2b) G c(dv),
+
+    Delta_mu,b''[u,w]
+      = 4 mu^2 u w exp(-2b)
+        - 4 i mu u w exp(-2b) G c(db)
+        + 2 i mu exp(-2b) G c(d(uw)).                       (1e)
+
+Thus the mass-square vertices are controlled by the `mu^2` term in (1d),
+and the commutator vertices by `|mu| <= (1+mu^2)/2`. Together with the
+standard product-rule bounds for the orbit vertices, the full first and
+mixed second form derivatives are relatively bounded by the same energy form,
+with constants independent of `mu` on the declared field and direction
+sets. No common second-order operator domain is needed; the statement is at
+form level.
+
+Under the corresponding compact-cut form-Duhamel trace theorem and a uniform
+bound on `Tr(exp(-epsilon D_b*D_b))` over the field set, positive-time heat
+smoothing and (1c) give constants `c,C,p>0` such that
+
+    |partial_u partial_w Tr(exp(-t Q_full,mu(b)))|
+      <= C (1+|mu|)^p exp(-c epsilon mu^2),
+      epsilon <= t <= T.                                  (1f)
+
+The same bound holds for the orbit family. Since `d_n=O(n)` and
+`|mu_n|` grows linearly, (1f) is summable uniformly on the proper-time
+window. It therefore permits the angular sum and mixed derivative to
+interchange for this finite-cut full-Weyl response, and permits integration
+on `[epsilon,T]` term by term. The LLL remains a separate finite block.
+
+This closes only the massive-tower differentiation on a fixed compact cut
+and a fixed positive proper-time window under the stated form and heat-trace
+hypotheses. It provides no `epsilon->0` bound, moving-cut uniformity, source
+observable identity, physical density/contact or boundary-transgression
+matching, or LLL anomaly transfer. No Lean check is claimed.
 
 ## First and mixed second vertices at the seed
 
