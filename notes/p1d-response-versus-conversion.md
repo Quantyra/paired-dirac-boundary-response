@@ -180,6 +180,44 @@ hypotheses hold. No small-time or endpoint claim follows from integrating
 the differential identity without controlling its reference values and
 integral.
 
+### Smooth interior leading coefficient of the orbit bracket
+
+For smooth directions supported a positive distance from the finite-cut
+boundary, the leading orbit bracket can be derived from the ordinary `a_0`
+heat coefficient and the corrected differential identity. Assume the pinned
+rank-two source physical-half trace, the smooth strongly elliptic finite-cut
+domain, the common mode domain, and the same trace measure as above. The
+two-dimensional Laplace-type heat expansion starts with
+`(4 pi t)^(-1) integral sqrt(g_b) tr(I)`; see
+[Vassilevich, Secs. 2.2 and 4.1](https://arxiv.org/abs/hep-th/0306138).
+For a Weyl change `g_b=e^(2b)g`, the mixed volume jet is
+`partial_u partial_w sqrt(g_b)|_0=4uw sqrt(g)`. Rank two and the source's
+conditional physical-half factor therefore give
+
+    h_2(t)= A(u,w)/t + O(1),
+    A(u,w)=(1/pi) integral_R u w/f_0.
+
+The integral is the full-line pairing of the reflected interior profiles;
+the factor `1/2` relative to the full doubled trace is already included in
+`A`. Integrating `F_j'=-h_2/(2t)` from a fixed positive reference time gives
+
+    F_j(t)=A(u,w)/(2t)+O(|log t|),
+
+where the reference-time value is included in the `O(1)` part. Using
+`Theta(t)=C/t+O(1)`,
+
+    H_orb(t)-G_src(t)
+      = (C/(2pi)) t^(-2) integral_R u w/f_0
+        + O(t^(-1) |log t|).                            (4b)
+
+This gives the smooth-interior zeroth-jet coefficient under the declared
+source trace normalization and explains the nonzero flat orbit bracket.
+It does not cover directions reaching the seam, rough coefficients,
+boundary heat terms, density variation outside this smooth local model, or
+the moving-cut/common-regulator endpoint. The source coefficient and
+reference-time integration remain in the exact ledger; no global `h_2'`
+substitution is made.
+
 For local tangent subtractions `T_FW,T_src` at that same cut, set
 `delta_T=T_FW-T_src`, and define
 

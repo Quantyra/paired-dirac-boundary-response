@@ -138,10 +138,11 @@ conditional physical-half factor to the doubled scalar result gives
 `D_sc=(3C/pi)t^(-2) integral_R uw/f_0+O(t^(-1))`. This gives the conditional
 scalar/contact component `D_sc-C_src=(7C/(2pi))t^(-2) integral_R uw/f_0+
 O(t^(-1))`; it is not the complete `D-C_src`, because the matrix sector is
-still absent. The curved leading coefficient of `H_orb-G_src` must be
-derived independently using the corrected differential identity. This
-comparison assumes the source physical-half normalization and matching
-measure; the observable-level trace identification remains open. It does
+still absent. The smooth-interior leading coefficient of `H_orb-G_src` is
+derived in the finite-cut comparison note using the corrected differential
+identity; seam-reaching directions and the observable-level trace
+identification remain open. This comparison assumes the source
+physical-half normalization and matching measure. It does
 not match density/Jacobian and boundary terms in the complete curved
 response, prove cancellation with local restorations, or establish a
 common-regulator endpoint; see the full finite-cut ledger in
