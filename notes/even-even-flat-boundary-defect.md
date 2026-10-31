@@ -63,17 +63,39 @@ The needed moment assertion is the uniform bound, for each such term,
        [one or more reflected factors][remaining factors]
        dy1 dy2 dy3 <= C t^3.                               (2)
 
-Scaling `yj=sqrt(t) xj` reduces this to a dimensionless integral for time
-fractions in the simplex. The normalization powers cancel: the three
-one-dimensional kernels contribute `t^(-3/2)`, the volume element
-contributes `t^(3/2)`, and the two cubic insertions contribute `t^3`.
-The remaining uniform bound, including corners where two or more fractions
-vanish, is the substantive Gaussian lemma in this argument. At a vanishing
-fraction its kernel must be treated as an approximate identity (a direct
-edge identifies adjacent coordinates, while a reflected edge pins them to
-the seam); simply substituting a delta in a pointwise bound is not enough.
-The draft estimate remains conditional on establishing this uniform
-approximate-identity bound.
+Here is a uniform proof of the moment bound. It suffices to take each edge
+factor to be a Gaussian `g_(lambda_i s_i)` with `lambda_i` in a fixed compact
+subset of `(0,infinity)`; this covers the kernel envelopes in (1). A direct
+edge has argument `y_i-y_(i+1)` and a reflected edge has argument
+`y_i+y_(i+1)`.
+
+If the number of reflected edges is odd, set
+`z_i=y_i-epsilon_i y_(i+1)`, with `epsilon_i=+1` on direct edges and
+`epsilon_i=-1` on reflected edges. The cyclic linear map has determinant
+`1-product(epsilon_i)=2`, hence is invertible with a fixed inverse. Extend
+the positive-octant integral to all `z` after taking absolute values. The
+three normalized Gaussian factors then have bounded total mass, and each
+`y_i` is a fixed linear combination of centered Gaussians with total
+variance `O(t)`. Their degree-six absolute moment is `O(t^3)`. This is uniform
+as any `s_i` tends to zero.
+
+If exactly two edges are reflected, relabel them as
+`r=y_1+y_2`, `s=y_2+y_3`; the remaining direct argument is `s-r`. At fixed
+`r,s>=0`, the common coordinate `y_2` ranges over an interval of length at
+most `min(r,s)`. Also `y_2^3 y_3^3 <= (r+s)^6`. Thus the integral is bounded
+by
+
+    integral_(r,s>=0) (r+s)^7
+       g_(lambda_1 a)(r) g_(lambda_2 b)(s)
+       g_(lambda_3 c)(s-r) dr ds.
+
+Extend this integral to `R^2`. The product is a two-dimensional centered
+Gaussian times a normalization factor `O(t^(-1/2))`; its covariance matrix
+has entries `O(t)` because `a+b+c=t`. Its degree-seven absolute moment is
+therefore `O(t^(7/2))`, giving `O(t^3)` overall. The bound is uniform on the
+closed time simplex by taking limits, including corners with two vanishing
+intervals. Zero reflected edges are the all-direct term, which cancels in
+the trace difference. This proves (2), including the Duhamel endpoints.
 
 For the thermal variables, bound each antiperiodic image kernel in absolute
 value by the positive periodic image kernel. Their convolution on the circle
@@ -93,16 +115,15 @@ uses
 
     sum_(n>=1) d_n mu_n^4 exp(-t mu_n^2)=Theta''(t)<=C t^(-3).
 
-The two time orderings together have simplex area `t^2`. Assuming the
-uniform Gaussian moment lemma above, equation (3) therefore gives the
-boundary-minus-tangent defect
+The two time orderings together have simplex area `t^2`. Equation (3)
+therefore gives the boundary-minus-tangent defect
 
     |R_even-even,bdy(t)|
        <= C_(T,S0,t0,q,b0) U W t^2 Theta''(t) t^(5/2)
        <= C_(T,S0,t0,q,b0) U W t^(3/2).                   (4)
 
-If that lemma holds, this component has an integrable `dt/t^2` endpoint. The estimate concerns
-only the difference caused by the flat boundary kernels; it does not bound
+This component has an integrable `dt/t^2` endpoint. The estimate concerns only
+the difference caused by the flat boundary kernels; it does not bound
 the same-boundary full-line tangent response or its local subtraction.
 
 ## Scope
@@ -113,6 +134,11 @@ decomposition. It does not control variable or curved coefficients, moving
 cuts, physical density/contact, transgression, source conversion, the LLL,
 or the common-regulator endpoint. It closes neither the full even-even
 sector nor the P1 correction by itself.
+
+For the complete P1 argument, the first unsupported implication remains the
+transfer from these flat product-model estimates to the curved, moving-cut
+source family with the prescribed tangent subtraction, common domain and
+physical trace. Numerical role: none; this is an analytic flat-model bound.
 
 Remaining to-do list: establish curved mixed-boundary analogues and match
 all vertices to the source tangent subtraction, sectors and physical

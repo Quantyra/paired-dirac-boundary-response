@@ -357,3 +357,30 @@ massless upper-endpoint cancellation or add the model zero-mode term to an
 already allocated source cocycle. Numerical role: none; this coefficient is
 an analytic local tangent contribution, not a physical admission margin or
 numerical estimate.
+
+## Flat even-even ordered angular boundary defect (2026-10-31)
+
+The companion [`even-even flat boundary-defect estimate`](even-even-flat-boundary-defect.md)
+proves the flat half-cylinder boundary-minus-full-line-tangent defect for
+the ordered pair of even angular first vertices. With cubic vanishing
+`|u|,|w|<=const*y^3`, Dirichlet or bounded constant Robin kernels, the full
+antiperiodic thermal image sum, and the sign-paired mass tower, the two-
+insertion trace defect is `O(t^(5/2))` uniformly over the Duhamel simplex;
+the `t^2 Theta''(t)` weight then gives `O(t^(3/2))`, integrable against
+`dt/t^2`. The Gaussian moment bound includes simplex corners: odd numbers of
+reflected edges are handled by an invertible cyclic change of variables, and
+two reflected edges reduce to a two-dimensional Gaussian with covariance
+`O(t)` and mass `O(t^(-1/2))`.
+
+This closes only the flat even-even boundary-minus-tangent defect. It does
+not estimate the same-boundary full-line tangent response or its local
+subtraction, curved coefficients/domain motion, source conversion, density,
+boundary/contact, LLL, or the common-regulator endpoint. First unsupported
+implication: transfer this flat defect estimate to the admitted curved,
+moving-cut source family with the actual physical trace and common
+subtraction. Numerical role: none.
+
+Remaining to-do list: establish curved/domain transfer and match every
+correction vertex and physical sector to the prescribed source subtraction;
+close the common-regulator endpoint; complete novelty and manuscript review;
+certify supported claims on GCP.
