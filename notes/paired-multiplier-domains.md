@@ -81,6 +81,35 @@ The collar estimates do not themselves prove (1), a uniform trace theorem,
 a fixed square domain, a nonlinear-neighborhood embedding or regulator-uniform
 curved response. Those are separate hypothesis checks or research problems.
 
+### Instantiation on the pinned mass/log family
+
+The pinned rough-variation source at commit
+`f0eab59063422c80ccc7c8e281170c75cc3afc71` supplies the relevant coefficient
+hypotheses for its fixed source realization. Section 2 requires real scalar
+multipliers identical on both copies, bounded value and first weak derivative,
+and zero value and first normal jet at the outer boundary. Section 3 specifies
+`b=c_b y^3+r_b`, with
+`|partial_y^j r_b|<=K j! 100^j y^(4-j)(1+log(1/y))` for `j<=5` on
+`0<y<=0.1`, and requires fixed interior/cold `C^5` charts, regular even disk
+fields, and uniform atlas/coefficient bounds on the bounded family.
+
+On the collar, the first two derivatives obey
+
+    |b'| <= 3K y^2 + 100K y^3 L(y),
+    |b''| <= 6K y + 20000K y^2 L(y),
+    L(y)=1+log(1/y).
+
+These are bounded, and `b'(0)=0`. Under the stated finite regular atlas and
+uniform interior/cold bounds, this gives uniform global `W^(2,infinity)` and
+zero outer normal trace for each bounded admitted finite-log family. Thus
+the multiplier-domain argument applies on the source-prescribed fixed
+realization, and the square-domain criterion gives equality with the seed
+square domain there, conditional on the already stated H1 projector-domain
+identifications. This does not transfer to an artificial cut `y=eta>0`,
+where the normal jet need not vanish, or to a different physical weighted
+L2 realization at conformal infinity. It also gives no heat-trace or
+common-regulator estimate.
+
 Remaining to-do list: trace the paired operator's H1 domain and adjoint proofs,
 verify the fixed-atlas multiplier bounds and regular bolt, audit the full heat
 and regulator claims, and formalize the supported statements on GCP.

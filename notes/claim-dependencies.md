@@ -46,15 +46,23 @@ The actual square is D_b*D_b. If additionally b is W^{2,∞} and has zero
 boundary normal derivative, the conditional
 [square-domain criterion](square-domain-boundary-criterion.md) identifies
 its domain with that of D*D. This extra conclusion is not asserted for the
-whole W^{1,∞} class.
+whole W^{1,infty} class. For the pinned source mass/log family, the collar
+bounds, zero first boundary jet, and fixed regular interior/disk charts give
+W^{2,infty} and zero normal trace on the source-prescribed fixed realization,
+provided the stated uniform atlas/coefficient assumptions hold. The square
+domains then agree there. This does not apply to artificial cuts y=eta>0 or
+identify a different physical weighted-L2 realization at conformal infinity.
+See the instantiation in [the multiplier note](paired-multiplier-domains.md).
 
 **Dependencies and status.** The ordinary conditional multiplier argument is
-[here](paired-multiplier-domains.md); its trace and H¹-domain inputs are not
-proved from the physical geometry. The collar supplies the normal jet and
-bounded normal second derivative; global W^{2,∞} requires the stated atlas.
-The abstract projected-trace/congruence and natural-square result has a GCP
-Lean check described in [the Lean campaign](lean-campaign.md), conditional
-on abstract trace/domain hypotheses. The graph-constant assembly now has a
+[here](paired-multiplier-domains.md). The compact smooth finite-cut H1
+projector domain and adjoint argument is checked in [the source
+instantiation](source-finite-cut-domain-instantiation.md); the rough-family
+square-domain application still uses the stated global atlas and
+source-domain hypotheses. The abstract projected-trace/congruence and
+natural-square result has a GCP Lean check described in [the Lean
+campaign](lean-campaign.md), conditional on abstract trace/domain hypotheses.
+The graph-constant assembly has a
 [clean GCP receipt](../evidence/gcp-scalar-multiplier-graph-clean-20261030/README.md):
 it derives the exact `e^B` conclusions from explicit operator and commutator
 norm hypotheses. The bounded scalar action in the geometric endpoint identity
