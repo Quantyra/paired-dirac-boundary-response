@@ -159,8 +159,11 @@ comparison. It cannot be substituted for the Euclidean orbit contact
 3. Carry the geometric endpoint conversion through the complete P1-C mixed
    response, retaining `2 Theta' I_e`, local subtractions and the declared
    physical-half and external action normalizations.
-4. Formalize the operator endpoint algebra and finite-cut jet identities on
-   GCP after their domain hypotheses are frozen. The existing raw-integral
+4. The bounded scalar operator-action identity is now checked on GCP; see
+   [`SourceEndpointAlgebra.lean`](../lean/SourceEndpointAlgebra.lean) and its
+   [receipt](../evidence/gcp-source-endpoint-algebra-20261030/README.md).
+   Formalize the paired composition-domain step and finite-cut jet identities
+   after their analytic hypotheses are frozen. The existing raw-integral
    replay certifies only a separate form-factor integral identity.
 
 The source notes are imported evidence, not yet an independently checked P1

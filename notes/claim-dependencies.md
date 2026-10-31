@@ -57,8 +57,10 @@ Lean check described in [the Lean campaign](lean-campaign.md), conditional
 on abstract trace/domain hypotheses. The graph-constant assembly now has a
 [clean GCP receipt](../evidence/gcp-scalar-multiplier-graph-clean-20261030/README.md):
 it derives the exact `e^B` conclusions from explicit operator and commutator
-norm hypotheses. This does not certify those geometric hypotheses or the
-stronger equal-square-domain criterion.
+norm hypotheses. The bounded scalar action in the geometric endpoint identity
+is also checked in [a separate GCP receipt](../evidence/gcp-source-endpoint-algebra-20261030/README.md).
+Neither receipt certifies the unbounded paired composition domains, geometric
+hypotheses or the stronger equal-square-domain criterion.
 
 ## P1-B: resolvent variation
 

@@ -116,3 +116,25 @@ geometric domain and tangent response at the scope the paper ultimately claims.
 The clean source-only GCP replay checked `congruence_graph_lower_composed_draft` with standard reported axioms and no reported `sorryAx`; see [the receipt](../evidence/gcp-graph-clean-20261030/README.md) for the pinned base, exact overlay, dependencies, logs and limitations. This supersedes the earlier statement that the graph-draft run had not been obtained. It is an abstract conditional result, not a certificate for the physical assumptions or the paper.
 
 Remaining to-do list: establish the physical realization and response, resolve novelty, complete the manuscript, and certify its supported claims in Lean.
+
+## Geometric endpoint scalar identity (2026-10-30 HST)
+
+The targeted GCP check of
+[`source_geometric_endpoint_action`](../lean/SourceEndpointAlgebra.lean)
+proves the bounded scalar algebra behind
+`E(D + M exp(b))E = EDE + M` for an arbitrary real-linear map on a real
+module. The run used Lean 4.30.0 and reported only `propext`,
+`Classical.choice` and `Quot.sound`; no `sorryAx` was reported. The full raw
+log, source hash and attempt history are in the
+[GCP receipt](../evidence/gcp-source-endpoint-algebra-20261030/README.md).
+
+This is only the scalar action identity. It does not certify the unbounded
+Dirac realization, paired/composition domains, angular Clifford block,
+positive-square equality, heat-trace identity, rough remainder or common
+regulator. The run reused the retained source-only dependency environment;
+Lake emitted local-change warnings, so it is not a clean dependency rebuild
+or exact-tree acceptance replay.
+
+Remaining to-do list: prove the actual paired endpoint/domain map, match the
+source rough heat hypotheses, account for the chiral zero-mode/anomaly sector,
+and formalize the response only after those analytic hypotheses are audited.
