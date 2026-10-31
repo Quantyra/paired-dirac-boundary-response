@@ -188,3 +188,64 @@ weight in (1), including its trace-ideal and simplex-endpoint behavior, or
 (b) establish a coefficient-stable localization theorem with an explicit
 remainder strong enough to imply (1). In either route, verify the physical
 bundle map and common regulator separately.
+
+## Fixed-window boundary-layer estimate from absolute kernel bounds
+
+The bilocal defect input (1) is stronger than needed to bound a fixed-width
+`O(sqrt(t))` boundary-layer piece. Here is a separate conditional estimate
+for that piece. Let `M` be the compact two-dimensional orbit surface with
+smooth boundary, and assume that the kernels of `Q` and `Q_X` obey, for
+`0<s<=t0`,
+
+    ||K_j(s;z,z')|| <= C s^(-1) exp(-d(z,z')^2/(c s)),  j in {Q,Q_X}. (4)
+
+Use the Riemannian volume measure on `M`, and suppose its local volume has
+the standard uniform two-dimensional upper bound on scales at most
+`sqrt(t0)`. In a fixed collar let `y` be distance to the seam and let the
+admitted directions satisfy `|u'(y)|<=U y^2`, `|w'(y)|<=W y^2`. For a fixed
+`R>0`, restrict both Duhamel insertion points to `0<=y,y'<=R sqrt(t)`; this
+defines the fixed-window boundary-layer contribution. Write `s+r=t`,
+`0<s,r<t`, and let `T_R(t;s,r)` be the absolute value of the corresponding
+radial heat trace word after removing the exact angular factor
+`exp(-t mu^2)` and the explicit `mu^2`.
+
+The product of (4) has Gaussian exponent
+`-(1/s+1/r)d(z,z')^2/c=-t d(z,z')^2/(c s r)`. Its integral in the second
+point is at most `C s r/t` by the two-dimensional volume bound. The two
+kernel prefactors `s^(-1) r^(-1)` therefore leave `C/t`, uniformly even
+when either Duhamel time tends to zero. On the restricted layer,
+`|u'(y)w'(y')|<=UW R^4 t^2`, and the volume of the first-point layer is at
+most `C R sqrt(t)` (the seam has fixed finite length). Hence
+
+    |T_R(t;s,r)| <= C_R U W t^(3/2),    0<s,r<t.          (5)
+
+The same bound holds for the semigroup defect word because
+`K_(Q_X)-K_Q` is bounded in norm by the sum of the two kernels. The exact
+unitary-conjugation identity defining `Q_X` also gives
+`||K_(Q_X)(r;z,z')||=||K_Q(r;z,z')||` when `X` is a pointwise unitary
+multiplier; thus a single verified estimate for `Q` suffices for (4).
+
+Integrating (5) over the ordered Duhamel simplex contributes `t^2`; summing
+the explicit angular mass-square factor contributes
+`sum_n d_n mu_n^2 exp(-t mu_n^2)=-Theta'(t)<=C t^(-2)`. The resulting fixed-
+window boundary-layer contribution is conditionally `O_R(UW t^(3/2))`,
+uniformly in the simplex and the sign-paired angular tower.
+
+This argument does not prove (4), and it estimates only the layer where both
+insertions are within `R sqrt(t)` of the seam. It does not show that the
+complement can be replaced by the same-boundary/tangent term, does not prove
+smallness of the non-hit defect, and does not address moving-cut transfer or
+the physical common regulator. The next concrete kernel task is to verify a
+uniform two-dimensional Gaussian upper bound for the actual pinned compact
+orbit realization and its unitary conjugate, then separately prove the
+boundary-decay estimate needed outside the fixed window. No physical response
+or admission-margin conclusion follows from (5).
+
+Concrete claim: under the explicit two-dimensional Gaussian kernel bounds,
+the fixed `R sqrt(t)` layer of the odd-odd trace has an `O_R(t^(3/2))` bound
+uniform to the Duhamel endpoints and after the angular sum. Ordinary argument:
+combine the two Gaussian kernels, integrate their relative point using
+`1/s+1/r=t/(sr)`, bound the two cubic jets on the fixed layer, and use the
+`t^2` simplex area and `t^(-2)` tower moment. First unsupported implication:
+verify (4) for the actual pinned operator and control the complementary
+non-hit region and common-regulator matching. Numerical role: none.
