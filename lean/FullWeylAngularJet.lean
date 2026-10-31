@@ -1,3 +1,4 @@
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Tactic.Ring
 
 /-!
