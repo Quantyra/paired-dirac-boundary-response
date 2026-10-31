@@ -47,6 +47,28 @@ terms under the same path, followed by the orbit/correction, density/contact,
 thermal-image and LLL transfer. This conditional model estimate does not by
 itself instantiate the physical endpoint.
 
+## Same-path tangent-subtraction integrability check
+
+The frozen rough source's flat tangent estimate after its stated local
+subtractions is componentwise `|r_flat(t)| <= C t^2 ||u'''||_2 ||w'''||_2`
+for the unweighted orbit trace. This is integrable against `dt/t^2` before
+angular summation. It is not enough after inserting the full angular tower:
+since `Theta(t)=O(t^(-1))`, the product is only `O(t)`, and
+
+    integral_epsilon^t0 t^(-2) [Theta(t) |r_flat(t)|] dt
+      <= C ||u'''||_2 ||w'''||_2 log(t0/epsilon).
+
+Thus this estimate alone gives no uniform removal of the common lower cutoff.
+The flat contact audit independently finds an `O(t)` term after the angular
+contact weight and its stated local subtractions. The two `O(t)` coefficients
+must be computed in the same physical-half normalization and shown to cancel
+(or both terms must be incorporated into the prescribed local subtraction)
+before the `e,delta,epsilon` approximation path can be used for the
+renormalized response. A componentwise bound cannot supply that cancellation.
+Even a flat matched cancellation still requires curved localization,
+moving-insertion control, density/boundary terms and LLL transfer. These flat
+estimates are conditional evidence, not a physical common-regulator proof.
+
 **Numerical role.** Numerical checks can audit explicit constants or
 truncation bounds after the analytic endpoint map is proved. They cannot
 establish operator-domain equality, determinant identification, or the
