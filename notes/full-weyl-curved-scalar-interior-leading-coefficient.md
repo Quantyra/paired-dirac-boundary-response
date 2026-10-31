@@ -345,3 +345,103 @@ Remaining to-do list: match the rough scalar expansion, including its
 `O(t^(-1))` remainder, to the source subtraction; then combine the orbit,
 matrix, density, contact, boundary and LLL terms under one regulator and
 close the endpoint; finish novelty/manuscript review and GCP certification.
+
+### Integrated weighted expansion of the path functional H_0
+
+The pointwise path-Hessian coefficient above is not itself a uniform seam
+expansion. The source's stronger physical-side weights do, however, support an
+integrated expansion for compactly localized directions. Assume the recorded
+bounds `b,u,w = c y^3 + r` with
+`|r^(j)(y)| <= C y^(4-j)(1+|log y|)` for `0<=j<=5`, positive bounded `f_0`
+and its induced coefficient jets, and the source's smooth physical-side
+approximants with uniform `W^(3,infinity)` bounds. Keep the bridge path inside
+a fixed localization chart; the stated collar-exit estimate handles its
+complement.
+
+Write angle brackets for the bridge-time average. At a fixed path,
+
+    H_0 = W_u R_w + W_w R_u + W R_uw,
+    W_u = -A^(-3/2) <f f_u>,   R_u=2<u>,
+    f_u=-u f+f' X_u,
+    R_uw=8<u><w>-4<uw>+2<u'X_w+w'X_u>.
+
+After expanding `f_u,f_w` and differentiating the spatial integral of `H_0`
+four times with respect to the common bridge scale `h`, every term is an
+integral of products of shifted one-dimensional factors with total spatial
+derivative count at most five: four from the `h` derivatives and at most one
+already present in `f'`, `u'`, or `w'`. The factors include at least one
+localized direction. In the `u'X_w` and `w'X_u` terms, first integrate the
+explicit derivative off `u'` or `w'`; the full folded product has zero seam
+trace because `u,w=O(|y|^3)` and `X_u,X_w=O(|y|^4)`. The resulting terms still
+have total derivative count at most five and retain a localized direction
+factor. The six-derivative transfer lemma therefore moves derivatives until
+no factor has order above three, with no inverse power of `h`. Its constants
+are uniform in all bridge-time shifts. Derivatives through order three of
+`f_0,u,w,X_u,X_w` are controlled by their uniform physical `W^(3,infinity)`
+bounds; the weighted `C^5` assumptions supply the stated approximations and
+uniform bounds. This gives, for each bridge path,
+
+    |d^4/dh^4 integral H_0(y+h xi) dy|
+       <= C ||xi||_infinity^4.
+
+Taylor's formula through cubic order, followed by bridge symmetry, now yields
+
+    integral E[H_0(y+sqrt(t)xi)] dy
+      = integral Q_(u,w)(y) dy
+        + t integral K_2(y) dy + O(t^2),
+
+uniformly over the admitted approximants. The terms of odd degree vanish
+because `xi` and `-xi` have the same law. The fourth bridge-supremum moment
+is finite. The uniform bound after derivative transfer and convergence of the
+lower-order integrated expressions pass this identity to the reflected rough
+profiles. Multiplying by the singular heat prefactor `C/(2 pi t^2)` leaves an
+`O(1)` integrated scalar remainder after both the leading and path-Hessian
+coefficients are retained. The `H_1` term has its separate seam estimate
+above.
+
+This is an integrated scalar bridge statement. It does not identify
+`integral (K_2+H_1)` with the prescribed source local subtraction, does not
+include the full physical density/contact conversion or the orbit, matrix,
+boundary and LLL sectors, and does not by itself prove the common-regulator
+response. Its ordinary proof uses the source's weighted smooth approximants;
+the seam integration-by-parts trace and convergence must be checked for the
+exact source approximation before importing it into the physical observable.
+Numerical role: none.
+
+Concrete claim: for the localized scalar singular bridge term, the integrated
+remainder after the `Q` and `K_2` coefficients is `O(1)` after the heat
+prefactor, conditional on the source approximation and cutoff hypotheses
+stated above. Ordinary argument: expand the exact path formula, count at most
+five spatial derivatives in its fourth bridge-scale derivative, transfer
+those derivatives to factors with uniform `W^(3,infinity)` bounds, use bridge
+symmetry, and pass the integrated coefficient formulas to the rough limit.
+First unsupported implication: verify these seam-transfer hypotheses against
+the exact source physical cutoff and match the resulting local coefficients to
+the source subtraction, then control the remaining full-Weyl sectors.
+Numerical role: none.
+
+Remaining to-do list: verify the source cutoff passage for this integrated
+expansion; match all scalar coefficients to the source subtraction; close
+orbit, matrix, density/contact, boundary, LLL and common-regulator terms; then
+complete novelty review and GCP Lean certification.
+
+For the rough limit, the source's physical-side smooth remainder approximants
+are combined with an auxiliary even mollification of the folded cubic jet.
+The latter has uniform `W^(3,infinity)` bounds and converges in `W^(2,infinity)`
+and local `H^3`; the transfer is uniform in both smoothing scales. The
+chain-rule count can be audited by the following term classes before expanding
+`A^(-alpha)` derivatives:
+
+| `H_0` factor class | Intrinsic derivative offset | Four bridge derivatives | Handling |
+| --- | ---: | ---: | --- |
+| `<f^2 u><w>` and its swap | 0 | total at most 4 | Direct transfer |
+| `<f f' X_u><w>` and its swap | 1 from `f'` | total at most 5 | Transfer to the localized `w` factor if needed |
+| `<u><w>` and `<uw>` | 0 | total at most 4 | Direct transfer |
+| `<u' X_w>` and `<w' X_u>` | 1 from the displayed direction derivative | total at most 5 | First integrate that derivative by parts; then transfer |
+
+Differentiating `A^(-alpha)` adds shifted `f` factors and distributes, but
+does not increase the total bridge derivative count. Every resulting product
+has a compactly supported direction factor whose first three derivatives are
+integrable, as required by the transfer lemma. Total order five also ensures
+that after transfer at most one factor has order three, so the stated local
+`H^3` convergence suffices to pass the integrated expressions to the limit.
