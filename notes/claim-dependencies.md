@@ -89,6 +89,15 @@ physical-half mixed geometric heat multiplier is F(tk²)/(pi t), with
 
     F(x)=1/2+(1/2)∫₀¹(1+a x)e^(−a x)dα,  a=α(1−α).
 
+The distinct full-four-dimensional Weyl congruence is now calculated in the
+fixed product tangent model: the [full-Weyl mode formula](flat-tangent-angular-mode.md)
+and [angular sum](flat-tangent-angular-sum.md) retain the varying angular
+mass, while the [local subtraction](full-weyl-angular-local-subtraction.md)
+gives its all-frequency small-time terms for the massive tower. These are
+rank-two full-plane heat-trace results. They do not identify the physical
+half-trace, source contact/conversion, density variation, LLL block, or curved
+common-regulator response with P1-C.
+
 The [weighted log-jet audit](weighted-log-jet-nonuniqueness.md) shows that
 the recorded remainder bound alone does not determine a unique logarithmic
 amplitude; the following log coefficient requires an explicit additional jet

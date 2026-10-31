@@ -17,6 +17,13 @@ This is the S001.2 working audit, assessed against [the claim ledger](claim-depe
 
 ## Reconciliation of the later physical and formal work
 
+The full-Weyl flat tangent package now includes the exact angular mode
+vertices, positive-time tower sum, and an all-frequency small-time local
+subtraction in [`full-weyl-angular-local-subtraction.md`](full-weyl-angular-local-subtraction.md).
+This strengthens the fixed-product tangent calculation only. It does not
+close the physical paired-domain match, curved mixed-boundary remainder,
+source contact/density/LLL transfer, common regulator, or P1-C claim.
+
 The following entries record the scope of later work alongside the original
 audit. They do not close the paper's source, novelty or certification gates.
 

@@ -22,8 +22,14 @@ independently rederived or audited every hypothesis.
 **First unsupported implication for P1.** Transfer the source's orbit-only
 conversion to P1's full four-dimensional Weyl family. P1 varies the angular
 term as well as the orbit operator and produces additional mode-dependent
-square vertices. Their complete mixed response, density terms, rough
-remainders and common subtraction have not been bounded. The chiral LLL also
+square vertices. The complete flat full-Weyl mode multiplier, its positive-
+time angular sum, and its angular-weighted all-frequency local subtraction
+are now derived in [`flat-tangent-angular-mode.md`](flat-tangent-angular-mode.md),
+[`flat-tangent-angular-sum.md`](flat-tangent-angular-sum.md), and
+[`full-weyl-angular-local-subtraction.md`](full-weyl-angular-local-subtraction.md).
+These are fixed-product tangent calculations, not the physical mixed
+response: the rough curved remainders, density/contact transfer, common
+subtraction, and physical domains have not been bounded. The chiral LLL also
 needs its separate response/anomaly accounting.
 
 **Numerical role.** Numerical checks can audit explicit constants or
@@ -155,14 +161,13 @@ comparison. It cannot be substituted for the Euclidean orbit contact
 
 ## Revised first missing implication and verification work
 
-1. Derive the full-Weyl per-mode square response, including the angular-mass
-   derivative, commutator and second/density vertices, on the actual paired
-   composition domains.
-2. Compare that complete response to the source's fixed-angular conversion
-   and show, with a common regulator, how the additional terms and contacts
-   restore the P1 observable.
-3. Match the rough heat estimates and subtraction to P1's cubic/log fields;
-   retain the `q` chiral LLL and its Weyl/anomaly contribution separately.
+1. Match the fixed-product full-Weyl mode/form response to the actual paired
+   composition domains, including its density and boundary/contact vertices.
+2. Compare that complete response and its tangent subtraction to the source's
+   fixed-angular conversion under one common regulator; retain the `q`
+   chiral LLL and its Weyl/anomaly contribution separately.
+3. Establish the required rough curved remainder and cubic/log approximation
+   limits, or decide from the final theorem scope whether P1-D is necessary.
 4. The bounded scalar endpoint algebra is GCP-checked, and the previous GCP
    mode real-mass bridge checks the orbit-only positive square under abstract
    hypotheses. Neither receipt formalizes the full-Weyl correction. Formalize
