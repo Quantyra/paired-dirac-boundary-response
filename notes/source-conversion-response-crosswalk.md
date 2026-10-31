@@ -161,11 +161,17 @@ comparison. It cannot be substituted for the Euclidean orbit contact
 
 ## Revised first missing implication and verification work
 
-1. Start from the exact finite-cut physical L2 transport and composition
-   domain in [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md),
-   then match its full-Weyl mode/form response to the physical paired
-   observable, including density and boundary/contact vertices. The finite-cut
-   identity does not supply uniform moving-cut or trace estimates.
+1. The finite-cut physical L2 transport and composition domain are now
+   explicit in [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md).
+   For the static zero-angle RN seed, the parent conformal-domain derivation
+   and radial nature of E identify each massive physical mode with the
+   full-Weyl congruence `E(D+i mu G)E` on the common projector domain. The
+   remaining implication is from this operator identification to the
+   complete physical paired response, including density and boundary/contact
+   vertices; the finite-cut argument supplies no uniform moving-cut or trace
+   estimate. Lean now checks the abstract composition-domain set reduction
+   under explicit preservation assumptions, but does not certify those
+   physical assumptions or the mode trace.
 2. Compare that complete response and its tangent subtraction to the source's
    fixed-angular conversion under one common regulator; retain the `q`
    chiral LLL and its Weyl/anomaly contribution separately.

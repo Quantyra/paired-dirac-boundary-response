@@ -48,8 +48,10 @@ common complementary first-order domains are
 
 The finite-cut source model's projector and adjoint-domain argument is audited
 in [`source-finite-cut-domain-instantiation.md`](source-finite-cut-domain-instantiation.md).
-The physical-to-product unitary and conformal spin-bundle identification
-still have to be checked against that model for each application.
+For the static zero-angle RN seed, the parent source's finite-cut conformal
+domain derivation supplies the physical-to-product unitary and projector
+identification; no extension to other frames or varying boundary angles is
+asserted.
 
 On this fixed cut E=u^(1/2) and E^(-1) are smooth bounded multipliers that
 preserve both projector domains. Thus P=U D_g U^(-1)=E D_hat E has
@@ -66,12 +68,45 @@ preserve V*, this is equivalent to D_hat(E psi) in V*. This condition is
 not the bare product-frame square condition
 `psi in V, D_hat psi in V*` unless an additional domain equivalence is
 proved. Formula (3) keeps the physical square's composition domain explicit.
+The set-theoretic reduction under the two domain-preservation assumptions is
+checked in Lean on GCP; see the
+[exact-source receipt](../evidence/gcp-finite-cut-congruence-domain-20261031/README.md).
+The analytic assumptions themselves are not part of that Lean theorem.
 
 On each fixed cut these statements make the products and transformed
 boundary conditions precise under the stated projector identification. In
 the moving-cut limit the bounds on u, u^(-1), and their derivatives need not
 be uniform. Equation (2) is a congruence, not a unitary conjugacy between
 D_g and D_hat.
+
+## Angular-mode form of the finite-cut physical operator
+
+For the stationary RN seed, the source-side finite-cut conformal-domain
+derivation also gives the following application-specific inputs: the
+conformal spinor map takes the physical mixed domain to the same product-frame
+projector domain, and that domain is independent of sphere angular
+eigenspaces. These statements are recorded in the parent source repository's
+`notes/stationary-exterior-conformal-domain.md`, commit `08cb71afea3f0e5310cac8a50c05d5007555641f`
+(file blob `b9117fa2b2e9e9e2cec36e1c71f52f414b5349b9`). They apply to the
+static zero-angle finite-cut seed under its stated spin/bundle identification.
+
+The product-frame Dirac expression separates into orbit modes
+`D+i mu G`, with the chiral LLL treated as a distinct zero sector. Since
+`E=u^(1/2)` is radial, it commutes with the sphere angular projections. Thus
+on each fixed finite cut the transported physical massive-mode expression is
+exactly
+
+  P_mu = E (D+i mu G) E,  Dom(P_mu)=V,
+  Dom(P_mu*P_mu)={psi in V : (D+i mu G)(E psi) in V*}.   (4)
+
+This is the full-Weyl mode family of
+[`full-weyl-angular-mode-correction.md`](full-weyl-angular-mode-correction.md),
+not the source conversion's fixed-angular-mass orbit-only family. Its
+angular-mass and commutator vertices therefore belong in the physical finite-
+cut response. The LLL remains separate. The identification establishes a
+modewise operator expression and domain on each finite cut; it supplies no
+cut-uniform graph or trace estimate, density/contact normalization,
+small-time subtraction, or common-regulator limit.
 
 The positive physical square transported by U is the actual composition
 square in (3). Its principal symbol is u^2 times the
@@ -95,7 +130,8 @@ operator, not yet a proof of the paper's product-frame contact.
 
 This calculation does not assert that no other equivalence or subtracted
 identity exists, and does not decide the finite contact or the full action.
-No numerical run or Lean certificate is claimed.
+No numerical calculation is used. The Lean receipt above checks only the
+abstract set-theoretic domain reduction, not the operator or trace claims.
 
 Remaining to-do list: establish the product-frame contact and its source
 normalization or prove the complete conformal comparison, resolve the common
