@@ -839,7 +839,7 @@ By contrast, the localized scalar angular-mass bridge computed above gives
 The exact mode-square decomposition in
 `full-weyl-orbit-correction-vertices.md` writes the difference between these
 families as the commutator correction. Thus, in this declared flat model, the
-combined commutator/cross-vertex sector must supply
+commutator-involving vertices, including their ordered cross terms, must supply
 
     D_comm(t)|_(U_1/t) = +b_s^2/(2 pi t) U_1.             (8)
 
