@@ -3,8 +3,12 @@
 This upgrades `physical-cut-interior-operator-locality.md` to a localized
 Hilbert--Schmidt estimate for up to two output derivatives, under its
 uniform form/domain hypotheses and the H5 chart estimates of
-`physical-h5-from-mixed-h3.md`. It does not yet prove the mixed-response
-trace comparison, a physical source match or Lean certification.
+`physical-h5-from-mixed-h3.md`. For the fixed RN approximant path,
+`physical-cut-locality-regularity-instantiation.md` verifies the cutoff
+derivative, coefficient-regularity, and finite-chart inputs in this estimate
+under the stipulated matched geometry and bundles. It does not establish the
+actual uniform domain/weighted-form hypotheses, the physical source match,
+or Lean certification.
 
 Fix 0<a<b<1. Let K_delta be a compact common-interior set in u>=c delta^a,
 and let chi_delta be a smooth multiplier supported in a slightly larger set
@@ -80,6 +84,7 @@ cutoff commutators, and justify time integration at endpoints. It must also
 verify the physical bundle/domain identification and common regulator. No
 numerical run or Lean certification is claimed.
 
-Remaining to-do list: assemble the localized mixed-response trace from (6),
-match physical source and subtractions, finish novelty and manuscript, and
-certify supported claims in Lean on GCP.
+Remaining to-do list: verify the stipulated domain/weighted-form hypotheses,
+use (6) in the assembled mixed-response trace, match the physical source and
+subtractions, finish novelty and manuscript, and certify supported claims in
+Lean on GCP.

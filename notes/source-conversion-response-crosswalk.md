@@ -173,10 +173,15 @@ comparison. It cannot be substituted for the Euclidean orbit contact
    and all four mixed-second-vertex terms from the localized Schatten estimate.
    Together with [`physical-cut-tail-locality-reduction.md`](physical-cut-tail-locality-reduction.md)
    and its separate boundary path, it yields a joint cut-to-complete comparison
-   along the recorded power path, provided the common physical bundle/domain,
-   uniform H5, weighted Davies, finite-cover and form-trace hypotheses hold.
-   This is conditional progress on the physical-model cut limit, not an
-   independently verified application to the source family or its regulator.
+   along the recorded power path. The order-five radial cutoff bounds, C5
+   approximant/coefficient bounds, and polynomial finite-chart count have
+   since been checked conditionally for the fixed RN path in
+   [`physical-cut-locality-regularity-instantiation.md`](physical-cut-locality-regularity-instantiation.md).
+   The common physical bundle/domain, uniform graph and weighted Davies,
+   Duhamel cutoff, and form-trace hypotheses still need source-realization
+   verification. This is conditional progress on the physical-model cut
+   limit, not an independently verified application to the source family or
+   its regulator.
    Lean checks the abstract composition-domain set reduction under explicit
    preservation assumptions, but certifies neither these analytic hypotheses
    nor the mode trace.
@@ -188,10 +193,10 @@ comparison. It cannot be substituted for the Euclidean orbit contact
    Retain the physical density, boundary/contact vertices, angular tower and
    moving insertion terms. The conformal congruence is not a unitary
    conjugation of the product-frame square, and the LLL remains gapless.
-3. Verify that the conditional cut-locality hypotheses hold uniformly for
-   the actual cubic/log approximants and physical endpoint; then establish
-   the common-regulator finite part and required rough curved remainder, or
-   decide from the final theorem scope whether P1-D is necessary.
+3. Complete the remaining domain, weighted-form, and source-identification
+   hypotheses for the conditional cut-locality theorem, then establish the
+   common-regulator finite part and required rough curved remainder, or decide
+   from the final theorem scope whether P1-D is necessary.
 4. The bounded scalar endpoint algebra and abstract orbit-only mode bridge
    have GCP receipts. The [`fourth-order full-Weyl jet receipt`](../evidence/gcp-full-weyl-angular-jet4-20261030/README.md)
    extends the polynomial check through the x^4 coefficient; its reused

@@ -85,6 +85,7 @@ responses does not identify the product-frame time-reduced source observable
 or establish the existence of its renormalized finite part. No numerical run
 or Lean certification is claimed.
 
-Remaining to-do list: verify the physical hypotheses for the conditional
-separated-interior estimate (4), match source normalization and subtractions,
-complete novelty and manuscript, and certify supported claims in Lean on GCP.
+Remaining to-do list: verify the physical bundle/domain and weighted-form
+hypotheses for the conditional separated-interior estimate (4), match source
+normalization and subtractions, complete novelty and manuscript, and certify
+supported claims in Lean on GCP.
