@@ -65,6 +65,18 @@ candidate coefficient -15/(1024 sqrt(pi)). Do not compare the two numerical
 coefficients by simply substituting a guessed effective potential or dropping
 principal-symbol contributions.
 
+The fixed-cut physical realization now makes one part of this comparison
+explicit. In `physical-product-contact-operator-gap.md`, the transported
+mode operator is `P_mu=E(D+i mu G)E`, and its square has principal symbol
+`E^4 |xi|^2` (with `E=u^(1/2)` in that note). A scalar-potential family
+`L_0+V` keeps the principal symbol fixed. Multiplication conjugation alone
+cannot remove this principal-symbol variation; using a metric or coordinate
+change instead changes the transformed density, boundary data, and domain
+that must also be tracked. Thus the cited scalar jump coefficient is not a
+direct specialization of the P1 square. This rules out the naive scalar
+potential substitution, but it does not settle whether the complete P1
+Hessian admits a more elaborate reduction or compute its coefficient.
+
 The prior source's finite jump formula does not, on its face, evaluate the
 candidate's mixed cubic/logarithmic t^3 log(t) coefficient, nor does this
 observation prove that coefficient is novel. Its assumptions require smooth

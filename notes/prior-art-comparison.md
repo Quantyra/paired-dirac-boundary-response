@@ -106,3 +106,11 @@ the exact transformed-Dirac source audit and the proved P1 claim to be fixed.
 Remaining to-do list: establish the physical full-Weyl source/common-regulator
 bridge; finish the transformed-Dirac comparison and final novelty disposition;
 certify only the supported claims on GCP.
+
+## Additional complete-end heat-kernel screen (2026-10-31)
+
+The primary-source screen also checked Talebi and Vertman, [*Spectral geometry on manifolds with fibred boundary metrics II: heat kernel asymptotics*](https://arxiv.org/abs/2101.08844), published in *Analysis and Mathematical Physics* 12 (2022), article 62, [Theorem 1.1](https://doi.org/10.1007/s13324-022-00648-y). They construct a polyhomogeneous heat kernel for the Hodge Laplacian on complete fibred-boundary (`phi`) metrics and extend the result to Laplace-type operators whose normal operator has the specified scalar-Laplacian structure, including the square of a spin Dirac operator. This is relevant background for complete-end heat-kernel methods and means such methods cannot be described as new in themselves.
+
+The theorem concerns a fixed operator on a prescribed smooth fibred-boundary geometry. It does not give a mixed second variation of a Weyl-congruence family, P1's paired local projector and composition domains, the angular-mass/commutator vertices, the source's contact/density/LLL allocation, or a common-regulator comparison with the canonical observable. The geometry and normal-operator hypotheses have not been matched to the paper's physical endpoint. This is adjacent endpoint/heat-calculus prior art, not a direct P1 theorem or a novelty verdict. The literature search remains limited.
+
+Remaining to-do list: complete the physical source/common-regulator bridge, match the full transformed Hessian and its coefficients, finish the novelty decision and manuscript, and certify supported claims on GCP.
