@@ -7,6 +7,29 @@ discrepancy must be resolved before the scalar comparison is used as a
 numerical benchmark. This is not a finding that the published result is wrong:
 an overlooked convention or transcription issue remains possible.
 
+## Version and published-record check (2026-10-31)
+
+The same displayed Eqs. (27)--(32) occur in both the [v1 manuscript dated
+8 April 2004](https://arxiv.org/pdf/hep-th/0404069v1) and the [v2 manuscript
+dated 11 May 2004](https://arxiv.org/pdf/hep-th/0404069v2); the factor
+discrepancy is therefore not resolved by the arXiv revision history. In the
+v2 OCR of Eq. (31), the p=1 prefactor is `1/64` multiplying
+`integral E E'''`; Eq. (32) gives `gamma_1=1/128`. By contrast, Eqs. (27)--(28)
+give `1/4 * Gamma(5/2)/(4! sqrt(pi)) = 1/128` multiplying that integral.
+For the one-sided example with `E(0)=0`, integration by parts gives
+`integral_0^infinity E E''' = E'(0+)^2/2`, so these are coefficients
+`1/256` and `1/128` of `E'(0+)^2`, respectively.
+
+The APS record identifies the published article as *Phys. Rev. D* 70,
+045003 (published 9 August 2004), DOI
+[10.1103/PhysRevD.70.045003](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.70.045003).
+Its article PDF endpoint returned HTTP 401 in this audit, so the journal
+version's equation text could not be compared. The independent two-dimensional
+Fourier/Duhamel calculation in this note agrees with Eqs. (27)--(28) after
+including the tangential free heat factor, but that does not establish what
+the published version says. The normalization discrepancy remains open; no
+published result is accused of error.
+
 For the source's one-sided example E(0)=0, its Eqs. (27)--(28), applied
 literally with n=3, give the t^3 term
 
