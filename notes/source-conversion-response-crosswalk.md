@@ -211,3 +211,26 @@ complete the manuscript at the proved scope.
 The moving-cut obstruction is now quantified in [inite-cut-congruence-uniformity-obstruction.md](finite-cut-congruence-uniformity-obstruction.md): the finite-cut conformal multiplier inverse has L2 norm `sqrt(R/ell)`. Any physical trace transfer therefore needs a weighted/localized estimate or cancellation beyond the fixed-cut graph comparison. This is not a response lower bound and does not decide convergence.
 
 A further endpoint distinction is now recorded in [conformal-infinity-l2-domain-obstruction.md](conformal-infinity-l2-domain-obstruction.md): under the conformal spinor map, the physical graph norm has compactified weights `u^-1` on `psi_hat` and `u` on `D_hat psi_hat`. Within compactified `H1`, physical L2 forces the full boundary trace to vanish, whereas the source's local projector allows nonzero complementary trace. Thus compactified local-projector moving-cut heat estimates do not yet instantiate the physical endpoint; the intended Hilbert space and boundary realization must be specified. This does not invalidate a nonnormalizable source prescription.
+
+## LLL coefficient status clarification (2026-10-31)
+
+The canonical LLL tangent coefficient is already fixed in the pinned source:
+for the declared disk conformal tangent `T`,
+`Gamma_hat,LLL''[T,T] = -q/(12 pi) integral_disk |grad T|^2`.
+Polarization gives the mixed bilinear form
+`-q/(12 pi) integral_disk grad u . grad v`. The separate
+[`zero-sector flat comparison`](zero-sector-flat-lll-normalization-comparison.md)
+derives the same finite coefficient from the conditional flat zero-mass
+conversion after subtracting its `U0/epsilon` term and applying the even
+half-line folding factor. Thus the LLL coefficient and its conditional flat
+model match are not an unknown algebraic normalization.
+
+The first unsupported implication is the identification of the actual P1
+physical LLL contribution with that disk tangent/cocycle under the same
+physical state, bundle and boundary domains, conformal field map, per-exterior
+and time-reduced trace conventions, and common regulator. The massive-gap
+endpoint argument still cannot be applied at zero mass; do not infer a
+massless upper-endpoint cancellation or add the model zero-mode term to an
+already allocated source cocycle. Numerical role: none; this coefficient is
+an analytic local tangent contribution, not a physical admission margin or
+numerical estimate.
