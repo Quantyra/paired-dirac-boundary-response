@@ -164,9 +164,16 @@ subtraction, the LLL, boundary transgression, local restorations, or the
 moving-cut limit.
 
 For local tangent subtractions `T_FW,T_src` at that same cut, set
-`delta_T=T_FW-T_src`. The corresponding remainder ledger is
+`delta_T=T_FW-T_src`, and define
 
-    r_FW(t) - r_src(t)
+    r_FW=H_FW-T_FW,    r_src^conv=J_src''-T_src.
+
+The superscript marks `r_src^conv` as the conversion-endpoint remainder;
+it is not the frozen source's `r_curved`, whose exact weak response and
+localized tangent subtraction still need to be matched. The corresponding
+remainder ledger is
+
+    r_FW(t) - r_src^conv(t)
       = Theta h_2 + D + Theta/(2t) partial_t h_2
         - 2 Theta' I_t(u,w) - delta_T(t).                (5)
 
