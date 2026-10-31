@@ -27,11 +27,15 @@ hypotheses. GCP receipts through fourth polynomial order are indexed in
 [`gcp-full-weyl-angular-jet4-20261030`](../evidence/gcp-full-weyl-angular-jet4-20261030/README.md).
 These advances strengthen the fixed-product tangent calculation only. The
 exact algebraic difference between its full-Weyl cubic coefficient and the
-leading angular-weighted orbit-only coefficient, with their leading logarithmic
-coefficient equality, is also checked in
+leading angular-weighted orbit-only coefficient is checked in
 [`gcp-full-weyl-seam-comparison-20261031`](../evidence/gcp-full-weyl-seam-comparison-20261031/README.md).
-That receipt assumes the conditional model formulas, uses reused dependencies
-with local-change warnings, and certifies coefficient algebra only. The
+A later Taylor/Fourier audit found a factor-of-two error in that receipt's
+stipulated full-Weyl log coefficient: the corrected conditional full-Weyl
+coefficient is `-2 b^2/(35 pi)`, versus orbit-only `-b^2/(35 pi)`. The old
+receipt proves ring algebra for the values supplied, not the corrected
+comparison; the corrected Lean source awaits a GCP replay. The receipt uses
+reused dependencies with local-change warnings and certifies coefficient
+algebra only. The
 operator gap in [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md)
 shows why the product-frame kernel cannot be inserted directly as the
 physical observable: the transported physical square has a different

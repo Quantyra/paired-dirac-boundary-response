@@ -18,14 +18,16 @@ theorem fullWeyl_cubic_difference :
   ring
 
 def orbitTowerLog : ℝ := (2 * b^2) * (-(C) / (70 * pi))
-def fullWeylLog : ℝ := -(b^2 * C) / (35 * pi)
+def fullWeylLog : ℝ := -(2 * b^2 * C) / (35 * pi)
+def fullWeylLogCorrection : ℝ := -(b^2 * C) / (35 * pi)
 
-theorem fullWeyl_log_matches_orbit_leading_tower :
-    orbitTowerLog b pi C = fullWeylLog b pi C := by
-  dsimp [orbitTowerLog, fullWeylLog]
+theorem fullWeyl_log_difference :
+    fullWeylLog b pi C - orbitTowerLog b pi C
+      = fullWeylLogCorrection b pi C := by
+  dsimp [orbitTowerLog, fullWeylLog, fullWeylLogCorrection]
   ring
 
 end FullWeylSeamCoefficientComparison
 
 #print axioms FullWeylSeamCoefficientComparison.fullWeyl_cubic_difference
-#print axioms FullWeylSeamCoefficientComparison.fullWeyl_log_matches_orbit_leading_tower
+#print axioms FullWeylSeamCoefficientComparison.fullWeyl_log_difference

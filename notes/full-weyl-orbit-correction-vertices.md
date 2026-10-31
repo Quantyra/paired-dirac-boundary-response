@@ -171,6 +171,16 @@ subleading terms in `-Theta'` contribute at smaller order. This is a
 fixed-product tangent decomposition under the cited tail and half-folding
 hypotheses, not a physical coefficient or a curved-family estimate.
 
+As an internal coefficient check, the full-minus-orbit leading tower kernel
+is `3A+xA/4`, whose `x^4` coefficient is `-1/10080` and whose conditional
+half-normalized logarithmic seam difference is `-b^2/(35 pi) C`. The
+pure-angular remainder is `2A-1+xA/4`; its `x^4` coefficient is
+`-1/6048`, giving `-b^2/(21 pi) C`. Adding the cross coefficient in (11),
+`+2b^2/(105 pi) C`, recovers `-b^2/(35 pi) C`. This identifies why the old
+claimed equality of the full-Weyl and orbit-only logarithmic coefficients was
+inconsistent with the explicit fixed-mode decomposition; see the corrected
+Taylor audit in `full-weyl-angular-seam-coefficients.md`.
+
 No numerical result or Lean claim is made. These ordinary identities are candidates for a narrowly scoped GCP formalization only after the operator and domain representation is fixed; formalizing them would not certify the heat-kernel bound.
 
 Remaining to-do list: extend the fixed-flat orbit-angular cross kernel to the curved localized family with its common-regulator subtraction and physical source/contact terms; finish novelty and manuscript; certify supported claims on GCP.

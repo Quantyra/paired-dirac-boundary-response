@@ -100,9 +100,20 @@ The two frequency signs, Fourier measure, half-normalized multiplier, and
 `integral_(K0)^(t^-1/2) dk/k = -(1/2) log(t)+O(1)` give
 
 ```text
--alpha0/(70 pi) C t^2 log(t)
-  = -b^2/(35 pi) C t^2 log(t).
+-alpha0/(35 pi) C t^2 log(t)
+  = -2 b^2/(35 pi) C t^2 log(t).
 ```
+
+For the coefficient, the full frequency integral of the `|k|^-9` tail
+including both signs and `dk/(2 pi)` is `-288 C integral dk/k`. Its
+logarithmic part is `+144 C log(t)`; multiplying by
+`alpha0 (-1/5040)/(pi)` gives the displayed value.
+
+For comparison, the orbit-only leading tower kernel is `I-xI'`; direct
+expansion gives its `x^4` coefficient `-1/10080`. Applying the same Fourier
+tail calculation with the same half normalization gives
+`-alpha0/(70 pi) C=-b^2/(35 pi) C`. The full-Weyl value above is twice that
+magnitude, so the difference is `-b^2/(35 pi) C t^2 log(t)`.
 
 The product-tail little-o remainder is `o(t^2 |log t|)` after rescaling and
 splitting at `t^-1/2`; it need not be `O(t^2)`. Subleading angular heat
@@ -115,20 +126,28 @@ Multiplying the orbit-only massless coefficients by the leading tower factor
 `Theta(t) ~ 2b^2/t` would give respectively
 `-15 b^2/(512 sqrt(pi)) c_u c_w t^(3/2)` and
 `-b^2/(35 pi) C t^2 log(t)`. The fixed-product full-Weyl kernel instead gives
-the cubic coefficient `-27 b^2/(512 sqrt(pi))`; the logarithmic coefficients
-agree in this leading comparison. This difference is expected from the
-angular-mass variation terms retained by the full-Weyl formula. It does not
-show that physical observables disagree: conversion, density and second
-vertices, the LLL, physical domains, and common-regulator subtractions have
-not been matched here.
+the cubic coefficient `-27 b^2/(512 sqrt(pi))` and the logarithmic
+coefficient `-2 b^2/(35 pi) C t^2 log(t)`. Thus the full-Weyl leading
+logarithmic coefficient differs from the orbit-only value by
+`-b^2/(35 pi) C`; the angular-mass variation terms do not cancel at this
+order in this fixed-product diagnostic. This is a correction to the previous
+version of this note, which lost a factor of two in converting the marginal
+frequency integral into its logarithmic coefficient. It does not show that
+physical observables disagree: conversion, density and second vertices, the
+LLL, physical domains, and common-regulator subtractions have not been
+matched here.
 
 The exact rational difference between the conditional full-Weyl cubic and
-orbit-only tower coefficients, and the equality of their leading logarithmic
-coefficients, are checked in the GCP receipt
+orbit-only tower coefficients is checked in the GCP receipt
 [`gcp-full-weyl-seam-comparison-20261031`](../evidence/gcp-full-weyl-seam-comparison-20261031/README.md).
-The run uses Lean 4.30.0 and reused source-only dependencies with local-change
-warnings. This verifies coefficient algebra only. No Lean result is claimed
-for the integral evaluation or analytic remainders. The earlier
+That receipt's log equality is superseded: it certifies ring algebra for the
+previously stipulated coefficient, but the full-Weyl coefficient was not the
+one implied by `K_4=-1/5040` and the stated Fourier tail. The corrected
+coefficient-difference theorem is drafted in
+`lean/FullWeylSeamCoefficientComparison.lean` but awaits a GCP replay. The old
+run used Lean 4.30.0 and reused source-only dependencies with local-change
+warnings. Neither result proves the integral evaluation or analytic
+remainders. The earlier
 `FullWeylAngularJet` receipt checks only the rational polynomial cancellation
 in the local jet. Neither receipt proves the half-folding normalization,
 physical response, or common-regulator transfer.
