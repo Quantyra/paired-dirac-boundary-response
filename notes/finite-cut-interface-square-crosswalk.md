@@ -1,10 +1,10 @@
 # Finite-cut square-level transmittal crosswalk
 
-This records the candidate exact relationship between P1's finite-cut
+This records the conditional exact relationship between P1's finite-cut
 composition square and the square of a folded spinor interface operator. It
-is a conditional finite-cut result, not a physical endpoint or common-
-regulator theorem. It separates a possible equality of second-order
-operators from the first-order domain comparison, which fails by symmetry.
+is a finite-cut result, not a physical endpoint or common-regulator theorem.
+It separates the established equality of second-order operators from the
+first-order domain comparison, which fails by symmetry.
 
 ## Claim under audit
 
@@ -81,10 +81,9 @@ the source convention above; the interface normals and curvature signs must
 be converted together.
 
 This closes the scalar Robin-coefficient comparison, including a nonzero
-normal jet, at the declared smooth finite cut. It does not by itself match
-the varying tangential `B_j` connection, prove equality of the full closed
-second-order domains, or establish trace multiplicity. Those remain separate
-requirements for operator equivalence.
+normal jet, at the declared smooth finite cut. By itself it does not match
+the varying tangential `B_j` connection or establish closed-domain equality;
+those steps are supplied separately below.
 
 ### Tangential connection
 
@@ -111,8 +110,9 @@ are aligned. This identity uses the transformed second fundamental form
 does not assume that the connection defect stays at its seed value. The
 magnetic connection still has no side jump under the source's common pulled-
 back transition. This closes the local varying-connection coefficient
-comparison under the pinned identical-copy hypotheses, not the global closed
-operator or trace-multiplicity comparison.
+comparison under the pinned identical-copy hypotheses. The global closed-
+operator and trace-multiplicity comparison follows separately from the
+unitary fold and side-sign factorization below.
 
 ### Closed-square factorization under the global partner hypothesis
 
