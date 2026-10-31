@@ -31,6 +31,13 @@ remaining heat trace uses the corresponding orbit and complementary
 realizations. The formula is at a fixed cut under the common-domain,
 trace-Duhamel hypotheses already recorded in the vertex note.
 
+For the boundary estimate, split the middle factor as
+`exp(-r Q_X)=exp(-r Q)+(exp(-r Q_X)-exp(-r Q))`. The first term is the
+same-boundary scalar-gradient pair and belongs with the bulk/tangent local
+subtraction. The criterion below applies only to the boundary-condition
+defect in the second term, as in the exact flat model. The non-hit part of
+the full odd-odd response is not estimated by this note.
+
 ## Sufficient localized trace input
 
 Let `y` be collar distance to the seam and assume the admitted directions obey
@@ -40,7 +47,8 @@ Let `y` be collar distance to the seam and assume the admitted directions obey
 Write `r=s1-s2`, `s=t-r`, and `sigma=s r/t`. Convolving the two outer
 `Q` kernels and integrating the tangential variable suggests the following
 bilocal Gaussian input for the boundary-layer part of each normalized trace
-word, uniformly over the closed Duhamel simplex and massive modes:
+word of the boundary-condition defect, uniformly over the closed Duhamel
+simplex and massive modes:
 
     |T^bl_(mu,s1,s2)(t;u',w')|
       <= C t^(-1) integral_0^delta exp(-y^2/(c t)) |u'(y)|
@@ -49,14 +57,16 @@ word, uniformly over the closed Duhamel simplex and massive modes:
 where `g_sigma(z)=(4 pi sigma)^(-1/2) exp(-z^2/(4 sigma))`; at `sigma=0`
 the inner integral is interpreted by its delta limit. Here `T` is the trace
 word after factoring out `exp(-t mu^2)` and the explicit `mu^2`. The estimate
-must hold for the actual pair `Q,Q_X`, including their complementary form
+uses the middle-factor defect `exp(-r Q_X)-exp(-r Q)` and its boundary-layer
+part. It must hold for the actual pair `Q,Q_X`, including their complementary form
 domains, not merely for two scalar semigroups with a common boundary
 condition. Its boundary localization must come from the mixed-kernel
 boundary part, while the normalized Gaussian couples the two insertion
 coordinates.
 
 At the scalar kernel level, the proposed factorization follows from the
-outer convolution and the reflected middle Gaussian. Put `p=y-y'` and
+outer convolution and the reflected middle Gaussian for the defect. Put
+`p=y-y'` and
 `q=y+y'`, so `q>=|p|`. Since `s+r=t` and `sigma=sr/t`, a fixed fraction of
 `p^2/s+q^2/r` controls `p^2/sigma+q^2/t`. Including Gaussian prefactors,
 
@@ -105,11 +115,12 @@ factorization.
 ## First unsupported implication
 
 Estimate (1) is not proved here. Establishing it requires a localized
-trace-ideal or heat-kernel bound for the mixed product
-`Q`/`Q_X` with their complementary boundary conditions, uniformly at the
-Duhamel simplex endpoints and uniformly in the angular mass after the tower
-factor is removed. The conjugation identity alone does not provide it, and a
-same-domain bounded-potential comparison is unavailable at the pinned cut.
+trace-ideal or heat-kernel bound for the boundary-condition defect
+`exp(-r Q_X)-exp(-r Q)`, with the two complementary realizations, uniformly
+at the Duhamel simplex endpoints and uniformly in the angular mass after the
+tower factor is removed. The conjugation identity alone does not provide it,
+and a same-domain bounded-potential comparison is unavailable at the pinned
+cut.
 One possible route is a boundary parametrix for the two local projector
 realizations with Gaussian localization; another is a cutoff localization
 strictly inside the collar followed by a separate boundary-map estimate.
