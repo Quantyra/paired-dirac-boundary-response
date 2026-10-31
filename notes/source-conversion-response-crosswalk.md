@@ -59,15 +59,20 @@ since `Theta(t)=O(t^(-1))`, the product is only `O(t)`, and
       <= C ||u'''||_2 ||w'''||_2 log(t0/epsilon).
 
 Thus this estimate alone gives no uniform removal of the common lower cutoff.
-The flat contact audit independently finds an `O(t)` term after the angular
-contact weight and its stated local subtractions. The two `O(t)` coefficients
-must be computed in the same physical-half normalization and shown to cancel
-(or both terms must be incorporated into the prescribed local subtraction)
-before the `e,delta,epsilon` approximation path can be used for the
-renormalized response. A componentwise bound cannot supply that cancellation.
-Even a flat matched cancellation still requires curved localization,
-moving-insertion control, density/boundary terms and LLL transfer. These flat
-estimates are conditional evidence, not a physical common-regulator proof.
+The exact flat conversion calculation
+[`flat-conversion-leading-remainder.md`](flat-conversion-leading-remainder.md)
+computes both coefficients under its specified physical-half normalization
+and through-`x^2` subtractions: geometric `-b0^2/(840pi) t`, contact
+`+b0^2/(420pi) t`, and total `+b0^2/(840pi) t`, each paired with
+`integral_0^infinity u'''w''' dy`, plus `o(t)`. They do **not** cancel for
+that subtraction. This is not yet identified with the complete physical P1
+subtraction or its finite local restorations. The next step is to match this
+diagnostic to the actual prescribed observable and determine whether an
+additional local term is present; do not claim a flat cancellation under the
+through-`x^2` convention. Even if the actual physical observable removes
+this term, curved localization, moving-insertion control, density/boundary
+terms and LLL transfer remain. These flat estimates are conditional
+evidence, not a physical common-regulator proof.
 
 **Numerical role.** Numerical checks can audit explicit constants or
 truncation bounds after the analytic endpoint map is proved. They cannot
