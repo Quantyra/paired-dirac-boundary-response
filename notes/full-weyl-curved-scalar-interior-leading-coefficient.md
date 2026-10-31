@@ -675,3 +675,62 @@ P1 sectors under the common regulator. Numerical role: none.
 Remaining to-do list: derive the curved integrated coefficient; assemble all
 sectors against the source subtraction; prove the common-regulator endpoint;
 finish novelty/manuscript review and GCP Lean certification.
+
+### Finite-dimensional formula for the curved path-Hessian coefficient
+
+For smooth interior profiles, the exact `H_0` path expression is a function of
+seven path averages. Put
+
+    phi=(a,g_u,u,g_w,w,v,j),
+    a=f^2,  g_u=f f_u,  g_w=f f_w,
+    v=uw,   j=u'X_w+w'X_u,
+
+and define the ordinary finite-dimensional function
+
+    Phi(A,G,U,H,W,V,J)
+      = -2 A^(-3/2)(G W+H U)
+        + A^(-1/2)(8 U W-4 V+2 J).
+
+Then `H_0(z)=Phi(<phi_1(z)>,...,<phi_7(z)>)`. The bridge-average moments
+are
+
+    E[<xi^2>]=1/3,       E[<xi>^2]=1/6.
+
+Taylor expansion of this seven-variable function therefore gives the exact
+local coefficient
+
+    K_2(y) = (1/6) sum_i Phi_i(phi(y)) phi_i''(y)
+             +(1/12) sum_(i,j) Phi_ij(phi(y)) phi_i'(y) phi_j'(y). (5)
+
+All partial derivatives in (5) are ordinary derivatives of the displayed
+explicit `Phi`, evaluated at
+`phi(y)=(f^2, f f_u, u, f f_w, w, uw, u'X_w+w'X_u)`. The source jets are
+`f_u=-u f+f'X_u` and `f_w=-w f+f'X_w`. Adding the already derived
+
+    H_1 = f'^2 Q_(u,w)/(4f^2) + 2(w Z_u+u Z_w)/f,
+    Z_u=f'f_u'/(2f^2)-f'^2 f_u/(2f^3),
+
+and its `w` counterpart gives a fully explicit finite-dimensional formula
+for `K_2+H_1` in the curved source variables. Its integrated rough value is
+the one justified by the grouped-jet expansion and cutoff passage above.
+
+Formula (5) follows by writing each bridge average as
+`<phi_i(y+h xi)>=phi_i+h phi_i'<xi>+(h^2/2)phi_i''<xi^2>+...`, taking
+expectations, and using the two displayed moments in the second-order Taylor
+formula for `Phi`. It reproduces the flat value `integral K_2=-2 integral
+u'w'` when `f=1`. The expression has not yet been reduced by integration by
+parts to `Ruw/6+grad(u).grad(w)/3`; the flat diagnostic shows that an equality
+with the source contact alone is already false. The curved formula is thus a
+precise source-variable comparison target, not a full-response identity.
+
+Concrete claim: equation (5) is the exact smooth-interior coefficient of the
+path-Hessian term, and together with `H_1` expresses the next scalar
+coefficient using source jets. Ordinary argument: finite-dimensional Taylor
+expansion of the exact seven-average path functional. First unsupported
+implication: evaluate its integrated curvature form and combine it with the
+geometric orbit and remaining physical sectors against the source ledger.
+Numerical role: none.
+
+Remaining to-do list: reduce the curved formula and compare the full scalar
+plus source-contact bracket; add the orbit, matrix, density/contact, boundary
+and LLL terms under one regulator; complete novelty and GCP Lean certification.
