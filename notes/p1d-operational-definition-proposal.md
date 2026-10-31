@@ -36,6 +36,15 @@ with the source-declared physical-half, thermal, and action normalization
 they are not discarded as lower-order errors. This choice is independent of
 `eta` only after the physical cutoff transport is specified.
 
+The existing normalization audit fixes part of `c_phys`: for the rank-two
+full-plane tangent multiplier and boundary-orthonormal time, the per-exterior
+physical-half factor is `1/2`. If the original reduced canonical time is
+used, restore the source's boundary length density `sqrt(beta)`; the final
+action conversion factor `-2G/B^2` multiplies the whole action separately.
+These factors must each be applied once. See
+[`tangent-regulator-normalization.md`](tangent-regulator-normalization.md)
+and [`flat-orbit-fiber-normalization.md`](flat-orbit-fiber-normalization.md).
+
 Write `A_eta(t;u,w)` for the signed sum of the action/contact terms not
 included in `H_eta`. Its definition must list the boundary transgression,
 LLL/cocycle allocation, and every finite local restoration exactly once. If
@@ -71,8 +80,9 @@ not evidence that the full P1-D bound fails.
    physical cut; state whether the estimate is uniform in a cutoff family.
 3. Give the signed formula for `A_eta`, including density, contact,
    transgression, LLL/cocycle, and finite local terms.
-4. Fix `c_phys` and the order/joint path for the physical cut and proper-time
-   regulator limits.
+4. Confirm that the half-trace, boundary-length and whole-action factors
+   above are applied exactly once, and fix the order/joint path for the
+   physical-cut and proper-time regulator limits.
 
 Until these decisions are settled from the full source action, this remains a
 template only. No physical response or regulator theorem is claimed.
