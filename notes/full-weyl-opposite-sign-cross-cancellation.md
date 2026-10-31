@@ -124,6 +124,51 @@ the `t^(3/2)` remainder. The even angular-angular `O_u O_w` contribution,
 physical density/contact, boundary transgression, thermal images and source
 conversion remain in the complete response.
 
+## Conditional conjugation reduction for the surviving odd-odd pair
+
+There is an exact algebraic reduction of the odd-odd Duhamel words when the
+source directions are radial. In the flat tangent convention of
+`full-weyl-orbit-correction-vertices.md`, write
+
+    O_u = -i mu M_(u') X,       O_w = -i mu M_(w') X,
+
+where `X=G gamma_y` is a fixed unitary matrix with `X^2=-I`, and `M_g`
+denotes multiplication by `g`. Assume, for this paragraph only, that the
+self-adjoint orbit square `Q` has an `X`-invariant domain. Set
+`Q_X=X Q X^(-1)`. Since scalar multipliers commute with `X`, for every
+`r>=0` on the common operator core,
+
+    O_u exp(-r Q) O_w
+       = mu^2 M_(u') exp(-r Q_X) M_(w').                 (12)
+
+Indeed, `X exp(-rQ) X = -exp(-r Q_X)` follows from `X^2=-I`; the two
+factors `-i` in the vertices supply the other minus sign. The reversed
+ordered word has the same identity with `u,w` interchanged. Thus the
+surviving odd-odd pair is a scalar-gradient pair evaluated against the
+conjugated orbit heat semigroup, rather than an arbitrary matrix insertion.
+
+If in addition `Q_X=Q+W` on a common domain with bounded self-adjoint `W`,
+Duhamel gives the operator-norm estimate
+
+    ||exp(-r Q_X)-exp(-r Q)||
+       <= r ||W|| exp(r max(0,-inf Q,-inf Q_X)).          (13)
+
+Consequently the error made by replacing the conjugated middle semigroup in
+(12) by `exp(-rQ)` is at most
+`mu^2 ||u'||_infinity ||w'||_infinity` times the right side of (13).
+Equation (12) identifies a scalar comparison term; (13) only controls its
+operator-norm semigroup defect. A localized trace-ideal estimate, angular
+summation with the common regulator, and small-time subtraction are still
+needed.
+
+The key application hypotheses are not presently verified for the physical
+P1 realization: the actual paired square domain must be invariant under
+`X`, and the conjugation difference `Q_X-Q` must extend to a bounded
+potential uniformly over the admitted curved family and thermal modes. The
+physical boundary projector may fail the first condition. This reduction
+therefore supplies a concrete route to test the odd-odd sector, not a bound
+for it or a P1 response theorem.
+
 ## Application to the pinned conformal-boundary product realization
 
 For the pinned source's compactified conformal-boundary product
