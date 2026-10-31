@@ -151,3 +151,33 @@ Remaining to-do list: establish the curved commutator and full physical source-o
 Concrete claim: the stated Gaussian trace input implies the boundary-layer power by direct integration and tower counting. First unsupported implication: prove that input for the actual complementary-domain heat product and integrate it into the full physical response. Numerical role: none.
 
 Remaining to-do list: prove the mixed-boundary trace input; close non-hit subtraction, physical density/contact/boundary/LLL terms and common regulator; finish novelty/manuscript; certify supported claims on GCP.
+
+## Curved scalar/contact identity update (2026-10-31 HST)
+
+Technical commit `1e3b60c` derives the exact local source-jet identity for
+the smooth-interior scalar `K_2+H_1` coefficient. Its total derivatives have
+zero integrated flux under the stated seam jets and compact direction
+localization. Using `R=2f''/f-4(f'/f)^2` and `dmu=dy/f`, the integrated
+coefficient is `-6 integral (Ruw/6+u'w'/3) dmu`. Under the conditional
+physical-half normalization, the scalar coefficient is `-3` times the
+source-contact coefficient; hence the scalar/contact pair in `D_scalar-C_src`
+is `-4` times that contact coefficient and does not cancel by itself.
+
+This closes only the smooth-interior scalar comparison. It does not match the
+curved commutator, orbit, density, boundary transgression, LLL, local
+restoration, moving-cut endpoint, or common-regulator contributions. The
+immediately relevant curved boundary-layer estimate remains conditional on
+the mixed `Q`/`Q_X` trace input (1) in
+[`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md).
+
+Concrete claim: the integrated smooth-interior scalar coefficient equals
+minus six times the specified source contact form. Ordinary argument: expand
+the exact local formula in source jets, group total derivatives and contact
+density, and use the admitted flux conditions. First unsupported implication:
+close all remaining response sectors under the physical common regulator.
+Numerical role: none.
+
+Remaining to-do list: prove the curved mixed-boundary trace input; match all
+other response and source terms under the common regulator; complete the
+theorem-specific novelty audit and manuscript; certify supported claims in
+Lean on GCP.
