@@ -6,7 +6,7 @@ Date: 2026-10-31 HST. This records a formalization attempt, not a Lean certifica
 
 `lean/FullWeylOrbitCorrectionVerticesDraft.lean` currently has SHA-256 `E7AF6A2B3FD32B7903C10D4E4A07345261185167369D2953F6E70B42593E37D0`. The GCP host currently has the immediately preceding source hash `8B6180B22B638EB97424B74257C3982D8F88F0DC0C89417B6B19EAAAC1DA170B`; it must be recopied after GCP authentication is restored. It proposes an abstract-ring proof of the mixed commutator coefficient under explicit product-rule and scalar-commutation hypotheses, plus polynomial checks of the angular-mass coefficients. It does not encode parameter differentiability, represented operators/domains, heat traces, curved estimates or the physical response.
 
-The current source was copied to the GCP host, but its Lean invocation did not begin: `gcloud compute ssh` failed during credential refresh with â€œReauthentication failed. cannot prompt during non-interactive execution.â€ Do not cite it as compiled or certified. The pending user action is to reauthenticate the configured account with `gcloud auth login`, after which the exact source should be replayed on the approved GCP builder.
+The current source was copied to the GCP host, but its Lean invocation did not begin: gcloud compute ssh failed during credential refresh with `Reauthentication failed; cannot prompt during non-interactive execution.` Do not cite it as compiled or certified. Reauthenticate the configured account with `gcloud auth login`, then replay the exact source on the approved GCP builder.
 
 ## Preserved earlier attempts
 
