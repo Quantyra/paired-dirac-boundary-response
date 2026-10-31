@@ -96,6 +96,31 @@ first for smooth zero-trace sections and then by H1 density. Uniform equivalence
 
 This does not invalidate the source's canonical boundary data: they may define a nonnormalizable boundary source or a different renormalized/domain realization. It does mean that the compactified H1 projector domain cannot be identified with the ordinary physical Euclidean L2 domain by the stated conformal spinor map. A physical bridge must specify which Hilbert space and endpoint realization is intended, and prove how its boundary data enter the determinant.
 
+## Pinned source wording check (2026-10-31)
+
+The parent source at immutable commit
+`08cb71afea3f0e5310cac8a50c05d5007555641f`,
+`notes/coupled-fermion-domain.md`, says: “At conformal infinity use finite
+canonical boundary data in a common conformal frame.” It then derives the
+maximal-isotropic coupled projector and states a self-adjoint Hamiltonian
+domain for the corresponding smooth compact regular boundary problem, with
+horizon ends and infrared zero modes requiring separate prescriptions. This
+specifies the source boundary-data convention and the finite-problem domain
+argument. It does not specify that the conformal-end realization is the
+completion in ordinary physical `L2(g)`, nor give a weighted endpoint graph
+domain or identify its determinant with that of the compactified `H1`
+projector realization. The companion pinned note
+`notes/stationary-exterior-conformal-domain.md` calls its radial projector
+prescription the “actual Euclidean domain,” but likewise does not resolve
+that Hilbert-space identification. Both files were inspected read-only; the
+parent repository has concurrent dirty work and was not modified.
+
+This source check therefore sharpens the open bridge: preserve the canonical
+boundary prescription as stated, and obtain an explicit statement from the
+source derivation about the intended endpoint Hilbert/renormalized space
+before identifying it with ordinary physical `L2`. It neither disproves the
+prescription nor supplies the missing response theorem.
+
 **First unsupported implication.** Applying the compactified product moving-cut mixed-heat estimate to the physical finite-cut congruence or using the source's nonzero projector trace as an ordinary physical L2 state. The required weighted graph realization and its heat/contact response have not been established.
 
 **Numerical role.** None. This is a norm/domain calculation; no numerical or Lean claim follows.
