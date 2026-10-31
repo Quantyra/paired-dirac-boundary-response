@@ -413,3 +413,59 @@ This is adjacent prior art for local Dirac projectors, heat-kernel anomaly metho
 Concrete claim: the cited work establishes eta/heat-kernel anomaly results for strongly elliptic local Dirac boundary problems and discusses metric variations. First unsupported implication: determine whether any specialization matches P1's paired second response after the operator, projector, normalization, and regulator are fixed. Numerical role: none. Lean role: none.
 
 Remaining to-do list: match the final P1 operator and observable against this local-boundary eta framework; close the physical common-regulator response; complete the theorem-specific novelty decision; certify supported claims on GCP.
+
+## Theorem-level scope check: finite-regularity and interface expansions
+
+The source-level comparison for the rough-heat claim is now pinned to the
+versioned statements. Smith, [*On the trace of Schrödinger heat kernels and
+regularity of potentials*](https://arxiv.org/abs/1809.05614v1), Theorem 1.1,
+assumes a real-valued bounded compactly supported scalar potential on a
+complete Riemannian manifold with Ricci curvature bounded below. For
+dimension `n >= 4`, it also assumes the local trace-class estimate (1.2).
+For integer `m >= 0`, it proves the equivalence between `V in H^m` and the
+specified relative heat-trace expansion with a bounded remainder; the
+regularity-to-expansion direction has a continuous normalized remainder at
+`t=0`. This is substantive finite-regularity trace prior art. It is not the
+P1 theorem: P1 varies a Dirac square's principal symbol and its composed
+mixed boundary realization, and asks for a differentiated, source-subtracted
+response. Neither distinction alone establishes novelty. The missing
+comparison is an ordinary estimate for the P1 matrix, boundary, and
+common-regulator terms in the same remainder topology.
+
+For interfaces, Gilkey, Kirsten and Vassilevich's [transfer paper,
+arXiv:hep-th/0208130v1](https://arxiv.org/abs/hep-th/0208130v1), Eq. (1.1)
+and Theorem 1.2, treats compact smooth Laplace-type problems with finite
+matrix Robin/impedance conditions on the full pair of boundary values and
+computes the first five heat-trace coefficients. Their formal transmittal
+limit imposes equality of the two side values and a sum-of-inward-normal-
+derivatives condition. The separate [transmittal paper,
+arXiv:hep-th/0101105v1](https://arxiv.org/abs/hep-th/0101105v1), Theorem 2.3
+and Section 7, determines interface invariants through `a_4`; Section 8
+gives only a restricted reflection-symmetric `a_5` case. P1's square has a
+mixed Dirichlet/Robin trace condition, so a general claim that this boundary
+structure is new is untenable. The conditional fixed-cut crosswalk already
+identifies its square with an interface Laplace-type class under the pinned
+bundle and partner hypotheses. That overlap makes the smooth low-order
+coefficient machinery prior art. It does not compute P1's full-Weyl mixed
+mass/log Hessian, rough seam terms, LLL/local allocation, or physical
+common-regulator endpoint.
+
+The resulting novelty boundary is therefore narrower and remains
+conditional: any distinct contribution must be stated as the complete
+paired-domain mixed response or a proved rough/source-uniform extension,
+with explicit coefficients and transfer hypotheses. Current evidence has
+not established either distinction as a theorem and does not support a final
+novelty verdict.
+
+Concrete claim: the named prior sources establish the finite-regularity
+scalar relative-trace equivalence and the stated low-order transfer/transmittal
+heat expansions. Ordinary argument: compare their theorem hypotheses and
+boundary data to the P1 composition-square crosswalk and response contract.
+First unsupported implication: derive the P1 mixed response and remainder
+under the same physical regulator, then show it is not already a specialization
+of the cited invariant frameworks. Numerical role: none. Lean role: none.
+
+Remaining to-do list: complete the full common-regulator response proof and
+source-level coefficient match; screen any further theorem-specific prior
+art at the final claim scope; record the S001 decision; certify the supported
+formalizable statements on GCP.
