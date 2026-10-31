@@ -12,7 +12,7 @@ This is the S001.2 working audit, assessed against [the claim ledger](claim-depe
 | Square and resolvent | [Square criterion](square-domain-boundary-criterion.md), [square resolvent](paired-square-resolvent.md) and [constant audit](resolvent-variation-constants.md) distinguish composition domains and parameter bounds. The pinned source's collar bounds through five derivatives give bounded `b'`,`b''` and zero outer normal trace; with its fixed regular atlas/interior/disk bounds, the criterion applies on the source-prescribed fixed realization (see [multiplier instantiation](paired-multiplier-domains.md)). | The global atlas and source-domain hypotheses still require verification for the admitted family. The conclusion excludes artificial positive cuts and any different physical weighted-L2 realization at conformal infinity; it supplies no heat-trace or common-regulator estimate. A W1,infinity multiplier alone does not justify equal square domains. |
 | Original collar approximation | [Weighted cutoff](weighted-remainder-cutoff.md), [H4 approximation](original-collar-h4-approximation.md) and [flat limit](flat-weighted-collar-cutoff-limit.md) cover the original weighted remainder under stated exterior assumptions. | Extend the needed convergence to the physical curved trace and full common regulator. The [counterexample](collar-fifth-derivative-counterexample.md) rules out inferring W5,1 from the original bounds. |
 | Tangent multiplier and boundary terms | [Flat multiplier](flat-tangent-multiplier.md), [coefficients](flat-boundary-coefficients.md) and [contact](flat-product-contact.md) give ordinary flat-model arguments. [Fiber normalization](flat-orbit-fiber-normalization.md), [source conversion](tangent-regulator-normalization.md) and the detailed [P1-C source normalization audit](p1c-source-normalization-audit.md) reconcile the per-exterior `H_2/2` factor, sphere signs, separate LLL, partner average, `2 Theta' I_t` contact, fixed period and external action factor under their stated hypotheses. [Cubic-jet boundary Hessian](cubic-jet-weyl-boundary-hessian.md) proves O(epsilon^3 log^2 epsilon) decay of the total local finite-cut Weyl boundary term for the source-matched fixed-seed Weyl directions. | These steps settle the flat-model factor bookkeeping and one local boundary term under explicit hypotheses. The source crosswalk adds a common-regulator seed-jet conversion for its own geometric and variable-mass endpoints. Match those endpoints to the complete P1-C observable; then establish any curved-to-tangent transfer required by the final claim. A logarithmic coefficient still requires stronger jet/tail assumptions than the original weight alone. |
-| Curved family trace | [Claim ledger P1-D](claim-dependencies.md) records the proposed estimate. Section 5 at `f0eab590` defines `r_curved` verbally and refers to tangent term (11) in Section 4, supporting that flat diagnostic as the working candidate; it still does not specify the localization, cutoff transitions or sector allocation term by term. | First freeze an operational `r_curved` formula on one Hilbert space and regulator, including localization maps, cutoff transitions, density/contact/LLL/restoration allocation and normalization. Then establish the mixed-boundary kernel estimate uniformly with complete vertices, thermal/angular sums, physical regularization and a fixed atlas. Neither step follows from norm-resolvent or flat estimates alone. |
+| Curved family trace | [Claim ledger P1-D](claim-dependencies.md) records the proposed estimate. Section 5 at `f0eab590` defines `r_curved` verbally and refers to tangent term (11) in Section 4, supporting that flat diagnostic as the working candidate; it still does not specify the localization, cutoff transitions or sector allocation term by term. | First freeze an operational `r_curved` formula on one Hilbert space and regulator, including localization maps, cutoff transitions, density/contact/LLL/restoration allocation and normalization. The later fixed-product audit establishes a Gaussian bound for the pinned compactified orbit square and an O_R(t^(3/2)) odd-odd contribution when both insertions lie in a fixed R sqrt(t) window. This does not control the non-hit region or identify its local coefficient with the source subtraction. Close the complete curved response, including all vertices, thermal/angular sums and physical moving-cut transfer under the common regulator. Neither the operational definition nor that transfer follows from norm-resolvent or flat estimates alone. |
 | Closest prior art | [Transfer/transmittal comparison](transfer-transmittal-comparison.md), [finite regularity](finite-regularity-prior-art.md) and [jump comparison](prior-art-derivative-jumps.md) identify substantial overlap and hypothesis differences. Herzog–Huang–Vassilevich, [*Interface Conformal Anomalies*](prior-art-comparison.md#close-structural-prior-art-symmetric-dirac-interfaces), is close prior art for folded/symmetric Dirac interface domains and the 4D `a4` anomaly, including cubic extrinsic-curvature terms. Ivanov–Vassilevich's [local-boundary eta-invariant analysis](prior-art-comparison.md#additional-adjacent-prior-art-eta-invariant-variations-for-local-boundary-conditions) adds adjacent precedent for strongly elliptic local projectors and metric-dependent eta variation. The [published-version check](scalar-jump-normalization-audit.md) confirms the APS bibliographic record, but its equation text is paywalled; the arXiv v2 factor discrepancy remains an open scalar benchmark issue. | The [exact one-interface benchmark](scalar-jump-exact-benchmark.md) independently checks the full-frequency scalar coefficient and gives an O(t^3) remainder. The fixed-cut physical operator note rules out direct substitution into the scalar-potential jump theorem because the P1 square has a varying principal symbol; full transformed-vertex coefficient matching remains open. The interface anomaly computes `a4`, while the eta-invariant paper studies a different spectral functional; neither comparison has been specialized to P1's even paired mixed mass/log response or physical regulator. The final-projector comparison, full response and normalization remain unresolved. No novelty verdict follows. |
 
 ## Reconciliation of the later physical and formal work
@@ -247,7 +247,7 @@ Remaining to-do list: compile and audit the exact Lean source on GCP; formalize
 additional supported algebra only after source checks; prove the curved
 mixed-boundary estimate and close all physical sectors and regulator limits.
 
-### Correction to the conditional odd-odd boundary estimate (2026-10-31 HST)
+### Correction to and fixed-model refinement of the odd-odd boundary estimate (2026-10-31 HST)
 
 Technical commit `f4082ec` withdraws the earlier same-coordinate input
 `t^(-1) integral exp(-y^2/(ct)) |u'(y)w'(y)|dy` in
@@ -256,9 +256,16 @@ multiplication vertices evaluated at separate normal coordinates; without a
 relation between the independent directions, the same-point product need
 not control an off-diagonal trace. The replacement is a bilocal input with a
 normalized Gaussian average of `|w'(y')|` against `|u'(y)|`. Under this
-input, the cubic jets and Gaussian second moment still give the conditional
-`O(t^(3/2))` boundary-layer scale. The actual complementary-domain kernel
-and trace-ideal estimate remains unproved.
+input, the cubic jets and Gaussian second moment give the conditional
+`O(t^(3/2))` boundary-layer scale. Subsequent analysis in
+[`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md)
+establishes the individual Gaussian upper bound for the pinned compactified
+smooth mixed Dirichlet/Robin orbit square and its pointwise unitary conjugate.
+It therefore proves the fixed-`R sqrt(t)` window component after the angular
+sum for that fixed model. It does not prove the bilocal Gaussian defect input
+for the complete boundary-layer region, control the complementary non-hit
+region/local coefficient, or transfer the result to moving physical cuts and
+the common-regulator source observable.
 
 Concrete claim: the bilocal conditional input implies the stated component
 scale. Ordinary argument: convolve the two outer Gaussian kernels, retain
@@ -267,6 +274,4 @@ then sum the simplex and mass tower. First unsupported implication: prove
 the mixed-boundary kernel estimate for the physical curved family and match
 the complete observable under one regulator. Numerical role: none.
 
-Remaining to-do list: prove the corrected bilocal estimate; close all other
-response sectors and the common-regulator bridge; complete the novelty and
-manuscript audits; certify supported claims on GCP.
+Remaining to-do list: control the non-hit region and match its local coefficient to the source subtraction; prove physical moving-cut and common-regulator transfer; close the other response sectors; finish novelty and manuscript audits; certify supported claims on GCP.
