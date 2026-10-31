@@ -318,6 +318,21 @@ P1-D's `t^(3/2)` target. This is a necessary condition inferred from the
 component expansion, not a conclusion that P1-D fails: the other response
 sectors and subtraction identity have not been assembled.
 
+The frozen source fixes one precise part of the subtraction. Its Section 4
+flat tangent multiplier is `H_t(k)=2 F(tk^2)/(pi t)`; the local terms through
+the stated `x^3` order are removed before its cubic/cubic-log seam terms, and
+the resulting tangent remainder begins at `t^(5/2)` / `t^3 log(t)`. That
+flat tangent contains no curved frame coefficient `h`. Section 5 defines
+`r_curved` as the exact weak curved response minus the localized tangent
+contribution with its cutoff terms, but does not expand those cutoff terms
+into the `h^2u'w'` coefficient. Therefore the current frozen source does not
+identify the new interior term as already subtracted. The necessary next
+step is an exact decomposition of those cutoff/local-restoration terms on
+the same physical Hilbert space and regulator. This comparison uses the
+immutable [rough paired-variation source at `f0eab590`](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md),
+Sections 4--5; it remains a scope audit, not evidence that cancellation
+fails.
+
 Concrete claim: the fixed-interior defect creates the displayed raw
 rank-two `t^0` coefficient, so P1-D requires its subtraction or a proved
 cancellation. First unsupported implication: identify this component in
