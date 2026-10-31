@@ -34,3 +34,15 @@ replay in the pinned workspace.
 A preceding `lake env` attempt in `paper1-sourceonly-6858aa7-20261029/source/lean` triggered a dependency URL refresh and deleted that workspace's Mathlib checkout. No Lean result came from that invocation. I restored the checkout from the retained exact-tree archive SHA-256 `e02f9079352fa741592aa8d9fe5c6116064d95c0c7bed87b4f1e94bbf4e603e3` and the retained Git metadata. The restored checkout reports commit `c5ea00351c28e24afc9f0f84379aa41082b1188f` and tree `1fe688f4d9e84fb268a300f8ac33cbca883fbd28`; its source was restored after that failed Lake attempt. The generated untracked manifest was removed. Use the separate pinned `paper1-domain-exact-tree-f7b70c1-20261029` workspace for a direct Lean invocation with its matching Lean 4.30.0 toolchain and prebuilt imports; avoid `lake env` in the source-only workspace.
 
 Remaining to-do list: reauthenticate GCP; replay the current exact hash and preserve the raw log/exit code/axiom output; then continue the P1 analytic bridge and novelty audit.
+
+## Credential recheck after temporary handoff
+
+On 2026-10-31, both `gcloud auth print-access-token` and the builder instance
+query still fail during user-token refresh with `Reauthentication failed. cannot
+prompt during non-interactive execution`. The configured account remains
+`dfredriksen@quantyra.org`. The alternate Application Default Credentials token
+refresh also fails, and `GOOGLE_APPLICATION_CREDENTIALS` is unset. The already
+open interactive login process remains live in the current workstation session;
+it has emitted no completion output. No Lean invocation was attempted, and the
+builder state remains unknown. Once interactive sign-in completes, verify the
+account and builder status before replaying the exact corrected source hash.
