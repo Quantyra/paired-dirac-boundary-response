@@ -1,0 +1,39 @@
+GraphProjectionDraft.lean:31:55: warning: This simp argument is unused:
+  WithLp.ofLp_toLp
+
+Hint: Omit it from the simp argument list.
+  simp only [WithLp.prod_inner_apply, WithLp.ofLp_sub, W̵i̵t̵h̵L̵p̵.̵o̵f̵L̵p̵_̵t̵o̵L̵p̵,̵Prod.fst_sub, Prod.snd_sub, Prod.fst_zero,
+  ̲  ̲ ̲ ̲Prod.snd_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+GraphProjectionDraft.lean:32:32: warning: This simp argument is unused:
+  Prod.fst_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [WithLp.prod_inner_apply, WithLp.ofLp_sub, WithLp.ofLp_toLp, Prod.fst_sub, Prod.snd_sub,
+  ̲  ̲ ̲ ̲P̵r̵o̵d̵.̵f̵s̵t̵_̵z̵e̵r̵o̵,̵ ̵Prod.snd_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+GraphProjectionDraft.lean:32:47: warning: This simp argument is unused:
+  Prod.snd_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [WithLp.prod_inner_apply, WithLp.ofLp_sub, WithLp.ofLp_toLp, Prod.fst_sub, Prod.snd_sub,
+  ̲  ̲ ̲ ̲P̵r̵o̵d̵.̵f̵s̵t̵_̵z̵e̵r̵o̵,̵ ̵P̵r̵o̵d̵.̵s̵n̵d̵_̵z̵e̵r̵o̵]̵P̲r̲o̲d̲.̲f̲s̲t̲_̲z̲e̲r̲o̲]̲ at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.graph_projection_identity_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+GraphProjectionDraft.lean:62:8: warning: This simp argument is unused:
+  add_comm
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵a̵d̵d̵_̵c̵o̵m̵m̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.positiveSquare_add_one_surjective_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_dense_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+GraphProjectionDraft.lean:133:2: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+'PairedDirac.positiveSquare_adjoint_domain_reverse_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_selfAdjoint_draft' depends on axioms: [propext, Classical.choice, Quot.sound]

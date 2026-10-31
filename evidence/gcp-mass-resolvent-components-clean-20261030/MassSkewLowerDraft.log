@@ -1,0 +1,4 @@
+MassSkewLowerDraft.lean:13:5: warning: unused variable `hm`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'PairedDirac.mass_skew_lower_bound_draft' depends on axioms: [propext, Classical.choice, Quot.sound]

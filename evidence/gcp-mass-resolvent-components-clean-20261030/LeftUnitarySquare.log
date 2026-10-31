@@ -1,0 +1,4 @@
+'PairedDirac.left_unitary_adjoint_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.left_unitary_square_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.left_unitary_adjoint_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.left_unitary_positive_square' depends on axioms: [propext, Classical.choice, Quot.sound]
