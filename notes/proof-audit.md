@@ -73,6 +73,22 @@ response vertices and physical common regulator. Numerical role: none for
 these operator-domain and conditional estimates. The estimates are not Lean
 certificates.
 
+Further full-Weyl model estimates sharpen the analytic status without closing
+that implication. [`full-weyl-mixed-response-angular-tail.md`](full-weyl-mixed-response-angular-tail.md)
+controls the whole mixed heat derivative's angular tail on a fixed compact
+product at each fixed positive time under common holomorphic-form and graph
+hypotheses. [`full-weyl-localized-heat-tower-bound.md`](full-weyl-localized-heat-tower-bound.md)
+gives a conditional localized cut comparison after angular and thermal
+summation for the unvaried square with a fixed scalar insertion. The exact
+full-Weyl correction vertices and their flat product-tangent cross kernel are
+also recorded. These do not provide the curved, localized, small-time
+subtracted orbit-angular cross estimate under the same regulator that is
+needed to transfer the parent curved remainder to P1; density/contact,
+boundary-transgression, thermal-image, LLL/anomaly and source-observable
+matching remain separate terms. That cross estimate and the physical map are
+the current first unsupported response obligations. No numerical role or
+Lean certification is claimed for these conditional analytic results.
+
 The fixed-product pure angular part is no longer wholly open: the ordinary
 [`angular-vertex-heat-majorant.md`](angular-vertex-heat-majorant.md) bounds
 the second angular vertex and the two angular-angular ordered terms, sums the
