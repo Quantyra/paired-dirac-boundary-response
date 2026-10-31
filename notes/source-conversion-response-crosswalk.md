@@ -80,6 +80,34 @@ identify that extraction with P1's full-Weyl tangent and prescribed local
 restorations, not to infer failure of the source target from this truncated
 flat diagnostic.
 
+## Sign-paired reduction of the full-Weyl correction
+
+On the compactified product realization where positive and negative mass
+modes have identical orbit domains, seed operators and trace densities,
+pairing `mu` with `-mu` cancels the odd-in-`mu` pieces in the orbit-angular
+cross terms. The surviving orbit-angular insertions are the scalar
+`-2 mu^2 u` and `-2 mu^2 w` vertices, weighted by `-Theta'(t)`. This is an
+exact positive-time reduction under the stated product-domain hypotheses;
+it does not apply automatically to arbitrary finite radial cuts. The
+angular-only sector still contains the even-even pair weighted by
+`Theta''(t)` and the odd-odd gradient pair weighted by `-Theta'(t)`; the
+odd-odd term does not cancel by sign pairing. See
+[`full-weyl-opposite-sign-cross-cancellation.md`](full-weyl-opposite-sign-cross-cancellation.md)
+and the exact Hessian formula in
+[`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md).
+
+Because `-Theta'(t)=O(t^-2)` and `Theta''(t)=O(t^-3)`, termwise sufficient
+targets for a subtracted total `O(t^(3/2))` correction are `O(t^(7/2))` for
+the orbit-insertion and odd-odd kernels, and `O(t^(9/2))` for the even-even
+kernel. These powers are sufficient bookkeeping, not necessary individual
+bounds; combined cancellations may improve them. The fixed-product
+positive-time estimates do not establish any of these small-time subtracted
+bounds. The first concrete curved obligation is to estimate the surviving
+scalar orbit-angular insertions with the actual localized tangent
+subtraction and common regulator, then control the odd-odd domain defect
+and the even-even sector. Density/contact, boundary transgression, thermal
+images and LLL still need inclusion.
+
 **Numerical role.** Numerical checks can audit explicit constants or
 truncation bounds after the analytic endpoint map is proved. They cannot
 establish operator-domain equality, determinant identification, or the
