@@ -59,6 +59,15 @@ subtracted response, the full contact/density/LLL allocation, or the
 commutator sector and its surviving odd-odd pair, which still need their own
 matrix insertion estimate.
 
+The same scalar note now extracts a necessary frozen, zeroth-spatial-jet
+coefficient: the angular-factor Hessian is
+`4 u w [t Theta'(t)+t^2 Theta''(t)]`, with leading singular part
+`4 C u w/t`. After the bridge prefactor this contributes
+`(2C/pi) E[W_T(0)] u w t^(-2)` to the doubled scalar diagonal. This is a
+coefficient to match in the local subtraction, not a counterterm assignment;
+orbit variations, physical normalization and source contacts remain to be
+included.
+
 The joint scalar-hit result is detailed in
 [`full-weyl-curved-scalar-joint-hit-bound.md`](full-weyl-curved-scalar-joint-hit-bound.md).
 Thus the parent result plus this scalar component do not yet close P1-C/P1-D.
