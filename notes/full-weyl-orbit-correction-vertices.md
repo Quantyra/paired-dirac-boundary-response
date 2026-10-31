@@ -116,6 +116,61 @@ subtraction, or the physical density/contact/LLL and boundary-transgression
 transfer. In particular they do not establish the required `t^(3/2)` curved
 subtracted remainder.
 
+## Exact orbit-angular cross term in the flat product tangent model
+
+The cross terms can be isolated explicitly in the existing rank-two flat
+model. Use `flat-tangent-angular-mode.md`'s `A(x)` and `I(x)`, with
+`x=tk^2`, `z=t mu^2`, and `X=G gamma_y`. The first angular vertex is
+`-2 mu^2 u-i mu X u'`; its mixed second vertex is
+`4 mu^2 uw+2i mu X(uw)'`. The rank-two trace of `X` vanishes and
+`X^2=-1`. Applying the mixed Duhamel formula gives the purely angular
+contribution
+
+    H_ang(t,k) = exp(-z)/pi
+      [-2 mu^2 + 2 mu^4 t A(x) + (mu^2 x/2) A(x)].          (7)
+
+Here `-2 mu^2/pi` is the mixed-second-vertex term; the other two terms are
+the scalar and gradient-gradient ordered angular pairs. Mixed scalar-gradient
+pairs vanish by `tr X=0`. The full-minus-orbit addition from
+`flat-tangent-angular-mode.md`, Eq. (3), is
+
+    H_full(t,k)-exp(-z) H_orbit(t,k)
+      = 2 exp(-z)/pi [mu^2 I(x)+mu^4 t A(x)-mu^2 x A'(x)].  (8)
+
+Since `I(x)=A(x)+x A(x)/4+x A'(x)`, subtracting (7) from (8) isolates
+the sum of the two orbit-angular ordered terms:
+
+    H_cross(t,k) = 2 mu^2 exp(-z)/pi [1+A(x)].              (9)
+
+This agrees at `k=0` with the constant-Weyl benchmark: the cross contribution
+is `4 mu^2 exp(-z)/pi` in the declared rank-two density convention. Summing
+(9) over the massive sphere tower at each positive time is exact:
+
+    H_cross,tower(t,k) = 2[-Theta'(t)]/pi [1+A(tk^2)].     (10)
+
+Thus the fixed-product orbit-angular cross term is now explicit and absolutely
+summable for every `t>0`; the mode-uniform estimate (3) in
+`angular-vertex-heat-majorant.md` supplies a separate crude absolute bound.
+Equation (10) is not the curved physical response and contains no density,
+contact, LLL, boundary-transgression, or source-conversion contribution.
+
+For the conditional physical-half normalization used in
+`full-weyl-angular-seam-coefficients.md`, put `alpha0=2b^2`. The leading
+small-time cross multiplier is `alpha0/(pi t^2) [1+A(tk^2)]`. Under that
+note's cubic/log Fourier-tail assumptions, the cubic local subtraction is
+`2-x/6+x^2/60-x^3/840`; the remainder is `A-A3`, whose Mellin integral is
+`J_A=pi^(3/2)/12288`. Therefore the isolated orbit-angular cross contribution
+to the conditional half-normalized flat diagnostic is
+
+    +3 b^2/(128 sqrt(pi)) c_u c_w t^(3/2)
+      +2 b^2/(105 pi) (c_u d_w+d_u c_w) t^2 log(t)
+      +o(t^2 |log(t)|).                                    (11)
+
+The logarithmic coefficient uses the `x^4/15120` coefficient of `A`; the
+subleading terms in `-Theta'` contribute at smaller order. This is a
+fixed-product tangent decomposition under the cited tail and half-folding
+hypotheses, not a physical coefficient or a curved-family estimate.
+
 No numerical result or Lean claim is made. These ordinary identities are candidates for a narrowly scoped GCP formalization only after the operator and domain representation is fixed; formalizing them would not certify the heat-kernel bound.
 
-Remaining to-do list: bound the orbit-angular Duhamel cross terms after local subtraction, prove curved source matching under the common regulator, finish novelty and manuscript, and certify supported claims on GCP.
+Remaining to-do list: extend the fixed-flat orbit-angular cross kernel to the curved localized family with its common-regulator subtraction and physical source/contact terms; finish novelty and manuscript; certify supported claims on GCP.

@@ -49,8 +49,10 @@ the second angular vertex and the two angular-angular ordered terms, sums the
 massive tower absolutely at each positive time, and gives only a crude
 `O(t^(-2))` compact-orbit bound before subtraction. The correction-vertex
 note adds relative-form bounds uniform in angular mass (technical commit
-`e9bc9fa`). The orbit-angular cross terms in the mixed Duhamel formula,
-curved localization and the common-regulator subtraction remain open. Neither
+`e9bc9fa`). The correction-vertex note further isolates the exact flat
+product-tangent orbit-angular cross multiplier and its conditional cubic/log
+seam coefficients. Curved localization, the physical density/contact/LLL
+transfer and the common-regulator subtraction remain open. Neither
 fixed-product result supplies P1-C or P1-D.
 
 | Dependency | Later evidence | What remains unproved |
