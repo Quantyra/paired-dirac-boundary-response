@@ -1,4 +1,4 @@
-# Conformal boundary data versus physical Euclidean L2
+﻿# Conformal boundary data versus physical Euclidean L2
 
 This is a scope check on the fixed massless RN product compactification in
 `stationary-exterior-conformal-domain.md` at scientific commit f0eab590. It
@@ -65,3 +65,41 @@ No numerical computation is used.
 Remaining to-do list: specify and match the physical and conformal boundary
 spaces and anomaly/regularization, prove the full response, resolve prior art,
 prepare the manuscript, and certify supported claims in Lean on GCP.
+## Weighted graph norm and the H1 boundary mismatch
+
+On the compactified RN collar write `g=u^(-2) ghat`, with `u=0` at the outer boundary and `dvol_g=u^(-4)dvol_ghat`. Four-dimensional spinor conformal covariance uses
+
+```text
+psi_g = u^(3/2) psi_hat,
+D_g psi_g = u^(5/2) D_hat psi_hat.
+```
+
+Therefore the physical graph norm, expressed in the compactified spinor variable, is
+
+```text
+||psi_g||_(L2(g))^2 + ||D_g psi_g||_(L2(g))^2
+ = integral [u^(-1)|psi_hat|^2 + u|D_hat psi_hat|^2] dvol_ghat.  (4)
+```
+
+This is the natural weighted graph quantity on smooth compactly supported core sections. It is not the unweighted compactified H1 graph norm used by the local-projector moving-cut estimates.
+
+Within `H1(ghat)`, the first term in (4) is finite if and only if the *entire* trace of `psi_hat` vanishes. If the trace is nonzero on a positive-measure boundary patch, the collar continuity in L2 gives a positive lower bound for its tangential L2 norm near `u=0`, and `integral du/u` diverges. Conversely, for zero trace, the one-dimensional Hardy estimate on a collar chart gives
+
+```text
+integral_0^a |f(u)|^2 du/u
+ <= integral_0^a (integral_0^u |partial_v f(v)|^2 dv) du
+  = integral_0^a (a-v)|partial_v f(v)|^2 dv
+ <= a integral_0^a |partial_v f(v)|^2 dv.
+```
+
+first for smooth zero-trace sections and then by H1 density. Uniform equivalence of the collar density and a finite atlas gives the corresponding boundary estimate. Thus, among compactified H1 sections, physical L2 selects zero full trace. The source local projector condition `Pi_- tr(psi_hat)=0` permits nonzero `Pi_+` trace and is strictly weaker.
+
+This does not invalidate the source's canonical boundary data: they may define a nonnormalizable boundary source or a different renormalized/domain realization. It does mean that the compactified H1 projector domain cannot be identified with the ordinary physical Euclidean L2 domain by the stated conformal spinor map. A physical bridge must specify which Hilbert space and endpoint realization is intended, and prove how its boundary data enter the determinant.
+
+**First unsupported implication.** Applying the compactified product moving-cut mixed-heat estimate to the physical finite-cut congruence or using the source's nonzero projector trace as an ordinary physical L2 state. The required weighted graph realization and its heat/contact response have not been established.
+
+**Numerical role.** None. This is a norm/domain calculation; no numerical or Lean claim follows.
+
+Remaining to-do list: identify the intended physical endpoint Hilbert space and boundary realization, prove its weighted graph and response estimates, match source density/contact/LLL normalizations and common regulator, then finish novelty, manuscript and claim-matched Lean certification.
+
+
