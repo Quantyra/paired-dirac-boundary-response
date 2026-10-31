@@ -1,0 +1,17 @@
+Sat Oct 31 22:13:16 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/FlatSourceContactLedger.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+b21468d3fe08878c15b33ed29578599676ba3aabdbd0c0288c71b3269672f67f  FlatSourceContactLedger.lean
+'source_contact_coefficient_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'physical_half_correction_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'correction_minus_contact_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'total_flat_ledger_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'source_contact_coefficient_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'physical_half_correction_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'correction_minus_contact_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'total_flat_ledger_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+FlatSourceContactLedger.lean: OK
+34360df975d55b2a27ef6f1e2395e1327f1cadfb3fe2461c22d683a2cc8a6c64  FlatSourceContactLedger.olean

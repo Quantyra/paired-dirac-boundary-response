@@ -7,6 +7,11 @@ obstruction is checked in `evidence/gcp-flat-form-factor-20261030/README.md`.
 The rational polynomial cancellation in the full-Weyl angular tangent jet is
 checked in `evidence/gcp-full-weyl-angular-jet-20261030/README.md`; this does
 not formalize its analytic remainders or physical trace transfer.
+The exact flat source-contact coefficient identities now compile on the GCP
+Lean 4.30.0 builder; the source, `.olean`, hashes and complete run log are in
+[`gcp-flat-source-contact-ledger-20261031`](../evidence/gcp-flat-source-contact-ledger-20261031/README.md).
+This verifies rational algebra only, not its analytic inputs, physical
+normalization, the common-regulator response, or the full paper.
 Geometric hypotheses, analytic response and full paper certification remain open.
 
 ## Historical initial campaign

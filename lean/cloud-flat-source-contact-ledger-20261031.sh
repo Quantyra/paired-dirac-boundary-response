@@ -2,8 +2,9 @@
 # Exact-source Lean replay on the Quantyra GCP builder; never run locally.
 set -euo pipefail
 
-run="$HOME/quantyra-space-runs/paper1-flat-source-contact-ledger-20261031"
+run="$HOME/quantyra-space-runs/paper1-flat-source-contact-ledger-20261031-retry3"
 base="$HOME/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029"
+deps="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/source/lean"
 toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin"
 source="$HOME/FlatSourceContactLedger.lean"
 source_sha='b21468d3fe08878c15b33ed29578599676ba3aabdbd0c0288c71b3269672f67f'
@@ -16,7 +17,7 @@ date -u
 hostname
 test "$(cat "$base/exit-code")" = 0
 test "$(git -C "$base/source" rev-parse HEAD)" = 6858aa7dd45f717f8302f4ae6bfa3a7926fe68b5
-test -f "$base/source/lean/lake-manifest.json"
+test -f "$base/source/lean/lakefile.toml"
 test -x "$toolchain/lean"
 printf '%s  %s\n' "$source_sha" "$source" | sha256sum -c -
 
@@ -25,14 +26,14 @@ lean --version | tee "$run/lean-version.txt"
 grep -F 'version 4.30.0' "$run/lean-version.txt"
 lake --version | tee "$run/lake-version.txt"
 
-pkg_root="$base/source/lean/.lake/packages"
+pkg_root="$deps/.lake/packages"
 lean_path=""
-for pkg in Cli batteries Qq aesop proofwidgets importGraph LeanSearchClient plausible mathlib; do
+for pkg in batteries Qq aesop proofwidgets importGraph LeanSearchClient plausible mathlib; do
   pkg_lib="$pkg_root/$pkg/.lake/build/lib/lean"
   test -d "$pkg_lib"
   lean_path="${lean_path:+$lean_path:}$pkg_lib"
 done
-lean_path="$lean_path:$base/source/lean/.lake/build/lib/lean:$(dirname "$toolchain")/lib/lean"
+lean_path="$lean_path:$deps/.lake/build/lib/lean:$(dirname "$toolchain")/lib/lean"
 export LEAN_PATH="$run:$lean_path"
 
 cp "$source" "$run/FlatSourceContactLedger.lean"

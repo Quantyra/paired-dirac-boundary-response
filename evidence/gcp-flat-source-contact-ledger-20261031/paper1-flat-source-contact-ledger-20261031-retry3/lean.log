@@ -1,0 +1,4 @@
+'source_contact_coefficient_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'physical_half_correction_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'correction_minus_contact_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'total_flat_ledger_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
