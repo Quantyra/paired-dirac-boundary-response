@@ -660,28 +660,99 @@ the leading coefficient over `0<=r<=t` gives `-h^2 t^2/(24 pi)` for one
 ordering and `-h^2 t^2/(12 pi)` for both orderings, before the angular
 mass-square sum and the insertion product `u'w'`.
 
-Equation (15) is established here as the local transport coefficient for
-ratios in compact subsets of the open simplex. The extension of its
-remainder uniformly to `r=0,t` has not been proved in this note. The leading
-coefficient is integrable at both endpoints after multiplication by `s`,
-but that fact alone does not bound the parametrix remainder there. A full
-fixed-interior trace asymptotic still needs an endpoint-uniform estimate,
-followed by control of cutoff-transition terms. Even once obtained, it is
-only the `Q_X-Q` defect; the same-boundary word and physical source/contact
-ledger remain separate obligations.
+At commit `415ca4b`, equation (15) had only been derived for ratios in
+compact subsets of the open simplex, and the endpoint remainder was left
+open. The endpoint-uniform fixed-interior argument below supersedes that
+limitation. The same-boundary word and physical source/contact ledger remain
+separate obligations.
 
-Concrete claim: for a fixed smooth interior cutoff and
-`s/t` bounded away from zero and one, the first relative transport
-coefficient of the odd-odd defect is (15). Ordinary argument: use the
-relative connection `B`, expand the two parallel transports to second order,
-integrate their product against the convolved Gaussian, and use the source
-identities `div B=0`, `B_iB^i=-h^2I`. First unsupported implication: prove
-uniform endpoint remainders and assemble this defect with same-boundary and
-source terms under the common regulator. Numerical role: none.
+Concrete claim at that stage: the coefficient (15) on compact subsets of
+the open simplex. The endpoint limitation is superseded below. First
+unsupported implication: match this fixed-interior defect with same-boundary
+and source terms under the common regulator. Numerical role: none.
 
-Remaining to-do list: establish endpoint-uniform parametrix remainders;
-match the defect to the same-boundary/source subtraction; close moving-cut
-transfer and certify supported claims on GCP.
+Remaining to-do list: establish the physical moving-cut and common-regulator
+bridge; match all response sectors; certify supported claims on GCP.
+
+### Endpoint-uniform fixed-interior parametrix
+
+Fix a smooth cutoff supported a positive distance from the seam, and let
+`s+r=t`, `0<s,r<t`. In the fixed compactified product model the semigroups
+are exact unitary conjugates in the interior, so
+
+    K_QX(r;y,x) = X(y) K_Q(r;y,x) X^(-1)(x).
+
+Choose normal coordinates at the trace point and radial gauge for `nabla`.
+Let `v` be the separation of the two insertion points and
+`P(y,x)` parallel transport from `x` to `y`. After conjugating back to the
+fiber at `x`, the relative transport factor in the trace word is
+
+    P(x,y)X(y)P(y,x)X^(-1)(x)-I
+      = -B_i v^i
+        + (1/2)(B_iB_j - nabla_i B_j) v^i v^j + O(|v|^3),
+
+where `B_i=X(nabla_iX^(-1))`. The convolved Gaussian has covariance
+`E[v^i v^j]=2 sigma g^(ij)`, `sigma=sr/t`, with
+`0<=sigma<=t/4` on the *closed* Duhamel simplex. The linear term vanishes
+under fiber trace because `tr B_i=0` for `X=epsilon c(e_tau)`. The quadratic
+term gives `sigma tr(B_iB^i-nabla^iB_i)=-2 sigma h^2`.
+
+The two local heat-kernel prefactors convolve to `(4 pi t)^(-1)` uniformly
+in `s,r`. Their scalar Van Vleck and first heat-amplitude terms are common
+to `Q` and `Q_X`; the relative factor already vanishes to first order in
+`v`, so these amplitude corrections change the defect only by
+`O(t sigma)`. The cubic Taylor terms are odd in `v`; after Gaussian
+integration the next transport remainder is `O(sigma^2)`. Consequently,
+for smooth scalar insertions `a=u'`, `b=w'`, the localized defect trace
+density obeys the endpoint-uniform expansion
+
+    T_def(s,r;t;a,b)
+      = -a b (h^2/(2 pi)) (sr/t^2)
+        + O((sigma^2+t sigma)/t)
+      = -a b (h^2/(2 pi)) (sr/t^2) + O(t),              (16)
+
+uniformly for `0<=r<=t`; the endpoints are interpreted by their semigroup
+limits. Gaussian tails outside the normal-coordinate neighborhood and
+boundary-reflected terms are exponentially small because the cutoff support
+has positive seam distance. The constants depend on the fixed cutoff,
+smooth coefficient bounds and `t0`, not on the angular mass. The exact
+`exp(-t mu_n^2)` factor can therefore be restored mode by mode.
+
+Multiplying (16) by the external Duhamel factor `s=t-r` and integrating
+over the entire simplex gives for both orderings
+
+    R_defect,int(t)
+      = -(h^2 a b t^2/(12 pi))
+          sum_n d_n mu_n^2 exp(-t mu_n^2) + O(t).
+
+The `O(t)` follows from `O(t)` per mode, the simplex integral
+`integral_0^t s dr=t^2/2`, and the sphere-tower bound
+`sum_n d_n mu_n^2 exp(-t mu_n^2)=O(t^(-2))`. With the recorded tower
+constant `2b_S^2`, the raw rank-two orbit coefficient is
+`-b_S^2 h^2 a b/(6 pi)`.
+
+This closes the local endpoint asymptotic only for a fixed smooth interior
+cutoff in the pinned compactified product model. It does not bound cutoff
+transition terms uniformly as the cutoff approaches the seam or a moving
+physical cut, and it does not give the source's per-exterior physical-half
+normalization. It also does not include the same-boundary word, density,
+source contact, boundary transgression or LLL. Thus (16) is a component in
+the technical ledger, not the source's full `r_curved` remainder and not a
+physical admission margin.
+
+Concrete claim: under the fixed-model smooth parametrix hypotheses, (16) is
+uniform through both Duhamel endpoints and yields the displayed interior
+defect contribution after the angular sum. Ordinary argument: use exact
+unitary kernel conjugation, expand the relative parallel transport through
+second order, exploit `tr B_i=0`, integrate the relative Gaussian with
+variance `2sr/t`, and apply the mode-independent mass shift. First
+unsupported implication: transfer this component through the seam/moving
+cut and match every source term under the common regulator. Numerical role:
+none.
+
+Remaining to-do list: prove uniform seam and moving-cut localization; obtain
+the physical-half source matching and full response subtraction; finish the
+novelty decision and certify supported claims on GCP.
 
 ### Endpoint check in the exact frozen model
 
