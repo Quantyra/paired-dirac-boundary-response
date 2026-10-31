@@ -180,6 +180,30 @@ hypotheses hold. No small-time or endpoint claim follows from integrating
 the differential identity without controlling its reference values and
 integral.
 
+### Source conversion finite part now available at the actual seed
+
+A later tracked parent-source calculation, [commit
+`fa84a1bf0e033825a7a76a7d03b48317bb9c5756`](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/fa84a1bf0e033825a7a76a7d03b48317bb9c5756/notes/current-variable-contact-conversion.md#L148-L205),
+derives the common-cutoff removal for the source conversion's first two jets
+at the actual paired seed and for its bounded admitted mass/log directions.
+It gives the finite mixed conversion (its Eq. (9)) with the angular tower
+represented by `Theta` and the thermal sum retained, and the corresponding
+local conversion operator (Eq. (10)). This supplies the source-conversion
+side of the ledger more strongly than the positive-time algebra (4) alone;
+the calculation is an imported parent result, not independently re-proved
+in this crosswalk.
+
+The scope boundary remains material. The parent source explicitly leaves
+the full variable-background strong-graph conversion and nonlinear-ball
+admission open; its separately allocated LLL/local blocks must remain in the
+same accounting. In P1 notation, this result evaluates `J_src''` at the
+seed, but does not evaluate the other bracket terms in (4), prove a
+cancellation with `H_FW`, identify the source's `r_curved` with
+`r_src^conv`, or justify moving-cut transfer of the full response. Thus the
+open source bridge is now the matched full-Weyl/orbit/contact/tangent ledger
+and physical-sector transfer, not the source conversion finite part by
+itself.
+
 ### Smooth interior leading coefficient of the orbit bracket
 
 For smooth directions supported a positive distance from the finite-cut
