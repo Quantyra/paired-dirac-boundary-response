@@ -8,4 +8,48 @@ Accordingly, the O(e) result in [the flat conversion diagnostic](flat-conversion
 
 This correction does not establish either the endpoint identity for the physical domain or the missing curved heat estimate. The next mathematical obligation is to write the exact mixed response and localized tangent subtraction on the same fixed Hilbert space and regulator, including all vertices and cutoff terms, then estimate their difference. Do not transfer an endpoint power or a flat coefficient to that difference without such an identity.
 
-Remaining to-do list: establish the exact physical response/subtraction identity and uniform curved remainder; complete the physical-domain and novelty audits, manuscript and GCP Lean certification.
+## Flat local subtraction audit
+
+The available flat formulas confirm that the full-Weyl tangent subtraction
+and the source geometric-plus-contact conversion are distinct. For the
+massive `n>=1` tower, the full-plane rank-two full-Weyl tangent Hessian has
+the local part
+
+    16 b0^2/(pi t^2) U0
+      + 2 C0/(pi t) U0 - b0^2/(pi t) U1,
+
+where `Uj=integral u^(j) w^(j)`, `C0=-q-1/3`, and `b0` is the angular
+scale. Applying the conditional physical-half factor `1/2` gives
+
+    8 b0^2/(pi t^2) U0
+      + C0/(pi t) U0 - b0^2/(2 pi t) U1.                 (1)
+
+These coefficients are the full-Weyl angular-weighted tangent expansion in
+[`full-weyl-angular-local-subtraction.md`](full-weyl-angular-local-subtraction.md),
+not a curved source subtraction. By comparison, the source's specified
+flat endpoint-conversion bilinear has
+
+    C0/(2 pi t) U0 + b0^2/(12 pi t) U1
+      + 1/(2 pi)[-C0 U1/12 - b0^2 U2/60
+                         + 2 C1 U0/b0^2] + O(t),         (2)
+
+from [`flat-conversion-angular-local-terms.md`](flat-conversion-angular-local-terms.md),
+where `C1=q^2/6-1/30`. The `t^-2 U0` term in (1) is absent in (2), and the
+`t^-1` coefficients differ. The two formulas name different observables;
+this is not evidence of a physical disagreement. The conversion contact
+term, the full-Weyl angular/commutator vertices, LLL allocation, and action
+restorations must be combined on one fixed Hilbert space and regulator
+before a physical subtraction identity can be asserted.
+
+Consequently, the bridge-hit estimate in
+[`full-weyl-curved-angular-factor-defect.md`](full-weyl-curved-angular-factor-defect.md)
+cannot yet be assigned to the source's `r_curved`: it bounds one model
+component before the physical source subtraction is identified. A correct
+comparison must subtract the full-Weyl tangent local terms when decomposing
+that family, while separately retaining the source contact/conversion and
+LLL terms according to the actual action definition.
+
+Remaining to-do list: derive the exact same-regulator identity between the
+full-Weyl response, source conversion, contact and LLL; then prove the
+uniform curved remainder, finish the physical-domain and novelty audits,
+prepare the manuscript and certify supported claims in Lean on GCP.
