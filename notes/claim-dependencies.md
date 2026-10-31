@@ -117,7 +117,7 @@ The [canonical/Euclidean comparison](canonical-euclidean-contact-matching.md)
 shows that the RN Hamiltonian-square cut contact is not yet identified with
 the product-frame orbit contact or its separate angular factor. The [physical/product-frame operator comparison](physical-product-contact-operator-gap.md) shows that the specified physical-L2 unitary map produces a congruence whose square has a different principal symbol from the product-frame square; it does not prove the regulated observables differ, but the source-to-physical response identity and contact/counterterm conversion remain unproved.
 
-The [finite-cut Weyl boundary Hessian](cubic-jet-weyl-boundary-hessian.md) vanishes as O(epsilon^3 log^2 epsilon) for the total local anomaly/conversion boundary functional when both directions have the stated cubic/log jets in a matched smooth collar coordinate. This removes only that local boundary term; it does not identify the nonlocal determinant or prove the common-regulator response.
+The [finite-cut Weyl boundary Hessian](cubic-jet-weyl-boundary-hessian.md) vanishes as O(epsilon^3 log^2 epsilon) for the total local anomaly/conversion boundary functional: the source fixes the same product-frame orbit metric and Weyl family, so the proper collar coordinates match up to orientation and origin. This removes only that local boundary term; it does not identify the nonlocal determinant or prove the common-regulator response.
 
 **Dependencies and status.** An ordinary full-plane multiplier derivation and
 all-frequency remainder calculations exist; the physical folding, trace

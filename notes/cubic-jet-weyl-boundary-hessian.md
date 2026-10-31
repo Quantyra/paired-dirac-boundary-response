@@ -20,7 +20,7 @@ Let `eta` and `zeta` be two real Weyl directions satisfying, for a fixed finite 
     |partial_x^j eta| + |partial_x^j zeta|
        <= C_j epsilon^(3-j) (1+|log epsilon|),  j=0,1,2,
 
-on the cut. If the Paper 1 direction is the Weyl field in this finite-cut family and its collar coordinate is related to the admitted physical-side coordinate by a uniformly smooth nondegenerate change (`x = c y + O(y^2)`, `c != 0`), then the admitted jets `c_3 y^3 + d_4 y^4 log y + r`, with the source's weighted remainder bounds, satisfy this condition. That coordinate and field identification is an explicit hypothesis to verify. Under it, the mixed Hessian of the local boundary functional tends to zero, with bound
+on the cut. The source match is direct at the fixed seed. `current-rough-paired-variation.md` writes the fixed-Hilbert Weyl realization as `D_b=exp(-b/2)D0 exp(-b/2)`. `current-curved-paired-heat-bridge.md` writes the same fixed-sphere product-frame orbit metric as `dy^2+a(y)^2 d tau^2`, while `stationary-exterior-boundary-weyl.md` writes it as `dx^2+N(x)^2 dU_E^2`; both `x` and `y` are proper radial distances for this same seed orbit metric, so they differ only by orientation and an additive constant. The thermal-coordinate rescaling is fixed and enters only the overall boundary-period factor. Thus the P1-C Weyl directions `u,w=c_3 y^3+d_4 y^4 log y+r` satisfy the displayed derivative bounds in `x` as well. Under the stated uniform collar bounds, the mixed Hessian of the local boundary functional tends to zero, with bound
 
     |delta_eta delta_zeta W_partial,total|
        <= C epsilon^3 (1+|log epsilon|)^2 -> 0.
@@ -47,9 +47,9 @@ Each term is `O(epsilon^3 L^2)` or smaller. Multiplication by the bounded `N` an
 
 ## Scope and implication for Paper 1
 
-This removes one specific possible missing term conditionally: the local anomaly/conversion boundary Hessian vanishes in the outer-cut limit for cubic/log Weyl directions if the stated collar coordinate and Weyl-field identification with P1-C are verified. The result uses the **total** finite-cut boundary functional, including all conversion fluxes; dropping those fluxes before differentiating would not justify the formula.
+This removes one specific possible missing term for the stated P1-C Weyl directions: the local anomaly/conversion boundary Hessian vanishes in the outer-cut limit. The identification is source-matched for the fixed product-frame seed and stationary Weyl paths. The result uses the **total** finite-cut boundary functional, including all conversion fluxes; dropping those fluxes before differentiating would not justify the formula.
 
-It does not specify an independent physical mouth ensemble, prove equality of the physical and product-frame nonlocal determinants, control a common proper-time regulator, or establish the uniform subtracted curved mixed-trace remainder. It also does not cover variations that change `N` or the boundary data, or arbitrary boundary jets. The first unsupported response implication therefore remains the full source/observable identification plus its nonlocal regulator estimate, not this local boundary Hessian.
+It does not specify an independent physical mouth ensemble, prove equality of the physical and product-frame nonlocal determinants, control a common proper-time regulator, or establish the uniform subtracted curved mixed-trace remainder. It does not cover variations that change `N` or the boundary data, or arbitrary boundary jets. The result is not uniform over families whose collar metrics lose the stated bounds. The first unsupported response implication therefore remains the full source/observable identification plus its nonlocal regulator estimate, not this local boundary Hessian.
 
 Source: the frozen finite-cut derivation at `Quantyra/quantyra-wormhole-semiclassical`, `notes/stationary-exterior-boundary-weyl.md`, especially equations (6)-(8), and its conformal compactification in `notes/stationary-exterior-conformal-domain.md`. No numerical computation or Lean invocation is required for this algebraic boundary estimate.
 
