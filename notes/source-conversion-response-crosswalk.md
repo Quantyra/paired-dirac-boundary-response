@@ -199,3 +199,5 @@ asserted here.
 Remaining to-do list: prove the endpoint identification and hypothesis match;
 finish the P1-C and novelty audits; formalize the supported claim on GCP; then
 complete the manuscript at the proved scope.
+
+The moving-cut obstruction is now quantified in [inite-cut-congruence-uniformity-obstruction.md](finite-cut-congruence-uniformity-obstruction.md): the finite-cut conformal multiplier inverse has L2 norm `sqrt(R/ell)`. Any physical trace transfer therefore needs a weighted/localized estimate or cancellation beyond the fixed-cut graph comparison. This is not a response lower bound and does not decide convergence.

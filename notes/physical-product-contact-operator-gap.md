@@ -137,3 +137,5 @@ Remaining to-do list: establish the product-frame contact and its source
 normalization or prove the complete conformal comparison, resolve the common
 regulator and prior-art decision, prepare the manuscript, and certify
 supported claims in Lean on GCP.
+
+A quantitative moving-cut limitation is recorded in [inite-cut-congruence-uniformity-obstruction.md](finite-cut-congruence-uniformity-obstruction.md): for `u=ell/r` on `[r_h,R]`, `||E^(-1)||_(L2->L2)=sqrt(R/ell)`. Thus a uniform endpoint graph bound cannot come from the direct bounded-invertible multiplier argument. This does not imply divergence of the renormalized response or trace.
