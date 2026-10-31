@@ -81,6 +81,29 @@ bounded weight t-s does not affect the fixed-t endpoint majorants. Equations
 cut/field convergence of the right side of (3) to the corresponding complete
 physical form response for every fixed t>0, under the common hypotheses.
 
+## Angular-mode trace sum at fixed compact cutoff
+
+There is also a direct consequence before the cutoff is removed. Assume the
+finite-cut seed and the real direction fields are invariant under the sphere
+rotation group, so the angular spectral projections `Pi_j` reduce the heat
+operator and the full mixed derivative. The trace-norm differentiability in
+`paired-positive-time-trace-derivatives.md` makes the mixed heat derivative
+`H_uw(t)=partial_u partial_w exp(-t L_b)|_(b=0)` trace class for every fixed
+`t>0` on this compact smooth cut. Since `H_uw(t)` is block diagonal in the
+angular decomposition,
+
+    sum_j |Tr(Pi_j H_uw(t) Pi_j)|
+      <= sum_j ||Pi_j H_uw(t) Pi_j||_1
+       = ||H_uw(t)||_1 < infinity.                         (4)
+
+The finite-dimensional chiral LLL block may be kept separate in this sum, as
+required by the source allocation. Equation (4) justifies absolute summation
+of the complete mixed derivative over angular sectors at fixed compact
+cutoff and positive time. It does not establish absolute convergence of each
+separately expanded Duhamel vertex, uniformity as the cutoff moves, or a
+bound uniform as `t` tends to zero. In particular it supplies no common
+regulator or source-conversion identity.
+
 No bound uniform as t->0 is obtained; the constants from the long heat
 factors may diverge. The assertion does not identify canonical boundary
 data, match the product-frame orbit trace or physical-half factor, include
