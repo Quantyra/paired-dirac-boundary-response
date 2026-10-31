@@ -668,6 +668,49 @@ Remaining to-do list: establish endpoint-uniform parametrix remainders;
 match the defect to the same-boundary/source subtraction; close moving-cut
 transfer and certify supported claims on GCP.
 
+### Endpoint check in the exact frozen model
+
+For constant `h,a,b`, the Fourier calculation gives the complete one-ordering
+time integral, including both Duhamel endpoints:
+
+    I_h(t) = (a b t/(2 pi))
+             integral_0^1 (1-x)(exp(-t h^2 x(1-x))-1) dx.
+
+This follows by setting `x=r/t` in the exact product-kernel formula, without
+using an interior-simplex expansion. For `z>=0`,
+`0<=exp(-z)-1+z<=z^2/2`. The beta integrals
+
+    integral_0^1 x(1-x)^2 dx = 1/12,
+    integral_0^1 x^2(1-x)^3 dx = 1/60
+
+then give
+
+    I_h(t) = -a b h^2 t^2/(24 pi) + E_h(t),
+    |E_h(t)| <= |a b| h^4 t^3/(240 pi).
+
+Thus the frozen model's endpoint remainder is uniform on the full closed
+simplex; the reversed ordering has the same result. This verifies that the
+factor `s^2 r/t^2` makes the *leading coefficient* integrable at both ends.
+It does not prove an endpoint-uniform remainder for the variable-coefficient
+curved heat kernels. A route for that proof is to retain the exact Gaussian
+convolution of the two local parametrices, rather than estimating the two
+heat factors separately; the resulting relative Gaussian has variance
+`2sr/t` and remains an approximate identity as either endpoint is approached.
+The Volterra-parametrix remainder must be shown to preserve this uniform
+relative-Gaussian bound before (15) can be integrated for the actual source.
+
+Concrete claim: the frozen-coefficient defect expansion and remainder bound
+above hold uniformly for `0<=r<=t`. Ordinary argument: rescale to `x=r/t`,
+use the exact Fourier factor, and apply the elementary exponential remainder
+bound with the displayed beta integrals. First unsupported implication:
+propagate this endpoint-uniform remainder through the actual curved
+complementary-domain parametrix. Numerical role: none.
+
+Remaining to-do list: prove the variable-coefficient endpoint parametrix
+bound; match the resulting fixed-interior defect with the same-boundary and
+source terms; close physical moving-cut/common-regulator transfer and GCP
+certification.
+
 ### Sector scope for the interior commutator
 
 The localized identity (8) is for the boundary-condition/conjugation defect
