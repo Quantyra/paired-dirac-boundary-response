@@ -127,6 +127,56 @@ At the seed `S_0=1`, their angular weights are precisely `Theta'(t)` and
 Thus (4)--(6) give a curved probabilistic representation of the scalar
 angular-potential insertion sector and retain its full massive tower.
 
+## Uniform heat-moment remainder and combined differentiation
+
+For the source tower, put `C=2 b_0^2` and, for `k=0,1,2`, define
+
+    f_(k,t)(x)=2(q+2x)[x(x+q)/b_0^2]^k
+                    exp[-t x(x+q)/b_0^2].
+
+Then `(-1)^k Theta^(k)(t)=sum_(n>=1) f_(k,t)(n)` and a direct change of
+variable `v=t x(x+q)/b_0^2` gives
+
+    integral_0^infinity f_(k,t)(x) dx
+        = C k! t^(-k-1).                                (8)
+
+Euler--Maclaurin through order `2(k+1)` bounds the difference between this
+sum and integral uniformly for `0<t<=t_0`. Indeed, the finitely many
+endpoint derivatives of `f_(k,t)` are bounded there. For the periodic
+Bernoulli remainder, rescaling `x=t^(-1/2)y` shows
+`integral |partial_x^(2k+2) f_(k,t)(x)| dx=O(1)`; the polynomial factors
+in `q sqrt(t)` remain bounded for fixed `q,t_0`. Hence
+
+    Theta(t)=C/t+O(1),
+    Theta'(t)=-C/t^2+O(1),
+    Theta''(t)=2C/t^3+O(1).                             (9)
+
+In particular `rho(s)=Theta(s)-C/s` and its first two derivatives are
+bounded on `0<s<=s_0`. Since `S_b` stays in a fixed positive compact
+interval, write
+
+    Theta(t S_b)=C/(t S_b)+rho(t S_b).
+
+The two field derivatives can therefore be combined exactly as
+
+    partial_u Theta(t S_b)
+       =-C S_u/(t S_b^2) + t rho'(t S_b) S_u,
+
+    partial_u partial_w Theta(t S_b)
+       = C/t [2 S_u S_w/S_b^3-S_uw/S_b^2]
+         + t rho'(t S_b) S_uw
+         + t^2 rho''(t S_b) S_u S_w.                    (10)
+
+This cancellation is stronger than estimating `t Theta'` and
+`t^2 Theta''` separately: the singular part is only `C/t` times derivatives
+of `S_b^(-1)`. At the seed, the explicit jets (7) make its first and mixed
+direction factors vanish as `x^3` and `x^6` for cubic profiles. Equation
+(10) is an exact angular-factor statement. It does not yet bound the
+remaining Brownian factors, the differentiated thermal images, the local
+counterterms, or the integrated mixed heat remainder. Those still require
+the parent finite-jet and source-normalization arguments for this inserted
+factor.
+
 The representation makes the next estimate concrete: after the source's
 full local subtraction, differentiate (5) along the admitted mass/log
 directions and bound its bridge expectation uniformly. The moment-order
@@ -137,6 +187,13 @@ even odd-odd contribution, still needs a separate matrix-valued bridge
 estimate under the same subtraction.
 
 No numerical computation or Lean certification is claimed.
+
+Continuation recorded 2026-10-31: the source angular tower satisfies the
+uniform differentiated asymptotics (9), so differentiating `Theta(t S_b)`
+combines the apparent `Theta'`/`Theta''` singularities into the `C/t`
+derivatives of `S_b^(-1)` plus bounded-remainder terms (10). This gives the
+local cubic-direction vanishing orders for the angular factor alone. It does
+not close the complete subtracted bridge estimate or the commutator sector.
 
 Remaining to-do list: justify (4)--(5) for the source's exact mode and
 boundary realization; derive the subtracted derivative bounds; bound the
