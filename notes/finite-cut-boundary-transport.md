@@ -40,6 +40,29 @@ path ordering; the complete problem also includes the other endpoint,
 thermal/Euclidean continuation and all angular sectors. The range of the
 transported condition across modes depends on D_q and collar geometry.
 
+## Failure of unweighted angular-uniform projector convergence
+
+Let `ell=x_1-x_0>0` and `A_ell=integral_[x_0,x_1] a(x) dx`, with
+`A_ell>0`. In the fixed angular eigenspace the transported line at `x_0` is
+the span of `v_+ + tau_mu v_-`, where `tau_mu=tanh(mu A_ell)`. The local
+projector line is the span of `v_+`. For two one-dimensional subspaces with
+angle `theta`, the operator norm of the difference of their orthogonal
+projections is `|sin(theta)|`; here this equals
+
+    |tau_mu| / sqrt(1+tau_mu^2).                         (2)
+
+For the unbounded sphere spectrum `|mu_n| -> infinity`, the supremum of (2)
+over the angular tower is `1/sqrt(2)` for every fixed `ell>0`, even when
+`ell` is arbitrarily small. Thus the direct-sum projector does not converge
+to the copied local projector in unweighted operator norm as the collar
+shrinks. On a fixed finite angular truncation `|mu|<=M`, by contrast,
+`|tau_mu|<=M A_ell`, so the mismatch tends to zero with `A_ell`.
+
+This only rules out an unweighted operator-norm argument that is uniform over
+the full angular tower. It does not rule out convergence after heat weights,
+resolvent weights, or a common-regulator trace estimate; such a weighted
+transport estimate is precisely what the physical matching still needs.
+
 ## Implication for the paper theorem
 
 The seed theorem can legitimately specify an independent finite-cut local
