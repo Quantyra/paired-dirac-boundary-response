@@ -112,6 +112,31 @@ terms do not by themselves show disagreement of physical observables; a
 common-regulator transfer with all contact, density, LLL and subtraction
 terms is still required.
 
+### Extension of the fixed-product tangent formula to rough H3 profiles
+
+The remainder estimate in (4) is controlled by the `H^3` norms, so the
+subtracted full-Weyl tangent bilinear extends by density from smooth compactly
+supported profiles to `H^3(R)` profiles. Indeed, after subtracting the three
+displayed local terms, the Fourier multiplier is bounded by
+`C t (1+|k|^6)` for `0<t<=t0`; Cauchy--Schwarz makes the bilinear form
+continuous on `H^3 x H^3`, uniformly with the stated factor `t`. The local
+terms themselves involve only `L^2` and first-derivative pairings and extend
+on the same space. Thus no uniform fourth-derivative bound is needed for
+this fixed flat tangent calculation.
+
+In particular, a compactly localized physical-side cubic/log profile
+`c y^3+d y^4 log(y)` has third weak derivative in `L^2(0,delta)`. Its
+balanced fold `c|y|^3+d|y|^4 log|y|` is locally `H^3(R)`; the third derivative
+may jump at zero for the cubic term, which is allowed in `H^3`. This extends
+the fixed-product full-Weyl tangent formula to those rough profiles by the
+continuous bilinear extension, without smoothing the seam. It does not prove
+that the frozen source's localized tangent extraction equals this full-Weyl
+multiplier, nor does it estimate the curved difference, moving cutoff,
+thermal images, density/contact, boundary transgression or LLL. In
+particular the uniform `O(t)` bound alone is not integrable against
+`dt/t^2`; the source-defined tangent must be subtracted before using the
+curved `t^(3/2)` target.
+
 Remaining to-do list: match this full-Weyl tangent subtraction to the physical
 observable and source conversion under one regulator, establish the curved
 remainder if the final claim requires it, resolve novelty, and certify the
