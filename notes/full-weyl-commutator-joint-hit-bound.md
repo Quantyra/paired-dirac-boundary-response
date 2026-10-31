@@ -757,6 +757,59 @@ Remaining to-do list: prove uniform seam and moving-cut localization; obtain
 the physical-half source matching and full response subtraction; finish the
 novelty decision and certify supported claims on GCP.
 
+### Same-boundary plus defect: zero insertion-jet ledger
+
+The defect coefficient must be combined with the same-boundary word before
+it is compared with the source subtraction. This combination can be done
+locally when `a=u'` and `b=w'` are constant near the trace point. In the
+interior the orbit square is the two-dimensional spin Laplacian
+`Q=nabla^*nabla+R/4`. Its first scalar heat coefficient is
+
+    a_1(Q)=R/6-R/4=-R/12=(h^2-h')/6,
+    R=2f''/f-4h^2=2(h'-h^2).
+
+For the same-boundary word, the two heat times combine to `t`. Subtract its
+flat `a_0` term; the remaining local trace density per ordering is
+`a b a_1/(2 pi)+O(t)`, using rank two. The external Duhamel factor `s=t-r`
+integrates to `t^2/2` per ordering. Summing both orderings and restoring
+`S_2(t)=sum_n d_n mu_n^2 exp(-t mu_n^2)~2b_S^2/t^2` gives the same-boundary
+local coefficient
+
+    R_same,int(t;z) = (b_S^2/pi) a_1(Q;z) a(z)b(z) + O(t)
+                    = (b_S^2/(6 pi))(h^2-h') a b + O(t).
+
+The defect contribution from (16) is
+
+    R_defect,int(t;z) = -(b_S^2/(6 pi))h^2 a b + O(t).
+
+Therefore this paired odd-odd sector, after subtracting its flat `a_0`
+term and for zero insertion jets, has the combined local coefficient
+
+    R_same+defect,int(t;z)
+        = -(b_S^2/(6 pi)) h'(z) a(z)b(z) + O(t).          (17)
+
+In particular the apparent `h^2` obstruction from the defect alone cancels
+against the first smooth heat coefficient of the same-boundary word. This
+is a real local cancellation within the paired odd-odd sector. It does not
+remove the residual `h'` term, treat nonconstant insertion jets, or establish
+that (17) is part of (or canceled by) the source's prescribed tangent
+subtraction. The source's flat tangent multiplier has no `h'`; its cutoff
+and restoration terms still need an exact same-regulator expansion. The
+physical-half factor, boundary, density/contact, LLL, and moving-cut sectors
+also remain outside (17).
+
+Concrete claim: in the fixed smooth product interior, the zero-insertion-jet
+same-boundary heat coefficient cancels the `h^2` part of the odd-odd defect,
+leaving (17) in raw rank-two normalization. Ordinary argument: use the
+rank-two interior `a_1` coefficient, the two-ordering Duhamel factor, the
+massive-tower limit, and (16). First unsupported implication: match the
+residual `h'` coefficient, derivative-insertion terms, physical-half
+normalization and source cutoff/restoration ledger. Numerical role: none.
+
+Remaining to-do list: derive the full variable-insertion odd-odd local
+coefficient and source cutoff match; control seam and moving-cut terms;
+complete the all-sector common-regulator comparison and GCP certification.
+
 ### Endpoint check in the exact frozen model
 
 For constant `h,a,b`, the Fourier calculation gives the complete one-ordering

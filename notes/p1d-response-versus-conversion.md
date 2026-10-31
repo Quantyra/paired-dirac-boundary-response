@@ -333,6 +333,19 @@ immutable [rough paired-variation source at `f0eab590`](https://github.com/Quant
 Sections 4--5; it remains a scope audit, not evidence that cancellation
 fails.
 
+The defect-only `h^2` condition above is refined by the same-boundary heat
+coefficient in
+[`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md).
+For constant insertion jets, the rank-two interior coefficient
+`a_1=R/6-R/4=(h^2-h')/6` contributes `+b_S^2 a_1 u'w'/pi` to the same-
+boundary word after the tower sum. Adding the defect coefficient cancels
+the `h^2` part and leaves `-b_S^2 h' u'w'/(6 pi)` in raw normalization.
+Thus the complete odd-odd pair has a residual `h'` zero-jet term in this
+fixed smooth interior calculation; the exact source cutoff/restoration
+ledger must account for it. This refines the necessary match and does not
+prove that the full response fails the `t^(3/2)` bound: derivative-insertion
+terms, other sectors, and the source subtraction may alter the total.
+
 Concrete claim: the fixed-interior defect creates the displayed raw
 rank-two `t^0` coefficient, so P1-D requires its subtraction or a proved
 cancellation. First unsupported implication: identify this component in

@@ -194,24 +194,28 @@ rank-two local density is `-b_S^2 h^2 u'w'/(6 pi)+O(t)`. The full derivation,
 including the Gaussian covariance and endpoint remainder, is in
 [`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md).
 
-This closes the fixed-interior endpoint asymptotic only. It does not control
-cutoff-transition terms as the cutoff approaches the seam, moving-cut
-domains, physical-half normalization, source contact/density, same-boundary
-word, transgression or LLL. As recorded in
-[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md),
-the raw `t^0` density must either be part of the exact localized tangent
-subtraction or cancel against other vertices before the source's
-`t^(3/2)` remainder target can hold. This is a necessary matching condition,
-not a failure result for the complete response.
+This closes the fixed-interior defect endpoint asymptotic only. The same
+technical note now combines it with the same-boundary rank-two heat
+coefficient `a_1=R/6-R/4=(h^2-h')/6` for constant insertion jets. The
+`h^2` terms cancel within the fixed smooth odd-odd pair, leaving the raw
+`-b_S^2 h' u'w'/(6 pi)` local density at order `t^0`. This refines the
+defect-only matching condition recorded in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md):
+the residual `h'` coefficient, derivative-insertion terms and cutoff/local
+restorations must be identified in the source subtraction or canceled by
+other sectors before its `t^(3/2)` remainder target can follow. No such
+matching is yet proved. Seam localization, moving-cut domains,
+physical-half normalization, contact/density, transgression and LLL also
+remain open. This is not a failure result for the complete response.
 
-Concrete claim: the fixed compactified interior defect has the displayed
-endpoint-uniform local coefficient under the smooth parametrix hypotheses.
-Ordinary argument: use the exact conjugated kernel, covariant Taylor
-expansion and `sr/t` relative Gaussian, then restore the exact angular mass
-shift. First unsupported implication: match it to the source tangent and
-remaining response sectors, including moving-cut and common-regulator
-transfer. Numerical role: none; Lean certification: none for this analytic
-estimate.
+Concrete claim: the fixed compactified interior odd-odd pair has the
+endpoint-uniform zero-insertion-jet local coefficient just stated under the
+smooth parametrix hypotheses. Ordinary argument: combine exact kernel
+conjugation and the relative Gaussian with the same-boundary `a_1` term,
+then restore the exact angular mass shift. First unsupported implication:
+match the residual and derivative-insertion terms to the source cutoff and
+local-restoration ledger and transfer through the moving physical cut.
+Numerical role: none; Lean certification: none for this analytic estimate.
 
 Remaining to-do list: prove seam/moving-cut localization; match the
 physical-half source response and all sectors; finish prior art and manuscript;
