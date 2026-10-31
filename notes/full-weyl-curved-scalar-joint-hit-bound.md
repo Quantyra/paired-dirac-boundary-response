@@ -159,13 +159,36 @@ Equation (8) still does not include the matrix-valued `mu C_b` sector,
 matrix Robin local-time weights, the full source tangent subtraction, LLL,
 local restorations or the moving-cut endpoint.
 
+## Curved-minus-tangent scalar hit component
+
+Let `R_sc,g^hit(t)` denote the left side of (8) before taking its absolute
+value, for the curved coefficient `f0`. Define `R_sc,tan^hit` by the same
+formula, same cutoff directions and same bridge event, with the base inverse
+radius replaced by its seam value `f0(0)` in the scalar tangent model.
+The field-dependent map `Y_b` is retained in both. The constant tangent
+coefficient has `f_tan'=0`; its field derivatives from
+`f_tan,b=exp(-b(x_b))f0(0)` satisfy the same (4) and (3) bounds (in fact
+the `B_h` terms simplify). Thus (8) applies separately to both terms, and
+
+    integral_0^delta |R_sc,g^hit(t)-R_sc,tan^hit(t)| dy
+       <= (C_g+C_tan) U W t^(3/2).                       (9)
+
+If the common localization cutoff is one on `0<=y<=delta_0`, its transition
+region has `P(Hit)<=exp(-delta_0^2/t)`; all bounded transition-direction
+terms there are superpolynomially small. Equation (9) therefore gives the
+`O(t^(3/2))` target for this specified curved-minus-flat scalar hit
+component. It does not assign the estimate to the whole source
+`r_curved`: that assignment requires proving the source's localized tangent
+prescription is exactly this scalar tangent block plus the complementary
+non-hit and other-vertex blocks under one common insertion and regulator.
+
 ## First unsupported implication
 
-The first unsupported implication is identifying this scalar bridge-hit
-component with a term in the source's localized subtraction while preserving
-the actual contact, density and cutoff terms. Equation (8) remains a
-conditional model bound, not a bound for `r_curved` and not a physical
-admission margin.
+The first unsupported implication is identifying the source's full
+localized tangent prescription with this exact scalar block decomposition,
+while preserving the complementary non-hit response, actual contact,
+density and cutoff terms. Equation (9) bounds one specified component; it
+is not a bound for `r_curved` and not a physical admission margin.
 
 Numerical role: none.
 
