@@ -95,6 +95,14 @@ odd-odd term does not cancel by sign pairing. See
 [`full-weyl-opposite-sign-cross-cancellation.md`](full-weyl-opposite-sign-cross-cancellation.md)
 and the exact Hessian formula in
 [`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md).
+The mixed angular second vertex is a separate `4 mu^2 uw` term. Its flat
+complementary-boundary defect is now bounded in
+[`angular-second-vertex-flat-boundary-defect.md`](angular-second-vertex-flat-boundary-defect.md):
+the insertion trace difference is `O(t^(5/2))` for cubic/log profiles, and
+the Duhamel factor `t` with `-Theta'=O(t^-2)` gives `O(t^(3/2))` after the
+massive tower. This closes only that flat second-vertex defect; it does not
+close the `Theta''` even-even ordered products, the same-boundary tangent, or
+the curved source transfer.
 
 Because `-Theta'(t)=O(t^-2)` and `Theta''(t)=O(t^-3)`, termwise sufficient
 targets for a subtracted total `O(t^(3/2))` correction are `O(t^(7/2))` for
@@ -104,7 +112,8 @@ bounds; combined cancellations may improve them. The fixed-product
 positive-time estimates do not establish any of these small-time subtracted
 bounds. The first concrete curved obligation is to estimate the surviving
 scalar orbit-angular insertions with the actual localized tangent
-subtraction and common regulator, and to control the even-even sector.
+subtraction and common regulator, and to control the remaining even-even
+ordered first-vertex products.
 Density/contact, boundary transgression, thermal images and LLL still need
 inclusion.
 
