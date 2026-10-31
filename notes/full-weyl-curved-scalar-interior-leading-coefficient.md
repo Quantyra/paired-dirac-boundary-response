@@ -731,9 +731,10 @@ implication: evaluate its integrated curvature form and combine it with the
 geometric orbit and remaining physical sectors against the source ledger.
 Numerical role: none.
 
-Remaining to-do list: reduce the curved formula and compare the full scalar
-plus source-contact bracket; add the orbit, matrix, density/contact, boundary
-and LLL terms under one regulator; complete novelty and GCP Lean certification.
+The scalar reduction recorded in the final section supersedes this earlier
+to-do statement. The remaining tasks are to add the orbit, matrix, density/
+contact, boundary and LLL terms under one regulator; complete novelty and GCP
+Lean certification.
 
 For direct substitution in (5), let
 `S=G W+H U` and `T=8 U W-4V+2J`. The nonzero first derivatives are
@@ -801,17 +802,16 @@ The next scalar coefficient to compare is now
 
     C/(4 pi) integral[-(1/12) phi'^T D^2 Phi(phi) phi' + H_1]dy,
 
-under the conditional physical-half normalization. Equation (7) is not yet
-reduced to curvature invariants and is not the complete source ledger. The
-flat substitution reduces (6) to `-2 integral u'w'`, as before.
+under the conditional physical-half normalization. Equation (7) together
+with `H_1` is reduced in the final section; this remains only the scalar
+subfamily, not the complete source ledger. The flat substitution reduces (6)
+to `-2 integral u'w'`, as before.
 
 Concrete claim: (6) and (7) give the integrated curved path-Hessian
 coefficient with no second derivatives of the seven source averages left.
 Ordinary argument: integrate (5) by parts, use the localized seam/outer
 boundary vanishing, and substitute the explicit Hessian of `Phi`. First
-unsupported implication: simplify this expression against the source contact
-and geometric orbit coefficients and then include the remaining full-Weyl
-sectors under one regulator. Numerical role: none.
+unsupported implication: combine this scalar identity with the curved commutator, geometric orbit, density, boundary, and LLL sectors under one regulator. Numerical role: none.
 
 Remaining to-do list: match
 the complete orbit/contact/commutator/density/boundary/LLL ledger; close the
