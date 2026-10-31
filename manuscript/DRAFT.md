@@ -284,6 +284,69 @@ The seam and outer fluxes vanish under the stated cubic source jets and compact 
 
 Thus, under the conditional physical-half normalization, this scalar coefficient is `-3` times the specified source-contact coefficient. The pair in the `D_scalar-C_src` bracket contributes `-4` times that contact coefficient; the scalar subfamily alone does not cancel the source contact. The derivation and pointwise jet algebra are recorded in `../notes/full-weyl-curved-scalar-interior-leading-coefficient.md` and `../notes/proof-audit.md`. This is not the full physical response: the curved commutator, orbit, density, boundary transgression, LLL, local restorations, moving-cut endpoint and common-regulator matching remain open.
 
+### Odd-odd gradient pair: fixed-boundary and interior split
+
+After sign pairing, the surviving odd-odd Duhamel words have the form
+
+    mu^2 integral_0^t (t-r) Tr[exp(-(t-r)Q) M_(u')
+                                      exp(-r Q_X) M_(w')] dr,
+
+plus the reversed ordering. Split the middle semigroup as
+`exp(-r Q_X)=exp(-r Q)+(exp(-r Q_X)-exp(-r Q))`. The first term is the
+same-boundary scalar-gradient word and belongs in the tangent/local
+subtraction. The defect is a separate boundary and conjugation contribution.
+This distinction matters already in the flat product: for constant `X`, the
+defect vanishes, while the same-boundary word carries the previously
+calculated `U_1/t` gradient-gradient coefficient. The flat coefficient must
+not be attributed to the curved interior defect.
+
+For the pinned compactified product, the orbit square is Laplace type on the
+smooth compact orbit disk with smooth local mixed Dirichlet/Robin boundary
+data. Its fixed-model heat kernel has the two-dimensional Gaussian bound
+`||K_Q(t;z,z')|| <= C t^(-1) exp(-d(z,z')^2/(c t))`; exact pointwise unitary
+conjugation gives the same fiber-norm bound for `Q_X`. Combining the kernels
+and restricting both insertions to `y,y' <= R sqrt(t)` gives an
+`O_R(UW t^(3/2))` fixed-window odd-odd boundary-layer contribution, uniform
+at the Duhamel endpoints and after the sign-paired angular sum. A collar of
+width `A sqrt(t log(t0/t))` adds a `log^(5/2)(t0/t)` factor, still integrable
+against `dt/t^2`; under the reflected-kernel Gaussian, the outside
+boundary-reflected tail can be made higher order by increasing `A`. These
+fixed-pinned component estimates and their parametrix hypotheses are detailed
+in `../notes/full-weyl-commutator-joint-hit-bound.md`.
+
+Away from the seam, use a smooth cutoff `chi_rho` vanishing near the boundary
+and set `F=chi_rho X`, `G=chi_rho X^(-1)`. The exact localized identity is
+
+    chi_rho (exp(-r Q_X)-exp(-r Q)) chi_rho
+       = [F, exp(-r Q)] G + [exp(-r Q), chi_rho] chi_rho.
+
+Both cutoff multipliers preserve the mixed domain of `Q`, so the commutators
+admit common-domain Duhamel representations. For `Q=nabla^*nabla+V` with
+positive connection Laplacian, the smooth-core formula is
+
+    [Q,A] = -2 (nabla^i A) nabla_i
+             - (nabla^i nabla_i A) + [V,A].
+
+In the source orbit metric `dy^2+f(y)^(-2)d tau^2`, let
+`h=f'/f`, `e_y=partial_y`, `e_tau=f partial_tau`, and
+`X=epsilon c(e_tau)`. Then
+
+    [Q,X] = -2 epsilon h c(e_y) nabla_(e_tau) + h^2 X + [V,X].
+
+In the source's product reduction, `V` is the scalar orbit Lichnerowicz
+endomorphism, so `[V,X]=0`; the monopole connection belongs to the sphere
+operator and its angular spectrum. Terms with derivatives of `chi_rho` are
+off diagonal from insertions beyond the transition strip and are Gaussian
+suppressed on the pinned smooth collar.
+The remaining local term involving `[Q,X]` still requires its localized
+trace expansion and coefficient matching. No moving-cut uniformity follows
+from this fixed-model calculation.
+
+This split does not complete the curved response. The same-boundary word,
+the local conjugation defect, density/contact, boundary transgression, LLL,
+local restorations, moving-cut limits and the physical common regulator must
+all be matched before a physical remainder claim or novelty decision.
+
 ## Relation to prior work — preliminary
 
 Local elliptic boundary conditions, adjoint boundary spaces and regularity for Dirac-type operators are part of the established theory; see [Bär and Ballmann](https://arxiv.org/abs/1307.3021). Propositions 2.1 and 3.1 apply those domain inputs to the stated congruence and paired involution; the general existence of projector boundary conditions is not claimed as a contribution here.

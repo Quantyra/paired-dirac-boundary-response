@@ -460,13 +460,15 @@ Substitution into (10) yields the exact smooth-collar identity
     [Q,X] = -2 epsilon h c(e_y) nabla_(e_tau)
               + h^2 X + [V,X].                         (11)
 
-Here `V` retains the complete zeroth-order endomorphism, including the
-magnetic curvature term in the Lichnerowicz formula. The scalar-curvature
-part of `V` commutes with `X`, while any chirality-valued magnetic term must
-be retained in `[V,X]`. In the flat, constant-field limit `h=0`, that magnetic
-commutator is not zero in general; omitting it would lose the flat
-odd-odd coefficient already calculated in
-`full-weyl-commutator-flat-coefficient.md`.
+For a general Clifford-compatible orbit twist, retain the full term
+`[V,X]`. In the actual static product reduction of the source, however, the
+monopole connection acts on the sphere factor and is already encoded in the
+angular masses `mu_n`; it is not an orbit twist in `Q`. The orbit
+Lichnerowicz endomorphism is scalar, so `[V,X]=0` there. In the flat orbit
+limit `h=0`, the interior commutator vanishes and `Q_X-Q` is only the
+complementary-boundary defect. The flat `U_1/t` coefficient belongs to the
+separate same-boundary word, as clarified below; it must not be attributed to
+`[V,X]`.
 
 Equation (11) is an interior operator identity, not yet an asymptotic trace
 coefficient. The next calculation is to insert (11) into the localized
@@ -476,14 +478,14 @@ coefficient must then be compared term-by-term with the curved tangent and
 source contact/density/boundary subtraction. The cutoff-transition terms
 remain controlled separately by (8)-(10).
 
-Concrete claim: on the smooth static orbit collar, the commutator needed in
-the localized defect is (11), with a geometric first-order term, a
-`h^2 X` term, and the full endomorphism commutator `[V,X]`. Ordinary
-argument: compute the Levi-Civita derivatives of the orthonormal frame,
-use Clifford compatibility, calculate the rough Laplacian of `X`, and
-substitute in the general Laplace-type commutator. First unsupported
-implication: evaluate its local Duhamel trace coefficient and match every
-curved source subtraction term. Numerical role: none.
+Concrete claim: on the smooth static source orbit collar,
+`[Q,X]=-2 epsilon h c(e_y) nabla_(e_tau)+h^2 X`; the reduced orbit
+endomorphism is scalar. Ordinary argument: compute the Levi-Civita
+derivatives of the orthonormal frame, use Clifford compatibility, calculate
+the rough Laplacian of `X`, and note that the source monopole connection is
+on the sphere factor. First unsupported implication: evaluate the curved
+defect trace and match the same-boundary term plus defect to every curved
+source subtraction term. Numerical role: none.
 
 ### Sector scope for the interior commutator
 
@@ -500,3 +502,16 @@ of `X` and the endomorphism connection; it is not a re-derivation or
 re-allocation of the full flat commutator coefficient. The curved ledger must
 combine the same-boundary tangent term and the localized defect with the
 source subtraction under the same regulator.
+
+### Correction to the orbit potential identification
+
+An earlier version of (11) assigned a monopole-curvature endomorphism to the
+orbit potential `V` and claimed a nonzero `[V,X]` term in the flat source
+limit. That identification is incorrect for the source's product
+decomposition: the monopole connection belongs to the sphere Dirac operator
+and its spectrum `mu_n`; the orbit square `Q` has only its scalar
+Lichnerowicz endomorphism. The corrected source-specific commutator therefore
+has `[V,X]=0`, and is `-2 epsilon h c(e_y) nabla_(e_tau)+h^2 X`. The flat
+constant-`X` interior defect vanishes; the known flat `U_1/t` coefficient
+comes from the same-boundary word. Keep `[V,X]` only when discussing a
+hypothetical additional orbit twist, not the source RN product.
