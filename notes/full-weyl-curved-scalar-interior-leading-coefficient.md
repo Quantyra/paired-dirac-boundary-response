@@ -116,28 +116,34 @@ Consequently the integrated coefficient of `Delta_sc` is
 with the full-plane leading scalar Duhamel correction in the existing flat
 ledger: the pure angular term contributes `2C/pi` and the two ordered
 orbit-angular terms contribute `4C/pi`. Under the conditional physical-half
-normalization this is `3C/pi`. The source contact remains separate:
-`C_src=-(C/pi)t^(-2)` in that normalization, so `D-C_src` has coefficient
-`4C/pi`; no cancellation is inferred. This check validates the scalar
-coefficient and the retained orbit-angular cross terms in the restricted
-flat leading ledger only.
+normalization this is `(3C/pi)t^(-2) integral_R uw`. In the matched source
+flat full-line pairing, `I_t=(1/(4pi)) integral_R uw+O(t)`, so
+`C_src=-(C/(2pi))t^(-2) integral_R uw`. The scalar/contact component is
+therefore `D_sc-C_src=(7C/(2pi))t^(-2) integral_R uw`; the remaining
+`C/(2pi)` needed to reach the full-Weyl coefficient `4C/pi` is the orbit
+bracket, derived from the corrected source identity in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md).
+This checks the allocation under the restricted flat common normalization
+only.
 
 There is also a conditional curved zeroth-jet contact check. In the source's
 recorded common-cut normalization,
 
     C_src(t)=2 Theta'(t) I_t(u,w),
-    I_t(u,w)=(1/(2 pi)) integral u w/f_0 + O(t),
+    I_t(u,w)=(1/(4 pi)) integral_R u w/f_0 + O(t),
     Theta'(t)=-C/t^2+O(1).
 
-Thus `C_src=-(C/pi)t^(-2) integral uw/f_0+O(t^(-1))`. Applying the source's
+Thus `C_src=-(C/(2pi))t^(-2) integral_R uw/f_0+O(t^(-1))`. Applying the source's
 conditional physical-half factor to the doubled scalar result gives
-`D_sc=(3C/pi)t^(-2) integral uw/f_0+O(t^(-1))`. Hence the scalar/contact
-part of the finite-cut bracket has leading coefficient
-`D_sc-C_src=(4C/pi)t^(-2) integral uw/f_0+O(t^(-1))`, the same coefficient
-as the flat check with its natural `1/f_0` local weight. This uses only the
-zeroth spatial jet and the source's insertion/contact normalization. It does
-not match `H_orb-G_src`, density/Jacobian and boundary terms in the complete
-curved response, prove cancellation with local restorations, or establish a
+`D_sc=(3C/pi)t^(-2) integral_R uw/f_0+O(t^(-1))`. This gives the conditional
+scalar/contact component `D_sc-C_src=(7C/(2pi))t^(-2) integral_R uw/f_0+
+O(t^(-1))`; it is not the complete `D-C_src`, because the matrix sector is
+still absent. The curved leading coefficient of `H_orb-G_src` must be
+derived independently using the corrected differential identity. This
+comparison assumes the source physical-half normalization and matching
+measure; the observable-level trace identification remains open. It does
+not match density/Jacobian and boundary terms in the complete curved
+response, prove cancellation with local restorations, or establish a
 common-regulator endpoint; see the full finite-cut ledger in
 [`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md).
 

@@ -94,20 +94,27 @@ before a physical subtraction identity can be asserted.
 
 ### Flat leading-coefficient ledger check
 
-The three existing flat calculations now provide an independent leading
-coefficient consistency check under their common conditional physical-half
-normalization. Set `C=2 b0^2`. The full-Weyl tangent Hessian has leading local
-term `(8 b0^2/pi) U0 t^(-2)=(4C/pi)U0 t^(-2)` by
-`full-weyl-angular-local-subtraction.md`. The source's geometric-plus-contact
-conversion has no `t^(-2)` term by `flat-conversion-angular-local-terms.md`.
-The fixed-mode Duhamel split gives `D_flat=(3C/pi)t^(-2)U0` and the source
-contact gives `C_src=-(C/pi)t^(-2)U0`; hence
-`D_flat-C_src=(4C/pi)t^(-2)U0`, exactly the full-Weyl leading coefficient.
-Thus the finite-cut ledger has consistent leading coefficients in this
-restricted flat product model. The exact identity then forces the
-`H_orb-G_src` bracket to have zero `t^(-2)` coefficient there. This check
-does not establish the curved source subtraction, commutator/boundary/LLL
-allocation, or any common-regulator endpoint.
+The flat leading-coefficient ledger can be resolved under the declared
+conditional physical-half convention, using the differential smearing
+identity rather than the withdrawn `h_2'` reduction. Write `C=2 b0^2` and
+`U0=integral_R u w`. The full-Weyl tangent Hessian has leading coefficient
+`4C/pi` by `full-weyl-angular-local-subtraction.md`. The source flat contact
+formula gives `I_t=(1/(4pi))U0+O(t)`, hence
+`C_src=-(C/(2pi))t^(-2)U0`. In the same per-exterior convention the
+rank-two flat mixed orbit Hessian is `h_2=H_2/2=(1/(pi t))U0+O(t)`; from
+`h_2=-2t F_j'` it follows that `F_j=D_v T_t(u)=1/(2pi t)U0+O(1)` at leading
+order. Thus `G_src=(C/(2pi))t^(-2)U0`, while
+`H_orb=(C/pi)t^(-2)U0`, and `H_orb-G_src=(C/(2pi))t^(-2)U0`. The source
+geometric and contact terms cancel at this order. The independent
+full-Weyl/orbit Duhamel split gives `D_flat=(3C/pi)t^(-2)U0`, so
+`D_flat-C_src=(7C/(2pi))t^(-2)U0`. Adding the two ledger brackets gives
+`(8C/(2pi))t^(-2)U0=(4C/pi)t^(-2)U0`, matching `H_FW-J_src''`.
+
+This is a restricted flat consistency check under the stated common
+normalization. It does not establish the curved source subtraction,
+commutator/boundary/LLL allocation, or any common-regulator endpoint. The
+older allocation `D_flat-C_src=4C/pi` with a vanishing orbit bracket used an
+incorrect contact factor and is superseded.
 
 Consequently, the bridge-hit estimate in
 [`full-weyl-curved-angular-factor-defect.md`](full-weyl-curved-angular-factor-defect.md)
