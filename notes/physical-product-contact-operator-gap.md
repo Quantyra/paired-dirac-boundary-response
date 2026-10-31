@@ -117,6 +117,23 @@ square domains are equal. In particular, strong convergence or a diagonal
 bound for the physical square does not automatically yield one for the
 product-frame square.
 
+The principal-symbol discrepancy persists at the level of the response
+vertices. Write the Weyl factor as `E_b=exp(b/2)` and use the seed product
+frame symbol `|xi|^2`. The transported square symbol is then
+`σ_2(P_b*P_b)=E_b^4|xi|^2=exp(2b)|xi|^2`. For directions `v,w`,
+
+    delta_v σ_2 = 2v |xi|^2,
+    delta_v delta_w σ_2 = 4vw |xi|^2.              (5)
+
+These are the principal-symbol parts of the first and mixed second
+variations; lower-order Clifford, density, and boundary vertices remain in
+addition. By contrast, the scalar-potential family `L_0+V_b` has zero first
+and mixed second variations of its principal symbol. Consequently its
+derivative-jump coefficient cannot be substituted for P1's response by
+matching only an effective potential. Any reduction must explicitly account
+for the `2v` and `4vw` symbol vertices as well as the boundary/domain and
+trace-density changes. This is a local symbol calculation, not a trace
+estimate or a conclusion that the two renormalized observables differ.
 The source conversion instead separates the product-frame square into orbit
 and angular pieces and defines its contact before multiplying by the
 angular factor Theta'(t). Consequently applying that factor to a full
