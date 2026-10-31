@@ -162,6 +162,43 @@ and all orbit, matrix, density, contact, LLL and boundary terms; prove the
 non-hit defect and common-regulator endpoint; finish novelty and manuscript
 decisions; certify supported claims on GCP.
 
+## Next local coefficient for smooth interior directions
+
+For this paragraph only, assume the compactly supported directions stay a
+positive distance from the seam and the exact singular path functional
+`mathcal G_y` in the proof above has four uniformly bounded Frechet
+derivatives in the path supremum norm. Its constant-path value is
+`mathcal G_y(0)=Q_(u,w)(y)`. Bridge symmetry gives
+`E[D mathcal G_y(0)[xi]]=E[D^3 mathcal G_y(0)[xi,xi,xi]]=0`. Taylor's formula
+through degree three therefore yields
+
+    E[mathcal G_y(sqrt(t) xi)]
+      = Q_(u,w)(y)
+        + (t/2) E[D^2 mathcal G_y(0)[xi,xi]] + O(t^2),
+
+uniformly on the interior support. Substitution into the singular tower term
+`C/(2 pi t^2) E[mathcal G_y(sqrt(t)xi)]` identifies its next coefficient:
+
+    partial_uw Delta_sc(t;y)
+      = C Q_(u,w)(y)/(2 pi t^2)
+        + C E[D^2 mathcal G_y(0)[xi,xi]]/(4 pi t) + O(1).   (2)
+
+The bounded remainder in (2) also uses the bounded tower remainder and the
+exponentially small nonzero thermal images from the preceding interior
+argument. Formula (2) defines the next local coefficient without expanding
+its large pointwise expression; its covariance is the fixed bridge
+covariance `2(min(s,r)-sr)`.
+
+This is a smooth-interior coefficient only. The uniform `W^(3,infinity)`
+seam hypotheses used for the leading term give only a Lipschitz first path
+derivative and do not justify this Taylor expansion; see
+[`bridge-lipschitz-next-coefficient-obstruction.md`](bridge-lipschitz-next-coefficient-obstruction.md).
+To use (2) in P1, one must express its Hessian coefficient as the source's
+prescribed local tangent/contact/density subtraction and then prove a
+uniform rough-seam remainder. No such identification follows from (2), and
+it does not include the matrix commutator, boundary transgression or LLL.
+Numerical role: none.
+
 ## Extension to the admitted rough seam profiles
 
 The leading coefficient above also extends to the admitted even-folded
