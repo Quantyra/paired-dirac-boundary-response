@@ -34,6 +34,30 @@ do not alone prove a new theorem or novelty. To use Smith's remainder method
 for the paired problem, the matrix vertices, mixed boundary kernel and
 common regulator would need explicit estimates in the actual norms.
 
+## Additional coefficient-regularity literature screen
+
+Yoichi Miyazaki, [Heat asymptotics for Dirichlet elliptic operators with
+non-smooth coefficients](https://doi.org/10.3233/ASY-2010-1024), *Asymptotic
+Analysis* 72 (2011), 125–167, studies divergence-form elliptic operators on
+bounded `C^rho` domains with coefficients in `C^sigma`; its published
+abstract says the smooth-coefficient heat-trace asymptotics persist through
+the order controlled by `sigma` and also gives heat-kernel asymptotics in
+whole-space, half-space and bounded `C^1` settings. This is relevant
+coefficient-regularity prior art for short-time heat traces. The journal page
+restricts the full text, so the exact order, boundary hypotheses and
+remainder theorem have not yet been checked against the candidate's
+mixed-projector, parameter-differentiated Dirac square. Do not infer a direct
+coefficient match from the abstract.
+
+Bandara and Bryan, [Heat kernels and regularity for rough metrics on smooth
+manifolds](https://arxiv.org/abs/1712.09287v2), Theorem 1.1, construct a
+positive heat kernel for a rough metric and an energy space between
+`W_0^{1,2}` and `W^{1,2}`, with local Holder regularity at positive times.
+This covers broad rough-metric heat-kernel existence and some mixed energy
+spaces, but it does not state a short-time heat-trace coefficient or a
+uniform differentiated trace remainder. It is therefore adjacent analytic
+context, not a theorem closing P1-C or P1-D.
+
 Remaining to-do list: complete that applicability and later-literature audit,
 resolve the scalar benchmark, prove the required paired trace estimates, and
 formalize the supported claims on GCP.
