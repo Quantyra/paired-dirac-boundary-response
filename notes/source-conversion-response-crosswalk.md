@@ -161,8 +161,11 @@ comparison. It cannot be substituted for the Euclidean orbit contact
 
 ## Revised first missing implication and verification work
 
-1. Match the fixed-product full-Weyl mode/form response to the actual paired
-   composition domains, including its density and boundary/contact vertices.
+1. Start from the exact finite-cut physical L2 transport and composition
+   domain in [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md),
+   then match its full-Weyl mode/form response to the physical paired
+   observable, including density and boundary/contact vertices. The finite-cut
+   identity does not supply uniform moving-cut or trace estimates.
 2. Compare that complete response and its tangent subtraction to the source's
    fixed-angular conversion under one common regulator; retain the `q`
    chiral LLL and its Weyl/anomaly contribution separately.
