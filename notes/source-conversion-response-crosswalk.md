@@ -176,8 +176,12 @@ comparison. It cannot be substituted for the Euclidean orbit contact
    [`abstract full-Weyl mode-square identity`](../evidence/gcp-full-weyl-square-algebra-20261030/README.md)
    proves the noncommutative expansion under explicit ring hypotheses, but
    likewise does not formalize the represented operator, physical paired
-   domains, or complete mixed response. Formalize those claims on GCP only
-   after their ordinary hypotheses and vertices are fixed.
+   domains, or complete mixed response. The new [constant-mode Hessian
+   benchmark](../evidence/gcp-full-weyl-constant-mode-20261031/README.md)
+   formally confirms that full congruence and fixed-angular variation differ
+   in general. Neither certificate identifies the physical observable.
+   Formalize the remaining claims on GCP only after their ordinary
+   hypotheses and vertices are fixed.
 
 The source notes are imported evidence, not yet an independently checked P1
 theorem. No physical action, wormhole existence or stability conclusion is

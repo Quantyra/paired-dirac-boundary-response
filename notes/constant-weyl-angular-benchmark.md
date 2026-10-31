@@ -5,6 +5,12 @@ the angular vertices in `full-weyl-angular-vertices.md`. It is an ordinary
 calculation, not a Lean certificate, a local boundary asymptotic, or a proof
 of the physical regulator limit.
 
+The scalar one-mode second derivative and its full-versus-orbit-only Hessian
+difference are now checked in Lean on GCP; see the
+[exact-source receipt](../evidence/gcp-full-weyl-constant-mode-20261031/README.md).
+The all-mode trace factorization and physical normalization below remain
+ordinary conditional arguments, outside that certificate.
+
 Let P be the constructed closed product first-order operator, H=P*P>=0,
 and assume its heat operator is trace class for every t>0. Set
 K(t)=Tr(e^(-tH)). For spatially constant real directions u,w and
