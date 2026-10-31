@@ -68,6 +68,15 @@ coefficient to match in the local subtraction, not a counterterm assignment;
 orbit variations, physical normalization and source contacts remain to be
 included.
 
+Comparing this frozen scalar coefficient with the source contact expansion
+under the physical-half normalization gives opposite leading terms:
+`+(C/pi)(uw/f_0)t^(-2)` from the scalar angular factor and
+`-(C/pi)(uw/f_0)t^(-2)` from `2 Theta'(t) I_t`. The exact finite-cut ledger
+contains `D-C_src`, so this pair adds inside that bracket; it is not a
+standalone cancellation. Any cancellation in the full ledger must be derived
+with its separate geometric bracket and retained terms. Neither coefficient
+may be dropped on the basis of this leading comparison.
+
 The joint scalar-hit result is detailed in
 [`full-weyl-curved-scalar-joint-hit-bound.md`](full-weyl-curved-scalar-joint-hit-bound.md).
 Thus the parent result plus this scalar component do not yet close P1-C/P1-D.
