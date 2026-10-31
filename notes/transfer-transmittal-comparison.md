@@ -134,8 +134,16 @@ expressions and a splitting before the transmittal boundary condition is
 imposed. To obtain an operator equivalence one must globally identify the
 two S-eigenbundles, match their normal connections, verify the transformed
 Robin coefficient and source sign convention, and compare the actual
-closed realizations. The required global parallel J itself remains an
-application-specific hypothesis.
+closed realizations. For the pinned identical-copy finite-cut model, the
+separate [transition check](source-paired-bundle-transition-check.md)
+verifies that its stipulated `J` patches and is parallel across the source's
+common spin and pulled-back magnetic transitions, including the regular bolt
+chart. Thus the parallel-`J` hypothesis is closed at that declared fixed-cut
+scope; this is not an independent reconstruction of a different bundle or
+nonidentical copies. The remaining comparison is the identification of the
+resulting S-eigenbundles with interface side bundles, their normal and
+tangential connections (including `B_j`), the transformed Robin coefficient
+and sign, and the actual closed realizations.
 
 In the source's displayed normal-frame matrices gamma_n=sigma_1 and
 J=tau_1 gamma_n, the candidate splitting simplifies further. The same U
@@ -209,7 +217,7 @@ first-order paired realization. Conversely, a result at those features is
 not automatically novel: the relevant specializations and later literature
 must still be compared, including all density vertices and normalization.
 
-Remaining to-do list: construct or rule out the exact identification for the
-declared paired bundle and connection, audit the applicable heat coefficients
-and later literature, resolve the scalar normalization, and certify supported
-claims on GCP.
+Remaining to-do list: complete the transformed connection and closed-operator
+comparison with the transmittal model at the pinned finite cut, then audit
+its coefficient specialization, physical endpoint transfer, scalar
+normalization, and certify supported claims on GCP.
