@@ -42,6 +42,14 @@ under those product identifications. It does not assign the same projector
 to arbitrary finite radial cuts, where the collar transport calculation
 gives an angular-dependent subspace.
 
+For the scalar angular-mass part, the conditional
+[`curved scalar tower formula`](full-weyl-curved-scalar-tower-formula.md)
+puts `Theta(t S_b)` inside the parent's exact Brownian bridge expectation and
+retains all antiperiodic images. This is an exact representation for the
+subfamily `L_b+mu^2 exp(-2b)`, not a bound for its subtracted mixed
+derivative. The commutator sector and its surviving odd-odd pair still need
+their own matrix insertion estimate.
+
 Thus the parent result closes a closely related curved-response theorem but does not yet close P1-C/P1-D. This crosswalk is an ordinary scope comparison; the parent argument has not been independently rederived here and no Lean certification of the heat-kernel estimate is claimed.
 
 Remaining to-do list: derive and bound the P1 angular correction under the common regulator; finish the theorem-specific novelty decision and manuscript; certify supported claims on GCP.

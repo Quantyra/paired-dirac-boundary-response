@@ -91,6 +91,13 @@ equal positive/negative massive multiplicities, so the lemma applies under
 those product identifications. It does not prescribe the same domain at
 arbitrary finite radial cuts.
 The even scalar `mu^2` cross terms and even odd-odd angular products remain.
+The scalar sector now has an exact conditional curved collar representation:
+[`full-weyl-curved-scalar-tower-formula.md`](full-weyl-curved-scalar-tower-formula.md)
+replaces the external `Theta(t)` by the path-dependent `Theta(t S_b)` in the
+parent Brownian bridge formula for `L_b+mu^2 exp(-2b)`, retaining the full
+massive tower and thermal images. This does not include the commutator
+operator `mu C_b`; its odd-odd contribution still needs a matrix-insertion
+estimate. No subtracted derivative bound follows from the representation.
 These results do not provide the curved, localized, small-time
 subtracted orbit-angular cross estimate under the same regulator that is
 needed to transfer the parent curved remainder to P1; density/contact,
