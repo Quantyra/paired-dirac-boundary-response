@@ -38,6 +38,16 @@ subtraction. The criterion below applies only to the boundary-condition
 defect in the second term, as in the exact flat model. The non-hit part of
 the full odd-odd response is not estimated by this note.
 
+In the pinned compactified product realization, each mode square is the
+corresponding mass-free square plus `mu^2 I`, and the mode-independent
+projector domains are shared by the sign pair. Every heat time in the
+Duhamel word sums to `t`, so the mass factors exactly as `exp(-t mu^2)`.
+After removing it, the remaining `Q` and `Q_X` defect word is independent
+of `mu`; its kernel constant is therefore uniform in the angular mass for
+this fixed product model. This uses the mode-independent product domains
+recorded in `full-weyl-mode-form-domain.md`. It does not apply to arbitrary
+finite radial cuts, whose transported boundary subspace can depend on `mu`.
+
 ## Sufficient localized trace input
 
 Let `y` be collar distance to the seam and assume the admitted directions obey
@@ -114,13 +124,16 @@ factorization.
 
 ## First unsupported implication
 
-Estimate (1) is not proved here. Establishing it requires a localized
-trace-ideal or heat-kernel bound for the boundary-condition defect
+Estimate (1) is not proved here. On the fixed product model, establishing
+it requires a localized trace-ideal or heat-kernel bound for the
+boundary-condition defect
 `exp(-r Q_X)-exp(-r Q)`, with the two complementary realizations, uniformly
-at the Duhamel simplex endpoints and uniformly in the angular mass after the
-tower factor is removed. The conjugation identity alone does not provide it,
-and a same-domain bounded-potential comparison is unavailable at the pinned
-cut.
+at the Duhamel simplex endpoints. Uniformity in `mu` then follows from the
+scalar shift above. Extending this estimate through a moving finite cut
+also requires uniform boundary-domain transfer, which is not supplied by the
+fixed product result. The conjugation identity alone does not provide the
+kernel estimate, and a same-domain bounded-potential comparison is
+unavailable at the pinned cut.
 One possible route is a boundary parametrix for the two local projector
 realizations with Gaussian localization; another is a cutoff localization
 strictly inside the collar followed by a separate boundary-map estimate.
