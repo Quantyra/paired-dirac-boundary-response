@@ -75,6 +75,45 @@ Here `Delta_u=(Delta_mu)'[u]`, `Delta_w=(Delta_mu)'[w]`, and `Delta_mu''` is (3)
 
 Equations (2)-(4) sharpen the first missing implication recorded in `parent-curved-heat-bridge-p1-crosswalk.md`: beyond the parent orbit-sector remainder, the full-Weyl correction contains a zeroth-order angular-mass vertex and a first-order gradient vertex, their mixed second vertex, their mutual ordered products, and cross terms with the orbit vertices. To transfer a `t^(3/2)` subtracted bound, estimate the localized, subtracted trace of (4), summed over the actual angular tower with the same regulator and uniformity in the admitted curved family. The estimate must account for density and contact variations, boundary transgression, thermal images, and the separate LLL/anomaly block. The displayed vertices alone do not control their angular sum or the small-time finite part.
 
+## Mode-uniform relative-form bounds for the correction vertices
+
+There is a simple positive-time input available before estimating the
+subtracted trace. Suppose, on a common smooth mode core, that
+
+    q_(0,mu)[psi] = ||D psi||^2 + mu^2 ||psi||^2
+
+is the seed orbit-square form, `||G||=1`, and Clifford multiplication obeys
+`||c(dv)|| <= ||dv||_infinity`. For real smooth scalar directions, the
+explicit correction vertices satisfy
+
+    |<psi, Delta_mu'[u] psi>|
+      <= (2||u||_infinity + ||du||_infinity/2)
+         (q_(0,mu)[psi] + ||psi||^2),                       (5)
+
+and
+
+    |<psi, Delta_mu''[u,w] psi>|
+      <= (4||uw||_infinity + ||d(uw)||_infinity)
+         (q_(0,mu)[psi] + ||psi||^2).                       (6)
+
+The constants are independent of the angular mass `mu`. For (5), apply
+`|<psi,u psi>| <= ||u||_infinity ||psi||^2`, the Clifford bound, and
+`|mu| <= (1+mu^2)/2`; then use
+`q_(0,mu)+||psi||^2 >= (1+mu^2)||psi||^2`. For (6), use the same inequality
+on `4 mu^2 uw` and `2 |mu| ||d(uw)||_infinity`. These are ordinary
+relative-form estimates for the zeroth and mixed-second correction vertices,
+not an angular trace estimate. The constants are finite when the displayed
+direction norms are finite; their finiteness does not follow from the
+original rough-field class without checking its multiplier hypotheses.
+
+The first correction vertex also appears in the two ordered products in the
+Duhamel Hessian difference (4). Bounds (5)--(6) therefore provide a
+mode-uniform form input for a localized heat-sandwich argument, but they do
+not prove its trace-ideal hypotheses, small-time subtraction, summation of
+the ordered products, or the physical density/contact/LLL and boundary
+transgression transfer. In particular they do not establish the required
+`t^(3/2)` subtracted remainder.
+
 No numerical result or Lean claim is made. These ordinary identities are candidates for a narrowly scoped GCP formalization only after the operator and domain representation is fixed; formalizing them would not certify the heat-kernel bound.
 
 Remaining to-do list: prove the curved angular correction bound and source matching; finish novelty and manuscript; certify supported claims on GCP.
