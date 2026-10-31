@@ -8,6 +8,12 @@ derives the time power from the source's cubic direction jets, but it does
 not prove the needed mixed-boundary heat-kernel estimate for the physical
 curved family.
 
+The exact flat half-cylinder analogue is already proved in
+[`odd-odd-complementary-boundary-flat-estimate.md`](odd-odd-complementary-boundary-flat-estimate.md),
+including bounded constant Robin data and the full antiperiodic image sum.
+The present note isolates a sufficient Gaussian-weighted trace input for a
+curved extension; it does not replace or re-prove the flat estimate.
+
 ## Duhamel structure
 
 After pairing the `+mu` and `-mu` modes, the odd-gradient orbit-cross terms
