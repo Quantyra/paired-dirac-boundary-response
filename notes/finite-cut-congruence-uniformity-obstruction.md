@@ -28,3 +28,4 @@ and the first term already has coefficient `sqrt(R/ell)`. The derivative term do
 This sharpens the limitation recorded in [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md). It identifies why the fixed-cut congruence is not a uniform endpoint argument; the physical density/contact/LLL comparison and common-regulator limit remain to be established independently.
 
 Remaining to-do list: derive a weighted or localized estimate that compensates for this loss, then close the physical response and common-regulator bridge, novelty audit, manuscript, and claim-matched Lean certification.
+
