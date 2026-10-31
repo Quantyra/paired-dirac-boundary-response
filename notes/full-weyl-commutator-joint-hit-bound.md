@@ -830,6 +830,19 @@ points and integrating the Gaussian; equivalently its Fourier multiplier is
 `exp(-sigma |xi|^2)=1-sigma |xi|^2+O(sigma^2 |xi|^4)`. The coefficient of
 `t a_1` is the same scalar heat coefficient used above.
 
+An exact flat check fixes the normalization without the local-coordinate
+parametrix: for `Q_0=-Delta` on the orbit plane, one ordering has integrated
+trace
+
+    (1/(2 pi t)) integral a (exp(sigma Delta)b) dmu.
+
+Taylor expansion of this semigroup and integration by parts give
+`integral (a b) dmu - sigma integral (nabla a . nabla b) dmu + O(sigma^2)`.
+Thus the gradient coefficient and sign above agree with the exact Fourier
+convolution. The two orderings satisfy
+`2 integral_0^t (t-r) sigma dr=t^3/6`, which reproduces the stated
+`-b_S^2/(6 pi)` coefficient after the rank-two prefactor and tower limit.
+
 Multiplication by the external Duhamel factor `s=t-r`, integration in `r`,
 and summation over both orderings give the same-boundary coefficients
 
