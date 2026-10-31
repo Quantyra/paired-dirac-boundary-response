@@ -1,0 +1,18 @@
+388627737d25a98728b6eee3d8f7bde257867fd1beaea88a79eeb2db642f8ab2  /home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-mass-skew-lower-20261030a/MassSkewLowerDraft.lean
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+warning: mathlib: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/mathlib' has local changes
+warning: plausible: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/dfredriksen_quantyra_org/quantyra-space-runs/paper1-sourceonly-6858aa7-20261029/source/lean/.lake/packages/Cli' has local changes
+MassSkewLowerDraft.lean:17:4: error: Type mismatch: After simplification, term
+  hcs
+ has type
+  (inner ℂ (m • x) x).re ≤ ‖m • x + y‖ * ‖x‖
+but is expected to have type
+  m * ‖x‖ ^ 2 ≤ ‖m • x + y‖ * ‖x‖
+'PairedDirac.mass_skew_lower_bound_draft' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

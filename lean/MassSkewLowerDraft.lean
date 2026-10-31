@@ -14,7 +14,8 @@ theorem mass_skew_lower_bound_draft (m : ℝ) (x y : H)
     m * ‖x‖ ≤ ‖(m : ℂ) • x + y‖ := by
   have hcs := re_inner_le_norm (𝕜 := ℂ) ((m : ℂ) • x + y) x
   have hquad : m * ‖x‖ ^ 2 ≤ ‖(m : ℂ) • x + y‖ * ‖x‖ := by
-    simpa [inner_add_left, inner_smul_left, inner_self_eq_norm_sq_to_K, hy] using hcs
+    rw [inner_add_left, inner_smul_left, inner_self_eq_norm_sq_to_K] at hcs
+    simpa [hy, ← Complex.ofReal_pow] using hcs
   by_cases hx : ‖x‖ = 0
   · simp [hx]
   · have hxpos : 0 < ‖x‖ := lt_of_le_of_ne (norm_nonneg x) (Ne.symm hx)
