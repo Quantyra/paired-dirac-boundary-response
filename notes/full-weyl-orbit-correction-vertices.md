@@ -86,16 +86,28 @@ separate LLL/anomaly term.
 For the mixed response, assume in addition that `b` varies in a bounded
 `W^(1,infinity)` field set, that the real directions `u,w` lie in
 `W^(1,infinity)`, and that the compact-cut quadratic-form family is twice differentiable
-on the first-order form domain. Restrict to the massive tower, with `|mu|`
-bounded below by a positive constant. Assume uniform quadratic-form
-comparability of the positive square to
+on the first-order form domain. On a bounded `W^(1,infinity)` field set,
+the positive square, after a uniform scalar shift, is comparable in
+quadratic-form sense to
 
     ||D psi||^2 + (1+mu^2)||psi||^2,                       (1d)
 
 with comparison constants depending on the field ball and fixed cut, not on
-`mu`. Establishing this coercivity, including the positive lower bound on the
-massive spectrum, is a hypothesis here; (1c) supplies only part of its proof.
-The second-order operator domains need not be common.
+`mu`. To see the lower bound, let `a=exp(-2||b||_infinity)` and
+`C=exp(-2 inf b)||db||_infinity`. The exact quadratic form and the Clifford
+norm give
+
+    q_full,mu,b[psi] >= ||D_b psi||^2 + (a mu^2-C|mu|)||psi||^2.
+
+Using `C|mu| <= (a/2)mu^2+C^2/(2a)` shows that
+`q_full,mu,b[psi] + K||psi||^2` controls
+`||D_b psi||^2+(1+mu^2)||psi||^2` for
+`K=1+C^2/(2a)`, uniformly on the field set. The reverse estimate follows
+from the same form identity and boundedness of `b` and `db`. Finally,
+`D_b=m_b D m_b` and the multiplier/inverse multiplier bounds imply graph
+norm equivalence between `D_b` and `D`, so the comparison in (1d) follows.
+The shift `K` is essential: no positive spectral gap for the unshifted square
+is assumed. The second-order operator domains need not be common.
 
 The first and mixed second derivatives of the correction at general `b` are
 multiplication operators:
