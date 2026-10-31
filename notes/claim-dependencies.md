@@ -54,8 +54,11 @@ proved from the physical geometry. The collar supplies the normal jet and
 bounded normal second derivative; global W^{2,∞} requires the stated atlas.
 The abstract projected-trace/congruence and natural-square result has a GCP
 Lean check described in [the Lean campaign](lean-campaign.md), conditional
-on abstract trace/domain hypotheses. This does not certify those geometric
-hypotheses or the stronger equal-square-domain criterion.
+on abstract trace/domain hypotheses. The graph-constant assembly now has a
+[clean GCP receipt](../evidence/gcp-scalar-multiplier-graph-clean-20261030/README.md):
+it derives the exact `e^B` conclusions from explicit operator and commutator
+norm hypotheses. This does not certify those geometric hypotheses or the
+stronger equal-square-domain criterion.
 
 ## P1-B: resolvent variation
 

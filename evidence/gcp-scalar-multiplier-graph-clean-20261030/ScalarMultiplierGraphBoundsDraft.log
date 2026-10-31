@@ -1,0 +1,7 @@
+ScalarMultiplierGraphBoundsDraft.lean:18:15: warning: unused variable `hB`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ScalarMultiplierGraphBoundsDraft.lean:18:28: warning: unused variable `hG`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'PairedDirac.scalar_congruence_graph_bounds_draft' depends on axioms: [propext, Classical.choice, Quot.sound]

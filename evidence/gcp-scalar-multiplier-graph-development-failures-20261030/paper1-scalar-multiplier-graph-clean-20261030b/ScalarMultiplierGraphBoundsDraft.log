@@ -1,0 +1,42 @@
+ScalarMultiplierGraphBoundsDraft.lean:56:41: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Real.exp (B / 2) * Real.exp (B / 2)
+in the target expression
+  Real.exp (B / 2) * (Real.exp (B / 2) * (G / 2)) = Real.exp B * (G / 2)
+
+H : Type u_1
+inst✝¹ : NormedAddCommGroup H
+inst✝ : NormedSpace ℂ H
+D : H →ₗ.[ℂ] H
+E : H ≃L[ℂ] H
+C : H →L[ℂ] H
+hE : ∀ x ∈ D.domain, E x ∈ D.domain
+hC : ∀ (x : ↥D.domain), ↑D ⟨E ↑x, ⋯⟩ = E (↑D x) + C ↑x
+B G : ℝ
+hB : 0 ≤ B
+hG : 0 ≤ G
+hE_norm : ‖↑E‖ ≤ Real.exp (B / 2)
+hEinv_norm : ‖↑E.symm‖ ≤ Real.exp (B / 2)
+hC_norm : ‖C‖ ≤ Real.exp (B / 2) * (G / 2)
+hEinvC : ∀ (x : H), ‖E.symm (C x)‖ ≤ G / 2 * ‖x‖
+x : ↥D.domain
+hExp : Real.exp (B / 2) * Real.exp (B / 2) = Real.exp B
+hE_sq : ‖↑E‖ ^ 2 ≤ Real.exp B
+hEinv_sq : ‖↑E.symm‖ ^ 2 ≤ Real.exp B
+⊢ Real.exp (B / 2) * (Real.exp (B / 2) * (G / 2)) = Real.exp B * (G / 2)
+ScalarMultiplierGraphBoundsDraft.lean:62:39: error: Application type mismatch: The argument
+  ↑E
+has type
+  H →L[ℂ] H
+but is expected to have type
+  H ≃L[ℂ] H
+in the application
+  congruence_graph_upper_draft D ↑E
+ScalarMultiplierGraphBoundsDraft.lean:74:48: error: Application type mismatch: The argument
+  ↑E
+has type
+  H →L[ℂ] H
+but is expected to have type
+  H ≃L[ℂ] H
+in the application
+  congruence_graph_lower_composed_draft D ↑E
+'PairedDirac.scalar_congruence_graph_bounds_draft' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
