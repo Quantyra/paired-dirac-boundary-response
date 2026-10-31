@@ -35,6 +35,23 @@ A preceding `lake env` attempt in `paper1-sourceonly-6858aa7-20261029/source/lea
 
 Remaining to-do list: reauthenticate GCP; replay the current exact hash and preserve the raw log/exit code/axiom output; then continue the P1 analytic bridge and novelty audit.
 
+## Contact-jet replay safety update (2026-10-31 HST)
+
+The targeted `cloud-curved-scalar-contact-jet-20261031.sh` runner was revised
+to construct `LEAN_PATH` directly from the pinned source-only workspace's
+recorded package build directories and the pinned Lean 4.30.0 library. It no
+longer evaluates `lake env` in the source-only workspace, avoiding the Lake
+dependency-refresh path that previously removed a checkout. The source SHA-256
+still matches the runner's exact-source pin. Git Bash `-n` passes locally;
+this is only a shell syntax check, not a Lean invocation or certification.
+The latest builder API query still fails during user-token refresh, so the
+runner has not been transferred or executed on GCP.
+
+Remaining to-do list: restore GCP authentication; verify the builder and
+prebuilt import directories; replay the exact Lean source on GCP and retain
+the raw log, exit code and axiom output; continue the physical response and
+novelty audits.
+
 ## Credential recheck after temporary handoff
 
 On 2026-10-31, both `gcloud auth print-access-token` and the builder instance
