@@ -249,3 +249,66 @@ combine the two Gaussian kernels, integrate their relative point using
 `t^2` simplex area and `t^(-2)` tower moment. First unsupported implication:
 verify (4) for the actual pinned operator and control the complementary
 non-hit region and common-regulator matching. Numerical role: none.
+
+## Gaussian kernel bound for the pinned compactified orbit square
+
+For the pinned static zero-angle product realization, hypothesis (4) can be
+verified at the fixed compactified boundary. The source derivation recorded
+at parent commit `08cb71afea3f0e5310cac8a50c05d5007555641f` identifies the
+orbit operator as the square of a smooth Dirac-type operator on the smooth
+compact orbit disk, with a regular bolt and the local projector boundary
+condition at conformal infinity. The Weitzenbock/Lichnerowicz form of this
+square is Laplace type: its principal symbol is `|xi|^2 I`, and its connection
+and endomorphism coefficients are smooth on the compact disk. The boundary
+conditions obtained by requiring `D psi` to lie in the complementary
+first-order domain are
+
+    Pi_- psi|_boundary = 0,
+    Pi_+ (nabla_n + K/2) psi|_boundary = 0.
+
+In the inward-normal convention the Robin endomorphism is `S=-K/2`; at the
+conformal boundary of this static seed, `K=0`. These are smooth local mixed
+Dirichlet/Robin conditions. The established mixed-boundary setup for a
+Laplace-type operator on a smooth compact vector bundle is precisely this
+class; see [Branson--Gilkey--Kirsten--Vassilevich, §§1--2](https://arxiv.org/abs/hep-th/9906144),
+which states the mixed decomposition and the elliptic (Lopatinski--Shapiro)
+condition. The finite-cut transport caveat in `full-weyl-mode-form-domain.md`
+continues to apply away from the pinned compactified boundary.
+
+For clarity, the Gaussian estimate needed here follows from the local heat
+parametrix for this fixed operator, rather than from the extension-independent
+Euclidean theorem discussed above. In interior charts, use the frozen-metric
+Gaussian model. In collar charts, use the direct/reflected half-space models
+on the Dirichlet and Robin subbundles, with the smooth Robin endomorphism in
+the reflected term. Smooth coefficients and a smooth projector give a
+parametrix error of lower parabolic order. The Volterra correction series
+converges for `0<t<=t0`; Gaussian convolution on the compact orbit disk
+absorbs each correction after enlarging the Gaussian constant. A finite atlas
+and compactness then give constants `C,c,t0>0` such that
+
+    ||K_Q(t;z,z')|| <= C t^(-1) exp(-d(z,z')^2/(c t)), 0<t<=t0. (6)
+
+The heat kernel is matrix-valued; the estimate is in the fiber operator norm.
+Since `Q_X=X Q X^(-1)` with pointwise unitary `X`,
+`K_QX(t;z,z')=X(z)K_Q(t;z,z')X(z')^(-1)` and its fiber norm obeys the same
+bound. Therefore (4) holds for this pinned compactified product, and the
+fixed-window estimate (5) is an unconditional ordinary estimate for that
+fixed realization and the declared cubic-jet directions.
+
+The constants in (6) depend on the pinned smooth metric, connection,
+endomorphism, boundary projector and collar; this proof gives no uniformity
+for a family of transported finite-cut projectors. Nor does (6) bound the
+non-hit defect outside the fixed `R sqrt(t)` window or match the full source
+observable. The curved common-regulator endpoint and all other response
+sectors remain open. This is a fixed-product boundary-layer component result,
+not a physical admission margin or a wormhole claim.
+
+Concrete claim: the fixed pinned compactified orbit square satisfies (4), so
+the fixed-window odd-odd boundary-layer component is `O_R(t^(3/2))` after
+the sign-paired angular sum. Ordinary argument: verify Laplace-type and
+smooth mixed-boundary hypotheses from the source domain; construct the local
+interior/reflected heat parametrix and sum its Volterra corrections; transfer
+the bound through exact unitary conjugation for `Q_X`; apply (5). First
+unsupported implication: establish a uniform complement/non-hit subtraction
+and transfer the result through the moving physical cutoff and full
+common-regulator response. Numerical role: none.
