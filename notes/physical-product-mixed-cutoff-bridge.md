@@ -62,6 +62,18 @@ comparison under the listed hypotheses. It does not prove those hypotheses
 for the source realization or permit removal of epsilon, T or the spatial
 cut.
 
+**Concrete claim.** For the declared fixed-cut families, the mixed
+derivative of the geometric/product-frame regulated-action difference is the
+four-term trace in (3), with both partners and both proper-time endpoints.
+**Ordinary argument.** Differentiate the exact r-integrated endpoint identity
+and apply the product rule to the moving bounded multiplier and the endpoint
+heat expression. **First unsupported implication.** Match these families,
+their domains and all moving density/local terms to the source's physical
+observable, then prove cut- and regulator-uniform convergence. **Numerical
+role.** None; this is an exact conditional identity. **Lean role.** Not
+formalized; an algebraic certificate would not establish the analytic trace
+hypotheses.
+
 For each r and each partner, the complete mixed heat derivative is the sum
 of two ordered first-form-vertex insertions minus the mixed second-form
 vertex, as in `mixed-heat-vertex-inventory.md`. In a finite Galerkin
