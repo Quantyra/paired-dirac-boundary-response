@@ -348,6 +348,24 @@ boundary-reflected tail can be made higher order by increasing `A`. These
 fixed-pinned component estimates and their parametrix hypotheses are detailed
 in `../notes/full-weyl-commutator-joint-hit-bound.md`.
 
+For smooth insertions supported in a fixed interior region, the same-boundary
+word and the conjugation defect can also be combined after subtracting the
+flat `a_0` term. In raw rank-two orbit normalization, their spatially
+integrated odd-odd sector is
+
+    R_same+defect,int(t)
+      = -b_S^2/(6 pi) integral [h' u'w' + u''w''] dmu + O(t),
+      dmu=dy/f,  h=f'/f.                                  (5.6)
+
+The `h^2 u'w'` contributions cancel between the smooth-interior heat
+coefficient and the defect. Formula (5.6) is not the complete response or a
+physical subtraction term: it omits other vertices, density, source contact,
+LLL, boundary transgression and local restorations, and it has not been
+transferred through the moving physical cut. In particular, its order-zero
+coefficient must be identified in the source's tangent/cutoff ledger before
+using a curved `t^(3/2)` remainder claim. The derivation and normalization
+limits are recorded in `../notes/full-weyl-commutator-joint-hit-bound.md`.
+
 Away from the seam, use a smooth cutoff `chi_rho` vanishing near the boundary
 and set `F=chi_rho X`, `G=chi_rho X^(-1)`. The exact localized identity is
 
