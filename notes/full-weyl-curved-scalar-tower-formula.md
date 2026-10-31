@@ -222,12 +222,19 @@ source terms.
 
 The representation makes the next estimate concrete: after the source's
 full local subtraction, differentiate (5) along the admitted mass/log
-directions and bound its bridge expectation uniformly. The moment-order
-bookkeeping in the sign-cancellation note gives termwise sufficient targets
-for the seed derivatives, but neither this identity nor the parent orbit
-remainder proves those bounds. The `mu C_b` commutator sector, including its
-even odd-odd contribution, still needs a separate matrix-valued bridge
-estimate under the same subtraction.
+directions and bound its bridge expectation uniformly. A model bridge-hit
+component with both derivatives on `Theta(t S_b)` is bounded in
+[`full-weyl-curved-angular-factor-defect.md`](full-weyl-curved-angular-factor-defect.md):
+under the stated Gaussian localization it is `O(t^(3/2))`, and its bounded
+`rho` remainder is `O(t^(7/2))`. This model path restriction has not been
+identified with a term in the source's exact local subtraction. It does not
+estimate derivatives on `A_h`, `B_h`, or the thermal images, and has no
+matrix-Robin local-time weight.
+The moment-order bookkeeping in the sign-cancellation note gives termwise
+sufficient targets for the remaining seed derivatives, but neither this
+identity nor the parent orbit remainder proves those bounds. The `mu C_b`
+commutator sector, including its even odd-odd contribution, still needs a
+separate matrix-valued bridge estimate under the same subtraction.
 
 No numerical computation or Lean certification is claimed.
 

@@ -47,8 +47,15 @@ For the scalar angular-mass part, the conditional
 puts `Theta(t S_b)` inside the parent's exact Brownian bridge expectation and
 retains all antiperiodic images. This is an exact representation for the
 subfamily `L_b+mu^2 exp(-2b)`, not a bound for its subtracted mixed
-derivative. The commutator sector and its surviving odd-odd pair still need
-their own matrix insertion estimate.
+derivative. A separate conditional bridge-hit calculation in
+[`full-weyl-curved-angular-factor-defect.md`](full-weyl-curved-angular-factor-defect.md)
+now gives an `O(t^(3/2))` bound for the term where both directions hit
+`Theta(t S_b)`, assuming Gaussian seam localization and no boundary local-time
+weight; its bounded `rho` remainder is `O(t^(7/2))`. This path restriction
+has not been identified with a term in the source's exact subtraction and
+does not bound derivatives on the orbit/thermal factors. The commutator
+sector and its surviving odd-odd pair still need their own matrix insertion
+estimate.
 
 Thus the parent result closes a closely related curved-response theorem but does not yet close P1-C/P1-D. This crosswalk is an ordinary scope comparison; the parent argument has not been independently rederived here and no Lean certification of the heat-kernel estimate is claimed.
 
