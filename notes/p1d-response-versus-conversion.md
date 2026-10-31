@@ -92,6 +92,23 @@ term, the full-Weyl angular/commutator vertices, LLL allocation, and action
 restorations must be combined on one fixed Hilbert space and regulator
 before a physical subtraction identity can be asserted.
 
+### Flat leading-coefficient ledger check
+
+The three existing flat calculations now provide an independent leading
+coefficient consistency check under their common conditional physical-half
+normalization. Set `C=2 b0^2`. The full-Weyl tangent Hessian has leading local
+term `(8 b0^2/pi) U0 t^(-2)=(4C/pi)U0 t^(-2)` by
+`full-weyl-angular-local-subtraction.md`. The source's geometric-plus-contact
+conversion has no `t^(-2)` term by `flat-conversion-angular-local-terms.md`.
+The fixed-mode Duhamel split gives `D_flat=(3C/pi)t^(-2)U0` and the source
+contact gives `C_src=-(C/pi)t^(-2)U0`; hence
+`D_flat-C_src=(4C/pi)t^(-2)U0`, exactly the full-Weyl leading coefficient.
+Thus the finite-cut ledger has consistent leading coefficients in this
+restricted flat product model. The exact identity then forces the
+`H_orb-G_src` bracket to have zero `t^(-2)` coefficient there. This check
+does not establish the curved source subtraction, commutator/boundary/LLL
+allocation, or any common-regulator endpoint.
+
 Consequently, the bridge-hit estimate in
 [`full-weyl-curved-angular-factor-defect.md`](full-weyl-curved-angular-factor-defect.md)
 cannot yet be assigned to the source's `r_curved`: it bounds one model
