@@ -296,3 +296,49 @@ the mixed-boundary kernel estimate for the physical curved family and match
 the complete observable under one regulator. Numerical role: none.
 
 Remaining to-do list: control the non-hit region and match its local coefficient to the source subtraction; prove physical moving-cut and common-regulator transfer; close the other response sectors; finish novelty and manuscript audits; certify supported claims on GCP.
+
+### Candidate curved-remainder ledger: dependency disposition
+
+The frozen source names `r_curved` verbally but does not give a termwise
+localization, cutoff-transition formula, or allocation of contact, density,
+LLL, boundary-transgression and local-restoration terms. The source points to
+Section 4 tangent term (11); accordingly the Section 4 flat tangent `T_4` is
+the best-supported working subtraction. This is a candidate interpretation,
+not an adoption of a proved theorem. The exact finite-cut algebra in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md) and
+[`p1d-operational-definition-proposal.md`](p1d-operational-definition-proposal.md)
+gives, under common-Hilbert-space, cut, trace-density and positive-time
+hypotheses,
+
+    r_cand = [H_orb-G_src] + [D-C_src] + [J_src''-T_4] + A.
+
+The four blocks have different open proof obligations:
+
+| Block | What the current evidence supports | First unsupported implication |
+| --- | --- | --- |
+| `H_orb-G_src` | A fixed-cut positive-time orbit/source identity and restricted flat leading-coefficient ledger are recorded. | Match the full curved orbit Hessian to the source geometric variation, including moving density, cutoff, endpoint and boundary terms. |
+| `D-C_src` | The full-Weyl correction vertices are explicit; flat and scalar-subfamily contact coefficients are compared under stated conditional normalizations. | Derive the complete matrix/angular tower, LLL, density and contact allocation on one physical Hilbert space and regulator. The smooth interior odd-odd pair still has an order-zero local term requiring source-sector matching. |
+| `J_src''-T_4` | The source conversion first two jets and common-cutoff finite part at the seed are imported; flat coefficients are subtracted algebraically. | Prove that this source endpoint conversion equals the physical localized Section 4 tangent subtraction, with the same operator, trace measure, cutoff and limits. The current flat difference is diagnostic only. |
+| `A` | The term is defined as a placeholder for signed action/contact contributions not already in `H_FW`. | Give its exact source-derived formula and allocate boundary transgression, contact, density, LLL/cocycle and every local restoration exactly once. |
+
+This ledger exposes where an `O(t^(3/2))` claim would have to cancel all
+lower-order terms; it does not show that a coefficient fails to cancel. In
+particular, model coefficients with different normalizations cannot be
+added to infer a physical mismatch. No source-level identity currently
+identifies `r_cand` with the frozen source's `r_curved`, proves the four
+blocks cancel to the target order, or controls the joint moving-cut and
+proper-time endpoint. See the operational-definition note for the precise
+ordinary proof sequence.
+
+Concrete claim: under the displayed common-cut hypotheses, the candidate
+remainder has the exact four-block algebraic decomposition. Ordinary
+argument: combine the fixed-cut full-Weyl/orbit Duhamel identity with the
+source conversion identity, then add and subtract `G_src`, `C_src`, and
+`T_4`. First unsupported implication: identify each block with the frozen
+physical action and prove its uniform coefficient and endpoint bounds.
+Numerical role: none. Lean role: none for the analytic or trace identity.
+
+Remaining to-do list: derive the signed action allocation from the source;
+prove the four block matches and lower-order cancellations under one physical
+regulator; control the rough seam, non-hit region and moving cut; then finish
+the S001 decision and certify supported formalizable statements on GCP.
