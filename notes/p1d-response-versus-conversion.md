@@ -253,6 +253,24 @@ identification, physical density or transgression terms, or the
 common-regulator endpoint. A stronger differentiated remainder expansion
 would be needed for a sharper error than the displayed logarithmic bound.
 
+### Why this smooth expansion does not cover the admitted rough seam
+
+The pinned rough-family assumptions are weaker than those used above. The
+source's weighted bounds imply a uniform `C^(2,1)` bound for the reflected
+coefficients but no uniform fourth-derivative bound; its leading logarithmic
+jet can have an unbounded fourth derivative at the seam. Thus the classical
+smooth-boundary heat expansion cannot be applied uniformly to the admitted
+family merely by smooth approximation. The source's exact flat rough-seam
+diagnostic instead has cubic-cubic `t^(5/2)` and cubic-log `t^3 log(t)`
+terms after its specified local subtraction. These are integrable against
+`dt/t^2`, but the diagnostic is for the tangent full-Weyl response, not
+`h_2` or `H_orb-G_src`. Transferring those powers requires a localization
+estimate for the exact rough family and common-domain variation. This is
+the first unsupported implication here; the conditional smooth-boundary
+coefficient cancellation does not fill it. See the frozen source
+[`current-rough-paired-variation.md` at `f0eab590`](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md),
+Secs. 3-5, for the admitted weighted class and the tangent diagnostic.
+
 For local tangent subtractions `T_FW,T_src` at that same cut, set
 `delta_T=T_FW-T_src`, and define
 
