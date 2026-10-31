@@ -195,6 +195,30 @@ Neither the four-dimensional `a4` anomaly formulas nor their folding
 statement computes P1's proposed higher-order response or its physical
 regulator limit.
 
+### Screened order coverage
+
+The primary transmittal source, Gilkey, Kirsten and Vassilevich,
+[*Heat trace asymptotics with transmittal boundary conditions and quantum
+brane-world scenario*](https://arxiv.org/abs/hep-th/0101105), Theorem 2.3
+and Section 7, determines the singular-interface invariants through order
+`a_4^Sigma`. Section 8 explicitly says a complete `a_5` calculation is
+impractical there and gives a special reflection-symmetric `a_5` result
+under matching assumptions on invariants through dimension four. The later
+spinor interface paper uses the `a_4` trace-anomaly coefficient. The screened
+transfer source, Gilkey, Kirsten and Vassilevich, [arXiv:hep-th/0208130](https://arxiv.org/abs/hep-th/0208130),
+states that it computes the first
+five terms for Laplace-type operators with transfer conditions. These are
+substantial low-order interface and boundary-condition results; none of
+these sources, in the text reviewed for this audit, supplies P1's candidate
+full-Weyl `t^(3/2)` (`a_7`) or logarithmic `t^2 log(t)` term (log-`a_8`).
+
+This order comparison does not prove that no other literature contains an
+`a_7`-level specialization. The search is not exhaustive, and an exact
+specialization of P1's operator and directions into the available invariant
+bases remains unchecked. It establishes that the cited `a_4` anomaly and
+the classic transmittal/transfer results through the stated orders do not by
+themselves close or pre-empt the P1 higher-order coefficient claim.
+
 Remaining to-do list: perform the exact folded-operator and coefficient
 specialization check; close the physical source/common-regulator bridge;
 then complete the novelty decision, supported manuscript and GCP Lean
