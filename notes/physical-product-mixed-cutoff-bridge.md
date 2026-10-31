@@ -60,7 +60,13 @@ differentiated and added separately. For a fixed b, b_s=b_v=b_sv=0 and this
 reduces to (2). This formula is an exact fixed-cut, positive-endpoint
 comparison under the listed hypotheses. It does not prove those hypotheses
 for the source realization or permit removal of epsilon, T or the spatial
-cut.
+cut. This interpolation is distinct from the parent source's
+geometric/variable-mass path
+`A_r(b)=exp(-r b/2)[D+M exp(b)]exp(-r b/2)`, whose mixed derivative contains
+the separate `2 Theta'(t) I_t` contact; see
+`source-conversion-response-crosswalk.md`. The two interpolation identities
+must not be identified without a further same-Hilbert-space, same-regulator
+derivation.
 
 **Concrete claim.** For the declared fixed-cut families, the mixed
 derivative of the geometric/product-frame regulated-action difference is the

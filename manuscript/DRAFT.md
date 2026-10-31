@@ -429,6 +429,11 @@ must be differentiated separately. This is the complete fixed-cut
 positive-endpoint identity for the declared interpolation, not an estimate or
 the source's common-regulator response; details and hypotheses are in
 `../notes/physical-product-mixed-cutoff-bridge.md`.
+This physical/product-frame congruence is distinct from the parent source's
+geometric/variable-mass interpolation, whose second variation contains the
+separate `2 Theta'(t) I_t` contact; the two identities are not interchangeable
+without an additional common-Hilbert-space derivation (see
+`../notes/source-conversion-response-crosswalk.md`).
 
 Away from the seam, use a smooth cutoff `chi_rho` vanishing near the boundary
 and set `F=chi_rho X`, `G=chi_rho X^(-1)`. The exact localized identity is
