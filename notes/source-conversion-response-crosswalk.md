@@ -185,6 +185,13 @@ comparison. It cannot be substituted for the Euclidean orbit contact
    Lean checks the abstract composition-domain set reduction under explicit
    preservation assumptions, but certifies neither these analytic hypotheses
    nor the mode trace.
+   For the spherical seed and invariant directions, the compact-cut
+   trace-norm result now justifies absolute angular summation of the complete
+   mixed heat derivative and interchange with its mixed parameter derivative
+   for each fixed positive time; see
+   [`physical-fixed-time-mixed-response-assembly.md`](physical-fixed-time-mixed-response-assembly.md).
+   This closes the fixed-cut positive-time mode-sum interchange only. It gives
+   no cutoff-uniform bound, small-time subtraction or common-regulator limit.
 2. The first remaining bridge is from that complete physical paired response
    to the source's product-frame/time-reduced observable. Compare its tangent
    subtraction to the source's
