@@ -242,6 +242,40 @@ For a stipulated product model, suppose the complete antiperiodic thermal decomp
 Consequently its two partner squares agree and have a positive lower bound. With the stated compact heat and form-differentiability assumptions this supplies large-time integrability at fixed positive cutoff for the finite zero sector. The assumed thermal gap requires the actual mode domains and bolt regularity; it does not follow from antiperiodicity alone. For each fixed nonzero thermal mode, `../notes/bolt-symmetric-lapse-domain-equality.md` establishes the symmetric-lapse domain equality under explicit smooth compact product, common bundle, physical projector and graph-core hypotheses. Applying that result to the source and obtaining uniform rough-family control remain separate obligations. The detailed conditional argument is in `../notes/product-conversion-zero-sector-thermal-gap.md`.
 
 This finite-model endpoint is not yet identified with the source's lowest-Landau-level state, cocycle, physical-half normalization or common subtraction. No zero-mode block is discarded or added twice, and no ultraviolet limit follows from (4.11).
+
+### Flat full-Weyl and endpoint-conversion coefficient comparison
+
+For the massive tower, write `U_j=integral u^(j)(y)w^(j)(y)dy`,
+`C_0=-q-1/3`, and `C_1=q^2/6-1/30`. In the conditional physical-half
+convention, the full-Weyl tangent local series is
+
+    8 b_0^2/(pi t^2) U_0 + C_0/(pi t) U_0
+      - b_0^2/(2 pi t) U_1 + O(t),                    (4.12a)
+
+while the source endpoint-conversion bilinear is
+
+    C_0/(2 pi t) U_0 + b_0^2/(12 pi t) U_1
+      + 1/(2 pi)[-C_0 U_1/12 - b_0^2 U_2/60
+                    + 2 C_1 U_0/b_0^2] + O(t).         (4.12b)
+
+Subtracting (4.12b) from (4.12a) gives
+
+    8 b_0^2/(pi t^2) U_0 + C_0/(2 pi t) U_0
+      - 7 b_0^2/(12 pi t) U_1
+      + C_0/(24 pi) U_1 + b_0^2/(120 pi) U_2
+      - C_1/(pi b_0^2) U_0 + O(t).                    (4.12c)
+
+This follows by subtracting the two displayed local series term by term.
+It is an algebraic comparison only: it does not identify the residual with
+the physical mixed-response difference, a local-action restoration, the
+lowest-Landau-level term, or a curved-response mismatch. Those assignments
+require a common-Hilbert-space derivation with the same trace density and
+regulator. The finite mixed conversion coefficients separately agree with
+the source finite-part formula under the declared half-line/full-line
+relation; that normalization check does not settle the divergent terms or
+the full-Weyl/source match. Details and coefficient sources are in
+`../notes/p1d-response-versus-conversion.md`.
+
 ## 5. Curved trace extension — work in progress
 
 The source's localized tangent-subtracted curved remainder and the endpoint conversion (4.10) are distinct observables; see `../notes/p1d-response-versus-conversion.md`. To specify the mixed response before estimating it, let a positive-cutoff form family q_(s,r) have a common form domain and write its first and mixed derivatives as V_u, V_w and V_uw in a finite-dimensional Galerkin approximation. If K_t is the unperturbed heat matrix, the exact mixed heat derivative is
