@@ -104,9 +104,21 @@ bounds; combined cancellations may improve them. The fixed-product
 positive-time estimates do not establish any of these small-time subtracted
 bounds. The first concrete curved obligation is to estimate the surviving
 scalar orbit-angular insertions with the actual localized tangent
-subtraction and common regulator, then control the odd-odd domain defect
-and the even-even sector. Density/contact, boundary transgression, thermal
-images and LLL still need inclusion.
+subtraction and common regulator, and to control the even-even sector.
+Density/contact, boundary transgression, thermal images and LLL still need
+inclusion.
+
+One flat boundary component has now been estimated. The
+[`odd-odd complementary-boundary flat estimate`](odd-odd-complementary-boundary-flat-estimate.md)
+uses the exact Dirichlet/Robin half-line kernels, all antiperiodic thermal
+images, `u',w'=O(y^2)`, and a bounded constant scalar Robin parameter. It
+proves that the complementary-boundary versus same-boundary odd-odd defect,
+after the full massive tower weight `-Theta'`, is `O(t^(3/2))`. The admitted
+cubic/log profiles satisfy the derivative vanishing used there. This closes
+that flat defect component under its stated model hypotheses. It does not
+control the same-boundary odd-odd tangent term, variable/curved boundary
+operators, moving cuts, physical normalization, or the source-observable
+bridge; the curved domain defect remains open.
 
 **Numerical role.** Numerical checks can audit explicit constants or
 truncation bounds after the analytic endpoint map is proved. They cannot
