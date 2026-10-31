@@ -114,6 +114,17 @@ Dirichlet/Neumann identity. The estimate does not include the even-even
 angular vertices, the scalar angular-mass path factor, density/contact
 variations, or LLL/anomaly terms.
 
+A possible analytic input is Li--Strohmaier's extension-independent
+"not feeling the boundary" estimate for nonnegative self-adjoint extensions
+of the vector-valued Euclidean Laplacian: its constants do not depend on the
+chosen boundary condition. See [Theorem 1.1 and its hypotheses](https://ems.press/journals/jst/articles/14417).
+This supports interior localization away from the boundary, but it does not
+directly cover the source's variable-coefficient curved Laplace-type square,
+its connection and potential, or uniformity over the moving/rough family.
+The missing step is to prove a corresponding extension-independent kernel
+estimate for that operator, then combine it with the cubic boundary-layer
+weight in (3). The theorem is a candidate tool, not a verified import.
+
 No numerical computation or Lean certification is claimed.
 
 Remaining to-do list: prove curved uniform counterparts of (1), match the
