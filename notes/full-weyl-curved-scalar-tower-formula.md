@@ -236,6 +236,44 @@ identity nor the parent orbit remainder proves those bounds. The `mu C_b`
 commutator sector, including its even odd-odd contribution, still needs a
 separate matrix-valued bridge estimate under the same subtraction.
 
+## Full-product bound for the bounded tower remainder
+
+The boundedness of the differentiated `rho` factor also controls its product
+with the Brownian orbit weight, under the same pathwise hypotheses. Write
+
+    W_T(b)=A_h^(-1/2) exp(t B_h^2/(4 A_h)) I_T(t;A_h,B_h),
+    R_b=rho(t S_b)-rho(t).
+
+Assume the first two field jets of `A_h,B_h,S_b` are bounded uniformly on the
+real collar family, `A_h` is uniformly positive, and the differentiated
+thermal-image bounds (5) hold. Then `W_T,D_u W_T,D_w W_T,D_uw W_T` are uniformly
+bounded for small positive `t`: the zero image follows by differentiating
+the displayed algebraic weight, while each nonzero image derivative is a
+finite power of `t^(-1)` times its retained `exp(-c/t)` majorant. At the seed
+`S_0=1`, so `R_0=0`, and (12) gives
+
+    |D_u R_0|+|D_w R_0|+|D_uw R_0| <= C t.
+
+The mixed product rule therefore has no `D_uw W_T` term:
+
+    D_uw(W_T R_b)|_0
+       = (D_u W_T)(D_w R_b)+(D_w W_T)(D_u R_b)
+          +W_T D_uw R_b = O(t).
+
+After the external heat prefactor `1/(2 pi t)`, the bounded-tower part of
+the scalar mixed response is `O(1)`, uniformly before the spatial integral.
+This removes the bounded `rho` remainder and the thermal images as sources
+of the `O(t^(-1))` coefficient in the scalar bridge expansion. It leaves
+the singular `C/(t S_b)` contribution, whose next coefficient is identified
+only for smooth interior directions in
+[`full-weyl-curved-scalar-interior-leading-coefficient.md`](full-weyl-curved-scalar-interior-leading-coefficient.md).
+
+The `O(1)` estimate is not sufficient for the action endpoint against
+`dt/t^2`; its finite local coefficient must still be matched or subtracted.
+The assumptions on the mixed path jets and the thermal-image derivatives
+must be verified in the source realization, and the estimate says nothing
+about `mu C_b`, density/contact, boundary or LLL terms. Numerical role: none.
+
 No numerical computation or Lean certification is claimed.
 
 Continuation recorded 2026-10-31: the source angular tower satisfies the
