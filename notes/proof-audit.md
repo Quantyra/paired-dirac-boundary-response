@@ -299,12 +299,19 @@ Remaining to-do list: control the non-hit region and match its local coefficient
 
 ### Candidate curved-remainder ledger: dependency disposition
 
-The frozen source names `r_curved` verbally but does not give a termwise
+The frozen source at `f0eab590`, Section 5, Eqs. (13)--(16), operationally
+defines `r_curved` in prose as the weak mixed response minus a localized
+tangent contribution with cutoff terms and states the target
+`|r_curved| <= A(K)||u||_A||w||_A t^(3/2)` through the physical regulators.
+The constant `A(K)` is explicitly unknown. Eqs. (15)--(16) give finite
+candidate dyadic moments, but the source does not derive a termwise
 localization, cutoff-transition formula, or allocation of contact, density,
-LLL, boundary-transgression and local-restoration terms. The source points to
-Section 4 tangent term (11); accordingly the Section 4 flat tangent `T_4` is
-the best-supported working subtraction. This is a candidate interpretation,
-not an adoption of a proved theorem. The exact finite-cut algebra in
+LLL, boundary-transgression and local-restoration terms, and it does not show
+that all matrix, domain and commutator terms reduce to those moments. The
+source points to Section 4 tangent term (11); accordingly the Section 4 flat
+tangent `T_4` is the best-supported working subtraction. This is a candidate
+interpretation, not an adoption of a proved theorem. The exact finite-cut
+algebra in
 [`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md) and
 [`p1d-operational-definition-proposal.md`](p1d-operational-definition-proposal.md)
 gives, under common-Hilbert-space, cut, trace-density and positive-time
