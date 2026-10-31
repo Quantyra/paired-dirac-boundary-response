@@ -140,16 +140,34 @@ variable `v=t x(x+q)/b_0^2` gives
     integral_0^infinity f_(k,t)(x) dx
         = C k! t^(-k-1).                                (8)
 
-Euler--Maclaurin through order `2(k+1)` bounds the difference between this
-sum and integral uniformly for `0<t<=t_0`. Indeed, the finitely many
-endpoint derivatives of `f_(k,t)` are bounded there. For the periodic
-Bernoulli remainder, rescaling `x=t^(-1/2)y` shows
-`integral |partial_x^(2k+2) f_(k,t)(x)| dx=O(1)`; the polynomial factors
-in `q sqrt(t)` remain bounded for fixed `q,t_0`. Hence
+Euler--Maclaurin through order `2(k+1)` gives
+
+    sum_(n>=1) f_(k,t)(n) - integral_0^infinity f_(k,t)(x) dx
+       = -f_(k,t)(0)/2
+         - sum_(j=1)^(k+1) B_(2j)/(2j)! f_(k,t)^(2j-1)(0)
+         + R_(k,t),
+
+where, with the periodic Bernoulli function in the remainder,
+
+    |R_(k,t)| <= ||B_(2k+2)||_infinity/(2k+2)!
+                  integral_0^infinity |f_(k,t)^(2k+2)(x)| dx.  (9)
+
+For fixed `q,b_0,t_0`, each endpoint derivative displayed here is bounded
+uniformly on `0<t<=t_0`: differentiating the polynomial-exponential form
+leaves a finite sum of nonnegative powers of `t` times fixed polynomials in
+`q` and `b_0^(-2)`. For the remainder set `x=t^(-1/2)y`. The function has
+the scaled form
+`f_(k,t)(t^(-1/2)y)=t^(-k-1/2) F_k(y,q sqrt(t),b_0)`, where `F_k` is a
+polynomial times `exp[-(y^2+q sqrt(t)y)/b_0^2]`. Applying `2k+2`
+`x`-derivatives and including `dx=t^(-1/2)dy` cancels all powers of `t`.
+The resulting integral is bounded uniformly because `q sqrt(t)` stays in
+a compact interval and the Gaussian has a uniform integrable majorant (with
+constants depending on `q,b_0,t_0`). Thus the sum-minus-integral difference
+is `O(1)` uniformly on this interval. Hence
 
     Theta(t)=C/t+O(1),
     Theta'(t)=-C/t^2+O(1),
-    Theta''(t)=2C/t^3+O(1).                             (9)
+    Theta''(t)=2C/t^3+O(1).                            (10)
 
 In particular `rho(s)=Theta(s)-C/s` and its first two derivatives are
 bounded on `0<s<=s_0`. Since `S_b` stays in a fixed positive compact
@@ -165,13 +183,13 @@ The two field derivatives can therefore be combined exactly as
     partial_u partial_w Theta(t S_b)
        = C/t [2 S_u S_w/S_b^3-S_uw/S_b^2]
          + t rho'(t S_b) S_uw
-         + t^2 rho''(t S_b) S_u S_w.                    (10)
+         + t^2 rho''(t S_b) S_u S_w.                    (11)
 
 This cancellation is stronger than estimating `t Theta'` and
 `t^2 Theta''` separately: the singular part is only `C/t` times derivatives
 of `S_b^(-1)`. At the seed, the explicit jets (7) make its first and mixed
 direction factors vanish as `x^3` and `x^6` for cubic profiles. Equation
-(10) is an exact angular-factor statement. It does not yet bound the
+(11) is an exact angular-factor statement. It does not yet bound the
 remaining Brownian factors, the differentiated thermal images, the local
 counterterms, or the integrated mixed heat remainder. Those still require
 the parent finite-jet and source-normalization arguments for this inserted
@@ -189,9 +207,9 @@ estimate under the same subtraction.
 No numerical computation or Lean certification is claimed.
 
 Continuation recorded 2026-10-31: the source angular tower satisfies the
-uniform differentiated asymptotics (9), so differentiating `Theta(t S_b)`
+uniform differentiated asymptotics (10), so differentiating `Theta(t S_b)`
 combines the apparent `Theta'`/`Theta''` singularities into the `C/t`
-derivatives of `S_b^(-1)` plus bounded-remainder terms (10). This gives the
+derivatives of `S_b^(-1)` plus bounded-remainder terms (11). This gives the
 local cubic-direction vanishing orders for the angular factor alone. It does
 not close the complete subtracted bridge estimate or the commutator sector.
 
