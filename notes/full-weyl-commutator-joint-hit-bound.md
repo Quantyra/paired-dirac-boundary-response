@@ -580,6 +580,21 @@ where the error constant depends on the frozen coefficients. If
 `-Theta'(t)=sum_n d_n mu_n^2 exp(-t mu_n^2) ~ C_Theta t^(-2)`, the leading
 model term is the finite local density `-C_Theta h^2 a b/(12 pi)`.
 
+For the source massive sphere tower
+`mu_n^2=n(n+q)/b_S^2`, `d_n=2(q+2n)`, `n>=1`, the established Riemann-sum
+limit is `C_Theta=2b_S^2`. Thus the raw rank-two orbit trace coefficient in
+this component diagnostic is
+
+    R_defect,freeze(t) -> -b_S^2 h^2 u' w'/(6 pi).
+
+This uses the full nonzero sphere-sign multiplicity already contained in
+`d_n`; it does not include the LLL. It is stated in the rank-two full-line
+orbit normalization of the local Fourier trace. The source's per-exterior
+physical-half normalization has an additional factor of one half relative to
+that trace under its flat hypotheses, and the curved transfer of that factor
+has not been proved. The expression above is therefore not yet a physical
+coefficient and must not be compared directly with the source contact term.
+
 This computation includes both the scalar `h^2` term and the ordered pair of
 first-order connection-shift insertions: the exponential is their combined
 Gaussian momentum integral. Keeping only the scalar term in (12) would give
