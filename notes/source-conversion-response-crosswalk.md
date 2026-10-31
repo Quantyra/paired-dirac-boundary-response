@@ -342,6 +342,8 @@ The moving-cut obstruction is now quantified in [inite-cut-congruence-uniformit
 
 A further endpoint distinction is now recorded in [conformal-infinity-l2-domain-obstruction.md](conformal-infinity-l2-domain-obstruction.md): under the conformal spinor map, the physical graph norm has compactified weights `u^-1` on `psi_hat` and `u` on `D_hat psi_hat`. Within compactified `H1`, physical L2 forces the full boundary trace to vanish, whereas the source's local projector allows nonzero complementary trace. Thus compactified local-projector moving-cut heat estimates do not yet instantiate the physical endpoint; the intended Hilbert space and boundary realization must be specified. This does not invalidate a nonnormalizable source prescription.
 
+The pinned parent domain source at `08cb71afea3f0e5310cac8a50c05d5007555641f`, `notes/coupled-fermion-domain.md`, specifies “finite canonical boundary data in a common conformal frame” at infinity and proves maximal isotropy for the paired projector; its self-adjoint Hamiltonian statement is for the smooth compact regular boundary problem. It does not identify that endpoint data space with the completion in physical `L2(g)`. The companion [conformal-infinity audit](conformal-infinity-l2-domain-obstruction.md#pinned-source-wording-check-2026-10-31) records the source-level wording check. Therefore the exact source boundary prescription should be retained, while the unitary physical-L2 identification and its response remain a separate open hypothesis. This source distinction does not by itself invalidate fixed-cut identities on the stipulated compactified realization.
+
 ## LLL coefficient status clarification (2026-10-31)
 
 The canonical LLL tangent coefficient is already fixed in the pinned source:
