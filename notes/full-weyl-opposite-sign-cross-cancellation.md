@@ -65,6 +65,40 @@ positive-time sums by absolute convergence. It makes no assumption about a
 cancellation of the LLL: that finite zero-mode block has `mu=0` and remains
 separate under the source allocation.
 
+## Exact tower-moment reduction of the correction Hessian
+
+Let `Theta(t)=sum_(n>=1) d_n exp(-t mu_n^2)` use the source's combined
+massive multiplicity. Then
+
+    -Theta'(t)=sum_n d_n mu_n^2 exp(-t mu_n^2),
+    Theta''(t)=sum_n d_n mu_n^4 exp(-t mu_n^2).             (1)
+
+In the full-minus-orbit Hessian formula (4) of
+[`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md),
+factor `exp(-t mu^2)` from each Duhamel word. After pairing the two signs,
+the exact angular-moment replacements are:
+
+| Vertex word | Paired result | Tower moment |
+| --- | --- | --- |
+| Mixed angular vertex `4 mu^2 u w + 2 i mu G c(d(uw))` | Keep `4 mu^2 u w`; cancel the odd term | `-Theta'(t)` |
+| Orbit-angular pair `Delta_u, V_w` or `V_u, Delta_w` | Keep `-2 mu^2 u` or `-2 mu^2 w`; cancel `-i mu G c(du)` / `-i mu G c(dw)` | `-Theta'(t)` |
+| Two even angular vertices `E_u, E_w` | Keep `4 mu^4 u,w` in the ordered Duhamel products | `Theta''(t)` |
+| Two odd angular vertices `O_u, O_w` | Keep `mu^2 (-iGc(du)),(-iGc(dw))` in the ordered products | `-Theta'(t)` |
+| One even and one odd angular vertex | Cancel in the paired sum | `0` |
+
+The table is an exact reduction of the mode sum, not an estimate of the
+orbit traces or time-simplex integrals. In particular, the orbit-angular
+part is reduced to the orbit kernels with a scalar angular-potential
+insertion `-2u` or `-2w`, weighted by `-Theta'(t)`. The angular-only part
+still contains both the `Theta''` even-even term and the `-Theta'` odd-odd
+term. The latter's orbit-spin trace cannot be dropped by sign cancellation.
+
+Using (1) requires absolute convergence of the relevant positive-time
+mode traces before differentiating or summing; the fixed-time trace-norm
+and heat-tail hypotheses in the cited notes provide such a route on their
+declared compact product. Neither (1) nor the table controls the small-time
+local subtraction.
+
 ## Consequence and first unsupported implication
 
 Under these hypotheses, the curved orbit-angular estimate can focus on
