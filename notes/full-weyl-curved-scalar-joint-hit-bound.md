@@ -272,6 +272,25 @@ bracket or other retained terms. This leading comparison does not identify
 the complete scalar coefficient with the source contact, and it does not
 authorize dropping either term.
 
+For a smooth interior direction, the leading fixed-`y` angular-factor jets
+also expose the moving-coordinate contribution. From (7) in the tower note,
+
+    S_u=-2u(y)+O(t),
+    S_w=-2w(y)+O(t),
+    S_uw=4u(y)w(y)-2u'(y)X_w(y)-2w'(y)X_u(y)+O(t),
+
+where `X_u(y)=-integral_0^y u(x) dx`. Hence
+
+    partial_uw Theta(t S_b)|_0
+       = (C/t)[4uw+2u'X_w+2w'X_u]+O(1).
+
+The `X` terms depend on the direction from the seam to `y`; they are not a
+local coefficient of the scalar potential by themselves. In the full bridge
+formula they must be combined with the variations of `A_h,B_h`, the moving
+coordinate Jacobian/density, and the orbit-angular Duhamel vertices before
+assigning the non-hit local subtraction. This is why the frozen constant
+direction coefficient above is only one entry in the local ledger.
+
 The exact flat rank-two `k=0` decomposition in
 [`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md),
 equations (7), (9) and (10), checks why this component comparison is not a
