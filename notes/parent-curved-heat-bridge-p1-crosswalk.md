@@ -46,17 +46,21 @@ For the scalar angular-mass part, the conditional
 [`curved scalar tower formula`](full-weyl-curved-scalar-tower-formula.md)
 puts `Theta(t S_b)` inside the parent's exact Brownian bridge expectation and
 retains all antiperiodic images. This is an exact representation for the
-subfamily `L_b+mu^2 exp(-2b)`, not a bound for its subtracted mixed
-derivative. A separate conditional bridge-hit calculation in
-[`full-weyl-curved-angular-factor-defect.md`](full-weyl-curved-angular-factor-defect.md)
-now gives an `O(t^(3/2))` bound for the term where both directions hit
-`Theta(t S_b)`, assuming Gaussian seam localization and no boundary local-time
-weight; its bounded `rho` remainder is `O(t^(7/2))`. This path restriction
-has not been identified with a term in the source's exact subtraction and
-does not bound derivatives on the orbit/thermal factors. The commutator
-sector and its surviving odd-odd pair still need their own matrix insertion
-estimate.
+subfamily `L_b+mu^2 exp(-2b)`. The joint bridge-hit note now derives the
+source-coordinate path jets for `A_h,B_h`, controls derivatives on the
+zero-image orbit factor and differentiated thermal images, and compares the
+curved scalar hit component with its constant-radius tangent block at
+`O(t^(3/2))`. The estimate remains restricted to seam-hit paths and its
+identification with the source's full localized subtraction is open. It
+does not bound the non-hit local response, the full contact/density/LLL
+allocation, or the commutator sector and its surviving odd-odd pair, which
+still need their own matrix insertion estimate.
 
-Thus the parent result closes a closely related curved-response theorem but does not yet close P1-C/P1-D. This crosswalk is an ordinary scope comparison; the parent argument has not been independently rederived here and no Lean certification of the heat-kernel estimate is claimed.
+The joint scalar-hit result is detailed in
+[`full-weyl-curved-scalar-joint-hit-bound.md`](full-weyl-curved-scalar-joint-hit-bound.md).
+Thus the parent result plus this scalar component do not yet close P1-C/P1-D.
+This crosswalk is an ordinary scope comparison; the parent argument has not
+been independently rederived here and no Lean certification of the
+heat-kernel estimate is claimed.
 
 Remaining to-do list: derive and bound the P1 angular correction under the common regulator; finish the theorem-specific novelty decision and manuscript; certify supported claims on GCP.
