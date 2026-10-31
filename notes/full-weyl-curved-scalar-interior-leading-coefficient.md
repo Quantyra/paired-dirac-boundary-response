@@ -845,8 +845,9 @@ including their ordered cross terms, must supply
     D_comm(t)|_(U_1/t) = +b_s^2/(2 pi t) U_1.             (8)
 
 The complete Duhamel correction and the scalar angular-mass subfamily have
-the same leading `t^(-2)` coefficient in this flat model, so the commutator
-sector contributes no term at that order. Equation (8) is a fixed-product
+the same leading `t^(-2)` coefficient in this flat model, so the
+commutator-involving vertices contribute no term at that order. Equation (8)
+is a fixed-product
 flat coefficient target,
 not a proof of the vertex contribution or a curved estimate. It shows why
 the scalar `K_2+H_1` result must not be matched to the source contact alone.
