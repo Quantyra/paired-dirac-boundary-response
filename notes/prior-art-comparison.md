@@ -166,6 +166,35 @@ mixed response or its physical common-regulator limit. This source-level
 comparison is evidence-based but not an independent rederivation of its
 heat-coefficient formulas.
 
+### Boundary-jet normalization audit
+
+The interface source's equations (4) and (14) do give a precise folded
+boundary-jet comparison, conditional on identifying the two side bundles
+and covariant derivatives at the interface. Set
+`psi_e=(psi^+ + psi^-)/sqrt(2)` and
+`psi_o=(psi^+ - psi^-)/sqrt(2)`. Continuity gives `psi_o|Sigma=0` and
+`psi^+|Sigma=psi_e/sqrt(2)`. If the identified inward derivatives are folded
+with the same copy map, the derivative-sum condition becomes
+
+    nabla_n psi_e = (U/2) psi_e.
+
+For the symmetric geometry of their Section 2, `K^+=K^-=K_int`, and the
+spinor matching formula `U=(K^+ + K^-)/2` gives the Robin coefficient
+magnitude `K_int/2`. Thus the folded value/normal-derivative data have the
+same Dirichlet-plus-Robin structure and factor of two as P1's seed square
+condition `Pi_- psi=0`, `Pi_+(nabla_n+K/2)psi=0`, subject to aligning which
+normal is inward/outward and the sign convention for `K`. This is an explicit
+structural match, not merely a dimension count.
+
+The identification stops at those boundary jets. Their `B_j` connection
+jump (Eq. (15)), the global side-bundle map, the bulk Laplace-type operator,
+and the variation of `U` must also be matched. P1's nonzero-normal-jet
+condition contains `(K-partial_n b)/2`; this source-level calculation has
+not shown that it is the Weyl-transformed interface Robin endomorphism.
+Neither the four-dimensional `a4` anomaly formulas nor their folding
+statement computes P1's proposed higher-order response or its physical
+regulator limit.
+
 Remaining to-do list: perform the exact folded-operator and coefficient
 specialization check; close the physical source/common-regulator bridge;
 then complete the novelty decision, supported manuscript and GCP Lean
