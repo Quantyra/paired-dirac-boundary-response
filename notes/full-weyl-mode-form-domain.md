@@ -58,6 +58,20 @@ or control constants as the cut moves. The canonical source norm, density
 and contact terms, LLL/anomaly block, and common-regulator matching remain
 separate.
 
+For the pinned static zero-angle RN-AdS seed, these product and projector
+hypotheses are supplied at each smooth finite spherical cut by the source
+derivation in `quantyra-wormhole-semiclassical`, commit
+`08cb71afea3f0e5310cac8a50c05d5007555641f`,
+`notes/stationary-exterior-conformal-domain.md`, blob
+`b9117fa2b2e9e9e2cec36e1c71f52f414b5349b9`. The same modewise physical
+operator and composition domain are recorded in
+[`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md).
+Consequently the common mode form domain used in
+`full-weyl-orbit-correction-vertices.md` applies to this pinned finite-cut
+seed, with its stated multiplier regularity. This does not extend to a
+changing boundary angle, arbitrary physical frame, or a uniform moving-cut
+limit.
+
 Remaining to-do list: verify the product and projector hypotheses in the
 source frame; prove the curved common-regulator response and source matching;
 complete novelty review and manuscript; certify supported statements in Lean
