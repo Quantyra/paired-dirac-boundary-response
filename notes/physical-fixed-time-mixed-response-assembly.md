@@ -96,6 +96,19 @@ angular decomposition,
       <= sum_j ||Pi_j H_uw(t) Pi_j||_1
        = ||H_uw(t)||_1 < infinity.                         (4)
 
+If the two-parameter family and its holomorphic form extension preserve these
+blocks throughout a common parameter polydisc, the trace-norm holomorphy in
+the cited compact-cut result also gives locally uniform absolute convergence
+of the block traces there. The two-variable Cauchy formula then permits
+termwise mixed differentiation:
+
+    partial_u partial_w Tr(exp(-t L_(z1,z2)))|_(0,0)
+      = sum_j partial_u partial_w
+          Tr(Pi_j exp(-t L_(z1,z2)) Pi_j)|_(0,0).          (5)
+
+This justifies differentiation after the full angular sum for each fixed
+compact cutoff and `t>0`, under the stated symmetry and trace-norm hypotheses.
+
 The finite-dimensional chiral LLL block may be kept separate in this sum, as
 required by the source allocation. Equation (4) justifies absolute summation
 of the complete mixed derivative over angular sectors at fixed compact
