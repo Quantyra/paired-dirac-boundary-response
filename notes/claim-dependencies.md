@@ -188,7 +188,9 @@ for the localization maps, cutoff-transition terms, or allocation of the
 density, contact, LLL and finite local-restoration terms. Until those are
 specified on one Hilbert space and regulator, the bound is not yet an
 operationally frozen theorem statement. See the source-level audit in
-[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md).
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md)
+and the explicitly provisional
+[`operational-definition proposal`](p1d-operational-definition-proposal.md).
 
 **First unsupported implication.** The fixed-domain or norm-resolvent
 arguments and the flat all-frequency calculation do not provide this uniform
