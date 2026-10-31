@@ -92,6 +92,23 @@ term, the full-Weyl angular/commutator vertices, LLL allocation, and action
 restorations must be combined on one fixed Hilbert space and regulator
 before a physical subtraction identity can be asserted.
 
+### Formal difference of the two displayed flat diagnostics
+
+Subtracting (2) from (1) coefficient by coefficient gives the unambiguous
+algebraic diagnostic
+
+    8 b0^2/(pi t^2) U0 + C0/(2 pi t) U0
+      - 7 b0^2/(12 pi t) U1
+      + C0/(24 pi) U1 + b0^2/(120 pi) U2
+      - C1/(pi b0^2) U0 + O(t).                         (2a)
+
+This is only the difference between the declared full-Weyl tangent Hessian
+and the declared source endpoint-conversion bilinear. It is not a physical
+identity for `H_FW-J_src''` on the curved paired realization and is not an
+assignment of these terms to `delta_T`, an LLL block, or a local action
+restoration. Any such assignment must be derived from the common Hilbert
+space and regulator rather than inferred from (2a).
+
 ### Flat leading-coefficient ledger check
 
 The flat leading-coefficient ledger can be resolved under the declared
