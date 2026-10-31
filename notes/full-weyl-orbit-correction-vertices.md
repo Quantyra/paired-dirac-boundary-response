@@ -45,6 +45,42 @@ justified. Equation (1b) does not by itself justify summing over `mu`,
 removing the spatial cutoff or the proper-time regulator, matching the
 physical trace density/contact, or including the separate LLL source term.
 
+## Massive-tower sum on a fixed proper-time window
+
+The finite-cut identity (1b) also sums over the full massive sphere tower
+before any ultraviolet limit. On a fixed compact cut, write
+`a_b=exp(-2||b||_infinity)` and
+`C_b=exp(2||b||_infinity)||db||_infinity`, with the unit Clifford norm
+convention. The potential form of the full square gives
+
+    Q_full,mu(b) >= D_b* D_b + (a_b mu^2 - C_b |mu|) I.     (1c)
+
+Indeed, `exp(-2b)>=a_b`, while the norm of the commutator multiplier
+`exp(-2b)c(db)` is at most `C_b`. The orbit square is
+`Q_orbit,mu(b)=D_b*D_b+mu^2 I`. Therefore, if
+`Tr(exp(-epsilon D_b*D_b))` is uniformly bounded over the chosen compact
+field family, then for every `epsilon>0` the full and orbit heat traces have
+an absolute Gaussian majorant in `|mu|` for `t in [epsilon,T]`. Therefore,
+for sphere masses `mu_n` growing linearly in `n` with multiplicities
+`d_n=O(n)`, the tower series
+
+    sum_(n>=1) d_n integral_epsilon^T (dt/t)
+      Tr(exp(-t Q_full,mu_n(b))-exp(-t Q_orbit,mu_n(b)))
+
+converges absolutely. Summing (1b) through a finite angular cutoff and
+letting that cutoff tend to infinity gives equality with the convergent
+series of per-mode insertion integrals. Interchanging the angular sum with
+the internal Duhamel time integral requires an additional domination bound.
+If two parameter derivatives are needed, the same interchange also
+requires the corresponding form-Duhamel derivative bounds; the Gaussian mass
+factor absorbs any fixed polynomial growth in `|mu|` once those bounds are
+proved on the field family.
+
+This is only a regulated comparison at fixed spatial cut and
+`epsilon<=t<=T`. It does not justify `epsilon->0`, `T->infinity`, removal of
+the spatial cut, equality with the source conversion, or inclusion of the
+separate LLL/anomaly term.
+
 ## First and mixed second vertices at the seed
 
 For real directions `u,w`, differentiate at `b=0` (equivalently, at `b=su+tw`, taking the indicated derivatives). On the common smooth core,
