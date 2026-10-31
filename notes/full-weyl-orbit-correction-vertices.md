@@ -311,18 +311,20 @@ subtracted remainder.
 
 The cross terms can be isolated explicitly in the existing rank-two flat
 model. Use `flat-tangent-angular-mode.md`'s `A(x)` and `I(x)`, with
-`x=tk^2`, `z=t mu^2`, and `X=G gamma_y`. The first angular vertex is
+`x=tk^2`, `z=t mu^2`, and `X=G gamma_y`. The first correction vertex is
 `-2 mu^2 u-i mu X u'`; its mixed second vertex is
 `4 mu^2 uw+2i mu X(uw)'`. The rank-two trace of `X` vanishes and
-`X^2=-1`. Applying the mixed Duhamel formula gives the purely angular
-contribution
+`X^2=-1`. Applying the mixed Duhamel formula gives the correction-vertex
+contribution, including both the scalar angular-mass and gradient-commutator
+terms:
 
     H_ang(t,k) = exp(-z)/pi
       [-2 mu^2 + 2 mu^4 t A(x) + (mu^2 x/2) A(x)].          (7)
 
-Here `-2 mu^2/pi` is the mixed-second-vertex term; the other two terms are
-the scalar and gradient-gradient ordered angular pairs. Mixed scalar-gradient
-pairs vanish by `tr X=0`. The full-minus-orbit addition from
+Here `-2 mu^2/pi` is the scalar mixed-second-vertex term; `2 mu^4 t A` is
+the scalar angular-mass ordered-pair term, and `mu^2 x A/2` is the
+gradient-gradient commutator pair. Mixed scalar-gradient pairs vanish by
+`tr X=0`. The full-minus-orbit addition from
 `flat-tangent-angular-mode.md`, Eq. (3), is
 
     H_full(t,k)-exp(-z) H_orbit(t,k)
