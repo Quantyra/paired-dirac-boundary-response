@@ -101,10 +101,37 @@ remains. In fact, for fixed `A_ell>0`, the Riemann-sum scaling
 because `|mu_n|A_ell -> infinity` for every fixed `s>0` in that scaling.
 Thus the scalar heat weight alone leaves a nonzero fraction of the projector
 mismatch at short times. This is a statement about the zero-energy collar
-model, not the full response. It also does not control the full heat semigroup with its
-matrix transport, nonzero spectral parameter, thermal images, or the
+model, not the full response. It also does not control the full heat semigroup
+with its matrix transport, nonzero spectral parameter, thermal images, or the
 physical density/contact terms. A common-regulator physical matching still
 needs a stronger weighted transport argument.
+
+## Exact nonzero Euclidean spectral parameter in a constant collar
+
+The mismatch is not limited to zero spectral parameter. In the exactly
+solvable constant-coefficient collar `a(x)=a_0>0`, the mode equation
+`H psi=omega psi` is
+
+    partial_x psi = (-mu a_0 sigma_3+i omega sigma_2)psi.
+
+In the `sigma_1` eigenbasis `(v_+,v_-)`, let
+`kappa^2=mu^2 a_0^2-omega^2`. Propagating the terminal line `span(v_+)`
+back across width `ell` gives
+
+    psi(x_0) in span(v_+ + tau_(mu,omega) v_-),
+    tau_(mu,omega)=(mu a_0-omega)tanh(kappa ell)/kappa. (7)
+
+At Euclidean frequency `omega=i nu`, `kappa=sqrt(mu^2 a_0^2+nu^2)` and
+`|tau_(mu,i nu)|=tanh(kappa ell)`. The projection distance from the copied
+local line is therefore
+
+    tanh(kappa ell)/sqrt(1+tanh(kappa ell)^2).           (8)
+
+It approaches `1/sqrt(2)` as `kappa ell -> infinity`. Thus adding the
+Euclidean frequency tower does not restore unweighted angular/frequency
+uniform convergence, even in this constant-collar model. Equations (7)-(8)
+are exact for that model only; variable `a(x)` gives a path-ordered transfer
+matrix, and neither formula proves convergence of the physical heat trace.
 
 ## Implication for the paper theorem
 
