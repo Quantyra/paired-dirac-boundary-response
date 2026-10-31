@@ -168,11 +168,12 @@ comparison. It cannot be substituted for the Euclidean orbit contact
    chiral LLL and its Weyl/anomaly contribution separately.
 3. Establish the required rough curved remainder and cubic/log approximation
    limits, or decide from the final theorem scope whether P1-D is necessary.
-4. The bounded scalar endpoint algebra is GCP-checked, and the previous GCP
-   mode real-mass bridge checks the orbit-only positive square under abstract
-   hypotheses. Neither receipt formalizes the full-Weyl correction. Formalize
-   the paired-domain and complete mixed-response identities on GCP after the
-   ordinary hypotheses and vertices are fixed.
+4. The bounded scalar endpoint algebra and abstract orbit-only mode bridge
+   have GCP receipts. The new [`full-Weyl angular jet receipt`](../evidence/gcp-full-weyl-angular-jet-20261030/README.md)
+   checks only the rational polynomial cancellation in the flat tangent
+   subtraction. None of these receipts formalizes the full-Weyl operator,
+   physical paired domains, or complete mixed response. Formalize those
+   claims on GCP only after their ordinary hypotheses and vertices are fixed.
 
 The source notes are imported evidence, not yet an independently checked P1
 theorem. No physical action, wormhole existence or stability conclusion is
