@@ -218,6 +218,41 @@ the moving-cut/common-regulator endpoint. The source coefficient and
 reference-time integration remain in the exact ledger; no global `h_2'`
 substitution is made.
 
+### Conditional cancellation of the smooth boundary heat coefficient
+
+There is a useful extension when directions reach a smooth finite-cut
+boundary, provided the common-domain family has a differentiated heat trace
+expansion and its shape/domain variations are already included in `h_2`.
+For a smooth strongly elliptic two-dimensional Laplace-type problem with
+smooth local boundary conditions, the ordinary heat expansion has powers
+`t^(-1), t^(-1/2), t^0, ...`; see
+[Vassilevich, Secs. 2.2 and 2.3](https://arxiv.org/abs/hep-th/0306138).
+Assume the mixed Hessian inherits, after any fixed-domain identification,
+
+    h_2(t)=A/t+B/t^(1/2)+O(1),
+
+with `A` and `B` independent of `t`, and that both smeared derivatives
+`F_j` obey the exact identity `F_j'=-h_2/(2t)` on the same domain. Then
+integration from a fixed `t_*>0` gives
+
+    F_j(t)=A/(2t)+B/t^(1/2)+O(|log t|),
+
+where the reference-time value is retained in the bounded part. With
+`Theta(t)=C/t+O(1)`,
+
+    H_orb-G_src
+      = (C A/2)t^(-2) + O(t^(-1)|log t|).
+
+The entire `B t^(-3/2)` contribution cancels: it appears with coefficient
+`C B` in both `Theta h_2` and `Theta(F_1+F_2)/2`. Thus a smooth boundary
+heat coefficient does not alter the leading `t^(-2)` orbit-bracket term.
+This is a conditional heat-expansion calculation, not a proof that the
+source's rough/seam-reaching directions satisfy these hypotheses. It does
+not control nonsmooth boundary data, a moving cut without a common-domain
+identification, physical density or transgression terms, or the
+common-regulator endpoint. A stronger differentiated remainder expansion
+would be needed for a sharper error than the displayed logarithmic bound.
+
 For local tangent subtractions `T_FW,T_src` at that same cut, set
 `delta_T=T_FW-T_src`, and define
 
