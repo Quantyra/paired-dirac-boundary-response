@@ -169,6 +169,9 @@ restoration, moving-cut endpoint, or common-regulator contributions. The
 immediately relevant curved boundary-layer estimate remains conditional on
 the mixed `Q`/`Q_X` trace input (1) in
 [`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md).
+The adjacent mixed Dirichlet/Neumann Gaussian-kernel theory is screened in
+that note as a possible source of individual-kernel bounds; its scalar form
+domains do not establish the paired complementary-projector defect input.
 
 Concrete claim: the integrated smooth-interior scalar coefficient equals
 minus six times the specified source contact form. Ordinary argument: expand

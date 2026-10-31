@@ -189,6 +189,28 @@ weight in (1), including its trace-ideal and simplex-endpoint behavior, or
 remainder strong enough to imply (1). In either route, verify the physical
 bundle map and common regulator separately.
 
+## Mixed-boundary Gaussian estimates as a candidate input
+
+Böhnlein, Ciani and Egert prove Gaussian kernel estimates for scalar
+divergence-form operators with mixed Dirichlet/Neumann boundary conditions
+under ellipticity and geometric assumptions; their Theorem 1.1 relates the
+Gaussian estimate to De Giorgi/Hölder regularity, and Theorem 1.2 obtains the
+regularity property for real-valued coefficients in the stated geometry
+([published article](https://doi.org/10.1007/s00208-024-02939-0),
+[arXiv:2307.03648](https://arxiv.org/abs/2307.03648)). This is relevant
+methodological prior art for the separate kernel majorants in (4), provided
+the coefficient and domain hypotheses can be verified uniformly.
+
+It does not give the bilocal defect estimate (1): it estimates an individual
+semigroup kernel, while (1) needs the difference for the two complementary
+projector realizations inside a two-insertion trace, with control through
+the closed Duhamel simplex. Its form domains encode scalar Dirichlet and
+Neumann portions of the boundary; the source's paired Dirac square has
+component-coupled complementary projector domains. No reduction of those
+domains to the article's form setting, and no uniform moving-cut transfer,
+has been established. Accordingly this result is a screened route for
+individual-kernel bounds, not a theorem imported into P1-D.
+
 ## Fixed-window boundary-layer estimate from absolute kernel bounds
 
 The bilocal defect input (1) is stronger than needed to bound a fixed-width
