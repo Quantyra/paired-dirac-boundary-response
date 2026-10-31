@@ -19,6 +19,32 @@ The latter freezes the angular mass while varying the orbit operator. Their diff
 
 All identities below concern this difference; they do not assert that the two complete response traces are interchangeable.
 
+## Exact finite-cut heat difference at arbitrary field
+
+On a fixed compact smooth cut, assume the two mode squares have the same
+composition domain and positive trace-class heat semigroups, as in the
+common-domain hypotheses above. The correction is a bounded multiplication
+operator for each fixed angular mass when `b` is in `W^(1,infinity)`:
+
+    Delta_mu(b) = mu^2 (exp(-2b)-1)
+                  - i mu exp(-2b) G c(db).                 (1a)
+
+The product rule gives this form from
+`[D_b,exp(-b)]=-exp(-2b)c(db)`. The bounded-perturbation Duhamel identity
+therefore yields, for `t>0` and a fixed bounded smearing `F`,
+
+    Tr(F (exp(-t Q_full,mu(b))-exp(-t Q_orbit,mu(b))))
+      = - integral_0^t Tr(F exp(-(t-s)Q_full,mu(b))
+                           Delta_mu(b) exp(-s Q_orbit,mu(b))) ds. (1b)
+
+This is an exact finite-cut, positive-time identity for each fixed `mu`;
+it keeps the same proper-time parameter in the two semigroups. At `b=0`,
+`Delta_mu(0)=0`, and differentiating twice recovers the correction-vertex
+Hessian decomposition (4), when the form derivatives and traces are
+justified. Equation (1b) does not by itself justify summing over `mu`,
+removing the spatial cutoff or the proper-time regulator, matching the
+physical trace density/contact, or including the separate LLL source term.
+
 ## First and mixed second vertices at the seed
 
 For real directions `u,w`, differentiate at `b=0` (equivalently, at `b=su+tw`, taking the indicated derivatives). On the common smooth core,
