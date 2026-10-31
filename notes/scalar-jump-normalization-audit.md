@@ -112,16 +112,26 @@ review and a direct check of the publisher's version are still needed.
 
 The arXiv record lists v2, revised 11 May 2004, as its last deposited
 version and gives the journal reference *Phys. Rev. D* 70, 045003 (2004).
-The APS article page confirms publication on 9 August 2004 and DOI
-`10.1103/PhysRevD.70.045003` ([APS article record](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.70.045003),
-[arXiv record](https://arxiv.org/abs/hep-th/0404069)). The APS page exposes
-the abstract and metadata but requires credentials for the full text; the
-publisher PDF request was denied. The bibliographic published-version check
-is complete, but equation-level comparison with the published typeset text
-is not. The discrepancy above is an apparent inconsistency in the accessible
-arXiv v2 derivation and conclusion only; it is not evidence that the published
-article contains an error. Keep the scalar benchmark unsettled unless the
-publisher text or an author-verified copy can be inspected.
+The APS issue page lists the same title, authors, article number and
+publication date ([APS issue record](https://journals.aps.org/prd/issues/70/4));
+the [article page](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.70.045003)
+confirms publication on 9 August 2004 and DOI `10.1103/PhysRevD.70.045003`.
+The versioned [arXiv record](https://arxiv.org/abs/hep-th/0404069) identifies
+v2, revised 11 May 2004, as its last deposited version and gives that journal
+reference. A text extraction of the APS issue contents PDF appears to
+misassociate nearby article numbers and titles; the APS issue and article
+pages agree, so that extraction is not evidence for a different journal
+identity. The APS article page exposes the abstract and metadata but requires
+credentials for the full text; the publisher PDF request was denied.
+
+A focused search of APS and the arXiv record for a separate correction or
+erratum did not locate one. This is a limited search, not evidence that no
+correction exists. The published bibliographic identity is verified, but
+equation-level comparison with the typeset article remains open. The
+discrepancy above is an apparent inconsistency in the accessible arXiv v2
+derivation and conclusion only; it is not evidence that the published article
+contains an error. Keep the scalar benchmark unsettled unless the publisher
+text or an author-verified copy can be inspected.
 
 ## Explicit one-interface comparison
 
