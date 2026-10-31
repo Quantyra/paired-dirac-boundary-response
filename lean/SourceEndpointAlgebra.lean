@@ -22,6 +22,7 @@ theorem source_geometric_endpoint_action
     rw [← Real.exp_add, ← Real.exp_add]
     congr 1
     ring
+    simp
   calc
     Real.exp (-b / 2) •
         ((m * Real.exp b) • (Real.exp (-b / 2) • x))
