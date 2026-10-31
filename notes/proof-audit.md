@@ -17,6 +17,16 @@ This is the S001.2 working audit, assessed against [the claim ledger](claim-depe
 
 ## Reconciliation of the later physical and formal work
 
+The fixed-cut [congruence bridge](physical-product-congruence-cutoff-bridge.md)
+now gives an exact interpolation identity between the regulated positive
+squares on a common Hilbert space. It retains both partner heat traces and
+both proper-time endpoints. The identity requires domain preservation and
+trace-class/cyclicity hypotheses; it does not equate the endpoint actions,
+remove either regulator, or provide the mixed mass/log derivative. If the
+conformal ratio moves with the fields, its derivatives and all local terms
+must also be retained. This is a precise comparison target, not the physical
+source bridge.
+
 The full-Weyl flat tangent package now includes the exact angular mode
 vertices, positive-time tower sum, and an all-frequency small-time local
 subtraction in [`full-weyl-angular-local-subtraction.md`](full-weyl-angular-local-subtraction.md).

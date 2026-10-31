@@ -385,6 +385,35 @@ normalization. Existence and physical normalization of `C_other`, and this
 cancellation identity, have not been proved. This is a necessary matching
 condition, not a disproof of the complete bound.
 
+There is an exact finite-cut identity for the conformal congruence that
+specifies what a physical-to-product trace comparison must retain. Let `D`
+be closed and densely defined on the fixed-cut Hilbert space, let bounded real
+`b` have exponentials preserving both first-order domains, and put
+`E_r=exp(r b/2)`, `A_r=E_r D E_r`, `L_r=A_r^*A_r`, and
+`Lbar_r=A_r A_r^*`. For `0<epsilon<T`, define
+
+    Gamma_(epsilon,T)(r)=1/2 integral_epsilon^T Tr(exp(-t L_r)) dt/t.
+
+If the fixed-cut form derivatives and heat traces satisfy the stated cyclicity
+and trace-class hypotheses, then
+
+    Gamma_(epsilon,T)(1)-Gamma_(epsilon,T)(0)
+      = 1/2 integral_0^1 Tr{b[K_r(T)+Kbar_r(T)
+                              -K_r(epsilon)-Kbar_r(epsilon)]} dr,
+
+where `K_r(t)=exp(-t L_r)` and `Kbar_r(t)=exp(-t Lbar_r)`. Both partner
+operators and both proper-time endpoints occur; neither a spectral-gap
+assumption nor equality of the partner traces is used. This follows by
+differentiating `A_r`, applying form-Duhamel and integrating
+`L exp(-tL)` in proper time. The derivation and exact operator-domain
+hypotheses are in `../notes/physical-product-congruence-cutoff-bridge.md`.
+It gives a fixed-cut comparison identity, not equality of the two regulated
+actions or removal of either endpoint. A mixed mass/log derivative must also
+differentiate the `r`-family and any moving conformal multiplier, retain all
+vertices and local terms, and justify the common regulator. The source's
+physical-half, angular/thermal, LLL and restoration allocations remain
+unmatched.
+
 Away from the seam, use a smooth cutoff `chi_rho` vanishing near the boundary
 and set `F=chi_rho X`, `G=chi_rho X^(-1)`. The exact localized identity is
 
