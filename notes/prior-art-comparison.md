@@ -219,6 +219,44 @@ bases remains unchecked. It establishes that the cited `a_4` anomaly and
 the classic transmittal/transfer results through the stated orders do not by
 themselves close or pre-empt the P1 higher-order coefficient claim.
 
+### Fixed-cut geometric conformal-family crosswalk
+
+There is an exact operator identity strengthening the fixed-cut comparison.
+In dimension four set `E_b=e^(-b/2)`, `D_b=E_b D_g E_b`, and let
+`W_b=e^(-2b)` be the unitary from `L^2(g)` to `L^2(g_b)` for
+`g_b=e^(2b)g`. Under the canonical spinor identification, conformal
+covariance gives
+
+    W_b D_b W_b^(-1) = e^(-5b/2) D_g e^(3b/2) = D_(g_b).
+
+Thus the smooth finite-cut full-Weyl family is the geometric massless Dirac
+family for `g_b`, including its lower-order connection terms, not merely a
+Laplace-type family with the same principal symbol. Its square and actual
+composition domain transport unitarily as well. This is consistent with the
+already recorded fixed-cut identity and the boundary term
+`(K-b_n)/2` in [the mixed-square calculation](multiplier-square-boundary.md);
+the conformal normal and mean-curvature conventions must be aligned when
+expressing the transported Robin operator in `g_b`.
+
+Consequently, whenever the global side identification and transmittal
+boundary match in [the comparison note](transfer-transmittal-comparison.md)
+hold for this particular cut, P1's smooth finite-cut conformal response lies
+in the geometric interface family treated by Gilkey--Kirsten--Vassilevich.
+Their 2001 analysis explicitly applies a conformal variation with a
+continuous parameter that need not be smooth across the interface and
+determines the interface heat invariants through `a4`; their 2020 paper
+specializes the `a4` anomaly to a conformal spinor. Therefore P1 cannot claim
+the smooth fixed-cut Dirac conformal anomaly or its `a4` interface
+specialization as new. This is stronger than a principal-symbol analogy.
+
+The conditional family crosswalk still does not close P1. The global
+side-bundle/connection match is not verified for the physical source or its
+moving endpoint; the published interface formulas do not establish P1's
+common-regulator, contact/density/LLL allocation, or source-observable map;
+and the screened interface formulas do not supply P1's proposed `a7` or
+log-`a8` mixed mass/log response. The exact coefficient specialization at
+the first relevant P1 order and the physical endpoint transfer remain open.
+
 Remaining to-do list: perform the exact folded-operator and coefficient
 specialization check; close the physical source/common-regulator bridge;
 then complete the novelty decision, supported manuscript and GCP Lean
