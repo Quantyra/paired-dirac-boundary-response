@@ -272,6 +272,30 @@ bracket or other retained terms. This leading comparison does not identify
 the complete scalar coefficient with the source contact, and it does not
 authorize dropping either term.
 
+The exact flat rank-two `k=0` decomposition in
+[`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md),
+equations (7), (9) and (10), checks why this component comparison is not a
+full leading-coefficient match. After the angular sum, its purely angular
+piece is
+
+    (2/pi)[Theta'(t)+t Theta''(t)]
+       = 2C/(pi t^2)+O(1),
+
+while the two orbit-angular ordered terms contribute
+
+    -4 Theta'(t)/pi = 4C/(pi t^2)+O(1).
+
+Their sum is `6C/(pi t^2)+O(1)` in the declared rank-two full-plane
+normalization, before the conditional physical-half factor. This is a flat
+constant-direction diagnostic, not the curved local coefficient. It shows
+that the surviving orbit-angular cross terms are of the same leading order
+as the pure angular term and must be included when matching the complete
+local subtraction and source contact. With the conditional half factor, the
+same diagnostic has `D_flat=3C/(pi t^2)+O(1)` and
+`C_src=-C/(pi t^2)+O(t^(-1))`, so `D_flat-C_src` has leading coefficient
+`4C/pi`. The geometric bracket and the physical source endpoint are still
+not included.
+
 Numerical role: none.
 
 Remaining to-do list: match the scalar terms to the physical common
