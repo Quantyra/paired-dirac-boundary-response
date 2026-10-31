@@ -89,3 +89,20 @@ A focused update found Paci and Solodukhin, [*Auxiliary-Field Formalism for High
 This update was prompted by searches for recent Dirac mixed-boundary Weyl-response work and newer boundary anomaly calculations. It is a limited screen, not an exhaustive priority search. The frozen paper claim and remaining direct comparisons still control the novelty decision.
 
 Remaining to-do list: audit the precise Euclidean endpoint/domain relation against this Lorentzian AdS literature; close the physical source and common-regulator bridge; complete the theorem-specific prior-art comparison and S001.3 decision; certify only the supported claims on GCP.
+
+## Focused exact-form search (2026-10-31)
+
+A follow-up search used the operator-level phrases “Dirac heat kernel scalar
+congruence,” “second variation heat trace mixed boundary mass,” and
+“Dirac discontinuous metric derivative jump.” The directly relevant primary
+hit was again Faraji Astaneh--Solodukhin's smooth d=4 mixed-boundary conformal
+anomaly calculation, already compared above. It establishes the smooth
+boundary anomaly / `a4` result, not the paired scalar-congruence mixed
+mass/log response or its physical common-regulator transfer. No exact
+operator-level match surfaced in this focused search; that is a search record,
+not evidence of absence or a novelty verdict. The comparison still requires
+the exact transformed-Dirac source audit and the proved P1 claim to be fixed.
+
+Remaining to-do list: establish the physical full-Weyl source/common-regulator
+bridge; finish the transformed-Dirac comparison and final novelty disposition;
+certify only the supported claims on GCP.
