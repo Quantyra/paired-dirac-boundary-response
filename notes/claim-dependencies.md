@@ -115,7 +115,7 @@ realization are not thereby certified.
 
 The [canonical/Euclidean comparison](canonical-euclidean-contact-matching.md)
 shows that the RN Hamiltonian-square cut contact is not yet identified with
-the product-frame orbit contact or its separate angular factor.
+the product-frame orbit contact or its separate angular factor. The [physical/product-frame operator comparison](physical-product-contact-operator-gap.md) shows that the specified physical-L2 unitary map produces a congruence whose square has a different principal symbol from the product-frame square; it does not prove the regulated observables differ, but the source-to-physical response identity and contact/counterterm conversion remain unproved.
 
 **Dependencies and status.** An ordinary full-plane multiplier derivation and
 all-frequency remainder calculations exist; the physical folding, trace
