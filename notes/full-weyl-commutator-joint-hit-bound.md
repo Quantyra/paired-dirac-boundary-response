@@ -484,3 +484,19 @@ use Clifford compatibility, calculate the rough Laplacian of `X`, and
 substitute in the general Laplace-type commutator. First unsupported
 implication: evaluate its local Duhamel trace coefficient and match every
 curved source subtraction term. Numerical role: none.
+
+### Sector scope for the interior commutator
+
+The localized identity (8) is for the boundary-condition/conjugation defect
+`exp(-r Q_X)-exp(-r Q)` only. The full odd-odd vertex word splits exactly
+into the same-boundary term with `exp(-rQ)` plus this defect. The
+same-boundary term belongs in the complete tangent/local subtraction and
+must be retained when assembling the response. In particular, for the flat
+constant-`X` product, `Q_X=Q` in the interior and the localized defect
+vanishes, while the directly computed flat gradient-gradient
+`U_1/t` coefficient is carried by the same-boundary word. Therefore (11)
+only governs the *additional curved interior defect* produced by variation
+of `X` and the endomorphism connection; it is not a re-derivation or
+re-allocation of the full flat commutator coefficient. The curved ledger must
+combine the same-boundary tangent term and the localized defect with the
+source subtraction under the same regulator.
