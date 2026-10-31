@@ -212,6 +212,14 @@ limit. First unsupported implication: match this rough-family coefficient
 and the next local terms to the complete source subtraction before claiming
 a renormalized scalar response. Numerical role: none.
 
+The regularity input used here does not itself determine a uniform next
+coefficient: a bounded `C^(1,1)` path functional can have an order-`t`
+bridge-averaging error with zero quadratic Taylor jet at the base point.
+[`bridge-lipschitz-next-coefficient-obstruction.md`](bridge-lipschitz-next-coefficient-obstruction.md)
+gives an explicit smooth family. This is not a counterexample to the
+source-specific functional; it means its weighted physical-side hypotheses
+or algebraic structure must be used to prove any stronger uniform expansion.
+
 Remaining to-do list: match the rough scalar expansion, including its
 `O(t^(-1))` remainder, to the source subtraction; then combine the orbit,
 matrix, density, contact, boundary and LLL terms under one regulator and
