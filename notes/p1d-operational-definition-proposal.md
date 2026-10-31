@@ -31,10 +31,16 @@ ordered first-vertex terms, the mixed second vertex, and the derivatives of
 keep the zero sector separate if that is the source action's allocation. This is the formula in
 [`fixed-cut-moving-insertion-mixed-response.md`](fixed-cut-moving-insertion-mixed-response.md).
 
-Choose once a smooth collar cutoff `chi` equal to one near the seam and
-supported in the source collar. Set `u_chi=chi*u` and `w_chi=chi*w`.
-Derivatives of `chi` are retained through these localized directions; they
-are not discarded as lower-order errors. The exact tangent subtraction is
+Fix a collar width `delta` strictly inside the source collar and one smooth
+profile `chi` with `chi(y)=1` for `0<=y<=delta/3` and `chi(y)=0` for
+`y>=2 delta/3`. Use this same profile for every physical cut `eta<delta/3`.
+After transporting the cut problem to the fixed seed Hilbert space by
+`U_eta`, apply the fixed multiplication operator `M_chi`; its physical
+representative is `U_eta^* M_chi U_eta`. Set `u_chi=chi*u` and
+`w_chi=chi*w` on the fixed space. Derivatives of `chi` are retained through
+these localized directions; they are not discarded as lower-order errors.
+This fixes a cutoff convention for the candidate, but does not prove its
+uniform transfer through `U_eta` as `eta` tends to zero. The exact tangent subtraction is
 not determined by the frozen source. Two distinct documented choices are:
 
 **Section 4 tangent candidate.** Section 4 of the frozen source gives
@@ -118,8 +124,9 @@ not evidence that the full P1-D bound fails.
    Section 4 diagnostic; verify whether full-Weyl angular-mass variations
    remain in `r_curved` or receive a separate action subtraction. Distinguish both from
    endpoint conversion `J_e''`.
-2. Fix the actual cutoff function and the maps transporting it to each finite
-   physical cut; state whether the estimate is uniform in a cutoff family.
+2. Verify the source's physical maps `U_eta` transport the fixed cutoff
+   convention above with uniform bounds as `eta` tends to zero; state whether
+   the theorem is uniform in any larger cutoff family.
 3. Give the signed formula for `A_eta`, including density, contact,
    transgression, LLL/cocycle, and finite local terms.
 4. Confirm that the half-trace, boundary-length and whole-action factors
