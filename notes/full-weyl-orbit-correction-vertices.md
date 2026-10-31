@@ -130,23 +130,56 @@ with constants independent of `mu` on the declared field and direction
 sets. No common second-order operator domain is needed; the statement is at
 form level.
 
-Under the corresponding compact-cut form-Duhamel trace theorem and a uniform
-bound on `Tr(exp(-epsilon D_b*D_b))` over the field set, positive-time heat
-smoothing and (1c) give constants `c,C,p>0` such that
+Here is a sufficient uniform trace criterion that makes the remaining
+analytic input explicit. On the fixed compact cut, require a common form
+domain `V=H^1`, and a holomorphic extension in a parameter polydisc of radius
+`r>0` independent of `mu`. Require its shifted forms to be uniformly
+sectorial and to satisfy, for some fixed `K,c>0`,
+
+    Re q_(mu,z)[psi,psi] >=
+      c (||D psi||^2 +(1+mu^2)||psi||^2),                    (1g)
+
+where `q_(mu,z)` is the form of the complexified full square plus the
+parameter-independent shift `K`. The form and its sectorial bounds must also
+be uniform in `mu` and `z` on that polydisc. The relative bounds above show
+that a sufficiently small radius can be chosen uniformly for the first and
+mixed correction vertices, once this common-domain holomorphic extension is
+constructed. Constructing and checking that extension for the actual
+full-Weyl family remains an obligation.
+
+Under these hypotheses, write `A_(mu,z)` for the associated sectorial
+operator. The compact two-dimensional embedding `H^1 -> L^2` belongs to
+`S_p` for every `p>2`. Uniform positive-time smoothing gives
+`||exp(-s A_(mu,z))||_(L2->H1) <= C_s exp(-c' s mu^2)`. Factoring the
+semigroup into `k` equal-time factors, for an integer `k>p`, and applying
+Schatten Holder gives, uniformly for `epsilon<=t<=T` and `z` in a smaller
+closed polydisc,
+
+    ||exp(-t A_(mu,z))||_1 <= C_epsilon,T exp(-c' t mu^2). (1h)
+
+The same estimates and finite-rank Galerkin approximation give trace-norm
+holomorphy on the smaller polydisc; this is the compact-form argument of
+`finite-cut-galerkin-heat-derivative.md`, with constants required here to be
+uniform in `mu`. Cauchy's two-variable formula applied to the trace then
+yields constants `C_epsilon,T,r` and `c'>0` such that
 
     |partial_u partial_w Tr(exp(-t Q_full,mu(b)))|
-      <= C (1+|mu|)^p exp(-c epsilon mu^2),
+      <= C_epsilon,T,r exp(-c' epsilon mu^2),
       epsilon <= t <= T.                                  (1f)
 
-The same bound holds for the orbit family. Since `d_n=O(n)` and
+The same criterion applies to the orbit family. Since `d_n=O(n)` and
 `|mu_n|` grows linearly, (1f) is summable uniformly on the proper-time
-window. It therefore permits the angular sum and mixed derivative to
-interchange for this finite-cut full-Weyl response, and permits integration
-on `[epsilon,T]` term by term. The LLL remains a separate finite block.
+window. Dominated convergence therefore permits the angular sum and mixed
+derivative to interchange for this finite-cut full-Weyl response, and permits
+integration on `[epsilon,T]` term by term. The LLL remains a separate finite
+block.
 
-This closes only the massive-tower differentiation on a fixed compact cut
-and a fixed positive proper-time window under the stated form and heat-trace
-hypotheses. It provides no `epsilon->0` bound, moving-cut uniformity, source
+This closes the coercivity step and isolates a sufficient route to massive-
+tower differentiation on a fixed compact cut and positive proper-time
+window. The common-domain holomorphic sectorial family and its uniform
+Schatten smoothing are not yet verified for the actual full-Weyl family, so
+the tower interchange remains conditional. No `epsilon->0` bound,
+moving-cut uniformity, source
 observable identity, physical density/contact or boundary-transgression
 matching, or LLL anomaly transfer. No Lean check is claimed.
 
