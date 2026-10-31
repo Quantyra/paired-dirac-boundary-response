@@ -99,6 +99,20 @@ and heat-tail hypotheses in the cited notes provide such a route on their
 declared compact product. Neither (1) nor the table controls the small-time
 local subtraction.
 
+The source tower has `Theta(t)~C/t`, `-Theta'(t)~C/t^2`, and
+`Theta''(t)~2C/t^3`, with `C=2 b_0^2`; the differentiated asymptotics are
+recorded in [`angular-weighted-cubic-log-seam.md`](angular-weighted-cubic-log-seam.md).
+Thus a **termwise sufficient** route to an overall `O(t^(3/2))` remainder
+would require the corresponding subtracted orbit insertion kernels to be
+`O(t^(7/2))` for the `-Theta'` terms and `O(t^(9/2))` for the
+`Theta''` even-even term. These are sufficient bookkeeping targets, not
+necessary bounds: cancellations among the subtracted kernels can improve
+the combined order. The flat tangent formula in
+[`angular-weighted-cubic-seam.md`](angular-weighted-cubic-seam.md) exhibits
+such a combination explicitly. The curved proof must establish its own
+subtraction and cannot infer these orders from the parent orbit Hessian
+remainder alone.
+
 ## Consequence and first unsupported implication
 
 Under these hypotheses, the curved orbit-angular estimate can focus on
