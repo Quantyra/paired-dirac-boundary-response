@@ -8,6 +8,57 @@ Accordingly, the O(e) result in [the flat conversion diagnostic](flat-conversion
 
 This correction does not establish either the endpoint identity for the physical domain or the missing curved heat estimate. The next mathematical obligation is to write the exact mixed response and localized tangent subtraction on the same fixed Hilbert space and regulator, including all vertices and cutoff terms, then estimate their difference. Do not transfer an endpoint power or a flat coefficient to that difference without such an identity.
 
+## Exact fixed-cut identity for the heat Hessian
+
+There is an exact positive-time identity between the full-Weyl and
+fixed-angular-mass orbit heat Hessians on the common finite-cut mode form
+domain. For each nonzero angular mass `mu`, let `H_FW,mu(t)` and
+`H_orb,mu(t)` be the mixed parameter derivatives at `b=0` of the respective
+heat traces. Assume the families have the same unvaried square
+`Q_0=D^*D+mu^2`, their quadratic forms are twice differentiable on the
+common first-order form domain, and the Duhamel differentiations and trace
+ideals in equation (4) of the cited note are justified at fixed `t>0`.
+Then
+
+    H_FW,mu(t) = H_orb,mu(t) + D_mu(t),
+
+where `D_mu(t)` is exactly the right-hand side of equation (4) in
+[`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md):
+the mixed correction vertex, both ordered orbit/correction cross terms, and
+both ordered correction/correction terms. The formula includes the full
+`mu^2` and commutator vertices. It is not merely a first-vertex insertion.
+
+Choose flat tangent subtraction terms `T_FW,mu(t)` and `T_orb,mu(t)` for
+those same two heat families, with the same cut, trace density and Fourier
+normalization, and put
+
+    r_FW,mu(t)=H_FW,mu(t)-T_FW,mu(t),
+    r_orb,mu(t)=H_orb,mu(t)-T_orb,mu(t),
+    delta_T_mu(t)=T_FW,mu(t)-T_orb,mu(t).
+
+Subtraction of the heat-Hessian identity gives the exact algebraic relation
+
+    r_FW,mu(t)=r_orb,mu(t)+D_mu(t)-delta_T_mu(t).          (3)
+
+For a fixed finite cut and `epsilon<=t<=T`, the product-mode form and
+holomorphy argument in
+[`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md)
+permits summing this identity over the massive tower, provided the chosen
+localized smearing is fixed and the mode-uniform trace bounds there hold.
+The LLL remains a separate term. Equation (3) is a same-regulator identity
+for heat Hessians; it does not exchange the proper-time endpoint, spatial
+cut, or physical source limit.
+
+The source's `r_curved` is not yet identified with `r_orb` in (3). The
+frozen conversion formula includes `2 Theta'(t) I_t` in addition to its
+geometric response, while the full-Weyl heat Hessian contains the `D_mu`
+terms. Their flat local subtractions also differ as shown above. To use
+equation (3) for P1-D, one must still show that the source's localized
+tangent subtraction equals the selected orbit tangent plus the appropriate
+`delta_T`, and account for the source contact, physical density, boundary
+transgression, LLL and local restorations on that same Hilbert space and
+regulator. No such source-level identity follows from Duhamel alone.
+
 ## Flat local subtraction audit
 
 The available flat formulas confirm that the full-Weyl tangent subtraction
