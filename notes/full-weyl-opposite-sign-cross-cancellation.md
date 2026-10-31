@@ -161,13 +161,32 @@ operator-norm semigroup defect. A localized trace-ideal estimate, angular
 summation with the common regulator, and small-time subtraction are still
 needed.
 
-The key application hypotheses are not presently verified for the physical
-P1 realization: the actual paired square domain must be invariant under
-`X`, and the conjugation difference `Q_X-Q` must extend to a bounded
-potential uniformly over the admitted curved family and thermal modes. The
-physical boundary projector may fail the first condition. This reduction
-therefore supplies a concrete route to test the odd-odd sector, not a bound
-for it or a P1 response theorem.
+The `X`-invariant-domain hypothesis actually fails at the pinned source
+projector. In the source's orbit frame, `gamma_y` is the normal Clifford
+matrix and `G` is the two-dimensional orbit chirality, so `X=G gamma_y` is
+(up to the fixed Clifford convention) tangential Clifford multiplication.
+The source finite-cut domain has
+`chi=tau_3 gamma_n`, `Pi_\pm=(1\pm chi)/2`, with allowed `D`-traces in
+`Ran(Pi_+)`; `chi` anticommutes with every tangential Clifford matrix, and
+`tau_3` commutes with the orbit Clifford factors. Hence `{chi,X}=0` and
+`X Ran(Pi_+)=Ran(Pi_-)`. A smooth section with nonzero allowed boundary
+trace is therefore sent outside the first-order form domain
+`V={psi in H^1:Pi_- tr(psi)=0}`. Since `V` is the closed-form domain of
+`Q=D^*D+mu^2`, the form domain is not `X`-invariant either. This uses the
+source projector and form-domain identifications in
+`source-finite-cut-domain-instantiation.md` and
+`full-weyl-mode-form-domain.md`; it applies to that declared product-cut
+realization, not arbitrary boundary data.
+
+Consequently `Q_X` cannot be treated as a bounded-potential perturbation of
+`Q` on a common form domain at the physical cut. The conjugation identity
+(12) remains a useful interior algebraic identity, but it does not reduce
+the boundary-localized physical odd-odd trace. A valid route must retain the
+boundary map/transgression (or localize strictly away from the boundary and
+separately recover its contribution) and prove the trace-ideal and
+common-regulator estimates. This is a no-go for applying the simple
+bounded-potential conjugation route directly to the pinned physical domain,
+not a bound for the odd-odd response or a P1 response theorem.
 
 ## Application to the pinned conformal-boundary product realization
 
