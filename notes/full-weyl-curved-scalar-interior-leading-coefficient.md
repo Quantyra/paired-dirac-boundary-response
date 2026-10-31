@@ -253,6 +253,36 @@ bridge-Hessian term `E[D^2 H_0(0)[xi,xi]]`, the local subtraction, or the
 other physical sectors; those remain the first unsupported parts of the
 next-coefficient argument.
 
+### Seam behavior of the path-Hessian coefficient
+
+Although its uniform remainder is not yet controlled, the coefficient
+`K_2(y)=(1/2) E[D^2 H_0(0)[xi,xi]]` itself has a continuous seam extension.
+At a constant path, `H_0=W_u R_w+W_w R_u+W R_uw`, with
+`W_u=-A^(-3/2) integral(f f_u)` and
+
+    R_uw=8(integral u)(integral w)-4 integral(uw)
+          +2 integral(u'X_w+w'X_u).
+
+For the source jets, `W_u` and `R_u` vanish as `O(y^3)`; their first and
+second path derivatives are respectively `O(y^2)` and `O(y)`. The same
+holds with `u,w` exchanged. The second path derivatives of `R_uw` are
+`O(y^4)`: this follows by differentiating the products of averages and from
+
+    (u'X_w)''=u'''X_w+2u''X_w'+u'X_w'',
+
+where `u'''=O(1)`, `X_w=O(y^4)`, `X_w'=-w=O(y^3)`, and
+`X_w''=-w'=O(y^2)`. The fixed logarithmic jets add only the prescribed
+finite log powers. The path derivatives of `W` through order two are
+bounded. The product rule therefore gives
+
+    |K_2(y)| <= C y^4 (1+|log y|)^p -> 0
+
+for some fixed finite `p` on the admitted family. Thus the smooth-interior
+Hessian coefficient extends to the seam with value zero. This is a statement
+about the coefficient only. It does not provide a uniform `o(t)` expansion
+of `E H_0(y,sqrt(t)xi)` across the seam; controlling that remainder still
+requires a seam-split estimate for the weighted physical jets.
+
 ## Extension to the admitted rough seam profiles
 
 The leading coefficient above also extends to the admitted even-folded
