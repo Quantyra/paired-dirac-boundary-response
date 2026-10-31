@@ -488,3 +488,78 @@ passage remain as stated above.
 This correction fixes the derivative-count justification; it does not remove
 the separate need to verify the source approximants' uniform grouped-jet
 bounds, compact support/localization, and the exact bridge chart extension.
+
+### Verification of the grouped jets for the source cutoff
+
+The grouped-jet passage can be checked against the repository's explicit
+physical cutoff construction in `weighted-remainder-cutoff.md` and
+`smooth-physical-cutoff-joint-path.md`. For each of `b,u,w`, write
+`c y^3+r(y)` on the physical half-collar, cut off only `r` at scale `eta`,
+and use the constructed C5 mollification of that remainder. This preserves
+the cubic coefficient, gives uniform enlarged weights through order five,
+and converges to the original profile in `W^(3,infinity)` on the half-collar.
+For the bridge's even full-line fold, additionally mollify `c|y|^3` with an
+even approximate identity. Its `W^(3,infinity)` norms are uniformly bounded;
+it converges in `W^(2,infinity)` and local `H^3`, and all derivatives through
+order four converge pointwise away from zero. This second smoothing is used
+only to justify ordinary integrations and is removed in the limit.
+
+Uniformly for this joint approximating family, on a sufficiently small
+collar,
+
+    |u^(j)|+|w^(j)|+|b^(j)| <= C y^(3-j),       0<=j<=3,
+    |u^(4)|+|w^(4)|+|b^(4)| <= C(1+|log y|),
+    |X_u|+|X_w| <= C y^4.
+
+The same estimates hold for the corresponding approximants with constants
+independent of both smoothing scales. Since `f_0=exp(-2b)` and `b` is
+uniformly bounded, `f_0` is uniformly positive, its derivatives through
+order three are bounded, and `|f_0^(4)|<=C(1+|log y|)`. Differentiating
+`g_u=-f_0^2u+f_0 f_0'X_u` three times shows that its only term using a fourth
+jet of `f_0` is bounded by
+`C |f_0^(4) X_u| <= C y^4(1+|log y|)`; all other terms are bounded by the
+first line. Hence `g_u,g_w` have uniform `W^(3,infinity)` bounds. Likewise,
+Leibniz gives
+
+    |(u'X_w)'''| <= C(|u^(4)X_w|+|u'''w|+|u''w'|+|u'w''|) <= C,
+
+and the same for `w'X_u`; thus `j_uw,j_wu` have uniform `W^(3,infinity)`
+bounds. The direction products `u,w,uw` have the same bound. Their local
+supports give the compactly supported factor required by the transfer lemma.
+
+For every fixed `y != 0`, the grouped jets and their weak derivatives through
+order three converge pointwise to those of the original folded profiles.
+The displayed bounds give a common local integrable majorant. In each
+transferred fourth-derivative expression, at most one factor has order three
+(the total order is four); local `H^3` convergence for the cubic mollifications
+and dominated convergence for the weighted remainder cutoffs therefore pass
+these expressions to the rough limit. The denominators `A_h` stay uniformly
+positive because `f_0` does. This verifies the source approximation passage
+for the localized scalar bridge expansion, for each fixed source profile and
+fixed compact localization. It does not assert uniformity over a noncompact
+set of source profiles with no common cutoff/mollification modulus.
+
+The remaining hypothesis is the exact localized chart extension used by the
+scalar bridge formula: choose the direction cutoff inside the source collar,
+use its bounded positive extension for paths that leave the chart, and apply
+the recorded Gaussian collar-exit estimate. The resulting exit contribution
+is exponentially small in `1/t`, including the finite field jets. This
+completes the source-cutoff and rough-limit part of the integrated scalar
+`Q+tK_2+O(t^2)` estimate for this localized sector. It still does not match
+these coefficients to the source subtraction or establish the full physical
+response.
+
+Concrete claim: the grouped-jet and rough-approximation hypotheses used in
+the preceding integrated scalar expansion follow for each fixed admitted
+radial source profile and compact localization. Ordinary argument: apply the
+explicit weighted remainder cutoff, mollify the even cubic fold with uniform
+W3 bounds, estimate `g_u,j_uw` by the weighted fourth-jet times `X=O(y^4)`,
+then pass the transferred expressions by dominated convergence. First
+unsupported implication: identify the integrated scalar coefficients with
+the prescribed source subtraction and combine the remaining physical sectors
+under the common regulator. Numerical role: none.
+
+Remaining to-do list: match the scalar coefficients to the source
+subtraction; close the full-Weyl orbit, matrix, density/contact, boundary and
+LLL terms and the common-regulator endpoint; finish novelty/manuscript review
+and GCP Lean certification.
