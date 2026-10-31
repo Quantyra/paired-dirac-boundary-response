@@ -243,16 +243,30 @@ already recorded fixed-cut identity and the boundary term
 the conformal normal and mean-curvature conventions must be aligned when
 expressing the transported Robin operator in `g_b`.
 
-Consequently, whenever the global side identification and transmittal
-boundary match in [the comparison note](transfer-transmittal-comparison.md)
-hold for this particular cut, P1's smooth finite-cut conformal response lies
-in the geometric interface family treated by Gilkey--Kirsten--Vassilevich.
-Their 2001 analysis explicitly applies a conformal variation with a
-continuous parameter that need not be smooth across the interface and
-determines the interface heat invariants through `a4`; their 2020 paper
-specializes the `a4` anomaly to a conformal spinor. Therefore P1 cannot claim
-the smooth fixed-cut Dirac conformal anomaly or its `a4` interface
-specialization as new. This is stronger than a principal-symbol analogy.
+Consequently, if the global side identification and the square-domain
+transmittal match in [the comparison note](transfer-transmittal-comparison.md)
+hold for this particular cut, P1's smooth finite-cut conformal *square* lies
+in the geometric interface Laplace-type family treated by
+Gilkey--Kirsten--Vassilevich. Their 2001 analysis explicitly applies a
+conformal variation with a continuous parameter that need not be smooth
+across the interface and determines the interface heat invariants through
+`a4`; their 2020 paper specializes the `a4` anomaly to a conformal spinor.
+Thus the smooth fixed-cut `a4` coefficient is close conditional prior art,
+but the exact P1 square decomposition and trace multiplicity must be
+established before calling it an identical specialization.
+
+There is a first-order realization distinction that prevents a shortcut.
+For P1, the source finite-cut operator has complementary adjoint domains and
+is not self-adjoint: its Green form is the normal Clifford pairing, which
+does not vanish on the allowed `Pi_+` trace space. The interface Dirac
+realization instead has continuous spinor data across two sides, for which
+the two oppositely oriented boundary Green terms cancel. A unitary
+identification cannot equate these first-order closed operators. The
+remaining plausible comparison is at the level of squares: derive whether
+the folded interface square is the direct sum of P1's `D^*D` and `DD^*`
+realizations (with the exact trace factor), or give the correct block
+decomposition. P1's partner involution makes the two spectra equal at a
+fixed cut, but that fact alone does not prove the interface decomposition.
 
 The conditional family crosswalk still does not close P1. The global
 side-bundle/connection match is not verified for the physical source or its

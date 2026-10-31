@@ -233,6 +233,28 @@ establish the full closed-operator equivalence for a varying metric family,
 the source's magnetic twisting terms in the interface formula, or any
 uniform moving-cut estimate.
 
+## First-order domain distinction and square-level target
+
+The matched boundary jets and tangential coefficient do not identify the
+first-order realizations. In the P1 realization,
+`Pi_+ gamma_n Pi_+=gamma_n Pi_+` and `gamma_n` is invertible on the allowed
+trace space. Therefore the Green form does not vanish on `Dom(D)`, and the
+closed P1 first-order operator is not symmetric; its adjoint has the
+complementary projector domain. In the interface Dirac realization, the
+spinor traces agree on the two sides and the outward normals are opposite,
+so the two first-order Green boundary terms cancel. No unitary map can
+identify these first-order closed operators.
+
+The relevant possible heat-trace comparison is instead between the folded
+interface square and the pair of P1 composition squares `D^*D` and `DD^*`.
+The source's parallel partner `J` unitarily conjugates those two squares at
+the fixed cut, so their heat traces agree whenever trace class. What remains
+to prove is the exact operator/domain decomposition of the interface square
+into these two P1 realizations, including its multiplicity and the matched
+twisting connection. The interface paper's statement that spinor interface
+coefficients are twice those of the folded boundary problem is consistent
+with this target but is not itself that P1-specific domain identity.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces
