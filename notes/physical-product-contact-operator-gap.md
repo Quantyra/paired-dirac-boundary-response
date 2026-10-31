@@ -73,6 +73,32 @@ checked in Lean on GCP; see the
 [exact-source receipt](../evidence/gcp-finite-cut-congruence-domain-20261031/README.md).
 The analytic assumptions themselves are not part of that Lean theorem.
 
+## Exact finite-cut heat-trace transport
+
+The map `U` above is unitary between the physical and product-frame `L^2`
+spaces, and (3) gives the actual transported composition domain. Hence the
+physical square `D_g^*D_g` and transported square `P^*P` are unitarily
+equivalent, including their domains. For each fixed finite cut and `t>0`,
+
+    U exp(-t D_g^*D_g) U^(-1) = exp(-t P^*P),
+    Tr_(L2(g))(exp(-t D_g^*D_g))
+      = Tr_(L2(ghat))(exp(-t P^*P)),
+
+whenever either heat operator is trace class; in that case both are. This
+uses the same proper-time parameter and incorporates the physical volume
+density through the unitary map. If coefficients vary and these trace
+functions are differentiable, the equality holds pointwise in the parameter,
+so their first and mixed derivatives agree and include the moving-density
+terms encoded by the transported family `P`.
+
+Here `P=E D_hat E`, not `D_hat`. The identity gives no equality with the
+bare product-frame heat trace, the orbit-only mode family, or the canonical
+Lorentzian Hamiltonian contact in
+`canonical-euclidean-contact-matching.md`. It also gives no uniformity as
+the cut moves, no small-time subtracted limit, and no common-regulator
+conversion to the conformal-infinity source observable. Those comparisons
+still require separate operator, domain and trace arguments.
+
 On each fixed cut these statements make the products and transformed
 boundary conditions precise under the stated projector identification. In
 the moving-cut limit the bounds on u, u^(-1), and their derivatives need not

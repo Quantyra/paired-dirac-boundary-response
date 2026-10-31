@@ -45,11 +45,18 @@ At a finite cut the pinned conformal-domain note states the Dirac conformal
 covariance and the transformation of the boundary realization. That is a
 relation between first-order operators and weighted spinor spaces, not by
 itself a unitary equality of heat semigroups for their squares at the same
-proper time. The four-dimensional conformal factor r/b is unbounded as the
-cut tends to infinity, so finite-cut bounded multiplier arguments alone do
-not provide a uniform outer-limit heat-trace comparison. A full comparison
-must specify the two L² identifications, transformed actual square domains,
-coincidence and density vertices, thermal modes and the common cutoff.
+proper time with the *bare product-frame square*. The finite-cut unitary map
+does give an exact equality with the transported full-Weyl square
+`P^*P=(E D_hat E)^*(E D_hat E)`, including its actual composition domain and
+physical density; see [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md).
+That square is the one used in P1's full-Weyl mode response, not the orbit
+operator used in the variable-contact conversion. The four-dimensional
+conformal factor `r/b` is unbounded as the cut tends to infinity, so
+finite-cut bounded multiplier arguments alone do not provide a uniform
+outer-limit heat-trace comparison. A full comparison must still specify the
+transformed square domains, coincidence vertices, thermal modes and common
+cutoff, and relate the full-Weyl observable to the conversion and canonical
+Hamiltonian trace.
 
 Likewise, a canonical Hamiltonian trace is integrated over a Lorentzian
 spatial radial Hilbert space, while the Euclidean product-frame orbit trace
