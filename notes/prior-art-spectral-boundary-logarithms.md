@@ -45,6 +45,31 @@ The singular-weight and nonsmooth-interface comparisons remain necessary,
 as do physical folding and regulator identification. No Lean or numerical
 certification follows from this comparison.
 
+### Perturbation stability for a fixed spectral boundary condition
+
+Grubb's later paper, [Logarithmic terms in trace expansions of
+Atiyah--Patodi--Singer problems](https://arxiv.org/pdf/math/0302289), makes
+the perturbation comparison more specific. For two first-order elliptic
+operators with the same well-posed pseudodifferential boundary projection,
+Section 3, Theorem 3.5 and Corollary 3.7 derive trace-expansion stability
+when the operator difference vanishes to a stated order in the normal
+coordinate. Initial logarithmic coefficients are stable in the indicated
+range, while selected power coefficients change only by local terms. The
+paper also treats perturbations of the APS product model by tangential
+operators commuting with the tangential boundary operator, with
+dimension-dependent conclusions for log coefficients.
+
+This is close prior art for boundary-vanishing operator variations and
+logarithmic trace coefficients. It does not yet settle the P1 comparison:
+one must match its smooth coefficient and spectral-boundary hypotheses to
+the local paired realization, the full scalar Weyl congruence (including the
+angular-mass and commutator vertices), the mixed response, and the rough/log
+jet class. The common regulator and physical curved trace are separate
+requirements. Do not claim novelty from boundary vanishing or the occurrence
+of `log(t)` alone; check whether the exact P1 coefficient is within the
+theorem's perturbation-stability range after the transformed-operator
+comparison.
+
 Remaining to-do list: complete the close-interface normalization and later
 literature audit, prove the paired physical response and required limits,
 resolve the paper decision, prepare the manuscript, and certify supported

@@ -97,5 +97,6 @@ all-frequency estimate together still warrant a standalone paper. This
 comparison is preliminary; no continue, merge or park decision follows yet.
 
 Remaining to-do list: complete the exact transformed-operator comparison,
-inspect later logarithmic-background literature, audit the paired physical
-scope and rough limits, and formalize the supported contribution on GCP.
+check the applicability of the logarithmic prior art against the final
+operator/domain claim, audit the paired physical scope and rough limits, and
+formalize the supported contribution on GCP.
