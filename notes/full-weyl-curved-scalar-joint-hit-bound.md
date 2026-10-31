@@ -255,6 +255,23 @@ In particular it is not itself an assigned counterterm. It provides a
 concrete coefficient that the scalar local expansion must reproduce and
 match before a non-hit remainder estimate can be claimed.
 
+The leading term can be compared with the frozen source contact, keeping
+the physical-half normalization. From the source insertion formula (6),
+
+    I_t(u,w)=(1/(2 pi)) integral (u w/f_0) dy + O(t),
+    2 Theta'(t) I_t(u,w)
+       = -(C/(pi t^2)) integral (u w/f_0) dy + O(t^(-1)).
+
+The physical-half scalar angular-factor coefficient above is
+`+(C/pi) (u w/f_0) t^(-2)`. Thus these two leading coefficients have equal
+magnitude and opposite signs. In the fixed-cut ledger they occur as
+`D-C_src`, with `C_src=2 Theta' I_t`; consequently this pair adds rather
+than cancels in that bracket. Any cancellation in the full
+`H_FW-J_src''` identity would have to involve the separate geometric
+bracket or other retained terms. This leading comparison does not identify
+the complete scalar coefficient with the source contact, and it does not
+authorize dropping either term.
+
 Numerical role: none.
 
 Remaining to-do list: match the scalar terms to the physical common
