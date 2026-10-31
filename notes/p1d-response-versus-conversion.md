@@ -150,35 +150,28 @@ commutator vertices, whereas `C_src` is the conversion contact. Any
 cancellation between these brackets needs its own operator and trace
 derivation.
 
-There is a more explicit form for the first bracket when the source's
-fixed-Hilbert-space smearing identity applies on this same cut. Let
+The source's fixed-Hilbert-space smearing identity gives a differential
+relation, not an algebraic expression for `G_src` in terms of `h_2'`. Let
 `h_2(t)` be the mixed Hessian of the unweighted two-dimensional orbit heat
-trace `Tr_bar(exp(-t L))`, before adding the angular masses. The frozen
-source identity is
+trace `Tr_bar(exp(-t L))`, before adding the angular masses, and set
+`F_1(t)=D_w T_t(u)`, `F_2(t)=D_u T_t(w)`. The source identity is
 
-    h_2(t) = -2t partial_t D_w T_t(u)
-           = -2t partial_t D_u T_t(w),
+    h_2(t) = -2t F_1'(t) = -2t F_2'(t).
 
-with equality of the two mixed variations. The orbit family holds each
-angular mass fixed, so its massive sum is `H_orb(t)=Theta(t) h_2(t)`;
-the angular weight must stay outside the proper-time derivative. Therefore
+Consequently, for any reference time `t_*>0` in the same differentiability
+interval,
 
-    G_src(t) = -Theta(t)/(2t) partial_t h_2(t),
+    F_j(t)=F_j(t_*)+(1/2) integral_t^t_* h_2(s)/s ds,  j=1,2. (4a)
 
-and (4) becomes
-
-    H_FW(t)-J_src''(t)
-      = Theta(t) h_2(t) + D(t)
-        + Theta(t)/(2t) partial_t h_2(t) - 2 Theta'(t) I_t(u,w). (4a)
-
-This is an exact positive-time finite-cut identity only under the source
-smearing identity, common mode domain, trace density, and differentiability
-and angular-sum hypotheses just stated. It does not turn the source's
-geometric term into the orbit Hessian: it relates that geometric term to
-the derivative of the unweighted orbit Hessian. Equation (4a) isolates
-what an endpoint proof must estimate, but does not control the small-time
-subtraction, the LLL, boundary transgression, local restorations, or the
-moving-cut limit.
+The integration constants at `t_*` are part of the data. In particular,
+the differential identity does **not** imply
+`G_src=-Theta(t)/(2t) partial_t h_2(t)`; that earlier reduction was
+unsupported and is withdrawn. The valid finite-cut ledger remains (4), with
+`G_src=Theta(t)[F_1(t)+F_2(t)]/2` retained explicitly. The orbit family
+still has `H_orb(t)=Theta(t)h_2(t)` when the common mode-domain and angular-sum
+hypotheses hold. No small-time or endpoint claim follows from integrating
+the differential identity without controlling its reference values and
+integral.
 
 For local tangent subtractions `T_FW,T_src` at that same cut, set
 `delta_T=T_FW-T_src`, and define
@@ -191,8 +184,7 @@ localized tangent subtraction still need to be matched. The corresponding
 remainder ledger is
 
     r_FW(t) - r_src^conv(t)
-      = Theta h_2 + D + Theta/(2t) partial_t h_2
-        - 2 Theta' I_t(u,w) - delta_T(t).                (5)
+      = [H_orb(t)-G_src(t)] + [D(t)-C_src(t)] - delta_T(t). (5)
 
 The source's separate LLL block, physical boundary transgression, local
 action restorations and prescribed normalizations are not included in
