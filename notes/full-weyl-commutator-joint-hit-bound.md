@@ -37,37 +37,69 @@ Let `y` be collar distance to the seam and assume the admitted directions obey
 
     |u'(y)| <= U y^2,       |w'(y)| <= W y^2.
 
-A sufficient Gaussian-localized bound for the boundary-layer part of each normalized
-trace word, uniformly over the closed Duhamel simplex and massive modes, is
+Write `r=s1-s2`, `s=t-r`, and `sigma=s r/t`. Convolving the two outer
+`Q` kernels and integrating the tangential variable suggests the following
+bilocal Gaussian input for the boundary-layer part of each normalized trace
+word, uniformly over the closed Duhamel simplex and massive modes:
 
     |T^bl_(mu,s1,s2)(t;u',w')|
-      <= C t^(-1) integral_0^delta
-             exp(-y^2/(c t)) |u'(y) w'(y)| dy.             (1)
+      <= C t^(-1) integral_0^delta exp(-y^2/(c t)) |u'(y)|
+             integral_0^delta g_sigma(y-y') |w'(y')| dy' dy, (1)
 
-Here `T` is the trace word after factoring out `exp(-t mu^2)` and the explicit
-`mu^2`; the constants must be independent of `mu,t,s1,s2`. The estimate must
-hold for the actual pair `Q,Q_X`, including their complementary form domains,
-not merely for two scalar semigroups with a common boundary condition.
+where `g_sigma(z)=(4 pi sigma)^(-1/2) exp(-z^2/(4 sigma))`; at `sigma=0`
+the inner integral is interpreted by its delta limit. Here `T` is the trace
+word after factoring out `exp(-t mu^2)` and the explicit `mu^2`. The estimate
+must hold for the actual pair `Q,Q_X`, including their complementary form
+domains, not merely for two scalar semigroups with a common boundary
+condition. Its boundary localization must come from the mixed-kernel
+boundary part, while the normalized Gaussian couples the two insertion
+coordinates.
 
-The source jets give
+At the scalar kernel level, the proposed factorization follows from the
+outer convolution and the reflected middle Gaussian. Put `p=y-y'` and
+`q=y+y'`, so `q>=|p|`. Since `s+r=t` and `sigma=sr/t`, a fixed fraction of
+`p^2/s+q^2/r` controls `p^2/sigma+q^2/t`. Including Gaussian prefactors,
 
-    integral_0^delta exp(-y^2/(c t)) |u'w'| dy
-      <= U W integral_0^infinity y^4 exp(-y^2/(c t)) dy
-      = C_c U W t^(5/2).                                  (2)
+    g_s(p) g_r(q) <= C t^(-1/2) g_sigma(p) exp(-q^2/(C t)).
+
+The integrated antiperiodic tangential factor contributes another
+`C_T t^(-1/2)`. Since `q>=y`, this gives the `t^(-1) exp(-y^2/(c t))`
+weight in (1). This explains the form of (1) under uniform kernel
+majorants; it does not prove those majorants or the trace-ideal estimate for
+the actual mixed-boundary matrix semigroups.
+
+A same-coordinate product bound by
+`integral exp(-y^2/(c t)) |u'(y)w'(y)|dy` is not assumed: the trace word
+contains off-diagonal kernels and evaluates its two multipliers at `y` and
+`y'`. Without an additional relation between the directions, that product
+does not control contributions from separated supports.
+
+Under the source jets and `sigma<=t`, the normalized Gaussian has second
+moment
+
+    integral_0^delta g_sigma(y-y') y'^2 dy' <= C(y^2+sigma).
+
+Therefore the input (1) implies
+
+    |T^bl_(mu,s1,s2)|
+      <= C U W t^(-1) integral_0^infinity
+             exp(-y^2/(c t)) y^2(y^2+sigma) dy
+      <= C_* U W t^(3/2).                                  (2)
 
 The Duhamel simplex has area `t^2`. Summing the explicit mass factor uses
 
     sum_n d_n mu_n^2 exp(-t mu_n^2) = -Theta'(t) <= C t^(-2).
 
-Combining (1)-(2) therefore gives the conditional boundary-layer estimate
+Combining (1)-(2) with the simplex and tower factors therefore gives the
+conditional boundary-layer estimate
 
     |R_odd-odd^bl(t)|
-      <= C U W t^2 * t^(-2) * t^(-1) * t^(5/2)
+      <= C U W t^2 * t^(-2) * t^(3/2)
       <= C_* U W t^(3/2).                                 (3)
 
 The same bound applies to both ordered words after changing the constant.
 This power count matches the scalar seam-hit target, but arises from the
-weighted mixed-boundary trace estimate (1), not from scalar Brownian-bridge
+bilocal mixed-boundary trace estimate (1), not from scalar Brownian-bridge
 factorization.
 
 ## First unsupported implication
@@ -90,9 +122,9 @@ term. It is not a physical admission margin, a bound for the complete curved
 remainder, or evidence of wormhole existence or stability. No numerical work
 or Lean certification is claimed.
 
-Concrete claim: if the mixed-boundary Gaussian trace bound (1) holds, cubic
-source jets imply (3). Ordinary argument: the weighted Gaussian integral,
-Duhamel simplex area, and the `-Theta'` tower moment. First unsupported
+Concrete claim: if the bilocal mixed-boundary Gaussian trace bound (1) holds,
+cubic source jets imply (3). Ordinary argument: the normalized Gaussian
+second moment, Duhamel simplex area, and the `-Theta'` tower moment. First unsupported
 implication: prove (1) for the actual curved source family and insert (3) into
 the full common-regulator ledger. Numerical role: none.
 
