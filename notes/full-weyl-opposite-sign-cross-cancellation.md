@@ -133,10 +133,10 @@ source directions are radial. In the flat tangent convention of
     O_u = -i mu M_(u') X,       O_w = -i mu M_(w') X,
 
 where `X=G gamma_y` is a fixed unitary matrix with `X^2=-I`, and `M_g`
-denotes multiplication by `g`. Assume, for this paragraph only, that the
-self-adjoint orbit square `Q` has an `X`-invariant domain. Set
-`Q_X=X Q X^(-1)`. Since scalar multipliers commute with `X`, for every
-`r>=0` on the common operator core,
+denotes multiplication by `g`. For any self-adjoint orbit square `Q`,
+define its unitary conjugate `Q_X=X Q X^(-1)` on the domain
+`Dom(Q_X)=X Dom(Q)`. Since scalar multipliers commute with `X`, for every
+`r>=0`,
 
     O_u exp(-r Q) O_w
        = mu^2 M_(u') exp(-r Q_X) M_(w').                 (12)
@@ -144,11 +144,12 @@ self-adjoint orbit square `Q` has an `X`-invariant domain. Set
 Indeed, `X exp(-rQ) X = -exp(-r Q_X)` follows from `X^2=-I`; the two
 factors `-i` in the vertices supply the other minus sign. The reversed
 ordered word has the same identity with `u,w` interchanged. Thus the
-surviving odd-odd pair is a scalar-gradient pair evaluated against the
-conjugated orbit heat semigroup, rather than an arbitrary matrix insertion.
+surviving odd-odd pair is exactly a scalar-gradient pair evaluated against
+the conjugated orbit heat semigroup, rather than an arbitrary matrix
+insertion. This identity permits `Q_X` to have a different boundary domain.
 
-If in addition `Q_X=Q+W` on a common domain with bounded self-adjoint `W`,
-Duhamel gives the operator-norm estimate
+If in addition `Dom(Q_X)=Dom(Q)` and `Q_X=Q+W` there for bounded
+self-adjoint `W`, Duhamel gives the operator-norm estimate
 
     ||exp(-r Q_X)-exp(-r Q)||
        <= r ||W|| exp(r max(0,-inf Q,-inf Q_X)).          (13)
@@ -161,8 +162,8 @@ operator-norm semigroup defect. A localized trace-ideal estimate, angular
 summation with the common regulator, and small-time subtraction are still
 needed.
 
-The `X`-invariant-domain hypothesis actually fails at the pinned source
-projector. In the source's orbit frame, `gamma_y` is the normal Clifford
+At the pinned source projector, `Q_X` has the complementary square-form
+domain. In the source's orbit frame, `gamma_y` is the normal Clifford
 matrix and `G` is the two-dimensional orbit chirality, so `X=G gamma_y` is
 (up to the fixed Clifford convention) tangential Clifford multiplication.
 The source finite-cut domain has
@@ -179,14 +180,15 @@ source projector and form-domain identifications in
 realization, not arbitrary boundary data.
 
 Consequently `Q_X` cannot be treated as a bounded-potential perturbation of
-`Q` on a common form domain at the physical cut. The conjugation identity
-(12) remains a useful interior algebraic identity, but it does not reduce
-the boundary-localized physical odd-odd trace. A valid route must retain the
-boundary map/transgression (or localize strictly away from the boundary and
-separately recover its contribution) and prove the trace-ideal and
-common-regulator estimates. This is a no-go for applying the simple
-bounded-potential conjugation route directly to the pinned physical domain,
-not a bound for the odd-odd response or a P1 response theorem.
+`Q` on a common form domain at the physical cut. The exact identity (12)
+instead reduces the odd-odd vertex pair to scalar-gradient insertions with
+the complementary boundary realization in the middle heat factor. A valid
+estimate must control that mixed-boundary heat kernel, its boundary
+map/transgression, trace ideals, angular sum, and common regulator (or
+localize strictly away from the boundary and separately recover its
+contribution). The domain calculation therefore rules out only the
+same-domain bounded-potential comparison; it does not rule out the exact
+conjugation reduction and does not provide a response bound or P1 theorem.
 
 ## Application to the pinned conformal-boundary product realization
 
