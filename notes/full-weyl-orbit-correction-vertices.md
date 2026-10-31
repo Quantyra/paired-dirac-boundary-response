@@ -37,9 +37,18 @@ Here `[D,f]=c(df)` is the Dirac product rule. To see the commutator terms direct
     A_u = -(uD+Du)/2,
     M_b = 1-su-tw+st uw + higher terms.
 
-The mixed coefficient of `[D_b,M_b]` is
+Since `Du=uD+c(du)` and scalar multiplication commutes with the Clifford
+multipliers, the first Dirac jet can also be written
+`A_u=-uD-c(du)/2`. Thus
+
+    [A_u,w] = -u c(dw),       [A_w,u] = -w c(du).
+
+The mixed coefficient of `[D_b,M_b]` is therefore
 
     -[A_u,w]-[A_w,u]+[D,uw] = 2[D,uw].
+
+Indeed, the first two terms sum to `u c(dw)+w c(du)=[D,uw]` by the scalar
+product rule, so the full expression is twice that commutator.
 
 Equivalently, the exact product rule gives `[D_b,M_b]=-exp(-2b)c(db)`, whose first and mixed derivatives yield (2) and (3). The mixed derivative is the genuine `partial_s partial_t` vertex; no extra factor of two is implicit.
 
