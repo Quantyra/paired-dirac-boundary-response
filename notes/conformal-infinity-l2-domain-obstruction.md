@@ -121,6 +121,31 @@ source derivation about the intended endpoint Hilbert/renormalized space
 before identifying it with ordinary physical `L2`. It neither disproves the
 prescription nor supplies the missing response theorem.
 
+## What the pinned Euclidean source does fix
+
+The same parent snapshot does specify a computational Euclidean realization
+in the compactified conformal frame. In
+`notes/stationary-exterior-conformal-domain.md`, the operator is the
+compactified `D_hat,E` on `g_hat,E`; at a true outer boundary its first-order
+domain is `Pi_- psi=0`, its adjoint domain is `Pi_+ phi=0`, and its positive
+square is formed by composition/form closure. The angular factorization is
+asserted for these positive squared realizations. Thus the source supplies
+a particular hatted operator/domain prescription for its Euclidean
+calculation.
+
+The companion `notes/spherical-anomaly-action.md` states that its anomaly
+functional compares the physical and conformal effective actions only where
+conformally related state and domain data are defined, and explicitly says
+the anomaly does not construct those data. The source therefore does not
+derive the endpoint identification from the local projector or anomaly
+formula alone. The remaining implication is precise: show that the
+compactified Euclidean operator and prescribed finite canonical boundary
+data give the physical determinant/response under the common regulator,
+including the singular-end domain and boundary transgression. The weighted
+`u^-1` L2 obstruction rules out treating nonzero compactified `H1` trace as
+an ordinary physical four-dimensional Euclidean L2 spinor; it does not
+invalidate the source's separately defined hatted prescription.
+
 **First unsupported implication.** Applying the compactified product moving-cut mixed-heat estimate to the physical finite-cut congruence or using the source's nonzero projector trace as an ordinary physical L2 state. The required weighted graph realization and its heat/contact response have not been established.
 
 **Numerical role.** None. This is a norm/domain calculation; no numerical or Lean claim follows.
