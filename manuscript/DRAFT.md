@@ -17,6 +17,8 @@ Assume the weak scalar product rule D(a psi)=a D psi+c(da)psi for bounded Lipsch
 
 The source model has a regular thermal bolt and a paired outer boundary. Its recorded domains, common bundle map, angular decomposition, state and normalization are collected in `../notes/claim-dependencies.md`; the fixed-seed compact orbit calculation is in `../notes/source-orbit-compact-bolt-check.md`. The physical trace and source matching must be stated independently of the following abstract lemma.
 
+There is also a specific endpoint-space obstruction. In the RN compactification, `g=u^(-2) ghat` and the conformal spinor relation is `psi_g=u^(3/2) psi_hat`. The unitary map from physical `L2(g)` to compactified `L2(ghat)` sends `psi_g` to `u^(-1/2) psi_hat`. If `psi_hat` is compactified `H1` with nonzero boundary trace, this image has squared norm proportional to `integral_0^a ||psi_hat(u,.)||^2 du/u`, which diverges. Hence the compactified `H1` projector condition `Pi_- tr(psi_hat)=0`, which permits nonzero `Pi_+` trace, is not automatically the ordinary physical `L2` domain. The source's boundary data may define a different renormalized or nonnormalizable realization; this argument does not invalidate that prescription. The intended endpoint Hilbert space and domain identification remain open; see `../notes/conformal-infinity-l2-domain-obstruction.md` for the weighted-norm calculation.
+
 ## 2. Scalar congruences on the paired domains
 
 **Proposition 2.1 (conditional domain preservation).** Let b be real W1,infinity, with B=||b||_infinity and G=||db||_infinity. Put E_b=exp(-b/2) and D_b=E_b D E_b on Dom(D). Under (1.1), D_b is closed and
