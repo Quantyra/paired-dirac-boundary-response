@@ -414,6 +414,16 @@ Concrete claim: the cited work establishes eta/heat-kernel anomaly results for s
 
 Remaining to-do list: match the final P1 operator and observable against this local-boundary eta framework; close the physical common-regulator response; complete the theorem-specific novelty decision; certify supported claims on GCP.
 
+## Additional close prior art: Dirac heat coefficients under metric variation
+
+Gilkey and Kirsten, [*Heat asymptotics with spectral boundary conditions II*](https://arxiv.org/abs/math-ph/0007015), published in *Proceedings of the Royal Society of Edinburgh A* 133 (2003), 333–361, determine the local Dirac heat coefficient `a_3` for compact smooth manifolds with spectral boundary conditions. Their boundary projection is the pseudodifferential projection onto the nonnegative spectrum of a tangential Dirac operator (arXiv version, Sec. 1). In the metric-variation argument (Eqs. (15)–(18)), they vary a Dirac operator while adjusting the tangential boundary data so the spectral boundary condition remains fixed, derive the heat-trace variation, and extract a second variation of `a_3`.
+
+This is closer method prior art than a static heat-coefficient table: metric variation, a varying Dirac square, boundary-domain bookkeeping and a second variation of a heat coefficient are all present. Its scope remains distinct from P1's local paired projector and complementary first-order realization, simultaneous mass/log mixed Hessian, angular mass tower and chiral LLL allocation, rough cubic/log seam class, and physical common-regulator observable. The result therefore rules out a novelty claim based only on computing a Dirac heat coefficient or differentiating a heat trace with boundary data. It does not settle whether the complete P1 response is a specialization or a distinct theorem; that comparison requires the final P1 operator, projector, observable and normalization on one Hilbert space.
+
+Concrete claim: this source derives the stated first metric variation and a second variation of the smooth spectral-boundary `a_3` coefficient. Ordinary argument: compare its Section 1 boundary projection and Eqs. (15)–(18) with the P1 local paired domain and mixed response. First unsupported implication: prove or rule out a specialization of the final P1 response, including the source conversion and common regulator. Numerical role: none. Lean role: none.
+
+Remaining to-do list: compare the final P1 operator and observable against this variation framework; close the physical common-regulator response; finish the theorem-specific novelty decision; certify supported claims on GCP.
+
 ## Theorem-level scope check: finite-regularity and interface expansions
 
 The source-level comparison for the rough-heat claim is now pinned to the
