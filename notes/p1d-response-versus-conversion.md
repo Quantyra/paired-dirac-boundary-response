@@ -100,6 +100,53 @@ comparison must subtract the full-Weyl tangent local terms when decomposing
 that family, while separately retaining the source contact/conversion and
 LLL terms according to the actual action definition.
 
+## Finite-cut comparison ledger for the two Hessians
+
+Fix `t>0`, the same finite cut, common product-mode form domain, trace
+density, and smearing. Sum only over the massive `n>=1` tower, with the
+positive-time trace and Duhamel interchanges justified as in
+[`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md).
+Write
+
+    H_FW(t) = sum_n d_n H_FW,mu_n(t),
+    H_orb(t) = sum_n d_n H_orb,mu_n(t),
+    D(t) = sum_n d_n D_mu_n(t),
+
+where `D_mu` is the complete correction from equation (4) of that note.
+Write the source's finite-cut conversion identity as
+
+    J_src''(t) = G_src(t) + C_src(t),
+    G_src(t) = Theta(t)/2 [D_w T_t(u)+D_u T_t(w)],
+    C_src(t) = 2 Theta'(t) I_t(u,w).
+
+The two existing identities then give the exact ledger
+
+    H_FW(t) - J_src''(t)
+      = [H_orb(t) - G_src(t)] + [D(t) - C_src(t)].       (4)
+
+Equation (4) is algebraic under the common-cut assumptions; it does not
+assert that either bracket vanishes. In particular, the first bracket is
+not known to vanish: `G_src` is the source geometric variation of the
+smeared trace, whereas `H_orb` is the mixed orbit heat-trace Hessian. The
+second bracket also has distinct ingredients: `D` contains mass and
+commutator vertices, whereas `C_src` is the conversion contact. Any
+cancellation between these brackets needs its own operator and trace
+derivation.
+
+For local tangent subtractions `T_FW,T_src` at that same cut, set
+`delta_T=T_FW-T_src`. The corresponding remainder ledger is
+
+    r_FW(t) - r_src(t)
+      = [H_orb(t)-G_src(t)] + [D(t)-C_src(t)] - delta_T(t). (5)
+
+The source's separate LLL block, physical boundary transgression, local
+action restorations and prescribed normalizations are not included in
+(4)--(5); they must be added on both sides before taking a physical
+endpoint. These positive-time identities do not justify the small-time
+limit, spatial-cut removal, or an interchange of those limits. Equations
+(4)--(5) sharpen the finite-cut comparison target but do not close the
+source-observable bridge.
+
 Remaining to-do list: derive the exact same-regulator identity between the
 full-Weyl response, source conversion, contact and LLL; then prove the
 uniform curved remainder, finish the physical-domain and novelty audits,
