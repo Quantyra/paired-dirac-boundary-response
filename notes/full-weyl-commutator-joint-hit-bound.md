@@ -1,4 +1,4 @@
-﻿# Conditional boundary-layer target for the odd-odd commutator pair
+# Conditional boundary-layer target for the odd-odd commutator pair
 
 This note isolates a sufficient estimate for the surviving gradient-gradient
 commutator term in the curved product model. A boundary-layer part means the
@@ -358,3 +358,65 @@ the reflected-kernel factor `exp(-(y+y')^2/(cr))` with `r<=t` outside the
 collar. First unsupported implication: compute and match the local interior
 conjugation contribution, then extend to the moving physical cutoff and full
 common-regulator response. Numerical role: none.
+
+## Exact interior localization of the conjugation defect
+
+There is an exact same-domain reduction for the non-hit *interior* part; it
+does not require comparing `Q_X` and `Q` as bounded perturbations on their
+global domains. Let `X` be the pointwise unitary multiplier defining
+`Q_X=XQX^(-1)`. Choose a smooth scalar cutoff `chi_rho(y)` that vanishes
+for `y<=rho`, equals one for `y>=2 rho`, and has
+`|nabla^k chi_rho|<=C_k rho^(-k)`. Set
+
+    F_rho = chi_rho X,        G_rho = chi_rho X^(-1).
+
+Both are smooth multipliers vanishing near the physical boundary, so they
+preserve the mixed operator domain of `Q`. Since multiplication operators
+satisfy `F_rho G_rho=chi_rho^2`, direct algebra gives the exact identity
+
+    chi_rho (exp(-r Q_X)-exp(-r Q)) chi_rho
+       = [F_rho, exp(-r Q)] G_rho
+         + [exp(-r Q), chi_rho] chi_rho.                 (8)
+
+No claim that `X` itself preserves the domain is used. For either cutoff
+multiplier `A` in (8), common-domain Duhamel is valid:
+
+    [A, exp(-r Q)]
+       = integral_0^r exp(-(r-s)Q) [Q,A] exp(-sQ) ds.    (9)
+
+Write `Q=-(nabla^*nabla+E)` in Laplace-type form. On the smooth core the
+commutator is the explicit first-order differential operator
+
+    [Q,A] = -2 (nabla^i A) nabla_i
+             - (nabla^i nabla_i A) - [E,A].             (10)
+
+Thus (8)-(10) reduce the non-hit term to local heat-kernel words with the
+usual common `Q` domain. Expanding the `chi_rho [Q,X]` contribution is the
+ordinary interior calculation whose local coefficients must match the
+curved tangent/source subtraction. Terms containing derivatives of
+`chi_rho` are supported in the transition strip `rho<=y<=2 rho`; if the
+external source insertions are restricted to `y>=3 rho`, these terms connect
+points separated by at least `rho`. Gaussian off-diagonal bounds for `Q`
+(and the corresponding first-derivative kernel bounds for the order-one
+operator in (10)) then give exponential suppression
+`exp(-rho^2/(c t))`, uniformly up to Duhamel endpoints. The logarithmic
+choice of `rho_t` in the preceding section makes this cutoff-transition
+error higher order than any prescribed power, after accounting for the
+polynomial `rho_t^(-1)` factors.
+
+This proves an algebraic reduction and identifies the local operator to
+expand; it does not yet bound the full trace with its insertions, compute the
+interior coefficient, justify the needed derivative-kernel trace ideals, or
+match the result to the complete source subtraction. It also gives no
+moving-cut uniformity. In particular, the global bounded-potential estimate
+(13) remains unavailable because `X` does not preserve the boundary domain;
+(8) only uses cutoffs that vanish at that boundary.
+
+Concrete claim: on a fixed pinned smooth collar, the localized semigroup
+defect has the exact representation (8)-(10) by common-domain Duhamel words.
+Ordinary argument: introduce a cutoff that is one on the non-hit insertions
+and zero near the boundary; use `F_rho G_rho=chi_rho^2` and the commutator
+Duhamel identity; compute the Laplace-type commutator. First unsupported
+implication: estimate the resulting trace words with insertions, compute and
+match their interior coefficients, then transfer uniformly through the
+physical cut and common regulator. Numerical role: none.
