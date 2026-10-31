@@ -1,0 +1,6 @@
+'PairedDirac.positiveSquare_domain_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mem_positiveSquare_domain_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_inner_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_nonneg_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_symmetric_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.positiveSquare_le_adjoint_draft' depends on axioms: [propext, Classical.choice, Quot.sound]

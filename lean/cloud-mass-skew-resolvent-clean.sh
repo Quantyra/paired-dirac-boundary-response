@@ -1,9 +1,9 @@
 #!/bin/bash
 # Fresh source-only replay of the abstract positive-mass resolvent assembly; run only on GCP.
 set -euo pipefail
-run="$HOME/quantyra-space-runs/paper1-mass-skew-resolvent-clean-20261030a"
+run="$HOME/quantyra-space-runs/paper1-mass-skew-resolvent-clean-20261030b"
 archives="$HOME/paper1-exact-tree-archives-20261029"
-work="/dev/shm/paper1-mass-skew-resolvent-clean-20261030a"
+work="/dev/shm/paper1-mass-skew-resolvent-clean-20261030b"
 mkdir "$run"
 exec > >(tee "$run/run.log") 2>&1
 trap 'code=$?; printf "%s\n" "$code" > "$run/exit-code"; date -u > "$run/finished-utc"' EXIT
@@ -50,7 +50,7 @@ printf '%s  %s\n' '8fd57dcf16df5d896049b2f7cfe77c99c29c554bf503348cb6cbc0df68424
 cp "$HOME/MassSkewSurjectiveDraft.lean" MassSkewSurjectiveDraft.lean
 printf '%s  %s\n' 'b3cfe5b3a102070468a747d61b061a1df8cc1ec34172b24e1b3e6bdf2cf37a30' MassSkewSurjectiveDraft.lean | sha256sum -c -
 cp "$HOME/MassSkewScalingDraft.lean" MassSkewScalingDraft.lean
-printf '%s  %s\n' 'd8370cc9f7b2b1617276562eeef15102f569dee691469da820d854af734662c3' MassSkewScalingDraft.lean | sha256sum -c -
+printf '%s  %s\n' 'd8370cc9f7b2b1617276562eefe15102f569dee691469da820d854af734662c3' MassSkewScalingDraft.lean | sha256sum -c -
 cp "$HOME/ScaledSkewClosedDraft.lean" ScaledSkewClosedDraft.lean
 printf '%s  %s\n' '8d1f5857a2ace5fe7a04513211aecbb72390ef85ac56e184b2a8efeaad40760c' ScaledSkewClosedDraft.lean | sha256sum -c -
 cp "$HOME/RealScaledSkewAdjointDraft.lean" RealScaledSkewAdjointDraft.lean

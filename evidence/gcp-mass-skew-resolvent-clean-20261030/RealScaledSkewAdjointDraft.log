@@ -1,0 +1,3 @@
+'PairedDirac.real_scaled_adjoint_domain_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.real_scaled_adjoint_eq_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.real_scaled_skew_adjoint_draft' depends on axioms: [propext, Classical.choice, Quot.sound]

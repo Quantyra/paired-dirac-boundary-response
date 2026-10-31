@@ -1,0 +1,7 @@
+'PairedDirac.mass_shift_surjective_from_skew_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mass_shift_solution_bound_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mass_shift_injective_from_skew_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mass_shift_bijective_from_skew_draft' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.mass_resolvent_solution_exists_unique_bound_draft' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
