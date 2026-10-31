@@ -898,3 +898,26 @@ Thus the factor-two comparison is not an inconsistency between two formulas for 
 Concrete claim: the exact flat full-Weyl total and the scalar bridge component differ by the stated aggregate commutator target under their shared normalization. First unsupported implication: direct vertex derivation and curved/common-regulator extension. Numerical role: none.
 
 Remaining to-do list: derive the aggregate target directly from the commutator-involving Duhamel vertices; simplify and match the curved ledger; close the full physical common-regulator and novelty audits; certify supported claims in Lean on GCP.
+
+### Direct fixed-flat Duhamel evaluation of the commutator coefficient
+
+The aggregate flat commutator target can be checked directly in the existing vertex formula, without inferring it by subtracting the scalar bridge. In equation (7) of `full-weyl-orbit-correction-vertices.md`, the gradient-commutator vertices contribute the gradient-gradient term
+
+    H_grad(t,k;mu) = exp(-t mu^2)/pi * (mu^2 t k^2/2) A(t k^2).
+
+The mixed-second gradient vertex is proportional to `X` and has zero rank-two fiber trace because `tr X=0`. Each orbit-gradient ordered cross term is odd in `mu`; it cancels between the `+mu` and `-mu` modes in the recorded sign-paired tower. Thus the displayed even gradient-gradient term is the entire commutator-involving contribution to this fixed-flat sign-paired response at this order.
+
+Summing over the massive tower gives the exact positive-time multiplier
+
+    H_grad,tower(t,k) = (t k^2/(2 pi)) A(t k^2) [-Theta'(t)].
+
+With `Theta(t)=C/t+O(1)` and `-Theta'(t)=C/t^2+O(1)` from the recorded tower estimate, and `0<A(x)<=1`, smooth compactly supported directions permit dominated convergence after dividing by `t^(-1)`. The coefficient is
+
+    integral_R uhat(k) what(k) H_grad,tower(t,k) dk/(2 pi)
+      = C/(2 pi t) integral_R u'(y) w'(y) dy + o(t^(-1)).
+
+For `C=2 b_s^2`, this is `+b_s^2/(pi) U_1/t` in the doubled trace and `+b_s^2/(2 pi) U_1/t` after the conditional physical-half factor. This directly verifies the previously recorded aggregate target for the fixed flat sign-paired model. It does not prove a curved commutator estimate, boundary/domain transfer, or common-regulator endpoint. The earlier description of the target as subtraction-only is superseded for this flat coefficient; the distinction between the scalar bridge and full-Weyl sectors remains essential.
+
+Concrete claim: the fixed-flat gradient-commutator Duhamel contribution has the stated `U_1/t` coefficient in the sign-paired tower. Ordinary argument: isolate the gradient-gradient term in (7), use zero fiber trace for the mixed vertex and odd-mass cancellation for orbit-gradient terms, sum the tower, and apply dominated convergence using `A<=1`. First unsupported implication: extend the vertex bounds and coefficient through the admitted curved/domain family under the common regulator. Numerical role: none.
+
+Remaining to-do list: derive and bound the curved commutator contribution; match it with the curved scalar, orbit, contact, density, boundary and LLL terms under one regulator; finish novelty and manuscript audits; certify supported Lean statements on GCP.
