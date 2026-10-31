@@ -32,4 +32,21 @@ The candidate's potentially distinctive package is the actual paired first-order
 
 Current disposition: **undecided**. The remaining physical folding and full-response dependencies, scalar benchmark discrepancy, final-scope comparison and later-literature search prevent an evidence-backed continue/narrow/merge/park decision. No wormhole existence, stability, curved regulator theorem or Lean certification follows from this comparison.
 
-Remaining to-do list: resolve those dependencies and search later applicable literature; record the supported research decision; complete the manuscript and certify its claims in Lean on GCP.
+## Focused later-literature screen (2026-10-30)
+
+A targeted arXiv/web search used combinations of `Dirac heat trace metric
+variation rough coefficients boundary`, `Dirac determinant boundary heat
+trace metric perturbation`, `mixed boundary Dirac heat kernel interface
+Weyl`, and `heat trace response Dirac discontinuous metric coefficient
+boundary`. The directly relevant items returned were the established smooth
+spectral-boundary heat asymptotics already listed above and Ronge's 2025
+Lorentzian APS Fredholm-perturbation paper. No exact statement matching the
+paired Riemannian realization, full scalar Weyl congruence, rough/log seam,
+and common-regulator mixed response appeared in these results. This is a
+limited discovery screen, not an exhaustive priority search or evidence of
+novelty; broaden and rerun it after P1's actual theorem statement is frozen.
+
+Remaining to-do list: close the physical response bridge, broaden the
+theorem-specific literature comparison, resolve the scalar benchmark issue,
+record the supported S001.3 decision, complete the manuscript, and certify
+its claims in Lean on GCP.
