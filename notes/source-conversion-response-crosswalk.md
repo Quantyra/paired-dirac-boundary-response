@@ -172,10 +172,12 @@ comparison. It cannot be substituted for the Euclidean orbit contact
    have GCP receipts. The [`fourth-order full-Weyl jet receipt`](../evidence/gcp-full-weyl-angular-jet4-20261030/README.md)
    extends the polynomial check through the x^4 coefficient; its reused
    dependencies have local-change warnings, and it proves neither the
-   analytic tail estimates nor the conditional seam integral. None of these
-   receipts formalizes the full-Weyl operator, physical paired domains, or
-   complete mixed response. Formalize those claims on GCP only after their
-   ordinary hypotheses and vertices are fixed.
+   analytic tail estimates nor the conditional seam integral. The new
+   [`abstract full-Weyl mode-square identity`](../evidence/gcp-full-weyl-square-algebra-20261030/README.md)
+   proves the noncommutative expansion under explicit ring hypotheses, but
+   likewise does not formalize the represented operator, physical paired
+   domains, or complete mixed response. Formalize those claims on GCP only
+   after their ordinary hypotheses and vertices are fixed.
 
 The source notes are imported evidence, not yet an independently checked P1
 theorem. No physical action, wormhole existence or stability conclusion is
