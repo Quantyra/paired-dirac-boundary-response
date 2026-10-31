@@ -816,3 +816,53 @@ sectors under one regulator. Numerical role: none.
 Remaining to-do list: reduce (7)+`H_1` to the source curvature form; match
 the complete orbit/contact/commutator/density/boundary/LLL ledger; close the
 common-regulator endpoint and certify supported claims in Lean on GCP.
+
+### Flat full-Weyl/orbit split fixes the commutator-sector target
+
+A second flat check locates the mismatch with the source contact inside the
+full-Weyl/orbit split. Let `b_s` be the sphere scale, so `C=2 b_s^2`, and
+`U_1=integral_R u'w'`. The massless rank-two full-plane orbit multiplier is
+`H_t(k)=2[I(x)-xI'(x)]/(pi t)`, where
+`I(x)=1-x/12+x^2/120+O(x^3)`. Since `I-xI'=1+O(x^2)`, the tower-summed orbit
+Hessian has a `t^(-1)` local term proportional to `U_0` but no `U_1` term.
+The complete full-Weyl-minus-orbit tangent correction in the same flat
+normalization is obtained by subtracting this orbit expansion from
+`full-weyl-angular-local-subtraction.md`. After the conditional physical-half
+factor, its `U_1/t` coefficient is
+
+    D_full(t)|_(U_1/t) = -b_s^2/(2 pi t) U_1.
+
+By contrast, the localized scalar angular-mass bridge computed above gives
+
+    D_scalar(t)|_(U_1/t) = -b_s^2/(pi t) U_1.
+
+The exact mode-square decomposition in
+`full-weyl-orbit-correction-vertices.md` writes the difference between these
+families as the commutator correction. Thus, in this declared flat model, the
+combined commutator/cross-vertex sector must supply
+
+    D_comm(t)|_(U_1/t) = +b_s^2/(2 pi t) U_1.             (8)
+
+The cancellation of the `U_1` leading `t^(-2)` scalar term by that sector is
+also required, since the complete Duhamel correction has no discrepancy in
+that leading coefficient beyond the pure angular term already recorded in
+the flat ledger. Equation (8) is a fixed-product flat coefficient target,
+not a proof of the vertex contribution or a curved estimate. It shows why
+the scalar `K_2+H_1` result must not be matched to the source contact alone.
+The source geometric bracket and contact are separate again in
+`p1d-response-versus-conversion.md`.
+
+Concrete claim: the flat full-Weyl-minus-orbit `U_1/t` coefficient and the
+scalar angular-mass subcomponent differ by `+b_s^2/(2 pi) U_1`; the remaining
+commutator/cross vertices must account for this difference under the shared
+flat normalization. Ordinary argument: expand the massless orbit multiplier,
+subtract it from the complete full-Weyl tangent multiplier, and compare with
+the scalar bridge coefficient. First unsupported implication: derive the
+same commutator coefficient from its Duhamel vertices and extend the local
+cancellation to the admitted curved family under the common regulator.
+Numerical role: none.
+
+Remaining to-do list: verify (8) directly from the commutator vertex
+integrals; derive its curved counterpart and combine with `K_2+H_1`; close
+the full source ledger and endpoint; finish novelty/manuscript review and
+GCP Lean certification.
