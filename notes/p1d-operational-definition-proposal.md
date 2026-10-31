@@ -43,11 +43,18 @@ representative is `U_eta^* M_chi U_eta`. Set `u_chi=chi*u` and
 these localized directions; they are not discarded as lower-order errors.
 The multiplier norm is exactly uniform by unitarity:
 `||U_eta^* M_chi U_eta||=||M_chi||=||chi||_infinity`. This does not give
-uniform first- or second-derivative multiplier bounds, graph-commutator
-bounds, or moving-domain transfer when the physical coordinates vary with
-`eta`; those remain proof obligations. The full subtraction formula is not
-determined by the frozen source. Section 4 is the best-supported tangent
-candidate; the full-Weyl expression below is the comparison alternative.
+uniform derivative or graph bounds for an arbitrary physical map. For the
+fixed smooth product-frame family, `product-frame-moving-cut-uniformity.md`
+establishes uniform graph bounds conditionally, and
+`weighted-fields-moving-cut-transport.md` proves `O(eta)` `W^{1,infinity}`
+transport for the admitted `W^{2,infinity}`-controlled fields and their
+approximants. The associated complete heat-derivative comparison is in
+`product-frame-moving-cut-response-rate.md`. These results give the cutoff
+transfer in that model under their hypotheses. Matching the physical source
+bundle, transported infinity data, full rough family and common regulator to
+those hypotheses remains open. The full subtraction formula is not determined
+by the frozen source. Section 4 is the best-supported tangent candidate; the
+full-Weyl expression below is the comparison alternative.
 
 **Section 4 tangent candidate.** Section 4 of the frozen source gives
 `H_t(k)=2F(t k^2)/(pi t)` and separately retains the massive angular weight
@@ -130,11 +137,11 @@ not evidence that the full P1-D bound fails.
    Section 4 diagnostic; verify whether full-Weyl angular-mass variations
    remain in `r_curved` or receive a separate action subtraction. Distinguish both from
    endpoint conversion `J_e''`.
-2. Prove uniform first- and second-derivative and graph-commutator bounds
-   for the physical representatives of `M_chi` under `U_eta`, and establish
-   the moving-domain transfer as `eta` tends to zero. The multiplier norm
-   itself is already uniform by unitarity. State whether the theorem is
-   uniform in any larger cutoff family.
+2. Match the source's physical maps and direction family to the fixed
+   product-frame transfer hypotheses above, including the physical boundary
+   data and full atlas `W^{2,infinity}` bounds. The product-model graph and
+   multiplier transfer is conditional evidence, not that physical match.
+   State whether the theorem is uniform in any larger cutoff family.
 3. Give the signed formula for `A_eta`, including density, contact,
    transgression, LLL/cocycle, and finite local terms.
 4. Confirm that the half-trace, boundary-length and whole-action factors
