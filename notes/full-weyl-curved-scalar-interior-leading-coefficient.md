@@ -629,3 +629,49 @@ Remaining to-do list: calculate `integral(K_2+H_1)` in source variables;
 verify the rough curved source contact expansion and matching measure; combine
 all remaining P1 sectors under the common regulator; finish novelty and GCP
 certification.
+
+### Flat tangent value of the integrated scalar next coefficient
+
+The next coefficient can be evaluated exactly in the flat seed, which is a
+useful check before attempting the curved source match. Set `f_0=1`, take
+smooth compactly supported full-line directions `u,w`, and use
+`f_u=-u`, `f_w=-w`. Then `B_h=0`, so `H_1=0`. The exact path formula reduces
+to
+
+    H_0=12 <u><w>-4<uw>+2<u'X_w+w'X_u>,
+
+where every factor is evaluated at `y+sqrt(t)xi_s`. After integration in `y`,
+the last two terms are translation invariant: their contributions are
+`-4 integral uw +2 integral(u'X_w+w'X_u)` with no `t` coefficient. For the
+first term, expand the two bridge averages using
+`G(s,r)=E[xi_s xi_r]=2(min(s,r)-sr)` and integrate by parts in `y`. Its
+coefficient of `t` is
+
+    12 [ integral_0^1 integral_0^1
+         (G(s,r)-(G(s,s)+G(r,r))/2) ds dr ] integral u'w'
+       = -2 integral u'w',
+
+since the two covariance integrals are `1/6` and `1/3`, respectively. Hence
+
+    integral K_2 = -2 integral u'w',    integral H_1=0.
+
+The doubled scalar heat coefficient at order `t^(-1)` is therefore
+`-C/pi integral u'w'`; after the conditional physical-half factor it is
+`-C/(2 pi) integral u'w'`. By contrast, the source's flat contact target
+from Eq. (4) above is `+C/(6 pi) integral u'w'`. Thus the scalar next
+coefficient is not equal to the source contact coefficient by itself. In the
+ledger `D_scalar-C_src`, their conditional physical-half difference is
+`-2C/(3 pi) integral u'w'`. This is a component diagnostic only; the orbit,
+full-Weyl commutator, density, boundary and LLL terms are not included, and
+no full-response coefficient is inferred from it.
+
+Concrete claim: in the flat tangent seed, the integrated scalar path-Hessian
+coefficient is exactly `-2 integral u'w'` and the explicit-exponential term
+vanishes. Ordinary argument: insert `f_0=1` into the exact path formula, use
+bridge covariance, and integrate by parts. First unsupported implication:
+combine this scalar value with the complete source geometric and remaining
+P1 sectors under the common regulator. Numerical role: none.
+
+Remaining to-do list: derive the curved integrated coefficient; assemble all
+sectors against the source subtraction; prove the common-regulator endpoint;
+finish novelty/manuscript review and GCP Lean certification.
