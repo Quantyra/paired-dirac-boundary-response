@@ -315,3 +315,13 @@ Remaining to-do list: specialize the interface coefficients at the first
 relevant P1 order with localized directions and matched trace normalization;
 close the physical source/common-regulator bridge; then complete the novelty
 decision, supported manuscript and GCP Lean certification.
+
+## Focused follow-up search (2026-10-31)
+
+A further arXiv-focused screen used the combinations `Dirac operator heat kernel boundary metric perturbation rough coefficients`, `paired Dirac local boundary conditions heat trace perturbation response`, and `Dirac heat trace interface logarithmic metric variation`. The relevant results were already represented in the comparison above: the smooth mixed-boundary `a_5` heat-coefficient work, general smooth Dirac boundary-domain theory, and Lorentzian APS boundary perturbation criteria. No new source returned a direct match for the candidate's paired Euclidean scalar congruence with simultaneous mass/log mixed response, cubic/log seam class and common physical regulator.
+
+This is a bounded search-engine screen with no validated completeness claim. It does not prove priority or novelty, and the same-source exact-specialization check for P1's full conformal square and higher-order response remains open. It does not change the current `undecided` disposition.
+
+Concrete claim: this query set did not surface an additional direct-match source beyond the adjacent works already catalogued. First unsupported implication: an exhaustive theorem-specific literature comparison after freezing the final supported claim. Numerical role: none.
+
+Remaining to-do list: freeze the supported P1 claim; complete source-level coefficient and hypothesis comparison against the closest interface/mixed-boundary work; then decide continue, narrow, merge or park before manuscript readiness and GCP Lean certification.
