@@ -146,9 +146,9 @@ Remaining to-do list: establish the curved commutator and full physical source-o
 
 ## Conditional boundary-layer scale for the curved odd-odd pair
 
-[`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md) records a precise sufficient input for the surviving curved gradient-gradient pair. If the mixed `Q`/`Q_X` trace word has a Gaussian-localized seam contribution bounded by `C t^(-1) integral exp(-y^2/(ct)) |u'w'| dy`, uniformly over the Duhamel simplex and after removing the tower mass factor, the source jets `u',w'=O(y^2)`, simplex area `t^2`, and `-Theta'(t)=O(t^(-2))` yield `O(t^(3/2))` for that boundary-layer component. This is conditional: the localized mixed-boundary trace estimate itself is not proved, and the non-hit local subtraction, physical source terms and common-regulator limit remain open. It is not a physical admission margin and has no Lean certification.
+The initial same-coordinate version `C t^(-1) integral exp(-y^2/(ct)) |u'w'| dy` in [`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md) is withdrawn because the Duhamel word evaluates its multipliers at distinct normal points. The corrected bilocal input and conditional `O(t^(3/2))` power count are recorded in the correction section below. The actual mixed-boundary estimate, non-hit local subtraction, physical source terms and common-regulator limit remain open. It is not a physical admission margin and has no Lean certification.
 
-Concrete claim: the stated Gaussian trace input implies the boundary-layer power by direct integration and tower counting. First unsupported implication: prove that input for the actual complementary-domain heat product and integrate it into the full physical response. Numerical role: none.
+Concrete claim: the corrected bilocal Gaussian input implies the conditional boundary-layer power by its normalized second moment and tower counting. First unsupported implication: prove that input for the actual complementary-domain heat product and integrate it into the full physical response. Numerical role: none.
 
 Remaining to-do list: prove the mixed-boundary trace input; close non-hit subtraction, physical density/contact/boundary/LLL terms and common regulator; finish novelty/manuscript; certify supported claims on GCP.
 
