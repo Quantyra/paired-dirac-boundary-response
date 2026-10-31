@@ -349,3 +349,43 @@ Remaining to-do list: derive the signed action allocation from the source;
 prove the four block matches and lower-order cancellations under one physical
 regulator; control the rough seam, non-hit region and moving cut; then finish
 the S001 decision and certify supported formalizable statements on GCP.
+
+### Fixed-interior variable-insertion sector: coefficient check
+
+The technical note
+[`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md)
+now carries the compact-interior variable-insertion expansion through the
+angular-tower limit. Its internal normalization can be checked from
+`R=2(h'-h^2)`, the rank-two heat coefficient
+`a_1=-R/12=(h^2-h')/6`, and the exact Duhamel moment
+
+    2 integral_0^t (t-r) (r(t-r)/t) dr = t^3/6.
+
+Combining the same-boundary and conjugation-defect words gives, after the flat
+`a_0` subtraction and in raw rank-two normalization,
+
+    R_same+defect,int(t)
+      = -(b_S^2/(6 pi)) integral [h' u'w' + u''w''] dmu + O(t).
+
+The `h^2` terms cancel inside this fixed smooth interior sector. This audit
+checks the local heat coefficient, both Duhamel orderings and the tower
+scaling; it does not prove the variable-coefficient parametrix remainder
+uniformly at the physical cut. Nor does it show that the residual `h'` and
+`u''w''` terms are canceled by another sector or included in the source's
+tangent/cutoff restoration. In particular, this coefficient is not evidence
+that the complete `r_curved` estimate fails.
+
+Concrete claim: for compactly supported smooth insertion jets in the fixed
+product interior, the paired odd-odd sector has the displayed integrated
+coefficient under the parametrix hypotheses of the linked note. Ordinary
+argument: use the scalar `a_1` coefficient for the same-boundary word, the
+relative-Gaussian second moment for the conjugation defect, and the exact
+two-ordering Duhamel simplex integral. First unsupported implication: match
+this term and every other response/action sector to the source cutoff and
+common-regulator subtraction. Numerical role: none. Lean role: none for this
+analytic heat expansion.
+
+Remaining to-do list: establish the variable-coefficient parametrix and
+seam/non-hit bounds; match this coefficient, the four remainder blocks and
+all source sectors on one physical regulator; finish the S001 decision and
+certify supported formalizable results on GCP.
