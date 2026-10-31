@@ -130,25 +130,52 @@ with constants independent of `mu` on the declared field and direction
 sets. No common second-order operator domain is needed; the statement is at
 form level.
 
-Here is a sufficient uniform trace criterion that makes the remaining
-analytic input explicit. On the fixed compact cut, require a common form
-domain `V=H^1`, and a holomorphic extension in a parameter polydisc of radius
-`r>0` independent of `mu`. Require its shifted forms to be uniformly
-sectorial and to satisfy, for some fixed `K,c>0`,
+The common form family can be built on the fixed compact cut under the
+first-order domain hypotheses already used for (1a): take a fixed elliptic
+projector realization with domain `V subset H^1`, preserved by the scalar
+multipliers and their inverses. Write `b_z=b+z_1u+z_2w`,
+`m_z=exp(-b_z/2)`, and `D_z=m_z D m_z`. With the inner product linear in the
+first slot, set `D_conj(z)=m_conj(z) D m_conj(z)`, and define the complex form
+on `V` by
 
-    Re q_(mu,z)[psi,psi] >=
+    q_(mu,z)(psi,phi) = <D_z psi,D_conj(z) phi>
+       + <[mu^2 exp(-2b_z)-i mu exp(-2b_z)G c(db_z)] psi,phi>.
+
+For real `z` this is exactly the closed form of the full mode square (1),
+with form domain `V`; the second slot's conjugate parameter makes the
+sesquilinear form holomorphic in `z`. Multiplication by `m_z` is analytic on
+`H^1`, so `D_z:V->L^2` and the displayed potential `V->L^2` are holomorphic.
+Their difference from the base forms obeys
+
+    |q_(mu,z)-q_(mu,0)|(psi,psi)
+       <= C (|z_1|+|z_2|) (||D psi||^2
+                          +(1+mu^2)||psi||^2),
+
+on a fixed small polydisc, with `C` independent of `mu`: the orbit term
+follows from `D_z-D_0=O(|z_1|+|z_2|):V->L^2`, while the two potential
+differences are `O(rho mu^2)` and `O(rho |mu|)` in `L^infinity`. The latter
+is absorbed using `|mu| <= (1+mu^2)/2`. The shifted coercivity proved above
+therefore persists on a sufficiently small complex polydisc, uniformly in
+`mu`, and the forms are uniformly sectorial there. This verifies the common
+domain and holomorphy criterion subject to the stated fixed elliptic
+projector realization; it does not assume a common second-order operator
+domain.
+
+Let `q_tilde_(mu,z)=q_(mu,z)+K<.,.>` be the fixed scalar shift of these
+forms.
+
+For some fixed `K,c>0`, the shifted forms satisfy
+
+    Re q_tilde_(mu,z)[psi,psi] >=
       c (||D psi||^2 +(1+mu^2)||psi||^2),                    (1g)
 
-where `q_(mu,z)` is the form of the complexified full square plus the
-parameter-independent shift `K`. The form and its sectorial bounds must also
-be uniform in `mu` and `z` on that polydisc. The relative bounds above show
-that a sufficiently small radius can be chosen uniformly for the first and
-mixed correction vertices, once this common-domain holomorphic extension is
-constructed. Constructing and checking that extension for the actual
-full-Weyl family remains an obligation.
+where the shift `K` is independent of `z` and `mu`. The fixed cut and its
+elliptic projector must still be identified with the physical mode domain.
 
-Under these hypotheses, write `A_(mu,z)` for the associated sectorial
-operator. The compact two-dimensional embedding `H^1 -> L^2` belongs to
+Under these hypotheses, write `A_(mu,z)` for the operator associated with
+`q_tilde_(mu,z)`. Since `Q_(mu,z)=A_(mu,z)-K`, the fixed factor `exp(tK)` is
+absorbed into constants on `[epsilon,T]`. The compact two-dimensional
+embedding `H^1 -> L^2` belongs to
 `S_p` for every `p>2`. Uniform positive-time smoothing gives
 `||exp(-s A_(mu,z))||_(L2->H1) <= C_s exp(-c' s mu^2)`. Factoring the
 semigroup into `k` equal-time factors, for an integer `k>p`, and applying
@@ -174,11 +201,10 @@ derivative to interchange for this finite-cut full-Weyl response, and permits
 integration on `[epsilon,T]` term by term. The LLL remains a separate finite
 block.
 
-This closes the coercivity step and isolates a sufficient route to massive-
-tower differentiation on a fixed compact cut and positive proper-time
-window. The common-domain holomorphic sectorial family and its uniform
-Schatten smoothing are not yet verified for the actual full-Weyl family, so
-the tower interchange remains conditional. This route supplies no
+For any fixed cut realizing the stated elliptic projector domain, this closes
+the common-form and holomorphy steps and supplies the positive-time tower
+interchange. Verifying that the physical mode domains equal this projector
+realization on each cut remains open. This route supplies no
 `epsilon->0` bound, moving-cut uniformity, source-observable identity,
 physical density/contact or boundary-transgression matching, or LLL anomaly
 transfer. No Lean check is claimed.
