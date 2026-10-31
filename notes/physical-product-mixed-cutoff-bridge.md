@@ -33,6 +33,35 @@ held fixed. If the physical-to-product conformal ratio moves with the
 variation, (2) is incomplete: its b_s, b_v and b_sv terms must be retained
 as in `fixed-cut-moving-insertion-mixed-response.md`.
 
+## Moving conformal ratio
+
+The complete mixed derivative follows directly when the interpolation
+multiplier varies. Let b=b(s,v) be a bounded real scalar family, let D=D(s,v)
+be the declared first-order family, and define A_r(s,v), L_r(s,v) and
+Lbar_r(s,v) as in (1), using E_r(s,v)=exp(r b(s,v)/2). Assume uniformly in
+r that both first-order domains are preserved on the parameter polydisc and
+that the bridge identity, its mixed derivatives and endpoint traces are
+valid in trace norm. Set
+
+    B_r(s,v)=K_r(T)+Kbar_r(T)-K_r(epsilon)-Kbar_r(epsilon).
+
+The mixed derivative of the regulated congruence difference is then
+
+    partial_s partial_v [Gamma_(epsilon,T)(1)-Gamma_(epsilon,T)(0)]
+      =1/2 integral_0^1 Tr[b_sv B_r+b_s partial_v B_r
+                            +b_v partial_s B_r+b partial_s partial_v B_r] dr.
+
+This is the four-term product rule for the moving insertion b and the full
+partner endpoint heat expression B_r. The derivatives of B_r include the
+ordered first-form vertices and the mixed second-form vertex of each partner;
+the s,v dependence of E_r also contributes to those operator derivatives.
+Any independently moving density, localization or local action term must be
+differentiated and added separately. For a fixed b, b_s=b_v=b_sv=0 and this
+reduces to (2). This formula is an exact fixed-cut, positive-endpoint
+comparison under the listed hypotheses. It does not prove those hypotheses
+for the source realization or permit removal of epsilon, T or the spatial
+cut.
+
 For each r and each partner, the complete mixed heat derivative is the sum
 of two ordered first-form-vertex insertions minus the mixed second-form
 vertex, as in `mixed-heat-vertex-inventory.md`. In a finite Galerkin

@@ -23,8 +23,11 @@ squares on a common Hilbert space. It retains both partner heat traces and
 both proper-time endpoints. The identity requires domain preservation and
 trace-class/cyclicity hypotheses; it does not equate the endpoint actions,
 remove either regulator, or provide the mixed mass/log derivative. If the
-conformal ratio moves with the fields, its derivatives and all local terms
-must also be retained. This is a precise comparison target, not the physical
+conformal ratio moves with the fields, the four-term moving-insertion
+derivative is now explicit in
+[the mixed bridge note](physical-product-mixed-cutoff-bridge.md), together
+with the derivatives of both partner heat families. All local terms must
+also be retained. This is a precise comparison target, not the physical
 source bridge.
 
 The full-Weyl flat tangent package now includes the exact angular mode

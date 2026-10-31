@@ -414,6 +414,22 @@ vertices and local terms, and justify the common regulator. The source's
 physical-half, angular/thermal, LLL and restoration allocations remain
 unmatched.
 
+When the conformal ratio itself varies, write `b=b(s,v)` and
+`B_r(s,v)=K_r(T)+Kbar_r(T)-K_r(epsilon)-Kbar_r(epsilon)`. Under the same
+uniform domain and trace-norm differentiability hypotheses, the mixed
+derivative of this endpoint comparison is
+
+    1/2 integral_0^1 Tr[b_sv B_r+b_s B_(r,v)+b_v B_(r,s)
+                          +b B_(r,sv)] dr.
+
+The last term differentiates both partner heat families through their full
+ordered and mixed second-form vertices; the first three retain the moving
+conformal insertion. Moving density, localization and local action terms
+must be differentiated separately. This is the complete fixed-cut
+positive-endpoint identity for the declared interpolation, not an estimate or
+the source's common-regulator response; details and hypotheses are in
+`../notes/physical-product-mixed-cutoff-bridge.md`.
+
 Away from the seam, use a smooth cutoff `chi_rho` vanishing near the boundary
 and set `F=chi_rho X`, `G=chi_rho X^(-1)`. The exact localized identity is
 
