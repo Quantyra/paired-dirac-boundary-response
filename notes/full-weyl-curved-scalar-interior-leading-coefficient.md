@@ -912,7 +912,7 @@ Summing over the massive tower gives the exact positive-time multiplier
 
 With `Theta(t)=C/t+O(1)` and `-Theta'(t)=C/t^2+O(1)` from the recorded tower estimate, and `0<A(x)<=1`, smooth compactly supported directions permit dominated convergence after dividing by `t^(-1)`. The coefficient is
 
-    integral_R uhat(k) what(k) H_grad,tower(t,k) dk/(2 pi)
+    integral_R conjugate(uhat(k)) what(k) H_grad,tower(t,k) dk/(2 pi)
       = C/(2 pi t) integral_R u'(y) w'(y) dy + o(t^(-1)).
 
 For `C=2 b_s^2`, this is `+b_s^2/(pi) U_1/t` in the doubled trace and `+b_s^2/(2 pi) U_1/t` after the conditional physical-half factor. This directly verifies the previously recorded aggregate target for the fixed flat sign-paired model. It does not prove a curved commutator estimate, boundary/domain transfer, or common-regulator endpoint. The earlier description of the target as subtraction-only is superseded for this flat coefficient; the distinction between the scalar bridge and full-Weyl sectors remains essential.
