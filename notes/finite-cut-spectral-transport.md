@@ -94,7 +94,11 @@ For `0<tau<=1`, composition with angular heat smoothing gives
 The constant may depend on `s`; the estimate is useful for fixed positive
 `tau` and bounded `z`, but is not uniform as `tau->0` or `|z|->infinity`.
 It is an angular boundary-projector estimate, not a resolvent trace or heat
-response estimate for the full operator.
+response estimate for the full operator. The companion
+[`heat-smoothed-boundary-transport.md`](heat-smoothed-boundary-transport.md)
+gives the direct linear bound in `delta/sqrt(tau)` and the corresponding
+Schatten estimates, which are useful for coupled collar/smoothing scales;
+(3)--(4) give an angular Sobolev formulation and saturation in `ell |z|`.
 
 ## Remaining application
 
