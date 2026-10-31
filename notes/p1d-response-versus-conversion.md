@@ -6,19 +6,22 @@ The frozen [rough-variation source](https://github.com/Quantyra/quantyra-wormhol
 
 The pinned source gives no explicit formula for the localized tangent operator,
 the cutoff maps and their transition terms, or the exact allocation of density,
-contact, LLL and finite local-restoration terms in `r_curved`. A search of
-that frozen source finds `r_curved` only in the target paragraph; its tangent
-model is calculated separately in Section 4. This is not evidence that the
-intended subtraction is inconsistent, but it means the proposed estimate is
-not yet a fully operational theorem statement. Before proving a kernel bound,
+contact, LLL and finite local-restoration terms in `r_curved`. Section 5 does
+refer to “the tangent term (11),” which points to Section 4's integrable flat
+diagnostic and supports that calculation as the referenced tangent. It does
+not establish that this diagnostic exhausts the subtraction for the complete
+localized paired Weyl Hessian, or say how the angular-mass correction is
+allocated. This is not evidence that the intended subtraction is inconsistent,
+but the proposed estimate is not yet a fully operational theorem statement.
+Before proving a kernel bound,
 freeze one common Hilbert space and regulator, the physical and tangent
 families, the localization maps, the complete subtracted integrand, and its
 normalization. The identities below compare declared positive-time
 diagnostics but do not supply that missing definition.
 The [candidate operational-definition contract](p1d-operational-definition-proposal.md)
-spells out distinct Section 4 and full-Weyl angular tangent choices and the remaining
-source/action inputs; it is a proposal pending confirmation, not an adopted
-definition.
+records Section 4 as the source-referenced tangent candidate and distinguishes
+the complete full-Weyl angular tangent diagnostic. The remaining source/action
+inputs are unresolved; the contract is not an adopted definition.
 
 By contrast, [the conversion source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-variable-contact-conversion.md), equations (2)–(3), defines J_e as the endpoint difference between two regulated actions. Its second variation includes a geometric heat variation and 2 Theta'(e) I_e. That endpoint is not itself the r_curved integrand specified above. A formula relating the two, including all subtractions, measure factors and endpoint terms, would need to be derived before their power bounds can be compared.
 

@@ -6,6 +6,14 @@ frozen source at `f0eab590`, Sec. 5, states a bound for `r_curved` but does
 not supply the term-by-term subtraction formula. This note makes the missing
 choices reviewable before any proof of the bound is attempted.
 
+Section 5 does refer to “the tangent term (11),” the integrable flat
+diagnostic established in Section 4. This supports Section 4's diagnostic as
+the term explicitly referenced there. It does not specify whether that flat
+diagnostic exhausts the subtraction after localizing the complete paired
+Weyl Hessian, or how angular-mass vertices, cutoff transitions, density and
+local-action terms are allocated. The full formula for `r_curved` therefore
+remains incomplete.
+
 ## Candidate object
 
 Fix the source-prescribed seed Hilbert space and, for every finite physical
@@ -56,7 +64,11 @@ This yields
 The terms involving `Theta'` and `Theta''` encode the angular-mass
 variation; they are absent from the Section 4 expression. The physical-half
 and time/action factors below apply to either candidate, but do not make the
-two tangent subtractions equivalent. The cutoff transport and the
+two tangent subtractions equivalent. Section 5's cross-reference supports
+`T_4,chi` as its named integrable tangent candidate. Whether the `Theta'` and
+`Theta''` terms in `T_FW,chi` are also part of the localized tangent
+subtraction or are allocated elsewhere in the complete action remains to be
+derived. The cutoff transport and the
 normalization of the entire regulated action must also be specified. The
 positive-time full-Weyl-minus-orbit difference is the correction ledger
 `D_mu(t)` in [`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md);
@@ -102,9 +114,10 @@ not evidence that the full P1-D bound fails.
 
 ## Decisions required before adopting the candidate
 
-1. Decide whether the source's `r_curved` subtracts the Section 4 tangent,
-   the full-Weyl angular tangent, or another term derived from its full action; also
-   distinguish either from endpoint conversion `J_e''`.
+1. Verify whether Section 5's reference to the Section 4 tangent term (11)
+   exhausts the subtraction, or whether full-Weyl angular-mass variations
+   are included or allocated separately; also distinguish either from
+   endpoint conversion `J_e''`.
 2. Fix the actual cutoff function and the maps transporting it to each finite
    physical cut; state whether the estimate is uniform in a cutoff family.
 3. Give the signed formula for `A_eta`, including density, contact,
