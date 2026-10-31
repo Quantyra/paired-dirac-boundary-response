@@ -98,6 +98,27 @@ factor gives
        =t Theta'(t S_b) partial_u partial_w S_b
           +t^2 Theta''(t S_b)(partial_u S_b)(partial_w S_b). (6)
 
+The seed jets of `S_b` can be written explicitly. At `b=0`, `x_0(y)=y` and
+the inverse-coordinate derivative from the parent relation
+`Y_b(x)=integral_0^x exp(b(s)) ds` is
+
+    X_u(x):=partial_u x_b(x)|_(b=0)=-integral_0^x u(s) ds.
+
+For each bridge path `z_s=y+sqrt(t) xi_s`, the chain rule gives
+
+    S_u(y)= -2 integral_0^1 u(z_s) ds,
+
+    S_uw(y)= integral_0^1 [4u(z_s)w(z_s)
+                -2u'(z_s)X_w(z_s)-2w'(z_s)X_u(z_s)] ds.   (7)
+
+The terms with `X_u` and `X_w` are required because the canonical radial
+coordinate moves with the field. For the source's cubic directions,
+`u,w=O(x^3)` and `u',w'=O(x^2)`, so `X_u,X_w=O(x^4)` and the pathwise
+integrands in (7) vanish as `O(x^3)` and `O(x^6)` at the seam. Fixed log
+weights in the higher jets can be retained in these estimates. This verifies
+the local direction factors in the angular weight; it does not bound the
+mixed derivative of the complete heat kernel.
+
 These are ordinary chain-rule identities; the path map `x_b`, `f_b`,
 `A_h`, `B_h`, and the thermal images also vary and must be differentiated.
 At the seed `S_0=1`, their angular weights are precisely `Theta'(t)` and
