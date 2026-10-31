@@ -20,6 +20,17 @@ The raw logs for runs a, b and c remain on the GCP host and should be copied int
 
 The builder was observed `RUNNING`. The subsequent stop command failed for the same expired-credential reason, so its current state must be rechecked after authentication is restored and the VM stopped after the replay.
 
+## Access recheck after temporary handoff
+
+On 2026-10-31 HST, a fresh `gcloud compute instances describe` call for
+`quantyra-lean-builder-01` again failed while refreshing credentials with
+`Reauthentication failed. cannot prompt during non-interactive execution.`
+The account name remains configured, but the API did not return the instance
+status; therefore `RUNNING` is only the last observed state, not a verified
+current state. No Lean invocation was attempted. Restore interactive
+authentication, recheck the instance, then copy the current source hash and
+replay in the pinned workspace.
+
 A preceding `lake env` attempt in `paper1-sourceonly-6858aa7-20261029/source/lean` triggered a dependency URL refresh and deleted that workspace's Mathlib checkout. No Lean result came from that invocation. I restored the checkout from the retained exact-tree archive SHA-256 `e02f9079352fa741592aa8d9fe5c6116064d95c0c7bed87b4f1e94bbf4e603e3` and the retained Git metadata. The restored checkout reports commit `c5ea00351c28e24afc9f0f84379aa41082b1188f` and tree `1fe688f4d9e84fb268a300f8ac33cbca883fbd28`; its source was restored after that failed Lake attempt. The generated untracked manifest was removed. Use the separate pinned `paper1-domain-exact-tree-f7b70c1-20261029` workspace for a direct Lean invocation with its matching Lean 4.30.0 toolchain and prebuilt imports; avoid `lake env` in the source-only workspace.
 
 Remaining to-do list: reauthenticate GCP; replay the current exact hash and preserve the raw log/exit code/axiom output; then continue the P1 analytic bridge and novelty audit.
