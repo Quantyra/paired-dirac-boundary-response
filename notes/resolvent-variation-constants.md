@@ -79,6 +79,16 @@ x=0.002, 0.125 and 0.127 gives respectively the rational upper bounds
     q < 1.002003 * 0.133149 < 0.134,
     C < 1.13546/(1-1.002003*0.133149) < 1.32.
 
+The exact rational arithmetic in these final bounds is drafted in
+[`lean/ResolventVariationConstants.lean`](../lean/ResolventVariationConstants.lean).
+It defines the Taylor polynomial plus geometric tail and states rational
+inequalities for the three inputs, the Neumann factor, and the resulting
+first- and mixed-Cauchy constants. The draft has not been compiled: the
+GCP-only Lean requirement applies. Its theorems would certify only the
+rational arithmetic after the ordinary Taylor-tail argument, not that
+argument itself, the Banach-space Cauchy estimates, any operator/domain
+hypothesis, or a trace response.
+
 The accompanying exact-integer check supports those finite rational
 comparisons; it does not prove (1)-(4), geometric hypotheses, or a trace
 estimate. The ball bound B is a sufficient assumption and not an evaluated
