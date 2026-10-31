@@ -216,6 +216,43 @@ Correction to the initial `418235c` version: that version included the path-
 Hessian term but omitted `H_1` from the explicit `t B_h^2/(4A_h)` exponent.
 This commit supplies the corrected coefficient. Numerical role: none.
 
+### The explicit-exponential term at the rough seam
+
+The constant-path value of `H_1` can be written in source jets. Put
+`f=f_0(y)`, `f_u=-u f+f'X_u`, and `f_w=-w f+f'X_w`. At the constant path,
+`W=1/f`, `R_u=2u`, `R_w=2w`, and `R_uw=4uw+2u'X_w+2w'X_u`. Also
+
+    Z=f'^2/(4f^2),
+    Z_u=f'f_u'/(2f^2)-f'^2 f_u/(2f^3),
+    Z_w=f'f_w'/(2f^2)-f'^2 f_w/(2f^3).
+
+Thus the exponential contribution to the coefficient in (2) is
+
+    H_1(y)= f'^2 Q_(u,w)/(4f^2) + 2(w Z_u+u Z_w)/f.       (3)
+
+For the even seed and admitted cubic/log directions,
+`f'=O(y)`, `u,w=O(y^3)`, `u',w'=O(y^2)`, `X_u,X_w=O(y^4)`,
+`f_u,f_w=O(y^3)`, and `f_u',f_w'=O(y^2)`, with the fixed logarithmic
+weights retained. Hence `Q=O(y^6)` and `Z_u,Z_w=O(y^3)`, so
+`H_1(y)=O(y^6)` (up to the prescribed finite log powers) and its
+constant-path value extends continuously to zero at the seam.
+
+The path version of `H_1` is built from path averages of these same fields
+and first spatial derivatives. Under the source's uniform `W^(3,infinity)`
+path-jet bounds, it has a uniformly Lipschitz first path derivative: one
+additional path derivative uses at most second spatial derivatives of the
+field jets. Bridge centering then gives
+
+    E[H_1(y,sqrt(t)xi)] = H_1(y,0)+O(t)
+
+uniformly through the seam collar. Therefore the explicit-exponential part
+itself has the corrected `t^(-1)` coefficient (3) with an `O(1)` remainder
+after multiplication by `C/(2 pi t)`. This closes the rough-seam passage for
+`H_1` under the stated path-jet hypotheses. It does not control the
+bridge-Hessian term `E[D^2 H_0(0)[xi,xi]]`, the local subtraction, or the
+other physical sectors; those remain the first unsupported parts of the
+next-coefficient argument.
+
 ## Extension to the admitted rough seam profiles
 
 The leading coefficient above also extends to the admitted even-folded
