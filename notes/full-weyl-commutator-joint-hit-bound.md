@@ -420,3 +420,12 @@ Duhamel identity; compute the Laplace-type commutator. First unsupported
 implication: estimate the resulting trace words with insertions, compute and
 match their interior coefficients, then transfer uniformly through the
 physical cut and common regulator. Numerical role: none.
+
+### Sign-convention correction
+
+The first version of the localized commutator paragraph at commit `480572b`
+used an inconsistent sign for the connection Laplacian and potential. Commit
+`7592c21` supersedes that line. With the positive convention
+`Q=nabla^*nabla+V`, `nabla^*nabla=-nabla^i nabla_i`, the correct formula is
+`[Q,A]=-2(nabla^i A)nabla_i-(nabla^i nabla_i A)+[V,A]`. The exact cutoff
+identity (8) and Duhamel orientation are unchanged.
