@@ -204,3 +204,27 @@ role: none.
 Remaining to-do list: compile and audit the exact Lean source on GCP; formalize
 additional supported algebra only after source checks; prove the curved
 mixed-boundary estimate and close all physical sectors and regulator limits.
+
+### Correction to the conditional odd-odd boundary estimate (2026-10-31 HST)
+
+Technical commit `f4082ec` withdraws the earlier same-coordinate input
+`t^(-1) integral exp(-y^2/(ct)) |u'(y)w'(y)|dy` in
+`full-weyl-commutator-joint-hit-bound.md`. The Duhamel word has two
+multiplication vertices evaluated at separate normal coordinates; without a
+relation between the independent directions, the same-point product need
+not control an off-diagonal trace. The replacement is a bilocal input with a
+normalized Gaussian average of `|w'(y')|` against `|u'(y)|`. Under this
+input, the cubic jets and Gaussian second moment still give the conditional
+`O(t^(3/2))` boundary-layer scale. The actual complementary-domain kernel
+and trace-ideal estimate remains unproved.
+
+Concrete claim: the bilocal conditional input implies the stated component
+scale. Ordinary argument: convolve the two outer Gaussian kernels, retain
+the reflected middle factor, use the normalized Gaussian second moment,
+then sum the simplex and mass tower. First unsupported implication: prove
+the mixed-boundary kernel estimate for the physical curved family and match
+the complete observable under one regulator. Numerical role: none.
+
+Remaining to-do list: prove the corrected bilocal estimate; close all other
+response sectors and the common-regulator bridge; complete the novelty and
+manuscript audits; certify supported claims on GCP.
