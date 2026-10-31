@@ -442,18 +442,27 @@ collar used for the source. Let
 Choose the Clifford convention so the tangential multiplier in the odd-odd
 identity is `X=epsilon c(e_tau)`, `epsilon in {+1,-1}`. Let the twisting
 connection be unitary and Clifford-compatible, and write
-`Q=nabla^*nabla+V` with the positive connection Laplacian. The orthonormal
-frame connection gives
+`Q=nabla^*nabla+V` with the positive connection Laplacian. The frame bracket
+is `[e_y,e_tau]=h e_tau`. Applying Koszul and using the orthonormality of
+`e_y,e_tau` gives
 
+    nabla_(e_y) e_y = 0,
     nabla_(e_y) e_tau = 0,
     nabla_(e_tau) e_tau = h e_y,
     nabla_(e_tau) e_y = -h e_tau.
+
+The last two entries have opposite signs, as required by torsion-freeness.
 
 The twist connection commutes with Clifford multiplication, so
 
     nabla_(e_y) X = 0,
     nabla_(e_tau) X = epsilon h c(e_y),
     nabla^i nabla_i X = -h^2 X.
+
+For the last equality, the radial rough-Laplacian contribution is zero. The
+tangential contribution is
+`nabla_(e_tau)(epsilon h c(e_y))-nabla_(h e_y)X`
+`=-epsilon h^2 c(e_tau)=-h^2 X`, which fixes the zeroth-order sign.
 
 Substitution into (10) yields the exact smooth-collar identity
 
