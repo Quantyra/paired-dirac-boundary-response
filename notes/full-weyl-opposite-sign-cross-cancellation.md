@@ -76,13 +76,34 @@ the `t^(3/2)` remainder. The even angular-angular `O_u O_w` contribution,
 physical density/contact, boundary transgression, thermal images and source
 conversion remain in the complete response.
 
-The source-specific obligation is to verify that the global magnetic mode
-map and actual paired domains implement the same orbit Hilbert space,
-seed operator, insertions and trace density for both signs. The spectrum and
-combined multiplicity are recorded in
-[`magnetic-sphere-transport-counting.md`](magnetic-sphere-transport-counting.md),
-but multiplicity alone does not prove those intertwining identities. No
-numerical computation or Lean certification is claimed.
+## Application to the pinned conformal-boundary product realization
+
+For the pinned source's compactified conformal-boundary product
+realization, the required sign-pair hypotheses are supplied conditionally
+by its recorded decomposition. At immutable parent commit
+`f0eab59063422c80ccc7c8e281170c75cc3afc71`,
+`notes/stationary-paired-dirac-phase.md` writes the product Dirac operator
+with orbit matrices on the orbit factor and the sphere Dirac operator
+multiplied by orbit chirality. The same note records the eigenvalues
+`+mu_n` and `-mu_n` at equal multiplicity `q+2n`. The pinned
+`notes/stationary-exterior-conformal-domain.md` records exact product
+separation and states that the physical boundary domain is the same for
+every angular eigenspace. The source's geometric angular reduction and
+this common projector therefore give identical orbit action and domain for
+the two signs; scalar Weyl directions, physical density, and smearing are
+also sign-independent. The product-domain argument in
+[`full-weyl-mode-form-domain.md`](full-weyl-mode-form-domain.md) supplies
+the corresponding direct-sum form interpretation under these source
+identifications. Thus the cancellation applies to the massive orbit-angular
+cross terms for this declared compactified product realization.
+
+This application does not prescribe the same projector at an arbitrary
+finite physical radial cut. The finite-collar transport calculation in
+[`finite-cut-boundary-transport.md`](finite-cut-boundary-transport.md)
+shows that propagated infinity data generally acquire angular dependence.
+Nor does the sign cancellation prove the curved small-time subtraction,
+the full physical response, or the common-regulator source-observable map.
+No numerical computation or Lean certification is claimed.
 
 Remaining to-do list: verify the sign-pair mode/domain identification for the
 physical source; bound the surviving even curved cross and angular terms

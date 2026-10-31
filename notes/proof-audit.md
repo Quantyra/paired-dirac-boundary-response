@@ -85,6 +85,11 @@ also recorded. The conditional
 [`opposite-sign cancellation lemma`](full-weyl-opposite-sign-cross-cancellation.md)
 removes the odd-gradient pieces from orbit-angular cross terms when the two
 massive signs have the same orbit action, vertices, domains and trace density.
+For the pinned compactified conformal-boundary product realization, the
+source records this common separation, an angular-independent projector, and
+equal positive/negative massive multiplicities, so the lemma applies under
+those product identifications. It does not prescribe the same domain at
+arbitrary finite radial cuts.
 The even scalar `mu^2` cross terms and even odd-odd angular products remain.
 These results do not provide the curved, localized, small-time
 subtracted orbit-angular cross estimate under the same regulator that is

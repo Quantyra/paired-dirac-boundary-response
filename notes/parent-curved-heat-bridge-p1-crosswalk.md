@@ -35,8 +35,12 @@ domains and trace density, the odd-in-angular-mass gradient pieces cancel in
 the orbit-angular cross Duhamel terms. This reduces that part of the curved
 estimate to the even scalar `mu^2 u`/`mu^2 w` insertions. It does not remove
 the even `O_u O_w` angular-angular product or supply a subtracted bound. The
-source-specific sign-pair identification remains to be checked against the
-global magnetic mode map and paired domains.
+source's pinned compactified conformal-boundary product realization records
+the common orbit/sphere separation, sign-independent projector and equal
+positive/negative massive multiplicities, so the cancellation applies there
+under those product identifications. It does not assign the same projector
+to arbitrary finite radial cuts, where the collar transport calculation
+gives an angular-dependent subspace.
 
 Thus the parent result closes a closely related curved-response theorem but does not yet close P1-C/P1-D. This crosswalk is an ordinary scope comparison; the parent argument has not been independently rederived here and no Lean certification of the heat-kernel estimate is claimed.
 
