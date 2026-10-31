@@ -389,3 +389,47 @@ Remaining to-do list: establish the variable-coefficient parametrix and
 seam/non-hit bounds; match this coefficient, the four remainder blocks and
 all source sectors on one physical regulator; finish the S001 decision and
 certify supported formalizable results on GCP.
+
+### P1-B resolvent variation: proof and Lean scope
+
+The ordinary [resolvent-variation audit](resolvent-variation-constants.md)
+derives a conditional holomorphic `L^infinity` ball estimate and Cauchy bounds
+for the conjugated first-order inverse `S(z)`. With its declared `B<=0.001`
+and radius `r=1/8`, its numerical targets are
+
+    ||DS(0)[u]|| <= 10.56 ||u||_infinity/M,
+    ||D^2S(0)[u,w]|| <= 337.92 ||u||_infinity||w||_infinity/M.
+
+If the square-resolvent identity
+`R_b=(S_+(b)+S_-(b))/(2M)` is established for both signs on the actual
+composition domains, these derivative bounds gain one further factor `1/M`.
+The [paired-square-resolvent audit](paired-square-resolvent.md) supplies that
+factorization only under skew-adjointness, partner and two-sided multiplier
+domain-invariance hypotheses. Its complex `L^infinity` Neumann continuation
+is a bounded holomorphic map; for arbitrary complex directions it need not
+represent the resolvent of an actual perturbed unbounded operator.
+
+The GCP [mass-skew-resolvent receipt](../evidence/gcp-mass-skew-resolvent-clean-20261030/README.md)
+certifies the positive real-mass bijection and norm estimate from
+skew-adjointness. The separate partner and graph receipts certify their
+stated abstract operator steps. The present coverage map has no exact-source
+Lean receipt for the two-variable Cauchy constants, the full analytic
+continuation, or their assembly into the P1-B second square-resolvent
+variation. None of these receipts establishes the physical `J`, scalar
+multiplier bounds, actual paired domains, or a trace estimate.
+
+Concrete claim: under the declared abstract hypotheses, the first- and
+second-order resolvent derivative bounds follow from the Neumann ball and
+one- and two-variable Cauchy estimates; the square bounds follow if both
+first-order signs factor on their actual domains. Ordinary argument: use
+`||A_b^{-1}||`, the Neumann perturbation bound `q<1`, the conjugating
+multipliers, and Cauchy estimates on radius `r` and half-radius polydisks.
+First unsupported implication: verify all operator/domain hypotheses for the
+admitted paired family, then formalize and replay the derivative estimates
+and exact rational constants on GCP. Numerical role: none beyond supporting
+the explicit operator-norm constants. The bounds do not justify angular
+trace summation, heat-trace differentiation, or the common regulator.
+
+Remaining to-do list: establish the physical partner and multiplier/domain
+hypotheses; formalize the Cauchy derivative and rational constant claims on
+GCP; prove the trace-level response and its common-regulator limit.
