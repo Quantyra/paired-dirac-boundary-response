@@ -689,7 +689,8 @@ fiber at `x`, the relative transport factor in the trace word is
 
     P(x,y)X(y)P(y,x)X^(-1)(x)-I
       = -B_i v^i
-        + (1/2)(B_iB_j - nabla_i B_j) v^i v^j + O(|v|^3),
+        + (1/2)(B_iB_j - nabla_i B_j) v^i v^j
+        + (1/6)D_ijk v^i v^j v^k + O(|v|^4),
 
 where `B_i=X(nabla_iX^(-1))`. The convolved Gaussian has covariance
 `E[v^i v^j]=2 sigma g^(ij)`, `sigma=sr/t`, with
@@ -701,8 +702,10 @@ The two local heat-kernel prefactors convolve to `(4 pi t)^(-1)` uniformly
 in `s,r`. Their scalar Van Vleck and first heat-amplitude terms are common
 to `Q` and `Q_X`; the relative factor already vanishes to first order in
 `v`, so these amplitude corrections change the defect only by
-`O(t sigma)`. The cubic Taylor terms are odd in `v`; after Gaussian
-integration the next transport remainder is `O(sigma^2)`. Consequently,
+`O(t sigma)`. The displayed cubic Taylor polynomial is odd in `v`; after
+Gaussian integration it vanishes, and the fourth-order Taylor remainder is
+`O(sigma^2)`. Scalar insertion gradients times the linear transport term
+also vanish because `tr B_i=0`. Consequently,
 for smooth scalar insertions `a=u'`, `b=w'`, the localized defect trace
 density obeys the endpoint-uniform expansion
 
