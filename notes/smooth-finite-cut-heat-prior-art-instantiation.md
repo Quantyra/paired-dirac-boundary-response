@@ -34,3 +34,7 @@ The theorem is close prior art for the explicit smooth fixed-cut coefficients th
 
 Remaining to-do list: compare the existing full-Weyl `a7`-order and log-`a8` tangent coefficients to the smooth local-coefficient framework without conflating them with the orbit-only `a9` term; prove the physical weighted endpoint and source/common-regulator bridge; resolve novelty and certify the supported paper claims in Lean on GCP.
 
+
+## Lean coverage of the Robin coefficient transport
+
+The algebraic normal-jet transport is checked in the exact-source GCP receipt [`gcp-projected-robin-congruence-20261031`](../evidence/gcp-projected-robin-congruence-20261031/README.md). Under the assumed normal product rule and linear projected trace, it confirms the coefficient `(K-b_n)/2` and its zero-normal-jet value `K/2`, matching the cited source convention `S=-K/2` after normal orientation is aligned. This does not prove the product rule, Gauss decomposition, composition-domain realization, actual geometric projector, or heat-coefficient hypotheses. The prior-art application remains an ordinary geometry and analysis argument.
