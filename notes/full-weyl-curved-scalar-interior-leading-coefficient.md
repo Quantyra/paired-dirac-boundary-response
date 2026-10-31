@@ -597,7 +597,10 @@ The source conversion note records
     2 Theta'(t) I_t(u,w),
 
 where `dmu=dy/f_0` is the time-reduced measure and
-`Theta'(t)=-C/t^2+O(1)`. The smooth periodic bridge calculation in
+`Theta'(t)=-C/t^2+O(1)`. In the collar convention
+`g=dy^2+f(y)^(-2)d tau^2`, the source curvature is
+`R=2f''/f-4(f'/f)^2`; the matching source insertion and convention are
+derived in `bridge-contact-low-order.md`. The smooth periodic bridge calculation in
 `bridge-contact-low-order.md` independently checks the displayed `I_t`
 coefficients under its smooth periodic hypotheses; the source's rough curved
 remainder and boundary passage remain separate assumptions. Multiplication
