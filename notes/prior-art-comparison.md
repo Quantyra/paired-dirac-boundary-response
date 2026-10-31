@@ -103,6 +103,15 @@ operator-level match surfaced in this focused search; that is a search record,
 not evidence of absence or a novelty verdict. The comparison still requires
 the exact transformed-Dirac source audit and the proved P1 claim to be fixed.
 
+The finite-cut source-operator part of that audit is now explicit:
+[`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md)
+proves that the physical square and its transported full-Weyl square have
+identical fixed-cut heat traces under the unitary L2 map, with the actual
+composition domain. This does not identify that trace with the bare
+product-frame/orbit trace or the canonical Lorentzian Hamiltonian contact.
+The remaining source audit is the common-regulator and endpoint comparison,
+not the finite-cut unitary transport.
+
 Remaining to-do list: establish the physical full-Weyl source/common-regulator
 bridge; finish the transformed-Dirac comparison and final novelty disposition;
 certify only the supported claims on GCP.
