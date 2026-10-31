@@ -118,16 +118,19 @@ shows that the RN Hamiltonian-square cut contact is not yet identified with
 the product-frame orbit contact or its separate angular factor. The
 [source conversion crosswalk](source-conversion-response-crosswalk.md)
 corrects the status of a separate bridge: the frozen source already gives a
-full-angular positive-cutoff geometric-versus-variable-mass identity and
+full massive-angular-tower positive-cutoff geometric-versus-variable-mass identity and
 common-regulator removal for its first two seed jets, including the distinct
 `2 Theta' I_e` contact, conditional on its rough heat-bridge hypotheses.
-What remains is to identify those two source endpoints, field parameter and
-domains with the P1 geometric and product-frame observables. The
+Its massive geometric endpoint is modewise the product-frame square under
+the source's paired-domain hypotheses; its variable-mass endpoint is only an
+auxiliary representation. What remains is an independent check of the
+composition domains, exact rough-field hypotheses and common subtraction,
+plus separate accounting for the chiral zero-mode/anomaly block. The
 [physical/product-frame operator comparison](physical-product-contact-operator-gap.md)
 shows that the specified physical-L2 unitary map is a congruence whose square
-has a different principal symbol from the bare product-frame square; it does
-not rule out the source's action-level conversion or prove the observables
-differ. The canonical Lorentzian `H_mu^2` contact remains distinct from both.
+has a different principal symbol from the bare product-frame square; this
+does not rule out the source's action-level conversion. The canonical
+Lorentzian `H_mu^2` contact remains distinct from both.
 
 The [finite-cut Weyl boundary Hessian](cubic-jet-weyl-boundary-hessian.md) vanishes as O(epsilon^3 log^2 epsilon) for the total local anomaly/conversion boundary functional: the source fixes the same product-frame orbit metric and Weyl family, so the proper collar coordinates match up to orientation and origin. This removes only that local boundary term; it does not identify the nonlocal determinant or prove the common-regulator response. The [fiber normalization audit](flat-orbit-fiber-normalization.md), [source conversion audit](tangent-regulator-normalization.md), and detailed [P1-C source normalization audit](p1c-source-normalization-audit.md) establish under their stated hypotheses that the per-exterior flat physical-half multiplier is one half of the rank-two full-plane multiplier: H2/2=F(tk^2)/(pi t). They trace `d_n=2(q+2n)` with both sphere signs already included, keep the `q` chiral LLL modes separate, distinguish the spatial half-trace from the per-exterior division, retain the partner-averaged geometric term and separate `2 Theta' I_t` contact, and leave the final `-2G/B^2` action factor external to `J_t''`. The fixed source period is retained in `Tr_bar`; fixed-period flat image bounds do not by themselves prove physical curved-to-tangent transfer. This fixes flat-model factor bookkeeping, not the curved source-observable limit.
 
