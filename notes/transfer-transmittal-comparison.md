@@ -208,6 +208,31 @@ source's hypotheses and local formulas must still be checked for the actual
 induced connections and endomorphism; the identity gives no uniform bound
 as the cut or metric varies.
 
+For the pinned source normal-frame matrices this tangential term can be
+compared explicitly with the spin-interface `B_j`. Use
+`gamma_n=1 tensor sigma_1`,
+`gamma_A=-tau_3 tensor sigma_2 tensor gamma_(A,S)`,
+`chi=tau_3 gamma_n`, and the folding unitary
+`F=(1+tau_1 chi)/sqrt(2)`. Then `T=F chi F^(-1)=tau_1`,
+`S=F J F^(-1)=-tau_3`, and `I=T|_(E_side^+)`. For the second fundamental
+form `H_(jA)=<nabla_j n,e_A>`, Clifford multiplication gives the exact
+fiber identity
+
+    I^(-1) (nabla'_j I) = H_(jA) gamma_n gamma_A.
+
+Indeed, `tau_3 gamma_A=-sigma_2 tensor gamma_(A,S)` and conjugation by `F`
+maps this to `-i tau_1 tau_3 sigma_3 tensor gamma_(A,S)`; left
+multiplication by `I^(-1)=tau_1` gives
+`-i tau_3 sigma_3 tensor gamma_(A,S)=gamma_n gamma_A`.
+Herzog--Huang--Vassilevich Eq. (15) gives
+`B_j=(K^+_(jA)+K^-_(jA))/2 gamma_n gamma_A`. In the reflection-symmetric
+case `K^+=K^-=H`, these expressions agree after aligning the inward/outward
+normal sign convention. This closes the tangential spin-connection
+coefficient match for the pinned symmetric finite-cut seed. It does not
+establish the full closed-operator equivalence for a varying metric family,
+the source's magnetic twisting terms in the interface formula, or any
+uniform moving-cut estimate.
+
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
 between smooth sides. The transmittal paper also treats singular interfaces

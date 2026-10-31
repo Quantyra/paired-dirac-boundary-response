@@ -186,14 +186,19 @@ condition `Pi_- psi=0`, `Pi_+(nabla_n+K/2)psi=0`, subject to aligning which
 normal is inward/outward and the sign convention for `K`. This is an explicit
 structural match, not merely a dimension count.
 
-The identification stops at those boundary jets. Their `B_j` connection
-jump (Eq. (15)), the global side-bundle map, the bulk Laplace-type operator,
-and the variation of `U` must also be matched. P1's nonzero-normal-jet
-condition contains `(K-partial_n b)/2`; this source-level calculation has
-not shown that it is the Weyl-transformed interface Robin endomorphism.
-Neither the four-dimensional `a4` anomaly formulas nor their folding
-statement computes P1's proposed higher-order response or its physical
-regulator limit.
+The boundary comparison now has a sharper finite-cut scope. The pinned
+source transition check establishes the global partner `J` for its stipulated
+identical-copy bundle. The [transmittal comparison](transfer-transmittal-comparison.md)
+derives the side splitting and Robin jump; in the pinned normal frame its
+new explicit tangential calculation matches the interface `B_j` term in the
+reflection-symmetric seed after aligning normal signs. The full closed
+operator equivalence for the varying family, including the transformed
+magnetic connection and the Weyl-transformed interface endomorphism, is not
+yet established. In particular, P1's `(K-partial_n b)/2` Robin coefficient
+has not been substituted into the interface `U(b)` law in a single matched
+normal convention. Neither the four-dimensional `a4` anomaly formulas nor
+their folding statement computes P1's proposed higher-order response or its
+physical regulator limit.
 
 ### Screened order coverage
 
