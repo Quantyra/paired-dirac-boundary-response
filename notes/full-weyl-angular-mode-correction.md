@@ -1,8 +1,10 @@
 ﻿# Four-dimensional Weyl congruence changes the angular mode
 
 This is an ordinary operator calculation identifying an application limit of
-`product-square-domain-summability.md`. It is not a Lean certificate or a
-physical trace calculation. The distinction matters for P1-A through P1-C:
+`product-square-domain-summability.md`. The [GCP mode real-mass receipt](../evidence/gcp-mode-real-mass-20261030/README.md)
+certifies the orbit-only mode endpoint under abstract assumptions, but does
+not certify the full-Weyl correction below or a physical trace calculation.
+The distinction matters for P1-A through P1-C:
 the pinned rough-variation source applies scalar congruence to the *full*
 four-dimensional first-order operator, while the product factorization uses
 an orbit-only variation with a fixed angular coefficient.

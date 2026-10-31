@@ -3,9 +3,11 @@
 This connects the paired product-mode operator in
 `product-sphere-mixed-response.md` with the real-mass interpolation in
 `graded-mass-conversion-positive-cut.md`. The connection is an exact
-left-unitary operator identity on the stipulated compact paired orbit. It
-does not verify the physical bundle/product realization, source trace
-normalization, or regulator limit, and it is not Lean-certified.
+left-unitary operator identity on the stipulated compact paired orbit. The
+abstract first-order endpoint and positive-square algebra are now checked
+under explicit hypotheses by the [GCP mode real-mass receipt](../evidence/gcp-mode-real-mass-20261030/README.md).
+The physical bundle/product realization, source trace normalization, and
+regulator limit are not thereby verified.
 
 Let D have domain V and adjoint domain V*, and let G be the self-adjoint
 unitary orbit chirality with G V=V* and D*Gx=GDx for x in V, as in the
@@ -70,10 +72,11 @@ The map W and equality of squares do not by themselves establish a physical
 trace density, the half/copy factor, the global spin and magnetic pullbacks,
 the moving-cut limit, or a renormalized determinant. A left-unitary map of
 first-order operators is not a unitary conjugation of their heat operators;
-the heat equality here follows from equality of their positive squares.
-No numerical or Lean check is claimed.
+the heat equality here follows from equality of their positive squares. The
+Lean receipt formalizes the orbit-only mode algebra, not the full-Weyl
+correction in `full-weyl-angular-mode-correction.md`.
 
-Remaining to-do list: verify global physical product and domain matching,
-match source normalization and all angular vertices, establish the rough
-remainder and regulator, finish novelty and manuscript, and certify the
-supported results in Lean on GCP.
+Remaining to-do list: match the orbit model to the physical product and
+domains; derive the full-Weyl angular and commutator vertices; match source
+normalization and the LLL; establish the rough remainder and regulator;
+finish novelty and manuscript; certify the supported results in Lean on GCP.

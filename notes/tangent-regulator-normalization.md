@@ -9,7 +9,7 @@ regulated action is addressed by the flat tangent multiplier.
 The pinned [variable-contact conversion](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-variable-contact-conversion.md)
 defines the common-cutoff conversion using the physical-half,
 time-reduced trace Tr_bar, with the original paired domains, thermal
-period, complete angular tower and bolt retained. It sets
+period, full massive angular tower and bolt retained. It sets
 
     K_t = exp(−t L),       T_t(u)=Tr_bar[u K_t],
     I_t(u,v)=∫_0^t Tr_bar[u K_{t-s} v K_s] ds,
@@ -27,6 +27,14 @@ source retains the two partner squares and uses their grading equality;
 the final normalized action has its separately stated factor −2G/B².
 The second term in (1) is a product-gradient/contact contribution and is
 not supplied by the geometric heat Hessian alone.
+
+Here “complete angular tower” in the conversion means the massive `n>=1`
+sector weighted by `Theta`; the `q` chiral LLL modes remain a separate
+block. Also, this source conversion varies the orbit operator with each
+angular mass held fixed. It is not yet the full four-dimensional Weyl
+congruence: `full-weyl-angular-mode-correction.md` derives the additional
+angular-mass and commutator vertices. Do not use (1) as the complete P1-C
+response until those terms and the LLL are included under the same regulator.
 
 The pinned [smearing note](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-smeared-heat-projection-domain.md)
 explicitly defines K_s(t)=Tr exp(−t L_s) as a scalar heat trace on the

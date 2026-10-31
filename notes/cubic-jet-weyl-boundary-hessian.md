@@ -27,6 +27,12 @@ on the cut. The source match is direct at the fixed seed. `current-rough-paired-
 
 The constant may depend on the fixed log weight, collar bounds, period, and direction norms. This is a boundary-local statement; it does not bound the bulk trace response.
 
+The collar match here is only for the total local four-dimensional Weyl
+boundary functional. It does not identify the full Weyl heat Hessian with the
+source's orbit-only fixed-angular variation. The additional angular-mass and
+commutator vertices in `full-weyl-angular-mode-correction.md` remain in the
+nonlocal P1-C response.
+
 ## Ordinary calculation
 
 Only the quadratic and cubic terms in `s` contribute to the mixed Hessian. Direct differentiation at fixed `N,a,Y` gives
