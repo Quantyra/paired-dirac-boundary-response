@@ -375,3 +375,31 @@ Numerical role: none.
 Remaining to-do list: verify the smooth bundle identification in the final
 operator statement; close P1's physical source bridge and common-regulator
 response; finish the novelty decision; certify supported claims on GCP.
+
+## Additional adjacent prior art: chiral-bag heat coefficients
+
+Esposito, Gilkey and Kirsten, [*Heat kernel coefficients for chiral bag
+boundary conditions*](https://arxiv.org/abs/math/0510156), study smeared heat
+traces for Dirac-type operators with chiral-bag conditions. Their abstract
+states that they determine the boundary contributions to `a_1` and `a_2`;
+their Remark 2.3 identifies the zero bag-angle case with standard mixed
+boundary conditions. This is direct background for low-order local
+coefficient methods and the mixed boundary class at a smooth fixed cut.
+
+The paper does not derive P1's simultaneous mass/log mixed Hessian, the
+full-Weyl angular tower, rough cubic/log seam coefficients, or the physical
+common-regulator source map. It therefore narrows any claim of novelty for
+the mixed projector or low heat coefficients, while leaving the intended
+higher-order response question open. The exact coefficient and observable
+comparison remains conditional on the final P1 operator and trace
+normalization.
+
+Concrete claim: the cited work treats smeared Dirac-type heat traces and
+reports boundary `a_1,a_2` coefficients; at zero bag angle its boundary
+condition is mixed. Ordinary argument: use the paper's abstract and
+Remark 2.3. First unsupported implication: compare higher-order mixed
+mass/log coefficients and the physical P1 regulator. Numerical role: none.
+
+Remaining to-do list: finish the P1 source/common-regulator bridge, complete
+the higher-order and theorem-specific prior-art comparison, decide S001,
+and certify the supported scope on GCP.
