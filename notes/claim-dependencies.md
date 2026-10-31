@@ -98,6 +98,15 @@ rank-two full-plane heat-trace results. They do not identify the physical
 half-trace, source contact/conversion, density variation, LLL block, or curved
 common-regulator response with P1-C.
 
+The additional [`full-Weyl/orbit correction analysis`](full-weyl-orbit-correction-vertices.md)
+now establishes mixed-derivative interchange with the angular tower on a
+fixed compact cut and positive-time window, using common first-order mode
+forms and Schatten smoothing. The [mode-domain argument](full-weyl-mode-form-domain.md)
+matches that hypothesis to the pinned static zero-angle RN finite-cut model.
+This closes a fixed-cut interchange dependency only; it gives no small-time
+subtraction, moving-cut uniformity, physical density/contact transfer, or
+common-regulator source-observable identity.
+
 The [weighted log-jet audit](weighted-log-jet-nonuniqueness.md) shows that
 the recorded remainder bound alone does not determine a unique logarithmic
 amplitude; the following log coefficient requires an explicit additional jet
