@@ -18,8 +18,11 @@ Paper 1 as a whole.
 - OLean SHA-256: `34360df975d55b2a27ef6f1e2395e1327f1cadfb3fe2461c22d683a2cc8a6c64`
 - Exit code: `0`
 
-The source was compiled against the retained Mathlib/package build in
-`paper1-domain-exact-tree-f7b70c1-20261029`, with Lean 4.30.0. The runner is
+The source was compiled against the retained Mathlib/package build located in
+`paper1-domain-exact-tree-f7b70c1-20261029`, with Lean 4.30.0. These dependency
+artifacts were reused rather than rebuilt in this run; this receipt does not
+hash each imported `.olean` or independently establish its source/build
+provenance. The runner is
 `lean/cloud-flat-source-contact-ledger-20261031.sh`. It verifies the base
 source commit and source hash, loads the cached package libraries, compiles the
 copied source, records theorem output and hashes, and fails if `sorryAx`
