@@ -143,3 +143,11 @@ This closes the direct flat coefficient calculation, not the curved commutator e
 Concrete claim: the fixed-flat sign-paired coefficient follows directly from the gradient-gradient Duhamel term. First unsupported implication: a curved mixed-boundary odd-odd estimate and its common-regulator physical transfer. Numerical role: none.
 
 Remaining to-do list: establish the curved commutator and full physical source-observable bound; match contact, density, boundary, LLL and local restorations under one regulator; complete the prior-art decision and manuscript; certify supported claims on GCP.
+
+## Conditional boundary-layer scale for the curved odd-odd pair
+
+[`full-weyl-commutator-joint-hit-bound.md`](full-weyl-commutator-joint-hit-bound.md) records a precise sufficient input for the surviving curved gradient-gradient pair. If the mixed `Q`/`Q_X` trace word has a Gaussian-localized seam contribution bounded by `C t^(-1) integral exp(-y^2/(ct)) |u'w'| dy`, uniformly over the Duhamel simplex and after removing the tower mass factor, the source jets `u',w'=O(y^2)`, simplex area `t^2`, and `-Theta'(t)=O(t^(-2))` yield `O(t^(3/2))` for that boundary-layer component. This is conditional: the localized mixed-boundary trace estimate itself is not proved, and the non-hit local subtraction, physical source terms and common-regulator limit remain open. It is not a physical admission margin and has no Lean certification.
+
+Concrete claim: the stated Gaussian trace input implies the boundary-layer power by direct integration and tower counting. First unsupported implication: prove that input for the actual complementary-domain heat product and integrate it into the full physical response. Numerical role: none.
+
+Remaining to-do list: prove the mixed-boundary trace input; close non-hit subtraction, physical density/contact/boundary/LLL terms and common regulator; finish novelty/manuscript; certify supported claims on GCP.
