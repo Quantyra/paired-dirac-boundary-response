@@ -130,9 +130,10 @@ with constants independent of `mu` on the declared field and direction
 sets. No common second-order operator domain is needed; the statement is at
 form level.
 
-The common form family can be built on the fixed compact cut under the
-first-order domain hypotheses already used for (1a): take a fixed elliptic
-projector realization with domain `V subset H^1`, preserved by the scalar
+The product-cut mode decomposition in
+[`full-weyl-mode-form-domain.md`](full-weyl-mode-form-domain.md) supplies the
+common first-order form domain `V` under its product and projector hypotheses.
+Take that fixed elliptic projector realization, preserved by scalar
 multipliers and their inverses. Write `b_z=b+z_1u+z_2w`,
 `m_z=exp(-b_z/2)`, and `D_z=m_z D m_z`. With the inner product linear in the
 first slot, set `D_conj(z)=m_conj(z) D m_conj(z)`, and define the complex form
@@ -157,9 +158,8 @@ differences are `O(rho mu^2)` and `O(rho |mu|)` in `L^infinity`. The latter
 is absorbed using `|mu| <= (1+mu^2)/2`. The shifted coercivity proved above
 therefore persists on a sufficiently small complex polydisc, uniformly in
 `mu`, and the forms are uniformly sectorial there. This verifies the common
-domain and holomorphy criterion subject to the stated fixed elliptic
-projector realization; it does not assume a common second-order operator
-domain.
+domain and holomorphy criterion under the product-cut hypotheses; it does
+not assume a common second-order operator domain.
 
 Let `q_tilde_(mu,z)=q_(mu,z)+K<.,.>` be the fixed scalar shift of these
 forms.
@@ -203,8 +203,9 @@ block.
 
 For any fixed cut realizing the stated elliptic projector domain, this closes
 the common-form and holomorphy steps and supplies the positive-time tower
-interchange. Verifying that the physical mode domains equal this projector
-realization on each cut remains open. This route supplies no
+interchange. Verifying that the source-frame physical operator has the
+product-cut decomposition in `full-weyl-mode-form-domain.md` remains open.
+This route supplies no
 `epsilon->0` bound, moving-cut uniformity, source-observable identity,
 physical density/contact or boundary-transgression matching, or LLL anomaly
 transfer. No Lean check is claimed.

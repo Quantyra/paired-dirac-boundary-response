@@ -9,6 +9,10 @@ the pinned rough-variation source applies scalar congruence to the *full*
 four-dimensional first-order operator, while the product factorization uses
 an orbit-only variation with a fixed angular coefficient.
 
+The conditional finite-cut argument deriving these common mode domains from
+the four-dimensional product projector realization is in
+[`full-weyl-mode-form-domain.md`](full-weyl-mode-form-domain.md).
+
 Start from a product-mode seed P_mu=D+i mu G on Dom D=V, with real mu,
 a bounded self-adjoint involution G, and the complementary-domain relation
 D* G=G D on V. Let m be a positive real scalar multiplier with m and 1/m
