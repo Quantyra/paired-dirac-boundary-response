@@ -734,3 +734,33 @@ Numerical role: none.
 Remaining to-do list: reduce the curved formula and compare the full scalar
 plus source-contact bracket; add the orbit, matrix, density/contact, boundary
 and LLL terms under one regulator; complete novelty and GCP Lean certification.
+
+For direct substitution in (5), let
+`S=G W+H U` and `T=8 U W-4V+2J`. The nonzero first derivatives are
+
+    Phi_A = 3 A^(-5/2) S - (1/2) A^(-3/2) T,
+    Phi_G = -2 A^(-3/2) W,
+    Phi_U = -2 A^(-3/2) H + 8 A^(-1/2) W,
+    Phi_H = -2 A^(-3/2) U,
+    Phi_W = -2 A^(-3/2) G + 8 A^(-1/2) U,
+    Phi_V = -4 A^(-1/2),
+    Phi_J = 2 A^(-1/2).
+
+The nonzero second derivatives, with symmetry understood, are
+
+    Phi_AA = -(15/2) A^(-7/2) S +(3/4) A^(-5/2) T,
+    Phi_AG = 3 A^(-5/2) W,
+    Phi_AU = 3 A^(-5/2) H -4 A^(-3/2) W,
+    Phi_AH = 3 A^(-5/2) U,
+    Phi_AW = 3 A^(-5/2) G -4 A^(-3/2) U,
+    Phi_AV = 2 A^(-3/2),
+    Phi_AJ = -A^(-3/2),
+    Phi_GW = -2 A^(-3/2),
+    Phi_HU = -2 A^(-3/2),
+    Phi_UW = 8 A^(-1/2).
+
+All other second partials vanish. Substitution of these derivatives and
+`phi=(f^2,ff_u,u,ff_w,w,uw,j)` into (5) is now a finite algebraic
+expression in the source field jets, with no implicit functional derivative
+left. In particular, the flat result follows by setting `f=1`, `g_u=-u`,
+`g_w=-w`, and using `X_u'=-u`, `X_w'=-w` after integration.
