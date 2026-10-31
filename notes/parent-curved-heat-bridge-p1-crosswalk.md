@@ -29,6 +29,15 @@ P1 therefore varies the angular mass and has the mode-dependent commutator verte
 
 To import the parent `t^(3/2)` bound into P1, prove a decomposition of P1's full-Weyl response into (i) the parent orbit-sector response plus its already controlled local conversion and (ii) the angular-mass/commutator correction whose vertices and mixed Duhamel terms are recorded in `full-weyl-orbit-correction-vertices.md`. Its localized, subtracted mixed trace must have a uniform integrable bound under the same proper-time regulator. The correction must retain physical density/contact, boundary transgression, thermal images and the separate LLL/anomaly block. The operator decomposition is now explicit, but no P1-specific uniform bound or source-observable matching is established.
 
+The conditional note [`full-weyl-opposite-sign-cross-cancellation.md`](full-weyl-opposite-sign-cross-cancellation.md)
+proves that, when the two signs have the same identified orbit seed, vertices,
+domains and trace density, the odd-in-angular-mass gradient pieces cancel in
+the orbit-angular cross Duhamel terms. This reduces that part of the curved
+estimate to the even scalar `mu^2 u`/`mu^2 w` insertions. It does not remove
+the even `O_u O_w` angular-angular product or supply a subtracted bound. The
+source-specific sign-pair identification remains to be checked against the
+global magnetic mode map and paired domains.
+
 Thus the parent result closes a closely related curved-response theorem but does not yet close P1-C/P1-D. This crosswalk is an ordinary scope comparison; the parent argument has not been independently rederived here and no Lean certification of the heat-kernel estimate is claimed.
 
 Remaining to-do list: derive and bound the P1 angular correction under the common regulator; finish the theorem-specific novelty decision and manuscript; certify supported claims on GCP.
