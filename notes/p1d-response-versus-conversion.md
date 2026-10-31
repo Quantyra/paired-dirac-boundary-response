@@ -16,7 +16,7 @@ families, the localization maps, the complete subtracted integrand, and its
 normalization. The identities below compare declared positive-time
 diagnostics but do not supply that missing definition.
 The [candidate operational-definition contract](p1d-operational-definition-proposal.md)
-spells out distinct orbit-only and full-Weyl tangent choices and the remaining
+spells out distinct Section 4 and full-Weyl angular tangent choices and the remaining
 source/action inputs; it is a proposal pending confirmation, not an adopted
 definition.
 

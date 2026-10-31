@@ -29,11 +29,11 @@ Derivatives of `chi` are retained through these localized directions; they
 are not discarded as lower-order errors. The exact tangent subtraction is
 not determined by the frozen source. Two distinct documented choices are:
 
-**Orbit-only tangent candidate.** Section 4 of the frozen source gives
+**Section 4 tangent candidate.** Section 4 of the frozen source gives
 `H_t(k)=2F(t k^2)/(pi t)` and separately retains the massive angular weight
 `Theta(t)`. This yields
 
-    T_orb,chi(t;u,w) = c_phys Theta(t) integral_R
+    T_4,chi(t;u,w) = c_phys Theta(t) integral_R
        conjugate(uhat_chi(k)) what_chi(k) [2 F(t k^2)/(pi t)] dk/(2 pi).
 
 **Full-Weyl tangent candidate.** The complete flat full-Weyl calculation
@@ -54,7 +54,7 @@ This yields
        conjugate(uhat_chi(k)) what_chi(k) H_FW(t,k) dk/(2 pi).
 
 The terms involving `Theta'` and `Theta''` encode the angular-mass
-variation; they are absent from the orbit-only expression. The physical-half
+variation; they are absent from the Section 4 expression. The physical-half
 and time/action factors below apply to either candidate, but do not make the
 two tangent subtractions equivalent. The cutoff transport and the
 normalization of the entire regulated action must also be specified. The
@@ -102,8 +102,8 @@ not evidence that the full P1-D bound fails.
 
 ## Decisions required before adopting the candidate
 
-1. Decide whether the source's `r_curved` subtracts the orbit-only tangent,
-   the full-Weyl tangent, or another term derived from its full action; also
+1. Decide whether the source's `r_curved` subtracts the Section 4 tangent,
+   the full-Weyl angular tangent, or another term derived from its full action; also
    distinguish either from endpoint conversion `J_e''`.
 2. Fix the actual cutoff function and the maps transporting it to each finite
    physical cut; state whether the estimate is uniform in a cutoff family.
