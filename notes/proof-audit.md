@@ -412,11 +412,17 @@ represent the resolvent of an actual perturbed unbounded operator.
 The GCP [mass-skew-resolvent receipt](../evidence/gcp-mass-skew-resolvent-clean-20261030/README.md)
 certifies the positive real-mass bijection and norm estimate from
 skew-adjointness. The separate partner and graph receipts certify their
-stated abstract operator steps. The present coverage map has no exact-source
-Lean receipt for the two-variable Cauchy constants, the full analytic
-continuation, or their assembly into the P1-B second square-resolvent
-variation. None of these receipts establishes the physical `J`, scalar
-multiplier bounds, actual paired domains, or a trace estimate.
+stated abstract operator steps. A dedicated source,
+[`ResolventVariationConstants.lean`](../lean/ResolventVariationConstants.lean),
+and a GCP-only
+[exact-source runner](../lean/cloud-resolvent-variation-constants-20261031.sh)
+now target the finite rational inequalities and final Cauchy-constant
+arithmetic. They are uncompiled and have no receipt. Even after a successful
+replay, the analytic Taylor-tail comparison, the Banach-valued Cauchy
+estimates, their assembly into the P1-B second square-resolvent variation,
+and all physical instantiation would remain outside that certificate. None
+of the existing receipts establishes the physical `J`, scalar multiplier
+bounds, actual paired domains, or a trace estimate.
 
 Concrete claim: under the declared abstract hypotheses, the first- and
 second-order resolvent derivative bounds follow from the Neumann ball and
