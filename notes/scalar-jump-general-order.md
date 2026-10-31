@@ -39,6 +39,26 @@ Taylor's integral remainder and a Gaussian integral give
 
 Their product yields (1) via the half-integer gamma identity. These steps include the complete frequency integral and the ordered-Duhamel normalization; the sign convention for a scalar potential does not affect a quadratic coefficient.
 
+## Four-dimensional flat scalar specialization
+
+For `n=4`, take a potential depending only on the normal coordinate and
+constant in the three tangential coordinates. The free heat trace factors
+into the two-dimensional normal-plus-one-tangential trace above and the two
+remaining tangential heat densities. Per unit interface area, this multiplies
+the two-dimensional coefficient by `(4 pi t)^(-1)`. Thus for a
+first-derivative jump (`p=1`) the independently derived scalar coefficient is
+
+    Q_4(t)-Q_4,sub(t) = J^2/[2048 pi^(3/2)] t^(3/2) + o(t^(3/2)).
+
+This is the scalar-potential `a_7` contribution for one scalar fiber and one
+flat interface, with `Q` the coefficient of `lambda^2`, not its second
+lambda derivative. Substituting `p=1` in the accessible preprint's Eq. (32)
+instead gives `J^2/[1024 pi^(3/2)]`, twice this value. The apparent factor-two
+discrepancy therefore persists after the dimension lift. This calculation is
+an exact tensor-product reduction of the scalar model; it does not identify
+any term in the full-Weyl Dirac variation or settle the published equation,
+whose full text remains gated.
+
 The preprint's displayed Eq. (32) instead has the same expression without the factor 1/(p+1)!. The comparison uses the preprint's one-sided jump convention and the coefficient of the quadratic term, with one scalar fiber and one interface. It is evidence of a discrepancy in the accessible preprint, not a determination about the published version or an erratum. It also does not establish which terms survive in the Dirac variation, or a novelty verdict. No Lean verification is claimed.
 
 Remaining to-do list: independently review the general derivation and inspect the publisher's version or an authoritative correction; complete the physical Dirac comparison, manuscript and Lean certification on GCP.
