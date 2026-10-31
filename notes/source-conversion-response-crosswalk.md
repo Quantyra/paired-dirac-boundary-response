@@ -32,6 +32,21 @@ response: the rough curved remainders, density/contact transfer, common
 subtraction, and physical domains have not been bounded. The chiral LLL also
 needs its separate response/anomaly accounting.
 
+There is conditional progress on one adjacent limit. The
+[`joint rough-field and moving-cut comparison`](weighted-rough-joint-heat-limit.md)
+uses the retained-cubic physical-side approximants, a common-domain pullback,
+and a single path (`e=epsilon^9`, `delta=exp(-4L/epsilon)`) to show that the
+complete unsubtracted mixed heat derivatives converge along the positive
+proper-time cutoff, with integrated error
+`O(epsilon^(7/12)(1+|log epsilon|)^(1/6))`. Its hypotheses include the fixed
+global chart, common domain, coercivity and complex-form estimates. It does
+not include a local tangent subtraction or its moving insertion terms, and
+therefore does not prove convergence of the renormalized response. The
+immediate analytic gap is now the matching and control of those subtraction
+terms under the same path, followed by the orbit/correction, density/contact,
+thermal-image and LLL transfer. This conditional model estimate does not by
+itself instantiate the physical endpoint.
+
 **Numerical role.** Numerical checks can audit explicit constants or
 truncation bounds after the analytic endpoint map is proved. They cannot
 establish operator-domain equality, determinant identification, or the
