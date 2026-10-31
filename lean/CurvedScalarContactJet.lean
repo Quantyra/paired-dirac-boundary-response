@@ -1,4 +1,6 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
 /-!
@@ -26,8 +28,8 @@ theorem curved_scalar_contact_jet_identity
             / (3 * f ^ 2)
           - 2 * f1 ^ 2 * (u1 * xw + w1 * xu) / (3 * f ^ 3))
         + 2 * f1 * (u1 * w + u * w1) / (3 * f ^ 2)) := by
-  field_simp [hf]
-  <;> ring
+  field_simp
+  ring
 
 #print axioms curved_scalar_contact_jet_identity
 
@@ -37,18 +39,18 @@ flat full-Weyl/source-conversion comparison. The O(t) remainders and the
 identification with a physical response are not represented here.
 -/
 
-def flatFullWeylLocal (b0 C0 t U0 U1 : ℝ) : ℝ :=
+noncomputable def flatFullWeylLocal (b0 C0 t U0 U1 : ℝ) : ℝ :=
   8 * b0 ^ 2 / (Real.pi * t ^ 2) * U0
     + C0 / (Real.pi * t) * U0
     - b0 ^ 2 / (2 * Real.pi * t) * U1
 
-def flatSourceConversionLocal (b0 C0 C1 t U0 U1 U2 : ℝ) : ℝ :=
+noncomputable def flatSourceConversionLocal (b0 C0 C1 t U0 U1 U2 : ℝ) : ℝ :=
   C0 / (2 * Real.pi * t) * U0
     + b0 ^ 2 / (12 * Real.pi * t) * U1
     + 1 / (2 * Real.pi) *
       (-C0 * U1 / 12 - b0 ^ 2 * U2 / 60 + 2 * C1 * U0 / b0 ^ 2)
 
-def flatLocalCoefficientResidual
+noncomputable def flatLocalCoefficientResidual
     (b0 C0 C1 t U0 U1 U2 : ℝ) : ℝ :=
   8 * b0 ^ 2 / (Real.pi * t ^ 2) * U0
     + C0 / (2 * Real.pi * t) * U0
@@ -64,7 +66,8 @@ theorem flat_local_coefficient_difference
       = flatLocalCoefficientResidual b0 C0 C1 t U0 U1 U2 := by
   unfold flatFullWeylLocal flatSourceConversionLocal
     flatLocalCoefficientResidual
-  field_simp [hb0, ht, Real.pi_ne_zero]
-  <;> ring
+  have hpi : Real.pi ≠ 0 := Real.pi_ne_zero
+  field_simp
+  ring
 
 #print axioms flat_local_coefficient_difference

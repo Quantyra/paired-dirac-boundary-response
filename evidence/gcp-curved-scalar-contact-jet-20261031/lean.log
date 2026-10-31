@@ -1,0 +1,2 @@
+'curved_scalar_contact_jet_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'flat_local_coefficient_difference' depends on axioms: [propext, Classical.choice, Quot.sound]

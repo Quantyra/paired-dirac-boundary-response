@@ -1,0 +1,17 @@
+Sat Oct 31 23:08:38 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/FullWeylOrbitCorrectionVerticesDraft.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+687dd7e4917a4bfa7b875ee1570d911dd4754f5e033799acdf7cbaf882a3cda9  FullWeylOrbitCorrectionVerticesDraft.lean
+FullWeylOrbitCorrectionVerticesDraft.lean:22:5: warning: unused variable `hduw`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+FullWeylOrbitCorrectionVerticesDraft.lean:23:5: warning: unused variable `hdwu`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'FullWeylOrbitCorrection.mixed_commutator_vertex' depends on axioms: [propext, Quot.sound]
+'FullWeylOrbitCorrection.mixed_commutator_vertex' depends on axioms: [propext, Quot.sound]
+FullWeylOrbitCorrectionVerticesDraft.lean: OK
+10e4b07a364c9b431718e08f76c342dfdb274adbf5d6412d810a45609bcdf542  FullWeylOrbitCorrectionVerticesDraft.olean

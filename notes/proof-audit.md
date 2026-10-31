@@ -54,9 +54,13 @@ A later Taylor/Fourier audit found a factor-of-two error in that receipt's
 stipulated full-Weyl log coefficient: the corrected conditional full-Weyl
 coefficient is `-2 b^2/(35 pi)`, versus orbit-only `-b^2/(35 pi)`. The old
 receipt proves ring algebra for the values supplied, not the corrected
-comparison; the corrected Lean source awaits a GCP replay. The receipt uses
-reused dependencies with local-change warnings and certifies coefficient
-algebra only. The
+comparison. The corrected Lean source has since been replayed on GCP with
+exit code 0, standard axioms only and no reported `sorryAx`; see
+[`gcp-full-weyl-seam-coefficient-comparison-corrected-20261031`](../evidence/gcp-full-weyl-seam-coefficient-comparison-corrected-20261031/README.md),
+certified source SHA-256
+`98f2e7138670b493fc5c0b551ca8ae7a78a499673977ad76a5e1418a5c90036e`. The old
+receipt uses reused dependencies with local-change warnings, and both
+receipts certify coefficient algebra only. The
 operator gap in [`physical-product-contact-operator-gap.md`](physical-product-contact-operator-gap.md)
 shows why the product-frame kernel cannot be inserted directly as the
 physical observable: the transported physical square has a different
@@ -251,11 +255,28 @@ certify supported formalizable claims on GCP.
 regrouping behind the local identity in
 [`full-weyl-curved-scalar-interior-leading-coefficient.md`](full-weyl-curved-scalar-interior-leading-coefficient.md).
 It encodes the derivative jets directly and proves only the polynomial
-rearrangement, conditional on `f != 0`. This is an uncompiled GCP-bound
-development draft; no Lean invocation was made locally and no certificate is
-claimed. Even after a successful GCP check, it will not cover derivation of
-the Hessian expansion, vanishing integrated fluxes, heat traces or the
-physical observable.
+rearrangement, conditional on `f != 0`, together with the flat local
+coefficient difference for `b0 != 0` and `t != 0`.
+
+Both declarations now compile on GCP with Lean 4.30.0, exit code 0, standard
+axioms `propext`, `Classical.choice` and `Quot.sound`, and no reported
+`sorryAx`; see [the receipt](../evidence/gcp-curved-scalar-contact-jet-20261031/README.md).
+The certified source SHA-256 is
+`e8bc85145e142ea6fd0dea295fe37f2297343ab5d803bb7a02e566512c770ba1`. The
+first prepared source
+(`6a952be2f8139ac62cc6e1e84aef31bda5ccb814f080a57cb6b3b5ebb51255b3`) failed
+with exit code 1 and both theorems reporting `sorryAx`: `Real.pi` was unknown
+under its imports, and a trailing `<;> ring` on its own line did not parse.
+That failure is retained at
+[the failure receipt](../evidence/gcp-curved-scalar-contact-jet-import-failure-20261031/README.md).
+The correction changed imports, `noncomputable` markers and tactic blocks
+only; no theorem statement or definition body changed.
+
+The successful check does not cover derivation of the Hessian expansion,
+vanishing integrated fluxes, heat traces or the physical observable. It
+certifies two identities between displayed expressions whose coefficients
+remain analytic inputs, and it reused the retained exact-tree dependency
+build rather than rebuilding it.
 
 Concrete claim: the expanded nine-term rational jet expression equals its
 grouped total-derivative form under `f != 0`. Ordinary argument: clear the
@@ -264,9 +285,10 @@ implication: prove the Hessian expansion and integrate under the admitted
 source jets; the full response and common regulator remain open. Numerical
 role: none.
 
-Remaining to-do list: compile and audit the exact Lean source on GCP; formalize
-additional supported algebra only after source checks; prove the curved
-mixed-boundary estimate and close all physical sectors and regulator limits.
+Remaining to-do list: the exact Lean source is compiled and audited on GCP;
+derive the Hessian expansion and integrated fluxes that supply its
+coefficients; prove the curved mixed-boundary estimate and close all physical
+sectors and regulator limits.
 
 ### Correction to and fixed-model refinement of the odd-odd boundary estimate (2026-10-31 HST)
 
@@ -416,13 +438,20 @@ stated abstract operator steps. A dedicated source,
 [`ResolventVariationConstants.lean`](../lean/ResolventVariationConstants.lean),
 and a GCP-only
 [exact-source runner](../lean/cloud-resolvent-variation-constants-20261031.sh)
-now target the finite rational inequalities and final Cauchy-constant
-arithmetic. They are uncompiled and have no receipt. Even after a successful
-replay, the analytic Taylor-tail comparison, the Banach-valued Cauchy
-estimates, their assembly into the P1-B second square-resolvent variation,
-and all physical instantiation would remain outside that certificate. None
-of the existing receipts establishes the physical `J`, scalar multiplier
-bounds, actual paired domains, or a trace estimate.
+target the finite rational inequalities and final Cauchy-constant arithmetic.
+Those seven declarations now compile on GCP with Lean 4.30.0, exit code 0,
+standard axioms only and no reported `sorryAx`; the exact source, `.olean`,
+hashes and full log are in
+[the receipt](../evidence/gcp-resolvent-variation-constants-20261031/README.md).
+As first prepared, the runner could not have run: it pointed `LEAN_PATH` at a
+package tree with no built `mathlib` and required an absent
+`lake-manifest.json`. It was corrected to the dependency layout already
+proven by the flat source-contact ledger replay. The analytic Taylor-tail
+comparison, the Banach-valued Cauchy estimates, their assembly into the P1-B
+second square-resolvent variation, and all physical instantiation remain
+outside that certificate. None of the existing receipts establishes the
+physical `J`, scalar multiplier bounds, actual paired domains, or a trace
+estimate.
 
 Concrete claim: under the declared abstract hypotheses, the first- and
 second-order resolvent derivative bounds follow from the Neumann ball and
@@ -437,8 +466,9 @@ the explicit operator-norm constants. The bounds do not justify angular
 trace summation, heat-trace differentiation, or the common regulator.
 
 Remaining to-do list: establish the physical partner and multiplier/domain
-hypotheses; formalize the Cauchy derivative and rational constant claims on
-GCP; prove the trace-level response and its common-regulator limit.
+hypotheses; the rational constant claims are certified on GCP, so formalize
+the Cauchy derivative estimates that consume them; prove the trace-level
+response and its common-regulator limit.
 
 ### Flat source-contact factor correction and Lean draft (2026-10-31 HST)
 
@@ -460,9 +490,11 @@ the pinned GCP-only replay is
 [`cloud-flat-source-contact-ledger-20261031.sh`](../lean/cloud-flat-source-contact-ledger-20261031.sh).
 The source SHA-256 is
 `b21468d3fe08878c15b33ed29578599676ba3aabdbd0c0288c71b3269672f67f`.
-The Lean source is uncompiled and has no receipt because GCP authentication
-cannot currently refresh. Its scope excludes the analytic coefficient
-inputs, physical source matching and common-regulator limit.
+That replay has since succeeded on GCP with exit code 0, standard axioms only
+and no reported `sorryAx`; the receipt is
+[`gcp-flat-source-contact-ledger-20261031`](../evidence/gcp-flat-source-contact-ledger-20261031/README.md).
+Its scope excludes the analytic coefficient inputs, physical source matching
+and common-regulator limit.
 
 Concrete claim: given the displayed coefficient inputs, rational algebra
 yields the corrected contact and total-ledger factors. Ordinary argument:
@@ -473,6 +505,6 @@ complete physical response terms under one regulator and transfer the ledger
 to the curved source observable. Numerical role: none. Lean role: certify
 only the rational coefficient identities after exact-source GCP replay.
 
-Remaining to-do list: replay the rational ledger on GCP; close the curved
+Remaining to-do list: the rational ledger is replayed on GCP; close the curved
 response sectors and physical source-observable bridge; finish the novelty
 decision and manuscript; certify the supported final claims.

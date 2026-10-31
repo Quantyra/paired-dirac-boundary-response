@@ -1,0 +1,7 @@
+FullWeylOrbitCorrectionVerticesDraft.lean:22:5: warning: unused variable `hduw`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+FullWeylOrbitCorrectionVerticesDraft.lean:23:5: warning: unused variable `hdwu`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'FullWeylOrbitCorrection.mixed_commutator_vertex' depends on axioms: [propext, Quot.sound]

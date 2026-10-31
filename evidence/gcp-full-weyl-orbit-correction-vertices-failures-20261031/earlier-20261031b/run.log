@@ -1,0 +1,53 @@
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:27:40: error: expected ';' or line break
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:34:5: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul ℤ ℝ ?m.20
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:34:22: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul ℤ ℝ ?m.34
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:34:10: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HPow ℝ ℕ ℝ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:34:27: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HPow ℝ ℕ ℝ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:34:39: error: unsolved goals
+ℝ : Type u_1
+mu u : ℝ
+⊢ -2 * mu ^ 2 * u = -2 * mu ^ 2 * u
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:38:18: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul ℝ ℝ ?m.20
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:38:5: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul ℕ ℝ ?m.16
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:38:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HPow ℝ ℕ ℝ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:38:47: error: unsolved goals
+ℝ : Type u_1
+mu u w : ℝ
+⊢ sorry
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:42:14: error(lean.unknownIdentifier): Unknown constant `FullWeylOrbitCorrection.mixed_commutator_vertex`
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031b/FullWeylOrbitCorrectionVertices.lean:43:14: error(lean.unknownIdentifier): Unknown constant `FullWeylOrbitCorrection.angular_mass_first_vertex`
+'FullWeylOrbitCorrection.angular_mass_mixed_vertex' does not depend on any axioms

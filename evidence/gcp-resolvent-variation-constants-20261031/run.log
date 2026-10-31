@@ -1,0 +1,23 @@
+Sat Oct 31 22:38:42 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ResolventVariationConstants.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+bb92d956d74faa62b05a7c34bfe5d8d52b554056c0ede8f454a8961253e42b36  ResolventVariationConstants.lean
+'exp_upper_at_002' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exp_upper_at_0125' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exp_upper_at_0127' depends on axioms: [propext, Classical.choice, Quot.sound]
+'neumann_q_upper_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'conjugated_resolvent_ball_constant_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'first_cauchy_constant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'mixed_cauchy_constant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exp_upper_at_002' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exp_upper_at_0125' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exp_upper_at_0127' depends on axioms: [propext, Classical.choice, Quot.sound]
+'neumann_q_upper_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'conjugated_resolvent_ball_constant_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'first_cauchy_constant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'mixed_cauchy_constant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResolventVariationConstants.lean: OK
+fda06a01e7c45c0b3ece013e2dd8d3ffc43f15edf19ef42d05c4b4c5a7aa6131  ResolventVariationConstants.olean

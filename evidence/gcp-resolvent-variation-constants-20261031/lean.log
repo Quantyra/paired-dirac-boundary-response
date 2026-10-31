@@ -1,0 +1,7 @@
+'exp_upper_at_002' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exp_upper_at_0125' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exp_upper_at_0127' depends on axioms: [propext, Classical.choice, Quot.sound]
+'neumann_q_upper_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'conjugated_resolvent_ball_constant_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'first_cauchy_constant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'mixed_cauchy_constant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]

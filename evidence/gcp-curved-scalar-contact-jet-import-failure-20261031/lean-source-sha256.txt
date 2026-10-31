@@ -1,0 +1,1 @@
+6a952be2f8139ac62cc6e1e84aef31bda5ccb814f080a57cb6b3b5ebb51255b3  CurvedScalarContactJet.lean

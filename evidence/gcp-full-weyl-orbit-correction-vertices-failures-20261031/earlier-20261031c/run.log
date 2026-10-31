@@ -1,0 +1,11 @@
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+/home/dfredriksen_quantyra_org/quantyra-space-runs/p1-full-weyl-orbit-correction-vertices-20261031c/FullWeylOrbitCorrectionVertices.lean:28:43: error: unsolved goals
+R : Type
+inst✝ : Ring R
+D u w : R
+huw : u * w = w * u
+hproduct : D * (u * w) - u * w * D = (D * u - u * D) * w + u * (D * w - w * D)
+⊢ 4 • (D * (w * u)) + (-1 • (w * (u * D)) + -3 • (u * (w * D))) = 4 • (D * (w * u)) + -4 • (u * (w * D))
+'FullWeylOrbitCorrection.mixed_commutator_vertex' depends on axioms: [propext, sorryAx, Quot.sound]
+'FullWeylOrbitCorrection.angular_mass_first_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FullWeylOrbitCorrection.angular_mass_mixed_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]

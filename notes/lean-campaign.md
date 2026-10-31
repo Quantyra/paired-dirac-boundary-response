@@ -146,3 +146,64 @@ or exact-tree acceptance replay.
 Remaining to-do list: prove the actual paired endpoint/domain map, match the
 source rough heat hypotheses, account for the chiral zero-mode/anomaly sector,
 and formalize the response only after those analytic hypotheses are audited.
+
+## Restored-credential replay sweep (2026-10-31 HST)
+
+GCP authentication was restored, `quantyra-lean-builder-01` was verified
+`RUNNING`, and every Lean source that had been left uncompiled on the
+authentication failure has now been replayed on that builder with Lean 4.30.0
+(commit `d024af099ca4bf2c86f649261ebf59565dc8c622`) and Lake `5.0.0-src+d024af0`.
+Four sources now compile with exit code 0 and no reported `sorryAx`:
+
+| Source | Certified SHA-256 | Axioms | Receipt |
+| --- | --- | --- | --- |
+| `ResolventVariationConstants.lean` | `bb92d956…e42b36` | `propext`, `Classical.choice`, `Quot.sound` | [`gcp-resolvent-variation-constants-20261031`](../evidence/gcp-resolvent-variation-constants-20261031/README.md) |
+| `CurvedScalarContactJet.lean` | `e8bc8514…c770ba1` | `propext`, `Classical.choice`, `Quot.sound` | [`gcp-curved-scalar-contact-jet-20261031`](../evidence/gcp-curved-scalar-contact-jet-20261031/README.md) |
+| `FullWeylSeamCoefficientComparison.lean` | `98f2e713…c90036e` | `propext`, `Classical.choice`, `Quot.sound` | [`gcp-full-weyl-seam-coefficient-comparison-corrected-20261031`](../evidence/gcp-full-weyl-seam-coefficient-comparison-corrected-20261031/README.md) |
+| `FullWeylOrbitCorrectionVerticesDraft.lean` | `687dd7e4…f882a3cda9` | `propext`, `Quot.sound` | [`gcp-full-weyl-orbit-correction-vertices-20261031`](../evidence/gcp-full-weyl-orbit-correction-vertices-20261031/README.md) |
+
+Two of the four needed source corrections before they would compile, and the
+failures are retained:
+
+- `CurvedScalarContactJet.lean` at `6a952be2…b51255b3` failed with exit code
+  1 and `sorryAx` in both theorems: `Real.pi` was unknown under its imports,
+  and a trailing `<;> ring` on its own line did not parse. Retained in
+  [`gcp-curved-scalar-contact-jet-import-failure-20261031`](../evidence/gcp-curved-scalar-contact-jet-import-failure-20261031/README.md).
+- `FullWeylOrbitCorrectionVerticesDraft.lean` at `cc24abf8…0453a17119`
+  failed with exit code 1 and `sorryAx`, leaving a residual goal equivalent to
+  `w * u * D = u * w * D`. `noncomm_ring` had normalized products to
+  right-associated form, after which the supplied hypothesis `u * w = w * u`
+  no longer matched syntactically. Retained with the three earlier attempts in
+  [`gcp-full-weyl-orbit-correction-vertices-failures-20261031`](../evidence/gcp-full-weyl-orbit-correction-vertices-failures-20261031/README.md).
+
+In both cases the correction touched imports, `noncomputable` markers and
+tactic blocks only; no theorem statement or definition body changed, and the
+retained sources in the paired receipts show the difference. The statements
+were checked by hand before the corrections were made.
+
+Two runners also had to be repaired before they could run at all. The
+prepared `cloud-resolvent-variation-constants-20261031.sh` and
+`cloud-curved-scalar-contact-jet-20261031.sh` both pointed `LEAN_PATH` at the
+`paper1-sourceonly-6858aa7-20261029` package tree, which has no built
+`mathlib` library, and both required a `lake-manifest.json` that tree does not
+contain. They were corrected to the dependency layout already proven by the
+flat source-contact ledger replay: the retained
+`paper1-domain-exact-tree-f7b70c1-20261029` package build, a `lakefile.toml`
+precondition, and the eight packages that actually carry built libraries. The
+two new runners for the seam and orbit sources were written to the same
+pattern.
+
+Scope: all four certificates are abstract algebra and finite rational
+arithmetic. None establishes an analytic input, an operator realization, a
+domain or trace claim, the physical observable, the common-regulator response,
+or the endpoint-domain match. Every run reused the retained exact-tree
+dependency artifacts rather than rebuilding them, and no receipt hashes each
+imported `.olean`, so dependency acceptance remains open. Lean's linter also
+reports `hduw` and `hdwu` as unused in the orbit vertex theorem: that identity
+needs only `huw` and `hproduct`.
+
+Remaining to-do list: no Lean source in this repository is now left
+uncompiled. Close the analytic and physical gates that these certificates do
+not touch, finish the closest-prior-art comparison, and record the S001
+decision; formalize the operator-level estimates only at the scope the paper
+ultimately claims.

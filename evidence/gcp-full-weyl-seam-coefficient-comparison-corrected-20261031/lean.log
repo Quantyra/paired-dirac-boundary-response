@@ -1,0 +1,2 @@
+'FullWeylSeamCoefficientComparison.fullWeyl_cubic_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FullWeylSeamCoefficientComparison.fullWeyl_log_difference' depends on axioms: [propext, Classical.choice, Quot.sound]

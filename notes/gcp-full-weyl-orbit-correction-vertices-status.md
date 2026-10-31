@@ -1,8 +1,39 @@
-# GCP status: full-Weyl correction vertex formalization draft
+# GCP status: full-Weyl correction vertex formalization
 
-Date: 2026-10-31 HST. This records a formalization attempt, not a Lean certificate.
+Date: 2026-10-31 HST. The replay is now complete. Everything below the
+resolution section is retained chronological evidence and cites earlier
+states.
 
-## Current source
+## Resolution (2026-10-31 HST)
+
+GCP authentication was restored and the builder `quantyra-lean-builder-01`
+verified `RUNNING`. The declaration now compiles with Lean 4.30.0, exit code
+0, axioms `propext` and `Quot.sound` only, and no reported `sorryAx`. The
+certified source SHA-256 is
+`687dd7e4917a4bfa7b875ee1570d911dd4754f5e033799acdf7cbaf882a3cda9`; the
+receipt is
+[`gcp-full-weyl-orbit-correction-vertices-20261031`](../evidence/gcp-full-weyl-orbit-correction-vertices-20261031/README.md)
+and the runner is
+`lean/cloud-full-weyl-orbit-correction-vertices-687dd7e4-20261031.sh`.
+
+The source recorded below as current, SHA-256
+`cc24abf8d01802bf44e8e4b0da6dc67d11f96213decdc85acb60fd0453a17119`, was
+replayed first on the restored credentials and **failed** with exit code 1,
+leaving the same residual goal as the earlier run `c`:
+`noncomm_ring [huw, hduw, hdwu]` does not apply `huw` after it normalizes
+products to right-associated form. The fix supplies the bridging step
+`w * (u * D) = u * (w * D)` in that normalized form. All four failing runs,
+including this one and the earlier `a`, `b` and `c` logs, are preserved in
+[`gcp-full-weyl-orbit-correction-vertices-failures-20261031`](../evidence/gcp-full-weyl-orbit-correction-vertices-failures-20261031/README.md).
+
+Lean's linter reports that `hduw` and `hdwu` are unused: the identity needs
+only `huw` and `hproduct`. The statement retains them as declared, so the
+certified theorem is weaker than the hypotheses would allow. The certificate
+still does not encode parameter differentiability, represented operators or
+domains, heat traces, curved estimates, or the physical response, and it
+reused the retained exact-tree dependency build rather than rebuilding it.
+
+## Current source (historical)
 
 `lean/FullWeylOrbitCorrectionVerticesDraft.lean` currently has SHA-256 `CC24ABF8D01802BF44E8E4B0DA6DC67D11F96213DECDC85ACB60FD0453A17119`. This revision removes the trivial scalar simplification lemmas and retains only the substantive abstract mixed-commutator coefficient identity. It has not been copied or compiled on GCP. The GCP host has the immediately preceding source hash `8B6180B22B638EB97424B74257C3982D8F88F0DC0C89417B6B19EAAAC1DA170B`; it must be recopied after GCP authentication is restored. It proposes an abstract-ring proof of the mixed commutator coefficient under explicit product-rule and scalar-commutation hypotheses, plus polynomial checks of the angular-mass coefficients. It does not encode parameter differentiability, represented operators/domains, heat traces, curved estimates or the physical response.
 

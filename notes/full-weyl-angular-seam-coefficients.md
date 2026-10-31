@@ -143,8 +143,13 @@ orbit-only tower coefficients is checked in the GCP receipt
 That receipt's log equality is superseded: it certifies ring algebra for the
 previously stipulated coefficient, but the full-Weyl coefficient was not the
 one implied by `K_4=-1/5040` and the stated Fourier tail. The corrected
-coefficient-difference theorem is drafted in
-`lean/FullWeylSeamCoefficientComparison.lean` but awaits a GCP replay. The old
+coefficient-difference theorem in
+`lean/FullWeylSeamCoefficientComparison.lean` has now been replayed on GCP
+with Lean 4.30.0, exit code 0, standard axioms only and no reported
+`sorryAx`; see
+[`gcp-full-weyl-seam-coefficient-comparison-corrected-20261031`](../evidence/gcp-full-weyl-seam-coefficient-comparison-corrected-20261031/README.md),
+certified source SHA-256
+`98f2e7138670b493fc5c0b551ca8ae7a78a499673977ad76a5e1418a5c90036e`. The old
 run used Lean 4.30.0 and reused source-only dependencies with local-change
 warnings. Neither result proves the integral evaluation or analytic
 remainders. The earlier

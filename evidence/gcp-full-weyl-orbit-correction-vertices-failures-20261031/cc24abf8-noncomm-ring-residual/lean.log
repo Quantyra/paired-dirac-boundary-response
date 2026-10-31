@@ -1,0 +1,10 @@
+FullWeylOrbitCorrectionVerticesDraft.lean:29:43: error: unsolved goals
+R : Type
+inst✝ : Ring R
+D u w : R
+huw : u * w = w * u
+hduw : (D * u - u * D) * w = w * (D * u - u * D)
+hdwu : (D * w - w * D) * u = u * (D * w - w * D)
+hproduct : D * (u * w) - u * w * D = (D * u - u * D) * w + u * (D * w - w * D)
+⊢ 4 • (D * (w * u)) + (-1 • (w * (u * D)) + -3 • (u * (w * D))) = 4 • (D * (w * u)) + -4 • (u * (w * D))
+'FullWeylOrbitCorrection.mixed_commutator_vertex' depends on axioms: [propext, sorryAx, Quot.sound]

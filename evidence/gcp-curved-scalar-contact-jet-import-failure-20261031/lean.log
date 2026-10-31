@@ -1,0 +1,43 @@
+CurvedScalarContactJet.lean:29:3: error: unknown tactic
+CurvedScalarContactJet.lean:28:55: error: unsolved goals
+f f1 f2 u u1 u2 w w1 w2 xu xw : ℝ
+hf : f ≠ 0
+⊢ -2 * u1 * w1 / f + f1 * u * w1 / (3 * f ^ 2) + f1 * w * u1 / (3 * f ^ 2) + f1 * u2 * xw / (3 * f ^ 2) +
+              f1 * w2 * xu / (3 * f ^ 2) +
+            f2 * u1 * xw / (3 * f ^ 2) +
+          f2 * w1 * xu / (3 * f ^ 2) -
+        2 * f1 ^ 2 * u1 * xw / (3 * f ^ 3) -
+      2 * f1 ^ 2 * w1 * xu / (3 * f ^ 3) =
+    -2 * u1 * w1 / f +
+        ((f2 * (u1 * xw + w1 * xu) + f1 * (u2 * xw + w2 * xu - u1 * w - w1 * u)) / (3 * f ^ 2) -
+          2 * f1 ^ 2 * (u1 * xw + w1 * xu) / (3 * f ^ 3)) +
+      2 * f1 * (u1 * w + u * w1) / (3 * f ^ 2)
+'curved_scalar_contact_jet_identity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+CurvedScalarContactJet.lean:41:16: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:42:12: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:43:20: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:40:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'
+CurvedScalarContactJet.lean:46:12: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:47:21: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:48:15: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:45:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'
+CurvedScalarContactJet.lean:53:16: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:54:16: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:55:25: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:56:17: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:57:22: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:58:12: error(lean.unknownIdentifier): Unknown constant `Real.pi`
+CurvedScalarContactJet.lean:51:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'
+CurvedScalarContactJet.lean:67:3: error: unknown tactic
+CurvedScalarContactJet.lean:64:60: error: unsolved goals
+b0 C0 C1 t U0 U1 U2 : ℝ
+hb0 : b0 ≠ 0
+ht : t ≠ 0
+⊢ 8 * b0 ^ 2 / (sorry * t ^ 2) * U0 + C0 / (sorry * t) * U0 - b0 ^ 2 / (2 * sorry * t) * U1 -
+      (C0 / (2 * sorry * t) * U0 + b0 ^ 2 / (12 * sorry * t) * U1 +
+        1 / (2 * sorry) * (-C0 * U1 / 12 - b0 ^ 2 * U2 / 60 + 2 * C1 * U0 / b0 ^ 2)) =
+    8 * b0 ^ 2 / (sorry * t ^ 2) * U0 + C0 / (2 * sorry * t) * U0 - 7 * b0 ^ 2 / (12 * sorry * t) * U1 +
+          C0 / (24 * sorry) * U1 +
+        b0 ^ 2 / (120 * sorry) * U2 -
+      C1 / (sorry * b0 ^ 2) * U0
+'flat_local_coefficient_difference' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

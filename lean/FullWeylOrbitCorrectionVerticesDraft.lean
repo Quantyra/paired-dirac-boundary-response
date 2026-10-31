@@ -1,7 +1,7 @@
 import Mathlib.Tactic.NoncommRing
 
 /-!
-Development draft: the fixed-mode full-Weyl commutator correction vertex. No successful GCP Lean replay is recorded for this source yet.
+Development draft: the fixed-mode full-Weyl commutator correction vertex.
 This declaration verifies a commutator coefficient identity under explicit
 product-rule and scalar-commutation hypotheses. It does not formalize angular-mass
 derivatives, operator domains, parameter differentiability, heat traces, or the
@@ -27,9 +27,11 @@ theorem mixed_commutator_vertex
       -(twiceDiracJet D w * u - u * twiceDiracJet D w)
       + 2 * (D * (u * w) - (u * w) * D)
       = 4 * (D * (u * w) - (u * w) * D) := by
+  have hassoc : w * (u * D) = u * (w * D) := by
+    rw [← mul_assoc, ← huw, mul_assoc]
   unfold twiceDiracJet
   rw [hproduct]
-  noncomm_ring [huw, hduw, hdwu]
+  noncomm_ring [hassoc, huw, hduw, hdwu]
 
 end FullWeylOrbitCorrection
 

@@ -1,0 +1,13 @@
+Sat Oct 31 22:56:50 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/CurvedScalarContactJet.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+e8bc85145e142ea6fd0dea295fe37f2297343ab5d803bb7a02e566512c770ba1  CurvedScalarContactJet.lean
+'curved_scalar_contact_jet_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'flat_local_coefficient_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'curved_scalar_contact_jet_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'flat_local_coefficient_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+CurvedScalarContactJet.lean: OK
+6d93d9d1c054750c07df023d09981950ebfad408d45e169d56f8cffd893c10d9  CurvedScalarContactJet.olean

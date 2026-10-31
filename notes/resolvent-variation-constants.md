@@ -79,22 +79,33 @@ x=0.002, 0.125 and 0.127 gives respectively the rational upper bounds
     q < 1.002003 * 0.133149 < 0.134,
     C < 1.13546/(1-1.002003*0.133149) < 1.32.
 
-The exact rational arithmetic in these final bounds is drafted in
+The exact rational arithmetic in these final bounds is formalized in
 [`lean/ResolventVariationConstants.lean`](../lean/ResolventVariationConstants.lean).
 It defines the Taylor polynomial plus geometric tail and states rational
 inequalities for the three inputs, the Neumann factor, and the resulting
-first- and mixed-Cauchy constants. The draft has not been compiled: the
-GCP-only Lean requirement applies. Its theorems would certify only the
-rational arithmetic after the ordinary Taylor-tail argument, not that
-argument itself, the Banach-space Cauchy estimates, any operator/domain
-hypothesis, or a trace response.
+first- and mixed-Cauchy constants. Its theorems certify only the rational
+arithmetic after the ordinary Taylor-tail argument, not that argument itself,
+the Banach-space Cauchy estimates, any operator/domain hypothesis, or a trace
+response.
 
 The GCP-only exact-source runner is
 [`lean/cloud-resolvent-variation-constants-20261031.sh`](../lean/cloud-resolvent-variation-constants-20261031.sh).
 It pins the Lean source SHA-256 and the existing Lean 4.30.0 source-only
 build at `6858aa7dd45f717f8302f4ae6bfa3a7926fe68b5`; the source file must be
-copied to the builder's home directory before running it. The runner has not
-been executed because the selected GCP account cannot refresh its token.
+copied to the builder's home directory before running it.
+
+On 2026-10-31 HST that runner compiled the source on
+`quantyra-lean-builder-01` with Lean 4.30.0 and exit code 0. All seven
+declarations depend only on `propext`, `Classical.choice` and `Quot.sound`,
+and no `sorryAx` was reported. The exact source, `.olean`, hashes, version
+output, full log and scope limits are preserved in
+[the receipt](../evidence/gcp-resolvent-variation-constants-20261031/README.md).
+The certified content is the rational content of `q<0.134`, `C<1.32`,
+`264/25` and `8448/25`. Inequality (5) itself, estimates (1)-(4), the
+operator and domain hypotheses, and every physical input remain ordinary
+arguments outside that certificate. The run reused the retained exact-tree
+dependency build rather than rebuilding it, so dependency acceptance stays
+open.
 
 The accompanying exact-integer check supports those finite rational
 comparisons; it does not prove (1)-(4), geometric hypotheses, or a trace
@@ -103,5 +114,6 @@ norm of an unknown corrected geometry.
 
 Remaining to-do list: verify the actual paired skew-adjoint realization,
 scalar multiplier and domain hypotheses, the plus/minus square identity,
-the trace and regulator requirements, and formalize the supported statements
-and exact inequalities on GCP.
+and the trace and regulator requirements. The exact rational inequalities
+are now certified on GCP; the operator-level estimates that consume them are
+not, and remain to be formalized at the scope the paper claims.
