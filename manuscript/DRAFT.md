@@ -406,6 +406,21 @@ density, boundary transgression, LLL, and local restorations under the same
 regulator. Equation (5.7) does not identify `r_curved` with either bracket
 or justify the cut and proper-time limits.
 
+In the flat constant-direction model, the leading coefficients in (5.7) can
+be checked under the declared common normalization. Set `C=2 b_0^2` and
+`U_0=integral_R uw`. The source contact identity and even folding give
+`C_src=-(C/(2 pi)) U_0 t^(-2)`; the full-Weyl correction vertices give
+`D_flat=(3C/pi) U_0 t^(-2)`, so
+`D_flat-C_src=(7C/(2 pi)) U_0 t^(-2)`. The orbit bracket contributes
+`(C/(2 pi)) U_0 t^(-2)`, and their sum is
+`(4C/pi) U_0 t^(-2)`, matching the full-Weyl coefficient in this model.
+The earlier `4C/pi` assignment to `D_flat-C_src` used a factor-two error in
+the source contact and is superseded. This is rational coefficient
+bookkeeping for a flat diagnostic; it does not match the curved sectors,
+identify the source's `r_curved`, or prove the common-regulator endpoint.
+`../lean/FlatSourceContactLedger.lean` records only the rational arithmetic
+and remains uncompiled pending GCP reauthentication.
+
 For the still-unadopted candidate `r_cand,eta=H_FW+A_eta-T_4,chi`, with
 `A_eta` the signed action terms assigned outside `H_FW`, the same finite-cut
 ledger would read
