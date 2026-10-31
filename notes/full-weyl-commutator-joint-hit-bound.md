@@ -806,9 +806,72 @@ massive-tower limit, and (16). First unsupported implication: match the
 residual `h'` coefficient, derivative-insertion terms, physical-half
 normalization and source cutoff/restoration ledger. Numerical role: none.
 
-Remaining to-do list: derive the full variable-insertion odd-odd local
+Remaining to-do list: derive the integrated variable-insertion odd-odd local
 coefficient and source cutoff match; control seam and moving-cut terms;
 complete the all-sector common-regulator comparison and GCP certification.
+
+### Integrated variable-insertion odd-odd coefficient
+
+Let `a=u'` and `b=w'` be smooth scalar insertions compactly supported in the
+fixed smooth interior, so no seam or spatial-boundary term enters the
+integrated heat expansion. In the same-boundary word, the two heat times
+combine to `t`; the relative-point Gaussian has covariance
+`2 sigma g^(-1)`, `sigma=sr/t`. After integrating over the orbit, its
+rank-two trace through the terms that can survive the tower limit is
+
+    (1/(2 pi t)) [ integral (a b) dmu
+       + t integral (a_1 a b) dmu
+       - sigma integral (nabla a . nabla b) dmu ] + O(t),
+
+where the displayed `O(t)` is after the two-ordering Duhamel integration
+and the massive-tower sum, with fixed smooth coefficients and insertions.
+The gradient sign follows by expanding the two insertions at separated
+points and integrating the Gaussian; equivalently its Fourier multiplier is
+`exp(-sigma |xi|^2)=1-sigma |xi|^2+O(sigma^2 |xi|^4)`. The coefficient of
+`t a_1` is the same scalar heat coefficient used above.
+
+Multiplication by the external Duhamel factor `s=t-r`, integration in `r`,
+and summation over both orderings give the same-boundary coefficients
+
+    (b_S^2/pi) integral (a_1 a b) dmu
+      - (b_S^2/(6 pi)) integral (nabla a . nabla b) dmu + O(t).
+
+Indeed, the derivative term uses
+`2 integral_0^t (t-r)(sr/t) dr=t^3/6`; the rank-two heat prefactor is
+`1/(2 pi t)`, and `S_2(t)~2 b_S^2/t^2`. The defect's linear insertion
+gradient term vanishes by `tr B_i=0`; its first derivative-dependent terms
+are in the `O(t)` remainder after the tower. Adding its coefficient from
+(16) to the same-boundary `a_1=(h^2-h')/6` term therefore yields the
+spatially integrated paired-sector expression
+
+    R_same+defect,int(t)
+      = -(b_S^2/(6 pi)) integral [ h' a b + nabla a . nabla b ] dmu
+        + O(t)
+      = -(b_S^2/(6 pi)) integral [ h' u'w' + u''w'' ] dmu + O(t).
+
+This is raw rank-two normalization for the fixed interior, compactly
+supported insertions, after subtracting the flat `a_0` term. It does not
+assert a pointwise density formula for the gradient part; integration by
+parts or removing the compact-support condition would introduce boundary
+terms. At `h=0`, its remaining `u''w''` term also shows that this odd-odd
+sector alone is not the full flat response: other vertices and the source
+subtraction must be included. Nothing here identifies either term with the
+source's tangent/cutoff restoration or proves the physical `t^(3/2)`
+remainder.
+
+Concrete claim: the integrated fixed-interior odd-odd pair has the displayed
+coefficient for compactly supported smooth scalar insertion jets. Ordinary
+argument: expand the same-boundary relative-point Gaussian to second order,
+retain its first heat coefficient, use `tr B_i=0` for the defect's linear
+term, and integrate the two Duhamel orderings against `S_2(t)`. First
+unsupported implication: match this paired-sector coefficient and every
+other vertex, contact, cutoff restoration, and boundary term under the
+source's common regulator. Numerical role: none.
+
+Remaining to-do list: independently audit the variable-insertion expansion
+and its normalization; match the full local ledger to the source; control
+seam and moving-cut terms; complete all-sector common-regulator comparison
+and GCP certification.
 
 ### Endpoint check in the exact frozen model
 
