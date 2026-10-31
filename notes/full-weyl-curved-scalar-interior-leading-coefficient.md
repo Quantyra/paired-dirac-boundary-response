@@ -93,6 +93,17 @@ For compactly supported `u,w` the total derivative integrates to zero, so
 
     integral Q_{u,w}(y) dy = 12 integral u(y)w(y)/f_0(y) dy.
 
+Consequently the integrated coefficient of `Delta_sc` is
+`(6C/pi) t^(-2) integral uw/f_0`. In the flat seed `f_0=1`, this agrees
+with the full-plane leading scalar Duhamel correction in the existing flat
+ledger: the pure angular term contributes `2C/pi` and the two ordered
+orbit-angular terms contribute `4C/pi`. Under the conditional physical-half
+normalization this is `3C/pi`. The source contact remains separate:
+`C_src=-(C/pi)t^(-2)` in that normalization, so `D-C_src` has coefficient
+`4C/pi`; no cancellation is inferred. This check validates the scalar
+coefficient and the retained orbit-angular cross terms in the restricted
+flat leading ledger only.
+
 This is a new consistency target for the complete local matching: the orbit
 weight changes the integrated scalar coefficient. It does not prove that
 this term is canceled by the orbit Hessian, the matrix `mu C_b` sector, the
