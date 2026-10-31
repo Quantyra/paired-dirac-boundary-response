@@ -195,6 +195,31 @@ counterterms, or the integrated mixed heat remainder. Those still require
 the parent finite-jet and source-normalization arguments for this inserted
 factor.
 
+There is a useful bound on the nonsingular angular-factor remainder alone.
+Let `M_1,M_2` bound `|rho'|,|rho''|` on `(0,s_0]`, and restrict
+`0<t<=min(1,s_0/a_max)`, so `t S_b<=s_0` and `t<=1`. If the path jets obey
+`|S_u|<=J_u` and `|S_uw|<=J_uw` uniformly in the base point and bridge,
+then (11) implies
+
+    |partial_u rho(t S_b)| <= t M_1 J_u,
+    |partial_u partial_w rho(t S_b)|
+        <= t M_1 J_uw + t^2 M_2 J_u J_w.               (12)
+
+At the seed, sufficient pathwise constants follow directly from (7):
+
+    J_u <= 2 ||u||_infinity,
+    J_uw <= 4 ||u||_infinity ||w||_infinity
+             +2 ||u'||_infinity ||X_w||_infinity
+             +2 ||w'||_infinity ||X_u||_infinity.
+
+Thus the differentiated `rho` factor is nonsingular and its first two field
+jets are uniformly `O(t)` for bounded path jets. This isolates the only
+`1/t` singularity in the angular-factor derivatives in `C/(t S_b)`.
+Equation (12) does not bound the mixed derivative of the full product in
+(5): derivatives of `A_h`, `B_h`, the thermal images and their products
+with the unvaried `rho` remain, as do the local subtraction and physical
+source terms.
+
 The representation makes the next estimate concrete: after the source's
 full local subtraction, differentiate (5) along the admitted mass/log
 directions and bound its bridge expectation uniformly. The moment-order
