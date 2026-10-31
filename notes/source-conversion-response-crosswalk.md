@@ -166,17 +166,32 @@ comparison. It cannot be substituted for the Euclidean orbit contact
    For the static zero-angle RN seed, the parent conformal-domain derivation
    and radial nature of E identify each massive physical mode with the
    full-Weyl congruence `E(D+i mu G)E` on the common projector domain. The
-   remaining implication is from this operator identification to the
-   complete physical paired response, including density and boundary/contact
-   vertices; the finite-cut argument supplies no uniform moving-cut or trace
-   estimate. Lean now checks the abstract composition-domain set reduction
-   under explicit preservation assumptions, but does not certify those
-   physical assumptions or the mode trace.
-2. Compare that complete response and its tangent subtraction to the source's
+   finite-cut identity alone supplies no uniform moving-cut or trace estimate.
+   A subsequent conditional result in
+   [`physical-cut-interior-response-locality.md`](physical-cut-interior-response-locality.md)
+   assembles the separated-interior cut comparison for both ordered vertices
+   and all four mixed-second-vertex terms from the localized Schatten estimate.
+   Together with [`physical-cut-tail-locality-reduction.md`](physical-cut-tail-locality-reduction.md)
+   and its separate boundary path, it yields a joint cut-to-complete comparison
+   along the recorded power path, provided the common physical bundle/domain,
+   uniform H5, weighted Davies, finite-cover and form-trace hypotheses hold.
+   This is conditional progress on the physical-model cut limit, not an
+   independently verified application to the source family or its regulator.
+   Lean checks the abstract composition-domain set reduction under explicit
+   preservation assumptions, but certifies neither these analytic hypotheses
+   nor the mode trace.
+2. The first remaining bridge is from that complete physical paired response
+   to the source's product-frame/time-reduced observable. Compare its tangent
+   subtraction to the source's
    fixed-angular conversion under one common regulator; retain the `q`
    chiral LLL and its Weyl/anomaly contribution separately.
-3. Establish the required rough curved remainder and cubic/log approximation
-   limits, or decide from the final theorem scope whether P1-D is necessary.
+   Retain the physical density, boundary/contact vertices, angular tower and
+   moving insertion terms. The conformal congruence is not a unitary
+   conjugation of the product-frame square, and the LLL remains gapless.
+3. Verify that the conditional cut-locality hypotheses hold uniformly for
+   the actual cubic/log approximants and physical endpoint; then establish
+   the common-regulator finite part and required rough curved remainder, or
+   decide from the final theorem scope whether P1-D is necessary.
 4. The bounded scalar endpoint algebra and abstract orbit-only mode bridge
    have GCP receipts. The [`fourth-order full-Weyl jet receipt`](../evidence/gcp-full-weyl-angular-jet4-20261030/README.md)
    extends the polynomial check through the x^4 coefficient; its reused

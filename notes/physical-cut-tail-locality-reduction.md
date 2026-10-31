@@ -2,9 +2,12 @@
 
 This reduces the quantitative cut-to-complete response comparison to one
 explicit separated-interior heat-locality estimate. The tail and path
-calculations are proved under the recorded physical chart and heat bounds;
-the needed locality estimate is stated as a hypothesis, not proved here.
-This is not a source-normalization or complete regulator theorem.
+calculations are proved under the recorded physical chart and heat bounds.
+The interior estimate was subsequently assembled conditionally, including
+both ordered vertices and the mixed second vertex, in
+`physical-cut-interior-response-locality.md`; that result uses the combined
+uniform hypotheses listed there and in the localized Schatten note. Neither
+note establishes source normalization or the complete regulator theorem.
 
 Use the physical four-dimensional model and N(v) norm of
 `physical-direction-cutoff-proper-time-path.md`, with its uniform fixed-cut
@@ -43,7 +46,7 @@ The same holds for w_int and for a cutoff commutator region placed between
 u=delta and u~delta^a. No assumption that compactified distance equals
 physical distance is used.
 
-The missing quantitative input is an estimate, uniform in the cut and field
+The quantitative target is an estimate, uniform in the cut and field
 approximant, for the *complete interior mixed response* after identifying
 the common interior bundles and operators. One sufficient form is
 
@@ -54,14 +57,17 @@ the common interior bundles and operators. One sufficient form is
 for 0<t<=t0, with finite fixed M,N and positive c_0. It must include both
 ordered first-vertex terms and the mixed second vertex, all cutoff
 commutators, and the actual trace normalization. This estimate is not implied
-merely by strong heat convergence. The compact-model commutator argument in
-`complex-collar-commutator-trace-locality.md` is a possible route, but its
-uniform off-diagonal trace/Schatten hypotheses and common-domain cutoff
-identity must be proved for the physical noncompact/cut pair. In particular,
-no global trace-class assumption on the complete heat operator is available.
+merely by strong heat convergence. The conditional assembly in
+`physical-cut-interior-response-locality.md` derives this form from the
+compact-model commutator argument and localized Schatten inputs. The
+commutator argument in `complex-collar-commutator-trace-locality.md` still
+requires verification of its uniform off-diagonal trace/Schatten hypotheses
+and common-domain cutoff identity for the physical noncompact/cut pair. In
+particular, no global trace-class assumption on the complete heat operator is
+available.
 
-If (4) is established, its contribution to the proper-time integral is at
-most a polynomial in delta^(-1) and epsilon^(-1) times
+Under the hypotheses of the conditional assembly, its contribution to the
+proper-time integral is at most a polynomial in delta^(-1) and epsilon^(-1) times
 exp[-c_0(1-a)^2 |log delta|^2/t0], hence tends to zero along any power-law
 delta=epsilon^p. For the tail bound (2), it suffices that 3ap/2>3, or
 p>2/a. For example,
@@ -79,6 +85,6 @@ responses does not identify the product-frame time-reduced source observable
 or establish the existence of its renormalized finite part. No numerical run
 or Lean certification is claimed.
 
-Remaining to-do list: prove the physical separated-interior estimate (4),
-match source normalization and subtractions, complete novelty and manuscript,
-and certify supported claims in Lean on GCP.
+Remaining to-do list: verify the physical hypotheses for the conditional
+separated-interior estimate (4), match source normalization and subtractions,
+complete novelty and manuscript, and certify supported claims in Lean on GCP.
