@@ -45,3 +45,11 @@ theorem first_cauchy_constant_eq :
 theorem mixed_cauchy_constant_eq :
     (4 * (33 / 25 : ℚ)) / (1 / 8) ^ 2 = 8448 / 25 := by
   norm_num
+
+#print axioms exp_upper_at_002
+#print axioms exp_upper_at_0125
+#print axioms exp_upper_at_0127
+#print axioms neumann_q_upper_lt
+#print axioms conjugated_resolvent_ball_constant_lt
+#print axioms first_cauchy_constant_eq
+#print axioms mixed_cauchy_constant_eq

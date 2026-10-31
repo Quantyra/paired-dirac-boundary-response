@@ -89,6 +89,13 @@ rational arithmetic after the ordinary Taylor-tail argument, not that
 argument itself, the Banach-space Cauchy estimates, any operator/domain
 hypothesis, or a trace response.
 
+The GCP-only exact-source runner is
+[`lean/cloud-resolvent-variation-constants-20261031.sh`](../lean/cloud-resolvent-variation-constants-20261031.sh).
+It pins the Lean source SHA-256 and the existing Lean 4.30.0 source-only
+build at `6858aa7dd45f717f8302f4ae6bfa3a7926fe68b5`; the source file must be
+copied to the builder's home directory before running it. The runner has not
+been executed because the selected GCP account cannot refresh its token.
+
 The accompanying exact-integer check supports those finite rational
 comparisons; it does not prove (1)-(4), geometric hypotheses, or a trace
 estimate. The ball bound B is a sufficient assumption and not an evaluated
