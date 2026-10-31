@@ -75,6 +75,29 @@ and maximal realization. The GCP Lean receipt proves the operator algebra
 from those partner hypotheses; it does not formalize Bär--Ballmann or verify
 the source geometry.
 
+## Primary-theorem hypothesis check (2026-10-31)
+
+The cited arXiv v2 gives Corollary 4.18 for a boundary splitting interchanged
+by the adapted tangential symbol; it concludes that each `H^(1/2)` eigenspace
+is a local `D`-elliptic boundary condition. Here the adapted symbol is
+`sigma_D(nu)^(-1) sigma_D(xi)`. Since `chi=tau_3 gamma_n` anticommutes with
+this symbol for every tangential `xi`, both `E_+` and `E_-` meet that
+criterion. The source realization is on a compact smooth manifold with
+compact boundary, within the guide's complete-manifold-with-compact-boundary
+setup.
+
+Theorem 4.6 gives the adjoint boundary condition by annihilation under the
+normal-symbol pairing. Because `sigma_D(nu)` preserves the `chi` eigenspaces,
+the annihilator of `E_+` is `E_-`, yielding the stated complementary adjoint
+domain. Theorem 4.9 at `k=0` upgrades a maximal-domain section whose image is
+in `L^2` to `H^1` locally up to the boundary; compactness makes this global.
+Conversely, an `H^1` section with the prescribed trace lies in the maximal
+domain by its distributional action. Theorem 4.10 supplies graph-density of
+the smooth projector core. These citations support the stated finite-cut
+domain/adjoint/core argument under the source model's bundle and formal
+operator hypotheses; they provide no moving-cut constants or limiting
+conformal-boundary domain.
+
 ## Scope boundary
 
 This closes the finite-cut H^1-domain and partner argument at the stated
