@@ -131,19 +131,18 @@ This does not say J preserves the paired first-order boundary domain. It
 exchanges that domain with its adjoint domain, and likewise exchanges the
 partner squares as closed operators. The claim above concerns bulk
 expressions and a splitting before the transmittal boundary condition is
-imposed. To obtain an operator equivalence one must globally identify the
-two S-eigenbundles, match their normal connections, verify the transformed
-Robin coefficient and source sign convention, and compare the actual
-closed realizations. For the pinned identical-copy finite-cut model, the
+imposed. For the pinned identical-copy finite-cut model, the
 separate [transition check](source-paired-bundle-transition-check.md)
 verifies that its stipulated `J` patches and is parallel across the source's
 common spin and pulled-back magnetic transitions, including the regular bolt
 chart. Thus the parallel-`J` hypothesis is closed at that declared fixed-cut
 scope; this is not an independent reconstruction of a different bundle or
-nonidentical copies. The remaining comparison is the identification of the
-resulting S-eigenbundles with interface side bundles, their normal and
-tangential connections (including `B_j`), the transformed Robin coefficient
-and sign, and the actual closed realizations.
+nonidentical copies. The local varying `B_j` and nonzero-normal-jet Robin
+coefficients are matched in the
+[finite-cut square crosswalk](finite-cut-interface-square-crosswalk.md).
+Its side-sign factorization proves equality of the closed interface and P1
+composition squares, including trace multiplicity, under this global `J`
+hypothesis. No first-order equivalence is asserted.
 
 In the source's displayed normal-frame matrices gamma_n=sigma_1 and
 J=tau_1 gamma_n, the candidate splitting simplifies further. The same U
@@ -227,11 +226,12 @@ multiplication by `I^(-1)=tau_1` gives
 Herzog--Huang--Vassilevich Eq. (15) gives
 `B_j=(K^+_(jA)+K^-_(jA))/2 gamma_n gamma_A`. In the reflection-symmetric
 case `K^+=K^-=H`, these expressions agree after aligning the inward/outward
-normal sign convention. This closes the tangential spin-connection
-coefficient match for the pinned symmetric finite-cut seed. It does not
-establish the full closed-operator equivalence for a varying metric family,
-the source's magnetic twisting terms in the interface formula, or any
-uniform moving-cut estimate.
+normal sign convention. The same identity applies to the conformally
+transformed second fundamental form, so the local `B_j` match includes a
+nonzero normal jet. Together with the common magnetic transition and the
+closed-square factorization in the crosswalk, this completes the conditional
+fixed-cut operator comparison for the pinned model. It gives no uniform
+moving-cut estimate or physical response transfer.
 
 ## First-order domain distinction and square-level target
 
@@ -245,15 +245,16 @@ spinor traces agree on the two sides and the outward normals are opposite,
 so the two first-order Green boundary terms cancel. No unitary map can
 identify these first-order closed operators.
 
-The relevant possible heat-trace comparison is instead between the folded
-interface square and the pair of P1 composition squares `D^*D` and `DD^*`.
-The source's parallel partner `J` unitarily conjugates those two squares at
-the fixed cut, so their heat traces agree whenever trace class. What remains
-to prove is the exact operator/domain decomposition of the interface square
-into these two P1 realizations, including its multiplicity and the matched
-twisting connection. The interface paper's statement that spinor interface
-coefficients are twice those of the folded boundary problem is consistent
-with this target but is not itself that P1-specific domain identity.
+The fixed-cut heat-trace comparison now follows from the explicit side-sign
+factorization in the crosswalk: if `P` is the density-transported P1
+realization, `F` is the global fold and `S=FJF^(-1)`, then the interface
+realization `A=S F P F^(-1)` satisfies
+`A^*A=F P^*P F^(-1)` on exactly the same closed second-order domain. Thus
+the heat traces and multiplicities agree whenever trace class. Separately,
+`J` conjugates the partner squares `P^*P` and `PP^*` at the fixed cut; that
+partner equality is not an extra multiplicity factor in the interface trace.
+The result is conditional on the pinned global bundle and domain hypotheses,
+and does not extend the physical endpoint or common-regulator limit.
 
 The transfer paper's Theorem 1.2 supplies smooth Laplace-type heat
 coefficients through a4; its introduction allows unequal normal metric jets
@@ -264,7 +265,6 @@ first-order paired realization. Conversely, a result at those features is
 not automatically novel: the relevant specializations and later literature
 must still be compared, including all density vertices and normalization.
 
-Remaining to-do list: complete the transformed connection and closed-operator
-comparison with the transmittal model at the pinned finite cut, then audit
-its coefficient specialization, physical endpoint transfer, scalar
-normalization, and certify supported claims on GCP.
+Remaining to-do list: transfer the fixed-cut identity to P1's physical
+mass-mixed common-regulator response, complete coefficient/novelty and scalar
+normalization audits, and certify supported claims on GCP.
