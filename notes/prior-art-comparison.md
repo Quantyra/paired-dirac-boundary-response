@@ -272,15 +272,46 @@ inferring it from equality of the `D^*D` and `DD^*` spectra. The P1
 first-order realization remains distinct from the self-adjoint interface
 first-order realization.
 
+### Angular-mass vertices under the four-dimensional conformal map
+
+The mode-dependent angular-mass correction must be retained in the
+coefficient comparison; it is not absent from the interface formulation.
+Before mode reduction, the finite-cut operator is the four-dimensional
+geometric Dirac family `D_(g_b)`. In the product-mode frame write
+`D_(mu,b)=m_b(D+i mu G)m_b`, with `m_b=exp(-b/2)`. Its positive square
+decomposes as
+
+    Q_full,mu(b) = D_b^* D_b + mu^2 exp(-2b)
+                   + i mu G [D_b,exp(-b)],
+
+where `D_b=m_b D m_b`. Relative to the orbit-only square with the angular
+mass frozen, the correction is
+`Delta_mu(b)=mu^2(exp(-2b)-1)+i mu G[D_b,exp(-b)]`. Its seed jets are
+`Delta_mu'[u]=-2 mu^2 u-i mu G c(du)` and
+`Delta_mu''[u,w]=4 mu^2 uw+2i mu G c(d(uw))`; see
+[`full-weyl-orbit-correction-vertices.md`](full-weyl-orbit-correction-vertices.md)
+for their full mixed Duhamel response. The unitary conformal identity above
+already includes these terms when the full four-dimensional operator is
+kept. They must therefore be included when specializing an interface heat
+coefficient; they are not a separate operator-equivalence obstruction for
+the conditional finite-cut full-Dirac square.
+
+This observation does not compute the mixed mass/log coefficient. The
+screened spinor-interface anomaly is an `a4` result, whereas the candidate
+fixed-product response is at `a7` and log-`a8` order. A higher-order
+coefficient specialization, including the declared localized directions
+and trace normalization, remains open. So do the physical moving endpoint,
+source contact/density/LLL allocation and common-regulator limit.
+
 The conditional finite-cut square identification still does not close P1.
 Its hypotheses do not establish the source's moving endpoint; the published
 interface formulas do not establish P1's common-regulator,
 contact/density/LLL allocation, or source-observable map; and the screened
 interface formulas do not supply P1's proposed `a7` or log-`a8` mixed
-mass/log response. The exact coefficient specialization at the first
-relevant P1 order and the physical endpoint transfer remain open.
+mass/log response. The exact higher-order coefficient specialization and
+physical endpoint transfer remain open.
 
-Remaining to-do list: compare the transformed mass-mixed vertices and
-specialize the interface coefficients at the first relevant P1 order; close
-the physical source/common-regulator bridge; then complete the novelty
+Remaining to-do list: specialize the interface coefficients at the first
+relevant P1 order with localized directions and matched trace normalization;
+close the physical source/common-regulator bridge; then complete the novelty
 decision, supported manuscript and GCP Lean certification.
