@@ -886,3 +886,15 @@ Treat the `-C/pi` bridge next coefficient and the derived `+b_s^2/(2 pi)` commut
 Concrete claim: the current bridge and fixed-mode calculations give incompatible flat scalar `U_1/t` coefficients by a factor of two. First unsupported implication: a corrected coefficient common to both representations, then the commutator split and curved ledger. Numerical role: none.
 
 Remaining to-do list: resolve the factor-two flat scalar coefficient discrepancy; correct the affected coefficient claims; then continue the complete source-observable/common-regulator and novelty audits, with Lean certification on GCP for supported formalizable identities.
+
+### Superseding correction: the flat coefficient difference is the commutator sector
+
+The immediately preceding handoff correction misidentified the exact fixed-mode multiplier as the scalar-only response. It is the full-Weyl response. In `full-weyl-orbit-correction-vertices.md`, the first variation explicitly contains both the scalar mass term `-2 mu^2 u` and the gradient commutator term `-i mu X u'`; its mixed vertex and ordered products therefore include commutator contributions. Equations (7)-(9) decompose the full-Weyl-minus-orbit addition into these inclusive angular/commutator vertices and orbit-angular cross terms. They do not assert that the scalar-only bridge equals the entire addition.
+
+The bridge formula instead represents `Q_sc=L_b+mu^2 exp(-2b)` relative to `L_b` and omits `mu C_b`. Consequently, its doubled-trace coefficient `-C/pi U_1/t` and the full-Weyl-minus-orbit coefficient `-C/(2 pi) U_1/t` are expected to differ by the aggregate commutator-involving contribution `+C/(2 pi) U_1/t` (equivalently `+b_s^2/(2 pi) U_1/t` after the conditional physical-half factor, for `C=2b_s^2`). This restores the earlier subtraction target. The difference is still not a term-by-term Duhamel proof of the commutator vertices, and the curved extension remains open.
+
+Thus the factor-two comparison is not an inconsistency between two formulas for the same sector. The incorrect implication in the preceding handoff-correction section is withdrawn. Retain the aggregate flat subtraction target with its explicit conditional normalization and indirect status; do not infer any curved coefficient from it.
+
+Concrete claim: the exact flat full-Weyl total and the scalar bridge component differ by the stated aggregate commutator target under their shared normalization. First unsupported implication: direct vertex derivation and curved/common-regulator extension. Numerical role: none.
+
+Remaining to-do list: derive the aggregate target directly from the commutator-involving Duhamel vertices; simplify and match the curved ledger; close the full physical common-regulator and novelty audits; certify supported claims in Lean on GCP.
