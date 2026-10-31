@@ -122,11 +122,31 @@ normalization this is `3C/pi`. The source contact remains separate:
 coefficient and the retained orbit-angular cross terms in the restricted
 flat leading ledger only.
 
+There is also a conditional curved zeroth-jet contact check. In the source's
+recorded common-cut normalization,
+
+    C_src(t)=2 Theta'(t) I_t(u,w),
+    I_t(u,w)=(1/(2 pi)) integral u w/f_0 + O(t),
+    Theta'(t)=-C/t^2+O(1).
+
+Thus `C_src=-(C/pi)t^(-2) integral uw/f_0+O(t^(-1))`. Applying the source's
+conditional physical-half factor to the doubled scalar result gives
+`D_sc=(3C/pi)t^(-2) integral uw/f_0+O(t^(-1))`. Hence the scalar/contact
+part of the finite-cut bracket has leading coefficient
+`D_sc-C_src=(4C/pi)t^(-2) integral uw/f_0+O(t^(-1))`, the same coefficient
+as the flat check with its natural `1/f_0` local weight. This uses only the
+zeroth spatial jet and the source's insertion/contact normalization. It does
+not match `H_orb-G_src`, density/Jacobian and boundary terms in the complete
+curved response, prove cancellation with local restorations, or establish a
+common-regulator endpoint; see the full finite-cut ledger in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md).
+
 This is a new consistency target for the complete local matching: the orbit
 weight changes the integrated scalar coefficient. It does not prove that
-this term is canceled by the orbit Hessian, the matrix `mu C_b` sector, the
-source contact, density/Jacobian variations, local restorations, LLL, or the
-boundary transgression. It is not a bound on the non-hit defect or on
+the separate orbit Hessian, matrix `mu C_b` sector, density/Jacobian
+variations, local restorations, LLL, or boundary transgression combine with
+it in the full response. The leading scalar/contact terms add inside
+`D_sc-C_src`, as shown above. It is not a bound on the non-hit defect or on
 `r_curved`; those pieces must be combined under the common regulator before
 the S001 physical response claim can be assessed.
 
