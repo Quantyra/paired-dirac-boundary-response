@@ -182,6 +182,14 @@ for 0<t≤0.001, uniformly over the declared rough family and physical-side
 regulators, plus the required positive-time convergence and continuity.
 A(K) is unknown. This is a proposed extension, not a proved paper theorem.
 
+**Definition status.** In the frozen source at `f0eab590`, Section 5 names
+`r_curved` and its tangent/cutoff subtraction but gives no explicit formula
+for the localization maps, cutoff-transition terms, or allocation of the
+density, contact, LLL and finite local-restoration terms. Until those are
+specified on one Hilbert space and regulator, the bound is not yet an
+operationally frozen theorem statement. See the source-level audit in
+[`p1d-response-versus-conversion.md`](p1d-response-versus-conversion.md).
+
 **First unsupported implication.** The fixed-domain or norm-resolvent
 arguments and the flat all-frequency calculation do not provide this uniform
 subtracted curved trace bound, nor do they justify the regulator interchanges.

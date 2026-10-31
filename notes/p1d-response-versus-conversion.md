@@ -1,6 +1,20 @@
 ﻿# P1-D heat remainder is distinct from the endpoint conversion
 
-The frozen [rough-variation source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md), section 5, defines r_curved as the localized exact weak mixed response on the original paired square, after extracting the localized tangent contribution with its cutoff terms. Its sufficient target is |r_curved(t)|<=A(K)||u||_A||w||_A t^(3/2), to be integrated against dt/t². The source explicitly keeps density/second vertices, contacts, angular weights, thermal images and local restorations in the physical action.
+The frozen [rough-variation source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-rough-paired-variation.md), section 5, describes `r_curved` verbally as the localized exact weak mixed response on the original paired square after extracting the localized tangent contribution with its cutoff terms. It states the sufficient bound `|r_curved(t)|<=A(K)||u||_A||w||_A t^(3/2)`, to be integrated against `dt/t^2`, and says density/second vertices, contacts, angular weights, thermal images and local restorations stay in the physical action.
+
+### Operational-definition gap in the frozen target
+
+The pinned source gives no explicit formula for the localized tangent operator,
+the cutoff maps and their transition terms, or the exact allocation of density,
+contact, LLL and finite local-restoration terms in `r_curved`. A search of
+that frozen source finds `r_curved` only in the target paragraph; its tangent
+model is calculated separately in Section 4. This is not evidence that the
+intended subtraction is inconsistent, but it means the proposed estimate is
+not yet a fully operational theorem statement. Before proving a kernel bound,
+freeze one common Hilbert space and regulator, the physical and tangent
+families, the localization maps, the complete subtracted integrand, and its
+normalization. The identities below compare declared positive-time
+diagnostics but do not supply that missing definition.
 
 By contrast, [the conversion source](https://github.com/Quantyra/quantyra-wormhole-semiclassical/blob/f0eab59063422c80ccc7c8e281170c75cc3afc71/notes/current-variable-contact-conversion.md), equations (2)–(3), defines J_e as the endpoint difference between two regulated actions. Its second variation includes a geometric heat variation and 2 Theta'(e) I_e. That endpoint is not itself the r_curved integrand specified above. A formula relating the two, including all subtractions, measure factors and endpoint terms, would need to be derived before their power bounds can be compared.
 

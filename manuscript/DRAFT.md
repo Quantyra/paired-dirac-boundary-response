@@ -278,7 +278,7 @@ the full-Weyl/source match. Details and coefficient sources are in
 
 ## 5. Curved trace extension — work in progress
 
-The source's localized tangent-subtracted curved remainder and the endpoint conversion (4.10) are distinct observables; see `../notes/p1d-response-versus-conversion.md`. To specify the mixed response before estimating it, let a positive-cutoff form family q_(s,r) have a common form domain and write its first and mixed derivatives as V_u, V_w and V_uw in a finite-dimensional Galerkin approximation. If K_t is the unperturbed heat matrix, the exact mixed heat derivative is
+The source's localized tangent-subtracted curved remainder and the endpoint conversion (4.10) are distinct observables; see `../notes/p1d-response-versus-conversion.md`. The frozen source states the desired `r_curved` bound but gives no explicit formula for the tangent localization, cutoff-transition terms, or allocation of density, contact, LLL and finite local-restoration terms. The target therefore still needs an operational definition on one Hilbert space and regulator before a kernel estimate can prove it. To specify the mixed response before estimating it, let a positive-cutoff form family q_(s,r) have a common form domain and write its first and mixed derivatives as V_u, V_w and V_uw in a finite-dimensional Galerkin approximation. If K_t is the unperturbed heat matrix, the exact mixed heat derivative is
 
  K_uw(t)=integral_(a,b,c>=0; a+b+c=t)
        [K_a V_u K_b V_w K_c+K_a V_w K_b V_u K_c] da db
