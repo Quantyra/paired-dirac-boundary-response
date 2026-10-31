@@ -1,12 +1,11 @@
-import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NoncommRing
-import Mathlib.Tactic.Ring
 
 /-!
-Development draft: algebraic checks for the fixed-mode full-Weyl correction vertices. No successful GCP Lean replay is recorded for this source yet.
-These declarations verify coefficient identities from explicit product-rule
-hypotheses. They do not formalize operator domains, parameter differentiability,
-heat-trace estimates, or the physical response.
+Development draft: the fixed-mode full-Weyl commutator correction vertex. No successful GCP Lean replay is recorded for this source yet.
+This declaration verifies a commutator coefficient identity under explicit
+product-rule and scalar-commutation hypotheses. It does not formalize angular-mass
+derivatives, operator domains, parameter differentiability, heat traces, or the
+physical response.
 -/
 
 namespace FullWeylOrbitCorrection
@@ -32,16 +31,6 @@ theorem mixed_commutator_vertex
   rw [hproduct]
   noncomm_ring [huw, hduw, hdwu]
 
-/-- First angular-mass vertex coefficient for `mu^2 exp(-2b)`. -/
-theorem angular_mass_first_vertex (mu u : Real) :
-    (-2 * mu ^ 2) * u = -2 * mu ^ 2 * u := by ring
-
-/-- Mixed angular-mass vertex coefficient for `mu^2 exp(-2b)`. -/
-theorem angular_mass_mixed_vertex (mu u w : Real) :
-    (4 * mu ^ 2) * (u * w) = 4 * mu ^ 2 * u * w := by ring
-
 end FullWeylOrbitCorrection
 
 #print axioms FullWeylOrbitCorrection.mixed_commutator_vertex
-#print axioms FullWeylOrbitCorrection.angular_mass_first_vertex
-#print axioms FullWeylOrbitCorrection.angular_mass_mixed_vertex
