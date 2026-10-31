@@ -156,3 +156,35 @@ Remaining to-do list: prove (1), match the odd-odd sector with all other
 curved response terms under one regulator, complete the prior-art decision and
 manuscript, and certify supported claims in Lean on GCP.
 
+
+## Prior-art applicability check: extension-independent localization
+
+Li and Strohmaier's Theorem 1.1 proves an extension-independent
+"not feeling the boundary" estimate for nonnegative self-adjoint extensions
+of the componentwise Euclidean Laplacian on an open set in `R^d`, acting on
+`C^N`-valued functions. The estimate compares each extension kernel with the
+free Euclidean kernel and suppresses that difference exponentially in the
+sum of the two points' distances to the boundary; the constants do not depend
+on the selected extension. See [the published theorem and stated hypotheses](https://ems.press/journals/jst/articles/14417)
+(DOI `10.4171/JST/147`).
+
+This result does not establish (1) for the physical `Q,Q_X` pair. The source
+operator has a variable curved principal metric after the physical and
+conformal identifications, and its complementary boundary realizations and
+finite-cut transport have not been shown to be extensions of the same
+componentwise Euclidean Laplacian. Further, Theorem 1.1 compares one kernel
+with a free kernel, while (1) is a bilocal, two-insertion trace-ideal estimate
+for a difference of semigroups, uniform up to the closed Duhamel endpoints.
+Even where both kernels could be localized to a common Euclidean model, the
+polynomial time and distance factors in that theorem must be integrated
+against the two insertion coordinates and the Duhamel simplex; the stated
+exponential alone does not imply the required prefactor or endpoint-uniform
+constant. Thus the theorem is useful motivation for localization but is not
+an accepted import or a proof of the curved criterion.
+
+The next analytic step remains either (a) prove a boundary-parametrix estimate
+for the actual curved complementary projector pair with the bilocal Gaussian
+weight in (1), including its trace-ideal and simplex-endpoint behavior, or
+(b) establish a coefficient-stable localization theorem with an explicit
+remainder strong enough to imply (1). In either route, verify the physical
+bundle map and common regulator separately.
