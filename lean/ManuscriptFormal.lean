@@ -199,7 +199,119 @@ theorem matrix_reference_position_identity {n : Type*} [Fintype n] [DecidableEq 
   rw [hrot, hA, hB, Matrix.trace_sub]
   ring
 
+/-! ## (2.3): the transported finite-cut boundary plane -/
+
+/-- The `σ₃` action on the two spin components, in the standard basis. -/
+def s3 (v : ℝ × ℝ) : ℝ × ℝ := (v.1, -v.2)
+
+/-- The `σ₁` action on the two spin components, in the standard basis. -/
+def s1 (v : ℝ × ℝ) : ℝ × ℝ := (v.2, v.1)
+
+/-- `v₊`, the `σ₁` eigenvector with eigenvalue `+1`. -/
+def vplus : ℝ × ℝ := (1, 1)
+
+/-- `v₋`, the `σ₁` eigenvector with eigenvalue `-1`. -/
+def vminus : ℝ × ℝ := (1, -1)
+
+theorem s1_vplus : s1 vplus = vplus := rfl
+
+theorem s1_vminus : s1 vminus = -vminus := by
+  simp [s1, vminus]
+
+theorem s3_vplus : s3 vplus = vminus := rfl
+
+theorem s3_vminus : s3 vminus = vplus := by
+  simp [s3, vminus, vplus]
+
+/-- `sinh λ = 0 ↔ λ = 0`. Mathlib's `Real.sinh_eq_zero` lives in a module
+that this retained build does not contain, so it is proved here from
+`Real.cosh_add_sinh`, `Real.cosh_sub_sinh` and injectivity of `exp`. -/
+theorem real_sinh_eq_zero (lam : ℝ) : Real.sinh lam = 0 ↔ lam = 0 := by
+  constructor
+  · intro hs
+    have h1 : Real.exp lam = Real.exp (-lam) := by
+      rw [← Real.cosh_add_sinh lam, ← Real.cosh_sub_sinh lam, hs]
+      ring
+    have h2 : lam = -lam := Real.exp_eq_exp.mp h1
+    linarith
+  · intro h
+    subst h
+    exact Real.sinh_zero
+
+/-- The transported boundary datum of (2.3): in coordinates,
+`cosh λ v₊ + sinh λ v₋` with `v₊ = (1,1)`, `v₋ = (1,-1)`. The parameter is
+`λ = μ ∫ a`. -/
+noncomputable def transportedPlane (lam : ℝ) : ℝ × ℝ :=
+  (Real.cosh lam + Real.sinh lam, Real.cosh lam - Real.sinh lam)
+
+/-- The coordinate definition above is the span expression of (2.3). -/
+theorem transportedPlane_eq_smul (lam : ℝ) :
+    transportedPlane lam = (Real.cosh lam) • vplus + (Real.sinh lam) • vminus := by
+  ext
+  · change Real.cosh lam + Real.sinh lam = Real.cosh lam * 1 + Real.sinh lam * 1
+    ring
+  · change Real.cosh lam - Real.sinh lam = Real.cosh lam * 1 + Real.sinh lam * (-1)
+    ring
+
+/-- The local `P₋` boundary operator `(1 - σ₁)/2` of the manuscript. -/
+noncomputable def pminus (v : ℝ × ℝ) : ℝ × ℝ := ((v.1 - v.2) / 2, (v.2 - v.1) / 2)
+
+/-- The transported datum's `P₋` component. -/
+theorem pminus_transportedPlane (lam : ℝ) :
+    pminus (transportedPlane lam) = (Real.sinh lam, -Real.sinh lam) := by
+  ext
+  · change (Real.cosh lam + Real.sinh lam - (Real.cosh lam - Real.sinh lam)) / 2
+      = Real.sinh lam
+    ring
+  · change (Real.cosh lam - Real.sinh lam - (Real.cosh lam + Real.sinh lam)) / 2
+      = -Real.sinh lam
+    ring
+
+/-- `(2.3)`: unless `λ = 0`, the transported boundary plane is not the local
+`P₋ ψ = 0` plane. -/
+theorem transportedPlane_not_local (lam : ℝ) (hlam : lam ≠ 0) :
+    pminus (transportedPlane lam) ≠ 0 := by
+  rw [pminus_transportedPlane]
+  intro hzero
+  have hsinh : Real.sinh lam = 0 := by
+    simpa using congrArg Prod.fst hzero
+  exact hlam ((real_sinh_eq_zero lam).mp hsinh)
+
+/-- The transported plane coincides with the local `P₋` plane exactly when
+`λ = 0`. -/
+theorem transportedPlane_parallel_iff (lam : ℝ) :
+    (∃ c : ℝ, transportedPlane lam = c • vplus) ↔ lam = 0 := by
+  constructor
+  · rintro ⟨c, hc⟩
+    have h1 : Real.cosh lam + Real.sinh lam = c * 1 := by
+      have := congrArg Prod.fst hc
+      simpa [transportedPlane, vplus] using this
+    have h2 : Real.cosh lam - Real.sinh lam = c * 1 := by
+      have := congrArg Prod.snd hc
+      simpa [transportedPlane, vplus] using this
+    have hsinh : Real.sinh lam = 0 := by linarith
+    exact (real_sinh_eq_zero lam).mp hsinh
+  · intro h
+    subst h
+    exact ⟨1, by simp [transportedPlane, vplus]⟩
+
+/-! ## (4.9a) consistency with the `(4.12)` coefficients -/
+
+/-- `(4.9a)` and `(4.12)` together: differentiating the explicit polynomial
+part of the tower expansion, with `a = t/b²`, reproduces the displayed
+`b⁻²[2/a² - q²/6 + 1/30]` coefficient of `-Θ'`. The constants `C₀` and `C₁`
+of `(4.12)` are the coefficients `-q - 1/3` and `q²/6 - 1/30` of (4.9a). -/
+theorem tower_derivative_coefficient (q b t : ℝ) (hb : b ≠ 0) (ht : t ≠ 0) :
+    -(-(2 * b ^ 2 / t ^ 2) + (q ^ 2 / 6 - 1 / 30) / b ^ 2)
+      = b ^ (-2 : ℤ) * (2 * (b ^ 2 / t) ^ 2 - (q ^ 2 / 6 - 1 / 30)) := by
+  have hb2 : b ^ 2 ≠ 0 := pow_ne_zero 2 hb
+  have ht2 : t ^ 2 ≠ 0 := pow_ne_zero 2 ht
+  field_simp
+  ring
+
 end PairedDirac.Manuscript
+
+
 
 #print axioms PairedDirac.Manuscript.skew_adjoint_inner_self_zero
 #print axioms PairedDirac.Manuscript.resolvent_shift_norm_lower
@@ -211,3 +323,13 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.flat_conversion_cubic_coefficient
 #print axioms PairedDirac.Manuscript.flat_conversion_cutoff_coefficient
 #print axioms PairedDirac.Manuscript.matrix_reference_position_identity
+#print axioms PairedDirac.Manuscript.s1_vplus
+#print axioms PairedDirac.Manuscript.s1_vminus
+#print axioms PairedDirac.Manuscript.s3_vplus
+#print axioms PairedDirac.Manuscript.s3_vminus
+#print axioms PairedDirac.Manuscript.real_sinh_eq_zero
+#print axioms PairedDirac.Manuscript.transportedPlane_eq_smul
+#print axioms PairedDirac.Manuscript.pminus_transportedPlane
+#print axioms PairedDirac.Manuscript.transportedPlane_not_local
+#print axioms PairedDirac.Manuscript.transportedPlane_parallel_iff
+#print axioms PairedDirac.Manuscript.tower_derivative_coefficient

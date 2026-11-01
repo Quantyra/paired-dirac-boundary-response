@@ -3,11 +3,11 @@
 # GCP builder; never run locally.
 set -euo pipefail
 
-run="$HOME/quantyra-space-runs/p1-manuscript-formal-20261101-r1"
+run="$HOME/quantyra-space-runs/p1-manuscript-formal-20261101-r3"
 deps="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/source/lean"
 toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin"
 source="$HOME/ManuscriptFormal.lean"
-source_sha='c316e863623a4809ef5584d42e779065de9ced94177b4b5e8e69a145b3a52f4e'
+source_sha='be50bb1d05bab33dbb2cddaa5eb77a176031773f7ad31c041d3501718d61ce9c'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -41,12 +41,17 @@ cp "$source" "$run/ManuscriptFormal.lean"
 cd "$run"
 sha256sum ManuscriptFormal.lean | tee lean-source-sha256.txt
 lean -o ManuscriptFormal.olean ManuscriptFormal.lean 2>&1 | tee lean.log
-for theorem in skew_adjoint_inner_self_zero resolvent_shift_norm_lower \
-    resolvent_norm_bound square_shift_norm_lower square_resolvent_norm_bound \
-    congruenced_gap_composition converted_series_difference \
-    flat_conversion_cubic_coefficient flat_conversion_cutoff_coefficient \
-    matrix_reference_position_identity; do
-  grep -F "$theorem" lean.log
+
+theorems="skew_adjoint_inner_self_zero resolvent_shift_norm_lower
+resolvent_norm_bound square_shift_norm_lower square_resolvent_norm_bound
+congruenced_gap_composition converted_series_difference
+flat_conversion_cubic_coefficient flat_conversion_cutoff_coefficient
+matrix_reference_position_identity s1_vplus s1_vminus s3_vplus s3_vminus
+real_sinh_eq_zero transportedPlane_eq_smul pminus_transportedPlane
+transportedPlane_not_local transportedPlane_parallel_iff
+tower_derivative_coefficient"
+for theorem in $theorems; do
+  grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done
 if grep -q 'sorryAx' lean.log; then
   echo 'Unexpected sorryAx in Lean output.' >&2

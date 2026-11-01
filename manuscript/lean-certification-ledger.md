@@ -5,9 +5,10 @@ draft). Purpose: record, statement by statement, exactly what is
 machine-checked, what is not, and what a full Lean certification would still
 require.
 
-**Verdict: the manuscript is not Lean-certified.** Ten algebraic or
-bounded-operator statements are now machine-checked on GCP (receipt
-[`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md)).
+**Verdict: the manuscript is not Lean-certified.** Twenty algebraic or
+bounded-operator statements are now machine-checked on GCP (receipts
+[`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md)
+and [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md)).
 Every analytic proposition (4.1, 4.2, 4.3), the unbounded-domain/unbounded-operator
 content of Propositions 2.1, 3.1 and 3.2, the heat-trace and regulator
 statements of Section 5, and all physical identification steps remain
@@ -26,7 +27,7 @@ skeleton is checked; its analysis and its physics are not.
 | Prop. 2.1, (2.1) | `D_b` closed, `Dom(D_b)=Dom(D)`, adjoint `E_b D* E_b` | abstract core certified | `ClosedGraphDraft`, `AdjointDraft` (clean replay `gcp-clean-replay-20261030`); the `W^{1,∞}` multiplier, product rule and projector commutation are *assumed* in Lean, not derived |
 | Prop. 2.1, (2.2) | `exp(B)` graph bounds | certified abstractly | `ScalarMultiplierGraphBoundsDraft` (`gcp-scalar-multiplier-graph-clean-20261030`) assembles the exact constants from abstract norm hypotheses; multiplier norms themselves are not instantiated |
 | Prop. 2.1, square domain | composition domain of `D_b*D_b` | certified abstractly | `SquareDomainDraft`, `PositiveSquareDraft`; equality with the unperturbed domain is *not* asserted, matching the manuscript |
-| (2.3) | transported boundary plane | not formalized | finite-dimensional hyperbolic algebra; would need a matrix-exponential model |
+| (2.3) | transported boundary plane | **certified** | New: `transportedPlane_not_local`, `transportedPlane_parallel_iff`, `pminus_transportedPlane`, `transportedPlane_eq_smul`, plus the `σ₁/σ₃` eigenvector facts (`gcp-manuscript-formal-20261101-r2`). Certified for the displayed solution formula `cosh λ v₊ + sinh λ v₋`; the exponential `exp(λσ₃)` is not derived from `Hψ = 0` in Lean |
 | (2.4)–(2.5) | `K_ζ` system, variation of constants | not formalized | ODE fundamental-matrix theory over operator-valued coefficients |
 | §3 interface square | `A_b* A_b = P'_b* P'_b`, domain equality | partially certified | `LeftUnitarySquare` proves `(UD)*(UD)=D*D` for a unitary `U`, and `P1FiniteCutBoundarySquare`/`ProjectedRobinCongruence` cover the finite-cut algebra; the fold conjugation `P'=F P F^{-1}`, `S=FJF^{-1}` and the domain exchange are not formalized |
 | Prop. 3.1, (3.1) | `‖(M±Q_b)⁻¹‖ ≤ 1/M`, `‖(D_b*D_b+M²)⁻¹‖ ≤ 1/M²` | bounded reading certified, existence not | New: `resolvent_shift_norm_lower`, `square_shift_norm_lower` prove the a priori inequalities for bounded skew-adjoint operators; `resolvent_norm_bound`, `square_resolvent_norm_bound` give the inverse bounds **conditional on a right inverse**. Existence (spectral theorem) and the unbounded domain statement are not formalized |
@@ -38,7 +39,7 @@ skeleton is checked; its analysis and its physics are not.
 | (4.6) | compact-model transfer | not formalized | compact flat-model heat kernel and winding sums |
 | Prop. 4.3, (4.7)–(4.8) | all-frequency bound and integrability | not formalized | requires `0 ≤ R2 ≤ min(x³/840, x²/120)`, Parseval and the half/full-line norm relation |
 | (4.9)–(4.10) | conversion identity | source identity, not formalized | operator trace identity under domain hypotheses |
-| (4.9a) | tower asymptotics | not formalized | Euler–Maclaurin with remainder control |
+| (4.9a) | tower asymptotics | polynomial part certified | New: `tower_derivative_coefficient` checks that differentiating the displayed polynomial part with `a=t/b²` reproduces the `b⁻²[2/a²-q²/6+1/30]` coefficient of `-Θ'`; the Euler–Maclaurin derivation and the `O_q(a²)` remainder are not formalized |
 | (4.10a)–(4.10b) | combined multiplier, `J_2` limit | coefficient algebra certified only | New: `flat_conversion_cubic_coefficient` checks `2·(b²/π)·(-1/1680+1/840) = b²/(840π)`. The angular limits and pairing factor are inputs |
 | (4.10c) | cubic/cubic-log seam coefficients | cutoff coefficient certified only | New: `flat_conversion_cutoff_coefficient`; the `t^{3/2}` and `t²log t` terms are not derived |
 | §4 grading bridge | `H=JG` anticommutes with `Q`, odd trace cancels | finite-matrix level certified | `GradingOddTrace` (`gcp-grading-clean-20261030`); the infinite-dimensional trace-class and Duhamel passage is not formalized |
@@ -49,16 +50,24 @@ skeleton is checked; its analysis and its physics are not.
 | (5.2) | four-term trace expansion | not formalized | product rule for parameter-dependent traces |
 | (5.3) | reference-position commutator identity | **certified at finite-matrix level** | New: `matrix_reference_position_identity`, with commuting heat factors and `Kt=Ka·Kc` |
 | (5.4) | boundary joint-path bound | not formalized | trace-class heat estimates |
-| (5.5) | scalar/contact jet identity | not formalized | differential jet algebra; could be formalized with an abstract jet model |
+| (5.5) | scalar/contact jet identity | not formalized — not currently jet algebra | `K_2` is defined in `notes/full-weyl-curved-scalar-interior-leading-coefficient.md` as the **path expectation** `K_2(y)=(1/2)E[D²H_0(0)[xi,xi]]`, not as a displayed jet expression. `(5.5)` relates that expectation to the explicit `H_1` of formula (3) through a Brownian computation, so certifying it needs formal probability and path-jet estimates, not `ring` on displayed derivatives. The deterministic part (`H_1` of (3)) is a candidate once `Q, Z_u, Z_w` are fixed from the note |
 | (5.6) | odd-odd interior coefficient | not formalized | heat-kernel coefficient identity |
 | §5 necessary condition | `C_other = -(b_S²/6π)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-Summary: 10 statements machine-checked (2 of them new algebraic coefficient
-identities, 1 finite-matrix trace identity, 5 bounded-operator inequalities,
-1 inner-product lemma, 1 gap-composition lemma). 1 statement certified with a
-constant discrepancy that needs a manuscript correction. The remaining
-analytic and physical statements are unformalized.
+Summary: 20 declarations machine-checked across two receipts (10 in the first
+run, 10 new here). Of these, 2 are algebraic coefficient identities, 1 is a
+finite-matrix trace identity, 5 are bounded-operator inequalities, 1 is an
+inner-product lemma, 1 is a gap-composition lemma, and the remaining 10 are
+the `(2.3)` transport/eigenvector facts and the `(4.9a)` coefficient check.
+1 statement is certified with a constant discrepancy that needs a manuscript
+correction. The remaining analytic and physical statements are unformalized.
+
+The requested `(5.5)` "jet algebra" reading turned out not to be available:
+the note defines `K_2` as `(1/2)E[D²H_0(0)[ξ,ξ]]`, an expectation over the
+bridge path, so the identity is a probabilistic statement, not an identity
+among displayed derivatives. It is recorded above with that reason rather
+than as a formalization that could be completed by more algebra.
 
 ## 2. What full certification would require
 

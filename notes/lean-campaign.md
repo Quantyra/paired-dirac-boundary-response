@@ -257,15 +257,24 @@ here touches; finish the closest-prior-art comparison and record S001.3.
 The first direct attempt to "Lean certify the manuscript" is recorded in
 [`manuscript/lean-certification-ledger.md`](../manuscript/lean-certification-ledger.md).
 It is deliberately partial and says so. `lean/ManuscriptFormal.lean`
-(SHA-256 `c316e863…`, receipt
-[`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md))
-adds ten machine-checked statements: the bounded-operator a priori
+(SHA-256 `be50bb1d…`, receipts
+[`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md)
+and [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md))
+now adds twenty machine-checked declarations: the bounded-operator a priori
 inequalities behind Proposition 3.1 and their conditional inverse bounds, the
 vanishing real quadratic form of a skew-adjoint operator, a gap-composition
 lemma, the exact `(4.12c)` series subtraction, two flat-conversion
-coefficient identities `(4.10b)`/`(4.10c)`, and the finite-matrix
-reference-position identity `(5.3)`. All ten report only `propext`,
+coefficient identities `(4.10b)`/`(4.10c)`, the finite-matrix
+reference-position identity `(5.3)`, the `(2.3)` transported-plane identity
+with its eigenvector facts and non-coincidence statement, and the `(4.9a)`
+coefficient check against `(4.12)`. All report only `propext`,
 `Classical.choice` and `Quot.sound`.
+
+The requested `(5.5)` "jet algebra" target is not available as stated:
+`notes/full-weyl-curved-scalar-interior-leading-coefficient.md` defines
+`K_2(y)=(1/2)E[D²H_0(0)[xi,xi]]` as a path expectation, so `(5.5)` is a
+probabilistic identity, not an identity among displayed derivatives. The
+ledger records that reason rather than a missing `ring` step.
 
 Two findings matter more than the count:
 
