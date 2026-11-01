@@ -429,6 +429,41 @@ theorem kzeta_entries (nu mua zetaM2 finv : ℝ) :
           (Complex.I * (zetaM2 * finv)) • pauli2,
           -(nu • pauli2 - mua • pauli3)] := rfl
 
+/-! ## (2.5): variation of constants, discrete finite-dimensional form -/
+
+section VariationOfConstants
+
+open scoped BigOperators
+
+/-- The accumulated propagator `P k = U 0 * U 1 * ⋯ * U (k-1)`, with
+`P 0 = 1`. -/
+noncomputable def prop (m : ℕ) (U : ℕ → Matrix (Fin m) (Fin m) ℂ) :
+    ℕ → Matrix (Fin m) (Fin m) ℂ
+  | 0 => 1
+  | (k + 1) => prop m U k * U k
+
+/-- `(2.5)` in exact discrete finite-dimensional form: if the inhomogeneous
+recursion `Y j = U j Y (j+1) - b j` holds, then
+`Y 0 = P k Y k - Σ_{j<k} P j b j`. The source at step `j` is propagated by
+the product of the preceding steps, which is the telescoping identity behind
+the integral formula. The continuum statement with the integral is **not**
+formalized: no ODE or integration theory is used or claimed here. -/
+theorem discrete_variation_of_constants {m : ℕ}
+    (U : ℕ → Matrix (Fin m) (Fin m) ℂ) (Y b : ℕ → Fin m → ℂ)
+    (hrec : ∀ j, Y j = (U j).mulVec (Y (j + 1)) - b j) :
+    ∀ k, Y 0 = (prop m U k).mulVec (Y k)
+      - ∑ j ∈ Finset.range k, (prop m U j).mulVec (b j) := by
+  intro k
+  induction k with
+  | zero => simp [prop, Matrix.one_mulVec]
+  | succ k ih =>
+      have hP : prop m U (k + 1) = prop m U k * U k := rfl
+      rw [ih, hrec k, Matrix.mulVec_sub, Matrix.mulVec_mulVec, hP,
+        Finset.sum_range_succ]
+      abel
+
+end VariationOfConstants
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.skew_adjoint_inner_self_zero
@@ -461,3 +496,4 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.pauli2_mul_pauli3
 #print axioms PairedDirac.Manuscript.kzeta_diag_antisym
 #print axioms PairedDirac.Manuscript.kzeta_entries
+#print axioms PairedDirac.Manuscript.discrete_variation_of_constants

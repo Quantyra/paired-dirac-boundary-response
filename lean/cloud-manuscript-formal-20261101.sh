@@ -3,11 +3,11 @@
 # GCP builder; never run locally.
 set -euo pipefail
 
-run="$HOME/quantyra-space-runs/p1-manuscript-formal-20261101-r4"
+run="$HOME/quantyra-space-runs/p1-manuscript-formal-20261101-r6"
 deps="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/source/lean"
 toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin"
 source="$HOME/ManuscriptFormal.lean"
-source_sha='d551719a38535b1f9468c152cbf963133d00fcff525532e1b4e855668a6eb07e'
+source_sha='ca83944d343f01f27cc17cfbc79cd894683d0e1b17cd63d8bd83f001bbc4c618'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -51,7 +51,8 @@ real_sinh_eq_zero transportedPlane_eq_smul pminus_transportedPlane
 transportedPlane_not_local transportedPlane_parallel_iff
 tower_derivative_coefficient multiplier_identity first_graph_inequality
 second_graph_inequality pauli1_sq pauli2_sq pauli3_sq pauli2_mul_pauli1
-pauli2_mul_pauli3 kzeta_diag_antisym kzeta_entries"
+pauli2_mul_pauli3 kzeta_diag_antisym kzeta_entries
+discrete_variation_of_constants"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done
