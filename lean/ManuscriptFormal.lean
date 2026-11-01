@@ -108,8 +108,9 @@ theorem square_resolvent_norm_bound (T : H →L[ℝ] H) (M : ℝ) (hM : 0 < M)
 /-! ## (4.11): congrenced gap transfer -/
 
 /-- A gap for `Q` survives conjugation by a bounded map with a lower norm
-bound. The constant is the product of the two multiplier lower bounds; the
-manuscript's printed single factor is flagged in the ledger. -/
+bound. The constant is the product of the two multiplier lower bounds. For
+`E_r = exp(-r b/2)` each factor contributes `exp(-rB/2)`, so the product is
+`exp(-rB)`: `zero_sector_gap_printed` below recovers the printed `(4.11)`. -/
 theorem congruenced_gap_composition (Q E : H →L[ℝ] H) (κ c : ℝ)
     (hκ : 0 ≤ κ) (hc : 0 ≤ c)
     (hQ : ∀ ψ, κ * ‖ψ‖ ≤ ‖Q ψ‖) (hE : ∀ ψ, c * ‖ψ‖ ≤ ‖E ψ‖) (ψ : H) :
@@ -121,6 +122,30 @@ theorem congruenced_gap_composition (Q E : H →L[ℝ] H) (κ c : ℝ)
     mul_le_mul_of_nonneg_left h2 hc
   have h5 : κ * (c * ‖ψ‖) ≤ κ * ‖E ψ‖ := mul_le_mul_of_nonneg_left h1 hκ
   nlinarith [h3, h4, h5, norm_nonneg (E ψ)]
+
+/-- With `E_r = exp(-r b/2)` and `B = ‖b‖_∞`, `r ≥ 0`, the multiplier lower
+bound is `exp(-rB/2)`; the two occurrences of `E_r` therefore give
+`exp(-rB)`, which is the printed `(4.11)` constant. -/
+theorem exp_neg_half_mul_sq (r B : ℝ) :
+    Real.exp (-(r * B) / 2) * Real.exp (-(r * B) / 2) = Real.exp (-(r * B)) := by
+  rw [← Real.exp_add, show -(r * B) / 2 + -(r * B) / 2 = -(r * B) by ring]
+
+/-- `(4.11)` exactly as printed, from the composition bound with the correct
+multiplier bound `c = exp(-rB/2)`: `‖A_r ψ‖ ≥ κ exp(-rB)‖ψ‖` for
+`A_r = E_r Q E_r`. -/
+theorem zero_sector_gap_printed (Q E : H →L[ℝ] H) (κ r B : ℝ) (hκ : 0 ≤ κ)
+    (hQ : ∀ ψ, κ * ‖ψ‖ ≤ ‖Q ψ‖)
+    (hE : ∀ ψ, Real.exp (-(r * B) / 2) * ‖ψ‖ ≤ ‖E ψ‖) (ψ : H) :
+    κ * Real.exp (-(r * B)) * ‖ψ‖ ≤ ‖E (Q (E ψ))‖ := by
+  have h : κ * Real.exp (-(r * B) / 2) * Real.exp (-(r * B) / 2) * ‖ψ‖
+      ≤ ‖E (Q (E ψ))‖ :=
+    congruenced_gap_composition Q E κ (Real.exp (-(r * B) / 2)) hκ
+      (Real.exp_pos _).le hQ hE ψ
+  calc κ * Real.exp (-(r * B)) * ‖ψ‖
+      = κ * (Real.exp (-(r * B) / 2) * Real.exp (-(r * B) / 2)) * ‖ψ‖ := by
+        rw [exp_neg_half_mul_sq]
+    _ = κ * Real.exp (-(r * B) / 2) * Real.exp (-(r * B) / 2) * ‖ψ‖ := by ring
+    _ ≤ ‖E (Q (E ψ))‖ := h
 
 /-! ## Section 4: the displayed coefficient ledgers -/
 
@@ -411,23 +436,105 @@ theorem pauli2_mul_pauli3 : pauli2 * pauli3 = Complex.I • pauli1 := by
     simp [pauli1, pauli2, pauli3, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,
       Complex.I_mul_I]
 
-/-- `(2.4)`: the displayed `K_ζ` is the block matrix `[[A, B], [C, -A]]` with
-`A = νσ₂ - μaσ₃`, `B = i f⁻¹σ₂`, `C = i(ζ-M²)f⁻¹σ₂`. This certifies the block
-structure and the diagonal antisymmetry; the elimination to the second-order
-equation is not formalized. -/
-def kzeta (A B C : Matrix (Fin 2) (Fin 2) ℂ) :
+/-- `σ₁` is symmetric. -/
+theorem pauli1_transpose : pauli1ᵀ = pauli1 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [pauli1, Matrix.transpose_apply]
+
+/-- `σ₂ᵀ = -σ₂`: the Pauli `σ₂` is skew-symmetric. -/
+theorem pauli2_transpose : pauli2ᵀ = -pauli2 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [pauli2, Matrix.transpose_apply, Matrix.neg_apply]
+
+/-- `σ₃ᵀ = σ₃`. -/
+theorem pauli3_transpose : pauli3ᵀ = pauli3 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [pauli3, Matrix.transpose_apply]
+
+/-- `(2.4)`, upper-left block `A = νσ₂ - μaσ₃`. -/
+noncomputable def kUpper (nu mua : ℝ) : Matrix (Fin 2) (Fin 2) ℂ :=
+  nu • pauli2 - mua • pauli3
+
+/-- `(2.4)`, lower-right block `-νσ₂ - μaσ₃`, exactly as printed. -/
+noncomputable def kLower (nu mua : ℝ) : Matrix (Fin 2) (Fin 2) ℂ :=
+  -(nu • pauli2) - mua • pauli3
+
+/-- The manuscript's lower-right block is the **transpose** of its upper-left
+block, because `σ₂ᵀ = -σ₂` while `σ₃ᵀ = σ₃`. It is not `-A`: `-A` would carry
+`+μaσ₃` in the lower-right block and so flip the sign of the angular term.
+This replaces the earlier `kzeta_diag_antisym`, which certified the different
+`-A` encoding. -/
+theorem kLower_eq_transpose (nu mua : ℝ) : kLower nu mua = (kUpper nu mua)ᵀ := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [kLower, kUpper, pauli2, pauli3, Matrix.transpose_apply,
+      Matrix.neg_apply] <;> ring
+
+/-- `(2.4)` exactly as printed:
+`K_ζ = [[νσ₂-μaσ₃, i f⁻¹σ₂], [i(ζ-M²)f⁻¹σ₂, -νσ₂-μaσ₃]]`. -/
+noncomputable def kzetaManuscript (nu mua zetaM2 finv : ℝ) :
     Matrix (Fin 2) (Fin 2) (Matrix (Fin 2) (Fin 2) ℂ) :=
-  !![A, B; C, -A]
+  !![kUpper nu mua, (Complex.I * (finv : ℂ)) • pauli2;
+     (Complex.I * ((zetaM2 : ℂ) * (finv : ℂ))) • pauli2, kLower nu mua]
 
-theorem kzeta_diag_antisym (A B C : Matrix (Fin 2) (Fin 2) ℂ) :
-    kzeta A B C 1 1 = -kzeta A B C 0 0 := rfl
+/-- The block entries of `(2.4)` at the printed sign conventions. -/
+theorem kzetaManuscript_entries (nu mua zetaM2 finv : ℝ) :
+    kzetaManuscript nu mua zetaM2 finv
+      = !![kUpper nu mua, (Complex.I * (finv : ℂ)) • pauli2;
+          (Complex.I * ((zetaM2 : ℂ) * (finv : ℂ))) • pauli2, kLower nu mua] := rfl
 
-theorem kzeta_entries (nu mua zetaM2 finv : ℝ) :
-    kzeta (nu • pauli2 - mua • pauli3) ((Complex.I * finv) • pauli2)
-        ((Complex.I * (zetaM2 * finv)) • pauli2)
-      = !![nu • pauli2 - mua • pauli3, (Complex.I * finv) • pauli2;
-          (Complex.I * (zetaM2 * finv)) • pauli2,
-          -(nu • pauli2 - mua • pauli3)] := rfl
+/-- `(2.4)`: the printed lower-right block equals the transpose of the printed
+upper-left block. This is the correct structural statement for the manuscript's
+sign convention. -/
+theorem kzetaManuscript_lower_right (nu mua zetaM2 finv : ℝ) :
+    kzetaManuscript nu mua zetaM2 finv 1 1
+      = (kzetaManuscript nu mua zetaM2 finv 0 0)ᵀ := by
+  have h := kLower_eq_transpose nu mua
+  simpa [kzetaManuscript] using h
+
+/-- The inverse of `iσ₂` is `-iσ₂`, the step used to solve the first block row
+of `(2.4)` for the flux variable `ξ`. -/
+theorem i_pauli2_mul_neg_i_pauli2 :
+    ((Complex.I : ℂ) • pauli2) * ((-Complex.I : ℂ) • pauli2) = 1 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [pauli2, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,
+      Matrix.one_apply, Complex.I_mul_I] <;> ring
+
+/-- `(2.4)`, first block row solved for the flux variable. From
+`η' = Aη + i f⁻¹σ₂ξ` and `f⁻¹f = 1` one gets `ξ = -i f σ₂(η' - Aη)`. -/
+theorem flux_of_first_row (A : Matrix (Fin 2) (Fin 2) ℂ) (finv f : ℝ)
+    (hfi : finv * f = 1) (eta eta' xi : Fin 2 → ℂ)
+    (hrow : eta' = A.mulVec eta + ((Complex.I * (finv : ℂ)) • pauli2).mulVec xi) :
+    xi = ((-Complex.I * (f : ℂ)) • pauli2).mulVec (eta' - A.mulVec eta) := by
+  have hff : ((f : ℂ) * (finv : ℂ)) = 1 := by
+    have h1 : ((finv * f : ℝ) : ℂ) = ((1 : ℝ) : ℂ) := by rw [hfi]
+    push_cast at h1
+    rw [mul_comm]
+    exact h1
+  have hc : (-Complex.I * (f : ℂ)) * (Complex.I * (finv : ℂ)) = 1 := by
+    have hI : Complex.I * Complex.I = -1 := Complex.I_mul_I
+    calc (-Complex.I * (f : ℂ)) * (Complex.I * (finv : ℂ))
+        = -((Complex.I * Complex.I) * ((f : ℂ) * (finv : ℂ))) := by ring
+      _ = 1 := by rw [hI, hff]; norm_num
+  rw [hrow, add_sub_cancel_left, ← Matrix.mulVec_mulVec, Matrix.smul_mul,
+    Matrix.mul_smul, pauli2_sq, smul_smul, hc, one_smul, Matrix.one_mulVec]
+
+/-- `(2.4)`/`(2.5)`: the inhomogeneous source `(0, i f⁻¹ᐟ²σ₂ g)`; the first
+(η) block row is homogeneous and the second (ξ) block row carries the source. -/
+noncomputable def kzetaSource (finvhalf : ℝ) (g : Fin 2 → ℂ) :
+    Fin 2 → (Fin 2 → ℂ) :=
+  ![0, (Complex.I * (finvhalf : ℂ)) • (pauli2.mulVec g)]
+
+/-- The source has no `η` component. -/
+theorem kzetaSource_eta (finvhalf : ℝ) (g : Fin 2 → ℂ) :
+    kzetaSource finvhalf g 0 = 0 := rfl
+
+/-- The source's `ξ` component is exactly `i f⁻¹ᐟ²σ₂ g`. -/
+theorem kzetaSource_xi (finvhalf : ℝ) (g : Fin 2 → ℂ) :
+    kzetaSource finvhalf g 1
+      = (Complex.I * (finvhalf : ℂ)) • (pauli2.mulVec g) := rfl
 
 /-! ## (2.5): variation of constants, discrete finite-dimensional form -/
 
@@ -550,6 +657,8 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.square_shift_norm_lower
 #print axioms PairedDirac.Manuscript.square_resolvent_norm_bound
 #print axioms PairedDirac.Manuscript.congruenced_gap_composition
+#print axioms PairedDirac.Manuscript.exp_neg_half_mul_sq
+#print axioms PairedDirac.Manuscript.zero_sector_gap_printed
 #print axioms PairedDirac.Manuscript.converted_series_difference
 #print axioms PairedDirac.Manuscript.flat_conversion_cubic_coefficient
 #print axioms PairedDirac.Manuscript.flat_conversion_cutoff_coefficient
@@ -572,8 +681,16 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.pauli3_sq
 #print axioms PairedDirac.Manuscript.pauli2_mul_pauli1
 #print axioms PairedDirac.Manuscript.pauli2_mul_pauli3
-#print axioms PairedDirac.Manuscript.kzeta_diag_antisym
-#print axioms PairedDirac.Manuscript.kzeta_entries
+#print axioms PairedDirac.Manuscript.pauli1_transpose
+#print axioms PairedDirac.Manuscript.pauli2_transpose
+#print axioms PairedDirac.Manuscript.pauli3_transpose
+#print axioms PairedDirac.Manuscript.kLower_eq_transpose
+#print axioms PairedDirac.Manuscript.i_pauli2_mul_neg_i_pauli2
+#print axioms PairedDirac.Manuscript.flux_of_first_row
+#print axioms PairedDirac.Manuscript.kzetaSource_eta
+#print axioms PairedDirac.Manuscript.kzetaSource_xi
+#print axioms PairedDirac.Manuscript.kzetaManuscript_entries
+#print axioms PairedDirac.Manuscript.kzetaManuscript_lower_right
 #print axioms PairedDirac.Manuscript.discrete_variation_of_constants
 #print axioms PairedDirac.Manuscript.discrete_variation_of_constants_matrix
 #print axioms PairedDirac.Manuscript.prop_add

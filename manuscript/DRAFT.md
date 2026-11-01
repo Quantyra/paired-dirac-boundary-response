@@ -52,6 +52,8 @@ For a square resolvent the missing collar source also changes the boundary relat
  K_zeta=[ nu sigma_2-mu a sigma_3        i f^(-1) sigma_2 ]
         [ i(zeta-M²)f^(-1) sigma_2   -nu sigma_2-mu a sigma_3 ]. (2.4)
 
+The block system is machine-checked at exactly these signs (`kzetaManuscript`, `kzetaManuscript_entries`; exact-source GCP replay of this revision is pending, see [`lean-certification-ledger.md`](lean-certification-ledger.md) §4). The structural relation in the displayed sign convention is that the lower-right block is the *transpose* of the upper-left block, `-nu sigma_2-mu a sigma_3=(nu sigma_2-mu a sigma_3)^T`, because `sigma_2^T=-sigma_2` and `sigma_3^T=sigma_3` (`kzetaManuscript_lower_right`). It is not the negative of the upper-left block; an earlier formalization encoded the lower-right block as `-A`, which changes the sign of the angular term `mu a sigma_3`, and the statement it certified has been withdrawn. The inverse `-i sigma_2` of `i sigma_2` (`i_pauli2_mul_neg_i_pauli2`) solves the first block row for the flux variable (`flux_of_first_row`), and the inhomogeneous source is the displayed `(0,i f^(-1/2) sigma_2 g)` with vanishing upper block (`kzetaSource_eta`, `kzetaSource_xi`). Still not formalized: the derivation of `K_zeta` from `(P*P+M^2-zeta)psi=g`, i.e. that `P*P` really is the displayed first-order system at these coefficients.
+
 If U_zeta(s,t) is the fundamental matrix, variation of constants yields
 
  Y(s0)=U_zeta(s0,s1)Y(s1)
@@ -258,7 +260,7 @@ For a stipulated product model, suppose the complete antiperiodic thermal decomp
 
  ||A_r psi||>=kappa exp(-r||b||_infinity)||psi||.         (4.11)
 
-The printed constant needs a check: the displayed step applies the multiplier bound at both occurrences of `E_r`, which yields `kappa exp(-2r||b||_infinity)`. The formal composition bound proves the `kappa*c^2` version (`congruenced_gap_composition`), not the printed one; see [`lean-certification-ledger.md`](lean-certification-ledger.md) §3. Either the constant or the argument must change.
+The constant is correct as printed. With `E_r=exp(-r b/2)` and `r>=0`, the multiplier lower bound at each of the two occurrences of `E_r` is `exp(-r||b||_infinity/2)`, not `exp(-r||b||_infinity)`; the product is `exp(-r||b||_infinity)`. This is machine-checked at the source level: `congruenced_gap_composition` gives `kappa*c^2`, and `zero_sector_gap_printed` instantiates `c=exp(-r||b||_infinity/2)` using `exp_neg_half_mul_sq` to recover exactly `(4.11)` (exact-source GCP replay of this revision pending). An earlier ledger revision reported `kappa exp(-2r||b||_infinity)` as the proved constant; that report substituted `c=exp(-r||b||_infinity)` and is superseded.
 
 Consequently its two partner squares agree and have a positive lower bound. With the stated compact heat and form-differentiability assumptions this supplies large-time integrability at fixed positive cutoff for the finite zero sector. The assumed thermal gap requires the actual mode domains and bolt regularity; it does not follow from antiperiodicity alone. For each fixed nonzero thermal mode, `../notes/bolt-symmetric-lapse-domain-equality.md` establishes the symmetric-lapse domain equality under explicit smooth compact product, common bundle, physical projector and graph-core hypotheses. Applying that result to the source and obtaining uniform rough-family control remain separate obligations. The detailed conditional argument is in `../notes/product-conversion-zero-sector-thermal-gap.md`.
 
