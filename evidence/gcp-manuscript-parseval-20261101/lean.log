@@ -1,0 +1,4 @@
+'PairedDirac.Manuscript.integrand_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_abs_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_response_le_symbol' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_response_le_half' depends on axioms: [propext, Classical.choice, Quot.sound]

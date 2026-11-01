@@ -1,0 +1,18 @@
+Sun Nov  1 23:39:04 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptParseval.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+8fb6d20d7067f7f887fc8bfb2285228c21e07ba576e18c59a65609dfdbd12b5f  ManuscriptParseval.lean
+'PairedDirac.Manuscript.integrand_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_abs_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_response_le_symbol' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_response_le_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integrand_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_abs_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_response_le_symbol' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_response_le_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptParseval.lean: OK
+4c00ff152d8d4193432a80f28eb1393b43ab2d49521f9c429c1fa7cf78984287  ManuscriptParseval.olean

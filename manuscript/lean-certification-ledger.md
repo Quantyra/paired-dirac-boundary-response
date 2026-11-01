@@ -6,7 +6,7 @@ machine-checked, what is not, and what a full Lean certification would still
 require.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** Fifty-nine declarations are machine-checked on GCP (receipts
+beyond it.** Sixty-three declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
@@ -14,8 +14,9 @@ beyond it.** Fifty-nine declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101-r5`](../evidence/gcp-manuscript-formal-20261101-r5/README.md),
 [`gcp-manuscript-integral-20261101-r2`](../evidence/gcp-manuscript-integral-20261101-r2/README.md)
 and [`gcp-manuscript-correspondence-repair-20261101`](../evidence/gcp-manuscript-correspondence-repair-20261101/README.md)
-and [`gcp-manuscript-flat-bound-20261101`](../evidence/gcp-manuscript-flat-bound-20261101/README.md)). Propositions 4.1 and 4.2, the
-Parseval step of 4.3, the unbounded-domain/unbounded-operator content of
+and [`gcp-manuscript-flat-bound-20261101`](../evidence/gcp-manuscript-flat-bound-20261101/README.md)
+and [`gcp-manuscript-parseval-20261101`](../evidence/gcp-manuscript-parseval-20261101/README.md)). Propositions 4.1 and 4.2, the
+two Fourier inputs of the 4.3 Parseval step, the unbounded-domain/unbounded-operator content of
 Propositions 2.1, 3.1 and 3.2, the heat-trace and regulator statements of
 Section 5, and all physical identification steps remain **outside** the
 certified scope.
@@ -56,7 +57,7 @@ printed equations, its analysis and its physics are not.
 | (4.6) | compact-model transfer | not formalized | compact flat-model heat kernel and winding sums |
 | Prop. 4.3, (4.8) | integrability consequence of the cubic bound | **certified** (integral included) | `flat_pointwise_reduction` and `flat_finite_time_sum_bound` in `ManuscriptFormal.lean`; and in [`gcp-manuscript-integral-20261101`](../evidence/gcp-manuscript-integral-20261101/README.md) the genuine integral: `flat_time_integral_bound` (`∫_0^{t0} |r|dt/t² ≤ C t0` under the cubic bound plus interval-integrability) and `flat_time_integral_bound_of_bounded`, which discharges integrability from measurability and the pointwise bound. The earlier environment gap is closed by running against the Space Mathlib build, which contains `Mathlib.MeasureTheory.Integral.IntervalIntegral` |
 | Prop. 4.3, (4.7) | kernel bound `0 ≤ R2(x) ≤ min(x³/840, x²/120)` | **certified at the printed definition of `F`** | New in [`gcp-manuscript-flat-bound-20261101`](../evidence/gcp-manuscript-flat-bound-20261101/README.md): `R2_bound` (plus `R2_nonneg`, `R2_le_cubic`, `R2_le_quadratic`) for `x ≥ 0`, with `Ffun`/`R2` defined from `(4.1)`. Supporting: `phi_remainder` (the FTC identity `φ(z)-1+z²/2 = ∫_0^z s(1-e^{-s})ds`), the beta moments `integral_weightA_sq` (`∫a²=1/30`) and `integral_weightA_cu` (`∫a³=1/140`), the pointwise bounds `phi_remainder_nonneg`/`_le_cubic`/`_le_quadratic`, and `R2_eq_half_integral` (`R2` as the `α`-average). The constants `1/840` and `1/120` are derived, not assumed |
-| Prop. 4.3, Parseval step | `(4.8)` bound from the `(4.7)` kernel bound | not formalized | requires the Fourier transform, Plancherel/Parseval and Cauchy–Schwarz with the half/full-line norm relation and the `1/(420π)` constant |
+| Prop. 4.3, Parseval step | `(4.8)` bound from the `(4.7)` kernel bound | **certified conditionally on two named Fourier inputs** | New in [`gcp-manuscript-parseval-20261101`](../evidence/gcp-manuscript-parseval-20261101/README.md): `integrand_abs_le` (pointwise `|uhat·what·K(tk²)| ≤ (t³/840)|g k||h k|`), `integral_abs_mul_le` (Cauchy–Schwarz in `L²` via Mathlib Hölder), `flat_response_le_symbol` (`|r_flat| ≤ t²/(1680π²)√(∫g²)√(∫h²)`), and `flat_response_le_half` (the printed `|r_flat| ≤ t²/(420π)·Ah·Bh` under `∫g² = 4πAh²`, `∫h² = 4πBh²`, with `√(4πAh²)=2√π·Ah` and `√π·√π=π` proved). **Hypotheses, not proved:** the Fourier derivative identity `g = (i k)³uhat` and Plancherel in the manuscript's `exp(-i k y)` normalization (Mathlib's `L²` Plancherel uses `exp(-2πi k x)`), whose composite with the half/full-line relation is exactly `∫g² = 4πAh²` |
 | (4.9)–(4.10) | conversion identity | source identity, not formalized | operator trace identity under domain hypotheses |
 | (4.9a) | tower asymptotics | polynomial part certified | New: `tower_derivative_coefficient` checks that differentiating the displayed polynomial part with `a=t/b²` reproduces the `b⁻²[2/a²-q²/6+1/30]` coefficient of `-Θ'`; the Euler–Maclaurin derivation and the `O_q(a²)` remainder are not formalized |
 | (4.10a)–(4.10b) | combined multiplier, `J_2` limit | coefficient algebra certified only | New: `flat_conversion_cubic_coefficient` checks `2·(b²/π)·(-1/1680+1/840) = b²/(840π)`. The angular limits and pairing factor are inputs |
@@ -74,8 +75,8 @@ printed equations, its analysis and its physics are not.
 | §5 necessary condition | `C_other = -(b_S²/6π)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-Summary: 59 declarations machine-checked across eight receipts (10, 10, 10, 1,
-4, 3, 12 and 11 respectively). Of these: 2 algebraic
+Summary: 63 declarations machine-checked across nine receipts (10, 10, 10, 1,
+4, 3, 12, 11 and 4 respectively). Of these: 2 algebraic
 coefficient identities, 1 finite-matrix trace identity, 5 bounded-operator
 inequalities, 1 inner-product lemma, 1 gap-composition lemma plus the printed
 `(4.11)` instantiation, the 10 `(2.3)` transport/eigenvector facts, the `(4.9a)`
@@ -212,13 +213,19 @@ declarations of `manuscript/ManuscriptIntegral.lean` for the declared total of
 48.
 
 `powershell -ExecutionPolicy Bypass -File scripts/audit-lean-receipts.ps1`
-reports 59 sources, 59 matched, 0 unmatched at this revision.
+reports 60 sources, 60 matched, 0 unmatched at this revision.
 
 The `(4.7)` kernel bound lives in `lean/ManuscriptFlatBound.lean` (SHA-256
 `c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb`), run by
 `lean/cloud-manuscript-flat-bound-20261101.sh` against the Space reference
 Mathlib build and retained at
 `evidence/gcp-manuscript-flat-bound-20261101/` (exit 0, no warning, 11
+declarations, standard axioms only).
+
+The Parseval/Cauchy–Schwarz step lives in `lean/ManuscriptParseval.lean`
+(SHA-256 `8fb6d20d7067f7f887fc8bfb2285228c21e07ba576e18c59a65609dfdbd12b5f`),
+run by `lean/cloud-manuscript-parseval-20261101.sh` and retained at
+`evidence/gcp-manuscript-parseval-20261101/` (exit 0, no warning, 4
 declarations, standard axioms only).
 
 Remaining to-do list: none in the certified scope. Every numbered manuscript
