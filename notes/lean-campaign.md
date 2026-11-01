@@ -207,3 +207,48 @@ uncompiled. Close the analytic and physical gates that these certificates do
 not touch, finish the closest-prior-art comparison, and record the S001
 decision; formalize the operator-level estimates only at the scope the paper
 ultimately claims.
+
+## Complete receipt inventory (2026-11-01 UTC)
+
+The campaign's Lean side is now reconciled rather than merely replayed. On
+2026-11-01 UTC the repository's `scripts/audit-lean-receipts.ps1` audited
+every one of the 56 sources in `lean/` against the retained receipts:
+
+```text
+Sources audited: 56; matched: 56; unmatched: 0.
+```
+
+The generated table is [`notes/lean-receipt-audit.md`](lean-receipt-audit.md);
+the script exits non-zero if any source stops matching, so a later source or
+receipt edit cannot silently break the reconciliation. The audit compares
+both the committed LF SHA-256 and the Windows CRLF SHA-256, because several
+older receipts recorded the CRLF bytes of the working copy rather than the
+Git blob; that convention, not a content difference, explains the three
+apparent historical mismatches for `FullWeylSquareAlgebra.lean`,
+`GraphBoundsComposedDraft.lean` and `TransportedCongruence.lean`.
+
+One real gap was found and closed. The fourth-order angular-jet run recorded
+in [`gcp-full-weyl-angular-jet4-20261030`](../evidence/gcp-full-weyl-angular-jet4-20261030/README.md)
+left its source hash as an unsubstituted placeholder and retained neither
+source nor `.olean`, so the checked bytes could not be recovered from that
+receipt. The exact current source was replayed on `quantyra-lean-builder-01`
+with Lean 4.30.0 and the pinned Mathlib commit: exit code 0, both jet theorems
+reported with only `propext`, `Classical.choice` and `Quot.sound`, compiled
+`.olean` retained, and no `sorryAx`. See
+[`gcp-full-weyl-angular-jet-exact-20261031`](../evidence/gcp-full-weyl-angular-jet-exact-20261031/README.md).
+The first attempt at that replay failed in the environment (retained Mathlib
+build directories had lost their `.ir` compiler artifacts); the failure is
+recorded in the new receipt and was repaired by restoring the IR artifacts
+from the retained Lake cache of the same workspace, without editing any
+source.
+
+[`notes/lean-certification-status.md`](lean-certification-status.md) states
+what the whole inventory does and does not certify. The short form is
+unchanged: every receipt covers abstract algebra, finite rational arithmetic,
+or finite-matrix identities. No receipt establishes an analytic input, the
+physical paired realization, a heat-trace or regulator limit, the physical
+observable, novelty, or any part of the wormhole objective.
+
+Remaining to-do list: close the analytic and physical gates that no certificate
+here touches; finish the closest-prior-art comparison and record S001.3.
+

@@ -1,0 +1,14 @@
+Sun Nov  1 05:43:52 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/FullWeylAngularJet.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+e5f804e0a28087408e197719da807925414e3d1fe09c5b2b1395d5dba6a521e2  FullWeylAngularJet.lean
+'full_weyl_leading_angular_jet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'full_weyl_subtracted_jet_through_fourth_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'full_weyl_leading_angular_jet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'full_weyl_subtracted_jet_through_fourth_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+FullWeylAngularJet.lean: OK
+29cbdd2b5f1dc7fb3b75d7d941c603218804767583055e176518da39223285e2  FullWeylAngularJet.olean

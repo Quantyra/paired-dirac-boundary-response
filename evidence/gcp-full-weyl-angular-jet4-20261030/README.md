@@ -1,6 +1,19 @@
 # GCP check: full-Weyl angular jet through fourth order
 
-Run date: 2026-10-30 HST. Source: lean/FullWeylAngularJet.lean, SHA-256 $hash.
+Run date: 2026-10-30 HST. Source: lean/FullWeylAngularJet.lean.
+
+Source-identity note (2026-11-01 UTC): this receipt originally recorded the
+source as `SHA-256 $hash`, an unsubstituted template placeholder, and it
+retained neither the checked source nor the compiled `.olean`. It therefore
+does not by itself pin the bytes that were checked. The same file content was
+subsequently pinned and replayed exactly as
+`e5f804e0a28087408e197719da807925414e3d1fe09c5b2b1395d5dba6a521e2` with a
+retained source and `.olean` in
+[`gcp-full-weyl-angular-jet-exact-20261031`](../gcp-full-weyl-angular-jet-exact-20261031/README.md).
+The file has not changed since commit `441f46c`, which introduced this
+fourth-order version, so the successful run below and that exact replay cover
+the same source content. Treat the exact replay as the governing record for
+source identity; this receipt is retained as the original run record.
 
 Run on quantyra-lean-builder-01, project quantyra-lean-cert-20260915, zone us-central1-a, with Lean 4.30.0 (d024af099ca4bf2c86f649261ebf59565dc8c622) and Lake 5.0.0. The run used the retained paper1-sourceonly-6858aa7-20261029/source/lean environment and the cached toolchain at paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux. The command was lake env lean /tmp/FullWeylAngularJet.lean; exit code 0.
 
