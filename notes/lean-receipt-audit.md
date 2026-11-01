@@ -22,7 +22,7 @@ Sources audited: 56; matched: 56; unmatched: 0.
 | `FlatFormFactorIntegral.lean` | `0bda3ceb94db5f69ef4a8ec878974905a4552c0646a70a3aa4605881c5e0b22b` | gcp-flat-integral-20261030, gcp-raw-tangent-20261030, gcp-raw-tangent-sourceonly-20261030 |
 | `FlatFormFactorObstruction.lean` | `0074c72f304737ef24e4805675f59311b45839649593db2ec8a23813398a634d` | gcp-flat-form-factor-20261030 |
 | `FlatSourceContactLedger.lean` | `b21468d3fe08878c15b33ed29578599676ba3aabdbd0c0288c71b3269672f67f` | gcp-flat-source-contact-ledger-20261031 |
-| `FullWeylAngularJet.lean` | `e5f804e0a28087408e197719da807925414e3d1fe09c5b2b1395d5dba6a521e2` | gcp-full-weyl-angular-jet-exact-20261031 |
+| `FullWeylAngularJet.lean` | `e5f804e0a28087408e197719da807925414e3d1fe09c5b2b1395d5dba6a521e2` | gcp-full-weyl-angular-jet4-20261030, gcp-full-weyl-angular-jet-exact-20261031 |
 | `FullWeylConstantModeBenchmark.lean` | `1cf0c4635000f53e138410e7e414def59ff56515c71f119d852a965481170415` | gcp-full-weyl-constant-mode-20261031 |
 | `FullWeylOrbitCorrectionVerticesDraft.lean` | `687dd7e4917a4bfa7b875ee1570d911dd4754f5e033799acdf7cbaf882a3cda9` | gcp-full-weyl-orbit-correction-vertices-20261031 |
 | `FullWeylSeamCoefficientComparison.lean` | `98f2e7138670b493fc5c0b551ca8ae7a78a499673977ad76a5e1418a5c90036e` | gcp-full-weyl-seam-coefficient-comparison-corrected-20261031 |
