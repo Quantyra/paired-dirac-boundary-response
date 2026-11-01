@@ -1,6 +1,6 @@
 # Paired Dirac domains and boundary response under mass and logarithmic variations
 
-**Working draft — incomplete, not a manuscript release.** The full tangent boundary response, source-domain identification, curved extension, prior-art decision and requested Lean certification remain open. Statements below distinguish proved conditional operator facts from the intended physical application. No existence or stability conclusion for a wormhole is made.
+**Working draft — incomplete, not a manuscript release.** The full tangent boundary response, source-domain identification, curved extension and prior-art decision remain open. Lean certification is partial: the arithmetic and bounded-operator skeleton is machine-checked on GCP, while the analytic propositions and every physical identification step are not; see [`lean-certification-ledger.md`](lean-certification-ledger.md). Statements below distinguish proved conditional operator facts from the intended physical application. No existence or stability conclusion for a wormhole is made.
 
 ## Abstract (provisional)
 
@@ -78,6 +78,8 @@ This does not prove that zero is an eigenvalue or determine a renormalized physi
 
 The source records a candidate J and matched copy/bundle data. The algebraic transition check is in `../notes/source-paired-bundle-transition-check.md`; equality with the physical global realization remains to be checked. Equation (3.1) is a per-mode operator bound. It does not justify summing a full angular tower or removing a proper-time regulator.
 
+In the bounded-operator reading, the a priori inequalities behind (3.1) and the conditional inverse bounds are machine-checked on GCP (`resolvent_shift_norm_lower`, `square_shift_norm_lower`, `resolvent_norm_bound`, `square_resolvent_norm_bound`; receipt [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md)). The existence of the inverses, the unbounded realizations and the spectral step are not formalized.
+
 ### Conditional smooth finite-cut interface square
 
 At a smooth compact cut, the source-stipulated partner involution gives an exact square-level interface realization. Let `W_b` be the density unitary from `L2(g)` to `L2(g_b)`, and let `P_b=W_b D_b W_b^{-1}` be the transported P1 operator, where `D_b=E_b D_g E_b`, `E_b=exp(-b/2)`, and `g_b=exp(2b)g`. Assume the source's global parallel unitary involution `J` commutes with the bulk expression and exchanges the actual P1 and adjoint projector domains. Extend the boundary fold `F=(1+tau_1 chi)/sqrt(2)` smoothly through a collar, using `F_theta=cos(theta)+sin(theta)tau_1 chi` and lowering `theta` from `pi/4` at the cut to zero in the interior. Set
@@ -114,7 +116,16 @@ For real z with the required Lipschitz multiplier domain preservation, these ope
 
 Cauchy's estimate on a radius-r disk in the direction u gives the first bound. For the mixed derivative use two disks of radii r/(2||u||) and r/(2||v||), so their sum stays in the ball; Cauchy's coefficient bound gives 4(1.32)/(M r²)=337.92/M. Zero directions are immediate. The inverse and factorization identities on the actual domains follow by conjugating M +/- Q_b with E_b and using the spectral calculus of the skew-adjoint Q_b. The exact numerical comparisons are detailed in `../notes/resolvent-variation-constants.md`, and the domain ordering is in `../notes/paired-square-resolvent.md`. □
 
-The rational arithmetic for the exponential, Neumann and Cauchy constants now has a Lean draft at `../lean/ResolventVariationConstants.lean` and a GCP-only exact-source runner at `../lean/cloud-resolvent-variation-constants-20261031.sh`. Neither has been compiled or certified. The draft targets only the rational inequalities; it does not formalize the Taylor-tail comparison with the exponential, the Banach-valued Cauchy estimates, the operator hypotheses or this proposition as a whole.
+The rational arithmetic for the exponential, Neumann and Cauchy constants is
+machine-checked on GCP in
+[`ResolventVariationConstants.lean`](../lean/ResolventVariationConstants.lean)
+(receipt [`gcp-resolvent-variation-constants-20261031`](../evidence/gcp-resolvent-variation-constants-20261031/README.md)):
+`q<0.134`, `C<1.32`, `264/25` and `8448/25` are exact rational inequalities
+with only the standard axioms. The draft targets only those rational
+inequalities; the Taylor-tail comparison with the exponential, the
+Banach-valued Cauchy estimates, the operator hypotheses and this proposition
+as a whole are not formalized. See
+[`lean-certification-ledger.md`](lean-certification-ledger.md).
 
 For arbitrary complex L-infinity z, (3.2) is a bounded analytic continuation; it does not assert that multiplication by exp(-(b+z)/2) preserves a first-order operator domain. The constants are sufficient estimates, not measured physical margins. They do not make the angular trace summable or establish the common regulator.
 ## 4. Tangent boundary response — work in progress
@@ -247,6 +258,8 @@ For a stipulated product model, suppose the complete antiperiodic thermal decomp
 
  ||A_r psi||>=kappa exp(-r||b||_infinity)||psi||.         (4.11)
 
+The printed constant needs a check: the displayed step applies the multiplier bound at both occurrences of `E_r`, which yields `kappa exp(-2r||b||_infinity)`. The formal composition bound proves the `kappa*c^2` version (`congruenced_gap_composition`), not the printed one; see [`lean-certification-ledger.md`](lean-certification-ledger.md) §3. Either the constant or the argument must change.
+
 Consequently its two partner squares agree and have a positive lower bound. With the stated compact heat and form-differentiability assumptions this supplies large-time integrability at fixed positive cutoff for the finite zero sector. The assumed thermal gap requires the actual mode domains and bolt regularity; it does not follow from antiperiodicity alone. For each fixed nonzero thermal mode, `../notes/bolt-symmetric-lapse-domain-equality.md` establishes the symmetric-lapse domain equality under explicit smooth compact product, common bundle, physical projector and graph-core hypotheses. Applying that result to the source and obtaining uniform rough-family control remain separate obligations. The detailed conditional argument is in `../notes/product-conversion-zero-sector-thermal-gap.md`.
 
 This finite-model endpoint is not yet identified with the source's lowest-Landau-level state, cocycle, physical-half normalization or common subtraction. No zero-mode block is discarded or added twice, and no ultraviolet limit follows from (4.11).
@@ -273,7 +286,7 @@ Subtracting (4.12b) from (4.12a) gives
       + C_0/(24 pi) U_1 + b_0^2/(120 pi) U_2
       - C_1/(pi b_0^2) U_0 + O(t).                    (4.12c)
 
-This follows by subtracting the two displayed local series term by term.
+This follows by subtracting the two displayed local series term by term. The term-by-term subtraction itself is machine-checked on GCP (`converted_series_difference`, receipt [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md)); the two series are inputs from the cited notes, not derived there.
 It is an algebraic comparison only: it does not identify the residual with
 the physical mixed-response difference, a local-action restoration, the
 lowest-Landau-level term, or a curved-response mismatch. Those assignments
@@ -309,6 +322,8 @@ Under the common smooth-cut, field-approximation, form-trace and heat-smoothing 
 For the single V_uw term, a fixed conformal insertion b can be moved to a reference position with an explicit heat-commutator correction. At finite matrix level, for a+c=t and a>=t/2,
 
  Tr[b K_a V_uw K_c]=Tr[b K_t V_uw]+Tr([K_c,b]K_a V_uw). (5.3)
+
+The finite-matrix identity (`K_t=K_a K_c` with commuting heat factors) is machine-checked on GCP as `matrix_reference_position_identity`; the operator-level and trace-class passage in the surrounding argument is not.
 
 For c>=t/2 the reference is Tr[b V_uw K_t] and the correction is Tr([b,K_a]V_uw K_c). The reference traces are conjugate. Under the form-domain and weighted smoothing assumptions in `../notes/conformal-second-vertex-reference-traces.md`, they are bounded using the decaying directions and the commutators of b with D, without bounding the bare logarithmic insertion. The remaining correction requires an unsandwiched trace-class bound or another justified form estimate. These fixed-time conditional statements do not control the two ordered vertices or the common regulator.
 For the stipulated smooth four-dimensional finite-cut model, the unweighted mixed heat response (3) of `../notes/physical-fixed-time-mixed-response-assembly.md` has a separate conditional estimate for ordered terms containing at least one first-vertex Green boundary form. This estimate does not include the additional conformal-log insertion in the bridge. Assume the uniform graph, trace, mixed-domain and heat-smoothing hypotheses and cubic boundary weights in `../notes/finite-cut-boundary-joint-proper-time-path.md`. If delta is the outer cut and 0<t<=1, their complete ordered heat contribution obeys

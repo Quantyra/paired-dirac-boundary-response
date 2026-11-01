@@ -1,0 +1,34 @@
+Sun Nov  1 09:04:11 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptFormal.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+c316e863623a4809ef5584d42e779065de9ced94177b4b5e8e69a145b3a52f4e  ManuscriptFormal.lean
+ManuscriptFormal.lean:87:57: warning: unused variable `hM`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'PairedDirac.Manuscript.skew_adjoint_inner_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.congruenced_gap_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.converted_series_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cutoff_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.matrix_reference_position_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.skew_adjoint_inner_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.congruenced_gap_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.converted_series_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cutoff_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.matrix_reference_position_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptFormal.lean: OK
+688427eafb4adbd80c40fcf77a6766fda82e5bbcf3fc42e6247fce01fe8cf0f1  ManuscriptFormal.olean

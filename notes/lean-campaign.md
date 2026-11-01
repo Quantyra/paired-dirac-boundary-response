@@ -252,3 +252,42 @@ observable, novelty, or any part of the wormhole objective.
 Remaining to-do list: close the analytic and physical gates that no certificate
 here touches; finish the closest-prior-art comparison and record S001.3.
 
+## Manuscript formalization (2026-11-01 UTC)
+
+The first direct attempt to "Lean certify the manuscript" is recorded in
+[`manuscript/lean-certification-ledger.md`](../manuscript/lean-certification-ledger.md).
+It is deliberately partial and says so. `lean/ManuscriptFormal.lean`
+(SHA-256 `c316e863…`, receipt
+[`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md))
+adds ten machine-checked statements: the bounded-operator a priori
+inequalities behind Proposition 3.1 and their conditional inverse bounds, the
+vanishing real quadratic form of a skew-adjoint operator, a gap-composition
+lemma, the exact `(4.12c)` series subtraction, two flat-conversion
+coefficient identities `(4.10b)`/`(4.10c)`, and the finite-matrix
+reference-position identity `(5.3)`. All ten report only `propext`,
+`Classical.choice` and `Quot.sound`.
+
+Two findings matter more than the count:
+
+- The formalization exposed a constant discrepancy in `(4.11)`: the printed
+  `κ exp(-r‖b‖_∞)` is `κ exp(-2r‖b‖_∞)` under the displayed argument, and the
+  Lean lemma proves the latter. The manuscript now flags the check instead of
+  asserting the printed constant.
+- The ledger enumerates every remaining manuscript statement and why it is
+  not formalized: unbounded closed realizations and Sobolev trace domains,
+  the spectral theorem for unbounded self-adjoint operators, boundary
+  heat-kernel asymptotics, distributional Fourier limits, and uniform rough
+  family/regulator estimates. None of these is a missing lemma; each is a
+  separate formalization project, and the last is the paper's own open
+  problem.
+
+The honest status is therefore: the manuscript's arithmetic and abstract
+bounded-operator skeleton is certified, the manuscript is not. The ledger
+must be read with the draft, and no abstract may cite Lean certification of a
+proposition that the ledger marks unformalized.
+
+Remaining to-do list: formalize or explicitly exclude each unformalized
+manuscript statement; resolve the `(4.11)` constant; keep the ledger in step
+with the draft.
+
+
