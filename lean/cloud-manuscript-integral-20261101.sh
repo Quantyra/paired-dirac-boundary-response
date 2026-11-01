@@ -5,11 +5,11 @@
 # Mathlib.MeasureTheory.Integral.IntervalIntegral.
 set -euo pipefail
 
-run="$HOME/quantyra-space-runs/p1-manuscript-integral-20261101-r1"
+run="$HOME/quantyra-space-runs/p1-manuscript-integral-20261101-r2"
 deps="$HOME/quantyra-space-runs/space-20261007T093129Z-retry1/packages"
 toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin"
 source="$HOME/ManuscriptIntegral.lean"
-source_sha='974c5c88b779a0576806ab90f48601de4aab87ff7d21a4dbfe1c5d3c1735a3c9'
+source_sha='608ed5ead89e6911ce77f8a6dfd1494524a095097e3aec7f090e70f42adf2de0'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -44,7 +44,7 @@ cd "$run"
 sha256sum ManuscriptIntegral.lean | tee lean-source-sha256.txt
 lean -o ManuscriptIntegral.olean ManuscriptIntegral.lean 2>&1 | tee lean.log
 
-theorems="flat_time_integral_bound flat_time_integral_bound_of_bounded"
+theorems="flat_time_integral_bound flat_time_integral_bound_of_bounded continuum_variation_of_constants"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done

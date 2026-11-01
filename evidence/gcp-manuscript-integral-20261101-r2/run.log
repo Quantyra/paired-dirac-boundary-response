@@ -1,0 +1,23 @@
+Sun Nov  1 12:04:46 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptIntegral.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+608ed5ead89e6911ce77f8a6dfd1494524a095097e3aec7f090e70f42adf2de0  ManuscriptIntegral.lean
+ManuscriptIntegral.lean:45:17: warning: This simp argument is unused:
+  abs_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [a̵b̵s̵_̵zero,̵ ̵z̵e̵r̵o̵_pow (by norm_num : 2 ≠ 0), div_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.Manuscript.flat_time_integral_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_time_integral_bound_of_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.continuum_variation_of_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_time_integral_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_time_integral_bound_of_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.continuum_variation_of_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptIntegral.lean: OK
+7b611b338fd76a1565ff9dc92150e0437370ca0afc0cc48d30449159348f4787  ManuscriptIntegral.olean

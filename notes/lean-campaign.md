@@ -279,7 +279,13 @@ A separate receipt,
 [`gcp-manuscript-integral-20261101`](../evidence/gcp-manuscript-integral-20261101/README.md),
 adds the integral form of `(4.8)` itself; it is the first manuscript run
 against the Space Mathlib build, which contains
-`Mathlib.MeasureTheory.Integral.IntervalIntegral`.
+`Mathlib.MeasureTheory.Integral.IntervalIntegral`. Its successor
+[`gcp-manuscript-integral-20261101-r2`](../evidence/gcp-manuscript-integral-20261101-r2/README.md)
+adds `continuum_variation_of_constants`, the continuum form of `(2.5)`,
+proved by differentiating the constant of motion and applying the fundamental
+theorem of calculus; it is certified for algebra-valued `Y` (scalar case
+`A = ℝ`), not for the vector-valued reading with a matrix fundamental
+solution.
 All report only `propext`,
 `Classical.choice` and `Quot.sound`.
 
