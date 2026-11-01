@@ -17,7 +17,7 @@ source identity; this receipt is retained as the original run record.
 
 Run on quantyra-lean-builder-01, project quantyra-lean-cert-20260915, zone us-central1-a, with Lean 4.30.0 (d024af099ca4bf2c86f649261ebf59565dc8c622) and Lake 5.0.0. The run used the retained paper1-sourceonly-6858aa7-20261029/source/lean environment and the cached toolchain at paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux. The command was lake env lean /tmp/FullWeylAngularJet.lean; exit code 0.
 
-The checked theorems are ull_weyl_leading_angular_jet and ull_weyl_subtracted_jet_through_fourth_order. The latter verifies the rational polynomial identity
+The checked theorems are `full_weyl_leading_angular_jet and `full_weyl_subtracted_jet_through_fourth_order. The latter verifies the rational polynomial identity
 
 `	ext
 1 + 3(1 - x/6 + x^2/60 - x^3/840 + x^4/15120)

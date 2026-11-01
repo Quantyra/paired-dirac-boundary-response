@@ -338,7 +338,7 @@ Remaining to-do list: prove the endpoint identification and hypothesis match;
 finish the P1-C and novelty audits; formalize the supported claim on GCP; then
 complete the manuscript at the proved scope.
 
-The moving-cut obstruction is now quantified in [inite-cut-congruence-uniformity-obstruction.md](finite-cut-congruence-uniformity-obstruction.md): the finite-cut conformal multiplier inverse has L2 norm `sqrt(R/ell)`. Any physical trace transfer therefore needs a weighted/localized estimate or cancellation beyond the fixed-cut graph comparison. This is not a response lower bound and does not decide convergence.
+The moving-cut obstruction is now quantified in [nnite-cut-congruence-uniformity-obstruction.md](finite-cut-congruence-uniformity-obstruction.md): the finite-cut conformal multiplier inverse has L2 norm `sqrt(R/ell)`. Any physical trace transfer therefore needs a weighted/localized estimate or cancellation beyond the fixed-cut graph comparison. This is not a response lower bound and does not decide convergence.
 
 A further endpoint distinction is now recorded in [conformal-infinity-l2-domain-obstruction.md](conformal-infinity-l2-domain-obstruction.md): under the conformal spinor map, the physical graph norm has compactified weights `u^-1` on `psi_hat` and `u` on `D_hat psi_hat`. Within compactified `H1`, physical L2 forces the full boundary trace to vanish, whereas the source's local projector allows nonzero complementary trace. Thus compactified local-projector moving-cut heat estimates do not yet instantiate the physical endpoint; the intended Hilbert space and boundary realization must be specified. This does not invalidate a nonnormalizable source prescription.
 

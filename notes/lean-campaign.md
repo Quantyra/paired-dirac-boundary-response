@@ -275,6 +275,11 @@ coefficient check, the Proposition 2.1 multiplier identity
 Pauli relations with the `K_ζ` block form, and the discrete `(2.5)`
 telescoping identity `Y 0 = P k Y k - Σ_{j<k} P j b j` with its matrix-valued
 and composition forms, and the pointwise plus finite-mesh content of `(4.8)`.
+A separate receipt,
+[`gcp-manuscript-integral-20261101`](../evidence/gcp-manuscript-integral-20261101/README.md),
+adds the integral form of `(4.8)` itself; it is the first manuscript run
+against the Space Mathlib build, which contains
+`Mathlib.MeasureTheory.Integral.IntervalIntegral`.
 All report only `propext`,
 `Classical.choice` and `Quot.sound`.
 

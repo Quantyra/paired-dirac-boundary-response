@@ -1,0 +1,9 @@
+ManuscriptIntegral.lean:44:17: warning: This simp argument is unused:
+  abs_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [a̵b̵s̵_̵zero,̵ ̵z̵e̵r̵o̵_pow (by norm_num : 2 ≠ 0), div_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.Manuscript.flat_time_integral_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_time_integral_bound_of_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]

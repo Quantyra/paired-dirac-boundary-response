@@ -5,13 +5,14 @@ draft). Purpose: record, statement by statement, exactly what is
 machine-checked, what is not, and what a full Lean certification would still
 require.
 
-**Verdict: the manuscript is not Lean-certified.** Thirty-five algebraic or
-bounded-operator statements are now machine-checked on GCP (receipts
+**Verdict: the manuscript is not Lean-certified.** Thirty-seven declarations
+are now machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
-[`gcp-manuscript-formal-20261101-r4`](../evidence/gcp-manuscript-formal-20261101-r4/README.md)
-and [`gcp-manuscript-formal-20261101-r5`](../evidence/gcp-manuscript-formal-20261101-r5/README.md)).
+[`gcp-manuscript-formal-20261101-r4`](../evidence/gcp-manuscript-formal-20261101-r4/README.md),
+[`gcp-manuscript-formal-20261101-r5`](../evidence/gcp-manuscript-formal-20261101-r5/README.md)
+and [`gcp-manuscript-integral-20261101`](../evidence/gcp-manuscript-integral-20261101/README.md)).
 Every analytic proposition (4.1, 4.2, 4.3), the unbounded-domain/unbounded-operator
 content of Propositions 2.1, 3.1 and 3.2, the heat-trace and regulator
 statements of Section 5, and all physical identification steps remain
@@ -41,7 +42,7 @@ skeleton is checked; its analysis and its physics are not.
 | Prop. 4.1, (4.3) | `lim t^{-5/2} B_t = -15c_uc_w/(1024√π)` | not formalized | distributional fourth derivative, Riemann–Lebesgue, dominated convergence and an explicit improper integral; the integral value itself is not formalized |
 | Prop. 4.2, (4.4)–(4.5) | cubic-log asymptotic | not formalized | Fourier tail `o(|k|^{-9})`, split-frequency argument, `log t` extraction |
 | (4.6) | compact-model transfer | not formalized | compact flat-model heat kernel and winding sums |
-| Prop. 4.3, (4.8) | integrability consequence of the cubic bound | pointwise and finite-mesh forms **certified**, integral not | New: `flat_pointwise_reduction` (`|r t| ≤ C t²`, `t>0` gives `|r t|/t² ≤ C`) and `flat_finite_time_sum_bound` (`Σ w_j |r(t_j)|/t_j² ≤ C t0` for `t_j>0`, `w_j≥0`, `Σw_j ≤ t0`). The retained Mathlib build has no measure theory (`IntervalIntegral.olean` absent), so the integral `∫_0^{t0} |r|dt/t² ≤ C t0` is not formalized |
+| Prop. 4.3, (4.8) | integrability consequence of the cubic bound | **certified** (integral included) | `flat_pointwise_reduction` and `flat_finite_time_sum_bound` in `ManuscriptFormal.lean`; and in [`gcp-manuscript-integral-20261101`](../evidence/gcp-manuscript-integral-20261101/README.md) the genuine integral: `flat_time_integral_bound` (`∫_0^{t0} |r|dt/t² ≤ C t0` under the cubic bound plus interval-integrability) and `flat_time_integral_bound_of_bounded`, which discharges integrability from measurability and the pointwise bound. The earlier environment gap is closed by running against the Space Mathlib build, which contains `Mathlib.MeasureTheory.Integral.IntervalIntegral` |
 | Prop. 4.3, (4.7) and the Parseval step | all-frequency bound | not formalized | requires `0 ≤ R2 ≤ min(x³/840, x²/120)`, the Fourier transform and Parseval with the half/full-line norm relation |
 | (4.9)–(4.10) | conversion identity | source identity, not formalized | operator trace identity under domain hypotheses |
 | (4.9a) | tower asymptotics | polynomial part certified | New: `tower_derivative_coefficient` checks that differentiating the displayed polynomial part with `a=t/b²` reproduces the `b⁻²[2/a²-q²/6+1/30]` coefficient of `-Θ'`; the Euler–Maclaurin derivation and the `O_q(a²)` remainder are not formalized |
@@ -60,14 +61,15 @@ skeleton is checked; its analysis and its physics are not.
 | §5 necessary condition | `C_other = -(b_S²/6π)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-Summary: 35 declarations machine-checked across five receipts (10, 10, 10,
-1 and 4 respectively). Of these: 2 algebraic coefficient identities, 1
+Summary: 37 declarations machine-checked across six receipts (10, 10, 10, 1,
+4 and 2 respectively). Of these: 2 algebraic coefficient identities, 1
 finite-matrix trace identity, 5 bounded-operator inequalities, 1 inner-product
 lemma, 1 gap-composition lemma, the 10 `(2.3)` transport/eigenvector facts, the
 `(4.9a)` coefficient check, the Proposition 2.1 multiplier identity with both
 graph inequalities, the `(2.4)` Pauli relations and block form, the discrete
-`(2.5)` telescoping identity with its matrix-valued and composition forms, and
-the pointwise plus finite-mesh content of `(4.8)`.
+`(2.5)` telescoping identity with its matrix-valued and composition forms, the
+pointwise and finite-mesh content of `(4.8)`, and now the integral form of
+`(4.8)` itself.
 1 statement is certified with a constant discrepancy that needs a manuscript
 correction. The remaining analytic and physical statements are unformalized.
 

@@ -8,7 +8,7 @@ reported because older receipts sometimes recorded the CRLF bytes of a
 working copy rather than the Git blob. A source is matched when either
 value appears anywhere under `evidence/`.
 
-Sources audited: 57; matched: 57; unmatched: 0.
+Sources audited: 58; matched: 58; unmatched: 0.
 
 | Lean source | SHA-256 (LF blob) | Matched receipt(s) |
 | --- | --- | --- |
@@ -36,6 +36,7 @@ Sources audited: 57; matched: 57; unmatched: 0.
 | `LapseTraceDomainDraft.lean` | `3e49b0804999c868970ae4642dc7dfbfdc3c55b743684b9b2c69340d204f1896` | gcp-lapse-trace-domain-20261030 |
 | `LeftUnitarySquare.lean` | `899a0dca0dd7acc07bb02ed30781388bb6f282751f15e629ffcfde40b21b680f` | gcp-left-unitary-square-20261030, gcp-mode-real-mass-20261030 |
 | `ManuscriptFormal.lean` | `61214e81424575da5c7ae5b76a412e9cf9884cf4687a3fb596918f6177c4342b` | gcp-manuscript-formal-20261101-r5 |
+| `ManuscriptIntegral.lean` | `974c5c88b779a0576806ab90f48601de4aab87ff7d21a4dbfe1c5d3c1735a3c9` | gcp-manuscript-integral-20261101 |
 | `MassSkewLowerDraft.lean` | `f97b3643ea510a365505a9483272c6a2c291d0de4f5d3e9710eadfdaee8b1e44` | gcp-mass-skew-lower-20261030c, gcp-mass-skew-lower-clean-20261030 |
 | `MassSkewOperatorLowerDraft.lean` | `8fd57dcf16df5d896049b2f7cfe77c99c29c554bf503348cb6cbc0df68424b24` | gcp-mass-skew-operator-lower-20261030c |
 | `MassSkewResolventAssembleDraft.lean` | `1c733e296bc093b548f1b50134d13eb55451906f43ee777add0b37f54131f5d7` | gcp-mass-skew-resolvent-clean-20261030 (hash appears only outside a README) |
