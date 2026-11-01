@@ -3,11 +3,11 @@
 # GCP builder; never run locally.
 set -euo pipefail
 
-run="$HOME/quantyra-space-runs/p1-manuscript-formal-20261101-r3"
+run="$HOME/quantyra-space-runs/p1-manuscript-formal-20261101-r4"
 deps="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/source/lean"
 toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin"
 source="$HOME/ManuscriptFormal.lean"
-source_sha='be50bb1d05bab33dbb2cddaa5eb77a176031773f7ad31c041d3501718d61ce9c'
+source_sha='d551719a38535b1f9468c152cbf963133d00fcff525532e1b4e855668a6eb07e'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -49,7 +49,9 @@ flat_conversion_cubic_coefficient flat_conversion_cutoff_coefficient
 matrix_reference_position_identity s1_vplus s1_vminus s3_vplus s3_vminus
 real_sinh_eq_zero transportedPlane_eq_smul pminus_transportedPlane
 transportedPlane_not_local transportedPlane_parallel_iff
-tower_derivative_coefficient"
+tower_derivative_coefficient multiplier_identity first_graph_inequality
+second_graph_inequality pauli1_sq pauli2_sq pauli3_sq pauli2_mul_pauli1
+pauli2_mul_pauli3 kzeta_diag_antisym kzeta_entries"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done

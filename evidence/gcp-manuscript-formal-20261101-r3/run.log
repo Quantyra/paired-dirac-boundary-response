@@ -1,0 +1,92 @@
+Sun Nov  1 09:56:23 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptFormal.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+d551719a38535b1f9468c152cbf963133d00fcff525532e1b4e855668a6eb07e  ManuscriptFormal.lean
+ManuscriptFormal.lean:75:57: warning: unused variable `hM`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ManuscriptFormal.lean:316:45: warning: unused variable `hG`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ManuscriptFormal.lean:405:6: warning: This simp argument is unused:
+  Complex.I_mul_I
+
+Hint: Omit it from the simp argument list.
+  simp [pauli1, pauli2, pauli3, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵I̵_̵m̵u̵l̵_̵I̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ManuscriptFormal.lean:412:6: warning: This simp argument is unused:
+  Complex.I_mul_I
+
+Hint: Omit it from the simp argument list.
+  simp [pauli1, pauli2, pauli3, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵I̵_̵m̵u̵l̵_̵I̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.Manuscript.skew_adjoint_inner_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.congruenced_gap_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.converted_series_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cutoff_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.matrix_reference_position_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s1_vplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s1_vminus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s3_vplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s3_vminus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.real_sinh_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_eq_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pminus_transportedPlane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_not_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_parallel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.tower_derivative_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.multiplier_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.first_graph_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.second_graph_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli1_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli3_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_mul_pauli1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_mul_pauli3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzeta_diag_antisym' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzeta_entries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.skew_adjoint_inner_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.congruenced_gap_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.converted_series_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cutoff_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.matrix_reference_position_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s1_vplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s1_vminus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s3_vplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s3_vminus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.real_sinh_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_eq_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pminus_transportedPlane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_not_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_parallel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.tower_derivative_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.multiplier_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.first_graph_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.second_graph_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli1_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli3_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_mul_pauli1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_mul_pauli3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzeta_diag_antisym' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzeta_entries' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptFormal.lean: OK
+fcf612d0f30768c2a888bc0ee6ae4fdf5c9cc4265c5e2d50c074b391c85f5fe5  ManuscriptFormal.olean

@@ -257,17 +257,20 @@ here touches; finish the closest-prior-art comparison and record S001.3.
 The first direct attempt to "Lean certify the manuscript" is recorded in
 [`manuscript/lean-certification-ledger.md`](../manuscript/lean-certification-ledger.md).
 It is deliberately partial and says so. `lean/ManuscriptFormal.lean`
-(SHA-256 `be50bb1d…`, receipts
-[`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md)
-and [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md))
-now adds twenty machine-checked declarations: the bounded-operator a priori
+(SHA-256 `d551719a…`, receipts
+[`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
+[`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md)
+and [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md))
+now adds thirty machine-checked declarations: the bounded-operator a priori
 inequalities behind Proposition 3.1 and their conditional inverse bounds, the
 vanishing real quadratic form of a skew-adjoint operator, a gap-composition
 lemma, the exact `(4.12c)` series subtraction, two flat-conversion
 coefficient identities `(4.10b)`/`(4.10c)`, the finite-matrix
 reference-position identity `(5.3)`, the `(2.3)` transported-plane identity
-with its eigenvector facts and non-coincidence statement, and the `(4.9a)`
-coefficient check against `(4.12)`. All report only `propext`,
+with its eigenvector facts and non-coincidence statement, the `(4.9a)`
+coefficient check, the Proposition 2.1 multiplier identity
+`E⁻¹(DE) = D - ½c(db)` with both `(2.2)` graph inequalities, and the `(2.4)`
+Pauli relations with the `K_ζ` block form. All report only `propext`,
 `Classical.choice` and `Quot.sound`.
 
 The requested `(5.5)` "jet algebra" target is not available as stated:
