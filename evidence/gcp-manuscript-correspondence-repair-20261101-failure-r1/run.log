@@ -1,0 +1,116 @@
+Sun Nov  1 22:23:44 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptFormal.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+adda05e3cc8eeee93300ff716f6f559eb153a098b2ed11aa8b280c51f22d9538  ManuscriptFormal.lean
+ManuscriptFormal.lean:75:57: warning: unused variable `hM`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ManuscriptFormal.lean:341:45: warning: unused variable `hG`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ManuscriptFormal.lean:430:6: warning: This simp argument is unused:
+  Complex.I_mul_I
+
+Hint: Omit it from the simp argument list.
+  simp [pauli1, pauli2, pauli3, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵I̵_̵m̵u̵l̵_̵I̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ManuscriptFormal.lean:437:6: warning: This simp argument is unused:
+  Complex.I_mul_I
+
+Hint: Omit it from the simp argument list.
+  simp [pauli1, pauli2, pauli3, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵I̵_̵m̵u̵l̵_̵I̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ManuscriptFormal.lean:440:33: error: unexpected token 'ᵀ'; expected ':=', 'where' or '|'
+ManuscriptFormal.lean:445:33: error: unexpected token 'ᵀ'; expected ':=', 'where' or '|'
+ManuscriptFormal.lean:451:33: error: unexpected token 'ᵀ'; expected ':=', 'where' or '|'
+ManuscriptFormal.lean:468:74: error: unexpected token 'ᵀ'; expected ':=', 'where' or '|'
+ManuscriptFormal.lean:492:48: error: unexpected token 'ᵀ'; expected ':=', 'where' or '|'
+ManuscriptFormal.lean:502:54: warning: This simp argument is unused:
+  Matrix.smul_apply
+
+Hint: Omit it from the simp argument list.
+  simp [pauli2, Matrix.mul_apply, Fin.sum_univ_two, Matrix.s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵one_apply, Complex.I_mul_I]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ManuscriptFormal.lean:503:6: warning: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  simp [pauli2, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply, M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵Complex.I_mul_I]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ManuscriptFormal.lean:503:45: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ManuscriptFormal.lean:503:45: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ManuscriptFormal.lean:521:33: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (?M * ?N).mulVec ?v
+in the target expression
+  xi = ((-Complex.I * ↑f) • pauli2).mulVec (((Complex.I * ↑finv) • pauli2).mulVec xi)
+
+A : Matrix (Fin 2) (Fin 2) ℂ
+finv f : ℝ
+hfi : finv * f = 1
+eta eta' xi : Fin 2 → ℂ
+hrow : eta' = A.mulVec eta + ((Complex.I * ↑finv) • pauli2).mulVec xi
+hff : ↑f * ↑finv = 1
+hc : -Complex.I * ↑f * (Complex.I * ↑finv) = 1
+⊢ xi = ((-Complex.I * ↑f) • pauli2).mulVec (((Complex.I * ↑finv) • pauli2).mulVec xi)
+'PairedDirac.Manuscript.skew_adjoint_inner_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.congruenced_gap_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.exp_neg_half_mul_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.zero_sector_gap_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.converted_series_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cutoff_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.matrix_reference_position_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s1_vplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s1_vminus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s3_vplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s3_vminus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.real_sinh_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_eq_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pminus_transportedPlane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_not_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_parallel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.tower_derivative_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.multiplier_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.first_graph_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.second_graph_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli1_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli3_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_mul_pauli1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_mul_pauli3' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptFormal.lean:684:14: error(lean.unknownIdentifier): Unknown constant `PairedDirac.Manuscript.pauli1_transpose`
+ManuscriptFormal.lean:685:14: error(lean.unknownIdentifier): Unknown constant `PairedDirac.Manuscript.pauli2_transpose`
+ManuscriptFormal.lean:686:14: error(lean.unknownIdentifier): Unknown constant `PairedDirac.Manuscript.pauli3_transpose`
+'PairedDirac.Manuscript.kLower_eq_transpose' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.i_pauli2_mul_neg_i_pauli2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flux_of_first_row' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzetaSource_eta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzetaSource_xi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzetaManuscript_entries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzetaManuscript_lower_right' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.discrete_variation_of_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.discrete_variation_of_constants_matrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PairedDirac.Manuscript.prop_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_pointwise_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_finite_time_sum_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -437,18 +437,18 @@ theorem pauli2_mul_pauli3 : pauli2 * pauli3 = Complex.I • pauli1 := by
       Complex.I_mul_I]
 
 /-- `σ₁` is symmetric. -/
-theorem pauli1_transpose : pauli1ᵀ = pauli1 := by
+theorem pauli1_transpose : Matrix.transpose pauli1 = pauli1 := by
   ext i j
   fin_cases i <;> fin_cases j <;> simp [pauli1, Matrix.transpose_apply]
 
 /-- `σ₂ᵀ = -σ₂`: the Pauli `σ₂` is skew-symmetric. -/
-theorem pauli2_transpose : pauli2ᵀ = -pauli2 := by
+theorem pauli2_transpose : Matrix.transpose pauli2 = -pauli2 := by
   ext i j
   fin_cases i <;> fin_cases j <;>
     simp [pauli2, Matrix.transpose_apply, Matrix.neg_apply]
 
 /-- `σ₃ᵀ = σ₃`. -/
-theorem pauli3_transpose : pauli3ᵀ = pauli3 := by
+theorem pauli3_transpose : Matrix.transpose pauli3 = pauli3 := by
   ext i j
   fin_cases i <;> fin_cases j <;> simp [pauli3, Matrix.transpose_apply]
 
@@ -465,11 +465,12 @@ block, because `σ₂ᵀ = -σ₂` while `σ₃ᵀ = σ₃`. It is not `-A`: `-A
 `+μaσ₃` in the lower-right block and so flip the sign of the angular term.
 This replaces the earlier `kzeta_diag_antisym`, which certified the different
 `-A` encoding. -/
-theorem kLower_eq_transpose (nu mua : ℝ) : kLower nu mua = (kUpper nu mua)ᵀ := by
+theorem kLower_eq_transpose (nu mua : ℝ) :
+    kLower nu mua = Matrix.transpose (kUpper nu mua) := by
   ext i j
   fin_cases i <;> fin_cases j <;>
     simp [kLower, kUpper, pauli2, pauli3, Matrix.transpose_apply,
-      Matrix.neg_apply] <;> ring
+      Matrix.neg_apply]
 
 /-- `(2.4)` exactly as printed:
 `K_ζ = [[νσ₂-μaσ₃, i f⁻¹σ₂], [i(ζ-M²)f⁻¹σ₂, -νσ₂-μaσ₃]]`. -/
@@ -489,7 +490,7 @@ upper-left block. This is the correct structural statement for the manuscript's
 sign convention. -/
 theorem kzetaManuscript_lower_right (nu mua zetaM2 finv : ℝ) :
     kzetaManuscript nu mua zetaM2 finv 1 1
-      = (kzetaManuscript nu mua zetaM2 finv 0 0)ᵀ := by
+      = Matrix.transpose (kzetaManuscript nu mua zetaM2 finv 0 0) := by
   have h := kLower_eq_transpose nu mua
   simpa [kzetaManuscript] using h
 
@@ -499,8 +500,7 @@ theorem i_pauli2_mul_neg_i_pauli2 :
     ((Complex.I : ℂ) • pauli2) * ((-Complex.I : ℂ) • pauli2) = 1 := by
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [pauli2, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,
-      Matrix.one_apply, Complex.I_mul_I] <;> ring
+    simp [pauli2, Matrix.mul_apply, Fin.sum_univ_two, Complex.I_mul_I]
 
 /-- `(2.4)`, first block row solved for the flux variable. From
 `η' = Aη + i f⁻¹σ₂ξ` and `f⁻¹f = 1` one gets `ξ = -i f σ₂(η' - Aη)`. -/
@@ -518,7 +518,7 @@ theorem flux_of_first_row (A : Matrix (Fin 2) (Fin 2) ℂ) (finv f : ℝ)
     calc (-Complex.I * (f : ℂ)) * (Complex.I * (finv : ℂ))
         = -((Complex.I * Complex.I) * ((f : ℂ) * (finv : ℂ))) := by ring
       _ = 1 := by rw [hI, hff]; norm_num
-  rw [hrow, add_sub_cancel_left, ← Matrix.mulVec_mulVec, Matrix.smul_mul,
+  rw [hrow, add_sub_cancel_left, Matrix.mulVec_mulVec, Matrix.smul_mul,
     Matrix.mul_smul, pauli2_sq, smul_smul, hc, one_smul, Matrix.one_mulVec]
 
 /-- `(2.4)`/`(2.5)`: the inhomogeneous source `(0, i f⁻¹ᐟ²σ₂ g)`; the first

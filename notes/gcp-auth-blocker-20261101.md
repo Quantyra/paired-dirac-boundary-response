@@ -1,7 +1,13 @@
-# GCP authentication blocker: 2026-11-01 UTC
+# GCP authentication blocker: 2026-11-01 UTC — RESOLVED
 
-Status: **blocked on interactive re-authentication.** No Lean invocation
-occurred. No receipt exists for the correspondence-repair source.
+**Status: resolved the same day.** Re-authentication was restored; the pinned
+runner was executed and the receipt
+[`gcp-manuscript-correspondence-repair-20261101`](../evidence/gcp-manuscript-correspondence-repair-20261101/README.md)
+now exists (exit 0, no `sorryAx`, standard axioms only). The text below is the
+preserved record of the blocker.
+
+No Lean invocation occurred while blocked. No receipt existed for the
+correspondence-repair source at that time.
 
 ## Command and exact failure
 

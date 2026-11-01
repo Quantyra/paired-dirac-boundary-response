@@ -13,7 +13,7 @@ beyond it.** Forty-eight declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101-r4`](../evidence/gcp-manuscript-formal-20261101-r4/README.md),
 [`gcp-manuscript-formal-20261101-r5`](../evidence/gcp-manuscript-formal-20261101-r5/README.md),
 [`gcp-manuscript-integral-20261101-r2`](../evidence/gcp-manuscript-integral-20261101-r2/README.md)
-and the correspondence-repair receipt §4). Every analytic proposition (4.1,
+and [`gcp-manuscript-correspondence-repair-20261101`](../evidence/gcp-manuscript-correspondence-repair-20261101/README.md)). Every analytic proposition (4.1,
 4.2, 4.3), the unbounded-domain/unbounded-operator content of Propositions 2.1,
 3.1 and 3.2, the heat-trace and regulator statements of Section 5, and all
 physical identification steps remain **outside** the certified scope.
@@ -181,11 +181,15 @@ correction; the earlier discrepancy report is withdrawn.
 
 ### 3.3 Standing scope of the repairs
 
-Both repairs are source-level. Each requires its own exact-source GCP receipt;
-until that receipt exists the corresponding row above is a pending
-certification, not a completed one. The pre-repair receipts
-(`gcp-manuscript-formal-20261101` … `-r5`) remain valid evidence for their own
-frozen sources and are not reinterpreted.
+Both repairs are source-level and now carry an exact-source receipt:
+[`gcp-manuscript-correspondence-repair-20261101`](../evidence/gcp-manuscript-correspondence-repair-20261101/README.md)
+(source SHA-256 `dd56927188e2967244d15ce828fd0900ca781d4252639cc7d4a0a5c559364d13`,
+olean `e8c2283b2778ce55f65f6d712d24ef658219488e877308d1da3bfbda8cb3b8fb`,
+exit 0, no `sorryAx`, standard axioms only). The first attempt failed on the
+`ᵀ` notation and is preserved at
+[`gcp-manuscript-correspondence-repair-20261101-failure-r1`](../evidence/gcp-manuscript-correspondence-repair-20261101-failure-r1/README.md).
+The pre-repair receipts (`gcp-manuscript-formal-20261101` … `-r5`) remain
+valid evidence for their own frozen sources and are not reinterpreted.
 
 ## 4. Reproduce
 
@@ -193,11 +197,19 @@ frozen sources and are not reinterpreted.
 powershell -ExecutionPolicy Bypass -File scripts/audit-lean-receipts.ps1
 ```
 
-All Lean runs remain GCP-only. The new source is
-`lean/ManuscriptFormal.lean`; its executed runner is
-`lean/cloud-manuscript-formal-20261101.sh`; the receipt is
-`evidence/gcp-manuscript-formal-20261101/`.
+All Lean runs remain GCP-only. The current source is
+`lean/ManuscriptFormal.lean` (SHA-256
+`dd56927188e2967244d15ce828fd0900ca781d4252639cc7d4a0a5c559364d13`); its
+executed runner is `lean/cloud-manuscript-correspondence-repair-20261101.sh`;
+its receipt is `evidence/gcp-manuscript-correspondence-repair-20261101/`
+(exit 0, no `sorryAx`, 45 declarations, standard axioms only). Add the three
+declarations of `manuscript/ManuscriptIntegral.lean` for the declared total of
+48.
 
-Remaining to-do list: formalize or explicitly exclude each unformalized
-statement; resolve the `(4.11)` constant; and record the resulting scope in
-the manuscript itself.
+`powershell -ExecutionPolicy Bypass -File scripts/audit-lean-receipts.ps1`
+reports 58 sources, 58 matched, 0 unmatched at this revision.
+
+Remaining to-do list: none in the certified scope. Every numbered manuscript
+statement is certified at the declared scope or listed above with the reason it
+is excluded; extending that scope is the open research program
+(`manuscript/DRAFT.md` §5 and S001 F5), not a formalization backlog.

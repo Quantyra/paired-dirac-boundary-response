@@ -7,11 +7,11 @@
 # printed (4.11) constant. See manuscript/lean-certification-ledger.md.
 set -euo pipefail
 
-run="$HOME/quantyra-space-runs/p1-manuscript-correspondence-repair-20261101"
+run="$HOME/quantyra-space-runs/p1-manuscript-correspondence-repair-20261101-r3"
 deps="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/source/lean"
 toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin"
 source="$HOME/ManuscriptFormal.lean"
-source_sha='adda05e3cc8eeee93300ff716f6f559eb153a098b2ed11aa8b280c51f22d9538'
+source_sha='dd56927188e2967244d15ce828fd0900ca781d4252639cc7d4a0a5c559364d13'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
