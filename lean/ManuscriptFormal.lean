@@ -464,6 +464,84 @@ theorem discrete_variation_of_constants {m : ℕ}
 
 end VariationOfConstants
 
+/-! ## (2.5): matrix-valued propagator and its composition property -/
+
+section MatrixPropagator
+
+/-- `(2.5)` with matrix-valued data: if the inhomogeneous recursion
+`Y j = U j * Y (j+1) - B j` holds for matrices, then
+`Y 0 = P k * Y k - Σ_{j<k} P j * B j`. This is the matrix analogue used when
+`Y` is a fundamental solution rather than a single vector. -/
+theorem discrete_variation_of_constants_matrix {m : ℕ}
+    (U : ℕ → Matrix (Fin m) (Fin m) ℂ) (Y B : ℕ → Matrix (Fin m) (Fin m) ℂ)
+    (hrec : ∀ j, Y j = U j * Y (j + 1) - B j) :
+    ∀ k, Y 0 = prop m U k * Y k
+      - ∑ j ∈ Finset.range k, prop m U j * B j := by
+  intro k
+  induction k with
+  | zero => simp [prop]
+  | succ k ih =>
+      have hP : prop m U (k + 1) = prop m U k * U k := rfl
+      rw [ih, hrec k, Matrix.mul_sub, ← Matrix.mul_assoc, hP,
+        Finset.sum_range_succ]
+      abel
+
+/-- Composition of the accumulated propagator over consecutive blocks: the
+k-step propagator is the product of the block propagators. This is the
+fundamental-solution property that makes `P` depend only on the interval. -/
+theorem prop_add {m : ℕ} (U : ℕ → Matrix (Fin m) (Fin m) ℂ) (k : ℕ) :
+    ∀ l, prop m U (k + l)
+      = prop m U k * prop m (fun j => U (k + j)) l := by
+  intro l
+  induction l with
+  | zero => simp [prop]
+  | succ l ih =>
+      show prop m U (k + l) * U (k + l)
+        = prop m U k * (prop m (fun j => U (k + j)) l * U (k + l))
+      rw [ih, mul_assoc]
+
+end MatrixPropagator
+
+/-! ## Proposition 4.3: the elementary part of the (4.8) consequence
+
+The manuscript's (4.8) integrates `|r_flat|/t²` over `(0,t0)`. This retained
+Mathlib build contains no measure theory, so the integral is not available;
+what is certified here is the pointwise reduction and its exact finite-mesh
+(Riemann-sum) consequence. -/
+
+section FlatBound
+
+/-- The pointwise step behind `(4.8)`: a cubic bound `|r t| ≤ C t²` at `t > 0`
+gives `|r t| / t² ≤ C`. -/
+theorem flat_pointwise_reduction (r : ℝ → ℝ) (C t : ℝ) (ht : 0 < t)
+    (h : |r t| ≤ C * t ^ 2) :
+    |r t| / t ^ 2 ≤ C := by
+  rw [div_le_iff₀ (pow_pos ht 2)]
+  exact h
+
+/-- The finite-mesh form of `(4.8)`: for mesh points `t j > 0` with weights
+`w j ≥ 0` whose total is at most `t0`, the weighted sum of the integrand is
+at most `C t0`. This is the Riemann-sum statement of
+`∫_0^{t0} |r| dt/t² ≤ C t0`; the integral itself is not formalized. -/
+theorem flat_finite_time_sum_bound {n : ℕ} (r : ℝ → ℝ) (C t0 : ℝ)
+    (t w : Fin n → ℝ) (hC : 0 ≤ C)
+    (hbound : ∀ j, |r (t j)| ≤ C * (t j) ^ 2)
+    (hpos : ∀ j, 0 < t j)
+    (hw : ∀ j, 0 ≤ w j)
+    (hwsum : ∑ j, w j ≤ t0) :
+    ∑ j, w j * (|r (t j)| / (t j) ^ 2) ≤ C * t0 := by
+  have hterm : ∀ j, w j * (|r (t j)| / (t j) ^ 2) ≤ w j * C := by
+    intro j
+    exact mul_le_mul_of_nonneg_left
+      (flat_pointwise_reduction r C (t j) (hpos j) (hbound j)) (hw j)
+  calc ∑ j, w j * (|r (t j)| / (t j) ^ 2) ≤ ∑ j, w j * C :=
+        Finset.sum_le_sum (fun j _ => hterm j)
+    _ = (∑ j, w j) * C := by rw [Finset.sum_mul]
+    _ ≤ t0 * C := mul_le_mul_of_nonneg_right hwsum hC
+    _ = C * t0 := by ring
+
+end FlatBound
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.skew_adjoint_inner_self_zero
@@ -497,3 +575,7 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.kzeta_diag_antisym
 #print axioms PairedDirac.Manuscript.kzeta_entries
 #print axioms PairedDirac.Manuscript.discrete_variation_of_constants
+#print axioms PairedDirac.Manuscript.discrete_variation_of_constants_matrix
+#print axioms PairedDirac.Manuscript.prop_add
+#print axioms PairedDirac.Manuscript.flat_pointwise_reduction
+#print axioms PairedDirac.Manuscript.flat_finite_time_sum_bound

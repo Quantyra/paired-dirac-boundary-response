@@ -257,12 +257,13 @@ here touches; finish the closest-prior-art comparison and record S001.3.
 The first direct attempt to "Lean certify the manuscript" is recorded in
 [`manuscript/lean-certification-ledger.md`](../manuscript/lean-certification-ledger.md).
 It is deliberately partial and says so. `lean/ManuscriptFormal.lean`
-(SHA-256 `ca83944d…`, receipts
+(SHA-256 `61214e81…`, receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
-[`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md)
-and [`gcp-manuscript-formal-20261101-r4`](../evidence/gcp-manuscript-formal-20261101-r4/README.md))
-now adds thirty-one machine-checked declarations: the bounded-operator a priori
+[`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
+[`gcp-manuscript-formal-20261101-r4`](../evidence/gcp-manuscript-formal-20261101-r4/README.md)
+and [`gcp-manuscript-formal-20261101-r5`](../evidence/gcp-manuscript-formal-20261101-r5/README.md))
+now adds thirty-five machine-checked declarations: the bounded-operator a priori
 inequalities behind Proposition 3.1 and their conditional inverse bounds, the
 vanishing real quadratic form of a skew-adjoint operator, a gap-composition
 lemma, the exact `(4.12c)` series subtraction, two flat-conversion
@@ -272,7 +273,9 @@ with its eigenvector facts and non-coincidence statement, the `(4.9a)`
 coefficient check, the Proposition 2.1 multiplier identity
 `E⁻¹(DE) = D - ½c(db)` with both `(2.2)` graph inequalities, the `(2.4)`
 Pauli relations with the `K_ζ` block form, and the discrete `(2.5)`
-telescoping identity `Y 0 = P k Y k - Σ_{j<k} P j b j`. All report only `propext`,
+telescoping identity `Y 0 = P k Y k - Σ_{j<k} P j b j` with its matrix-valued
+and composition forms, and the pointwise plus finite-mesh content of `(4.8)`.
+All report only `propext`,
 `Classical.choice` and `Quot.sound`.
 
 The requested `(5.5)` "jet algebra" target is not available as stated:

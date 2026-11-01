@@ -5,12 +5,13 @@ draft). Purpose: record, statement by statement, exactly what is
 machine-checked, what is not, and what a full Lean certification would still
 require.
 
-**Verdict: the manuscript is not Lean-certified.** Thirty-one algebraic or
+**Verdict: the manuscript is not Lean-certified.** Thirty-five algebraic or
 bounded-operator statements are now machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
-[`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md)
-and [`gcp-manuscript-formal-20261101-r4`](../evidence/gcp-manuscript-formal-20261101-r4/README.md)).
+[`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
+[`gcp-manuscript-formal-20261101-r4`](../evidence/gcp-manuscript-formal-20261101-r4/README.md)
+and [`gcp-manuscript-formal-20261101-r5`](../evidence/gcp-manuscript-formal-20261101-r5/README.md)).
 Every analytic proposition (4.1, 4.2, 4.3), the unbounded-domain/unbounded-operator
 content of Propositions 2.1, 3.1 and 3.2, the heat-trace and regulator
 statements of Section 5, and all physical identification steps remain
@@ -31,7 +32,7 @@ skeleton is checked; its analysis and its physics are not.
 | Prop. 2.1, square domain | composition domain of `D_b*D_b` | certified abstractly | `SquareDomainDraft`, `PositiveSquareDraft`; equality with the unperturbed domain is *not* asserted, matching the manuscript |
 | (2.3) | transported boundary plane | **certified** | New: `transportedPlane_not_local`, `transportedPlane_parallel_iff`, `pminus_transportedPlane`, `transportedPlane_eq_smul`, plus the `σ₁/σ₃` eigenvector facts (`gcp-manuscript-formal-20261101-r2`). Certified for the displayed solution formula `cosh λ v₊ + sinh λ v₋`; the exponential `exp(λσ₃)` is not derived from `Hψ = 0` in Lean |
 | (2.4) | `K_ζ` block system | algebraic ingredients **certified**, derivation not | New: `pauli1_sq`, `pauli2_sq`, `pauli3_sq`, `pauli2_mul_pauli1` (`σ₂σ₁=-iσ₃`), `pauli2_mul_pauli3`, and `kzeta_diag_antisym`/`kzeta_entries` for the block form `[[A,B],[C,-A]]`. The elimination from `(P*P+M²-ζ)ψ=g` to `Y'=K_ζY+source` is not formalized. Resolving the first row under `σ₂σ₁=-iσ₃` gives `(μaσ₃-νσ₂, -i f⁻¹σ₂)`, i.e. the printed signs correspond to the opposite `σ₂` convention or reversed orientation; this is a convention note, not a proof of the printed signs |
-| (2.5) | variation of constants | discrete telescoping form **certified**, continuum not | New: discrete_variation_of_constants proves Y 0 = P k Y k - Σ_{j<k} P j b j for Y j = U j Y (j+1) - b j with P k = U 0 ⋯ U (k-1). The integral, the fundamental-matrix equation and the partition limit are not formalized |
+| (2.5) | variation of constants | discrete and matrix-valued forms **certified**, continuum not | New: `discrete_variation_of_constants` proves `Y 0 = P k Y k - Σ_{j<k} P j b j` for `Y j = U j Y (j+1) - b j` with `P k = U 0 ⋯ U (k-1)`; `discrete_variation_of_constants_matrix` gives the matrix-source form, and `prop_add` shows the propagator composes over consecutive blocks. The integral, the fundamental-matrix equation and the partition limit are not formalized |
 | §3 interface square | `A_b* A_b = P'_b* P'_b`, domain equality | partially certified | `LeftUnitarySquare` proves `(UD)*(UD)=D*D` for a unitary `U`, and `P1FiniteCutBoundarySquare`/`ProjectedRobinCongruence` cover the finite-cut algebra; the fold conjugation `P'=F P F^{-1}`, `S=FJF^{-1}` and the domain exchange are not formalized |
 | Prop. 3.1, (3.1) | `‖(M±Q_b)⁻¹‖ ≤ 1/M`, `‖(D_b*D_b+M²)⁻¹‖ ≤ 1/M²` | bounded reading certified, existence not | New: `resolvent_shift_norm_lower`, `square_shift_norm_lower` prove the a priori inequalities for bounded skew-adjoint operators; `resolvent_norm_bound`, `square_resolvent_norm_bound` give the inverse bounds **conditional on a right inverse**. Existence (spectral theorem) and the unbounded domain statement are not formalized |
 | Prop. 3.2, (3.2)–(3.3) | holomorphic family, `10.56`, `337.92` bounds | constants certified, analysis not | `ResolventVariationConstants` (`gcp-resolvent-variation-constants-20261031`) proves `q<0.134`, `C<1.32`, the two Cauchy constants; the Neumann series, the Banach-valued Cauchy estimates and the Taylor-tail comparison are *not* formalized |
@@ -40,7 +41,8 @@ skeleton is checked; its analysis and its physics are not.
 | Prop. 4.1, (4.3) | `lim t^{-5/2} B_t = -15c_uc_w/(1024√π)` | not formalized | distributional fourth derivative, Riemann–Lebesgue, dominated convergence and an explicit improper integral; the integral value itself is not formalized |
 | Prop. 4.2, (4.4)–(4.5) | cubic-log asymptotic | not formalized | Fourier tail `o(|k|^{-9})`, split-frequency argument, `log t` extraction |
 | (4.6) | compact-model transfer | not formalized | compact flat-model heat kernel and winding sums |
-| Prop. 4.3, (4.7)–(4.8) | all-frequency bound and integrability | not formalized | requires `0 ≤ R2 ≤ min(x³/840, x²/120)`, Parseval and the half/full-line norm relation |
+| Prop. 4.3, (4.8) | integrability consequence of the cubic bound | pointwise and finite-mesh forms **certified**, integral not | New: `flat_pointwise_reduction` (`|r t| ≤ C t²`, `t>0` gives `|r t|/t² ≤ C`) and `flat_finite_time_sum_bound` (`Σ w_j |r(t_j)|/t_j² ≤ C t0` for `t_j>0`, `w_j≥0`, `Σw_j ≤ t0`). The retained Mathlib build has no measure theory (`IntervalIntegral.olean` absent), so the integral `∫_0^{t0} |r|dt/t² ≤ C t0` is not formalized |
+| Prop. 4.3, (4.7) and the Parseval step | all-frequency bound | not formalized | requires `0 ≤ R2 ≤ min(x³/840, x²/120)`, the Fourier transform and Parseval with the half/full-line norm relation |
 | (4.9)–(4.10) | conversion identity | source identity, not formalized | operator trace identity under domain hypotheses |
 | (4.9a) | tower asymptotics | polynomial part certified | New: `tower_derivative_coefficient` checks that differentiating the displayed polynomial part with `a=t/b²` reproduces the `b⁻²[2/a²-q²/6+1/30]` coefficient of `-Θ'`; the Euler–Maclaurin derivation and the `O_q(a²)` remainder are not formalized |
 | (4.10a)–(4.10b) | combined multiplier, `J_2` limit | coefficient algebra certified only | New: `flat_conversion_cubic_coefficient` checks `2·(b²/π)·(-1/1680+1/840) = b²/(840π)`. The angular limits and pairing factor are inputs |
@@ -58,13 +60,14 @@ skeleton is checked; its analysis and its physics are not.
 | §5 necessary condition | `C_other = -(b_S²/6π)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-Summary: 31 declarations machine-checked across four receipts (10, 10, 10
-and 1 respectively); the last is the (2.5) telescoping identity. Of these: 2 algebraic coefficient identities, 1 finite-matrix
-trace identity, 5 bounded-operator inequalities, 1 inner-product lemma, 1
-gap-composition lemma, the 10 `(2.3)` transport/eigenvector facts and the
+Summary: 35 declarations machine-checked across five receipts (10, 10, 10,
+1 and 4 respectively). Of these: 2 algebraic coefficient identities, 1
+finite-matrix trace identity, 5 bounded-operator inequalities, 1 inner-product
+lemma, 1 gap-composition lemma, the 10 `(2.3)` transport/eigenvector facts, the
 `(4.9a)` coefficient check, the Proposition 2.1 multiplier identity with both
-graph inequalities, the `(2.4)` Pauli relations and block form, and the
-discrete `(2.5)` telescoping identity.
+graph inequalities, the `(2.4)` Pauli relations and block form, the discrete
+`(2.5)` telescoping identity with its matrix-valued and composition forms, and
+the pointwise plus finite-mesh content of `(4.8)`.
 1 statement is certified with a constant discrepancy that needs a manuscript
 correction. The remaining analytic and physical statements are unformalized.
 
