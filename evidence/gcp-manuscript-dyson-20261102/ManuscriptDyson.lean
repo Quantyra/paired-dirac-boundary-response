@@ -125,6 +125,40 @@ theorem second_order_closed {m : ℕ} (K A : ℕ → Matrix (Fin m) (Fin m) ℂ)
   rw [Finset.sum_congr rfl hsplit, Finset.sum_add_distrib]
   abel
 
+/-- **Closed three-vertex triple sum.** Substituting the second-order vertex
+identity (for the shifted family `K (j+1+·)`) into the third-order one. -/
+theorem third_order_closed {m : ℕ} (K A : ℕ → Matrix (Fin m) (Fin m) ℂ)
+    (Z1 Z2 Z3 : ℕ → Matrix (Fin m) (Fin m) ℂ)
+    (h2 : ∀ j, Z2 j = K j * Z2 (j + 1) + A j * Z1 (j + 1))
+    (h3 : ∀ j, Z3 j = K j * Z3 (j + 1) + A j * Z2 (j + 1)) :
+    ∀ n, Z3 0 = prop m K n * Z3 n
+      + (∑ j ∈ Finset.range n,
+          prop m K j * A j * prop m (fun i => K (j + 1 + i)) (n - (j + 1)) * Z2 n)
+      + (∑ j ∈ Finset.range n, ∑ i ∈ Finset.range (n - (j + 1)),
+          prop m K j * A j * prop m (fun l => K (j + 1 + l)) i
+            * A (j + 1 + i) * Z1 (j + 1 + i + 1)) := by
+  intro n
+  rw [third_order_vertex K A Z2 Z3 h3 n]
+  have hsplit : ∀ j ∈ Finset.range n,
+      prop m K j * A j * Z2 (j + 1)
+        = prop m K j * A j * prop m (fun i => K (j + 1 + i)) (n - (j + 1)) * Z2 n
+          + ∑ i ∈ Finset.range (n - (j + 1)),
+              prop m K j * A j * prop m (fun l => K (j + 1 + l)) i
+                * A (j + 1 + i) * Z1 (j + 1 + i + 1) := by
+    intro j hj
+    have hj' : j < n := Finset.mem_range.mp hj
+    have hh : ∀ i, Z2 (j + 1 + i)
+        = K (j + 1 + i) * Z2 (j + 1 + i + 1) + A (j + 1 + i) * Z1 (j + 1 + i + 1) :=
+      fun i => h2 (j + 1 + i)
+    rw [second_order_vertex (K := fun i => K (j + 1 + i)) (A := fun i => A (j + 1 + i))
+      (Z1 := fun i => Z1 (j + 1 + i)) (Z2 := fun i => Z2 (j + 1 + i)) hh
+      (n - (j + 1))]
+    rw [Nat.add_comm (j + 1) (n - (j + 1)), Nat.sub_add_cancel (Nat.succ_le_of_lt hj'),
+      Matrix.mul_add, Finset.mul_sum]
+    simp only [Matrix.mul_assoc, Nat.add_assoc]
+  rw [Finset.sum_congr rfl hsplit, Finset.sum_add_distrib]
+  abel
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.homogeneous_propagation
@@ -132,3 +166,4 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.second_order_vertex
 #print axioms PairedDirac.Manuscript.second_order_closed
 #print axioms PairedDirac.Manuscript.third_order_vertex
+#print axioms PairedDirac.Manuscript.third_order_closed
