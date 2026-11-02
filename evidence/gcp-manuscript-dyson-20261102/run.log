@@ -1,4 +1,4 @@
-Mon Nov  2 05:18:40 UTC 2026
+Mon Nov  2 05:43:30 UTC 2026
 quantyra-lean-builder-01
 /home/dfredriksen_quantyra_org/ManuscriptFormal.lean: OK
 /home/dfredriksen_quantyra_org/ManuscriptDyson.lean: OK
@@ -7,7 +7,7 @@ Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261
 Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
 Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
 dd56927188e2967244d15ce828fd0900ca781d4252639cc7d4a0a5c559364d13  ManuscriptFormal.lean
-3b613a61d558c735af75511f932a985e5be43de418d73032aab64058be17b96d  ManuscriptDyson.lean
+fd271221bf5fe8ca2160ff4886b00715ad2dac4deb015133f97ab43e03a64a19  ManuscriptDyson.lean
 --- dependency: ManuscriptFormal ---
 ManuscriptFormal.lean:75:57: warning: unused variable `hM`
 
@@ -93,13 +93,15 @@ Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
 'PairedDirac.Manuscript.second_order_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.third_order_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.third_order_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.third_order_expanded' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.homogeneous_propagation' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.first_order_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.second_order_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.second_order_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.third_order_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.third_order_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
-3b613a61d558c735af75511f932a985e5be43de418d73032aab64058be17b96d  ManuscriptDyson.lean
+'PairedDirac.Manuscript.third_order_expanded' depends on axioms: [propext, Classical.choice, Quot.sound]
+fd271221bf5fe8ca2160ff4886b00715ad2dac4deb015133f97ab43e03a64a19  ManuscriptDyson.lean
 dd56927188e2967244d15ce828fd0900ca781d4252639cc7d4a0a5c559364d13  ManuscriptFormal.lean
-5d0b7357e6229f45092be942fb734c68dcca62edbcdadec1c138b8590f91b566  ManuscriptDyson.olean
+3f13eea4c019cc31d2367acfa02eb45a62d973fd79ceb5f646d0433d4bd757c7  ManuscriptDyson.olean
 RECEIPT_COMPLETE

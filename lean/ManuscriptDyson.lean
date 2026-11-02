@@ -159,6 +159,61 @@ theorem third_order_closed {m : ℕ} (K A : ℕ → Matrix (Fin m) (Fin m) ℂ)
   rw [Finset.sum_congr rfl hsplit, Finset.sum_add_distrib]
   abel
 
+/-- **Fully expanded three-vertex sum.** Substituting the first-order vertex
+identity inside `third_order_closed`, so that the base level `Z0` appears at the
+bottom of the triple sum. -/
+theorem third_order_expanded {m : ℕ} (K A : ℕ → Matrix (Fin m) (Fin m) ℂ)
+    (Z0 Z1 Z2 Z3 : ℕ → Matrix (Fin m) (Fin m) ℂ)
+    (h1 : ∀ j, Z1 j = K j * Z1 (j + 1) + A j * Z0 (j + 1))
+    (h2 : ∀ j, Z2 j = K j * Z2 (j + 1) + A j * Z1 (j + 1))
+    (h3 : ∀ j, Z3 j = K j * Z3 (j + 1) + A j * Z2 (j + 1)) :
+    ∀ n, Z3 0 = prop m K n * Z3 n
+      + (∑ j ∈ Finset.range n,
+          prop m K j * A j * prop m (fun i => K (j + 1 + i)) (n - (j + 1)) * Z2 n)
+      + (∑ j ∈ Finset.range n, ∑ i ∈ Finset.range (n - (j + 1)),
+          prop m K j * A j * prop m (fun l => K (j + 1 + l)) i * A (j + 1 + i)
+            * prop m (fun p => K (j + 1 + i + 1 + p)) (n - (j + 1 + i + 1)) * Z1 n)
+      + (∑ j ∈ Finset.range n, ∑ i ∈ Finset.range (n - (j + 1)),
+          ∑ l ∈ Finset.range (n - (j + 1 + i + 1)),
+            prop m K j * A j * prop m (fun l => K (j + 1 + l)) i * A (j + 1 + i)
+              * prop m (fun p => K (j + 1 + i + 1 + p)) l * A (j + 1 + i + 1 + l)
+              * Z0 (j + 1 + i + 1 + l + 1)) := by
+  intro n
+  rw [third_order_closed K A Z1 Z2 Z3 h2 h3 n]
+  have hsplit : ∀ j ∈ Finset.range n, ∀ i ∈ Finset.range (n - (j + 1)),
+      prop m K j * A j * prop m (fun l => K (j + 1 + l)) i * A (j + 1 + i)
+          * Z1 (j + 1 + i + 1)
+        = prop m K j * A j * prop m (fun l => K (j + 1 + l)) i * A (j + 1 + i)
+            * prop m (fun p => K (j + 1 + i + 1 + p)) (n - (j + 1 + i + 1)) * Z1 n
+          + ∑ l ∈ Finset.range (n - (j + 1 + i + 1)),
+              prop m K j * A j * prop m (fun l => K (j + 1 + l)) i * A (j + 1 + i)
+                * prop m (fun p => K (j + 1 + i + 1 + p)) l * A (j + 1 + i + 1 + l)
+                * Z0 (j + 1 + i + 1 + l + 1) := by
+    intro j hj i hi
+    have hj' : j < n := Finset.mem_range.mp hj
+    have hi' : i < n - (j + 1) := Finset.mem_range.mp hi
+    have hjle : j + 1 ≤ n := Nat.succ_le_of_lt hj'
+    have hilt : i + (j + 1) < n := by
+      have h := Nat.add_lt_add_right hi' (j + 1)
+      rwa [Nat.sub_add_cancel hjle] at h
+    have hle : j + 1 + i + 1 ≤ n := by
+      have h := Nat.succ_le_of_lt hilt
+      simpa [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc] using h
+    have hh : ∀ k, Z1 (j + 1 + i + 1 + k)
+        = K (j + 1 + i + 1 + k) * Z1 (j + 1 + i + 1 + k + 1)
+          + A (j + 1 + i + 1 + k) * Z0 (j + 1 + i + 1 + k + 1) :=
+      fun k => h1 (j + 1 + i + 1 + k)
+    have key := first_order_vertex (K := fun k => K (j + 1 + i + 1 + k))
+      (A := fun k => A (j + 1 + i + 1 + k)) (Z0 := fun k => Z0 (j + 1 + i + 1 + k))
+      (Z1 := fun k => Z1 (j + 1 + i + 1 + k)) hh (n - (j + 1 + i + 1))
+    simp only [Nat.add_zero] at key
+    rw [Nat.add_comm (j + 1 + i + 1) (n - (j + 1 + i + 1)), Nat.sub_add_cancel hle] at key
+    rw [key, Matrix.mul_add, Finset.mul_sum]
+    simp only [Matrix.mul_assoc, Nat.add_assoc]
+  rw [Finset.sum_congr rfl (fun j hj => Finset.sum_congr rfl (fun i hi => hsplit j hj i hi))]
+  simp only [Finset.sum_add_distrib]
+  abel
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.homogeneous_propagation
@@ -167,3 +222,4 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.second_order_closed
 #print axioms PairedDirac.Manuscript.third_order_vertex
 #print axioms PairedDirac.Manuscript.third_order_closed
+#print axioms PairedDirac.Manuscript.third_order_expanded
