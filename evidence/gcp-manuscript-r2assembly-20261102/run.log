@@ -1,8 +1,9 @@
-Mon Nov  2 01:16:24 UTC 2026
+Mon Nov  2 01:42:56 UTC 2026
 quantyra-lean-builder-01
 /home/dfredriksen_quantyra_org/ManuscriptFlatBound.lean: OK
 /home/dfredriksen_quantyra_org/ManuscriptCubic.lean: OK
 /home/dfredriksen_quantyra_org/ManuscriptSmallOrder.lean: OK
+/home/dfredriksen_quantyra_org/ManuscriptR2Asymptotics.lean: OK
 /home/dfredriksen_quantyra_org/ManuscriptR2Assembly.lean: OK
 Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
 Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
@@ -11,7 +12,8 @@ Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
 c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb  ManuscriptFlatBound.lean
 6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90  ManuscriptCubic.lean
 b68f338739d524db5993cbaaec0322e4ef6d9f6833ee8bcdc6b99ad67b64c324  ManuscriptSmallOrder.lean
-3c9c510c85529fd561dcc39fbd69f4c2edaf498fd716459d8ea54d637bae983e  ManuscriptR2Assembly.lean
+0803650ff8974637ec4fa7975c91f90079d3acaee4194f72955ee4c6a91a0e89  ManuscriptR2Asymptotics.lean
+86b0dacf58095a3fb5bc9d8e109c929ccb25e2fc3cb7c3be07ad7c3699821a96  ManuscriptR2Assembly.lean
 --- dependency: ManuscriptFlatBound ---
 'PairedDirac.Manuscript.phi_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.integral_weightA_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -41,17 +43,30 @@ b68f338739d524db5993cbaaec0322e4ef6d9f6833ee8bcdc6b99ad67b64c324  ManuscriptSmal
 'PairedDirac.Manuscript.g1_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.g2_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.g2_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+--- dependency: ManuscriptR2Asymptotics ---
+'PairedDirac.Manuscript.integral_weightA_quartic' depends on axioms: [propext, Classical.choice, Quot.sound]
 --- target: ManuscriptR2Assembly ---
 'PairedDirac.Manuscript.g2_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.continuous_g2' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.exp_cubic_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.H_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_cubic_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_quartic_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_small' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.g2_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.continuous_g2' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.exp_cubic_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.H_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_cubic_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_quartic_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_small' depends on axioms: [propext, Classical.choice, Quot.sound]
 ManuscriptFlatBound.lean: OK
 ManuscriptCubic.lean: OK
 ManuscriptSmallOrder.lean: OK
+ManuscriptR2Asymptotics.lean: OK
 ManuscriptR2Assembly.lean: OK
-141bc3dc694c7c8661f8be93bd2cc1138d348aed821ab64dd3b602735ed33a4c  ManuscriptR2Assembly.olean
+0b79344f74f5fa6d7b717b1734ce9f3fbda6c379fec648d3cccaf84e8219c23a  ManuscriptR2Assembly.olean

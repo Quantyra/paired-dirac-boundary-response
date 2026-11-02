@@ -2,3 +2,8 @@
 'PairedDirac.Manuscript.continuous_g2' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.exp_cubic_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.H_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_cubic_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_quartic_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_small' depends on axioms: [propext, Classical.choice, Quot.sound]

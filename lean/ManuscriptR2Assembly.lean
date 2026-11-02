@@ -1,4 +1,7 @@
 import ManuscriptSmallOrder
+import ManuscriptR2Asymptotics
+
+set_option maxHeartbeats 1000000
 
 /-!
 # Manuscript formalization: assembly of the small-`x` kernel expansion
@@ -161,9 +164,163 @@ theorem H_expansion (y : ℝ) (hy : 0 ≤ y) :
   · linarith [hlow, hval2]
   · linarith [hhigh, hval3]
 
+/-- `φ(a(α)x)` is the kernel integral `H(a(α)x)`. -/
+theorem phiR2_eq_integral (al x : ℝ) :
+    phiR2 al x = ∫ s in (0 : ℝ)..(weightA al * x), s * (1 - Real.exp (-s)) :=
+  phi_remainder _
+
+/-- `∫₀¹ (a x)³/3 dα = x³/420`. -/
+theorem integral_cubic_term (x : ℝ) :
+    ∫ al in (0 : ℝ)..1, (weightA al * x) ^ 3 / 3 = x ^ 3 / 420 := by
+  have hcongr : ∀ al : ℝ, (weightA al * x) ^ 3 / 3 = (x ^ 3 / 3) * (weightA al) ^ 3 := by
+    intro al
+    ring
+  simp only [hcongr]
+  rw [intervalIntegral.integral_const_mul, integral_weightA_cu]
+  ring
+
+/-- `∫₀¹ (a x)⁴/8 dα = x⁴/5040`. -/
+theorem integral_quartic_term (x : ℝ) :
+    ∫ al in (0 : ℝ)..1, (weightA al * x) ^ 4 / 8 = x ^ 4 / 5040 := by
+  have hcongr : ∀ al : ℝ, (weightA al * x) ^ 4 / 8 = (x ^ 4 / 8) * (weightA al) ^ 4 := by
+    intro al
+    ring
+  simp only [hcongr]
+  rw [intervalIntegral.integral_const_mul, integral_weightA_quartic]
+  ring
+
+/-- `weightA al ≤ 1` on `[0,1]`. -/
+theorem weightA_le_one {al : ℝ} (h0 : 0 ≤ al) (h1 : al ≤ 1) : weightA al ≤ 1 := by
+  unfold weightA
+  nlinarith
+
+/-- Proposition 4.3's small-`x` expansion of `R2`:
+`R2(x) = x³/840 - x⁴/10080 + ρ` with `0 ≤ ρ ≤ x⁵/60`. -/
+theorem R2_expansion (x : ℝ) (hx : 0 ≤ x) :
+    0 ≤ R2 x - (x ^ 3 / 840 - x ^ 4 / 10080) ∧
+      R2 x - (x ^ 3 / 840 - x ^ 4 / 10080) ≤ x ^ 5 / 60 := by
+  have hphi : ∀ al : ℝ, phiR2 al x = ∫ s in (0 : ℝ)..(weightA al * x), s * (1 - Real.exp (-s)) :=
+    fun al => phiR2_eq_integral al x
+  have hlow : ∀ al ∈ Set.Icc (0 : ℝ) 1,
+      (weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8 ≤ phiR2 al x := by
+    intro al hal
+    have ha0 : 0 ≤ weightA al := weightA_nonneg hal.1 hal.2
+    have hax : 0 ≤ weightA al * x := mul_nonneg ha0 hx
+    rw [hphi al]
+    linarith [(H_expansion (weightA al * x) hax).1]
+  have hhigh : ∀ al ∈ Set.Icc (0 : ℝ) 1,
+      phiR2 al x ≤ (weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8
+        + (weightA al * x) ^ 5 / 30 := by
+    intro al hal
+    have ha0 : 0 ≤ weightA al := weightA_nonneg hal.1 hal.2
+    have hax : 0 ≤ weightA al * x := mul_nonneg ha0 hx
+    rw [hphi al]
+    linarith [(H_expansion (weightA al * x) hax).2]
+  have hcont : IntervalIntegrable (fun al : ℝ => phiR2 al x) volume (0 : ℝ) 1 :=
+    (by continuity :
+      Continuous fun al : ℝ =>
+        (1 + al * (1 - al) * x) * Real.exp (-(al * (1 - al) * x)) - 1
+          + (al * (1 - al) * x) ^ 2 / 2).intervalIntegrable 0 1
+  have hcontl : IntervalIntegrable
+      (fun al : ℝ => (weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8) volume (0 : ℝ) 1 :=
+    (by continuity : Continuous fun al : ℝ =>
+      (al * (1 - al) * x) ^ 3 / 3 - (al * (1 - al) * x) ^ 4 / 8).intervalIntegrable 0 1
+  have hconth : IntervalIntegrable
+      (fun al : ℝ => (weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8
+        + (weightA al * x) ^ 5 / 30) volume (0 : ℝ) 1 :=
+    (by continuity : Continuous fun al : ℝ =>
+      (al * (1 - al) * x) ^ 3 / 3 - (al * (1 - al) * x) ^ 4 / 8
+        + (al * (1 - al) * x) ^ 5 / 30).intervalIntegrable 0 1
+  have hmono_low : ∫ al in (0 : ℝ)..1, ((weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8)
+      ≤ ∫ al in (0 : ℝ)..1, phiR2 al x :=
+    intervalIntegral.integral_mono_on zero_le_one hcontl hcont hlow
+  have hmono_high : ∫ al in (0 : ℝ)..1, phiR2 al x
+      ≤ ∫ al in (0 : ℝ)..1, ((weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8
+          + (weightA al * x) ^ 5 / 30) :=
+    intervalIntegral.integral_mono_on zero_le_one hcont hconth hhigh
+  have hcont3 : IntervalIntegrable (fun al : ℝ => (weightA al * x) ^ 3 / 3) volume (0 : ℝ) 1 :=
+    (by continuity : Continuous fun al : ℝ => (al * (1 - al) * x) ^ 3 / 3).intervalIntegrable 0 1
+  have hcont4 : IntervalIntegrable (fun al : ℝ => (weightA al * x) ^ 4 / 8) volume (0 : ℝ) 1 :=
+    (by continuity : Continuous fun al : ℝ => (al * (1 - al) * x) ^ 4 / 8).intervalIntegrable 0 1
+  have hcont5 : IntervalIntegrable (fun al : ℝ => (weightA al * x) ^ 5 / 30) volume (0 : ℝ) 1 :=
+    (by continuity : Continuous fun al : ℝ => (al * (1 - al) * x) ^ 5 / 30).intervalIntegrable 0 1
+  have hIlow : ∫ al in (0 : ℝ)..1, ((weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8)
+      = x ^ 3 / 420 - x ^ 4 / 5040 := by
+    rw [intervalIntegral.integral_sub hcont3 hcont4, integral_cubic_term, integral_quartic_term]
+  have hIhigh : ∫ al in (0 : ℝ)..1, ((weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8
+        + (weightA al * x) ^ 5 / 30)
+      = x ^ 3 / 420 - x ^ 4 / 5040 + ∫ al in (0 : ℝ)..1, (weightA al * x) ^ 5 / 30 := by
+    rw [intervalIntegral.integral_add hcontl hcont5, hIlow]
+  have hbound5 : ∫ al in (0 : ℝ)..1, (weightA al * x) ^ 5 / 30 ≤ x ^ 5 / 30 := by
+    have h2 : IntervalIntegrable (fun al : ℝ => x ^ 5 / 30) volume (0 : ℝ) 1 :=
+      intervalIntegrable_const
+    have h := intervalIntegral.integral_mono_on zero_le_one hcont5 h2 (fun al hal => by
+      have ha0 : 0 ≤ weightA al := weightA_nonneg hal.1 hal.2
+      have ha1 : weightA al ≤ 1 := weightA_le_one hal.1 hal.2
+      have hle : weightA al * x ≤ x := by nlinarith
+      have h5 := pow_le_pow_left₀ (mul_nonneg ha0 hx) hle 5
+      linarith)
+    have hx5 : ∫ al in (0 : ℝ)..1, x ^ 5 / 30 = x ^ 5 / 30 := by
+      simp
+    linarith [h, hx5]
+  have hR2 := R2_eq_half_integral x
+  constructor
+  · rw [hR2]
+    have h1 : (1 / 2 : ℝ) * (x ^ 3 / 420 - x ^ 4 / 5040)
+        ≤ (1 / 2) * ∫ al in (0 : ℝ)..1, phiR2 al x := by
+      apply mul_le_mul_of_nonneg_left _ (by norm_num)
+      rw [← hIlow]
+      exact hmono_low
+    linarith [h1]
+  · rw [hR2]
+    have h1 : (1 / 2 : ℝ) * ∫ al in (0 : ℝ)..1, phiR2 al x
+        ≤ (1 / 2) * (x ^ 3 / 420 - x ^ 4 / 5040 + x ^ 5 / 30) := by
+      apply mul_le_mul_of_nonneg_left _ (by norm_num)
+      calc ∫ al in (0 : ℝ)..1, phiR2 al x
+          ≤ ∫ al in (0 : ℝ)..1, ((weightA al * x) ^ 3 / 3 - (weightA al * x) ^ 4 / 8
+              + (weightA al * x) ^ 5 / 30) := hmono_high
+        _ = x ^ 3 / 420 - x ^ 4 / 5040
+              + ∫ al in (0 : ℝ)..1, (weightA al * x) ^ 5 / 30 := hIhigh
+        _ ≤ x ^ 3 / 420 - x ^ 4 / 5040 + x ^ 5 / 30 := by
+            linarith [hbound5]
+    linarith [h1]
+
+/-- `R3(x) = O(x⁴)` on `[0,1]`: `|R3 x| ≤ x⁴(1/10080 + 1/60)`. -/
+theorem R3_bound (x : ℝ) (hx0 : 0 ≤ x) (hx1 : x ≤ 1) :
+    |R3 x| ≤ x ^ 4 * (1 / 10080 + 1 / 60) := by
+  obtain ⟨hl, hu⟩ := R2_expansion x hx0
+  have hR3 : R3 x = R2 x - x ^ 3 / 840 := rfl
+  have hx4 : 0 ≤ x ^ 4 := by positivity
+  have hx54 : x ^ 5 ≤ x ^ 4 := by
+    have h4 : 0 ≤ x ^ 4 := pow_nonneg hx0 4
+    have h := mul_le_mul_of_nonneg_right hx1 h4
+    nlinarith [h]
+  rw [hR3, abs_le]
+  constructor
+  · nlinarith [hl]
+  · nlinarith [hu, hx54, hx4]
+
+/-- The small-`s` bound on the `(4.3)` kernel: for `0 < s ≤ 1`,
+`|R3(s²)|/s⁸ ≤ 1/10080 + 1/60`. -/
+theorem R3_kernel_small (s : ℝ) (hs0 : 0 < s) (hs1 : s ≤ 1) :
+    |R3 (s ^ 2)| / s ^ 8 ≤ 1 / 10080 + 1 / 60 := by
+  have hs2 : (0:ℝ) < s ^ 2 := by positivity
+  have hs21 : s ^ 2 ≤ 1 := by nlinarith
+  have h := R3_bound (s ^ 2) (le_of_lt hs2) hs21
+  have hs8 : (0:ℝ) < s ^ 8 := by positivity
+  have hpow : (s ^ 2) ^ 4 = s ^ 8 := by ring
+  rw [hpow] at h
+  rw [div_le_iff₀ hs8]
+  linarith [h]
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.g2_closed
 #print axioms PairedDirac.Manuscript.continuous_g2
 #print axioms PairedDirac.Manuscript.exp_cubic_lower
 #print axioms PairedDirac.Manuscript.H_expansion
+#print axioms PairedDirac.Manuscript.integral_cubic_term
+#print axioms PairedDirac.Manuscript.integral_quartic_term
+#print axioms PairedDirac.Manuscript.R2_expansion
+#print axioms PairedDirac.Manuscript.R3_bound
+#print axioms PairedDirac.Manuscript.R3_kernel_small

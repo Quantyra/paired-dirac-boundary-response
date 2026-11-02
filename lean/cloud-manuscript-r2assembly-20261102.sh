@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
-# Exact-source Lean replay of the assembled small-x kernel expansion on the
-# Quantyra GCP builder; never run locally.
-#
-# Compiles the three already-certified dependency modules from their pinned
-# sources, then the new module that imports them.
+# Exact-source Lean replay of the R2/R3 small-x assembly on the Quantyra GCP
+# builder; never run locally. Compiles four pinned dependency modules first.
 set -euo pipefail
 
 run="$HOME/quantyra-space-runs/p1-manuscript-r2assembly-${RUN_TAG:-dev}"
@@ -12,8 +9,9 @@ toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/t
 flat_sha='c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb'
 cubic_sha='6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90'
 small_sha='b68f338739d524db5993cbaaec0322e4ef6d9f6833ee8bcdc6b99ad67b64c324'
+asym_sha='0803650ff8974637ec4fa7975c91f90079d3acaee4194f72955ee4c6a91a0e89'
 source="$HOME/ManuscriptR2Assembly.lean"
-source_sha='3c9c510c85529fd561dcc39fbd69f4c2edaf498fd716459d8ea54d637bae983e'
+source_sha='86b0dacf58095a3fb5bc9d8e109c929ccb25e2fc3cb7c3be07ad7c3699821a96'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -27,6 +25,7 @@ test "$(git -C "$deps/mathlib" rev-parse HEAD)" = "$mathlib_sha"
 printf '%s  %s\n' "$flat_sha" "$HOME/ManuscriptFlatBound.lean" | sha256sum -c -
 printf '%s  %s\n' "$cubic_sha" "$HOME/ManuscriptCubic.lean" | sha256sum -c -
 printf '%s  %s\n' "$small_sha" "$HOME/ManuscriptSmallOrder.lean" | sha256sum -c -
+printf '%s  %s\n' "$asym_sha" "$HOME/ManuscriptR2Asymptotics.lean" | sha256sum -c -
 printf '%s  %s\n' "$source_sha" "$source" | sha256sum -c -
 
 export PATH="$toolchain:$PATH"
@@ -48,10 +47,11 @@ printf '%s\n' "$lean_path" > "$run/lean-path.txt"
 cp "$HOME/ManuscriptFlatBound.lean" "$run/ManuscriptFlatBound.lean"
 cp "$HOME/ManuscriptCubic.lean" "$run/ManuscriptCubic.lean"
 cp "$HOME/ManuscriptSmallOrder.lean" "$run/ManuscriptSmallOrder.lean"
+cp "$HOME/ManuscriptR2Asymptotics.lean" "$run/ManuscriptR2Asymptotics.lean"
 cp "$source" "$run/ManuscriptR2Assembly.lean"
 cd "$run"
 sha256sum ManuscriptFlatBound.lean ManuscriptCubic.lean ManuscriptSmallOrder.lean \
-  ManuscriptR2Assembly.lean | tee lean-source-sha256.txt
+  ManuscriptR2Asymptotics.lean ManuscriptR2Assembly.lean | tee lean-source-sha256.txt
 
 echo '--- dependency: ManuscriptFlatBound ---'
 lean -o ManuscriptFlatBound.olean ManuscriptFlatBound.lean 2>&1 | tee base1-lean.log
@@ -59,14 +59,17 @@ echo '--- dependency: ManuscriptCubic ---'
 lean -o ManuscriptCubic.olean ManuscriptCubic.lean 2>&1 | tee base2-lean.log
 echo '--- dependency: ManuscriptSmallOrder ---'
 lean -o ManuscriptSmallOrder.olean ManuscriptSmallOrder.lean 2>&1 | tee base3-lean.log
+echo '--- dependency: ManuscriptR2Asymptotics ---'
+lean -o ManuscriptR2Asymptotics.olean ManuscriptR2Asymptotics.lean 2>&1 | tee base4-lean.log
 echo '--- target: ManuscriptR2Assembly ---'
 lean -o ManuscriptR2Assembly.olean ManuscriptR2Assembly.lean 2>&1 | tee lean.log
 
-theorems="g2_closed continuous_g2 exp_cubic_lower H_expansion"
+theorems="g2_closed continuous_g2 exp_cubic_lower H_expansion
+integral_cubic_term integral_quartic_term R2_expansion R3_bound R3_kernel_small"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done
-for log in base1-lean.log base2-lean.log base3-lean.log lean.log; do
+for log in base1-lean.log base2-lean.log base3-lean.log base4-lean.log lean.log; do
   if grep -q 'sorryAx' "$log"; then
     echo "Unexpected sorryAx in $log." >&2
     exit 1
