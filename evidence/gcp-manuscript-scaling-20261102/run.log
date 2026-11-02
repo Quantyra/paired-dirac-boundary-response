@@ -1,0 +1,20 @@
+Mon Nov  2 03:11:30 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptScaling.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+856e442d5386467eb25f20c91252c4494b61f663754e859d7ce1dd500698aa66  ManuscriptScaling.lean
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+'PairedDirac.Manuscript.scaling_terms_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.exp_neg_div_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.scaling_terms_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.exp_neg_div_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptScaling.lean: OK
+7d43b24713c4f830ce43f139c6d79e9c8983bb65bbe978c79b01c1d49744bd63  ManuscriptScaling.olean
