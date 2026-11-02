@@ -1,0 +1,5 @@
+'PairedDirac.Manuscript.g1_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.continuous_g1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g1_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g2_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g2_le' depends on axioms: [propext, Classical.choice, Quot.sound]
