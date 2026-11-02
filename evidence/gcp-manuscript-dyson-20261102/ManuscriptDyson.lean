@@ -75,6 +75,22 @@ theorem second_order_vertex {m : ℕ} (K A : ℕ → Matrix (Fin m) (Fin m) ℂ)
       simp only [Matrix.mul_add, Matrix.mul_assoc]
       abel
 
+/-- Third-order (three-vertex) level of the same hierarchy. -/
+theorem third_order_vertex {m : ℕ} (K A : ℕ → Matrix (Fin m) (Fin m) ℂ)
+    (Z2 Z3 : ℕ → Matrix (Fin m) (Fin m) ℂ)
+    (h3 : ∀ j, Z3 j = K j * Z3 (j + 1) + A j * Z2 (j + 1)) :
+    ∀ n, Z3 0 = prop m K n * Z3 n
+      + ∑ j ∈ Finset.range n, prop m K j * A j * Z2 (j + 1) := by
+  intro n
+  induction n with
+  | zero => simp [prop]
+  | succ n ih =>
+      rw [ih, h3 n, Finset.sum_range_succ]
+      have hP : prop m K (n + 1) = prop m K n * K n := rfl
+      rw [hP]
+      simp only [Matrix.mul_add, Matrix.mul_assoc]
+      abel
+
 /-- **Closed two-vertex double sum.** Substituting the first-order vertex
 identity (for the shifted family `K (j+1+·)`) into the second-order one. -/
 theorem second_order_closed {m : ℕ} (K A : ℕ → Matrix (Fin m) (Fin m) ℂ)
@@ -115,3 +131,4 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.first_order_vertex
 #print axioms PairedDirac.Manuscript.second_order_vertex
 #print axioms PairedDirac.Manuscript.second_order_closed
+#print axioms PairedDirac.Manuscript.third_order_vertex

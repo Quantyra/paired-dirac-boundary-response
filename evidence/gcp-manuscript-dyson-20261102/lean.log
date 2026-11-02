@@ -2,3 +2,4 @@
 'PairedDirac.Manuscript.first_order_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.second_order_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.second_order_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.third_order_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
