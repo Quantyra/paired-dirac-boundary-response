@@ -1,0 +1,48 @@
+Mon Nov  2 02:22:45 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptFlatBound.lean: OK
+/home/dfredriksen_quantyra_org/ManuscriptCubic.lean: OK
+/home/dfredriksen_quantyra_org/ManuscriptCubicChain.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb  ManuscriptFlatBound.lean
+6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90  ManuscriptCubic.lean
+d5e5247142badb5b3c406f40ca871c7f2b79cff38f8d41b6f21c90ad6d2fa650  ManuscriptCubicChain.lean
+--- dependency: ManuscriptFlatBound ---
+'PairedDirac.Manuscript.phi_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_weightA_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_weightA_cu' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_le_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_le_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_eq_half_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_le_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_le_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+--- dependency: ManuscriptCubic ---
+'PairedDirac.Manuscript.R3_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pi_rpow_three_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.sqrt_pi_mul_sqrt_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.Ffun_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_large_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+--- target: ManuscriptLogCoefficient ---
+'PairedDirac.Manuscript.rpow_five_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.rpow_neg_five_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_scaling_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_limit_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.rpow_five_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.rpow_neg_five_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_scaling_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_limit_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptFlatBound.lean: OK
+ManuscriptCubic.lean: OK
+ManuscriptCubicChain.lean: OK
+678e9ca0110d7b653267ce4da0a2003e2509ac179c1e58b7ae35729f3cb45fd0  ManuscriptCubicChain.olean
