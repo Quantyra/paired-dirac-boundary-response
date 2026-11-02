@@ -1,56 +1,70 @@
-# GCP exact-source replay: the discrete Duhamel expansion to two vertices
+# GCP exact-source replay: the discrete Duhamel hierarchy and the closed two-vertex double sum
 
 Status: `lean/ManuscriptDyson.lean` at SHA-256
-`9592cad195d69e4d2434e1732b489afef987a0c923f284b4088d47949772c841`
+`c9d7038165bc85c5cf275e1baec535c12d423c0edefa38aac48352a8e286381d`
 compiled on the Quantyra GCP Lean builder with exit code 0, producing
 `ManuscriptDyson.olean` at SHA-256
-`dbca02af8f4e13d803f55731b0508299d0493f77b508e58d8b3b7e9a75c8d359`.
-No `sorryAx`, no error. All three declarations depend only on `propext`,
+`8f595c2685470c388493c8e9f7bc340f07b6c8b90dc3b9516756df1072e1f6cc`.
+No `sorryAx`, no error. All four declarations depend only on `propext`,
 `Classical.choice` and `Quot.sound`.
 
-This supersedes the one-declaration version of this receipt (paper `111bec8`,
-source `da910d69…`), which remains valid evidence for its own source.
+This supersedes the three-declaration version of this receipt (paper `2d22c87`,
+source `9592cad1…`); that receipt remains valid evidence for its own source.
 
 ## Certified
 
-The Dyson expansion of `Z j = (K j + ε A j) Z (j+1)`, in the hierarchical
-Taylor-coefficient form `Z = Z0 + ε Z1 + ε² Z2 + ⋯`:
+The Taylor hierarchy of `Z j = (K j + ε A j) Z (j+1)`, with
+`P n = prop m K n`:
 
 - `homogeneous_propagation` — `Z0 0 = P n * Z0 n`;
-- `first_order_vertex` — `Z1 0 = P n * Z1 n + Σ_{j<n} P j * A j * Z0 (j+1)`;
-- `second_order_vertex` — `Z2 0 = P n * Z2 n + Σ_{j<n} P j * A j * Z1 (j+1)`;
+- `first_order_vertex` — `Z1 0 = P n * Z1 n + Σ_{j<n} P j A j Z0 (j+1)`;
+- `second_order_vertex` — `Z2 0 = P n * Z2 n + Σ_{j<n} P j A j Z1 (j+1)`;
+- **`second_order_closed`** — the closed two-vertex double sum obtained by
+  substituting the first-order identity (for the shifted family
+  `K (j+1+·)`, with segment length `n−(j+1)`) into the second-order one:
+  ```text
+  Z2 0 = P n * Z2 n
+       + Σ_{j<n} P j A j · prop m (fun i => K (j+1+i)) (n−(j+1)) · Z1 n
+       + Σ_{j<n} Σ_{i<n−(j+1)}
+           P j A j · prop m (fun l => K (j+1+l)) i · A (j+1+i) · Z0 (j+1+i+1).
+  ```
 
-with `P n = prop m K n` the unperturbed propagator. The second is the
-**two-vertex** level of `(5.1)`: each insertion `A j` is transported by the
-unperturbed propagator `P j` and acts on the previous-order tail `Z1 (j+1)`,
-which is itself a first-order vertex sum — the discrete counterpart of the
-ordered `da db` triangle.
+The double sum is the discrete counterpart of `(5.1)`'s ordered `da db`
+triangle: two insertions `A j`, `A (j+1+i)` separated by the interior segment
+product `prop m (fun l => K (j+1+l)) i`, transported by `P j`.
 
-## Why the hierarchical form (a correction)
+## Proof structure of `second_order_closed`
 
-A first attempt stated the *exact* truncated identity
-`Z 0 = P n Z n + ε(⋯) + ε²(⋯)`. The compiler's residual goal showed it is
-**false**: substituting the recursion produces an `ε³` term
-`ε³ • (T2 n * A n)`, so no exact two-term truncation exists for a genuine `Z`.
-The hierarchical form above is the correct statement and is what is certified.
-This is recorded because it is a mathematical correction, not a tactic fix.
+Per index `j`, `first_order_vertex` is applied to the shifted family with the
+hypothesis `hh i : Z1 (j+1+i) = K (j+1+i) Z1 (j+1+i+1) + A (j+1+i) Z0 (j+1+i+1)`
+(available from `h1 (j+1+i)`); the segment-length bookkeeping closes with
+`Nat.add_comm` + `Nat.sub_add_cancel`, the algebraic split with
+`Matrix.mul_add` and `Finset.mul_sum`, and both sides are normalised with
+`Matrix.mul_assoc`/`Nat.add_assoc`. The outer sum is then split with
+`Finset.sum_add_distrib` and reconciled by `abel`.
 
 ## Not certified
 
-- the closed double sum `Σ_{i<j}` obtained by substituting `first_order_vertex`
-  into `second_order_vertex` (not carried out);
-- a continuous heat family `K_s = exp(-sL)`, the unbounded realization, and any
-  trace/regulator statement of Section 5.
+- a continuous heat family `K_s = exp(-sL)` (matrix exponential, semigroup
+  property, twice-differentiated variation of constants);
+- the unbounded realization, trace-class hypotheses, and every regulator
+  statement of Section 5;
+- `(5.6)` and the operator derivation of `K_ζ`.
 
 ## Reproduction record
 
-- Remote run directory: `~/quantyra-space-runs/p1-manuscript-dyson-r6`
+- Remote run directory: `~/quantyra-space-runs/p1-manuscript-dyson-r14`
 - Lean 4.30.0 (`d024af09…`), Mathlib `c5ea0035`, paper1 exact-tree layout
-- Dependency `ManuscriptFormal` recompiled from `dd569271…`
-- Source `9592cad1…`, olean `dbca02af…`, exit code `0`
+- Dependency `ManuscriptFormal` recompiled from its pinned certified source
+  `dd56927188e2967244d15ce828fd0900ca781d4252639cc7d4a0a5c559364d13`
+- Source `c9d70381…`, olean `8f595c26…`, exit code `0`
 
 ## Preserved failures
 
-`-r1`: `Normed.Module.PiLp` absent from the build. `-r2`/`-r3`: runner theorem
-list named an absent declaration (aborted the receipt grep). `-r5`: the false
-exact truncation described above.
+`-r1` … `-r13` are preserved on the builder and in the session record:
+missing `Normed.Module.PiLp` and `Tactic.Omega` modules in this build, a stale
+runner theorem list (aborted the receipt grep), the *false* exact truncated
+ε-expansion (an ε³ remainder exists — corrected to the hierarchical form), and
+several index-associativity mismatches in the per-`j` substitution
+(`Z0 (j+1+(i+1))` versus `Z0 (j+1+i+1)`, unbound `i` after removing an
+`intro`). No statement or hypothesis was changed by a repair.

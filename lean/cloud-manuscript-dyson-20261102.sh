@@ -10,7 +10,7 @@ toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/t
 base_source="$HOME/ManuscriptFormal.lean"
 base_sha='dd56927188e2967244d15ce828fd0900ca781d4252639cc7d4a0a5c559364d13'
 source="$HOME/ManuscriptDyson.lean"
-source_sha='da910d692bd779fae27fc6a98bdee0faf8dbde03d16e4bbaf8656d0780ed6168'
+source_sha='c9d7038165bc85c5cf275e1baec535c12d423c0edefa38aac48352a8e286381d'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -50,7 +50,8 @@ lean -o ManuscriptFormal.olean ManuscriptFormal.lean 2>&1 | tee base-lean.log
 echo '--- target: ManuscriptDyson ---'
 lean -o ManuscriptDyson.olean ManuscriptDyson.lean 2>&1 | tee lean.log
 
-theorems="discrete_dyson_first_order"
+theorems="homogeneous_propagation first_order_vertex second_order_vertex
+second_order_closed"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done
