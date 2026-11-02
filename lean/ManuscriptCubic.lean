@@ -129,8 +129,10 @@ theorem R3_large_neg (x : ℝ) (hx : 14 ≤ x) : R3 x ≤ -(x ^ 3 / 1680) := by
   rw [R3_eq]
   linarith
 
-/-- The audit finding: on `s² ≥ 14` the `(4.3)` kernel is at least
-`1/(1680 s²)` in modulus, so it is not integrable on `(1,∞)`. -/
+/-- Lower bound on the modulus of the `(4.3)` kernel for `s ≥ √14`:
+`|R3(s²)|/s⁸ ≥ 1/(1680 s²)`. This records the *decay rate* of the kernel. Note
+that `s ↦ 1/s²` **is** integrable on `(1,∞)`, so this bound does not by itself
+imply divergence; the matching upper bound is `R3_kernel_upper`. -/
 theorem R3_kernel_domination (s : ℝ) (hs : Real.sqrt 14 ≤ s) :
     1 / (1680 * s ^ 2) ≤ |R3 (s ^ 2)| / s ^ 8 := by
   have hs0 : 0 ≤ s := by
@@ -158,6 +160,30 @@ theorem R3_kernel_domination (s : ℝ) (hs : Real.sqrt 14 ≤ s) :
   have hpow : ((s ^ 2) ^ 3) / 1680 = s ^ 6 / 1680 := by ring
   nlinarith [hneg, hkey, hpow]
 
+/-- **The correct integrability half of the `(4.3)` kernel bound.** For
+`s ≥ 1`, `|R3(s²)|/s⁸ ≤ 1/(840 s²)`. Since `s ↦ 1/s²` is integrable on
+`(1,∞)`, the printed improper integral converges at infinity: `R3` decays like
+`-x³/840`, and `x⁶/x⁸ = x⁻²` is integrable. The earlier claim that this kernel
+diverges was an error (`p = 2 > 1`); see the receipt README. -/
+theorem R3_kernel_upper (s : ℝ) (hs : 1 ≤ s) :
+    |R3 (s ^ 2)| / s ^ 8 ≤ 1 / (840 * s ^ 2) := by
+  have hs0 : (0 : ℝ) < s := by linarith
+  have hs2pos : (0 : ℝ) < s ^ 2 := by positivity
+  have hs8 : (0 : ℝ) < s ^ 8 := by positivity
+  have hle : R3 (s ^ 2) ≤ 0 := R3_nonpos (s ^ 2) (le_of_lt hs2pos)
+  have hlow : -(((s ^ 2) ^ 3) / 840) ≤ R3 (s ^ 2) := R3_lower (s ^ 2) (le_of_lt hs2pos)
+  have habs : |R3 (s ^ 2)| = -R3 (s ^ 2) := abs_of_nonpos hle
+  rw [habs, div_le_iff₀ hs8]
+  have hkey : 1 / (840 * s ^ 2) * s ^ 8 = s ^ 6 / 840 := by
+    have hd1 : (840 * s ^ 2 : ℝ) ≠ 0 := by
+      have hpos : (0:ℝ) < 840 * s ^ 2 := by nlinarith [hs2pos]
+      exact ne_of_gt hpos
+    have hd2 : (s : ℝ) ^ 8 ≠ 0 := ne_of_gt hs8
+    field_simp
+  rw [hkey]
+  have hpow : ((s ^ 2) ^ 3) = s ^ 6 := by ring
+  nlinarith [hlow, hpow]
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.R3_eq
@@ -169,3 +195,4 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.R3_lower
 #print axioms PairedDirac.Manuscript.R3_large_neg
 #print axioms PairedDirac.Manuscript.R3_kernel_domination
+#print axioms PairedDirac.Manuscript.R3_kernel_upper

@@ -12,7 +12,7 @@ toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/t
 base_source="$HOME/ManuscriptFlatBound.lean"
 base_sha='c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb'
 source="$HOME/ManuscriptCubic.lean"
-source_sha='cdd68d77759efad69e9ce3c2ff622e8aa07b784e61b6cbb7c52e8b7366e3dcfe'
+source_sha='6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -55,7 +55,8 @@ echo '--- target module: ManuscriptCubic ---'
 lean -o ManuscriptCubic.olean ManuscriptCubic.lean 2>&1 | tee lean.log
 
 theorems="R3_eq pi_rpow_three_halves sqrt_pi_mul_sqrt_pi cubic_coefficient
-Ffun_le_one R3_nonpos R3_lower R3_large_neg R3_kernel_domination"
+Ffun_le_one R3_nonpos R3_lower R3_large_neg R3_kernel_domination
+R3_kernel_upper"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done

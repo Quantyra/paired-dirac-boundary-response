@@ -1,4 +1,12 @@
-# GCP exact-source replay: Proposition 4.1 coefficient algebra and the `R3` kernel finding
+# GCP exact-source replay: Proposition 4.1 coefficient algebra and the `R3` kernel structure
+
+> **Correction (2026-11-02, later the same day).** The "finding" section below
+> is **wrong**. `R3(s²)/s⁸ ≍ -1/(840 s²)` *is* integrable at infinity
+> (`p = 2 > 1`), so the manuscript's step is sound there. The lower bound
+> certified here is a decay-rate statement, not a divergence statement. See
+> [`gcp-manuscript-cubic-20261102-r2`](../gcp-manuscript-cubic-20261102-r2/README.md),
+> which adds the matching upper bound `R3_kernel_upper`. This receipt is kept
+> unchanged as history.
 
 Status: `lean/ManuscriptCubic.lean` at SHA-256
 `cdd68d77759efad69e9ce3c2ff622e8aa07b784e61b6cbb7c52e8b7366e3dcfe`
