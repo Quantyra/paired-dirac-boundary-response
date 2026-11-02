@@ -18,7 +18,7 @@ require.
 > symbols.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** One hundred-twenty-five declarations are machine-checked on GCP (receipts
+beyond it.** One hundred-thirty-five declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
@@ -98,7 +98,8 @@ printed equations, its analysis and its physics are not.
 | (4.3), kernel cancellation form | `R3 x = (1/2)∫₀¹[H(a x) − (a x)³/3]dα` | **CERTIFIED** | Same receipt (run `-r9`, source `12e21190…`, olean `51985363…`, exit 0, 17 declarations): `cubic_term_eq` (`x³/840 = (1/2)∫₀¹(a x)³/3`) and **`R3_eq_cancellation`**, the form in which the leading `x³` terms cancel identically — the only form from which `∫₀^∞R3(s²)ds/s⁸` can be evaluated, since the pieces diverge at `x = 0` individually |
 | (4.3), the value of `I` | `∫₀^∞R3(s²)ds/s⁸ = -5π^{3/2}/49152` | **not certified; numerically confirmed** | The reduction (`x = s²`, then `y = a x`) gives `I = (1/2)∫₀¹a^{7/2}dα · J` with `J = ∫₀^∞y^{-9/2}(H(y)−y³/3)dy`, whose inner finite part needs Hadamard regularization that Mathlib lacks — a research task, not a missing lemma. **Numerical check** (`notes/check-I.py`, run on the builder; `x = e^u` for two-sided exponential decay): `I = -5.664396155022e-04` against the printed `-5.664396155631e-04`, agreement to ten significant digits, stable in mesh and truncation. So the printed constant is numerically right; the computation is not a proof and is not cited as one. See `notes/integral-value-reduction-20261102.md`, which also records the withdrawal of my own hand-computed "factor 2 discrepancy" (it was my finite-part bookkeeping error) |
 
-Summary: 125 declarations machine-checked across twenty-three receipts (the newest,
+| (4.3), value: domination step | `|x^(-9/2)(H(a x) âˆ’ (a x)Â³/3)| â‰¤ x^(-1/2)/8 + (11/6)x^(-3/2)` | **CERTIFIED** | New in [`gcp-manuscript-value-20261102`](../evidence/gcp-manuscript-value-20261102/README.md): `kernel_pointwise_dominated`, the uniform-in-`Î±` domination that the interchange of `âˆ«â‚€Â¹` and `âˆ«â‚€^âˆž` in the cancellation form requires, plus its ingredients `Hint_closed` (`H(y) = yÂ²/2 âˆ’ 1 + (1+y)e^{-y}`), `Hint_le`, `Hint_ge_neg_one`, `Hint_abs_le`, `Hint_sub_abs_le` (large-`y`), `Hint_sub_abs_le_quartic` (small-`y`, `|H(y) âˆ’ yÂ³/3| â‰¤ yâ´/8`) and the rpow bookkeeping `rpow_neg9_mul_four/two/three`. Source `cb8e9120â€¦`, olean `55e69a58â€¦`, exit 0, 10 declarations, standard axioms. **Not** certified: the interchange, the `Î±`-integral (`B(9/2,9/2)`), the half-integer `Gamma` values, and the final arithmetic |
+Summary: 135 declarations machine-checked across twenty-three receipts (the newest,
 [`gcp-manuscript-integrab-20261102`](../evidence/gcp-manuscript-integrab-20261102/README.md),
 re-certifies 9 earlier declarations and adds 6 new ones). Of these: 2 algebraic
 coefficient identities, 1 finite-matrix trace identity, 5 bounded-operator

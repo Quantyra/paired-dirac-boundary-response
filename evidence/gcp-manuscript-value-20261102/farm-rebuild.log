@@ -1,0 +1,13 @@
+rebuild Mathlib.MeasureTheory.Integral.Layercake
+rebuild Mathlib.Analysis.SpecialFunctions.JapaneseBracket
+rebuild Mathlib.MeasureTheory.Measure.Haar.NormedSpace
+rebuild Mathlib.Analysis.Normed.Affine.AddTorsor
+rebuild Mathlib.LinearAlgebra.AffineSpace.Ordered
+rebuild Mathlib.Topology.UrysohnsLemma
+rebuild Mathlib.MeasureTheory.Measure.EverywherePos
+rebuild Mathlib.Topology.Metrizable.Urysohn
+rebuild Mathlib.MeasureTheory.Measure.Haar.Unique
+rebuild Mathlib.MeasureTheory.Integral.IntegralEqImproper
+rebuild Mathlib.MeasureTheory.Measure.Lebesgue.Integral
+rebuild Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+probe ok after 12 rebuilds
