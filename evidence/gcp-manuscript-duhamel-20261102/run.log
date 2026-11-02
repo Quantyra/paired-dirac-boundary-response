@@ -1,0 +1,15 @@
+Mon Nov  2 04:06:38 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptDuhamel.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+ed7742af7bbb56fa6e69f845b43aaaed4734a42740092ef93322381ffd76465f  ManuscriptDuhamel.lean
+ManuscriptDuhamel.lean:44:26: warning: unused variable `b`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'PairedDirac.Manuscript.triangle_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.triangle_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptDuhamel.lean: OK
+ee53918e3be801c411da96c95fc557728f8cbea8a25131e9c36a18cff07c6a24  ManuscriptDuhamel.olean

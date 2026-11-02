@@ -1,0 +1,4 @@
+ManuscriptDuhamel.lean:44:26: warning: unused variable `b`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'PairedDirac.Manuscript.triangle_area' depends on axioms: [propext, Classical.choice, Quot.sound]
