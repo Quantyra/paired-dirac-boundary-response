@@ -1,0 +1,14 @@
+Mon Nov  2 03:00:31 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptCompactTransfer.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+6af8f7c8b8aef8571ecf6dc1407e1bd3067d4f8bcc3280fc435cae711a8997a0  ManuscriptCompactTransfer.lean
+'PairedDirac.Manuscript.winding_term_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.winding_nonzero_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.winding_term_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.winding_nonzero_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptCompactTransfer.lean: OK
+e04d77a01af2b612ac00468b081eb2b06a9e449a7de102d9674018b97aeb9b9a  ManuscriptCompactTransfer.olean

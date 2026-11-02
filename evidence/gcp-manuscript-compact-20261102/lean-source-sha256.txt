@@ -1,0 +1,1 @@
+6af8f7c8b8aef8571ecf6dc1407e1bd3067d4f8bcc3280fc435cae711a8997a0  ManuscriptCompactTransfer.lean
