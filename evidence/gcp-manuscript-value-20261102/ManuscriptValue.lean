@@ -385,6 +385,13 @@ theorem kernel_dominated_large (al x : ℝ) (hal : al ∈ Set.Icc (0 : ℝ) 1)
       = (11 / 6) * x ^ (-(3 : ℝ) / 2) := by ring
   linarith [hmono, hsum, hfin]
 
+/-- `H` is continuous, from its closed form. Needed for the measurability of the
+`(4.3)` integrand in any Fubini argument. -/
+theorem continuous_Hint : Continuous Hint := by
+  have h : Hint = fun y : ℝ => y ^ 2 / 2 - 1 + (1 + y) * Real.exp (-y) := funext Hint_closed
+  rw [h]
+  continuity
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.Hint_closed
@@ -401,3 +408,4 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.integrableOn_rpow_neg_three_halves_Ioi
 #print axioms PairedDirac.Manuscript.kernel_dominated_small
 #print axioms PairedDirac.Manuscript.kernel_dominated_large
+#print axioms PairedDirac.Manuscript.continuous_Hint

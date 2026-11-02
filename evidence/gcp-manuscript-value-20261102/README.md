@@ -113,3 +113,49 @@ over `alpha` in `Ioi 0` will consume.
 
 The interchange itself, the `alpha`-integral (`B(9/2,9/2)`), the half-integer
 `Gamma` values, and the arithmetic. The value remains unproved.
+
+## Addendum: continuity of `H`, and a failed attempt at the inner-integral lemma (run `-r12`)
+
+Run `-r12` certifies one further declaration: target source
+`d7cfc3ac1e904d8d181ebea82e47643b481df17daa6067b22a503c7a5f363202`,
+olean `16751260c87eceecadf16150edd530488429032ce227aea4b1708fbdbc1fbf32`,
+exit `0`, **15 declarations**, no `sorryAx`, no error.
+
+- `continuous_Hint` -- `Continuous Hint`, from the closed form
+  (`Hint_closed`) by `continuity`. This is the measurability input any Fubini
+  interchange over the `x`-variable needs.
+
+### The attempt that failed, and why (recorded, reverted)
+
+I also tried `integrableOn_inner` -- for each `Î±`, the `x`-integrand
+`x^(-9/2)(H(a(Î±)x) âˆ’ (a(Î±)x)Â³/3)` is `IntegrableOn (Ioi 0)`, by
+`IntegrableOn.mono'` against the two certified regime bounds plus
+`IntegrableOn.union`. It did **not** compile, on three points that are worth
+recording rather than retrying blindly:
+
+1. `fun_prop` cannot build `ContinuousOn (fun x => x^(-9/2) * â€¦) (Ioc 0 1)`: the
+   exponent is negative, so it needs `ContinuousOn.rpow_const` with the side
+   condition `x â‰  0`, and `fun_prop` reports "failed to infer `(?t : Set (â„ Ã— â„))`
+   when applying `continuousOn_id'`". The workaround is to assemble
+   `ContinuousOn` by hand from `continuousOn_id.rpow_const`,
+   `continuous_Hint.comp`, and `.mul`/`.sub`.
+2. `IntegrableOn` in this build is *definitionally* a conjunction
+   (`AEStronglyMeasurable âˆ§ HasFiniteIntegral`), so `h.congr_fun` does not exist
+   (`And.congr_fun`); a function equality has to be pushed through with
+   `rwa [hfun] at h` instead.
+3. The final `â€–g xâ€– â‰¤ â€–â€¦â€–` step needs `abs_of_nonneg` fed by
+   `div_nonneg (Real.rpow_nonneg hx.1.le _) â€¦`, not by `positivity`, which cannot
+   see `0 < x` from the hypothesis `x âˆˆ Ioc 0 1` in this shape.
+
+One further operational defect: a PowerShell fixup script wrote the runner back
+with CRLF, which makes `set -euo pipefail` fail on the builder (`set: pipefail:
+invalid option name`); the runner must stay LF-only. That trap has now cost time
+twice.
+
+The source was reverted to the last certified state and only `continuous_Hint`
+was added, so nothing unverified is committed.
+
+### Status of the `(4.3)` value
+
+Unchanged: the interchange, the `Î±`-integral `B(9/2,9/2)`, the half-integer
+`Gamma` values and the arithmetic are still open. The value remains unproved.

@@ -21,7 +21,7 @@ cubic_sha='6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90'
 small_sha='b68f338739d524db5993cbaaec0322e4ef6d9f6833ee8bcdc6b99ad67b64c324'
 asym_sha='0803650ff8974637ec4fa7975c91f90079d3acaee4194f72955ee4c6a91a0e89'
 source="$HOME/ManuscriptValue.lean"
-source_sha='903480e1457b120dc07daf2b9686f95cd01333e23c4252aac765678a727939a9'
+source_sha='d7cfc3ac1e904d8d181ebea82e47643b481df17daa6067b22a503c7a5f363202'
 
 mkdir "$run"
 exec > >(tee "$run/run.log") 2>&1
@@ -114,7 +114,8 @@ lean -o ManuscriptValue.olean ManuscriptValue.lean 2>&1 | tee lean.log
 theorems="Hint_closed Hint_le Hint_ge_neg_one Hint_abs_le Hint_sub_abs_le
 Hint_sub_abs_le_quartic rpow_neg9_mul_four rpow_neg9_mul_two rpow_neg9_mul_three
 kernel_pointwise_dominated integrableOn_rpow_neg_half_Ioc
-integrableOn_rpow_neg_three_halves_Ioi kernel_dominated_small kernel_dominated_large"
+integrableOn_rpow_neg_three_halves_Ioi kernel_dominated_small kernel_dominated_large
+continuous_Hint"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done
