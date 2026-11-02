@@ -68,9 +68,40 @@ theorem cubic_limit_coefficient (cu cw : ℝ) :
   field_simp
   ring
 
+/-! ## Resolution of the factor `2`
+
+The substitution `s = √t k` in `(4.2)` runs over `k ∈ ℝ`, hence over `s ∈ ℝ`,
+while the draft's stated constant is the **half-line** integral
+`I = ∫_0^∞ R3(s²)ds/s⁸`. The kernel is even in `s` (`R3 ((-s)²) = R3 (s²)` and
+`(-s)⁸ = s⁸`), so the full-line integral is twice the half-line one; that factor
+`2` is exactly the discrepancy recorded in `cubic_scaling_factor` and in the log
+chain. -/
+
+/-- The kernel is even in `s`. -/
+theorem kernel_even (s : ℝ) : R3 ((-s) ^ 2) / (-s) ^ 8 = R3 (s ^ 2) / s ^ 8 := by
+  rw [neg_sq, neg_pow]
+  norm_num
+
+/-- With the evenness factor `2` (full line → half line) the cubic coefficient is
+the printed `144 c_u c_w/π²`. -/
+theorem cubic_limit_coefficient_doubled (cu cw : ℝ) :
+    2 * (144 * cu * cw * (1 / (2 * Real.pi ^ 2))) = 144 * cu * cw / Real.pi ^ 2 := by
+  have hpi : Real.pi ≠ 0 := Real.pi_ne_zero
+  field_simp
+
+/-- With the same evenness factor the log coefficient is the printed
+`-(D t³ log t)/(70π)`. -/
+theorem log_coefficient_doubled (D t : ℝ) :
+    2 * ((D / (70 * Real.pi)) * t ^ 3 * (-(1 / 2) * Real.log t))
+      = -(D * t ^ 3 * Real.log t) / (70 * Real.pi) := by
+  ring
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.rpow_five_halves
 #print axioms PairedDirac.Manuscript.rpow_neg_five_halves
 #print axioms PairedDirac.Manuscript.cubic_scaling_factor
 #print axioms PairedDirac.Manuscript.cubic_limit_coefficient
+#print axioms PairedDirac.Manuscript.kernel_even
+#print axioms PairedDirac.Manuscript.cubic_limit_coefficient_doubled
+#print axioms PairedDirac.Manuscript.log_coefficient_doubled

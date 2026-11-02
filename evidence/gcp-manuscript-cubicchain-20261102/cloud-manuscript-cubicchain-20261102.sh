@@ -9,7 +9,7 @@ toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/t
 flat_sha='c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb'
 cubic_sha='6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90'
 source="$HOME/ManuscriptCubicChain.lean"
-source_sha='d5e5247142badb5b3c406f40ca871c7f2b79cff38f8d41b6f21c90ad6d2fa650'
+source_sha='3937dc312723028b3fac0a582ea17904e0145177e7732a7e8d541ec6940583fb'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -54,7 +54,8 @@ lean -o ManuscriptCubic.olean ManuscriptCubic.lean 2>&1 | tee base2-lean.log
 echo '--- target: ManuscriptLogCoefficient ---'
 lean -o ManuscriptCubicChain.olean ManuscriptCubicChain.lean 2>&1 | tee lean.log
 
-theorems="rpow_five_halves rpow_neg_five_halves cubic_scaling_factor cubic_limit_coefficient"
+theorems="rpow_five_halves rpow_neg_five_halves cubic_scaling_factor cubic_limit_coefficient
+kernel_even cubic_limit_coefficient_doubled log_coefficient_doubled"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done

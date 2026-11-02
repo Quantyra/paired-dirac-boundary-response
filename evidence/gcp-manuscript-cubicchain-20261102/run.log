@@ -1,4 +1,4 @@
-Mon Nov  2 02:22:45 UTC 2026
+Mon Nov  2 02:35:19 UTC 2026
 quantyra-lean-builder-01
 /home/dfredriksen_quantyra_org/ManuscriptFlatBound.lean: OK
 /home/dfredriksen_quantyra_org/ManuscriptCubic.lean: OK
@@ -9,7 +9,7 @@ Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261
 Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
 c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb  ManuscriptFlatBound.lean
 6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90  ManuscriptCubic.lean
-d5e5247142badb5b3c406f40ca871c7f2b79cff38f8d41b6f21c90ad6d2fa650  ManuscriptCubicChain.lean
+3937dc312723028b3fac0a582ea17904e0145177e7732a7e8d541ec6940583fb  ManuscriptCubicChain.lean
 --- dependency: ManuscriptFlatBound ---
 'PairedDirac.Manuscript.phi_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.integral_weightA_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -38,11 +38,17 @@ d5e5247142badb5b3c406f40ca871c7f2b79cff38f8d41b6f21c90ad6d2fa650  ManuscriptCubi
 'PairedDirac.Manuscript.rpow_neg_five_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.cubic_scaling_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.cubic_limit_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kernel_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_limit_coefficient_doubled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.log_coefficient_doubled' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.rpow_five_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.rpow_neg_five_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.cubic_scaling_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.cubic_limit_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kernel_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_limit_coefficient_doubled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.log_coefficient_doubled' depends on axioms: [propext, Classical.choice, Quot.sound]
 ManuscriptFlatBound.lean: OK
 ManuscriptCubic.lean: OK
 ManuscriptCubicChain.lean: OK
-678e9ca0110d7b653267ce4da0a2003e2509ac179c1e58b7ae35729f3cb45fd0  ManuscriptCubicChain.olean
+4fa0d2033662feca453e00f006b5ea0d3f24662630d75e85169e3e8ffd480aa7  ManuscriptCubicChain.olean
