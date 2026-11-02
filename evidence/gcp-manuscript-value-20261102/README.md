@@ -71,3 +71,45 @@ pursuing, but that is not a certificate.
 - Target source `cb8e9120…`, olean `55e69a58…`, exit code `0`
 - Same `.ir`-farm procedure as `gcp-manuscript-integrab-20261102` (12 module
   rebuilds in a symlink farm; the retained trees are never written to)
+
+
+## Addendum: the two-regime bounds in integrable form (run `-r8`)
+
+The receipt now records run `-r8`: target source
+`903480e1457b120dc07daf2b9686f95cd01333e23c4252aac765678a727939a9`,
+olean `23fe5b16634c25084311d084e979632ba07a9ab715b3e15b11f3c3958f554203`,
+exit code `0`, **14 declarations**, no `sorryAx`, no error.
+
+Four declarations are new. They exist because the earlier single domination
+`<= x^(-1/2)/8 + (11/6) x^(-3/2)` is **not** integrable on `(0,inf)`: the
+`x^(-1/2)` term diverges at infinity. The bound has to be split by regime, and
+each piece is integrable on its own half-line:
+
+| declaration | statement |
+| --- | --- |
+| `kernel_dominated_small` | `0 < x <= 1`: `|x^(-9/2)(H(a x) - (a x)^3/3)| <= x^(-1/2)/8` |
+| `kernel_dominated_large` | `1 <= x`: `|...| <= (11/6) x^(-3/2)` |
+| `integrableOn_rpow_neg_half_Ioc` | `IntegrableOn (fun x => x^(-1/2)) (Ioc 0 1)` |
+| `integrableOn_rpow_neg_three_halves_Ioi` | `IntegrableOn (fun x => (11/6) x^(-3/2)) (Ioi 1)` |
+
+So both halves of the dominating bound are now certified integrable on the range
+where they are used. This is the exact hypothesis a Tonelli/Fubini interchange
+over `alpha` in `Ioi 0` will consume.
+
+### Lemma-name findings (recorded so they are not rediscovered)
+
+- Mathlib has **no** `integrableOn_Ioc_rpow_iff`; the usable form is
+  `intervalIntegral.integrableOn_Ioo_rpow_iff (ht : 0 < t) :
+  IntegrableOn (fun x => x^s) (Ioo 0 t) <-> -1 < s`, and `(0,1]` is reached from
+  `(0,1)` by `volume ({1}) = 0` through `Measure.restrict_congr_set` +
+  `MeasureTheory.ae_eq_set` + `Real.volume_singleton`. The lemma lives in
+  `Mathlib.Analysis.SpecialFunctions.Integrability.Basic`, which must be imported
+  explicitly (`ImproperIntegrals` alone does not put it in scope).
+- `Ioo_subset_Ioc_self` and `Set.diff_eq_empty` do what they say.
+- `Measure.integrableOn_of_bounded` is `Measure.integrableOn_of_bounded`, not
+  `IntegrableOn.of_bound`.
+
+### Still not certified
+
+The interchange itself, the `alpha`-integral (`B(9/2,9/2)`), the half-integer
+`Gamma` values, and the arithmetic. The value remains unproved.

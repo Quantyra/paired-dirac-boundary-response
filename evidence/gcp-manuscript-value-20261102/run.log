@@ -1,4 +1,4 @@
-Mon Nov  2 07:34:48 UTC 2026
+Mon Nov  2 08:07:36 UTC 2026
 quantyra-lean-builder-01
 /home/dfredriksen_quantyra_org/ManuscriptFlatBound.lean: OK
 /home/dfredriksen_quantyra_org/ManuscriptCubic.lean: OK
@@ -27,7 +27,7 @@ c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb  ManuscriptFlat
 b68f338739d524db5993cbaaec0322e4ef6d9f6833ee8bcdc6b99ad67b64c324  ManuscriptSmallOrder.lean
 0803650ff8974637ec4fa7975c91f90079d3acaee4194f72955ee4c6a91a0e89  ManuscriptR2Asymptotics.lean
 12e21190a2ad94e16ef5bcb8affcdaf7583976856040607bcb45ef415db505bb  ManuscriptR2Assembly.lean
-cb8e9120596b0cd82183d7f3d7374634c54e4439a86292297c99c53a4da0eb38  ManuscriptValue.lean
+903480e1457b120dc07daf2b9686f95cd01333e23c4252aac765678a727939a9  ManuscriptValue.lean
 --- dependency: ManuscriptFlatBound ---
 'PairedDirac.Manuscript.phi_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.integral_weightA_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -78,10 +78,10 @@ cb8e9120596b0cd82183d7f3d7374634c54e4439a86292297c99c53a4da0eb38  ManuscriptValu
 'PairedDirac.Manuscript.cubic_term_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.R3_eq_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
 --- target: ManuscriptValue ---
-ManuscriptValue.lean:61:25: warning: unused variable `hy`
+ManuscriptValue.lean:63:25: warning: unused variable `hy`
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-ManuscriptValue.lean:163:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+ManuscriptValue.lean:165:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
 If you'd rather continue using `push_neg` in your project, you can implement it as follows:
 ```
 open Lean.Parser.Tactic in
@@ -98,6 +98,12 @@ macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
 'PairedDirac.Manuscript.rpow_neg9_mul_two' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.rpow_neg9_mul_three' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.kernel_pointwise_dominated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integrableOn_rpow_neg_half_Ioc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integrableOn_rpow_neg_three_halves_Ioi' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PairedDirac.Manuscript.kernel_dominated_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kernel_dominated_large' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.Hint_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.Hint_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.Hint_ge_neg_one' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -108,6 +114,10 @@ macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
 'PairedDirac.Manuscript.rpow_neg9_mul_two' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.rpow_neg9_mul_three' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.kernel_pointwise_dominated' depends on axioms: [propext, Classical.choice, Quot.sound]
-cb8e9120596b0cd82183d7f3d7374634c54e4439a86292297c99c53a4da0eb38  ManuscriptValue.lean
-55e69a58e45a9f32c13d24d5b63534e51bc0851e523d15e2da243297e7693db3  ManuscriptValue.olean
+'PairedDirac.Manuscript.integrableOn_rpow_neg_half_Ioc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integrableOn_rpow_neg_three_halves_Ioi' depends on axioms: [propext,
+'PairedDirac.Manuscript.kernel_dominated_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kernel_dominated_large' depends on axioms: [propext, Classical.choice, Quot.sound]
+903480e1457b120dc07daf2b9686f95cd01333e23c4252aac765678a727939a9  ManuscriptValue.lean
+23fe5b16634c25084311d084e979632ba07a9ab715b3e15b11f3c3958f554203  ManuscriptValue.olean
 RECEIPT_COMPLETE
