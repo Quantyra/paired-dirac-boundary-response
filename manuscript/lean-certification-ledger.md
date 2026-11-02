@@ -6,7 +6,7 @@ machine-checked, what is not, and what a full Lean certification would still
 require.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** One hundred declarations are machine-checked on GCP (receipts
+beyond it.** One hundred-three declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
@@ -73,17 +73,17 @@ printed equations, its analysis and its physics are not.
 | §4 zero sector, (4.11) | gap `κ exp(-r‖b‖_∞)` | **certified as printed** | `congruenced_gap_composition` gives `κc²`; `exp_neg_half_mul_sq` proves `exp(-rB/2)² = exp(-rB)`; `zero_sector_gap_printed` instantiates `c = exp(-r‖b‖_∞/2)`, the correct multiplier bound for `E_r = exp(-r b/2)` at `r ≥ 0`, and concludes exactly `κ exp(-r‖b‖_∞)‖ψ‖ ≤ ‖E_r Q E_r ψ‖`. The earlier §3 report of `κ exp(-2r‖b‖_∞)` was a wrong substitution (`c = exp(-r‖b‖_∞)`) and is superseded |
 | (4.12a)–(4.12b) | full-Weyl and conversion series | inputs, not derived | the two series come from cited notes; only their subtraction is certified |
 | (4.12c) | difference of the two series | **certified** | New: `converted_series_difference`, exact as printed for nonzero `π,t,b` |
-| §5, (5.1) | mixed Duhamel formula | not formalized | finite-Galerkin heat derivative |
-| (5.2) | four-term trace expansion | not formalized | product rule for parameter-dependent traces |
+| §5, (5.1) | mixed Duhamel formula | not formalized | finite-Galerkin heat derivative; the unbounded form-Duhamel passage needs the closed realization, the heat semigroup on its domain and trace-class hypotheses (see the `(5.2)` receipt README) |
+| (5.2) | four-term trace expansion | **certified at the finite-matrix derivation level** | New in [`gcp-manuscript-section5-20261102`](../evidence/gcp-manuscript-section5-20261102/README.md): `trace_four_term` proves `Tr[(D₁D₂)(C K)] = Tr[C_uw K] + Tr[C_w K_u] + Tr[C_u K_w] + Tr[C K_uw]` for linear maps with the Leibniz rule; `trace_four_term_display` gives the `(5.2)` display order and `trace_four_term_const` the constant-insertion reduction. The unbounded trace-class passage is not formalized |
 | (5.3) | reference-position commutator identity | **certified at finite-matrix level** | New: `matrix_reference_position_identity`, with commuting heat factors and `Kt=Ka·Kc` |
 | (5.4) | boundary joint-path bound | not formalized | trace-class heat estimates |
 | (5.5) | scalar/contact jet identity | not formalized — not currently jet algebra | `K_2` is defined in `notes/full-weyl-curved-scalar-interior-leading-coefficient.md` as the **path expectation** `K_2(y)=(1/2)E[D²H_0(0)[xi,xi]]`, not as a displayed jet expression. `(5.5)` relates that expectation to the explicit `H_1` of formula (3) through a Brownian computation, so certifying it needs formal probability and path-jet estimates, not `ring` on displayed derivatives. The deterministic part (`H_1` of (3)) is a candidate once `Q, Z_u, Z_w` are fixed from the note |
-| (5.6) | odd-odd interior coefficient | not formalized | heat-kernel coefficient identity |
+| (5.6) | odd-odd interior coefficient | not formalized, with a recorded reason | the coefficient is not an algebraic identity: it follows from the leading two-dimensional orbital mixed Dirichlet/Robin heat coefficients plus the cancellation of the `h²u'w'` terms, so it needs the boundary heat-kernel infrastructure (ledger §2, item 3). Formalizing only the final rearrangement would be vacuous — see [`gcp-manuscript-section5-20261102`](../evidence/gcp-manuscript-section5-20261102/README.md) |
 | §5 necessary condition | `C_other = -(b_S²/6π)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-Summary: 100 declarations machine-checked across sixteen receipts (10, 10, 10, 1,
-4, 3, 12, 11, 9, 4, 10, 5, 1, 9, 5 and 7 respectively). Of these: 2 algebraic
+Summary: 103 declarations machine-checked across seventeen receipts (10, 10, 10, 1,
+4, 3, 12, 11, 9, 4, 10, 5, 1, 9, 5, 7 and 3 respectively). Of these: 2 algebraic
 coefficient identities, 1 finite-matrix trace identity, 5 bounded-operator
 inequalities, 1 inner-product lemma, 1 gap-composition lemma plus the printed
 `(4.11)` instantiation, the 10 `(2.3)` transport/eigenvector facts, the `(4.9a)`
