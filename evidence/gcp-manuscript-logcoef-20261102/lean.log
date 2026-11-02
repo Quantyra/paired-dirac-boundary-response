@@ -1,0 +1,5 @@
+'PairedDirac.Manuscript.tail_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.log_conversion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.log_term_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.log_term_half_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_term_42' depends on axioms: [propext, Classical.choice, Quot.sound]
