@@ -1,0 +1,8 @@
+ManuscriptDyson.lean:45:27: warning: This simp argument is unused:
+  smul_mul_assoc
+
+Hint: Omit it from the simp argument list.
+  simp only [smul_add,̵ ̵s̵m̵u̵l̵_̵m̵u̵l̵_̵a̵s̵s̵o̵c̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.Manuscript.discrete_dyson_first_order' depends on axioms: [propext, Classical.choice, Quot.sound]

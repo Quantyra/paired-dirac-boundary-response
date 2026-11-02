@@ -1,0 +1,77 @@
+ManuscriptFormal.lean:75:57: warning: unused variable `hM`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ManuscriptFormal.lean:341:45: warning: unused variable `hG`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ManuscriptFormal.lean:430:6: warning: This simp argument is unused:
+  Complex.I_mul_I
+
+Hint: Omit it from the simp argument list.
+  simp [pauli1, pauli2, pauli3, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵I̵_̵m̵u̵l̵_̵I̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ManuscriptFormal.lean:437:6: warning: This simp argument is unused:
+  Complex.I_mul_I
+
+Hint: Omit it from the simp argument list.
+  simp [pauli1, pauli2, pauli3, Matrix.mul_apply, Fin.sum_univ_two, Matrix.smul_apply,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵I̵_̵m̵u̵l̵_̵I̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ManuscriptFormal.lean:473:6: warning: This simp argument is unused:
+  Matrix.neg_apply
+
+Hint: Omit it from the simp argument list.
+  simp [kLower, kUpper, pauli2, pauli3, Matrix.transpose_apply,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵n̵e̵g̵_̵a̵p̵p̵l̵y̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.Manuscript.skew_adjoint_inner_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_shift_norm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.square_resolvent_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.congruenced_gap_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.exp_neg_half_mul_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.zero_sector_gap_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.converted_series_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_conversion_cutoff_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.matrix_reference_position_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s1_vplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s1_vminus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s3_vplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.s3_vminus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.real_sinh_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_eq_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pminus_transportedPlane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_not_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.transportedPlane_parallel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.tower_derivative_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.multiplier_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.first_graph_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.second_graph_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli1_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli3_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_mul_pauli1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_mul_pauli3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli1_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli2_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pauli3_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kLower_eq_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.i_pauli2_mul_neg_i_pauli2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flux_of_first_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzetaSource_eta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzetaSource_xi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzetaManuscript_entries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.kzetaManuscript_lower_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.discrete_variation_of_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.discrete_variation_of_constants_matrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PairedDirac.Manuscript.prop_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_pointwise_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.flat_finite_time_sum_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
