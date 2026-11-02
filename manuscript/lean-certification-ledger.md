@@ -6,7 +6,7 @@ machine-checked, what is not, and what a full Lean certification would still
 require.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** One hundred-eleven declarations are machine-checked on GCP (receipts
+beyond it.** One hundred-thirteen declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
