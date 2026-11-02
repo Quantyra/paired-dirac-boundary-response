@@ -1,0 +1,11 @@
+ManuscriptElimination.lean:30:5: warning: unused variable `h0`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ManuscriptElimination.lean:96:25: warning: This simp argument is unused:
+  smul_neg
+
+Hint: Omit it from the simp argument list.
+  simp only [neg_smul,̵ ̵s̵m̵u̵l̵_̵n̵e̵g̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PairedDirac.Manuscript.elimination_second_order' depends on axioms: [propext, Classical.choice, Quot.sound]
