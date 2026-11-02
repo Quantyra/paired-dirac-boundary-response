@@ -1,0 +1,45 @@
+Mon Nov  2 00:26:59 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptFlatBound.lean: OK
+/home/dfredriksen_quantyra_org/ManuscriptCubic.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb  ManuscriptFlatBound.lean
+cdd68d77759efad69e9ce3c2ff622e8aa07b784e61b6cbb7c52e8b7366e3dcfe  ManuscriptCubic.lean
+--- dependency module: ManuscriptFlatBound ---
+'PairedDirac.Manuscript.phi_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_weightA_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_weightA_cu' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_le_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_le_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_eq_half_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_le_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_le_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ceb2c0d9e6d45f49a4482e7f73b67e9f4f93ad9a933c0e95841037227df6a4aa  ManuscriptFlatBound.olean
+--- target module: ManuscriptCubic ---
+'PairedDirac.Manuscript.R3_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pi_rpow_three_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.sqrt_pi_mul_sqrt_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.Ffun_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_large_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pi_rpow_three_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.sqrt_pi_mul_sqrt_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.Ffun_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_large_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptFlatBound.lean: OK
+ManuscriptCubic.lean: OK
+bfc62c7ddaccd1f310f2a710b2e7f8d32e36d5187db5c19dda5508340fa5a161  ManuscriptCubic.olean

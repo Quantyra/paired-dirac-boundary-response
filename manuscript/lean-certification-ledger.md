@@ -6,7 +6,7 @@ machine-checked, what is not, and what a full Lean certification would still
 require.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** Sixty-three declarations are machine-checked on GCP (receipts
+beyond it.** Seventy-two declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
@@ -52,7 +52,7 @@ printed equations, its analysis and its physics are not.
 | Prop. 3.2, (3.2)–(3.3) | holomorphic family, `10.56`, `337.92` bounds | constants certified, analysis not | `ResolventVariationConstants` (`gcp-resolvent-variation-constants-20261031`) proves `q<0.134`, `C<1.32`, the two Cauchy constants; the Neumann series, the Banach-valued Cauchy estimates and the Taylor-tail comparison are *not* formalized |
 | Prop. 3.2, (3.4) | square resolvent factorization | not formalized | requires the spectral calculus used in Prop. 3.1 |
 | §4, (4.1)–(4.2) | `F`, `R3`, `B_t` definitions | not formalized | definitions only; `R3` currently appears only as a polynomial truncation in `FullWeylAngularJet` |
-| Prop. 4.1, (4.3) | `lim t^{-5/2} B_t = -15c_uc_w/(1024√π)` | not formalized | distributional fourth derivative, Riemann–Lebesgue, dominated convergence and an explicit improper integral; the integral value itself is not formalized |
+| Prop. 4.1, (4.3) | limit constant and its integral reduction | **coefficient algebra certified; integral value not, and the printed proof step is refuted** | New in [`gcp-manuscript-cubic-20261102`](../evidence/gcp-manuscript-cubic-20261102/README.md): `cubic_coefficient` proves `144 c_u c_w/π² · (-5π^{3/2}/49152) = -15c_uc_w/(1024√π)`, with `π^{3/2}=π√π` and `√π·√π=π`; `R3_eq` gives the printed `R3`; `R3_nonpos`/`R3_lower` give `-x³/840 ≤ R3 x ≤ 0`; `Ffun_le_one`; `R3_large_neg` gives `R3 x ≤ -x³/1680` for `x ≥ 14`; `R3_kernel_domination` gives `1/(1680s²) ≤ |R3(s²)|/s⁸` for `s ≥ √14`. **Finding:** `F→1/2` while the subtracted term is `-x³/840`, so `R3(s²)/s⁸ ≍ -1/(840s²)` and the printed improper integral diverges at infinity; the "integrable kernel + dominated convergence" proof step cannot be literally correct. The value `-5π^{3/2}/49152` is the finite part and is **not** certified. Distributional fourth derivative and Riemann–Lebesgue remain unformalized |
 | Prop. 4.2, (4.4)–(4.5) | cubic-log asymptotic | not formalized | Fourier tail `o(|k|^{-9})`, split-frequency argument, `log t` extraction |
 | (4.6) | compact-model transfer | not formalized | compact flat-model heat kernel and winding sums |
 | Prop. 4.3, (4.8) | integrability consequence of the cubic bound | **certified** (integral included) | `flat_pointwise_reduction` and `flat_finite_time_sum_bound` in `ManuscriptFormal.lean`; and in [`gcp-manuscript-integral-20261101`](../evidence/gcp-manuscript-integral-20261101/README.md) the genuine integral: `flat_time_integral_bound` (`∫_0^{t0} |r|dt/t² ≤ C t0` under the cubic bound plus interval-integrability) and `flat_time_integral_bound_of_bounded`, which discharges integrability from measurability and the pointwise bound. The earlier environment gap is closed by running against the Space Mathlib build, which contains `Mathlib.MeasureTheory.Integral.IntervalIntegral` |
@@ -76,8 +76,8 @@ printed equations, its analysis and its physics are not.
 | §5 necessary condition | `C_other = -(b_S²/6π)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-Summary: 63 declarations machine-checked across nine receipts (10, 10, 10, 1,
-4, 3, 12, 11 and 4 respectively). Of these: 2 algebraic
+Summary: 72 declarations machine-checked across ten receipts (10, 10, 10, 1,
+4, 3, 12, 11, 4 and 9 respectively). Of these: 2 algebraic
 coefficient identities, 1 finite-matrix trace identity, 5 bounded-operator
 inequalities, 1 inner-product lemma, 1 gap-composition lemma plus the printed
 `(4.11)` instantiation, the 10 `(2.3)` transport/eigenvector facts, the `(4.9a)`

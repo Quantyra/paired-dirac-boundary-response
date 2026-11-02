@@ -1,0 +1,2 @@
+c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb  ManuscriptFlatBound.lean
+cdd68d77759efad69e9ce3c2ff622e8aa07b784e61b6cbb7c52e8b7366e3dcfe  ManuscriptCubic.lean
