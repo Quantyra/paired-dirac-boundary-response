@@ -6,7 +6,7 @@ machine-checked, what is not, and what a full Lean certification would still
 require.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** Seventy-three declarations are machine-checked on GCP (receipts
+beyond it.** Seventy-eight declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
@@ -52,7 +52,8 @@ printed equations, its analysis and its physics are not.
 | Prop. 3.2, (3.2)–(3.3) | holomorphic family, `10.56`, `337.92` bounds | constants certified, analysis not | `ResolventVariationConstants` (`gcp-resolvent-variation-constants-20261031`) proves `q<0.134`, `C<1.32`, the two Cauchy constants; the Neumann series, the Banach-valued Cauchy estimates and the Taylor-tail comparison are *not* formalized |
 | Prop. 3.2, (3.4) | square resolvent factorization | not formalized | requires the spectral calculus used in Prop. 3.1 |
 | §4, (4.1)–(4.2) | `F`, `R3`, `B_t` definitions | not formalized | definitions only; `R3` currently appears only as a polynomial truncation in `FullWeylAngularJet` |
-| Prop. 4.1, (4.3) | limit constant and its integral reduction | **coefficient algebra and the infinity-side kernel bound certified; small-`s` expansion and the integral value open** | [`gcp-manuscript-cubic-20261102-r2`](../evidence/gcp-manuscript-cubic-20261102-r2/README.md) (supersedes `gcp-manuscript-cubic-20261102`): `cubic_coefficient` proves `144 c_u c_w/π²·(-5π^{3/2}/49152) = -15c_uc_w/(1024√π)`; `R3_eq`, `R3_nonpos`/`R3_lower` (`-x³/840 ≤ R3 x ≤ 0`), `Ffun_le_one`, `R3_large_neg` (`R3 x ≤ -x³/1680`, `x ≥ 14`), `R3_kernel_domination` (`≥ 1/(1680s²)`, decay rate only) and **`R3_kernel_upper`** (`|R3(s²)|/s⁸ ≤ 1/(840s²)` for `s ≥ 1`, so the kernel is integrable at infinity). Correcting an earlier ledger version: `∫ s⁻²` converges, so the previous "divergence" claim was an inference error, now retracted. Open: `R3(x)=O(x⁴)` at zero (needs the `R2(x)=x³/840-x⁴/10080+O(x⁵)` cancellation), `u''''=12c_uδ_0+L¹`, Riemann–Lebesgue, and the value `-5π^{3/2}/49152` |
+| Prop. 4.1, small-`s` kernel behaviour | remainder chain for `R3(x)=O(x⁴)` | **elementary chain certified; assembly open** | [`gcp-manuscript-smallorder-20261102`](../evidence/gcp-manuscript-smallorder-20261102/README.md): with `g₁(u)=u-1+e^{-u}`, `g₂=∫g₁`, `g1_nonneg`, `continuous_g1`, `g1_le` (`g₁ u ≤ u²/2`), `g2_nonneg`, `g2_le` (`g₂ t ≤ t³/6`) for `t ≥ 0`. These give `∫₀^y s(1-e^{-s})ds = y³/3-y⁴/8+∫₀^y s g₂`, `0 ≤ ∫₀^y s g₂ ≤ y⁵/30`. **Not certified:** the termwise integration and the `α`-average with `∫₀¹a⁴=1/630` that yield `R2(x)=x³/840-x⁴/10080+O(x⁵)`, and the resulting integrability of `R3(s²)/s⁸` on `(0,∞)` |
+| Prop. 4.1, (4.3) | limit constant and its integral reduction | **coefficient algebra and the infinity-side kernel bound certified; small-`s` expansion and the integral value open** | [`gcp-manuscript-cubic-20261102-r2`](../evidence/gcp-manuscript-cubic-20261102-r2/README.md) (supersedes `gcp-manuscript-cubic-20261102`): `cubic_coefficient` proves `144 c_u c_w/π²·(-5π^{3/2}/49152) = -15c_uc_w/(1024√π)`; `R3_eq`, `R3_nonpos`/`R3_lower` (`-x³/840 ≤ R3 x ≤ 0`), `Ffun_le_one`, `R3_large_neg` (`R3 x ≤ -x³/1680`, `x ≥ 14`), `R3_kernel_domination` (`≥ 1/(1680s²)`, decay rate only) and **`R3_kernel_upper`** (`|R3(s²)|/s⁸ ≤ 1/(840s²)` for `s ≥ 1`, so the kernel is integrable at infinity). Correcting an earlier ledger version: `∫ s⁻²` converges, so the previous "divergence" claim was an inference error, now retracted. Open: `R3(x)=O(x⁴)` at zero (see the small-`s` row), `u''''=12c_uδ_0+L¹`, Riemann–Lebesgue, and the value `-5π^{3/2}/49152` |
 | Prop. 4.2, (4.4)–(4.5) | cubic-log asymptotic | not formalized | Fourier tail `o(|k|^{-9})`, split-frequency argument, `log t` extraction |
 | (4.6) | compact-model transfer | not formalized | compact flat-model heat kernel and winding sums |
 | Prop. 4.3, (4.8) | integrability consequence of the cubic bound | **certified** (integral included) | `flat_pointwise_reduction` and `flat_finite_time_sum_bound` in `ManuscriptFormal.lean`; and in [`gcp-manuscript-integral-20261101`](../evidence/gcp-manuscript-integral-20261101/README.md) the genuine integral: `flat_time_integral_bound` (`∫_0^{t0} |r|dt/t² ≤ C t0` under the cubic bound plus interval-integrability) and `flat_time_integral_bound_of_bounded`, which discharges integrability from measurability and the pointwise bound. The earlier environment gap is closed by running against the Space Mathlib build, which contains `Mathlib.MeasureTheory.Integral.IntervalIntegral` |
@@ -76,8 +77,8 @@ printed equations, its analysis and its physics are not.
 | §5 necessary condition | `C_other = -(b_S²/6π)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-Summary: 73 declarations machine-checked across eleven receipts (10, 10, 10, 1,
-4, 3, 12, 11, 9, 4 and 10 respectively). Of these: 2 algebraic
+Summary: 78 declarations machine-checked across twelve receipts (10, 10, 10, 1,
+4, 3, 12, 11, 9, 4, 10 and 5 respectively). Of these: 2 algebraic
 coefficient identities, 1 finite-matrix trace identity, 5 bounded-operator
 inequalities, 1 inner-product lemma, 1 gap-composition lemma plus the printed
 `(4.11)` instantiation, the 10 `(2.3)` transport/eigenvector facts, the `(4.9a)`

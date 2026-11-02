@@ -1,0 +1,50 @@
+Mon Nov  2 00:54:50 UTC 2026
+quantyra-lean-builder-01
+/home/dfredriksen_quantyra_org/ManuscriptFlatBound.lean: OK
+/home/dfredriksen_quantyra_org/ManuscriptCubic.lean: OK
+/home/dfredriksen_quantyra_org/ManuscriptSmallOrder.lean: OK
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
+Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
+c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb  ManuscriptFlatBound.lean
+6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90  ManuscriptCubic.lean
+b68f338739d524db5993cbaaec0322e4ef6d9f6833ee8bcdc6b99ad67b64c324  ManuscriptSmallOrder.lean
+--- dependency: ManuscriptFlatBound ---
+'PairedDirac.Manuscript.phi_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_weightA_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integral_weightA_cu' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_le_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.phi_remainder_le_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_eq_half_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_le_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_le_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R2_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+--- dependency: ManuscriptCubic ---
+'PairedDirac.Manuscript.R3_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.pi_rpow_three_halves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.sqrt_pi_mul_sqrt_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.Ffun_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_large_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_kernel_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+--- target: ManuscriptSmallOrder ---
+'PairedDirac.Manuscript.g1_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.continuous_g1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g1_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g2_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g2_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g1_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.continuous_g1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g1_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g2_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.g2_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptFlatBound.lean: OK
+ManuscriptCubic.lean: OK
+ManuscriptSmallOrder.lean: OK
+8898376f3bf0fb49cfe4607e24cba631668e07695db95cec7824b3c8d89fc619  ManuscriptSmallOrder.olean
