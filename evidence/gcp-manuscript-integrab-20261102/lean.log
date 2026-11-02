@@ -13,3 +13,5 @@
 'PairedDirac.Manuscript.measurable_R3_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.rpow_neg_two' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.R3_kernel_integrableOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.cubic_term_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.R3_eq_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]

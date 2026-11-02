@@ -21,7 +21,7 @@ cubic_sha='6d49d6ac2f92c479e8033f23d760ac593bfaefb4d80b6f22948f5600955c1a90'
 small_sha='b68f338739d524db5993cbaaec0322e4ef6d9f6833ee8bcdc6b99ad67b64c324'
 asym_sha='0803650ff8974637ec4fa7975c91f90079d3acaee4194f72955ee4c6a91a0e89'
 source="$HOME/ManuscriptR2Assembly.lean"
-source_sha='d194b3413918084915429e7b44e666d7acf1aa23446b2d19b89548691218a2ca'
+source_sha='12e21190a2ad94e16ef5bcb8affcdaf7583976856040607bcb45ef415db505bb'
 
 mkdir "$run"
 exec > >(tee "$run/run.log") 2>&1
@@ -111,7 +111,7 @@ echo '--- target: ManuscriptR2Assembly ---'
 lean -o ManuscriptR2Assembly.olean ManuscriptR2Assembly.lean 2>&1 | tee lean.log
 
 theorems="volume_Ioc_zero_one_lt_top continuous_R2 continuous_R3 measurable_R3_kernel
-R3_kernel_integrableOn"
+R3_kernel_integrableOn cubic_term_eq R3_eq_cancellation"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done

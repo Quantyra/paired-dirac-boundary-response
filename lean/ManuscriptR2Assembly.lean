@@ -403,6 +403,53 @@ theorem R3_kernel_integrableOn :
   rw [hset]
   exact hunion
 
+/-! ## The cancellation form of `R3`
+
+The `(4.3)` integrand `R3(x)/x⁴` is finite only through cancellation: `R3(x)` is
+`R2(x) - x³/840` and the `x³` part cancels the leading term of the `α`-average of
+`H(a(α)x)`, where `H(y) = ∫₀^y s(1-e^{-s})ds`. This makes the cancellation
+explicit, which is the form any evaluation of `∫₀^∞ R3(s²)ds/s⁸` must start from
+(the individual pieces diverge at `x = 0`). -/
+
+/-- `∫₀¹ (a x)³/3 dα = x³/840`, restated. -/
+theorem cubic_term_eq (x : ℝ) :
+    x ^ 3 / 840 = (1 / 2) * ∫ al in (0 : ℝ)..1, (weightA al * x) ^ 3 / 3 := by
+  rw [integral_cubic_term]
+  ring
+
+/-- **The cancellation form of `R3`**: `R3(x)` is the `α`-average of
+`H(a(α)x) - (a(α)x)³/3`, whose leading cubic terms cancel identically. -/
+theorem R3_eq_cancellation (x : ℝ) :
+    R3 x = (1 / 2) * ∫ al in (0 : ℝ)..1,
+      ((∫ s in (0 : ℝ)..(weightA al * x), s * (1 - Real.exp (-s)))
+        - (weightA al * x) ^ 3 / 3) := by
+  have hR3 : R3 x = R2 x - x ^ 3 / 840 := rfl
+  have hcont : IntervalIntegrable (fun al : ℝ => phiR2 al x) volume (0 : ℝ) 1 :=
+    (by continuity :
+      Continuous fun al : ℝ =>
+        (1 + al * (1 - al) * x) * Real.exp (-(al * (1 - al) * x)) - 1
+          + (al * (1 - al) * x) ^ 2 / 2).intervalIntegrable 0 1
+  have hcont3 : IntervalIntegrable (fun al : ℝ => (weightA al * x) ^ 3 / 3)
+      volume (0 : ℝ) 1 :=
+    (by continuity :
+      Continuous fun al : ℝ => (al * (1 - al) * x) ^ 3 / 3).intervalIntegrable 0 1
+  have hsub : ∫ al in (0 : ℝ)..1, (phiR2 al x - (weightA al * x) ^ 3 / 3)
+      = (∫ al in (0 : ℝ)..1, phiR2 al x)
+        - ∫ al in (0 : ℝ)..1, (weightA al * x) ^ 3 / 3 :=
+    intervalIntegral.integral_sub hcont hcont3
+  have hmain : R3 x
+      = (1 / 2) * ∫ al in (0 : ℝ)..1, (phiR2 al x - (weightA al * x) ^ 3 / 3) := by
+    rw [hR3, R2_eq_half_integral x, cubic_term_eq x, hsub]
+    ring
+  rw [hmain]
+  congr 1
+  apply intervalIntegral.integral_congr
+  intro al _
+  show phiR2 al x - (weightA al * x) ^ 3 / 3
+      = (∫ s in (0 : ℝ)..(weightA al * x), s * (1 - Real.exp (-s)))
+        - (weightA al * x) ^ 3 / 3
+  rw [phiR2_eq_integral]
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.g2_closed
@@ -420,3 +467,5 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.measurable_R3_kernel
 #print axioms PairedDirac.Manuscript.rpow_neg_two
 #print axioms PairedDirac.Manuscript.R3_kernel_integrableOn
+#print axioms PairedDirac.Manuscript.cubic_term_eq
+#print axioms PairedDirac.Manuscript.R3_eq_cancellation

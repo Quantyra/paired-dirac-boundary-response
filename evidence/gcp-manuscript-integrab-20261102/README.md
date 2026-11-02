@@ -102,3 +102,34 @@ extended. `-r2`: a PowerShell here-string mangled the non-ASCII symbols
 with a byte-safe editor and doing only ASCII edits in scripts (a repeat of the
 ledger-encoding lesson). `-r3`: `IsLocallyFiniteMeasure ?m` metavariable (fixed
 by `(μ := volume)`) and `|R3(s²)/s⁸|` vs `|R3(s²)|/s⁸` (fixed by `abs_div`).
+
+
+## Addendum: the cancellation form of `R3` (run `-r9`)
+
+The receipt now records run `-r9`: target source `12e21190a2ad94e16ef5bcb8affcdaf7583976856040607bcb45ef415db505bb`,
+olean `519853635f025c884fbb21797e35665ee831c08adb0e00c7be06d3ba3f54d184`,
+exit code `0`, **17 declarations**, no `sorryAx`, no error. The two added
+declarations are:
+
+- `cubic_term_eq` â€” `xÂ³/840 = (1/2)âˆ«â‚€Â¹ (a(Î±)x)Â³/3 dÎ±`, i.e. the leading cubic
+  term of `R3` is exactly the cubic term of the `Î±`-average;
+- **`R3_eq_cancellation`** â€” the cancellation form
+  ```text
+  R3 x = (1/2) âˆ«â‚€Â¹ [ (âˆ«â‚€^{a(Î±)x} s(1-e^{-s}) ds) âˆ’ (a(Î±)x)Â³/3 ] dÎ±,
+  ```
+  in which the leading `xÂ³` contributions cancel identically. This is the form
+  any evaluation of `âˆ«â‚€^âˆž R3(sÂ²)ds/sâ¸` must start from, because the pieces
+  diverge at `x = 0` individually while the combination is `O(xâ´)`.
+
+Both rest on declarations already in this module (`R2_eq_half_integral`,
+`phiR2_eq_integral`, `integral_cubic_term`) and are purely algebraic plus the
+fundamental theorem of calculus; no new imports.
+
+Recorded arithmetic slip in the proof: the integral sign was at first written so
+that `âˆ’ (a x)Â³/3` fell *inside* the `s`-integrand (an extra factor), and the
+`intervalIntegral.integral_congr` goal needed the `phiR2` beta-redex unfolded
+before rewriting. Both are proof-shape errors, not statement changes.
+
+The numerical settlement of the integral's value is recorded in
+[`notes/integral-value-reduction-20261102.md`](../../notes/integral-value-reduction-20261102.md);
+the value itself is still **not** certified.

@@ -18,7 +18,7 @@ require.
 > symbols.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** One hundred-twenty-three declarations are machine-checked on GCP (receipts
+beyond it.** One hundred-twenty-five declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
@@ -94,9 +94,11 @@ printed equations, its analysis and its physics are not.
 | §5 necessary condition | `C_other = -(b_S²/6ÃƒÂ€)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-| (4.3), kernel integrability | `IntegrableOn (fun s => R3(s²)/s⁸) (Set.Ioi 0)` | **CERTIFIED** | New in [`gcp-manuscript-integrab-20261102`](../evidence/gcp-manuscript-integrab-20261102/README.md): `R3_kernel_integrableOn`, the first measure-theoretic (non-algebraic) certificate in this workstream. It assembles `R3_kernel_small` on `(0,1]` via `Measure.integrableOn_of_bounded` with `R3_kernel_upper` on `(1,∞)` via domination by `s ↦ s^(-2)` (`integrableOn_Ioi_rpow_iff`), glued by `IntegrableOn.union`. Supporting: `volume_Ioc_zero_one_lt_top`, `continuous_R2`, `continuous_R3`, `measurable_R3_kernel`, `rpow_neg_two`. Source `d194b341…`, olean `c0845332…`, exit 0, 15 declarations, standard axioms. The kernel's **integrability** is no longer an open formalization gap; its **value** is still open |
+| (4.3), kernel integrability | `IntegrableOn (fun s => R3(s²)/s⁸) (Set.Ioi 0)` | **CERTIFIED** | [`gcp-manuscript-integrab-20261102`](../evidence/gcp-manuscript-integrab-20261102/README.md): `R3_kernel_integrableOn`, the first measure-theoretic (non-algebraic) certificate in this workstream. Assembles `R3_kernel_small` on `(0,1]` via `Measure.integrableOn_of_bounded` with `R3_kernel_upper` on `(1,∞)` via domination by `s ↦ s^(-2)` (`integrableOn_Ioi_rpow_iff`), glued by `IntegrableOn.union`. Supporting: `volume_Ioc_zero_one_lt_top`, `continuous_R2`, `continuous_R3`, `measurable_R3_kernel`, `rpow_neg_two`. Source `d194b341…`, olean `c0845332…`, exit 0, 15 declarations, standard axioms |
+| (4.3), kernel cancellation form | `R3 x = (1/2)∫₀¹[H(a x) − (a x)³/3]dα` | **CERTIFIED** | Same receipt (run `-r9`, source `12e21190…`, olean `51985363…`, exit 0, 17 declarations): `cubic_term_eq` (`x³/840 = (1/2)∫₀¹(a x)³/3`) and **`R3_eq_cancellation`**, the form in which the leading `x³` terms cancel identically — the only form from which `∫₀^∞R3(s²)ds/s⁸` can be evaluated, since the pieces diverge at `x = 0` individually |
+| (4.3), the value of `I` | `∫₀^∞R3(s²)ds/s⁸ = -5π^{3/2}/49152` | **not certified; numerically confirmed** | The reduction (`x = s²`, then `y = a x`) gives `I = (1/2)∫₀¹a^{7/2}dα · J` with `J = ∫₀^∞y^{-9/2}(H(y)−y³/3)dy`, whose inner finite part needs Hadamard regularization that Mathlib lacks — a research task, not a missing lemma. **Numerical check** (`notes/check-I.py`, run on the builder; `x = e^u` for two-sided exponential decay): `I = -5.664396155022e-04` against the printed `-5.664396155631e-04`, agreement to ten significant digits, stable in mesh and truncation. So the printed constant is numerically right; the computation is not a proof and is not cited as one. See `notes/integral-value-reduction-20261102.md`, which also records the withdrawal of my own hand-computed "factor 2 discrepancy" (it was my finite-part bookkeeping error) |
 
-Summary: 123 declarations machine-checked across twenty-three receipts (the newest,
+Summary: 125 declarations machine-checked across twenty-three receipts (the newest,
 [`gcp-manuscript-integrab-20261102`](../evidence/gcp-manuscript-integrab-20261102/README.md),
 re-certifies 9 earlier declarations and adds 6 new ones). Of these: 2 algebraic
 coefficient identities, 1 finite-matrix trace identity, 5 bounded-operator
