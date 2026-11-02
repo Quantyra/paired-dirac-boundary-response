@@ -18,7 +18,7 @@ require.
 > symbols.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** One hundred-seventeen declarations are machine-checked on GCP (receipts
+beyond it.** One hundred-twenty-three declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
@@ -94,8 +94,11 @@ printed equations, its analysis and its physics are not.
 | §5 necessary condition | `C_other = -(b_S²/6ÃƒÂ€)∫(h'u'w'+u''w'')dμ` | not formalized | depends on (5.6) |
 | §4 fixed-time assembly | form-Duhamel identity | not formalized | form-trace convergence |
 
-Summary: 117 declarations machine-checked across twenty-two receipts (10, 10, 10, 1,
-4, 3, 12, 11, 9, 4, 10, 5, 1, 9, 5, 7, 3, 2, 3, 1, 7 and 1 respectively). Of these: 2 algebraic
+| (4.3), kernel integrability | `IntegrableOn (fun s => R3(s²)/s⁸) (Set.Ioi 0)` | **CERTIFIED** | New in [`gcp-manuscript-integrab-20261102`](../evidence/gcp-manuscript-integrab-20261102/README.md): `R3_kernel_integrableOn`, the first measure-theoretic (non-algebraic) certificate in this workstream. It assembles `R3_kernel_small` on `(0,1]` via `Measure.integrableOn_of_bounded` with `R3_kernel_upper` on `(1,∞)` via domination by `s ↦ s^(-2)` (`integrableOn_Ioi_rpow_iff`), glued by `IntegrableOn.union`. Supporting: `volume_Ioc_zero_one_lt_top`, `continuous_R2`, `continuous_R3`, `measurable_R3_kernel`, `rpow_neg_two`. Source `d194b341…`, olean `c0845332…`, exit 0, 15 declarations, standard axioms. The kernel's **integrability** is no longer an open formalization gap; its **value** is still open |
+
+Summary: 123 declarations machine-checked across twenty-three receipts (the newest,
+[`gcp-manuscript-integrab-20261102`](../evidence/gcp-manuscript-integrab-20261102/README.md),
+re-certifies 9 earlier declarations and adds 6 new ones). Of these: 2 algebraic
 coefficient identities, 1 finite-matrix trace identity, 5 bounded-operator
 inequalities, 1 inner-product lemma, 1 gap-composition lemma plus the printed
 `(4.11)` instantiation, the 10 `(2.3)` transport/eigenvector facts, the `(4.9a)`

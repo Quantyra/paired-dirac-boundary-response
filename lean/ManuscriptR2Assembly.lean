@@ -1,5 +1,8 @@
 import ManuscriptSmallOrder
 import ManuscriptR2Asymptotics
+import Mathlib.MeasureTheory.Integral.IntegrableOn
+import Mathlib.MeasureTheory.Integral.DominatedConvergence
+import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 
 set_option maxHeartbeats 1000000
 
@@ -313,6 +316,93 @@ theorem R3_kernel_small (s : ℝ) (hs0 : 0 < s) (hs1 : s ≤ 1) :
   rw [div_le_iff₀ hs8]
   linarith [h]
 
+/-! ## Integrability of the `(4.3)` kernel on `(0, ∞)`
+
+Assembles `R3_kernel_small` (bounded on the finite-measure set `(0,1]`) and
+`R3_kernel_upper` (dominated by `s ↦ s^(-2)` on `(1,∞)`, integrable by
+`integrableOn_Ioi_rpow_iff`) into the formal `IntegrableOn` statement.
+Supporting continuity comes from
+`intervalIntegral.continuous_parametric_intervalIntegral_of_continuous'`. -/
+
+/-- `volume (Ioc 0 1)` is finite. -/
+theorem volume_Ioc_zero_one_lt_top : (volume : Measure ℝ) (Set.Ioc (0 : ℝ) 1) ≠ ⊤ := by
+  rw [Real.volume_Ioc]
+  simp
+
+/-- `R2` is continuous: a parametric interval integral of a continuous integrand. -/
+theorem continuous_R2 : Continuous R2 := by
+  have hf : Continuous (Function.uncurry fun x al => phiR2 al x) := by
+    show Continuous fun p : ℝ × ℝ => phiR2 p.2 p.1
+    unfold phiR2 weightA
+    continuity
+  have h := intervalIntegral.continuous_parametric_intervalIntegral_of_continuous'
+    (f := fun x al => phiR2 al x) (μ := volume) hf 0 1
+  have h2 : R2 = fun x => (1 / 2) * ∫ al in (0 : ℝ)..1, phiR2 al x := by
+    funext x
+    exact R2_eq_half_integral x
+  rw [h2]
+  exact continuous_const.mul h
+
+/-- `R3` is continuous. -/
+theorem continuous_R3 : Continuous R3 := by
+  have h : R3 = fun x : ℝ => R2 x - x ^ 3 / 840 := by
+    funext x
+    rfl
+  rw [h]
+  exact continuous_R2.sub (by continuity)
+
+/-- The `(4.3)` kernel is measurable. -/
+theorem measurable_R3_kernel : Measurable fun s : ℝ => R3 (s ^ 2) / s ^ 8 := by
+  have h1 : Measurable fun s : ℝ => R3 (s ^ 2) :=
+    continuous_R3.measurable.comp (by fun_prop : Measurable fun s : ℝ => s ^ 2)
+  have h2 : Measurable fun s : ℝ => s ^ 8 := by fun_prop
+  exact h1.div h2
+
+/-- `s ^ (-2)` in the closed form `1 / s^2`. -/
+theorem rpow_neg_two (s : ℝ) (hs : 0 < s) : s ^ (-2 : ℝ) = 1 / s ^ 2 := by
+  rw [show (-2 : ℝ) = -((2 : ℕ) : ℝ) by norm_num, Real.rpow_neg (le_of_lt hs),
+    Real.rpow_natCast, one_div]
+
+/-- **Integrability of the `(4.3)` kernel on `(0, ∞)`.** -/
+theorem R3_kernel_integrableOn :
+    IntegrableOn (fun s : ℝ => R3 (s ^ 2) / s ^ 8) (Set.Ioi 0) := by
+  have hmble : AEStronglyMeasurable (fun s : ℝ => R3 (s ^ 2) / s ^ 8) volume :=
+    measurable_R3_kernel.aestronglyMeasurable
+  have h1 : IntegrableOn (fun s : ℝ => R3 (s ^ 2) / s ^ 8) (Set.Ioc (0 : ℝ) 1) := by
+    refine Measure.integrableOn_of_bounded volume_Ioc_zero_one_lt_top hmble
+      (M := 1 / 10080 + 1 / 60) ?_
+    filter_upwards [ae_restrict_mem measurableSet_Ioc] with s hs
+    rw [Real.norm_eq_abs, abs_div, abs_of_nonneg (by positivity : (0 : ℝ) ≤ s ^ 8)]
+    exact R3_kernel_small s hs.1 hs.2
+  have h2 : IntegrableOn (fun s : ℝ => R3 (s ^ 2) / s ^ 8) (Set.Ioi 1) := by
+    have hbase : IntegrableOn (fun s : ℝ => s ^ (-2 : ℝ)) (Set.Ioi 1) volume :=
+      (integrableOn_Ioi_rpow_iff zero_lt_one).mpr (by norm_num)
+    refine hbase.mono' hmble.restrict ?_
+    filter_upwards [ae_restrict_mem measurableSet_Ioi] with s hs
+    have hs1 : (1 : ℝ) ≤ s := le_of_lt hs
+    have hpos : (0 : ℝ) < s := by linarith
+    have hup := R3_kernel_upper s hs1
+    have hnorm : ‖R3 (s ^ 2) / s ^ 8‖ = |R3 (s ^ 2)| / s ^ 8 := by
+      rw [Real.norm_eq_abs, abs_div, abs_of_nonneg (by positivity : (0 : ℝ) ≤ s ^ 8)]
+    rw [hnorm, rpow_neg_two s hpos]
+    refine le_trans hup (one_div_le_one_div_of_le (by positivity : (0 : ℝ) < s ^ 2) ?_)
+    nlinarith [sq_nonneg s]
+  have hunion : IntegrableOn (fun s : ℝ => R3 (s ^ 2) / s ^ 8)
+      (Set.Ioc 0 1 ∪ Set.Ioi 1) := h1.union h2
+  have hset : Set.Ioi (0 : ℝ) = Set.Ioc 0 1 ∪ Set.Ioi 1 := by
+    ext s
+    constructor
+    · intro hs
+      have hs0 : (0 : ℝ) < s := hs
+      by_cases h : s ≤ 1
+      · exact Or.inl ⟨hs0, h⟩
+      · exact Or.inr (not_le.mp h)
+    · rintro (⟨h1', _⟩ | h2')
+      · exact h1'
+      · exact lt_trans zero_lt_one (show (1 : ℝ) < s from h2')
+  rw [hset]
+  exact hunion
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.g2_closed
@@ -324,3 +414,9 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.R2_expansion
 #print axioms PairedDirac.Manuscript.R3_bound
 #print axioms PairedDirac.Manuscript.R3_kernel_small
+#print axioms PairedDirac.Manuscript.volume_Ioc_zero_one_lt_top
+#print axioms PairedDirac.Manuscript.continuous_R2
+#print axioms PairedDirac.Manuscript.continuous_R3
+#print axioms PairedDirac.Manuscript.measurable_R3_kernel
+#print axioms PairedDirac.Manuscript.rpow_neg_two
+#print axioms PairedDirac.Manuscript.R3_kernel_integrableOn

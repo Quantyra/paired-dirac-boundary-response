@@ -86,3 +86,36 @@ compiled dependency is missing.
 Remaining to-do list: obtain a Mathlib build containing the Fourier derivative
 stack; compile `ManuscriptFourier.lean`; then assemble the unconditional
 complex-valued form of `(4.8)`.
+
+
+## Update 2026-11-02 (later): the missing-`.ir` class of gap is patchable offline; the Fourier gap is not
+
+Measurement on the retained Space build: 2694 `.olean`, 2609 `.ir`. So **85
+modules** lost their `.ir` sidecar, and any of them is unimportable
+(`missing IR data file for module ...`). This â€” not a missing source â€” is what
+blocked every `IntegrableOn` attempt, including `R3_kernel_integrableOn`.
+
+It is repairable without network access and without writing to the retained
+trees. Procedure now used by
+`lean/cloud-manuscript-integrab-20261102.sh`:
+
+1. symlink farm over the retained build: `cp -as <treelib> $run/farm`;
+2. loop: compile a probe importing the wanted modules; on
+   `missing IR data file for module M`, rebuild `M` inside the farm
+   (`lean -R $run/farm -o $run/farm/<M>.olean <M>.lean`), which replaces the
+   symlink with a fresh olean carrying no IR requirement;
+3. repeat until the probe imports cleanly.
+
+For the analysis stack this took **12 rebuilds** (Layercake, JapaneseBracket,
+Haar.NormedSpace, Normed.Affine.AddTorsor, AffineSpace.Ordered, UrysohnsLemma,
+Measure.EverywherePos, Metrizable.Urysohn, Haar.Unique, IntegralEqImproper,
+Lebesgue.Integral, ImproperIntegrals) and then
+`R3_kernel_integrableOn` compiled: receipt
+[`gcp-manuscript-integrab-20261102`](../evidence/gcp-manuscript-integrab-20261102/README.md).
+
+**The Fourier stack is still blocked**, for a different reason: the measurement
+here shows `Analysis/Fourier/FourierTransformDeriv` and `LpSpace` have no olean
+at all (not merely a missing `.ir`), so the farm procedure cannot help. Those
+modules need a real build, which needs the network or a complete artifact set.
+`ManuscriptFourier.lean` therefore remains uncompiled, and the two Parseval
+hypotheses remain hypotheses.
