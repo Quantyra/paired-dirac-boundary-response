@@ -1,48 +1,46 @@
-# GCP exact-source replay: `(5.4)`'s term algebra and the `(4.6)` prefactor bound
+# GCP exact-source replay: `(5.4)`'s term algebra and ratio, and the `(4.6)` prefactor bound
 
 Status: `lean/ManuscriptScaling.lean` at SHA-256
-`856e442d5386467eb25f20c91252c4494b61f663754e859d7ce1dd500698aa66`
+`80413f259c4761d9c6b92e3426eca2375d5ab089524e4746d176b12636104b9f`
 compiled on the Quantyra GCP Lean builder with exit code 0, producing
 `ManuscriptScaling.olean` at SHA-256
-`7d43b24713c4f830ce43f139c6d79e9c8983bb65bbe978c79b01c1d49744bd63`.
-No `sorryAx`, no error. Both declarations depend only on `propext`,
+`17d0a00407dbbf34688ce08ad78c1c32e0c08a23fbc5582639559e712186fcdf`.
+No `sorryAx`, no error. All three declarations depend only on `propext`,
 `Classical.choice` and `Quot.sound`.
+
+This supersedes the two-declaration version of this receipt and completes item
+(a): the term-ratio identity that was drafted but abandoned last turn.
 
 ## Certified
 
-- `scaling_terms_nonneg` — for `δ, t > 0` both terms of `(5.4)`'s display,
-  `δ^{3/2}t^{-9/4}` and `δ³t^{-3/2}`, are nonnegative; hence
-  `C(δ^{3/2}t^{-9/4} + δ³t^{-3/2})` is a genuine two-term majorant with
-  `C = max` of the two coefficients.
-- `exp_neg_div_bounded` — the `(4.6)` prefactor companion:
+- `scaling_terms_nonneg` — both `(5.4)` terms, `δ^{3/2}t^{-9/4}` and
+  `δ³t^{-3/2}`, are nonnegative for `δ, t > 0`;
+- `scaling_ratio` — **the ratio identity**:
   ```text
-  t^{-N}·exp(-c/t) ≤ N!/c^N        for all t > 0, c > 0,
+  δ^{3/2}t^{-9/4} / (δ³t^{-3/2}) = 1/(δ^{3/2}t^{3/4}),
   ```
-  from Mathlib's `Real.pow_div_factorial_le_exp` (`u^N/N! ≤ e^u`) at `u = c/t`
-  and `exp(x)exp(-x) = 1`. So `(1 + t^{-N})exp(-c/t)` is bounded by
-  `1 + N!/c^N` uniformly on `(0, ∞)` — the polynomial factor cannot defeat the
-  exponential.
+  so the cubic term dominates exactly when `δ^{3/2}t^{3/4} ≤ 1`. Proved with
+  `Real.rpow_sub`, `Real.rpow_neg`, `Real.rpow_natCast` and
+  `div_mul_div_comm` (the earlier failure was the `δ^3` nat-power versus
+  `δ^(3:ℝ)` rpow mismatch, and the final `1/a·1/b = 1/(ab)` step);
+- `exp_neg_div_bounded` — `t^{-N}exp(-c/t) ≤ N!/c^N`, so `(1+t^{-N})exp(-c/t)`
+  is uniformly bounded on `(0, ∞)`.
 
-## Recorded as not certified
+## Not certified
 
-- the *ratio* of the `(5.4)` terms, `δ^{3/2}t^{-9/4} / (δ³t^{-3/2}) =
-  1/(δ^{3/2}t^{3/4})` (structural context: the cubic term dominates exactly when
-  `δ^{3/2}t^{3/4} ≤ 1`); an rpow-algebra proof was drafted but not completed, so
-  it is **not** claimed;
-- the estimate `(5.4)` itself: it is a trace-norm bound on a boundary-defect
-  operator, needing the unbounded realization (recorded in the `(5.2)` receipt);
-- the *joint* bound `(1+t^{-N})exp(-c/t)·‖u‖‖w‖` and the mixed-derivative
-  content of `(4.6)`; only the two scalar factors are certified here.
+The trace-norm estimate `(5.4)` itself (needs the unbounded realization), and
+the mixed-derivative content of `(4.6)`.
 
 ## Reproduction record
 
-- Remote run directory: `~/quantyra-space-runs/p1-manuscript-scaling-r2`
+- Remote run directory: `~/quantyra-space-runs/p1-manuscript-scaling-r6`
 - Lean 4.30.0 (`d024af09…`), Mathlib `c5ea0035`, Space reference build
-- No project dependencies (Mathlib rpow/exp modules only)
-- Source `856e442d…`, olean `7d43b247…`, exit code `0`
+- No project dependencies
+- Source `80413f25…`, olean `17d0a004…`, exit code `0`
 
-## Preserved failure
+## Preserved failures
 
-`-r1` failed on the argument order of `Real.pow_div_factorial_le_exp` (it takes
-the nonnegativity proof before the exponent) and on the final `div_le_iff₀`
-orientation; no statement changed.
+`-r1`: `Real.pow_div_factorial_le_exp` argument order and the final
+`div_le_iff₀` orientation. `-r3` … `-r6`: the `δ^3` nat-power / rpow mismatch in
+`scaling_ratio` (fixed by `← Real.rpow_natCast`) and the final
+`1/a · 1/b = 1/(ab)` step (fixed by `field_simp`). No statement changed.

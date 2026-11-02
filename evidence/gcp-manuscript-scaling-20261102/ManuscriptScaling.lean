@@ -34,6 +34,29 @@ theorem scaling_terms_nonneg (δ t : ℝ) (hδ : 0 < δ) (ht : 0 < t) :
   · exact mul_nonneg (Real.rpow_nonneg hδ.le _) (Real.rpow_nonneg ht.le _)
   · exact mul_nonneg (pow_nonneg hδ.le 3) (Real.rpow_nonneg ht.le _)
 
+/-- The ratio of the `(5.4)` terms: the cubic term dominates exactly when
+`δ^{3/2}t^{3/4} ≤ 1`. -/
+theorem scaling_ratio (δ t : ℝ) (hδ : 0 < δ) (ht : 0 < t) :
+    δ ^ ((3 : ℝ) / 2) * t ^ (-((9 : ℝ) / 4))
+        / (δ ^ 3 * t ^ (-((3 : ℝ) / 2)))
+      = 1 / (δ ^ ((3 : ℝ) / 2) * t ^ ((3 : ℝ) / 4)) := by
+  have hd : δ ^ ((3 : ℝ) / 2) / δ ^ 3 = 1 / δ ^ ((3 : ℝ) / 2) := by
+    rw [← Real.rpow_natCast δ 3]
+    rw [← Real.rpow_sub hδ, show ((3 : ℝ) / 2) - ((3 : ℕ) : ℝ) = -((3 : ℝ) / 2) by
+      push_cast
+      norm_num,
+      Real.rpow_neg hδ.le, one_div]
+  have ht' : t ^ (-((9 : ℝ) / 4)) / t ^ (-((3 : ℝ) / 2))
+      = 1 / t ^ ((3 : ℝ) / 4) := by
+    rw [← Real.rpow_sub ht,
+      show -((9 : ℝ) / 4) - -((3 : ℝ) / 2) = -((3 : ℝ) / 4) by norm_num,
+      Real.rpow_neg ht.le, one_div]
+  have hδ3 : (0 : ℝ) < δ ^ ((3 : ℝ) / 2) := Real.rpow_pos_of_pos hδ _
+  have ht1 : (0 : ℝ) < t ^ ((3 : ℝ) / 4) := Real.rpow_pos_of_pos ht _
+  rw [← div_mul_div_comm]
+  rw [hd, ht']
+  field_simp
+
 /-- `(4.6)`'s prefactor: `t^{-N}exp(-c/t)` is bounded on `(0,∞)` by `N!/c^N`. -/
 theorem exp_neg_div_bounded (c : ℝ) (hc : 0 < c) (N : ℕ) :
     ∀ t : ℝ, 0 < t → (t ^ N)⁻¹ * Real.exp (-c / t) ≤ (N.factorial : ℝ) / c ^ N := by
@@ -63,4 +86,5 @@ theorem exp_neg_div_bounded (c : ℝ) (hc : 0 < c) (N : ℕ) :
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.scaling_terms_nonneg
+#print axioms PairedDirac.Manuscript.scaling_ratio
 #print axioms PairedDirac.Manuscript.exp_neg_div_bounded

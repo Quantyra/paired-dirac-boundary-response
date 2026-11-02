@@ -7,7 +7,7 @@ run="$HOME/quantyra-space-runs/p1-manuscript-scaling-${RUN_TAG:-dev}"
 deps="$HOME/quantyra-space-runs/space-20261007T093129Z-retry1/packages"
 toolchain="$HOME/quantyra-space-runs/paper1-domain-exact-tree-f7b70c1-20261029/toolchain/lean-4.30.0-linux/bin"
 source="$HOME/ManuscriptScaling.lean"
-source_sha='856e442d5386467eb25f20c91252c4494b61f663754e859d7ce1dd500698aa66'
+source_sha='80413f259c4761d9c6b92e3426eca2375d5ab089524e4746d176b12636104b9f'
 mathlib_sha='c5ea00351c28e24afc9f0f84379aa41082b1188f'
 
 mkdir "$run"
@@ -41,7 +41,7 @@ cd "$run"
 sha256sum ManuscriptScaling.lean | tee lean-source-sha256.txt
 lean -o ManuscriptScaling.olean ManuscriptScaling.lean 2>&1 | tee lean.log
 
-theorems="scaling_terms_nonneg exp_neg_div_bounded"
+theorems="scaling_terms_nonneg scaling_ratio exp_neg_div_bounded"
 for theorem in $theorems; do
   grep -F "PairedDirac.Manuscript.$theorem' depends on axioms" lean.log
 done

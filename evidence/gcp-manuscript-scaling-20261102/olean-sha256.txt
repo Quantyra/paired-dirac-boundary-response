@@ -1,1 +1,1 @@
-7d43b24713c4f830ce43f139c6d79e9c8983bb65bbe978c79b01c1d49744bd63  ManuscriptScaling.olean
+17d0a00407dbbf34688ce08ad78c1c32e0c08a23fbc5582639559e712186fcdf  ManuscriptScaling.olean

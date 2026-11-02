@@ -1,11 +1,11 @@
-Mon Nov  2 03:11:30 UTC 2026
+Mon Nov  2 03:25:14 UTC 2026
 quantyra-lean-builder-01
 /home/dfredriksen_quantyra_org/ManuscriptScaling.lean: OK
 Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
 Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
 Lean (version 4.30.0, x86_64-unknown-linux-gnu, commit d024af099ca4bf2c86f649261ebf59565dc8c622, Release)
 Lake version 5.0.0-src+d024af0 (Lean version 4.30.0)
-856e442d5386467eb25f20c91252c4494b61f663754e859d7ce1dd500698aa66  ManuscriptScaling.lean
+80413f259c4761d9c6b92e3426eca2375d5ab089524e4746d176b12636104b9f  ManuscriptScaling.lean
 Try this:
   [apply] ring_nf
   
@@ -13,8 +13,10 @@ Try this:
     
   Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
 'PairedDirac.Manuscript.scaling_terms_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.scaling_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.exp_neg_div_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.scaling_terms_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.scaling_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.exp_neg_div_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
 ManuscriptScaling.lean: OK
-7d43b24713c4f830ce43f139c6d79e9c8983bb65bbe978c79b01c1d49744bd63  ManuscriptScaling.olean
+17d0a00407dbbf34688ce08ad78c1c32e0c08a23fbc5582639559e712186fcdf  ManuscriptScaling.olean
