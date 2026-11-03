@@ -206,3 +206,58 @@ Remaining: the `alpha`/`x` interchange, the `alpha`-integral
 (`B(9/2,9/2)` after `y = a x`), the half-integer `Gamma` values, and the final
 arithmetic. The value `-5 pi^(3/2)/49152` remains unproved (numerically confirmed
 to ten significant digits).
+
+## Addendum: the alpha/x interchange, certified (run `-r19`)
+
+Run `-r19` certifies the interchange itself: target source
+`3333cb4a46931ebe60ac00e9c50ea064dabd7bdb57784722bc49aa3b479f5920`,
+olean `d886ab0511200f145ecaa73471ce5d50549143363efce5fcbba1127e7fa0c1cd`,
+exit `0`, **19 declarations**, no `sorryAx`, no error.
+
+Three declarations are new:
+
+| declaration | statement |
+| --- | --- |
+| `kernelBound` | the piecewise dominating function `x <= 1 => x^(-1/2)/8`, else `(11/6) x^(-3/2)` |
+| `integrableOn_kernelBound` | `IntegrableOn kernelBound (Ioi 0)` |
+| **`inner_integral_swap`** | `âˆ«_{alpha in 0..1} âˆ«_{x in Ioi 0} f alpha x = âˆ«_{x in Ioi 0} âˆ«_{alpha in 0..1} f alpha x` for the `(4.3)` integrand `f alpha x = x^(-9/2)(H(a(alpha)x) - (a(alpha)x)^3/3)` |
+
+The swap is proved with Mathlib's
+`intervalIntegral_integral_swap`, whose hypothesis is product integrability of
+`uncurry f` against `(volume.restrict (uIoc 0 1)).prod (volume.restrict (Ioi 0))`.
+That hypothesis is discharged by `Integrable.mono'` against the product majorant
+`(alpha, x) => kernelBound x`, itself obtained from `Integrable.mul_prod` applied
+to the constant `1` on `(0,1]` (finite measure) and `integrableOn_kernelBound`.
+
+### Exact requirements, recorded so they are not rediscovered
+
+- `MeasureTheory.integral_integral_swap (hf : Integrable (uncurry f) (mu.prod nu))`
+  and, better for this shape,
+  `MeasureTheory.intervalIntegral_integral_swap (h_int : Integrable (uncurry f)
+    ((volume.restrict (uIoc a b)).prod mu)) : âˆ« x in a..b, âˆ« y, f x y âˆ‚mu
+    = âˆ« y, (âˆ« x in a..b, f x y) âˆ‚mu` -- both in
+  `Mathlib/MeasureTheory/Integral/Prod.lean`.
+- `ContinuousOn.aestronglyMeasurable` needs the measure **explicitly**
+  (`(Î¼ := volume.prod volume)`); otherwise Lean reports "don't know how to
+  synthesize implicit argument `mu`".
+- `Measure.prod_restrict s t : (mu.restrict s).prod (nu.restrict t)
+  = (mu.prod nu).restrict (s x t)` must be applied *both* to the measurability
+  goal and to the `filter_upwards` hypothesis (via `ae_restrict_mem`), not just
+  one of them.
+- `Set.uIoc_of_le zero_le_one` converts `uIoc 0 1` to `Ioc 0 1`; the finite-measure
+  instance `isFiniteMeasure_restrict_Ioc` only fires on the latter syntactically,
+  so the rewrite must come before `integrable_const`.
+- `Integrable.mul_prod` requires `[NormedRing L]`; with `f = fun _ => (1 : Real)`
+  the product is the majorant in the second variable.
+
+### Where the (4.3) chain now stands
+
+Certified: coefficient algebra; `s = sqrt(t) k` bookkeeping; kernel integrability;
+cancellation form; two-regime domination; integrability of each regime piece;
+continuity of `H`; the inner integral for each `alpha`; the dominating function and
+its integrability; and **the alpha/x interchange**.
+
+Remaining: the substitution `y = a(alpha) x` (giving `I = (1/2) B(9/2,9/2) J`), the
+half-integer `Gamma` values, and the final arithmetic. The value
+`-5 pi^(3/2)/49152` is still not proved (numerically confirmed to ten significant
+digits).

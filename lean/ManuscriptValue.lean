@@ -455,6 +455,93 @@ theorem integrableOn_inner (al : ℝ) (hal : al ∈ Set.Icc (0 : ℝ) 1) :
   rw [hset] at h
   exact h
 
+/-- The piecewise dominating function for the `(4.3)` integrand: the quartic
+regime bound on `x <= 1`, the crude bound for `x >= 1`. -/
+noncomputable def kernelBound (x : ℝ) : ℝ :=
+  if x ≤ 1 then x ^ (-(1 : ℝ) / 2) / 8 else (11 / 6) * x ^ (-(3 : ℝ) / 2)
+
+/-- `kernelBound` is integrable on `(0, ∞)`. -/
+theorem integrableOn_kernelBound : IntegrableOn kernelBound (Set.Ioi 0) := by
+  have h1 : IntegrableOn kernelBound (Set.Ioc (0 : ℝ) 1) := by
+    refine IntegrableOn.congr_fun (integrableOn_rpow_neg_half_Ioc.const_mul (1 / 8 : ℝ)) ?_
+      measurableSet_Ioc
+    intro x hx
+    show (1 / 8 : ℝ) * x ^ (-(1 : ℝ) / 2) = kernelBound x
+    rw [kernelBound, if_pos hx.2]
+    ring
+  have h2 : IntegrableOn kernelBound (Set.Ioi (1 : ℝ)) := by
+    refine IntegrableOn.congr_fun integrableOn_rpow_neg_three_halves_Ioi ?_ measurableSet_Ioi
+    intro x hx
+    have hx1 : (1 : ℝ) < x := Set.mem_Ioi.mp hx
+    rw [kernelBound, if_neg (not_le.mpr hx1)]
+  have h := h1.union h2
+  have hset : Set.Ioc (0 : ℝ) 1 ∪ Set.Ioi 1 = Set.Ioi 0 := by
+    ext x
+    constructor
+    · rintro (⟨h0, _⟩ | h1')
+      · exact h0
+      · exact lt_trans zero_lt_one (Set.mem_Ioi.mp h1')
+    · intro hx
+      have hx0 : (0 : ℝ) < x := Set.mem_Ioi.mp hx
+      by_cases hc : x ≤ 1
+      · exact Or.inl ⟨hx0, hc⟩
+      · exact Or.inr (Set.mem_Ioi.mpr (not_le.mp hc))
+  rwa [hset] at h
+
+/-- **The `α`/`x` interchange for the `(4.3)` integrand** (Tonelli/Fubini). The
+double integral may be evaluated in either order. -/
+theorem inner_integral_swap :
+    (∫ al in (0 : ℝ)..1, ∫ x in Set.Ioi (0 : ℝ),
+        x ^ (-(9 : ℝ) / 2) * (Hint (weightA al * x) - (weightA al * x) ^ 3 / 3))
+      = ∫ x in Set.Ioi (0 : ℝ), (∫ al in (0 : ℝ)..1,
+        x ^ (-(9 : ℝ) / 2) * (Hint (weightA al * x) - (weightA al * x) ^ 3 / 3)) := by
+  set F : ℝ → ℝ → ℝ := fun al x =>
+    x ^ (-(9 : ℝ) / 2) * (Hint (weightA al * x) - (weightA al * x) ^ 3 / 3) with hF
+  have hw : Continuous fun p : ℝ × ℝ => weightA p.1 * p.2 := by
+    unfold weightA
+    continuity
+  have hcont : ContinuousOn (fun p : ℝ × ℝ => F p.1 p.2)
+      (Set.Ioc (0 : ℝ) 1 ×ˢ Set.Ioi (0 : ℝ)) := by
+    rw [hF]
+    have hhint : Continuous fun p : ℝ × ℝ => Hint (weightA p.1 * p.2) :=
+      continuous_Hint.comp hw
+    have hcub : Continuous fun p : ℝ × ℝ => (weightA p.1 * p.2) ^ 3 / 3 :=
+      (hw.pow 3).div_const 3
+    refine ContinuousOn.mul ?_ ((hhint.sub hcub).continuousOn)
+    exact continuous_snd.continuousOn.rpow_const (fun p hp => Or.inl (ne_of_gt hp.2))
+  have haes : AEStronglyMeasurable (fun p : ℝ × ℝ => F p.1 p.2)
+      ((volume.restrict (Set.Ioc (0 : ℝ) 1)).prod (volume.restrict (Set.Ioi (0 : ℝ)))) := by
+    have h := hcont.aestronglyMeasurable (μ := volume.prod volume)
+      (measurableSet_Ioc.prod measurableSet_Ioi)
+    simpa only [Measure.prod_restrict] using h
+  have hconst : Integrable (fun _ : ℝ => (1 : ℝ)) (volume.restrict (Set.Ioc (0 : ℝ) 1)) :=
+    integrable_const (1 : ℝ)
+  have hg : Integrable (fun x : ℝ => kernelBound x) (volume.restrict (Set.Ioi (0 : ℝ))) :=
+    integrableOn_kernelBound
+  have hmaj : Integrable (fun p : ℝ × ℝ => kernelBound p.2)
+      ((volume.restrict (Set.Ioc (0 : ℝ) 1)).prod (volume.restrict (Set.Ioi (0 : ℝ)))) := by
+    have h := hconst.mul_prod hg
+    simpa using h
+  have hbnd : ∀ᵐ p ∂((volume.restrict (Set.Ioc (0 : ℝ) 1)).prod
+      (volume.restrict (Set.Ioi (0 : ℝ)))), ‖F p.1 p.2‖ ≤ kernelBound p.2 := by
+    rw [Measure.prod_restrict]
+    filter_upwards [ae_restrict_mem (measurableSet_Ioc.prod measurableSet_Ioi)] with p hp
+    obtain ⟨hpa, hpx⟩ := hp
+    have hal : p.1 ∈ Set.Icc (0 : ℝ) 1 := ⟨le_of_lt hpa.1, hpa.2⟩
+    have hxpos : (0 : ℝ) < p.2 := hpx
+    have hnorm : ‖F p.1 p.2‖ = |F p.1 p.2| := Real.norm_eq_abs _
+    rw [hnorm, hF]
+    by_cases hs : p.2 ≤ 1
+    · rw [kernelBound, if_pos hs]
+      exact kernel_dominated_small p.1 p.2 hal hxpos hs
+    · have hx1 : (1 : ℝ) < p.2 := not_le.mp hs
+      rw [kernelBound, if_neg hs]
+      exact kernel_dominated_large p.1 p.2 hal (lt_trans zero_lt_one hx1) hx1.le
+  have hprod := hmaj.mono' haes hbnd
+  have hu : Set.uIoc (0 : ℝ) 1 = Set.Ioc (0 : ℝ) 1 := Set.uIoc_of_le zero_le_one
+  exact intervalIntegral_integral_swap (μ := volume.restrict (Set.Ioi (0 : ℝ)))
+    (by rwa [hu])
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.Hint_closed
@@ -473,3 +560,6 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.kernel_dominated_large
 #print axioms PairedDirac.Manuscript.continuous_Hint
 #print axioms PairedDirac.Manuscript.integrableOn_inner
+#print axioms PairedDirac.Manuscript.inner_integral_swap
+#print axioms PairedDirac.Manuscript.integrableOn_kernelBound
+#print axioms PairedDirac.Manuscript.kernelBound
