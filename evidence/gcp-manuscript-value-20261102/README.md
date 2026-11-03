@@ -159,3 +159,50 @@ was added, so nothing unverified is committed.
 
 Unchanged: the interchange, the `Î±`-integral `B(9/2,9/2)`, the half-integer
 `Gamma` values and the arithmetic are still open. The value remains unproved.
+
+## Addendum: the inner integral exists for every alpha (run `-r17`)
+
+Run `-r17` certifies the prerequisite that the previous three attempts failed to
+get through: target source
+`df1ce9f8ddd8ec4c10076909996a866a1b79b1f36fb3b87cd819af5f47037687`,
+olean `170a095cac6db26598f5f78278779cb40a0b427e0b49f689109e1088fd08a7f2`,
+exit `0`, **16 declarations**, no `sorryAx`, no error.
+
+```
+integrableOn_inner (al : Real) (hal : al in Icc 0 1) :
+  IntegrableOn (fun x => x^(-9/2) * (Hint (a(alpha) x) - (a(alpha) x)^3/3)) (Ioi 0)
+```
+
+That is: for every `alpha` in the interpolation range, the `x`-integrand of the
+`(4.3)` cancellation form is integrable on `(0, inf)`. This is the domain-side
+half of the Tonelli/Fubini exchange; the exchange itself is still to be done.
+
+### What finally made it work (all four earlier failures recorded)
+
+1. `fun_prop` cannot build `ContinuousOn` for a **negative-exponent** `rpow`; the
+   hypothesis has to be `ContinuousOn.rpow_const` with the side condition
+   `x != 0`, assembled by hand from `continuousOn_id.rpow_const`, `continuous_Hint`
+   and `Continuous.sub/mul`.
+2. `Integrable.mono'` (which `IntegrableOn.mono'` reduces to) wants
+   `â€–g xâ€– <= f x` -- the *dominating function without a norm on the right-hand
+   side*, not `â€–g xâ€– <= â€–f xâ€–`. Both earlier attempts stated the normed version
+   and were rejected.
+3. `Set.mem_Ioi.mp` is needed to turn `x in Ioi 1` into `1 < x`; a bare `hx` does
+   not elaborate in that position, and `Real.rpow_nonneg` wants `0 <= x`, so the
+   bound must be fed `le_of_lt (lt_trans zero_lt_one hx1)`.
+4. A PowerShell here-string replacement silently failed to match because the
+   script is read with CRLF while the Lean file has LF; the edits had to be made
+   with a byte-exact editor. This is the fifth occurrence of the
+   encoding/line-ending family of trap and is now treated as a standing rule:
+   edit Lean and Markdown with byte-exact tools, keep scripts ASCII-only and
+   LF-only.
+
+### Position in the (4.3) chain
+
+Done: coefficient algebra; `s = sqrt(t) k` bookkeeping; kernel integrability;
+cancellation form; two-regime domination with each piece integrable; continuity
+of `H`; and now the pointwise existence of the inner integral for each `alpha`.
+Remaining: the `alpha`/`x` interchange, the `alpha`-integral
+(`B(9/2,9/2)` after `y = a x`), the half-integer `Gamma` values, and the final
+arithmetic. The value `-5 pi^(3/2)/49152` remains unproved (numerically confirmed
+to ten significant digits).

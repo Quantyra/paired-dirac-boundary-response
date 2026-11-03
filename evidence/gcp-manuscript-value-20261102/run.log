@@ -1,4 +1,4 @@
-Mon Nov  2 08:30:14 UTC 2026
+Tue Nov  3 07:15:31 UTC 2026
 quantyra-lean-builder-01
 /home/dfredriksen_quantyra_org/ManuscriptFlatBound.lean: OK
 /home/dfredriksen_quantyra_org/ManuscriptCubic.lean: OK
@@ -27,7 +27,7 @@ c769670d0a3172326aa24fe5d72ef57fbb72f17a199cc2e161b582d9190c49eb  ManuscriptFlat
 b68f338739d524db5993cbaaec0322e4ef6d9f6833ee8bcdc6b99ad67b64c324  ManuscriptSmallOrder.lean
 0803650ff8974637ec4fa7975c91f90079d3acaee4194f72955ee4c6a91a0e89  ManuscriptR2Asymptotics.lean
 12e21190a2ad94e16ef5bcb8affcdaf7583976856040607bcb45ef415db505bb  ManuscriptR2Assembly.lean
-d7cfc3ac1e904d8d181ebea82e47643b481df17daa6067b22a503c7a5f363202  ManuscriptValue.lean
+df1ce9f8ddd8ec4c10076909996a866a1b79b1f36fb3b87cd819af5f47037687  ManuscriptValue.lean
 --- dependency: ManuscriptFlatBound ---
 'PairedDirac.Manuscript.phi_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.integral_weightA_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -105,6 +105,7 @@ macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
 'PairedDirac.Manuscript.kernel_dominated_small' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.kernel_dominated_large' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.continuous_Hint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairedDirac.Manuscript.integrableOn_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.Hint_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.Hint_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.Hint_ge_neg_one' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -120,6 +121,7 @@ macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
 'PairedDirac.Manuscript.kernel_dominated_small' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.kernel_dominated_large' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PairedDirac.Manuscript.continuous_Hint' depends on axioms: [propext, Classical.choice, Quot.sound]
-d7cfc3ac1e904d8d181ebea82e47643b481df17daa6067b22a503c7a5f363202  ManuscriptValue.lean
-16751260c87eceecadf16150edd530488429032ce227aea4b1708fbdbc1fbf32  ManuscriptValue.olean
+'PairedDirac.Manuscript.integrableOn_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+df1ce9f8ddd8ec4c10076909996a866a1b79b1f36fb3b87cd819af5f47037687  ManuscriptValue.lean
+170a095cac6db26598f5f78278779cb40a0b427e0b49f689109e1088fd08a7f2  ManuscriptValue.olean
 RECEIPT_COMPLETE

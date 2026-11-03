@@ -18,7 +18,7 @@ require.
 > symbols.
 
 **Verdict: the manuscript is Lean-certified at a declared scope, and not
-beyond it.** One hundred-forty declarations are machine-checked on GCP (receipts
+beyond it.** One hundred-forty-one declarations are machine-checked on GCP (receipts
 [`gcp-manuscript-formal-20261101`](../evidence/gcp-manuscript-formal-20261101/README.md),
 [`gcp-manuscript-formal-20261101-r2`](../evidence/gcp-manuscript-formal-20261101-r2/README.md),
 [`gcp-manuscript-formal-20261101-r3`](../evidence/gcp-manuscript-formal-20261101-r3/README.md),
@@ -100,7 +100,8 @@ printed equations, its analysis and its physics are not.
 
 | (4.3), value: domination step | `|x^(-9/2)(H(a x) âˆ’ (a x)Â³/3)| â‰¤ x^(-1/2)/8 + (11/6)x^(-3/2)` | **CERTIFIED** | New in [`gcp-manuscript-value-20261102`](../evidence/gcp-manuscript-value-20261102/README.md): `kernel_pointwise_dominated`, the uniform-in-`Î±` domination that the interchange of `âˆ«â‚€Â¹` and `âˆ«â‚€^âˆž` in the cancellation form requires, plus its ingredients `Hint_closed` (`H(y) = yÂ²/2 âˆ’ 1 + (1+y)e^{-y}`), `Hint_le`, `Hint_ge_neg_one`, `Hint_abs_le`, `Hint_sub_abs_le` (large-`y`), `Hint_sub_abs_le_quartic` (small-`y`, `|H(y) âˆ’ yÂ³/3| â‰¤ yâ´/8`) and the rpow bookkeeping `rpow_neg9_mul_four/two/three`. Source `cb8e9120â€¦`, olean `55e69a58â€¦`, exit 0, 10 declarations, standard axioms. **Not** certified: the interchange, the `Î±`-integral (`B(9/2,9/2)`), the half-integer `Gamma` values, and the final arithmetic |
 | (4.3), value: integrable domination | the two-regime bounds are integrable on their half-lines | **CERTIFIED** | Same receipt, run `-r8` (source `903480e1...`, olean `23fe5b16...`, exit 0, 14 declarations): `kernel_dominated_small` (`0 < x <= 1 => |x^(-9/2)(H(a x) - (a x)^3/3)| <= x^(-1/2)/8`), `kernel_dominated_large` (`1 <= x => |...| <= (11/6) x^(-3/2)`), `integrableOn_rpow_neg_half_Ioc` (`x^(-1/2)` integrable on `(0,1]`) and `integrableOn_rpow_neg_three_halves_Ioi`. The earlier single bound was *not* integrable at infinity (`x^(-1/2)` diverges), so this split is required, not cosmetic. **Still open:** the alpha/x interchange, `B(9/2,9/2)`, the half-integer `Gamma` values, and the arithmetic |
-Summary: 140 declarations machine-checked across twenty-three receipts (the newest,
+| (4.3), value: inner integral exists | `IntegrableOn (fun x => x^(-9/2)(H(a x) - (a x)^3/3)) (Ioi 0)` for every `alpha in [0,1]` | **CERTIFIED** | Same receipt, run `-r17` (source `df1ce9f8...`, olean `170a095c...`, exit 0, 16 declarations): `integrableOn_inner`, the domain-side prerequisite for the alpha/x Tonelli-Fubini interchange, proved by `IntegrableOn.mono'` against the two regime bounds and `IntegrableOn.union`. Four earlier failures are recorded, including that `Integrable.mono'` wants `â€–g xâ€– <= f x` (no norm on the dominating side) and that `fun_prop` cannot build `ContinuousOn` for a negative-exponent rpow. **Still open:** the interchange itself, `B(9/2,9/2)`, the half-integer `Gamma` values and the arithmetic |
+Summary: 141 declarations machine-checked across twenty-three receipts (the newest,
 [`gcp-manuscript-integrab-20261102`](../evidence/gcp-manuscript-integrab-20261102/README.md),
 re-certifies 9 earlier declarations and adds 6 new ones). Of these: 2 algebraic
 coefficient identities, 1 finite-matrix trace identity, 5 bounded-operator

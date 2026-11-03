@@ -392,6 +392,69 @@ theorem continuous_Hint : Continuous Hint := by
   rw [h]
   continuity
 
+/-- **The inner `x`-integral exists for every `α ∈ [0,1]`.** For each `α` the
+`(4.3)` integrand in cancellation form is integrable on `(0,∞)` — the
+domain-side prerequisite for exchanging the `α`- and `x`-integrals. -/
+theorem integrableOn_inner (al : ℝ) (hal : al ∈ Set.Icc (0 : ℝ) 1) :
+    IntegrableOn (fun x : ℝ => x ^ (-(9 : ℝ) / 2)
+      * (Hint (weightA al * x) - (weightA al * x) ^ 3 / 3)) (Set.Ioi 0) := by
+  set f : ℝ → ℝ := fun x => x ^ (-(9 : ℝ) / 2)
+    * (Hint (weightA al * x) - (weightA al * x) ^ 3 / 3) with hfdef
+  have hHintc : Continuous fun x : ℝ => Hint (weightA al * x) :=
+    continuous_Hint.comp (continuous_const.mul continuous_id)
+  have hcubc : Continuous fun x : ℝ => (weightA al * x) ^ 3 / 3 :=
+    ((continuous_const.mul continuous_id).pow 3).div_const 3
+  have hinner : Continuous fun x : ℝ =>
+      Hint (weightA al * x) - (weightA al * x) ^ 3 / 3 := hHintc.sub hcubc
+  have haes1 : AEStronglyMeasurable f (volume.restrict (Set.Ioc (0 : ℝ) 1)) := by
+    rw [hfdef]
+    refine ContinuousOn.aestronglyMeasurable ?_ measurableSet_Ioc
+    exact (continuousOn_id.rpow_const (fun x hx => Or.inl (ne_of_gt hx.1))).mul
+      hinner.continuousOn
+  have haes2 : AEStronglyMeasurable f (volume.restrict (Set.Ioi (1 : ℝ))) := by
+    rw [hfdef]
+    refine ContinuousOn.aestronglyMeasurable ?_ measurableSet_Ioi
+    exact (continuousOn_id.rpow_const
+      (fun x hx => Or.inl (ne_of_gt (lt_trans zero_lt_one (Set.mem_Ioi.mp hx))))).mul
+      hinner.continuousOn
+  have hbase1 : IntegrableOn (fun x : ℝ => x ^ (-(1 : ℝ) / 2) / 8) (Set.Ioc (0 : ℝ) 1) := by
+    have h := integrableOn_rpow_neg_half_Ioc.const_mul (1 / 8 : ℝ)
+    have hfun : (fun x : ℝ => (1 / 8 : ℝ) * x ^ (-(1 : ℝ) / 2))
+        = fun x : ℝ => x ^ (-(1 : ℝ) / 2) / 8 := by
+      funext x
+      ring
+    rwa [hfun] at h
+  have hbnd1 : ∀ᵐ x ∂(volume.restrict (Set.Ioc (0 : ℝ) 1)),
+      ‖f x‖ ≤ x ^ (-(1 : ℝ) / 2) / 8 := by
+    filter_upwards [ae_restrict_mem measurableSet_Ioc] with x hx
+    have hxf : ‖f x‖ = |f x| := Real.norm_eq_abs _
+    rw [hxf, hfdef]
+    exact kernel_dominated_small al x hal hx.1 hx.2
+  have h1 : IntegrableOn f (Set.Ioc (0 : ℝ) 1) := hbase1.mono' haes1 hbnd1
+  have hbnd2 : ∀ᵐ x ∂(volume.restrict (Set.Ioi (1 : ℝ))),
+      ‖f x‖ ≤ (11 / 6) * x ^ (-(3 : ℝ) / 2) := by
+    filter_upwards [ae_restrict_mem measurableSet_Ioi] with x hx
+    have hx1 : (1 : ℝ) < x := Set.mem_Ioi.mp hx
+    have hxf : ‖f x‖ = |f x| := Real.norm_eq_abs _
+    rw [hxf, hfdef]
+    exact kernel_dominated_large al x hal (lt_trans zero_lt_one hx1) hx1.le
+  have h2 : IntegrableOn f (Set.Ioi (1 : ℝ)) :=
+    integrableOn_rpow_neg_three_halves_Ioi.mono' haes2 hbnd2
+  have h := h1.union h2
+  have hset : Set.Ioc (0 : ℝ) 1 ∪ Set.Ioi 1 = Set.Ioi 0 := by
+    ext x
+    constructor
+    · rintro (⟨h0, _⟩ | h1')
+      · exact h0
+      · exact lt_trans zero_lt_one (Set.mem_Ioi.mp h1')
+    · intro hx
+      have hx0 : (0 : ℝ) < x := Set.mem_Ioi.mp hx
+      by_cases hc : x ≤ 1
+      · exact Or.inl ⟨hx0, hc⟩
+      · exact Or.inr (Set.mem_Ioi.mpr (not_le.mp hc))
+  rw [hset] at h
+  exact h
+
 end PairedDirac.Manuscript
 
 #print axioms PairedDirac.Manuscript.Hint_closed
@@ -409,3 +472,4 @@ end PairedDirac.Manuscript
 #print axioms PairedDirac.Manuscript.kernel_dominated_small
 #print axioms PairedDirac.Manuscript.kernel_dominated_large
 #print axioms PairedDirac.Manuscript.continuous_Hint
+#print axioms PairedDirac.Manuscript.integrableOn_inner
